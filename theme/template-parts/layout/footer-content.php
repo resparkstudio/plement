@@ -23,8 +23,8 @@
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-2',
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
+					'menu_class' => 'footer-menu',
+					'depth' => 1,
 				)
 			);
 			?>

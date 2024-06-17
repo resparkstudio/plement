@@ -129,13 +129,13 @@ add_action( 'after_setup_theme', 'plmt_setup' );
 function plmt_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', 'plement' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'plement' ),
+			'name' => __( 'Footer', 'plement' ),
+			'id' => 'sidebar-1',
+			'description' => __( 'Add widgets here to appear in your footer.', 'plement' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 }
@@ -195,3 +195,13 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * SVG icons functions and filters.
+ */
+require get_template_directory() . '/inc/svg-icons.php';

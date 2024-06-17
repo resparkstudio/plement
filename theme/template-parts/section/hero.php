@@ -1,0 +1,84 @@
+<?php
+$hero_content = get_field( 'hero' );
+
+if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
+	return;
+}
+
+
+?>
+<section id="hero" class="container pt-10 pb-8 lg:pb-6 lg:h-[calc(100vh-108px)] flex flex-col justify-between">
+	<div class="flex flex-col gap-12 items-center lg:flex-row lg:gap-14">
+		<div class="hero-content lg:max-w-2xl">
+			<h1 class="text-4xl md:text-7xl text-center font-medium mb-8 lg:text-left lg:mb-10">
+				<?php echo esc_html( $hero_content['heading'] ) ?>
+			</h1>
+			<div class="flex gap-6 justify-center lg:justify-start lg:gap-8">
+				<a href="#" class="button">Contact us
+					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" fill="none"
+						xmlns:v="https://vecta.io/nano">
+						<path
+							d="M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z"
+							fill="#fff" />
+					</svg></a>
+				<a href="#" class="button_secondary">Our services</a>
+			</div>
+		</div>
+		<div>
+			<img src="<?php echo esc_url( $hero_content['hero_image']['url'] ) ?>"
+				alt="<?php echo esc_attr( $hero_content['hero_image']['alt'] ) ?>">
+		</div>
+	</div>
+	<div class="mt-[60px] lg:flex justify-between items-center">
+		<div class="hidden lg:flex gap-4">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/image 2.png" alt="Hero Image"
+				class="w-[150px] h-[62px] object-contain">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/image 3.png" alt="Hero Image"
+				class="w-[150px] h-[62px] object-contain">
+		</div>
+		<div class="lg:flex">
+			<p class="text-textGray font-medium text-sm max-w-40 text-center mx-auto mb-4 lg:mb-0 lg:mr-4 lg:text-left">
+				Trusted by over 250
+				companies
+				worldwide:</p>
+			<div class="flex overflow-hidden space-x-4 h-[40px] max-w-xl">
+				<div class="flex space-x-4 animate-loop-scroll">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-1.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-2.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-3.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-4.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-1.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-2.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-3.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-4.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+				</div>
+				<div class="flex space-x-4 animate-loop-scroll" aria-hidden="true">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-1.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-2.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-3.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-4.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-1.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-2.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-3.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/company-4.png" alt="Hero Image"
+						class="max-w-none object-contain" width="200" height="40">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -54,3 +54,31 @@
 .entry-content > .alignright {
 	@apply float-right ml-8;
 }
+
+.button {
+	@apply inline-flex px-6 font-bold text-white bg-accent rounded-lg h-11 items-center gap-3;
+}
+
+.button:hover {
+	@apply bg-accentHover;
+}
+
+.button_secondary {
+	@apply inline-flex px-6 font-bold text-textBlack rounded-lg h-11 items-center gap-3 border border-lightGray;
+}
+
+.menu-primary-list {
+	@apply items-center gap-4 hidden lg:flex;
+}
+
+.menu-primary-list > li {
+	@apply font-bold;
+}
+
+.menu-primary-list > li > a:hover {
+	@apply text-accent;
+}
+
+.container {
+	@apply max-w-[1312px] mx-auto px-5 lg:px-0;
+}
