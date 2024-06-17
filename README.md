@@ -52,4 +52,4 @@ Or [deploy with the tool of your choice](https://underscoretw.com/docs/deploymen
 * [Managing Styles for Custom Blocks](https://underscoretw.com/docs/custom-blocks/)
   Learn strategies for using Tailwind in theme-specific custom blocks
 * [Setting Up Browsersync](https://underscoretw.com/docs/browsersync/)
-  Add live reloads and synchronized cross-device testing to your workflow
+  Add live reloads and synchronized cross-device testing to your workflo
