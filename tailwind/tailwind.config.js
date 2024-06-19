@@ -27,13 +27,26 @@ module.exports = {
 				lightGrayBorder: '#D8D8D8',
 				grayBorder: '#D6D6D6',
 			},
+			boxShadow: {
+				testimonial: '5px 5px 30px -5px #012D191A',
+			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
+				marquee: 'marquee 60s linear infinite',
+				marquee2: 'marquee2 60s linear infinite',
 			},
 			keyframes: {
 				'loop-scroll': {
 					from: { transform: 'translateX(0)' },
 					to: { transform: 'translateX(-100%)' },
+				},
+				marquee: {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
+				marquee2: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(100%)' },
 				},
 			},
 		},
