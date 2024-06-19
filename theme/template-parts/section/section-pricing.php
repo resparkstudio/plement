@@ -42,7 +42,7 @@ function package_cards( $packages ) {
 	if ( empty( $packages['packages_list'] ) )
 		return;
 	?>
-	<div class="max-w-sm mx-auto grid gap-6 lg:grid-cols-4 items-start lg:max-w-none">
+	<div class="max-w-sm mx-auto grid gap-6 lg:grid-cols-4 items-start lg:max-w-none" x-show="isAnnual">
 		<?php foreach ( $packages['packages_list'] as $package ) : ?>
 			<div class="h-full">
 				<div class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray">
@@ -78,13 +78,46 @@ function package_cards( $packages ) {
 	<?php
 }
 
+function standalone_solution( $standalone_solutions ) {
+
+	if ( empty( $standalone_solutions['standalone_list'] ) )
+		return;
+
+	?>
+
+	<ul class="grid grid-cols-4 gap-6" x-show="!isAnnual">
+		<?php foreach ( $standalone_solutions['standalone_list'] as $solution ) : ?>
+			<li>
+				<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>" value="" class="hidden peer"
+					required="">
+				<label for="<?php echo esc_attr( $solution['title'] ) ?>"
+					class="inline-flex items-center justify-between w-full p-5 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack peer-checked:text-gray-600 hover:bg-gray-50 ">
+					<div class="block">
+						<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
+						<div class="inline-flex items-baseline mb-3">
+							<span class="font-medium text-[2rem] leading-[41px]">$</span>
+							<span
+								class="font-medium text-[2rem] leading-[41px]"><?php echo esc_html( $solution['price_usd'] ) ?></span>
+						</div>
+						<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray">
+							<?php echo esc_html( $solution['description'] ) ?>
+						</p>
+					</div>
+					</la>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+}
+
 ?>
-<section id="pricing">
+<section id="pricing" class="pb-16 lg:pb-36">
 	<div class="relative">
 		<div class="container relative flex flex-col justify-center overflow-hidden">
 			<div x-data="{ isAnnual: true }">
 				<?php pricing_header( $pricing_content ) ?>
 				<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
+				<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 			</div>
 		</div>
 	</div>

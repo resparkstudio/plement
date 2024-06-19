@@ -14,6 +14,10 @@ $page_sections = [
 	'about',
 	'services',
 	'pricing',
+	'partner',
+	'process',
+	'integrations',
+	'faq'
 ]
 	?>
 

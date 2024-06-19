@@ -24,6 +24,8 @@ module.exports = {
 				accentHover: '#ef6739',
 				lightGray: '#E9E9E9',
 				lightGrayBg: '#F8F8FA',
+				lightGrayBorder: '#D8D8D8',
+				grayBorder: '#D6D6D6',
 			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
