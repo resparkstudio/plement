@@ -53,5 +53,9 @@
 		"zip": "node node_scripts/zip.js plement",
 		"bundle": "run-s production zip"
 	},
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"alpinejs": "^3.14.1",
+		"swiper": "^11.1.4"
+	}
 }

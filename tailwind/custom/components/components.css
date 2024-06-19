@@ -80,5 +80,13 @@
 }
 
 .container {
-	@apply max-w-[1312px] mx-auto px-5 lg:px-0;
+	@apply max-w-[1312px] mx-auto px-5 xl:px-0;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	@apply !bg-accent;
+}
+
+.swiper-pagination-bullet {
+	@apply !bg-lightGray;
 }

@@ -11,14 +11,16 @@ get_header();
 
 $page_sections = [ 
 	'hero',
-	'statistics',
+	'about',
+	'services',
+	'pricing',
 ]
 	?>
 
-<section id="primary">
-	<main id="main">
+<section id='primary'>
+	<main id='main'>
 		<?php foreach ( $page_sections as $section ) : ?>
-			<?php get_template_part( 'template-parts/section/' . $section ); ?>
+			<?php get_template_part( 'template-parts/section/section-' . $section ); ?>
 		<?php endforeach; ?>
 	</main>
 </section>

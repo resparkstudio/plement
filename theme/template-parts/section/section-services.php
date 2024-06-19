@@ -1,0 +1,51 @@
+<?php
+
+$services_content = get_field( 'services' );
+
+if ( ! isset( $services_content ) || empty( $services_content ) ) {
+	return;
+}
+
+function services_list( $services ) {
+	if ( empty( $services ) ) {
+		return;
+	}
+	?>
+	<div class="services-list swiper">
+		<ul class="swiper-wrapper md:flex md:flex-col md:gap-8">
+			<?php
+			foreach ( $services as $service ) {
+				?>
+				<li
+					class="swiper-slide group md:hover:bg-lightGrayBg transition-[background-color_.3s,_padding_.7s_cubic-bezier(.684,_.001,_.265,_1.55)] py-8 lg:py-12">
+					<div class="container">
+						<div
+							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
+							<h4 class="text-xl font-medium mb-3 inline-block lg:text-[1.375rem] lg:leading-7 md:mb-0">
+								<?php echo esc_html( $service['title'] ); ?>
+							</h4>
+							<div
+								class="max-w-[530px] md:opacity-0 md:invisible group-hover:md:opacity-100 group-hover:md:visible">
+								<p class="font-medium md:text-lg"><?php echo esc_html( $service['description'] ); ?></p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<?php
+			}
+			?>
+		</ul>
+		<div class="swiper-pagination"></div>
+	</div>
+	<?php
+}
+
+?>
+<section id="services" class="py-16 lg:py-36">
+	<div class="container">
+		<h2 class="max-w-md font-medium text-[2rem] mb-8 leading-9 lg:text-5xl lg:mb-20">
+			<?php echo esc_html( $services_content['heading'] ) ?>
+		</h2>
+	</div>
+	<?php isset( $services_content['services_list'] ) && services_list( $services_content['services_list'] ); ?>
+</section>

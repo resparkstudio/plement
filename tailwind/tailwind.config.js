@@ -19,6 +19,7 @@ module.exports = {
 			colors: {
 				textBlack: '#272727',
 				textGray: '#575757',
+				textDarkGray: '#4D4D4D',
 				accent: '#ED5623',
 				accentHover: '#ef6739',
 				lightGray: '#E9E9E9',

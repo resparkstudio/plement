@@ -14,3 +14,7 @@
 body {
 	@apply bg-background text-textBlack font-dm;
 }
+
+h2 {
+	@apply text-[2rem] leading-[35px] font-medium lg:text-5xl lg:leading-[52px];
+}
