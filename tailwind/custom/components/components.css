@@ -67,6 +67,10 @@
 	@apply inline-flex px-6 font-bold text-textBlack rounded-lg h-11 items-center gap-3 border border-lightGray;
 }
 
+.button_outlined {
+	@apply inline-flex px-6 font-bold border-2 border-accent text-accent rounded-lg h-11 items-center gap-3;
+}
+
 .menu-primary-list {
 	@apply items-center gap-4 hidden lg:flex;
 }

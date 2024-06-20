@@ -93,7 +93,42 @@ function calendly_modal() {
 		</template>
 	</div>
 	<?php
+}
 
+function terms_modal( $terms ) {
+	if ( empty( $terms ) )
+		return;
+	?>
+	<div @keydown.escape.window="termsModalOpen = false" class="relative z-50 w-auto h-auto">
+		<template x-teleport="body">
+			<div x-show="termsModalOpen"
+				class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen" x-cloak>
+				<div x-show="termsModalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300"
+					x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="termsModalOpen=false"
+					class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
+				<div x-show="termsModalOpen" x-trap.inert.noscroll="termsModalOpen"
+					x-transition:enter="ease-out duration-300"
+					x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+					x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+					x-transition:leave="ease-in duration-200"
+					x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+					x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+					class="max-w-[1350px] relative w-full py-6 bg-lightGrayBg px-7 lg:px-[105px] sm:rounded-lg container">
+					<button @click="termsModalOpen=false"
+						class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
+						<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke-width="1.5" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<h2><?php echo esc_html( $terms['heading'] ) ?></h2>
+					<p><?php echo esc_html( $terms['description'] ) ?></p>
+				</div>
+			</div>
+		</template>
+	</div>
+	<?php
 }
 
 function package_cards( $packages ) {
@@ -119,8 +154,14 @@ function package_cards( $packages ) {
 							</div>
 							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
-								class="pricing-button w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-accent px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-accentHover focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150">
+								class="pricing-button w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
+								<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
+									xmlns:v='https://vecta.io/nano'>
+									<path
+										d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
+										fill='#fff' />
+								</svg>
 							</button>
 						</div>
 						<ul class="text-sm space-y-3 grow">
@@ -199,13 +240,19 @@ function standalone_solution( $standalone_solutions ) {
 <section id="pricing" class="pb-16 lg:pb-36">
 	<div class="relative">
 		<div class="container relative flex flex-col justify-center overflow-hidden">
-			<div x-data="{ isPackages: true, modalOpen: false, selectedPackage: '' }">
+			<div x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false }">
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 				<?php pricing_header( $pricing_content ) ?>
 				<?php currency_switch() ?>
 				<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
 				<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 				<?php calendly_modal() ?>
+				<?php terms_modal( $pricing_content['payment_terms'] ) ?>
+				<div class="flex w-full justify-center mt-16">
+
+					<button class="text-lg font-bold underline"
+						@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
+				</div>
 			</div>
 		</div>
 	</div>

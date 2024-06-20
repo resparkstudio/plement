@@ -164,7 +164,7 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 						esc_attr( get_comment_time( 'c' ) ),
 						esc_html(
 							sprintf(
-							/* translators: 1: Comment date, 2: Comment time. */
+								/* translators: 1: Comment date, 2: Comment time. */
 								__( '%1$s at %2$s', 'plement' ),
 								get_comment_date( '', $comment ),
 								get_comment_time()
@@ -177,7 +177,7 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>
-				<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
+					<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -192,15 +192,15 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 						$args,
 						array(
 							'add_below' => 'div-comment',
-							'depth'     => $depth,
+							'depth' => $depth,
 							'max_depth' => $args['max_depth'],
-							'before'    => '<div class="reply">',
-							'after'     => '</div>',
+							'before' => '<div class="reply">',
+							'after' => '</div>',
 						)
 					)
 				);
 			}
 			?>
 		</article><!-- .comment-body -->
-	<?php
+		<?php
 }
