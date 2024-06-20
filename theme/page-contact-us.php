@@ -10,6 +10,7 @@
 get_header();
 $heading   = get_field( 'heading' );
 $shortcode = get_field( 'form_shortcode' );
+
 ?>
 
 <section id='primary'>
@@ -18,8 +19,8 @@ $shortcode = get_field( 'form_shortcode' );
 			class="my-10 lg:mb-20 lg:mt-[5.75rem] text-[2.375rem] leading-[2.625rem] lg:text-7xl lg:leading-[5rem] max-w-[52.75rem] font-medium">
 			<?php echo esc_html( $heading ) ?>
 		</h1>
-		<div class="flex justify-between">
-			<div class="bg-lightGrayBg p-14 max-w-[652px] w-full">
+		<div class="flex flex-col-reverse lg:flex-row gap-8 justify-between items-center lg:items-start">
+			<div class="bg-lightGrayBg py-8 px-4 lg:p-14 max-w-[652px] w-full">
 				<svg class="mb-4" width="50" height="50" viewBox="0 0 50 50" fill="none"
 					xmlns="http://www.w3.org/2000/svg">
 					<rect width="50" height="50" rx="8" fill="#ED5623" />
@@ -38,6 +39,7 @@ $shortcode = get_field( 'form_shortcode' );
 				<?php get_template_part( 'template-parts/section/section-contact-info' ); ?>
 			</div>
 		</div>
+		<?php get_template_part( 'template-parts/section/section-faq' ); ?>
 
 	</main>
 </section>

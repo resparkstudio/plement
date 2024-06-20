@@ -14,7 +14,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
 			<div class='flex gap-6 justify-center lg:justify-start lg:gap-8'>
-				<a href='#' class='button'>
+				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button'>
 					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
 					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
 						xmlns:v='https://vecta.io/nano'>
@@ -23,7 +23,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 							fill='#fff' />
 					</svg>
 				</a>
-				<a href='#' class='button_secondary'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
+				<a href='#services' class='button_secondary'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
 			</div>
 		</div>
 		<div>

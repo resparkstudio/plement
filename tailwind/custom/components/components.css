@@ -56,11 +56,11 @@
 }
 
 .button {
-	@apply inline-flex px-6 font-bold text-white bg-accent rounded-lg h-11 items-center gap-3;
+	@apply inline-flex px-6 font-bold text-white bg-accent rounded-lg h-11 items-center gap-3 transition duration-300 ease-in-out;
 }
 
 .button:hover {
-	@apply bg-accentHover;
+	@apply bg-accentHover transition duration-300 ease-in-out;
 }
 
 .button_secondary {
@@ -92,7 +92,7 @@
 }
 
 .container {
-	@apply max-w-[1440px] mx-auto px-5 xl:px-0;
+	@apply max-w-[1440px] mx-auto px-5  2xl:px-0;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -108,7 +108,7 @@
 }
 
 .footer-menu {
-	@apply flex items-center gap-4;
+	@apply flex flex-col gap-6 lg:items-center lg:flex-row lg:gap-4;
 }
 
 .footer-menu > li {

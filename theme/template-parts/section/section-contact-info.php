@@ -11,16 +11,17 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 <div class="py-8 px-4 rounded-lg bg-textBlack text-white max-w-[40.25rem] lg:p-14">
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
-	<div class="flex flex-col lg:flex-row lg:items-center">
-		<a href="#" class="button mr-6">
+	<div class="flex flex-col xl:flex-row xl:items-center">
+		<button class="button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
 			<?php esc_html_e( 'Book a Meeting', 'plmt' ) ?>
 			<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" fill="none" xmlns:v="https://vecta.io/nano">
 				<path
 					d="M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z"
 					fill="#fff" />
 			</svg>
-		</a>
-		<div class="pl-6 border-l border-textGray flex items-center gap-[10px]">
+		</button>
+		<div
+			class="xl:pl-6 pt-6 xl:pt-0 border-t xl:border-t-0 xl:border-l border-textGray flex items-center gap-[10px]">
 			<div class="relative">
 				<span
 					class="right-1 -top-1 absolute w-[14px] h-[14px] bg-[#58DD29] rounded-full border-[6px] border-[#58DD294D]"></span>

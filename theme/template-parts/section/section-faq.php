@@ -1,5 +1,7 @@
 <?php
-$faq_content = get_field( 'faq' );
+$front_page_id = get_option( 'page_on_front' );
+
+$faq_content = get_field( 'faq', $front_page_id );
 
 if ( ! isset( $faq_content ) || empty( $faq_content ) ) {
 	return;
