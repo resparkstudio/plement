@@ -47,3 +47,16 @@ function debounce(func, wait) {
 initSwiper();
 
 window.addEventListener('resize', debounce(initSwiper, 200));
+
+//on .pricing-button click take the value and add &a2={value} to .calendly-inline-widget data-url
+document.querySelectorAll('.pricing-button').forEach((button) => {
+	button.addEventListener('click', (e) => {
+		const value = e.target.value;
+		document
+			.querySelector('.calendly-inline-widget')
+			.setAttribute(
+				'data-url',
+				`https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`
+			);
+	});
+});
