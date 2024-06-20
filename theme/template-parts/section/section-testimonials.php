@@ -23,7 +23,7 @@ function testimonial_card( $testimonial ) {
 			<?php endif; ?>
 		</div>
 	</div>
-<?
+	<?php
 }
 
 ?>

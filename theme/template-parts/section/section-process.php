@@ -27,7 +27,7 @@ function step_card( $step, $index ) {
 		<h2 class="text-xl font-medium mb-3 lg:text-[22px]"><?php echo esc_html( $step['title'] ) ?></h2>
 		<p class="text-textGray font-medium"><?php echo esc_html( $step['description'] ) ?></p>
 	</div>
-<?
+	<?php
 }
 
 ?>
