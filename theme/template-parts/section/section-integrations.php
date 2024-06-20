@@ -11,7 +11,8 @@ function integration_card( $integration ) {
 		return;
 	}
 	?>
-	<div class="border border-r-grayBorder p-8 lg:last-of-type:border-r-0">
+	<div
+		class="py-10 last-of-type:pb-0 first-of-type:pt-0 last-of-type:border-b-0 border-b border-b-lightGrayBorder lg:border-b-0 lg:border lg:border-r-grayBorder lg:!p-8 lg:last-of-type:border-r-0">
 		<img class="w-[45px] h-[45px] mb-4 lg:w-[50px] lg:h-[50px]"
 			src="<?php echo esc_url( $integration['icon']['url'] ) ?>"
 			alt="<?php echo esc_url( $integration['icon']['alt'] ) ?>">
@@ -33,7 +34,7 @@ function integration_card( $integration ) {
 	<div class="container">
 		<h2 class="max-w-md mb-12 lg:mb-20"><?php echo esc_html( $integrations_content['heading'] ) ?></h2>
 
-		<div class="mb-[72px] grid grid-cols-1 border border-grayBorder rounded-[4px] lg:grid-cols-3">
+		<div class="mb-[72px] grid grid-cols-1 lg:border lg:border-grayBorder rounded-[4px] lg:grid-cols-3">
 			<?php
 			if ( isset( $integrations_content['integrations_list'] ) ) :
 				foreach ( $integrations_content['integrations_list'] as $integration ) :
