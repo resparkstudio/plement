@@ -8,14 +8,6 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
-import Alpine from 'alpinejs';
-import collapse from '@alpinejs/collapse';
-
-window.Alpine = Alpine;
-
-Alpine.plugin(collapse);
-Alpine.start();
-
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 
