@@ -44,7 +44,7 @@ function currency_switch() {
 		<form class="max-w-sm w-full justify-end md:flex items-center gap-2 ">
 			<label for="currency"
 				class="block text-sm font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
-			<select id="currency" class="bg-lightGrayBg max-w-20 text-sm rounded-lg block w-full p-2.5">
+			<select id="currency" x-model="currency" class="bg-lightGrayBg max-w-20 text-sm rounded-lg block w-full p-2.5">
 				<option value="usd" selected>USD</option>
 				<option value="eur">EUR</option>
 			</select>
@@ -149,8 +149,8 @@ function package_cards( $packages ) {
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
 							<div class="inline-flex items-baseline mb-3">
 								<span class="font-medium text-[2rem] leading-[41px]">$</span>
-								<span
-									class="font-medium text-[2rem] leading-[41px]"><?php echo esc_html( $package['price_usd'] ) ?></span>
+								<span class="font-medium text-[2rem] leading-[41px]"
+									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
 							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
@@ -222,8 +222,8 @@ function standalone_solution( $standalone_solutions ) {
 						<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
 						<div class="inline-flex items-baseline mb-3">
 							<span class="font-medium text-[2rem] leading-[41px]">$</span>
-							<span
-								class="font-medium text-[2rem] leading-[41px]"><?php echo esc_html( $solution['price_usd'] ) ?></span>
+							<span class="font-medium text-[2rem] leading-[41px]"
+								x-html="currency === 'usd' ? <?php echo esc_html( $solution['price_usd'] ) ?> : <?php echo esc_html( $solution['price_eur'] ) ?>"></span>
 						</div>
 						<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray">
 							<?php echo esc_html( $solution['description'] ) ?>
@@ -232,6 +232,27 @@ function standalone_solution( $standalone_solutions ) {
 					</la>
 			</li>
 		<?php endforeach; ?>
+		<li class="inline-flex flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
+			<div>
+				<div class=" text-[2.5rem] font-medium">
+					<span>0</span>
+					/
+					<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
+				</div>
+				<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
+			</div>
+			<div>
+				<button class="w-full justify-center button bg-white text-accent">
+					<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
+					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
+						xmlns:v='https://vecta.io/nano'>
+						<path
+							d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
+							fill='#ED5623' />
+					</svg>
+				</button>
+			</div>
+		</li>
 	</ul>
 	<?php
 }
@@ -240,7 +261,8 @@ function standalone_solution( $standalone_solutions ) {
 <section id="pricing" class="pb-16 lg:pb-36">
 	<div class="relative">
 		<div class="container relative flex flex-col justify-center overflow-hidden">
-			<div x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false }">
+			<div
+				x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 				<?php pricing_header( $pricing_content ) ?>
 				<?php currency_switch() ?>
