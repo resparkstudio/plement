@@ -30,6 +30,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 		</div>
 	</div>
 	<div class='mt-[60px] lg:flex justify-between items-center'>
+
 		<div class='hidden lg:flex gap-4'>
 			<img src='<?php echo get_template_directory_uri(); ?>/assets/image 2.png' alt='Hero Image'
 				class='w-[150px] h-[62px] object-contain'>
@@ -38,45 +39,20 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 		</div>
 		<div class='lg:flex'>
 			<p class='text-textGray font-medium text-sm max-w-40 text-center mx-auto mb-4 lg:mb-0 lg:mr-4 lg:text-left'>
-				Trusted by over 250
-				companies
-				worldwide:</p>
-			<div class='flex overflow-hidden space-x-4 h-[40px] max-w-xl'>
-				<div class='flex space-x-4 animate-loop-scroll'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-1.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-2.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-3.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-4.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-1.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-2.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-3.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-4.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
+				<?php echo esc_html( $hero_content['hero_bottom']['company_logos']['text'] ) ?>
+			</p>
+			<div class='flex overflow-hidden space-x-4 h-[40px] max-w-xl items-center relative'>
+				<div class='flex space-x-4 animate-loop-scroll items-center'>
+					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
+						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
+							class='max-w-none object-contain grayscale hover:grayscale-0' width='125' height='40'>
+					<?php endforeach; ?>
 				</div>
-				<div class='flex space-x-4 animate-loop-scroll' aria-hidden='true'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-1.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-2.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-3.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-4.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-1.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-2.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-3.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
-					<img src='<?php echo get_template_directory_uri(); ?>/assets/company-4.png' alt='Hero Image'
-						class='max-w-none object-contain' width='200' height='40'>
+				<div class='flex space-x-4 animate-loop-scroll items-center' aria-hidden='true'>
+					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
+						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
+							class='max-w-none object-contain grayscale hover:grayscale-0' width='125' height='40'>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>

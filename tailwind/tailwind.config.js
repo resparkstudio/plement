@@ -30,11 +30,12 @@ module.exports = {
 			},
 			boxShadow: {
 				testimonial: '5px 5px 30px -5px #012D191A',
+				bestValuePackage: '0px 0px 20px 0px #00000026',
 			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
-				marquee: 'marquee 60s linear infinite',
-				marquee2: 'marquee2 60s linear infinite',
+				marquee: 'marquee 80s linear infinite',
+				marquee2: 'marquee2 80s linear infinite',
 			},
 			keyframes: {
 				'loop-scroll': {
@@ -46,7 +47,7 @@ module.exports = {
 					'100%': { transform: 'translateX(-100%)' },
 				},
 				marquee2: {
-					'0%': { transform: 'translateX(0)' },
+					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(100%)' },
 				},
 			},

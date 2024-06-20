@@ -17,7 +17,7 @@ function services_list( $services ) {
 			foreach ( $services as $service ) {
 				?>
 				<li
-					class="swiper-slide group md:hover:bg-lightGrayBg transition-[background-color_.3s,_padding_.7s_cubic-bezier(.684,_.001,_.265,_1.55)] py-8 lg:py-12">
+					class="swiper-slide group md:hover:bg-lightGrayBg transition-[background-color_.3s,_padding_.7s_cubic-bezier(.684,_.001,_.265,_1.55)] py-8  hover:lg:py-12">
 					<div class="container">
 						<div
 							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
@@ -25,8 +25,16 @@ function services_list( $services ) {
 								<?php echo esc_html( $service['title'] ); ?>
 							</h4>
 							<div
-								class="max-w-[530px] md:opacity-0 md:invisible group-hover:md:opacity-100 group-hover:md:visible">
+								class=" md:hidden max-w-[530px] md:opacity-0 md:invisible transition-opacity group-hover:md:opacity-100 group-hover:md:visible group-hover:md:block">
 								<p class="font-medium md:text-lg"><?php echo esc_html( $service['description'] ); ?></p>
+								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
+									<div class="mt-6">
+										<?php foreach ( $service['tags'] as $tag ) : ?>
+											<span
+												class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

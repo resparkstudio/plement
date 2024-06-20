@@ -16,11 +16,11 @@ function integration_card( $integration ) {
 			src="<?php echo esc_url( $integration['icon']['url'] ) ?>"
 			alt="<?php echo esc_url( $integration['icon']['alt'] ) ?>">
 		<h4 class="mb-4 text-xl font-medium lg:text-[22px] lg:mb-6"><?php echo esc_html( $integration['title'] ) ?></h4>
-		<p class="text-textDarkGray font-medium mb-3"><?php echo esc_html( $integration['description'] ) ?></p>
-		<div class="space-x-3 space-y-3">
+		<p class="text-textDarkGray font-medium mb-6"><?php echo esc_html( $integration['description'] ) ?></p>
+		<div>
 			<?php foreach ( $integration['tags'] as $tag ) : ?>
 				<span
-					class="text-sm px-4 py-[10px] rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+					class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
 			<?php endforeach; ?>
 		</div>
 	</div>

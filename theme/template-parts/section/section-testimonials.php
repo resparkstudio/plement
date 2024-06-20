@@ -44,8 +44,8 @@ function testimonial_card( $testimonial ) {
 			</div>
 			<div class='flex space-x-6 animate-marquee' aria-hidden='true'>
 				<?php
-				if ( isset( $testimonials_content['testimonials_row_2'] ) ) :
-					foreach ( $testimonials_content['testimonials_row_2'] as $testimonial ) :
+				if ( isset( $testimonials_content['testimonials_row_1'] ) ) :
+					foreach ( $testimonials_content['testimonials_row_1'] as $testimonial ) :
 						testimonial_card( $testimonial );
 					endforeach;
 				endif;
@@ -64,8 +64,8 @@ function testimonial_card( $testimonial ) {
 			</div>
 			<div class='flex space-x-6 animate-marquee2' aria-hidden='true'>
 				<?php
-				if ( isset( $testimonials_content['testimonials_row_1'] ) ) :
-					foreach ( $testimonials_content['testimonials_row_1'] as $testimonial ) :
+				if ( isset( $testimonials_content['testimonials_row_2'] ) ) :
+					foreach ( $testimonials_content['testimonials_row_2'] as $testimonial ) :
 						testimonial_card( $testimonial );
 					endforeach;
 				endif;

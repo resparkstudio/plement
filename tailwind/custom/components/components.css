@@ -98,3 +98,15 @@
 .swiper-pagination-bullet {
 	@apply !bg-lightGray;
 }
+
+.best-value-package {
+	@apply !border-accent shadow-bestValuePackage;
+}
+
+.footer-menu {
+	@apply flex items-center gap-4;
+}
+
+.footer-menu > li {
+	@apply font-bold;
+}
