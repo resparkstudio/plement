@@ -66,8 +66,9 @@ function services_list( $services ) {
 								<?php echo esc_html( $service['title'] ); ?>
 							</h4>
 							<div
-								class=" max-w-[530px] md:opacity-0 md:invisible transition-opacity group-hover:md:opacity-100 group-hover:md:visible delay-150 duration-500">
-								<p class="font-medium md:text-lg h-0 group-hover:h-[100px] transition-[height] duration-500">
+								class="max-w-[530px] md:opacity-0 md:invisible max-h-0 group-hover:max-h-[300px] transition-[opacity,max-height]  group-hover:md:opacity-100 group-hover:md:visible delay-150 duration-500">
+								<p
+									class="font-medium md:text-lg max-h-0 group-hover:max-h-[300px] transition-[height] duration-500">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>

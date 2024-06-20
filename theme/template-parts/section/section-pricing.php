@@ -271,11 +271,11 @@ function standalone_solution( $standalone_solutions ) {
 
 	<ul class="grid grid-cols-4 gap-6" x-show="!isPackages">
 		<?php foreach ( $standalone_solutions['standalone_list'] as $solution ) : ?>
-			<li>
+			<li class="relative">
 				<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>" value="" class="hidden peer"
 					required="">
 				<label for="<?php echo esc_attr( $solution['title'] ) ?>"
-					class="inline-flex items-center justify-between w-full p-5 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack peer-checked:text-gray-600 hover:bg-gray-50 ">
+					class="relative inline-flex items-center justify-between w-full p-5 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50 ">
 					<div class="block">
 						<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
 						<div class="inline-flex items-baseline mb-3">
@@ -287,13 +287,91 @@ function standalone_solution( $standalone_solutions ) {
 							<?php echo esc_html( $solution['description'] ) ?>
 						</p>
 					</div>
-					</la>
+				</label>
+				<span
+					class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border rounded-full border-lightGrayBorder peer-checked:bg-accent">
+					<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M13.2321 0.731002C13.4942 1.01647 13.4942 1.47931 13.2321 1.76479L5.86825 9.78593C5.60785 10.0696 5.18623 10.0716 4.92349 9.79053L0.772386 5.34964C0.50796 5.06682 0.504128 4.60395 0.763836 4.31593L1.23408 3.79436C1.49379 3.50635 1.91869 3.50218 2.18312 3.78508L5.38522 7.21069L11.8085 0.214105C12.0705 -0.0713647 12.4955 -0.071372 12.7575 0.214105L13.2321 0.731002Z"
+							fill="white" />
+					</svg>
+				</span>
+
 			</li>
 		<?php endforeach; ?>
 		<li class="inline-flex flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
 			<div>
 				<div class=" text-[2.5rem] font-medium">
-					<span>0</span>
+					<span class="selected-services-count">0</span>
+					/
+					<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
+				</div>
+				<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
+			</div>
+			<div>
+				<button class="standalone-button w-full justify-center button bg-white text-accent hover:bg-white">
+					<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
+					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
+						xmlns:v='https://vecta.io/nano'>
+						<path
+							d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
+							fill='#ED5623' />
+					</svg>
+				</button>
+			</div>
+		</li>
+	</ul>
+	<?php
+}
+
+
+function standalone_solution_mobile( $standalone_solutions ) {
+
+	if ( empty( $standalone_solutions['standalone_list'] ) )
+		return;
+
+	?>
+	<div x-data="selectedSolutions: 'asd">
+		<div class="swiper standalone-list">
+			<ul class="swiper-wrapper mb-12" x-show="!isPackages">
+				<?php foreach ( $standalone_solutions['standalone_list'] as $solution ) : ?>
+					<li class="swiper-slide relative">
+						<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>-mobile" value=""
+							class="hidden peer" required="">
+						<label for="<?php echo esc_attr( $solution['title'] ) ?>-mobile"
+							class="inline-flex items-center justify-between w-full p-5 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack hover:bg-gray-50 ">
+							<div class="block">
+								<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
+								<div class="inline-flex items-baseline mb-3">
+									<span class="font-medium text-[2rem] leading-[41px]"
+										x-html="currency === 'usd' ? '$' : '€'"></span>
+									<span class="font-medium text-[2rem] leading-[41px]"
+										x-html="currency === 'usd' ? <?php echo esc_html( $solution['price_usd'] ) ?> : <?php echo esc_html( $solution['price_eur'] ) ?>"></span>
+								</div>
+								<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray">
+									<?php echo esc_html( $solution['description'] ) ?>
+								</p>
+							</div>
+						</label>
+						<span
+							class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border rounded-full border-lightGrayBorder peer-checked:bg-accent">
+							<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M13.2321 0.731002C13.4942 1.01647 13.4942 1.47931 13.2321 1.76479L5.86825 9.78593C5.60785 10.0696 5.18623 10.0716 4.92349 9.79053L0.772386 5.34964C0.50796 5.06682 0.504128 4.60395 0.763836 4.31593L1.23408 3.79436C1.49379 3.50635 1.91869 3.50218 2.18312 3.78508L5.38522 7.21069L11.8085 0.214105C12.0705 -0.0713647 12.4955 -0.071372 12.7575 0.214105L13.2321 0.731002Z"
+									fill="white" />
+							</svg>
+						</span>
+					</li>
+				<?php endforeach; ?>
+
+			</ul>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div x-show="!isPackages"
+			class="mt-8 inline-flex flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
+			<div class="mb-8">
+				<div class=" text-[2.5rem] font-medium ">
+					<span class="selected-services-count">0</span>
 					/
 					<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
 				</div>
@@ -310,12 +388,13 @@ function standalone_solution( $standalone_solutions ) {
 					</svg>
 				</button>
 			</div>
-		</li>
-	</ul>
+		</div>
+	</div>
 	<?php
 }
 
 ?>
+
 <section id="pricing" class="pb-16 lg:pb-36">
 	<div class="relative">
 		<div class="container relative flex flex-col justify-center overflow-hidden">
@@ -330,7 +409,13 @@ function standalone_solution( $standalone_solutions ) {
 				<div class="hidden lg:block">
 					<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
 				</div>
-				<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
+
+				<div class="lg:hidden">
+					<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution_mobile( $pricing_content['standalone_solutions'] ) : ''; ?>
+				</div>
+				<div class="hidden lg:block">
+					<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
+				</div>
 				<?php calendly_modal() ?>
 				<?php terms_modal( $pricing_content['payment_terms'] ) ?>
 				<div class="flex w-full justify-center mt-16">

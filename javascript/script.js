@@ -33,6 +33,26 @@ function initSwiper() {
 			bulletClass: 'swiper-pagination-bullet',
 		},
 	});
+
+	new Swiper('.standalone-list', {
+		modules: [Pagination],
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
+
+	new Swiper('.testimonials-swiper', {
+		modules: [Pagination],
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
 }
 function debounce(func, wait) {
 	return function executedFunction(...args) {
