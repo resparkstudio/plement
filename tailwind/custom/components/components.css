@@ -79,6 +79,14 @@
 	@apply text-accent;
 }
 
+.mobile-menu-primary-list {
+	@apply w-full bg-lightGrayBg absolute items-center gap-4 left-0 py-10 px-4;
+}
+
+.mobile-menu-primary-list > li {
+	@apply font-bold mb-8;
+}
+
 .container {
 	@apply max-w-[1312px] mx-auto px-5 xl:px-0;
 }

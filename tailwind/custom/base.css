@@ -18,3 +18,7 @@ body {
 h2 {
 	@apply text-[2rem] leading-[35px] font-medium lg:text-5xl lg:leading-[52px];
 }
+
+h3 {
+	@apply text-[1.5rem] leading-[31px] font-medium lg:text-[2rem] lg:leading-[41px];
+}
