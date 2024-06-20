@@ -1397,7 +1397,7 @@ h3 {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1312px;
+  max-width: 1440px;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -1435,6 +1435,99 @@ h3 {
 
 .footer-menu > li {
   font-weight: 700;
+}
+
+.wpcf7-form-control.wpcf7-text,
+.wpcf7-form-control.wpcf7-textarea {
+  display: block;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(216 216 216 / var(--tw-border-opacity));
+  background-color: transparent;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-inline-end: 0px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.wpcf7-form-control.wpcf7-text:focus,
+.wpcf7-form-control.wpcf7-textarea:focus {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.wpcf7-form-control.wpcf7-text:disabled,
+.wpcf7-form-control.wpcf7-textarea:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.wpcf7-form-control.wpcf7-select {
+  display: block;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(216 216 216 / var(--tw-border-opacity));
+  background-color: transparent;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-inline-end: 0px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.wpcf7-form-control.wpcf7-select:focus {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.wpcf7-form-control.wpcf7-select:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wpcf7-form label {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.wpcf7-form input[type="submit"] {
+  display: inline-flex;
+  height: 2.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 86 35 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 103 57 / var(--tw-bg-opacity));
 }
 
 /**
@@ -1809,6 +1902,10 @@ h3 {
   max-width: 80rem;
 }
 
+.max-w-\[1350px\] {
+  max-width: 1350px;
+}
+
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -1857,6 +1954,10 @@ h3 {
   max-width: 644px;
 }
 
+.max-w-\[652px\] {
+  max-width: 652px;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -1879,10 +1980,6 @@ h3 {
 
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-\[1350px\] {
-  max-width: 1350px;
 }
 
 .flex-1 {
@@ -2077,14 +2174,6 @@ h3 {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.self-start {
-  align-self: flex-start;
-}
-
-.justify-self-start {
-  justify-self: start;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2243,6 +2332,10 @@ h3 {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-14 {
+  padding: 3.5rem;
 }
 
 .p-2 {
@@ -3006,12 +3099,12 @@ h3 {
     margin-right: 1rem;
   }
 
-  .lg\:mt-\[5\.75rem\] {
-    margin-top: 5.75rem;
-  }
-
   .lg\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .lg\:mt-\[5\.75rem\] {
+    margin-top: 5.75rem;
   }
 
   .lg\:block {
@@ -3103,19 +3196,14 @@ h3 {
     padding-right: 2rem;
   }
 
-  .lg\:py-36 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-  }
-
-  .lg\:px-\[104px\] {
-    padding-left: 104px;
-    padding-right: 104px;
-  }
-
   .lg\:px-\[105px\] {
     padding-left: 105px;
     padding-right: 105px;
+  }
+
+  .lg\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
   }
 
   .lg\:pb-36 {

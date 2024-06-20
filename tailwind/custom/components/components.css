@@ -88,7 +88,7 @@
 }
 
 .container {
-	@apply max-w-[1312px] mx-auto px-5 xl:px-0;
+	@apply max-w-[1440px] mx-auto px-5 xl:px-0;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -109,4 +109,29 @@
 
 .footer-menu > li {
 	@apply font-bold;
+}
+
+.wpcf7-form-control.wpcf7-text,
+.wpcf7-form-control.wpcf7-textarea {
+	@apply py-3 pe-0 block w-full bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.wpcf7-form-control.wpcf7-select {
+	@apply py-3 pe-0 block w-full bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.wpcf7-form {
+	@apply flex flex-col gap-8;
+}
+
+.wpcf7-form label {
+	@apply font-medium text-lg;
+}
+
+.wpcf7-form input[type="submit"] {
+	@apply inline-flex px-6 font-bold text-white bg-accent rounded-lg h-11 items-center gap-3;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+	@apply bg-accentHover;
 }
