@@ -16,6 +16,12 @@ module.exports = {
 			fontFamily: {
 				dm: ['DM Sans', 'sans-serif'],
 			},
+			backgroundImage: {
+				gradientLeft:
+					'linear-gradient(90deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
+				gradientRight:
+					'linear-gradient(270deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
+			},
 			colors: {
 				textBlack: '#272727',
 				textGray: '#575757',

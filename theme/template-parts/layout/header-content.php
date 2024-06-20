@@ -43,24 +43,20 @@
 	</div>
 
 	<div x-data="{menuOpen: false}" class="lg:hidden">
-		<button @click="menuOpen=true" type="button"
-			class="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden" aria-controls="mobile-menu-2"
-			aria-expanded="false">
-			<span class="sr-only">Open main menu</span>
-			<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd"
-					d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-					clip-rule="evenodd"></path>
+		<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
+			class="flex text-textBlack lg:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
+			<svg x-cloak x-show="!menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
+				viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 			</svg>
-			<svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd"
-					d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-					clip-rule="evenodd"></path>
+			<svg x-cloak x-show="menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
+				viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 			</svg>
 		</button>
 
-		<nav x-show="menuOpen" @click.away="menuOpen=false" x-transition:enter="ease-out duration-200" x-cloak
-			id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
+		<nav x-show="menuOpen" @click.away="menuOpen=false" x-cloak id="site-navigation"
+			aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(

@@ -13,7 +13,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<h1 class='text-4xl md:text-7xl text-center font-medium mb-8 lg:text-left lg:mb-10'>
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
-			<div class='flex gap-6 justify-center lg:justify-start lg:gap-8'>
+			<div class='flex flex-wrap gap-6 justify-center lg:justify-start lg:gap-8'>
 				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button'>
 					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
 					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
@@ -32,7 +32,6 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 		</div>
 	</div>
 	<div class='mt-[60px] lg:flex justify-between items-center'>
-
 		<div class='hidden lg:flex gap-4'>
 			<?php foreach ( $hero_content['hero_bottom']['partner_icons'] as $icon ) : ?>
 				<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
@@ -43,7 +42,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<p class='text-textGray font-medium text-sm max-w-40 text-center mx-auto mb-4 lg:mb-0 lg:mr-4 lg:text-left'>
 				<?php echo esc_html( $hero_content['hero_bottom']['company_logos']['text'] ) ?>
 			</p>
-			<div class='flex overflow-hidden space-x-4 h-[40px] max-w-xl items-center relative'>
+			<div
+				class="relative flex overflow-hidden space-x-4 h-[40px] lg:max-w-xl items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
 				<div class='flex space-x-4 animate-loop-scroll items-center'>
 					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'

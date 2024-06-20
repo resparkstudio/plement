@@ -14,7 +14,7 @@ function pricing_header( $pricing_content ) {
 		</h2>
 		<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
 			<div class="relative flex w-full p-1 bg-white rounded-full">
-				<span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
+				<span class="absolute inset-0 m-1 pointer-events-none bg-lightGrayBg rounded-full" aria-hidden="true">
 					<span
 						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-150 ease-in-out"
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
@@ -131,6 +131,61 @@ function terms_modal( $terms ) {
 	<?php
 }
 
+function package_cards_mobile( $packages ) {
+	if ( empty( $packages['packages_list'] ) )
+		return;
+	?>
+	<div x-show="isPackages" x-cloak class="packages-list swiper">
+		<div class="swiper-wrapper mb-10 ">
+			<?php foreach ( $packages['packages_list'] as $package ) : ?>
+				<div class="swiper-slide h-full">
+					<div
+						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						<?php if ( $package['is_best_value'] ) : ?>
+							<span
+								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
+						<?php endif; ?>
+						<div class="mb-9">
+							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
+							<div class="inline-flex items-baseline mb-3">
+								<span class="font-medium text-[2rem] leading-[41px]"
+									x-html="currency === 'usd' ? '$' : '€'"></span>
+								<span class="font-medium text-[2rem] leading-[41px]"
+									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
+							</div>
+							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
+							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
+								class="pricing-button w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
+								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
+								<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
+									xmlns:v='https://vecta.io/nano'>
+									<path
+										d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
+										fill='<?php echo $package['is_best_value'] ? '#fff' : '#ED5623' ?>' />
+								</svg>
+							</button>
+						</div>
+						<ul class="text-sm space-y-3 grow">
+							<?php foreach ( $package['services'] as $service ) : ?>
+								<li class="flex items-center">
+									<svg class="w-2 h-2 fill-accent mr-2 shrink-0" viewBox="0 0 12 12"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+									</svg>
+									<span class="text-textDarkGray font-medium"><?php echo esc_html( $service['title'] ) ?></span>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<?php
+}
+
 function package_cards( $packages ) {
 	if ( empty( $packages['packages_list'] ) )
 		return;
@@ -148,7 +203,8 @@ function package_cards( $packages ) {
 						<div class="mb-9">
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
 							<div class="inline-flex items-baseline mb-3">
-								<span class="font-medium text-[2rem] leading-[41px]">$</span>
+								<span class="font-medium text-[2rem] leading-[41px]"
+									x-html="currency === 'usd' ? '$' : '€'"></span>
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
@@ -223,7 +279,7 @@ function standalone_solution( $standalone_solutions ) {
 					<div class="block">
 						<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
 						<div class="inline-flex items-baseline mb-3">
-							<span class="font-medium text-[2rem] leading-[41px]">$</span>
+							<span class="font-medium text-[2rem] leading-[41px]" x-html="currency === 'usd' ? '$' : '€'"></span>
 							<span class="font-medium text-[2rem] leading-[41px]"
 								x-html="currency === 'usd' ? <?php echo esc_html( $solution['price_usd'] ) ?> : <?php echo esc_html( $solution['price_eur'] ) ?>"></span>
 						</div>
@@ -268,7 +324,12 @@ function standalone_solution( $standalone_solutions ) {
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 				<?php pricing_header( $pricing_content ) ?>
 				<?php currency_switch() ?>
-				<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
+				<div class="lg:hidden">
+					<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
+				</div>
+				<div class="hidden lg:block">
+					<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
+				</div>
 				<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 				<?php calendly_modal() ?>
 				<?php terms_modal( $pricing_content['payment_terms'] ) ?>

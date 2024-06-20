@@ -11,28 +11,29 @@
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 
-let servicesList;
 let resizeTimeout;
 
 function initSwiper() {
-	if (window.innerWidth <= 768) {
-		servicesList = new Swiper('.services-list', {
-			modules: [Pagination],
-			slidesPerView: 1,
-			pagination: {
-				el: '.swiper-pagination',
-				bulletActiveClass: 'swiper-pagination-bullet-active',
-				bulletClass: 'swiper-pagination-bullet',
-			},
-		});
-	} else {
-		if (servicesList) {
-			servicesList.destroy(true, true);
-			servicesList = null;
-		}
-	}
-}
+	new Swiper('.services-list', {
+		modules: [Pagination],
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
 
+	new Swiper('.packages-list', {
+		modules: [Pagination],
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
+}
 function debounce(func, wait) {
 	return function executedFunction(...args) {
 		const later = () => {
