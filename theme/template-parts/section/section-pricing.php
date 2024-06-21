@@ -19,12 +19,13 @@ function pricing_header( $pricing_content ) {
 						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-150 ease-in-out"
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
 				</span>
-				<button class="relative flex-1 py-4 rounded-full font-bold transition-colors duration-150 ease-in-out"
+				<button class="relative flex-1 py-4 rounded-full font-semibold transition-colors duration-150 ease-in-out"
 					:class="isPackages ? 'text-white' : 'text-textBlack'" @click="isPackages = true"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Packages', 'plmt' ) ?>
 				</button>
-				<button class="relative flex-1 font-bold py-4 rounded-full transition-colors duration-150 ease-in-out w-max"
+				<button
+					class="relative flex-1 font-semibold py-4 rounded-full transition-colors duration-150 ease-in-out w-max"
 					:class="isPackages ? 'text-textBlack' : 'text-white'" @click="isPackages = false"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
@@ -455,7 +456,7 @@ function standalone_solution( $standalone_solutions ) {
 				<?php terms_modal( $pricing_content['payment_terms'] ) ?>
 				<div class="flex w-full justify-center mt-16">
 
-					<button class="text-lg font-bold underline hover:text-accent transition-colors duration-300 "
+					<button class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
 						@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
 				</div>
 			</div>

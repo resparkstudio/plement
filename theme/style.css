@@ -1329,7 +1329,7 @@ h3 {
   background-color: rgb(237 86 35 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1361,7 +1361,7 @@ h3 {
   border-color: rgb(233 233 233 / var(--tw-border-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(39 39 39 / var(--tw-text-opacity));
@@ -1378,7 +1378,7 @@ h3 {
   border-color: rgb(237 86 35 / var(--tw-border-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
@@ -1397,7 +1397,7 @@ h3 {
 }
 
 .menu-primary-list > li {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .menu-primary-list > li > a:hover {
@@ -1423,7 +1423,7 @@ h3 {
 
 .mobile-menu-primary-list > li {
   margin-bottom: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .container {
@@ -1469,7 +1469,7 @@ h3 {
 }
 
 .footer-menu > li {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .wpcf7-form-control.wpcf7-text,
@@ -1581,7 +1581,7 @@ h3 {
   background-color: rgb(237 86 35 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -2705,6 +2705,10 @@ h3 {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .uppercase {
