@@ -1155,6 +1155,23 @@ h3 {
   transition: all 0.3s ease;
 }
 
+.with-gradient::before {
+  position: absolute;
+  bottom: 90px;
+  left: 0px;
+  display: block;
+  height: 2rem;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.hide-gradient::before {
+  content: var(--tw-content);
+  display: none;
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
@@ -1204,6 +1221,10 @@ h3 {
   top: -0.25rem;
 }
 
+.-top-\[7px\] {
+  top: -7px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -1228,6 +1249,10 @@ h3 {
   right: 1rem;
 }
 
+.right-\[1px\] {
+  right: 1px;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -1240,20 +1265,12 @@ h3 {
   top: 70px;
 }
 
-.-top-2 {
-  top: -0.5rem;
-}
-
-.-top-\[7px\] {
-  top: -7px;
-}
-
-.right-\[1px\] {
-  right: 1px;
-}
-
 .-z-\[1\] {
   z-index: -1;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .z-10 {
@@ -1270,14 +1287,6 @@ h3 {
 
 .z-\[99\] {
   z-index: 99;
-}
-
-.z-\[100\] {
-  z-index: 100;
-}
-
-.z-0 {
-  z-index: 0;
 }
 
 .m-1 {
@@ -1514,10 +1523,6 @@ h3 {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[11px\] {
-  height: 11px;
 }
 
 .max-h-0 {
@@ -1939,16 +1944,8 @@ h3 {
   border-width: 2px;
 }
 
-.border-\[6px\] {
-  border-width: 6px;
-}
-
 .border-b {
   border-bottom-width: 1px;
-}
-
-.border-r {
-  border-right-width: 1px;
 }
 
 .border-t {
@@ -1957,10 +1954,6 @@ h3 {
 
 .border-solid {
   border-style: solid;
-}
-
-.border-\[\#58DD294D\] {
-  border-color: #58DD294D;
 }
 
 .border-gray-200 {
@@ -2002,6 +1995,15 @@ h3 {
   border-top-color: #FFFFFF4D;
 }
 
+.bg-\[\#575757\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(87 87 87 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#58DD294D\] {
+  background-color: #58DD294D;
+}
+
 .bg-\[\#58DD29\] {
   --tw-bg-opacity: 1;
   background-color: rgb(88 221 41 / var(--tw-bg-opacity));
@@ -2030,24 +2032,6 @@ h3 {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#58DD294D\] {
-  background-color: #58DD294D;
-}
-
-.bg-grayBorder {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 214 214 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#575757\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(87 87 87 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .bg-opacity-40 {
@@ -2167,10 +2151,6 @@ h3 {
 
 .pb-8 {
   padding-bottom: 2rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
 }
 
 .pr-4 {
@@ -2347,16 +2327,8 @@ h3 {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.outline-2 {
-  outline-width: 2px;
-}
-
-.outline-emerald-300 {
-  outline-color: #6ee7b7;
-}
-
-.transition-\[height\] {
-  transition-property: height;
+.transition-\[max-height\] {
+  transition-property: max-height;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2367,8 +2339,8 @@ h3 {
   transition-duration: 150ms;
 }
 
-.transition-\[padding\] {
-  transition-property: padding;
+.transition-\[padding\2c background\] {
+  transition-property: padding,background;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2391,8 +2363,8 @@ h3 {
   transition-duration: 150ms;
 }
 
-.delay-150 {
-  transition-delay: 150ms;
+.delay-75 {
+  transition-delay: 75ms;
 }
 
 .duration-150 {
@@ -2409,6 +2381,10 @@ h3 {
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 .ease-in {
@@ -2559,14 +2535,20 @@ h3 {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.hover\:transition-\[max-height\]:hover {
+  transition-property: max-height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .hover\:transition-\[padding\]:hover {
   transition-property: padding;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.hover\:duration-500:hover {
-  transition-duration: 500ms;
+.hover\:duration-700:hover {
+  transition-duration: 700ms;
 }
 
 .group:hover .group-hover\:max-h-\[300px\] {

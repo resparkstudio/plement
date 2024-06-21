@@ -58,7 +58,7 @@ function services_list( $services ) {
 			foreach ( $services as $service ) {
 				?>
 				<li
-					class="group md:hover:bg-lightGrayBg transition-[padding] duration-500 py-8 hover:transition-[padding] hover:duration-500 hover:lg:py-12">
+					class="group md:hover:bg-lightGrayBg transition-[padding,background] duration-700 py-8 hover:transition-[padding] hover:duration-700 hover:lg:py-12">
 					<div class="container">
 						<div
 							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
@@ -66,9 +66,9 @@ function services_list( $services ) {
 								<?php echo esc_html( $service['title'] ); ?>
 							</h4>
 							<div
-								class="max-w-[530px] md:opacity-0 md:invisible max-h-0 group-hover:max-h-[300px] transition-[opacity,max-height]  group-hover:md:opacity-100 group-hover:md:visible delay-150 duration-500">
+								class="max-w-[530px] md:opacity-0 md:invisible max-h-0 group-hover:max-h-[300px] transition-[opacity,max-height]  group-hover:md:opacity-100 delay-75 group-hover:md:visible  duration-700">
 								<p
-									class="font-medium md:text-lg max-h-0 group-hover:max-h-[300px] transition-[height] duration-500">
+									class="font-medium md:text-lg max-h-0 group-hover:max-h-[300px] transition-[max-height] hover:transition-[max-height] duration-700 delay-75">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>

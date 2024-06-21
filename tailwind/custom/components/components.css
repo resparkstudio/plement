@@ -168,3 +168,11 @@
 	filter: alpha(opacity=100);
 	transition: all 0.3s ease;
 }
+
+.with-gradient {
+	@apply before:content-[''] before:absolute before:bottom-[90px] before:left-0 before:block before:bg-gradientBottom before:w-full before:h-8;
+}
+
+.hide-gradient {
+	@apply before:hidden;
+}
