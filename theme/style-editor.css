@@ -982,13 +982,6 @@ h3 {
   padding-right: 1.25rem;
 }
 
-@media (min-width: 1440px) {
-  .container {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(237 86 35 / var(--tw-bg-opacity)) !important;
