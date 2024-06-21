@@ -24,11 +24,11 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 
 		<h5 class="text-lg font-medium mb-3"><?php echo esc_html( $testimonial['title'] ) ?></h5>
 		<p class="text-textGray mb-4"><?php echo esc_html( $testimonial['description'] ) ?></p>
-		<div>
+		<div class="font-medium">
 			- <?php echo esc_html( $testimonial['name'] ) ?>
 			<?php if ( ! empty( $testimonial['company'] ) ) : ?>
 				at
-				<a href="<?php echo esc_url( $testimonial['company']['url'] ) ?>">
+				<a class="underline" target="_blank" href="<?php echo esc_url( $testimonial['company']['url'] ) ?>">
 					<?php echo esc_html( $testimonial['company']['title'] ) ?>
 				</a>
 			<?php endif; ?>

@@ -1592,10 +1592,6 @@ h3 {
   visibility: visible;
 }
 
-.static {
-  position: static;
-}
-
 .\!static {
   position: static !important;
 }
@@ -1813,10 +1809,6 @@ h3 {
 
 .grid {
   display: grid;
-}
-
-.\!grid {
-  display: grid !important;
 }
 
 .hidden {
@@ -2182,14 +2174,6 @@ h3 {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -3025,10 +3009,6 @@ h3 {
     margin-bottom: 62px;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:inline {
     display: inline;
   }
@@ -3039,10 +3019,6 @@ h3 {
 
   .md\:inline-flex {
     display: inline-flex;
-  }
-
-  .md\:\!grid {
-    display: grid !important;
   }
 
   .md\:grid {
@@ -3069,16 +3045,16 @@ h3 {
     gap: 3.5rem;
   }
 
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .md\:gap-8 {
     gap: 2rem;
   }
 
   .md\:gap-\[20px\] {
     gap: 20px;
-  }
-
-  .md\:gap-6 {
-    gap: 1.5rem;
   }
 
   .md\:bg-inherit {
