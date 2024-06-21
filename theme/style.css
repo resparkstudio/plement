@@ -1634,6 +1634,18 @@ h3 {
   top: 1rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-\[70px\] {
+  top: 70px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1644,6 +1656,10 @@ h3 {
 
 .z-\[99\] {
   z-index: 99;
+}
+
+.-z-\[1\] {
+  z-index: -1;
 }
 
 .m-1 {
@@ -1759,6 +1775,10 @@ h3 {
 
 .mt-\[60px\] {
   margin-top: 60px;
+}
+
+.-ml-\[1px\] {
+  margin-left: -1px;
 }
 
 .block {
@@ -1957,6 +1977,10 @@ h3 {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[2px\] {
+  width: 2px;
 }
 
 .max-w-20 {
@@ -2642,6 +2666,11 @@ h3 {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-lightGrayBorder {
+  --tw-text-opacity: 1;
+  color: rgb(216 216 216 / var(--tw-text-opacity));
 }
 
 .underline {

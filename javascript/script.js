@@ -10,6 +10,11 @@
  */
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
+import { gsap } from 'gsap';
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 let resizeTimeout;
 
@@ -81,3 +86,64 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 			);
 	});
 });
+
+const processLineAnimation = function () {
+	const animatedLine = document.querySelector('.process-line');
+	if (!animatedLine) return;
+	const lastItem = document.querySelector('.process-item.is-last');
+	const lastItemHeight = lastItem.offsetHeight;
+	const animatedLineWrap = document.querySelector('.process-line-wrap');
+	animatedLineWrap.style.height = `calc(100% - ${lastItemHeight}px)`;
+
+	gsap.set(animatedLine, { transformOrigin: 'center top' });
+
+	const tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: animatedLineWrap,
+			start: 'top center',
+			end: 'bottom center',
+			scrub: 1,
+		},
+	});
+
+	tl.fromTo(
+		animatedLine,
+		{
+			scaleY: 0,
+		},
+		{
+			scaleY: 1,
+			duration: 3,
+			ease: 'none',
+		}
+	);
+};
+
+const processNumberAnimation = function () {
+	const steps = document.querySelectorAll('.process-item');
+	steps.forEach((step) => {
+		const number = step.querySelector('.step-heading');
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: step,
+				start: 'top+=10 center',
+				toggleActions: 'play none none reverse',
+			},
+		});
+
+		tl.fromTo(
+			[number],
+			{
+				color: '#D8D8D8',
+			},
+			{
+				color: '#ED5623',
+				duration: 0.3,
+				ease: 'none',
+			}
+		);
+	});
+};
+
+processNumberAnimation();
+processLineAnimation();
