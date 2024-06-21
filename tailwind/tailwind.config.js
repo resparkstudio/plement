@@ -11,6 +11,15 @@ module.exports = {
 		'./theme/**/*.php',
 	],
 	theme: {
+		tooltipArrows: () => ({
+			'gray-arrow': {
+				borderColor: '#E9E9E9',
+				borderWidth: 1,
+				backgroundColor: '#E9E9E9',
+				size: 15,
+				offset: 50,
+			},
+		}),
 		// Extend the default Tailwind theme.
 		extend: {
 			fontFamily: {
@@ -81,6 +90,7 @@ module.exports = {
 
 		// Extract colors and widths from `theme.json`.
 		require('@_tw/themejson'),
+		require('tailwindcss-tooltip-arrow-after')(),
 
 		// Uncomment below to add additional first-party Tailwind plugins.
 		// require('@tailwindcss/forms'),

@@ -8,11 +8,11 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 
 ?>
 
-<div class="py-8 px-4 rounded-lg bg-textBlack text-white max-w-[40.25rem] lg:p-14">
+<div class="py-8 px-4 rounded-lg bg-textBlack text-white max-w-[40.25rem] lg:p-14" x-data="{calendlyOpen: false}">
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
-		<button class="button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
+		<button @click="calendlyOpen=true" class="button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
 			<?php esc_html_e( 'Book a Meeting', 'plmt' ) ?>
 			<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" fill="none" xmlns:v="https://vecta.io/nano">
 				<path
@@ -52,4 +52,5 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 			</div>
 		</div>
 	</div>
+	<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
 </div>

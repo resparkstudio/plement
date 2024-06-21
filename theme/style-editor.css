@@ -1175,6 +1175,10 @@ h3 {
   right: 0.25rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -1183,16 +1187,8 @@ h3 {
   top: 1rem;
 }
 
-.top-6 {
-  top: 1.5rem;
-}
-
-.\!top-6 {
-  top: 1.5rem !important;
-}
-
-.right-4 {
-  right: 1rem;
+.z-0 {
+  z-index: 0;
 }
 
 .z-50 {
@@ -1211,10 +1207,6 @@ h3 {
   margin: auto;
 }
 
-.m-6 {
-  margin: 1.5rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1223,11 +1215,6 @@ h3 {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-}
-
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .my-8 {
@@ -1335,12 +1322,12 @@ h3 {
   display: inline-block;
 }
 
-.flex {
-  display: flex;
-}
-
 .\!flex {
   display: flex !important;
+}
+
+.flex {
+  display: flex;
 }
 
 .inline-flex {
@@ -1404,6 +1391,10 @@ h3 {
   height: 20px;
 }
 
+.h-\[30px\] {
+  height: 30px;
+}
+
 .h-\[40px\] {
   height: 40px;
 }
@@ -1434,10 +1425,6 @@ h3 {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[30px\] {
-  height: 30px;
 }
 
 .max-h-0 {
@@ -1488,6 +1475,10 @@ h3 {
   width: 20px;
 }
 
+.w-\[30px\] {
+  width: 30px;
+}
+
 .w-\[420px\] {
   width: 420px;
 }
@@ -1519,10 +1510,6 @@ h3 {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[30px\] {
-  width: 30px;
 }
 
 .max-w-20 {
@@ -2532,11 +2519,6 @@ h3 {
   background-color: rgb(237 86 35 / var(--tw-bg-opacity));
 }
 
-.peer:checked ~ .peer-checked\:text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"][class~="is-selected"] *))) {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
@@ -2794,6 +2776,11 @@ h3 {
     max-width: 36rem;
   }
 
+  .lg\:translate-y-\[50px\] {
+    --tw-translate-y: 50px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3002,6 +2989,26 @@ h3 {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right {
+    position: relative;
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:before,.group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: -30px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #E9E9E9;
+  }
+
+  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:after {
+    border-left: 15px solid #E9E9E9;
+    right: -29px;
+  }
+
   .group:nth-child(even) .lg\:group-even\:left-1\/2 {
     left: 50%;
   }
@@ -3009,6 +3016,26 @@ h3 {
   .group:nth-child(even) .lg\:group-even\:-translate-x-1\/2 {
     --tw-translate-x: -50%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .group:nth-child(even) .lg\:group-even\:gray-arrow-left {
+    position: relative;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:gray-arrow-left:before,.group:nth-child(even) .lg\:group-even\:gray-arrow-left:after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #E9E9E9;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+  }
+
+  .group:nth-child(even) .lg\:group-even\:gray-arrow-left:after {
+    border-right: 15px solid #E9E9E9;
+    left: -29px;
   }
 }
 
