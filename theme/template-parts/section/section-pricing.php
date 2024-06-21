@@ -353,7 +353,7 @@ function standalone_solution( $standalone_solutions ) {
 					<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>"
 						value="<?php echo esc_attr( $solution['title'] ) ?>" class="hidden peer" required="">
 					<label @click="toggle(id)" for=" <?php echo esc_attr( $solution['title'] ) ?>"
-						class="relative inline-flex items-center justify-between w-full pt-10 px-4 pb-16 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
+						class="relative inline-flex items-center justify-between w-full pt-10 px-4 pb-16 bg-white border-2 border-lightGray rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
 						:class="selectedServices.includes(id) ? 'border-textBlack' : ''">
 						<div class="block">
 							<p class="w-full text-xl font-medium"><?php echo esc_html( $solution['title'] ) ?></p>

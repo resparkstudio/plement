@@ -164,6 +164,11 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
  * editor.
 */
 
+*,
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1963,6 +1968,10 @@ h3 {
   overflow: hidden;
 }
 
+.\!scroll-smooth {
+  scroll-behavior: smooth !important;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -2008,9 +2017,9 @@ h3 {
   border-style: solid;
 }
 
-.border-gray-200 {
+.border-\[\#E9E9E9\] {
   --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  border-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .border-lightGray {
@@ -2036,11 +2045,6 @@ h3 {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-\[\#E9E9E9\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .border-b-lightGrayBorder {
@@ -2938,8 +2942,8 @@ h3 {
     max-width: 42rem;
   }
 
-  .lg\:max-w-\[62\.5rem\] {
-    max-width: 62.5rem;
+  .lg\:max-w-\[68\.25rem\] {
+    max-width: 68.25rem;
   }
 
   .lg\:max-w-none {

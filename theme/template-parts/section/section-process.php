@@ -43,7 +43,7 @@ function step_card( $step, $index ) {
 			class="process-line-wrap -z-[1] bg-lightGrayBg w-[2px] h-full -ml-[1px]] absolute top-[70px] bottom-0 left-[12px] lg:left-1/2">
 			<div class="process-line bg-accent w-full h-full"></div>
 		</div>
-		<div class="max-w-[31.9375rem] lg:mx-auto lg:max-w-[62.5rem] lg:w-full space-y-[3.5rem] lg:space-y-0 relative">
+		<div class="max-w-[31.9375rem] lg:mx-auto lg:max-w-[68.25rem] lg:w-full space-y-[3.5rem] lg:space-y-0 relative">
 			<?php
 			$index = 1;
 			foreach ( $process_content['steps'] as $step ) :
@@ -51,7 +51,7 @@ function step_card( $step, $index ) {
 
 				?>
 				<div
-					class="relative flex items-start  lg:items-center justify-between lg:justify-normal lg:even:flex-row-reverse group is-active process-item <?php echo $is_last ? 'is-last' : '' ?>">
+					class="relative flex items-start lg:items-center justify-between lg:justify-normal lg:even:flex-row-reverse group is-active process-item <?php echo $is_last ? 'is-last' : '' ?>">
 					<!-- Icon -->
 					<?php step_icon( $index ) ?>
 					<?php step_card( $step, $index ) ?>

@@ -11,6 +11,12 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
+
+*,
+html {
+	@apply !scroll-smooth;
+}
+
 body {
 	@apply bg-background text-textBlack font-dm;
 }

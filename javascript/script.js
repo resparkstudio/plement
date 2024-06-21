@@ -197,3 +197,33 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 		});
 	});
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	var inputs = document.querySelectorAll('.wpcf7-form-control');
+
+	if (inputs.length > 0) {
+		inputs.forEach(function (input) {
+			const label = input.parentElement.querySelector('label');
+
+			if (!label) return;
+
+			input.addEventListener('input', function () {
+				if (this.value) {
+					label.style.color = '#ababab';
+				} else {
+					label.style.color = '#000';
+				}
+			});
+
+			input.addEventListener('focus', function () {
+				label.style.color = '#ababab';
+			});
+
+			input.addEventListener('blur', function () {
+				if (!this.value) {
+					label.style.color = '#000';
+				}
+			});
+		});
+	}
+});

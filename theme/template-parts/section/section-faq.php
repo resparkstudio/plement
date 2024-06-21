@@ -67,8 +67,8 @@ function faq_item( $item ) {
 								fill="#272727" />
 						</svg>
 						<span x-show="!copyNotification"
-							class="text-xl lg:text-[1.5rem] font-bold">hello@plement.io</span>
-						<span x-show="copyNotification" class="text-xl lg:text-[1.5rem] font-bold">Email
+							class="text-xl lg:text-[1.5rem] font-semibold">hello@plement.io</span>
+						<span x-show="copyNotification" class="text-xl lg:text-[1.5rem] font-semibold">Email
 							copied</span>
 					</button>
 				</div>
