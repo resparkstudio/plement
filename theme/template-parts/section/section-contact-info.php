@@ -15,13 +15,26 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
-		<button @click="calendlyOpen=true" class="button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
+		<button @click="calendlyOpen=true" class="group button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
 			<?php esc_html_e( 'Book a Meeting', 'plmt' ) ?>
-			<svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" fill="none" xmlns:v="https://vecta.io/nano">
-				<path
-					d="M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z"
-					fill="#fff" />
-			</svg>
+			<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+				<div
+					class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+						aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+						preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+						<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+					</svg>
+				</div>
+				<div
+					class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+						aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+						preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+						<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+					</svg>
+				</div>
+			</div>
 		</button>
 		<div
 			class="xl:pl-6 pt-6 xl:pt-0 border-t xl:border-t-0 xl:border-l border-textGray flex items-center gap-[10px]">

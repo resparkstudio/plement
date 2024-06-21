@@ -153,14 +153,26 @@ function package_cards_mobile( $packages ) {
 							</div>
 							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
-								class="pricing-button w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
+								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
-								<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-									xmlns:v='https://vecta.io/nano'>
-									<path
-										d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-										fill='<?php echo $package['is_best_value'] ? '#fff' : '#ED5623' ?>' />
-								</svg>
+								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+									<div
+										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
+											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+										</svg>
+									</div>
+									<div
+										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
+											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+										</svg>
+									</div>
+								</div>
 							</button>
 						</div>
 						<div>
@@ -224,14 +236,26 @@ function package_cards( $packages ) {
 							</div>
 							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
-								class="pricing-button w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
+								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
-								<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-									xmlns:v='https://vecta.io/nano'>
-									<path
-										d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-										fill='<?php echo $package['is_best_value'] ? '#fff' : '#ED5623' ?>' />
-								</svg>
+								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+									<div
+										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
+											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+										</svg>
+									</div>
+									<div
+										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
+											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+										</svg>
+									</div>
+								</div>
 							</button>
 						</div>
 						<div>
@@ -357,14 +381,26 @@ function standalone_solution( $standalone_solutions ) {
 				</div>
 				<div>
 					<button @click="modalOpen=true" :value="selectedServices"
-						class="standalone-button w-full justify-center button bg-white text-accent hover:bg-white">
+						class="standalone-button group w-full justify-center button bg-white text-accent hover:bg-white">
 						<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
-						<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-							xmlns:v='https://vecta.io/nano'>
-							<path
-								d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-								fill='#ED5623' />
-						</svg>
+						<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+							<div
+								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+								</svg>
+							</div>
+							<div
+								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+								</svg>
+							</div>
+						</div>
 					</button>
 				</div>
 			</li>
@@ -419,7 +455,7 @@ function standalone_solution( $standalone_solutions ) {
 				<?php terms_modal( $pricing_content['payment_terms'] ) ?>
 				<div class="flex w-full justify-center mt-16">
 
-					<button class="text-lg font-bold underline"
+					<button class="text-lg font-bold underline hover:text-accent transition-colors duration-300 "
 						@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
 				</div>
 			</div>
