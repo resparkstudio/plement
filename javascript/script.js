@@ -93,7 +93,7 @@ const processLineAnimation = function () {
 	const lastItem = document.querySelector('.process-item.is-last');
 	const lastItemHeight = lastItem.offsetHeight;
 	const animatedLineWrap = document.querySelector('.process-line-wrap');
-	animatedLineWrap.style.height = `calc(100% - ${lastItemHeight}px - 10px)`;
+	animatedLineWrap.style.height = `calc(100% - ${lastItemHeight}px * 0.8)`;
 
 	gsap.set(animatedLine, { transformOrigin: 'center top' });
 
