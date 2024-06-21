@@ -88,7 +88,11 @@
 }
 
 .mobile-menu-primary-list > li {
-	@apply font-semibold mb-8;
+	@apply font-semibold;
+}
+
+.mobile-menu-primary-list > li:not(:last-of-type) {
+	@apply mb-8;
 }
 
 .container {

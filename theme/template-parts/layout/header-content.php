@@ -59,14 +59,19 @@
 	<div x-data="{menuOpen: false}" class="lg:hidden">
 		<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
 			class="flex text-textBlack lg:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
-			<svg x-cloak x-show="!menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
-				viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-			</svg>
-			<svg x-cloak x-show="menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
-				viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-			</svg>
+			<div class=" text-center text-textBlack three col">
+				<div class="hamburger" id="hamburger-1">
+					<span
+						class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+						:class="menuOpen ? 'translate-y-[6px] rotate-[45deg]' : ''"></span>
+					<span
+						class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+						:class="menuOpen ? 'opacity-0' : ''"></span>
+					<span
+						class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+						:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg]' : ''"></span>
+				</div>
+			</div>
 		</button>
 
 		<nav x-show="menuOpen" @click.away="menuOpen=false" x-cloak id="site-navigation"
