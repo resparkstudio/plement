@@ -2485,6 +2485,11 @@ h3 {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-\[\#E9E9E9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(233 233 233 / var(--tw-border-opacity));
+}
+
 .border-b-lightGrayBorder {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(216 216 216 / var(--tw-border-opacity));
