@@ -1646,6 +1646,26 @@ h3 {
   top: 70px;
 }
 
+.left-8 {
+  left: 2rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.left-\[30px\] {
+  left: 30px;
+}
+
+.left-\[28px\] {
+  left: 28px;
+}
+
+.left-\[26px\] {
+  left: 26px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -3137,6 +3157,10 @@ h3 {
 @media (min-width: 984px) {
   .lg\:absolute {
     position: absolute;
+  }
+
+  .lg\:left-1\/2 {
+    left: 50%;
   }
 
   .lg\:order-1 {
