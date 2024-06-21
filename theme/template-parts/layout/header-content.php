@@ -34,7 +34,7 @@
 
 	<div class="hidden lg:block">
 		<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
-			class="button group"><?php esc_html_e( 'Contact Us', 'plmt' ) ?>
+			class="button group h-auto py-4"><?php esc_html_e( 'Contact Us', 'plmt' ) ?>
 			<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 				<div
 					class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">

@@ -14,7 +14,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
 			<div class='flex flex-wrap gap-6 justify-center lg:justify-start lg:gap-8'>
-				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button  group h-auto py-4'>
+				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button group h-auto py-4'>
 					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
 					<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 						<div
