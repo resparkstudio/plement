@@ -161,3 +161,39 @@ const processNumberAnimation = function () {
 
 processNumberAnimation();
 processLineAnimation();
+
+document.querySelectorAll('.pricing-button').forEach((button) => {
+	button.addEventListener('click', (e) => {
+		const value = e.target.value;
+
+		//check if the div already has the widget
+		if (document.getElementById('SAMPLEdivID').hasChildNodes()) {
+			document.getElementById('SAMPLEdivID').innerHTML = '';
+		}
+
+		Calendly.initInlineWidget({
+			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`,
+			parentElement: document.getElementById('SAMPLEdivID'),
+			prefill: {},
+			utm: {},
+		});
+	});
+});
+
+document.querySelectorAll('.standalone-button').forEach((button) => {
+	button.addEventListener('click', (e) => {
+		const value = e.target.value;
+
+		//check if the div already has the widget
+		if (document.getElementById('SAMPLEdivID').hasChildNodes()) {
+			document.getElementById('SAMPLEdivID').innerHTML = '';
+		}
+
+		Calendly.initInlineWidget({
+			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a1=${value}`,
+			parentElement: document.getElementById('SAMPLEdivID'),
+			prefill: {},
+			utm: {},
+		});
+	});
+});

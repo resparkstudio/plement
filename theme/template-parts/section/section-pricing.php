@@ -79,9 +79,7 @@ function calendly_modal() {
 					</button>
 					<div class="flex flex-col items-start justify-center">
 						<h2 class="lg:pl-[100px] lg:mt-10"><?php esc_html_e( 'Book a Discovery Call', 'plmt' ) ?></h2>
-						<div class="calendly-inline-widget w-full mx-auto"
-							data-url="https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623"
-							style="min-width:320px;height:700px;max-width:1000px;"></div>
+						<div id="SAMPLEdivID"></div>
 						<div class="lg:pl-[100px] text-textBlack font-medium text-lg">
 							<span><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
 							<a class="underline"
@@ -358,7 +356,7 @@ function standalone_solution( $standalone_solutions ) {
 					<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
 				</div>
 				<div>
-					<button @click="modalOpen=true"
+					<button @click="modalOpen=true" :value="selectedServices"
 						class="standalone-button w-full justify-center button bg-white text-accent hover:bg-white">
 						<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
 						<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
@@ -382,7 +380,7 @@ function standalone_solution( $standalone_solutions ) {
 				<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
 			</div>
 			<div>
-				<button @click="modalOpen=true"
+				<button @click="modalOpen=true" :value="selectedServices"
 					class="standalone-button w-full justify-center button bg-white text-accent hover:bg-white">
 					<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
 					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
