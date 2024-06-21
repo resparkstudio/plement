@@ -32,7 +32,8 @@ function pricing_header( $pricing_content ) {
 				</button>
 			</div>
 		</div>
-		<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray">
+		<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray"
+			x-text="isPackages ? '<?php echo esc_html( $pricing_content['description'] ) ?>' : '<?php echo esc_html( $pricing_content['standalone_description'] ) ?>'">
 			<?php echo esc_html( $pricing_content['description'] ) ?>
 		</p>
 	</div>
@@ -291,27 +292,27 @@ function package_cards( $packages ) {
 					</div>
 				</div>
 			<?php endforeach; ?>
-		</div>
-		<div
-			class="max-w-[644px] justify-between items-center mx-auto flex px-6 py-10 rounded-[4px] bg-white border border-lightGray">
-			<div class="max-w-[349px]">
-				<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
-					<?php echo esc_html( $packages['custom_packages']['title'] ) ?>
-				</h4>
-				<p class="text-textGray font-medium">
-					<?php echo esc_html( $packages['custom_packages']['description'] ) ?>
-				</p>
-			</div>
-			<div>
-				<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button'>
-					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
-					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-						xmlns:v='https://vecta.io/nano'>
-						<path
-							d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-							fill='#fff' />
-					</svg>
-				</a>
+			<div
+				class="col-span-2 col-start-2 w-full justify-between items-center mx-auto flex px-6 py-10 rounded-[4px] bg-white border border-lightGray">
+				<div class="max-w-[349px]">
+					<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
+						<?php echo esc_html( $packages['custom_packages']['title'] ) ?>
+					</h4>
+					<p class="text-textGray font-medium">
+						<?php echo esc_html( $packages['custom_packages']['description'] ) ?>
+					</p>
+				</div>
+				<div>
+					<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button'>
+						<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
+						<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
+							xmlns:v='https://vecta.io/nano'>
+							<path
+								d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
+								fill='#fff' />
+						</svg>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
