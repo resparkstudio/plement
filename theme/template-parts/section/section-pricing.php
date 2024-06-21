@@ -8,7 +8,7 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 
 function pricing_header( $pricing_content ) {
 	?>
-	<div class="container relative flex flex-col items-center justify-center text-center mb-8 md:mb-2">
+	<div class="relative flex flex-col items-center justify-center text-center mb-8 md:mb-2">
 		<h2 class="mb-8 md:mb-12 max-w-[506px]">
 			<?php echo esc_html( $pricing_content['heading'] ) ?>
 		</h2>
@@ -134,7 +134,7 @@ function package_cards_mobile( $packages ) {
 		return;
 	?>
 	<div x-show="isPackages" x-cloak class="packages-list swiper">
-		<div class="swiper-wrapper mb-10 ">
+		<div class="swiper-wrapper">
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
 				<div class="swiper-slide h-full" x-data="{ readMoreOpen: false }">
 					<div
@@ -196,7 +196,7 @@ function package_cards_mobile( $packages ) {
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<div class="swiper-pagination"></div>
+		<div class="swiper-pagination !static mt-6"></div>
 	</div>
 	<?php
 }
@@ -297,9 +297,10 @@ function package_cards( $packages ) {
 function circular_checkbox() {
 	?>
 	<span
-		class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border rounded-full border-lightGrayBorder peer-checked:bg-accent"
-		:class="selectedServices.includes(id) ? 'bg-accent' : ''">
-		<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+		class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border-2 rounded-full border-lightGrayBorder peer-checked:bg-accent"
+		:class="selectedServices.includes(id) ? 'border-0 bg-accent' : ''">
+		<svg :class="selectedServices.includes(id) ? 'inline' : 'hidden'" width="14" height="10" viewBox="0 0 14 10"
+			fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" clip-rule="evenodd"
 				d="M13.2321 0.731002C13.4942 1.01647 13.4942 1.47931 13.2321 1.76479L5.86825 9.78593C5.60785 10.0696 5.18623 10.0716 4.92349 9.79053L0.772386 5.34964C0.50796 5.06682 0.504128 4.60395 0.763836 4.31593L1.23408 3.79436C1.49379 3.50635 1.91869 3.50218 2.18312 3.78508L5.38522 7.21069L11.8085 0.214105C12.0705 -0.0713647 12.4955 -0.071372 12.7575 0.214105L13.2321 0.731002Z"
 				fill="white" />
@@ -328,11 +329,11 @@ function standalone_solution( $standalone_solutions ) {
 					<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>"
 						value="<?php echo esc_attr( $solution['title'] ) ?>" class="hidden peer" required="">
 					<label @click="toggle(id)" for=" <?php echo esc_attr( $solution['title'] ) ?>"
-						class="relative inline-flex items-center justify-between w-full p-5 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
+						class="relative inline-flex items-center justify-between w-full pt-10 px-4 pb-16 bg-white border-2 border-lightGrayBorder rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
 						:class="selectedServices.includes(id) ? 'border-textBlack' : ''">
 						<div class="block">
-							<p class="w-full text-xl font-semibold"><?php echo esc_html( $solution['title'] ) ?></p>
-							<div class="inline-flex items-baseline mb-3">
+							<p class="w-full text-xl font-medium"><?php echo esc_html( $solution['title'] ) ?></p>
+							<div class="inline-flex items-baseline mb-4">
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '$' : '€'"></span>
 								<span class="font-medium text-[2rem] leading-[41px]"
@@ -346,9 +347,9 @@ function standalone_solution( $standalone_solutions ) {
 					<?php circular_checkbox() ?>
 				</li>
 			<?php endforeach; ?>
-			<li class="hidden md:inline-flex flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
+			<li class="hidden md:inline-flex flex-col justify-between w-full p-6 bg-accent text-white rounded-2xl">
 				<div>
-					<div class=" text-[2.5rem] font-medium">
+					<div class=" text-[2.5rem] font-medium flex ">
 						<span class="selected-services-count" x-text="selectedServices.length">0</span>
 						/
 						<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
@@ -372,7 +373,7 @@ function standalone_solution( $standalone_solutions ) {
 		<div class="swiper-pagination !static mt-6"></div>
 		<li class=" mt-8 inline-flex md:hidden flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
 			<div class="mb-6">
-				<div class=" text-[2.5rem] font-medium">
+				<div class="text-[2.5rem] font-medium flex">
 					<span class="selected-services-count" x-text="selectedServices.length">0</span>
 					/
 					<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>

@@ -9,7 +9,7 @@
 
 ?>
 
-<header id="masthead" class="container h-[108px] flex items-center justify-between relative">
+<header id="masthead" class="container py-[20px] lg:py-9 flex items-center justify-between relative">
 	<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"

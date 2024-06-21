@@ -44,7 +44,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
 	<div class="container lg:hidden">
-		<div class="testimonials-swiper swiper !flex flex-col gap-6">
+		<div class="testimonials-swiper swiper ">
 			<div class="swiper-wrapper  shadow-testimonial my-8">
 				<?php
 				if ( isset( $testimonials_content['testimonials_row_1'] ) ) :
@@ -60,11 +60,11 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 				endif;
 				?>
 			</div>
-			<div class="swiper-pagination"></div>
+			<div class="swiper-pagination !static"></div>
 		</div>
 	</div>
 	<div class="hidden lg:flex flex-col">
-		<div class='flex overflow-hidden space-x-6 pb-6'>
+		<div class='flex overflow-hidden space-x-6 py-6'>
 			<div class='flex space-x-6 animate-marquee'>
 				<?php
 				if ( isset( $testimonials_content['testimonials_row_1'] ) ) :
@@ -84,7 +84,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 				?>
 			</div>
 		</div>
-		<div class='flex overflow-hidden space-x-6'>
+		<div class='flex overflow-hidden space-x-6 py-6'>
 			<div class='flex space-x-6 animate-marquee2'>
 				<?php
 				if ( isset( $testimonials_content['testimonials_row_2'] ) ) :

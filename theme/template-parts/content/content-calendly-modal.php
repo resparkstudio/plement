@@ -26,7 +26,7 @@
 						data-url="https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623"
 						style="min-width:320px;height:600px;max-width:1000px;"></div>
 					<div class="lg:pl-[100px] text-textBlack font-medium text-lg">
-						<span><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
+						<span class="inline-block mb-1 lg:mb-2"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
 						<a class="underline"
 							href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"><?php esc_html_e( 'Contact Us', 'plmt' ) ?></a>
 					</div>

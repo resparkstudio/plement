@@ -22,13 +22,17 @@ $page_sections = [
 ]
 	?>
 
-<section id='primary'>
-	<main id='main'>
-		<?php foreach ( $page_sections as $section ) : ?>
-			<?php get_template_part( 'template-parts/section/section-' . $section ); ?>
-		<?php endforeach; ?>
-	</main>
-</section>
+<main class="relative z-10 bg-white">
 
-<?php
-get_footer();
+	<section id='primary'>
+		<div id='main'>
+			<?php foreach ( $page_sections as $section ) : ?>
+				<?php get_template_part( 'template-parts/section/section-' . $section ); ?>
+			<?php endforeach; ?>
+		</div>
+	</section>
+
+	<?php
+	get_footer();
+	?>
+</main>

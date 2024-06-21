@@ -16,7 +16,7 @@ function services_list_mobile( $services ) {
 			<?php
 			foreach ( $services as $service ) {
 				?>
-				<li class="swiper-slide group md:hover:bg-lightGrayBg transition-all py-8  hover:lg:py-12">
+				<li class="swiper-slide group md:hover:bg-lightGrayBg ">
 					<div class="container">
 						<div
 							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
@@ -42,7 +42,7 @@ function services_list_mobile( $services ) {
 			}
 			?>
 		</ul>
-		<div class="swiper-pagination"></div>
+		<div class="swiper-pagination !static mt-6"></div>
 	</div>
 	<?php
 }

@@ -9,6 +9,9 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 ?>
 
 <div class="py-8 px-4 rounded-lg bg-textBlack text-white max-w-[40.25rem] lg:p-14" x-data="{calendlyOpen: false}">
+	<img class="mb-4 w-[45px] h-[45px] lg:h-[50px] lg:w-[50px]"
+		src="<?php echo esc_url( $contact_information['top_icon']['url'] ) ?>"
+		alt="<?php echo esc_url( $contact_information['top_icon']['alt'] ) ?>">
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
@@ -23,16 +26,16 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 		<div
 			class="xl:pl-6 pt-6 xl:pt-0 border-t xl:border-t-0 xl:border-l border-textGray flex items-center gap-[10px]">
 			<div class="relative">
-				<span
-					class="right-1 -top-1 absolute w-[14px] h-[14px] bg-[#58DD29] rounded-full border-[6px] border-[#58DD294D]"></span>
+				<span class="right-1 -top-1 absolute w-[14px] h-[14px] bg-[#58DD29] rounded-full"></span>
+				<span class="right-[1px] -top-[7px] absolute w-[20px] h-[20px] bg-[#58DD294D] rounded-full"></span>
 				<img src="<?php echo esc_url( $contact_information['image']['url'] ) ?>"
 					alt="<?php echo esc_attr( $contact_information['image']['alt'] ) ?>"
 					class="rounded-full w-[46px] h-[46px] border border-white">
 			</div>
 			<div>
-				<div class="flex items-center">
-					<span
-						class="pr-2 mr-2 border-r border-textGray text-lg"><?php echo esc_html( $contact_information['name'] ) ?></span>
+				<div class="flex items-center gap-2">
+					<span class="text-lg"><?php echo esc_html( $contact_information['name'] ) ?></span>
+					<span class="w-[1px] h-[14px] bg-[#575757]"></span>
 					<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_247_5748)">
