@@ -323,7 +323,7 @@ function circular_checkbox() {
 	?>
 	<span
 		class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border-2 rounded-full border-lightGrayBorder peer-checked:bg-accent"
-		:class="selectedServices.includes(id) ? 'border-0 bg-accent' : ''">
+		:class="selectedServices.includes(id) ? '!border-0  bg-accent' : ''">
 		<svg :class="selectedServices.includes(id) ? 'inline' : 'hidden'" width="14" height="10" viewBox="0 0 14 10"
 			fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" clip-rule="evenodd"

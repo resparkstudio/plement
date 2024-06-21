@@ -84,7 +84,7 @@
 }
 
 .mobile-menu-primary-list {
-	@apply w-full bg-lightGrayBg absolute items-center gap-4 top-[108px] left-0 py-10 px-4 z-[100];
+	@apply w-full   items-center gap-4 pb-8;
 }
 
 .mobile-menu-primary-list > li {

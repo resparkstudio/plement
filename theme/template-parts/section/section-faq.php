@@ -17,7 +17,7 @@ function faq_item( $item ) {
 	<div x-data="{ id: $id('accordion') }" class="py-6 border-b border-solid border-[#E9E9E9] active">
 		<button @click="setActiveAccordion(id)" class="group inline-flex gap-5 items-center w-full">
 			<div :class="{ 'rotate-90': activeAccordion==id }"
-				class="relative flex items-center justify-center w-[12.5px] h-[12.5px] duration-300 ease-out">
+				class="relative flex items-center justify-center min-w-[12.5px] min-h-[12.5px] duration-300 ease-out">
 				<div class="absolute w-0.5 h-full bg-textBlack rounded-full"></div>
 				<div :class="{ 'rotate-90': activeAccordion==id }"
 					class="absolute w-full h-0.5 ease duration-500 bg-textBlack rounded-full">
