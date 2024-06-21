@@ -92,7 +92,7 @@
 }
 
 .container {
-	@apply max-w-[1440px] mx-auto px-5  2xl:px-0;
+	@apply max-w-[1440px] mx-auto px-5 2xl:px-0;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
