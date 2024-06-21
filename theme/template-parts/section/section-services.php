@@ -53,7 +53,7 @@ function services_list( $services ) {
 	}
 	?>
 	<div>
-		<ul class="md:flex md:flex-col md:gap-8">
+		<ul class="md:flex md:flex-col">
 			<?php
 			foreach ( $services as $service ) {
 				?>
