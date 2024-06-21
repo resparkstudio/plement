@@ -79,7 +79,7 @@ function calendly_modal() {
 					</button>
 					<div class="flex flex-col items-start justify-center">
 						<h2 class="lg:pl-[100px] lg:mt-10"><?php esc_html_e( 'Book a Discovery Call', 'plmt' ) ?></h2>
-						<div id="SAMPLEdivID"></div>
+						<div id="calendlyDiv" class=" w-full h-[700px]"></div>
 						<div class="lg:pl-[100px] text-textBlack font-medium text-lg">
 							<span><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
 							<a class="underline"

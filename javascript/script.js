@@ -167,13 +167,13 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 		const value = e.target.value;
 
 		//check if the div already has the widget
-		if (document.getElementById('SAMPLEdivID').hasChildNodes()) {
-			document.getElementById('SAMPLEdivID').innerHTML = '';
+		if (document.getElementById('calendlyDiv').hasChildNodes()) {
+			document.getElementById('calendlyDiv').innerHTML = '';
 		}
 
 		Calendly.initInlineWidget({
 			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`,
-			parentElement: document.getElementById('SAMPLEdivID'),
+			parentElement: document.getElementById('calendlyDiv'),
 			prefill: {},
 			utm: {},
 		});
@@ -185,13 +185,13 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 		const value = e.target.value;
 
 		//check if the div already has the widget
-		if (document.getElementById('SAMPLEdivID').hasChildNodes()) {
-			document.getElementById('SAMPLEdivID').innerHTML = '';
+		if (document.getElementById('calendlyDiv').hasChildNodes()) {
+			document.getElementById('calendlyDiv').innerHTML = '';
 		}
 
 		Calendly.initInlineWidget({
 			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a1=${value}`,
-			parentElement: document.getElementById('SAMPLEdivID'),
+			parentElement: document.getElementById('calendlyDiv'),
 			prefill: {},
 			utm: {},
 		});
