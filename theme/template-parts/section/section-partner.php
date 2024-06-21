@@ -14,9 +14,9 @@ function partner_cards( $cards ) {
 	<ul class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-20">
 		<?php foreach ( $cards as $card ) : ?>
 			<li>
-				<img class="w-[45px] h-[45px] mb-4 lg:mb-6 lg:w-[50px] lg:h-[50px]"
-					src="<?php echo esc_url( $card['icon']['url'] ) ?>" alt="<?php echo esc_url( $card['icon']['alt'] ) ?>">
-				<h4 class="mb-4 text-xl font-medium lg:text-[22px] lg:mb-6"><?php echo esc_html( $card['title'] ) ?></h4>
+				<img class="w-[45px] h-[45px] mb-4 lg:w-[50px] lg:h-[50px]" src="<?php echo esc_url( $card['icon']['url'] ) ?>"
+					alt="<?php echo esc_url( $card['icon']['alt'] ) ?>">
+				<h4 class="mb-3 text-xl font-medium lg:text-[22px]"><?php echo esc_html( $card['title'] ) ?></h4>
 				<p class="text-textDarkGray font-medium"><?php echo esc_html( $card['description'] ) ?></p>
 			</li>
 		<?php endforeach; ?>

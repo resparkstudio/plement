@@ -19,12 +19,12 @@ function pricing_header( $pricing_content ) {
 						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-150 ease-in-out"
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
 				</span>
-				<button class="relative flex-1 h-12 rounded-full font-bold transition-colors duration-150 ease-in-out"
+				<button class="relative flex-1 py-4 rounded-full font-bold transition-colors duration-150 ease-in-out"
 					:class="isPackages ? 'text-white' : 'text-textBlack'" @click="isPackages = true"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Packages', 'plmt' ) ?>
 				</button>
-				<button class="relative flex-1 font-bold h-12 rounded-full transition-colors duration-150 ease-in-out w-max"
+				<button class="relative flex-1 font-bold py-4 rounded-full transition-colors duration-150 ease-in-out w-max"
 					:class="isPackages ? 'text-textBlack' : 'text-white'" @click="isPackages = false"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
@@ -141,7 +141,7 @@ function package_cards_mobile( $packages ) {
 						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-medium"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
@@ -210,10 +210,10 @@ function package_cards( $packages ) {
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
 				<div class="h-full" x-data="{ readMoreOpen: false }">
 					<div
-						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-medium"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
@@ -269,7 +269,7 @@ function package_cards( $packages ) {
 			<?php endforeach; ?>
 		</div>
 		<div
-			class="max-w-[644px] justify-between items-center mx-auto flex p-6 rounded-[4px] bg-white border border-lightGray">
+			class="max-w-[644px] justify-between items-center mx-auto flex px-6 py-10 rounded-[4px] bg-white border border-lightGray">
 			<div class="max-w-[349px]">
 				<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
 					<?php echo esc_html( $packages['custom_packages']['title'] ) ?>

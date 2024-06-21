@@ -95,7 +95,7 @@ function services_list( $services ) {
 ?>
 <section id="services" class="py-16 lg:py-36">
 	<div class="container">
-		<h2 class="max-w-md font-medium text-[2rem] mb-8 leading-9 lg:text-5xl lg:mb-20">
+		<h2 class="max-w-md  mb-8  lg:mb-20">
 			<?php echo esc_html( $services_content['heading'] ) ?>
 		</h2>
 	</div>

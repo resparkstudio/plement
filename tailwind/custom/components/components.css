@@ -72,7 +72,7 @@
 }
 
 .menu-primary-list {
-	@apply items-center gap-4 hidden lg:flex;
+	@apply items-center gap-8 hidden lg:flex;
 }
 
 .menu-primary-list > li {
@@ -138,4 +138,20 @@
 
 .wpcf7-form input[type="submit"]:hover {
 	@apply bg-accentHover;
+}
+
+.gs {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	transition: all 0.3s ease;
+}
+
+.gs:hover {
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+	opacity: 1;
+	filter: alpha(opacity=100);
+	transition: all 0.3s ease;
 }

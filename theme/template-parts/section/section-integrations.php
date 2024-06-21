@@ -12,11 +12,11 @@ function integration_card( $integration ) {
 	}
 	?>
 	<div
-		class="py-10 last-of-type:pb-0 first-of-type:pt-0 last-of-type:border-b-0 border-b border-b-lightGrayBorder lg:border-b-0 lg:border lg:border-r-grayBorder lg:!p-8 lg:last-of-type:border-r-0">
+		class=" first-of-type:rounded-l-[4px] last-of-type:rounded-r-[4px] py-10 last-of-type:pb-0 first-of-type:pt-0 last-of-type:border-b-0 border-b border-b-lightGrayBorder lg:border-b-0 lg:border lg:border-r-grayBorder lg:!p-8 lg:last-of-type:border-r-0">
 		<img class="w-[45px] h-[45px] mb-4 lg:w-[50px] lg:h-[50px]"
 			src="<?php echo esc_url( $integration['icon']['url'] ) ?>"
 			alt="<?php echo esc_url( $integration['icon']['alt'] ) ?>">
-		<h4 class="mb-4 text-xl font-medium lg:text-[22px] lg:mb-6"><?php echo esc_html( $integration['title'] ) ?></h4>
+		<h4 class="mb-3 text-xl font-medium lg:text-[22px]"><?php echo esc_html( $integration['title'] ) ?></h4>
 		<p class="text-textDarkGray font-medium mb-6"><?php echo esc_html( $integration['description'] ) ?></p>
 		<div>
 			<?php foreach ( $integration['tags'] as $tag ) : ?>

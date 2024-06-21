@@ -14,7 +14,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
 			<div class='flex flex-wrap gap-6 justify-center lg:justify-start lg:gap-8'>
-				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button'>
+				<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button h-auto py-4'>
 					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
 					<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
 						xmlns:v='https://vecta.io/nano'>
@@ -23,7 +23,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 							fill='#fff' />
 					</svg>
 				</a>
-				<a href='#services' class='button_secondary'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
+				<a href='#services'
+					class='button_secondary h-auto py-4'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
 			</div>
 		</div>
 		<div>
@@ -47,13 +48,13 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<div class='flex space-x-4 animate-loop-scroll items-center'>
 					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain grayscale hover:grayscale-0' width='125' height='40'>
+							class='max-w-none object-contain gs' width='125' height='40'>
 					<?php endforeach; ?>
 				</div>
 				<div class='flex space-x-4 animate-loop-scroll items-center' aria-hidden='true'>
 					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain grayscale hover:grayscale-0' width='125' height='40'>
+							class='max-w-none object-contain gs' width='125' height='40'>
 					<?php endforeach; ?>
 				</div>
 			</div>

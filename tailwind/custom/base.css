@@ -16,7 +16,7 @@ body {
 }
 
 h2 {
-	@apply text-[2rem] leading-[35px] font-medium lg:text-5xl lg:leading-[52px];
+	@apply text-[2rem] leading-[35px] font-medium lg:text-5xl lg:leading-[52px] tracking-[-2%];
 }
 
 h3 {

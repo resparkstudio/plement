@@ -140,7 +140,7 @@ const processNumberAnimation = function () {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: step,
-				start: 'top+=10 center',
+				start: 'center center',
 				toggleActions: 'play none none reverse',
 			},
 		});
