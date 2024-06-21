@@ -17,7 +17,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 let resizeTimeout;
-
+let standaloneList;
 function initSwiper() {
 	new Swiper('.services-list', {
 		modules: [Pagination],
@@ -39,16 +39,6 @@ function initSwiper() {
 		},
 	});
 
-	new Swiper('.standalone-list', {
-		modules: [Pagination],
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-	});
-
 	new Swiper('.testimonials-swiper', {
 		modules: [Pagination],
 		slidesPerView: 1,
@@ -59,6 +49,29 @@ function initSwiper() {
 		},
 	});
 }
+
+function initStandalone() {
+	const standaloneWrap = document.querySelector('.standalone-wrap');
+	if (window.innerWidth < 768) {
+		standaloneWrap.classList.add('swiper-wrapper');
+
+		standaloneList = new Swiper('.standalone-list', {
+			modules: [Pagination],
+			slidesPerView: 1,
+			pagination: {
+				el: '.swiper-pagination',
+				bulletActiveClass: 'swiper-pagination-bullet-active',
+				bulletClass: 'swiper-pagination-bullet',
+			},
+		});
+	} else {
+		standaloneWrap.classList.remove('swiper-wrapper');
+		if (standaloneList) {
+			standaloneList.destroy();
+		}
+	}
+}
+
 function debounce(func, wait) {
 	return function executedFunction(...args) {
 		const later = () => {
@@ -71,8 +84,9 @@ function debounce(func, wait) {
 }
 
 initSwiper();
+initStandalone();
 
-window.addEventListener('resize', debounce(initSwiper, 200));
+window.addEventListener('resize', debounce(initStandalone, 200));
 
 //on .pricing-button click take the value and add &a2={value} to .calendly-inline-widget data-url
 document.querySelectorAll('.pricing-button').forEach((button) => {

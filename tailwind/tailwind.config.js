@@ -30,6 +30,8 @@ module.exports = {
 					'linear-gradient(90deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
 				gradientRight:
 					'linear-gradient(270deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
+				gradientBottom:
+					'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)',
 			},
 			colors: {
 				textBlack: '#272727',
@@ -46,6 +48,7 @@ module.exports = {
 			boxShadow: {
 				testimonial: '5px 5px 30px -5px #012D191A',
 				bestValuePackage: '0px 0px 20px 0px #00000026',
+				whiteShadowTop: '1px -26px 62px 0px rgba(255,255,255,0.79)',
 			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
