@@ -58,7 +58,7 @@ function services_list( $services ) {
 			foreach ( $services as $service ) {
 				?>
 				<li
-					class="group md:hover:bg-lightGrayBg transition-[padding,background] duration-700 py-8 hover:transition-[padding] hover:duration-700 hover:lg:py-12">
+					class="group md:hover:bg-lightGrayBg transition-[background-color_.3s,_padding_.7s_cubic-bezier(.684, .001, .265, 1.55)] duration-700 py-8 hover:transition-[padding] hover:duration-700 hover:lg:py-12">
 					<div class="container">
 						<div
 							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
