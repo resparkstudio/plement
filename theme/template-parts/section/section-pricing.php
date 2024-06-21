@@ -40,7 +40,7 @@ function pricing_header( $pricing_content ) {
 
 function currency_switch() {
 	?>
-	<div class=" w-full  justify-end hidden md:flex md:mb-[62px]">
+	<div class=" w-full  justify-end hidden md:flex md:mb-6">
 		<form class="max-w-sm w-full justify-end md:flex items-center gap-2 ">
 			<label for="currency"
 				class="block text-sm font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>

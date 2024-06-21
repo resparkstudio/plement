@@ -3152,6 +3152,10 @@ h3 {
     margin-bottom: 62px;
   }
 
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
   .md\:inline {
     display: inline;
   }
