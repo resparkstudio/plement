@@ -23,7 +23,7 @@ function step_card( $step, $index ) {
 	}
 	?>
 	<div
-		class="lg:border border-lightGray px-4 lg:px-12 lg:py-8 max-w-[443px] rounded-[4px] translate-y-3 lg:translate-y-[50px] arrow-right arrow-left">
+		class="lg:border border-lightGray px-4 lg:px-12 lg:py-8 max-w-[443px] rounded-[4px] translate-y-3 lg:-translate-y-[25px] arrow-right arrow-left">
 		<span
 			class="hidden text-accent font-semibold lg:inline-block mb-3"><?php echo $index < 10 ? '0' . $index : $index ?></span>
 		<h2 class="text-xl font-medium mb-3 lg:text-[22px]"><?php echo esc_html( $step['title'] ) ?></h2>
@@ -40,7 +40,7 @@ function step_card( $step, $index ) {
 	</h2>
 	<div class="relative">
 		<div
-			class="process-line-wrap -z-[1] bg-lightGrayBg w-[2px] h-full -ml-[1px]] absolute top-0 lg:top-[70px] bottom-0 left-[12px] lg:left-1/2">
+			class="process-line-wrap -z-[1] bg-lightGrayBorder w-[2px] lg:w-[3px] h-full -ml-[1px]] absolute top-0 bottom-0 left-[12px] lg:left-1/2">
 			<div class="process-line bg-accent w-full h-full"></div>
 		</div>
 		<div class="max-w-[31.9375rem] lg:mx-auto lg:max-w-[68.25rem] lg:w-full space-y-[3.5rem] lg:space-y-0 relative">
@@ -51,7 +51,7 @@ function step_card( $step, $index ) {
 
 				?>
 				<div
-					class="relative flex items-start lg:items-center justify-between lg:justify-normal lg:even:flex-row-reverse group is-active process-item <?php echo $is_last ? 'is-last' : '' ?>">
+					class="relative flex items-start  justify-between lg:justify-normal lg:even:flex-row-reverse group is-active process-item <?php echo $is_last ? 'is-last' : '' ?>">
 					<!-- Icon -->
 					<?php step_icon( $index ) ?>
 					<?php step_card( $step, $index ) ?>
