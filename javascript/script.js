@@ -173,7 +173,6 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const value = e.target.value;
 
-		//check if the div already has the widget
 		if (document.getElementById('calendlyDiv').hasChildNodes()) {
 			document.getElementById('calendlyDiv').innerHTML = '';
 		}
@@ -191,13 +190,27 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const value = e.target.value;
 
-		//check if the div already has the widget
 		if (document.getElementById('calendlyDiv').hasChildNodes()) {
 			document.getElementById('calendlyDiv').innerHTML = '';
 		}
+		const valueMap = {
+			'Chat / Messaging': 1,
+			'Call Center': 2,
+			'Help Center': 3,
+			'Customer Portal': 4,
+			Timeshift: 5,
+			'AI Chatbot': 6,
+			'Customer Satisfaction': 7,
+		};
+
+		const valueArray = value.split(',');
+
+		const values = valueArray.map((item) => {
+			return valueMap[item];
+		});
 
 		Calendly.initInlineWidget({
-			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a1=${value}`,
+			url: `https://calendly.com/tomasatplement/introduction-call?text_color=272727&primary_color=ed5623&month=2024-06&a2=${values.join(',')}`,
 			parentElement: document.getElementById('calendlyDiv'),
 			prefill: {},
 			utm: {},
