@@ -36,7 +36,7 @@ function faq_item( $item ) {
 
 ?>
 
-<section id="faq" class=" <?php echo ! $is_contact_us ? 'container' : '' ?> py-16 lg:py-36"
+<section id="faq" class="container py-16 lg:py-36"
 	style="<?php echo ! $is_contact_us ? 'border-bottom: 1px solid #E9E9E9' : '' ?>">
 
 	<div

@@ -31,7 +31,10 @@ function initSwiper() {
 
 	new Swiper('.packages-list', {
 		modules: [Pagination],
-		slidesPerView: 1,
+		slidesPerView: 1.1,
+		centeredSlides: true,
+		spaceBetween: 16,
+		initialSlide: 2,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',

@@ -142,7 +142,15 @@
 }
 
 .wpcf7-form-control input[type="checkbox"] {
-	@apply w-[18px] h-[18px] text-accent !bg-lightGrayBg !border-gray-300 focus:ring-blue-500;
+	@apply w-[18px] h-[18px] text-accent !bg-lightGrayBg !border-gray-300 relative;
+}
+
+.wpcf7-form-control input[type="checkbox"]::before {
+	@apply content-[''] absolute top-0 left-0 w-full h-full bg-lightGrayBg border border-gray-300;
+}
+
+.wpcf7-form-control input[type="checkbox"]:checked:before {
+	@apply hidden;
 }
 
 .wpcf7-form {
