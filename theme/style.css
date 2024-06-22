@@ -2960,6 +2960,42 @@ h3 {
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
+@media (min-width: 984px) {
+  .lg\:container {
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    .lg\:container {
+      max-width: 600px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .lg\:container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 984px) {
+    .lg\:container {
+      max-width: 984px;
+    }
+  }
+
+  @media (min-width: 1312px) {
+    .lg\:container {
+      max-width: 1312px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .lg\:container {
+      max-width: 1440px;
+    }
+  }
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;

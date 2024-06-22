@@ -437,28 +437,33 @@ function standalone_solution( $standalone_solutions ) {
 
 <section id="pricing" class="pb-16 lg:pb-36">
 	<div class="relative">
-		<div class="container relative flex flex-col justify-center overflow-hidden">
+		<div class=" relative flex flex-col justify-center overflow-hidden">
 			<div
 				x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
-				<?php pricing_header( $pricing_content ) ?>
-				<?php currency_switch() ?>
+				<div class="container">
+					<?php pricing_header( $pricing_content ) ?>
+					<?php currency_switch() ?>
+					<div class="hidden lg:block">
+						<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
+					</div>
+				</div>
 				<div class="lg:hidden">
 					<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
 				</div>
-				<div class="hidden lg:block">
-					<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
+				<div class="lg:container mx-auto">
+
+					<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 				</div>
+				<div class="container">
+					<?php calendly_modal() ?>
+					<?php terms_modal( $pricing_content['payment_terms'] ) ?>
+					<div class="flex w-full justify-center mt-16">
 
-
-				<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
-
-				<?php calendly_modal() ?>
-				<?php terms_modal( $pricing_content['payment_terms'] ) ?>
-				<div class="flex w-full justify-center mt-16">
-
-					<button class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
-						@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
+						<button
+							class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
+							@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
+					</div>
 				</div>
 			</div>
 		</div>
