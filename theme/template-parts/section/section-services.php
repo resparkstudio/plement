@@ -99,10 +99,10 @@ function services_list( $services ) {
 			<?php echo esc_html( $services_content['heading'] ) ?>
 		</h2>
 	</div>
-	<div class="hidden lg:block">
+	<div class="hidden md:block">
 		<?php isset( $services_content['services_list'] ) && services_list( $services_content['services_list'] ); ?>
 	</div>
-	<div class="block lg:hidden">
+	<div class="block md:hidden">
 		<?php isset( $services_content['services_list'] ) && services_list_mobile( $services_content['services_list'] ); ?>
 
 	</div>

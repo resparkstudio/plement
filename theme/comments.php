@@ -54,8 +54,8 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'callback'   => 'plmt_html5_comment',
+					'style' => 'ol',
+					'callback' => 'plmt_html5_comment',
 					'short_ping' => true,
 				)
 			);

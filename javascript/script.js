@@ -199,7 +199,7 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 			'Help Center': 3,
 			'Customer Portal': 4,
 			Timeshift: 5,
-			'AI Chatbot': 6,
+			Chatbot: 6,
 			'Customer Satisfaction': 7,
 		};
 
