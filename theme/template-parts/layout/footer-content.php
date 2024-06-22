@@ -17,12 +17,27 @@
 					<?php echo esc_html_e( 'It can be simple', 'plmt' ) ?>
 				</p>
 				<a href="<?php echo esc_url( '/contact-us' ) ?>"
-					class="underline inline-flex gap-12 items-center text-[4rem] leading-[70px] lg:text-[5.25rem] lg:leading-[92px]"><?php esc_html_e( "Let's talk" ) ?>
-					<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M41.1963 3.80469C41.1963 2.14783 39.8531 0.804688 38.1963 0.804688L11.1963 0.804687C9.53944 0.804687 8.19629 2.14783 8.19629 3.80469C8.19629 5.46154 9.53944 6.80469 11.1963 6.80469H35.1963V30.8047C35.1963 32.4615 36.5394 33.8047 38.1963 33.8047C39.8531 33.8047 41.1963 32.4615 41.1963 30.8047L41.1963 3.80469ZM4.31761 41.926L40.3176 5.92601L36.075 1.68337L0.0749688 37.6834L4.31761 41.926Z"
-							fill="white" />
-					</svg>
+					class="group underline inline-flex gap-12 items-center text-[4rem] leading-[70px] lg:text-[5.25rem] lg:leading-[92px]"><?php esc_html_e( "Let's talk" ) ?>
+					<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+						<div
+							class="justify-center items-center w-[3rem] h-[2.5rem] lg:w-[3.5rem] lg:h-[3rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+							<svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M41.1963 3.80469C41.1963 2.14783 39.8531 0.804688 38.1963 0.804688L11.1963 0.804687C9.53944 0.804687 8.19629 2.14783 8.19629 3.80469C8.19629 5.46154 9.53944 6.80469 11.1963 6.80469H35.1963V30.8047C35.1963 32.4615 36.5394 33.8047 38.1963 33.8047C39.8531 33.8047 41.1963 32.4615 41.1963 30.8047L41.1963 3.80469ZM4.31761 41.926L40.3176 5.92601L36.075 1.68337L0.0749688 37.6834L4.31761 41.926Z"
+									fill="white"></path>
+							</svg>
+						</div>
+						<div
+							class="justify-center items-center w-[3rem] h-[2.5rem] lg:w-[3.5rem] lg:h-[3rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+							<svg width="42" height="42" viewBox="0 0 42 42" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M41.1963 3.80469C41.1963 2.14783 39.8531 0.804688 38.1963 0.804688L11.1963 0.804687C9.53944 0.804687 8.19629 2.14783 8.19629 3.80469C8.19629 5.46154 9.53944 6.80469 11.1963 6.80469H35.1963V30.8047C35.1963 32.4615 36.5394 33.8047 38.1963 33.8047C39.8531 33.8047 41.1963 32.4615 41.1963 30.8047L41.1963 3.80469ZM4.31761 41.926L40.3176 5.92601L36.075 1.68337L0.0749688 37.6834L4.31761 41.926Z"
+									fill="white"></path>
+							</svg>
+						</div>
+					</div>
 				</a>
 			</div>
 			<div class="flex flex-col-reverse lg:flex-col">

@@ -143,7 +143,7 @@ function package_cards_mobile( $packages ) {
 						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-medium"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
@@ -226,7 +226,7 @@ function package_cards( $packages ) {
 						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-medium"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
 							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>

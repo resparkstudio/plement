@@ -40,7 +40,7 @@ function faq_item( $item ) {
 	style="<?php echo ! $is_contact_us ? 'border-bottom: 1px solid #E9E9E9' : '' ?>">
 
 	<div
-		class="grid grid-cols-1 justify-center items-start gap-x-16 gap-y-12 xl:gap-28 lg:grid-cols-2 lg:justify-between max-lg:max-w-2xl  max-w-full">
+		class="grid grid-cols-1 justify-center items-start gap-x-12 gap-y-6 xl:gap-28 lg:grid-cols-2 lg:justify-between max-lg:max-w-2xl  max-w-full">
 		<div class="w-full h-full flex flex-col justify-between">
 			<h2 class="max-w-md"><?php echo esc_html( $faq_content['heading'] ) ?></h2>
 

@@ -40,7 +40,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 ?>
 
 <section id="testimonials" class="py-16 lg:py-36">
-	<h2 class="container max-w-lg text-center mx-auto mb-8 lg:mb-20">
+	<h2 class="container max-w-lg text-center mx-auto lg:mb-12">
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
 	<div class="container lg:hidden">
