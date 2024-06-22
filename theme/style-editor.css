@@ -1199,6 +1199,42 @@ h3 {
   display: none;
 }
 
+@media (min-width: 984px) {
+  .group:nth-child(odd) .arrow-right::before {
+    position: absolute;
+    top: 50px;
+    right: -40px;
+    border-top-width: 12px;
+    border-right-width: 20px;
+    border-bottom-width: 12px;
+    border-left-width: 20px;
+    --tw-border-opacity: 1;
+    border-color: rgb(216 216 216 / var(--tw-border-opacity));
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+
+  .group:nth-child(even) .arrow-left::before {
+    position: absolute;
+    top: 50px;
+    left: -40px;
+    border-top-width: 12px;
+    border-right-width: 20px;
+    border-bottom-width: 12px;
+    border-left-width: 20px;
+    --tw-border-opacity: 1;
+    border-color: rgb(216 216 216 / var(--tw-border-opacity));
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
@@ -2463,12 +2499,6 @@ h3 {
   transition-duration: 150ms;
 }
 
-.transition-\[background-color_\.3s\2c _padding_\.7s_cubic-bezier\(\.684\2c _\.001\2c _\.265\2c _1\.55\)\] {
-  transition-property: background-color .3s, padding .7s cubic-bezier(.684, .001, .265, 1.55);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -2694,12 +2724,6 @@ h3 {
   transition-duration: 150ms;
 }
 
-.hover\:transition-\[background-color_\.3s\2c _padding_\.7s_cubic-bezier\(\.684\2c _\.001\2c _\.265\2c _1\.55\)\]:hover {
-  transition-property: background-color .3s, padding .7s cubic-bezier(.684, .001, .265, 1.55);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .hover\:duration-700:hover {
   transition-duration: 700ms;
 }
@@ -2726,10 +2750,6 @@ h3 {
 .group:hover .group-hover\:translate-y-\[-100\%\] {
   --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:delay-0 {
-  transition-delay: 0s;
 }
 
 .group.is-active .group-\[\.is-active\]\:bg-white {
@@ -3195,16 +3215,16 @@ h3 {
     padding-bottom: 46px;
   }
 
+  .lg\:pl-0 {
+    padding-left: 0px;
+  }
+
   .lg\:pl-\[100px\] {
     padding-left: 100px;
   }
 
   .lg\:pt-\[166px\] {
     padding-top: 166px;
-  }
-
-  .lg\:pl-0 {
-    padding-left: 0px;
   }
 
   .lg\:text-left {
@@ -3283,26 +3303,6 @@ h3 {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right {
-    position: relative;
-  }
-
-  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:before,.group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    right: -40px;
-    border-top: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #E9E9E9;
-  }
-
-  .group:nth-child(odd) .lg\:group-odd\:gray-arrow-right:after {
-    border-left: 20px solid #E9E9E9;
-    right: -39px;
-  }
-
   .group:nth-child(even) .lg\:group-even\:left-1\/2 {
     left: 50%;
   }
@@ -3310,26 +3310,6 @@ h3 {
   .group:nth-child(even) .lg\:group-even\:-translate-x-1\/2 {
     --tw-translate-x: -50%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .group:nth-child(even) .lg\:group-even\:gray-arrow-left {
-    position: relative;
-  }
-
-  .group:nth-child(even) .lg\:group-even\:gray-arrow-left:before,.group:nth-child(even) .lg\:group-even\:gray-arrow-left:after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    left: -40px;
-    border-top: 20px solid transparent;
-    border-right: 20px solid #E9E9E9;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid transparent;
-  }
-
-  .group:nth-child(even) .lg\:group-even\:gray-arrow-left:after {
-    border-right: 20px solid #E9E9E9;
-    left: -39px;
   }
 }
 

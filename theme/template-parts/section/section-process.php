@@ -23,7 +23,7 @@ function step_card( $step, $index ) {
 	}
 	?>
 	<div
-		class="lg:border border-lightGray px-4 lg:px-12 lg:py-8 max-w-[443px] rounded-[4px] translate-y-3 lg:translate-y-[50px] lg:group-odd:gray-arrow-right lg:group-even:gray-arrow-left">
+		class="lg:border border-lightGray px-4 lg:px-12 lg:py-8 max-w-[443px] rounded-[4px] translate-y-3 lg:translate-y-[50px] arrow-right arrow-left">
 		<span
 			class="hidden text-accent font-semibold lg:inline-block mb-3"><?php echo $index < 10 ? '0' . $index : $index ?></span>
 		<h2 class="text-xl font-medium mb-3 lg:text-[22px]"><?php echo esc_html( $step['title'] ) ?></h2>
