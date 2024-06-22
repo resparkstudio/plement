@@ -40,7 +40,7 @@ function step_card( $step, $index ) {
 	</h2>
 	<div class="relative">
 		<div
-			class="process-line-wrap -z-[1] bg-lightGrayBg w-[2px] h-full -ml-[1px]] absolute top-[70px] bottom-0 left-[12px] lg:left-1/2">
+			class="process-line-wrap -z-[1] bg-lightGrayBg w-[2px] h-full -ml-[1px]] absolute top-0 lg:top-[70px] bottom-0 left-[12px] lg:left-1/2">
 			<div class="process-line bg-accent w-full h-full"></div>
 		</div>
 		<div class="max-w-[31.9375rem] lg:mx-auto lg:max-w-[68.25rem] lg:w-full space-y-[3.5rem] lg:space-y-0 relative">

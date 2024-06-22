@@ -1288,10 +1288,6 @@ h3 {
   top: 1rem;
 }
 
-.top-\[70px\] {
-  top: 70px;
-}
-
 .top-\[72px\] {
   top: 72px;
 }
@@ -2870,6 +2866,10 @@ h3 {
 
   .lg\:top-\[108px\] {
     top: 108px;
+  }
+
+  .lg\:top-\[70px\] {
+    top: 70px;
   }
 
   .lg\:order-1 {
