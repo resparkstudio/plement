@@ -2910,6 +2910,12 @@ h3 {
   transition-duration: 150ms;
 }
 
+.transition-\[background-color_\.3s\2c _padding_\.7s_cubic-bezier\(\.684\2c _\.001\2c _\.265\2c _1\.55\)\] {
+  transition-property: background-color .3s, padding .7s cubic-bezier(.684, .001, .265, 1.55);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -3135,6 +3141,12 @@ h3 {
   transition-duration: 150ms;
 }
 
+.hover\:transition-\[background-color_\.3s\2c _padding_\.7s_cubic-bezier\(\.684\2c _\.001\2c _\.265\2c _1\.55\)\]:hover {
+  transition-property: background-color .3s, padding .7s cubic-bezier(.684, .001, .265, 1.55);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .hover\:duration-700:hover {
   transition-duration: 700ms;
 }
@@ -3161,6 +3173,10 @@ h3 {
 .group:hover .group-hover\:translate-y-\[-100\%\] {
   --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:delay-0 {
+  transition-delay: 0s;
 }
 
 .group.is-active .group-\[\.is-active\]\:bg-white {
@@ -3632,6 +3648,10 @@ h3 {
 
   .lg\:pt-\[166px\] {
     padding-top: 166px;
+  }
+
+  .lg\:pl-0 {
+    padding-left: 0px;
   }
 
   .lg\:text-left {
