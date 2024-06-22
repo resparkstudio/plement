@@ -65,7 +65,9 @@ function initStandalone() {
 			},
 		});
 	} else {
-		standaloneWrap.classList.remove('swiper-wrapper');
+		if (standaloneWrap) {
+			standaloneWrap.classList.remove('swiper-wrapper');
+		}
 		if (standaloneList) {
 			standaloneList.destroy();
 		}
@@ -198,16 +200,16 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 	});
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-	var inputs = document.querySelectorAll('.wpcf7-form-control');
-
+const handleContactFormTransition = function () {
+	var inputs = document.querySelectorAll('.wpcf7-form-control-wrap');
+	console.log(inputs);
 	if (inputs.length > 0) {
 		inputs.forEach(function (input) {
 			const label = input.parentElement.querySelector('label');
-
+			const inputField = input.querySelector('.wpcf7-form-control');
 			if (!label) return;
 
-			input.addEventListener('input', function () {
+			inputField.addEventListener('input', function () {
 				if (this.value) {
 					label.style.color = '#ababab';
 				} else {
@@ -215,15 +217,17 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 			});
 
-			input.addEventListener('focus', function () {
+			inputField.addEventListener('focus', function () {
 				label.style.color = '#ababab';
 			});
 
-			input.addEventListener('blur', function () {
+			inputField.addEventListener('blur', function () {
 				if (!this.value) {
 					label.style.color = '#000';
 				}
 			});
 		});
 	}
-});
+};
+
+handleContactFormTransition();

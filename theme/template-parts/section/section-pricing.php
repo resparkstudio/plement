@@ -293,7 +293,7 @@ function package_cards( $packages ) {
 				</div>
 			<?php endforeach; ?>
 			<div
-				class="col-span-2 col-start-2 w-full justify-between items-center mx-auto flex px-6 py-10 rounded-[4px] bg-white border border-lightGray">
+				class="col-span-2 col-start-2 w-full justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
 				<div class="max-w-[349px]">
 					<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
 						<?php echo esc_html( $packages['custom_packages']['title'] ) ?>

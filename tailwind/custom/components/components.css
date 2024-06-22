@@ -121,16 +121,20 @@
 
 .wpcf7-form-control.wpcf7-text,
 .wpcf7-form-control.wpcf7-textarea {
-	@apply pt-0 pb-4 pe-0 block w-full bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
+	@apply pt-0 pb-4 focus:outline-none pe-0 block w-full bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
 }
 
 .wpcf7-form-control.wpcf7-select {
-	@apply pb-4 pe-0 block w-full bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
+	@apply pb-4 pe-0 block w-full focus:outline-none bg-transparent border-t-transparent border-b border-x-transparent border-b-lightGrayBorder text-lg font-medium focus:border-t-transparent focus:border-x-transparent disabled:opacity-50 disabled:pointer-events-none;
 }
 
 .wpcf7-form-control.wpcf7-checkbox,
 .wpcf7-list-item {
 	@apply !ml-0;
+}
+
+.wpcf7 label {
+	@apply transition-colors duration-300;
 }
 
 .wpcf7-checkbox label {
