@@ -107,6 +107,10 @@
 	@apply !bg-lightGray;
 }
 
+.swiper-slide {
+	@apply !h-auto;
+}
+
 .best-value-package {
 	@apply !border-accent shadow-bestValuePackage;
 }
@@ -153,6 +157,14 @@
 	@apply hidden;
 }
 
+.wpcf7-acceptance label {
+	@apply flex items-center gap-4;
+}
+
+.wpcf7-acceptance label a {
+	@apply underline;
+}
+
 .wpcf7-form {
 	@apply flex flex-col gap-8;
 }
@@ -194,9 +206,9 @@
 }
 
 .arrow-right {
-	@apply lg:group-odd:before:content-[''] lg:group-odd:before:absolute lg:group-odd:before:top-[50px] lg:group-odd:before:right-[-40px] lg:group-odd:before:border-t-[12px] lg:group-odd:before:border-r-[20px] lg:group-odd:before:border-b-[12px] lg:group-odd:before:border-l-[20px] lg:group-odd:before:border-lightGrayBorder lg:group-odd:before:border-t-transparent lg:group-odd:before:border-r-transparent lg:group-odd:before:border-b-transparent;
+	@apply lg:group-odd:before:content-[''] lg:group-odd:before:absolute lg:group-odd:before:top-[50px] lg:group-odd:before:right-[-40px] lg:group-odd:before:border-t-[12px] lg:group-odd:before:border-r-[20px] lg:group-odd:before:border-b-[12px] lg:group-odd:before:border-l-[20px] lg:group-odd:before:border-lightGray lg:group-odd:before:border-t-transparent lg:group-odd:before:border-r-transparent lg:group-odd:before:border-b-transparent;
 }
 
 .arrow-left {
-	@apply lg:group-even:before:content-[''] lg:group-even:before:absolute lg:group-even:before:top-[50px] lg:group-even:before:left-[-40px] lg:group-even:before:border-t-[12px] lg:group-even:before:border-r-[20px] lg:group-even:before:border-b-[12px] lg:group-even:before:border-l-[20px] lg:group-even:before:border-lightGrayBorder lg:group-even:before:border-t-transparent lg:group-even:before:border-l-transparent lg:group-even:before:border-b-transparent;
+	@apply lg:group-even:before:content-[''] lg:group-even:before:absolute lg:group-even:before:top-[50px] lg:group-even:before:left-[-40px] lg:group-even:before:border-t-[12px] lg:group-even:before:border-r-[20px] lg:group-even:before:border-b-[12px] lg:group-even:before:border-l-[20px] lg:group-even:before:border-lightGray lg:group-even:before:border-t-transparent lg:group-even:before:border-l-transparent lg:group-even:before:border-b-transparent;
 }

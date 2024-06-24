@@ -303,14 +303,26 @@ function package_cards( $packages ) {
 					</p>
 				</div>
 				<div>
-					<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button'>
+					<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button group'>
 						<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
-						<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-							xmlns:v='https://vecta.io/nano'>
-							<path
-								d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-								fill='#fff' />
-						</svg>
+						<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+							<div
+								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+								</svg>
+							</div>
+							<div
+								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+								</svg>
+							</div>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -322,7 +334,7 @@ function package_cards( $packages ) {
 function circular_checkbox() {
 	?>
 	<span
-		class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border-2 rounded-full border-lightGrayBorder peer-checked:bg-accent"
+		class="inline-flex justify-center items-center w-[30px] h-[30px] absolute top-4 right-4 border-2 rounded-full border-lightGray peer-checked:bg-accent"
 		:class="selectedServices.includes(id) ? '!border-0  bg-accent' : ''">
 		<svg :class="selectedServices.includes(id) ? 'inline' : 'hidden'" width="14" height="10" viewBox="0 0 14 10"
 			fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -364,7 +376,7 @@ function standalone_solution( $standalone_solutions ) {
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? <?php echo esc_html( $solution['price_usd'] ) ?> : <?php echo esc_html( $solution['price_eur'] ) ?>"></span>
 							</div>
-							<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray">
+							<p class="max-w-[30rem] font-medium text-textGray">
 								<?php echo esc_html( $solution['description'] ) ?>
 							</p>
 						</div>
