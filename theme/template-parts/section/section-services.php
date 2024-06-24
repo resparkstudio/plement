@@ -16,11 +16,14 @@ function services_list_mobile( $services ) {
 			<?php
 			foreach ( $services as $service ) {
 				?>
-				<li class="swiper-slide group md:hover:bg-lightGrayBg ">
+				<li class="swiper-slide group ">
 					<div class="container">
 						<div
-							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
-							<h4 class="text-xl font-medium mb-3 inline-block lg:text-[1.375rem] lg:leading-7 md:mb-0">
+							class="flex flex-col justify-between py-8 px-4 bg-white md:p-0 md:flex-row border border-lightGray rounded-lg">
+							<img class="w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] rounded-md mb-[18px]"
+								src="<?php echo esc_url( $service['icon']['url'] ) ?>"
+								alt="<?php echo esc_url( $service['icon']['alt'] ) ?>">
+							<h4 class="text-xl font-medium mb-3 inline-block lg:text-[1.375rem] lg:leading-7">
 								<?php echo esc_html( $service['title'] ); ?>
 							</h4>
 							<div
@@ -52,38 +55,42 @@ function services_list( $services ) {
 		return;
 	}
 	?>
-	<div>
-		<ul class="md:flex md:flex-col">
+	<div class="container ">
+		<ul class="grid grid-cols-6 gap-6 h-full">
 			<?php
+			$index = 0;
 			foreach ( $services as $service ) {
+				if ( count( $services ) - $index <= 3 ) {
+					$service['class'] = 'col-span-3 lg:col-span-2';
+				} else {
+					$service['class'] = 'col-span-3';
+				}
 				?>
-				<li
-					class="group md:hover:bg-lightGrayBg transition-[background-color_.3s,_padding_.7s_cubic-bezier(.684, .001, .265, 1.55)] duration-700 py-8 hover:transition-[padding] hover:duration-700 hover:lg:py-12">
-					<div class="container">
-						<div
-							class="flex flex-col justify-between py-8 px-4 rounded-lg bg-lightGrayBg md:bg-inherit md:p-0 md:flex-row">
-							<h4 class="text-xl font-medium mb-3 inline-block lg:text-[1.375rem] lg:leading-7 md:mb-0">
-								<?php echo esc_html( $service['title'] ); ?>
-							</h4>
-							<div
-								class="max-w-[530px] md:opacity-0 md:invisible max-h-0 group-hover:max-h-[300px] transition-[opacity,max-height]  group-hover:md:opacity-100 delay-75 group-hover:md:visible  duration-700">
-								<p
-									class="font-medium md:text-lg max-h-0 group-hover:max-h-[300px] transition-[max-height] hover:transition-[max-height] duration-700 delay-75">
-									<?php echo esc_html( $service['description'] ); ?>
-								</p>
-								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
-									<div class="mt-6">
-										<?php foreach ( $service['tags'] as $tag ) : ?>
-											<span
-												class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
-										<?php endforeach; ?>
-									</div>
-								<?php endif; ?>
-							</div>
+				<li class="<?php echo esc_attr( $service['class'] ) ?>">
+					<div class="h-full flex flex-col  p-8 bg-white border border-lightGray rounded-lg">
+						<img class="w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] rounded-md mb-4"
+							src="<?php echo esc_url( $service['icon']['url'] ) ?>"
+							alt="<?php echo esc_url( $service['icon']['alt'] ) ?>">
+						<h4 class="text-xl font-medium inline-block lg:text-[1.375rem] lg:leading-7 mb-3">
+							<?php echo esc_html( $service['title'] ); ?>
+						</h4>
+						<div class="max-w-[530px]">
+							<p class="font-medium md:text-lg mb-6 text-textDarkGray">
+								<?php echo esc_html( $service['description'] ); ?>
+							</p>
+							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
+								<div>
+									<?php foreach ( $service['tags'] as $tag ) : ?>
+										<span
+											class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</li>
 				<?php
+				$index++;
 			}
 			?>
 		</ul>
