@@ -74,7 +74,7 @@ function services_list( $services ) {
 						<h4 class="text-xl font-medium inline-block lg:text-[1.375rem] lg:leading-7 mb-3">
 							<?php echo esc_html( $service['title'] ); ?>
 						</h4>
-						<div class="max-w-[530px]">
+						<div>
 							<p class="font-medium md:text-lg mb-6 text-textDarkGray">
 								<?php echo esc_html( $service['description'] ); ?>
 							</p>
