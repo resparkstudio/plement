@@ -43,7 +43,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 	<h2 class="container max-w-lg text-center mx-auto lg:mb-12">
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
-	<div class="container lg:hidden">
+	<div class="lg:hidden">
 		<div class="testimonials-swiper swiper ">
 			<div class="swiper-wrapper  shadow-testimonial my-8">
 				<?php

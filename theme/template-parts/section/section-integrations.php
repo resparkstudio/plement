@@ -13,7 +13,7 @@ function integration_card( $integration ) {
 	?>
 	<div
 		class=" first-of-type:rounded-l-[4px] last-of-type:rounded-r-[4px] py-10 last-of-type:pb-0 first-of-type:pt-0 last-of-type:border-b-0 border-b border-b-lightGrayBorder lg:border-b-0 lg:border-r lg:border-r-grayBorder lg:!p-8 lg:last-of-type:border-r-0">
-		<img class="w-[45px] h-[45px] mb-4 lg:w-[50px] lg:h-[50px]"
+		<img class="w-[40px] h-[40px] mb-4 lg:w-[45px] lg:h-[45px] rounded-md"
 			src="<?php echo esc_url( $integration['icon']['url'] ) ?>"
 			alt="<?php echo esc_url( $integration['icon']['alt'] ) ?>">
 		<h4 class="mb-3 text-xl font-medium lg:text-[22px]"><?php echo esc_html( $integration['title'] ) ?></h4>

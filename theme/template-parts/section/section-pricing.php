@@ -114,7 +114,7 @@ function terms_modal( $terms ) {
 					x-transition:leave="ease-in duration-200"
 					x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
 					x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-					class="max-w-[1350px] relative w-full py-6 bg-lightGrayBg px-7 lg:px-[105px] sm:rounded-lg container">
+					class="max-w-[800px] relative w-full py-6 bg-lightGrayBg px-7 lg:px-[105px] sm:rounded-lg container">
 					<button @click="termsModalOpen=false"
 						class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
 						<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -394,7 +394,7 @@ function standalone_solution( $standalone_solutions ) {
 						/
 						<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
 					</div>
-					<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
+					<span class="text-xl"><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
 				</div>
 				<div>
 					<button @click="modalOpen=true" :value="selectedServices"

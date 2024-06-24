@@ -9,7 +9,7 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 ?>
 
 <div class="py-8 px-4 rounded-lg bg-textBlack text-white max-w-[40.25rem] lg:p-14" x-data="{calendlyOpen: false}">
-	<img class="mb-4 w-[45px] h-[45px] lg:h-[50px] lg:w-[50px]"
+	<img class="mb-4 w-[40px] h-[40px] lg:h-[45px] lg:w-[45px] rounded-md"
 		src="<?php echo esc_url( $contact_information['top_icon']['url'] ) ?>"
 		alt="<?php echo esc_url( $contact_information['top_icon']['alt'] ) ?>">
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
