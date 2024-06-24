@@ -453,11 +453,11 @@ function standalone_solution( $standalone_solutions ) {
 
 ?>
 
-	<section id="pricing" class="pb-16 lg:pb-36">
+	<section id="pricing" class="pb-16 lg:pb-36"
+		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
 		<div class="relative">
 			<div class=" relative flex flex-col justify-center overflow-hidden">
-				<div
-					x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
+				<div>
 					<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 					<div class="container">
 						<?php pricing_header( $pricing_content ) ?>
@@ -484,4 +484,6 @@ function standalone_solution( $standalone_solutions ) {
 				</div>
 			</div>
 		</div>
+		<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
+
 	</section>

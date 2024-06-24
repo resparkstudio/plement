@@ -115,6 +115,10 @@
 	@apply !border-accent shadow-bestValuePackage;
 }
 
+.best-value-minimal-package {
+	@apply !border-accent !rounded-t-none;
+}
+
 .footer-menu {
 	@apply flex flex-col gap-6 lg:items-center lg:flex-row lg:gap-8 mb-10 lg:mb-0;
 }
