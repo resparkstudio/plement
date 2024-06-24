@@ -1441,6 +1441,7 @@ h3 {
 .swiper-pagination-bullet {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(233 233 233 / var(--tw-bg-opacity)) !important;
+  opacity: 1 !important;
 }
 
 .swiper-slide {

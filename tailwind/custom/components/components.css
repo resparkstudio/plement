@@ -104,7 +104,7 @@
 }
 
 .swiper-pagination-bullet {
-	@apply !bg-lightGray;
+	@apply !bg-lightGray !opacity-100;
 }
 
 .swiper-slide {
