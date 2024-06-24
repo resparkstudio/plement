@@ -28,7 +28,9 @@ function services_list_mobile( $services ) {
 							</h4>
 							<div
 								class=" md:hidden max-w-[530px] md:opacity-0 md:invisible transition-opacity group-hover:md:opacity-100 group-hover:md:visible group-hover:md:block">
-								<p class="font-medium md:text-lg"><?php echo esc_html( $service['description'] ); ?></p>
+								<p class="font-medium text-textDarkGray">
+									<?php echo esc_html( $service['description'] ); ?>
+								</p>
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
 									<div class="mt-6">
 										<?php foreach ( $service['tags'] as $tag ) : ?>
