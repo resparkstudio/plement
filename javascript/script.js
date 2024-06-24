@@ -220,11 +220,12 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 
 const handleContactFormTransition = function () {
 	var inputs = document.querySelectorAll('.wpcf7-form-control-wrap');
-	console.log(inputs);
+
 	if (inputs.length > 0) {
 		inputs.forEach(function (input) {
 			const label = input.parentElement.querySelector('label');
 			const inputField = input.querySelector('.wpcf7-form-control');
+			console.log(label);
 			if (!label) return;
 
 			inputField.addEventListener('input', function () {

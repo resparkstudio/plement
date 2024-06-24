@@ -122,8 +122,10 @@ function terms_modal( $terms ) {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-					<h2><?php echo esc_html( $terms['heading'] ) ?></h2>
-					<p><?php echo esc_html( $terms['description'] ) ?></p>
+					<div class="flex flex-col justify-center items-center py-28 gap-4">
+						<h3><?php echo esc_html( $terms['heading'] ) ?></h3>
+						<p class="text-lg font-medium"><?php echo esc_html( $terms['description'] ) ?></p>
+					</div>
 				</div>
 			</div>
 		</template>
