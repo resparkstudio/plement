@@ -19,7 +19,6 @@ $shortcode = get_field( 'form_shortcode' );
 
 		<div id='main' class="">
 			<div class="container">
-
 				<h1
 					class="my-10 lg:mb-20 lg:mt-[5.75rem] text-[2.375rem] leading-[2.625rem] lg:text-7xl lg:leading-[5rem] max-w-[52.75rem] font-medium">
 					<?php echo esc_html( $heading ) ?>
@@ -30,8 +29,8 @@ $shortcode = get_field( 'form_shortcode' );
 				<div
 					class="container flex flex-col-reverse lg:flex-row gap-8 justify-between items-center lg:items-start">
 					<div class="bg-lightGrayBg py-8 px-4 lg:p-14 lg:pl-0 max-w-[652px] w-full z-10">
-						<svg class="mb-4" width="50" height="50" viewBox="0 0 50 50" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
+						<svg class="mb-4 w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] rounded-md" width="50" height="50"
+							viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect width="50" height="50" rx="8" fill="#ED5623" />
 							<path
 								d="M27.0057 27.705C26.4086 28.1031 25.7151 28.3135 25 28.3135C24.285 28.3135 23.5914 28.1031 22.9943 27.705L13.1598 21.1485C13.1052 21.1121 13.0521 21.0742 13 21.0352V31.7788C13 33.0106 13.9996 33.9882 15.2094 33.9882H34.7906C36.0224 33.9882 37 32.9886 37 31.7788V21.0352C36.9478 21.0742 36.8945 21.1123 36.8398 21.1487L27.0057 27.705Z"
