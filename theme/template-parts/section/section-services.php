@@ -77,7 +77,7 @@ function services_list( $services ) {
 							<?php echo esc_html( $service['title'] ); ?>
 						</h4>
 						<div>
-							<p class="font-medium md:text-lg mb-6 text-textDarkGray">
+							<p class="font-medium mb-6 text-textDarkGray">
 								<?php echo esc_html( $service['description'] ); ?>
 							</p>
 							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
