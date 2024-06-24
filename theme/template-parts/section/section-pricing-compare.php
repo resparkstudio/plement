@@ -66,7 +66,7 @@ function pricing_accordion_body( $features ) {
 	?>
 	<div x-show="accordionOpen" x-collapse x-cloak>
 		<?php foreach ( $features as $feature ) : ?>
-			<div class="grid grid-cols-5 p-4 border-b border-lightGray last-of-type:border-b-0">
+			<div class="grid grid-cols-5 p-4 border-b border-lightGray">
 				<div class="flex items-center gap-3">
 					<div class="font-medium max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
