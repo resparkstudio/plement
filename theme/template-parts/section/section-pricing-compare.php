@@ -52,7 +52,7 @@ function pricing_accordion_head( $feature_group ) {
 	<button @click="accordionOpen=!accordionOpen"
 		class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
 		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
-		<svg class="w-4 h-4 duration-200 ease-out" :class="{ 'rotate-180': accordionOpen }" viewBox="0 0 24 24"
+		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': accordionOpen }" viewBox="0 0 24 24"
 			xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
 			stroke-linejoin="round">
 			<polyline points="6 9 12 15 18 9"></polyline>
@@ -229,7 +229,6 @@ function comparison_footer_rows( $footer_rows ) {
 			$index++;
 		endforeach; ?>
 		<div class="col-span-5">
-
 			<?php comparison_footer_rows( $package_comparison_data['footer_rows'] ) ?>
 		</div>
 

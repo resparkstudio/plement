@@ -2270,6 +2270,10 @@ h3 {
   width: 100vw;
 }
 
+.w-\[26px\] {
+  width: 26px;
+}
+
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
 }
@@ -2782,6 +2786,11 @@ h3 {
 .border-t-lightGray {
   --tw-border-opacity: 1;
   border-top-color: rgb(233 233 233 / var(--tw-border-opacity));
+}
+
+.border-b-lightGray {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .bg-\[\#575757\] {
@@ -3354,6 +3363,15 @@ h3 {
 
 .last-of-type\:border-b-0:last-of-type {
   border-bottom-width: 0px;
+}
+
+.last-of-type\:border-b:last-of-type {
+  border-bottom-width: 1px;
+}
+
+.last-of-type\:border-b-lightGray:last-of-type {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .last-of-type\:pb-0:last-of-type {
