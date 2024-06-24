@@ -9,7 +9,7 @@
 
 ?>
 
-<footer id="colophon" class="bg-accent text-white h-[664px] lg:h-[495px] " x-data="{calendlyOpen: false}">
+<footer id="colophon" class="bg-accent text-white h-[664px] -z-10 lg:h-[495px] " x-data="{calendlyOpen: false}">
 	<div class="fixed bottom-0 w-full  pt-16 lg:pt-[166px] pb-6 lg:pb-[46px]">
 		<div class="container flex flex-col gap-10 lg:flex-row justify-between lg:mb-[104px]">
 			<div>
