@@ -35,7 +35,7 @@ function services_list_mobile( $services ) {
 									<div class="mt-6">
 										<?php foreach ( $service['tags'] as $tag ) : ?>
 											<span
-												class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+												class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
 										<?php endforeach; ?>
 									</div>
 								<?php endif; ?>
@@ -84,7 +84,7 @@ function services_list( $services ) {
 								<div>
 									<?php foreach ( $service['tags'] as $tag ) : ?>
 										<span
-											class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+											class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>

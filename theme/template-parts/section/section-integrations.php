@@ -21,7 +21,7 @@ function integration_card( $integration ) {
 		<div>
 			<?php foreach ( $integration['tags'] as $tag ) : ?>
 				<span
-					class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block"><?php echo esc_html( $tag['title'] ) ?></span>
+					class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
 			<?php endforeach; ?>
 		</div>
 	</div>

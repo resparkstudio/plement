@@ -1622,10 +1622,6 @@ h3 {
   height: 0.625rem;
 }
 
-.h-4 {
-  height: 1rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -1742,10 +1738,6 @@ h3 {
   width: 0.625rem;
 }
 
-.w-4 {
-  width: 1rem;
-}
-
 .w-5 {
   width: 1.25rem;
 }
@@ -1780,6 +1772,10 @@ h3 {
 
 .w-\[25px\] {
   width: 25px;
+}
+
+.w-\[26px\] {
+  width: 26px;
 }
 
 .w-\[2px\] {
@@ -1821,10 +1817,6 @@ h3 {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[26px\] {
-  width: 26px;
 }
 
 .min-w-\[12\.5px\] {
@@ -2339,11 +2331,6 @@ h3 {
 .border-t-lightGray {
   --tw-border-opacity: 1;
   border-top-color: rgb(233 233 233 / var(--tw-border-opacity));
-}
-
-.border-b-lightGray {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .bg-\[\#575757\] {
@@ -2918,15 +2905,6 @@ h3 {
   border-bottom-width: 0px;
 }
 
-.last-of-type\:border-b:last-of-type {
-  border-bottom-width: 1px;
-}
-
-.last-of-type\:border-b-lightGray:last-of-type {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
-}
-
 .last-of-type\:pb-0:last-of-type {
   padding-bottom: 0px;
 }
@@ -3433,12 +3411,12 @@ h3 {
     padding-left: 100px;
   }
 
-  .lg\:pt-\[166px\] {
-    padding-top: 166px;
-  }
-
   .lg\:pt-36 {
     padding-top: 9rem;
+  }
+
+  .lg\:pt-\[166px\] {
+    padding-top: 166px;
   }
 
   .lg\:text-left {
