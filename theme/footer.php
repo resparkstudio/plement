@@ -11,13 +11,21 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
+<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+	tippy('[data-tippy-content]', {
+		theme: 'light',
+	});
+</script>
 </body>
+
 </html>

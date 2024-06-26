@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
 	<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>

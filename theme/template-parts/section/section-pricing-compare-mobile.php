@@ -57,28 +57,8 @@ function mobile_pricing_accordion_body( $features, $index ) {
 				<div class="flex items-center gap-3">
 					<div class="font-medium max-w-[123px] sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
-						<div x-data="{
-						tooltipVisible: false,
-						tooltipText: '<?php echo esc_html( $feature['popup_text'] ) ?>',
-						tooltipArrow: true,
-						tooltipPosition: 'top',
-					}" x-init="$refs.content.addEventListener('mouseenter', () => { tooltipVisible = true; }); $refs.content.addEventListener('mouseleave', () => { tooltipVisible = false; });"
-							class="relative">
-							<div x-ref="tooltip" x-show="tooltipVisible"
-								:class="{ 'top-0 left-1/2 -translate-x-1/2 -mt-0.5 -translate-y-full' : tooltipPosition == 'top', 'top-1/2 -translate-y-1/2 -ml-0.5 left-0 -translate-x-full' : tooltipPosition == 'left', 'bottom-0 left-1/2 -translate-x-1/2 -mb-0.5 translate-y-full' : tooltipPosition == 'bottom', 'top-1/2 -translate-y-1/2 -mr-0.5 right-0 translate-x-full' : tooltipPosition == 'right' }"
-								class="absolute w-auto text-sm" x-cloak>
-								<div x-show="tooltipVisible" x-transition
-									class="relative px-2 py-1 text-textBlack bg-white rounded">
-									<p x-text="tooltipText" class="flex-shrink-0 block text-sm whitespace-nowrap"></p>
-									<div x-ref="tooltipArrow" x-show="tooltipArrow"
-										:class="{ 'bottom-0 -translate-x-1/2 left-1/2 w-2.5 translate-y-full' : tooltipPosition == 'top', 'right-0 -translate-y-1/2 top-1/2 h-2.5 -mt-px translate-x-full' : tooltipPosition == 'left', 'top-0 -translate-x-1/2 left-1/2 w-2.5 -translate-y-full' : tooltipPosition == 'bottom', 'left-0 -translate-y-1/2 top-1/2 h-2.5 -mt-px -translate-x-full' : tooltipPosition == 'right' }"
-										class="absolute inline-flex items-center justify-center overflow-hidden">
-										<div :class="{ 'origin-top-left -rotate-45' : tooltipPosition == 'top', 'origin-top-left rotate-45' : tooltipPosition == 'left', 'origin-bottom-left rotate-45' : tooltipPosition == 'bottom', 'origin-top-right -rotate-45' : tooltipPosition == 'right' }"
-											class="w-1.5 h-1.5 transform bg-white"></div>
-									</div>
-								</div>
-							</div>
-							<div x-ref="content" class="cursor-pointer">
+						<div class="relative">
+							<div data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" class="cursor-pointer">
 								<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"
 										d="M8.5 16.5C12.6421 16.5 16 13.1421 16 9C16 4.85786 12.6421 1.5 8.5 1.5C4.35786 1.5 1 4.85786 1 9C1 13.1421 4.35786 16.5 8.5 16.5ZM8.5 17.5C13.1944 17.5 17 13.6944 17 9C17 4.30558 13.1944 0.5 8.5 0.5C3.80558 0.5 0 4.30558 0 9C0 13.6944 3.80558 17.5 8.5 17.5Z"
@@ -127,28 +107,8 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 				<div class="flex items-center gap-3">
 					<div class="font-medium max-w-[123px] sm:max-w-[243px]"><?php echo esc_html( $footer_row['title'] ) ?></div>
 					<?php if ( isset( $footer_row['popup_text'] ) && ! empty( $footer_row['popup_text'] ) ) : ?>
-						<div x-data="{
-							tooltipVisible: false,
-							tooltipText: '<?php echo esc_html( $footer_row['popup_text'] ) ?>',
-							tooltipArrow: true,
-							tooltipPosition: 'top',
-					}" x-init="$refs.content.addEventListener('mouseenter', () => { tooltipVisible = true; }); $refs.content.addEventListener('mouseleave', () => { tooltipVisible = false; });"
-							class="relative">
-							<div x-ref="tooltip" x-show="tooltipVisible"
-								:class="{ 'top-0 left-1/2 -translate-x-1/2 -mt-0.5 -translate-y-full' : tooltipPosition == 'top', 'top-1/2 -translate-y-1/2 -ml-0.5 left-0 -translate-x-full' : tooltipPosition == 'left', 'bottom-0 left-1/2 -translate-x-1/2 -mb-0.5 translate-y-full' : tooltipPosition == 'bottom', 'top-1/2 -translate-y-1/2 -mr-0.5 right-0 translate-x-full' : tooltipPosition == 'right' }"
-								class="absolute w-auto text-sm" x-cloak>
-								<div x-show="tooltipVisible" x-transition
-									class="relative px-2 py-1 text-textBlack bg-white rounded">
-									<p x-text="tooltipText" class="flex-shrink-0 block text-sm whitespace-nowrap"></p>
-									<div x-ref="tooltipArrow" x-show="tooltipArrow"
-										:class="{ 'bottom-0 -translate-x-1/2 left-1/2 w-2.5 translate-y-full' : tooltipPosition == 'top', 'right-0 -translate-y-1/2 top-1/2 h-2.5 -mt-px translate-x-full' : tooltipPosition == 'left', 'top-0 -translate-x-1/2 left-1/2 w-2.5 -translate-y-full' : tooltipPosition == 'bottom', 'left-0 -translate-y-1/2 top-1/2 h-2.5 -mt-px -translate-x-full' : tooltipPosition == 'right' }"
-										class="absolute inline-flex items-center justify-center overflow-hidden">
-										<div :class="{ 'origin-top-left -rotate-45' : tooltipPosition == 'top', 'origin-top-left rotate-45' : tooltipPosition == 'left', 'origin-bottom-left rotate-45' : tooltipPosition == 'bottom', 'origin-top-right -rotate-45' : tooltipPosition == 'right' }"
-											class="w-1.5 h-1.5 transform bg-white"></div>
-									</div>
-								</div>
-							</div>
-							<div x-ref="content" class="cursor-pointer">
+						<div class="relative">
+							<div data-tippy-content="<?php echo esc_attr( $footer_row['popup_text'] ) ?>" class="cursor-pointer">
 								<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"
 										d="M8.5 16.5C12.6421 16.5 16 13.1421 16 9C16 4.85786 12.6421 1.5 8.5 1.5C4.35786 1.5 1 4.85786 1 9C1 13.1421 4.35786 16.5 8.5 16.5ZM8.5 17.5C13.1944 17.5 17 13.6944 17 9C17 4.30558 13.1944 0.5 8.5 0.5C3.80558 0.5 0 4.30558 0 9C0 13.6944 3.80558 17.5 8.5 17.5Z"
