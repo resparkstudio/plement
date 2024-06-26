@@ -392,9 +392,9 @@ function standalone_solution( $standalone_solutions ) {
 
 ?>
 
-	<section id="pricing" class="pb-16 lg:pb-36"
+	<section class="pb-16 lg:pb-36"
 		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
-		<div class="relative">
+		<div id="pricing" class="relative">
 			<div class=" relative flex flex-col justify-center overflow-hidden">
 				<div>
 					<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
