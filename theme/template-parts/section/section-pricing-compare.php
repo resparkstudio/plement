@@ -121,10 +121,9 @@ function pricing_accordion_body( $features ) {
 
 function comparison_footer_rows( $footer_rows ) {
 	?>
-	<div class="border-t border-t-lightGray">
-
+	<div>
 		<?php foreach ( $footer_rows as $footer_row ) : ?>
-			<div class="grid grid-cols-5 p-4 border-b border-lightGray last-of-type:border-b-0">
+			<div class="grid grid-cols-5 px-4 py-3 border-b border-lightGray last-of-type:border-b-0">
 				<div class="flex items-center gap-3">
 					<div class="font-medium"><?php echo esc_html( $footer_row['title'] ) ?></div>
 					<?php if ( isset( $footer_row['popup_text'] ) && ! empty( $footer_row['popup_text'] ) ) : ?>

@@ -52,9 +52,9 @@ function mobile_pricing_accordion_body( $features, $index ) {
 	?>
 	<div x-show="mobileAccordionOpen" x-collapse x-cloak>
 		<?php foreach ( $features as $feature ) : ?>
-			<div class="flex items-center gap-6 px-4 py-3 border-b border-lightGray mt-2">
+			<div class="flex items-center justify-between w-full gap-6 px-4 py-3 border-b border-lightGray mt-2">
 				<div class="flex items-center gap-3">
-					<div class="font-medium max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
+					<div class="font-medium max-w-[123px] sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div x-data="{
 						tooltipVisible: false,
@@ -90,7 +90,7 @@ function mobile_pricing_accordion_body( $features, $index ) {
 						</div>
 					<?php endif; ?>
 				</div>
-				<div class="justify-self-center flex flex-col gap-2 items-center justify-center">
+				<div class="justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
 					<?php if ( $feature['columns'][ $index ]['included'] ) : ?>
 						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_515_6320)">
@@ -121,9 +121,10 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 	?>
 	<div>
 		<?php foreach ( $footer_rows as $footer_row ) : ?>
-			<div class="flex items-center gap-6 px-4 py-3 border-b border-lightGray last-of-type:border-b-0">
+			<div
+				class="flex items-center gap-6 px-4 py-3 justify-between w-full border-b border-lightGray last-of-type:border-b-0">
 				<div class="flex items-center gap-3">
-					<div class="font-medium"><?php echo esc_html( $footer_row['title'] ) ?></div>
+					<div class="font-medium max-w-[123px] sm:max-w-[243px]"><?php echo esc_html( $footer_row['title'] ) ?></div>
 					<?php if ( isset( $footer_row['popup_text'] ) && ! empty( $footer_row['popup_text'] ) ) : ?>
 						<div x-data="{
 							tooltipVisible: false,
@@ -160,7 +161,7 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 						</div>
 					<?php endif; ?>
 				</div>
-				<div class=" justify-self-center flex flex-col gap-2 items-center justify-center">
+				<div class=" justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
 					<?php if ( $footer_row['columns'][ $index ]['included'] ) : ?>
 						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_515_6320)">
@@ -231,7 +232,7 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 	</div>
 	<div class="lg:grid grid-cols-4 pt-12 lg:pt-20">
 		<div
-			class="col-span-2 col-start-2 w-full flex-col flex-wrap justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
+			class="col-span-2 col-start-2 w-full flex-col gap-y-6 justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
 			<div class="max-w-[349px]">
 				<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
 					<?php echo esc_html( $pricing_data['packages']['custom_packages']['title'] ) ?>
@@ -240,29 +241,29 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 					<?php echo esc_html( $pricing_data['packages']['custom_packages']['description'] ) ?>
 				</p>
 			</div>
-			<div>
-				<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button group'>
-					<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
-					<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-						<div
-							class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-								aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-								preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-							</svg>
-						</div>
-						<div
-							class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-								aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-								preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-							</svg>
-						</div>
+
+			<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button group w-full justify-center'>
+				<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
+				<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+					<div
+						class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+							preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+						</svg>
 					</div>
-				</a>
-			</div>
+					<div
+						class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+							preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+						</svg>
+					</div>
+				</div>
+			</a>
+
 		</div>
 	</div>
 	<div>
