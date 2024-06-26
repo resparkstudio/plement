@@ -422,5 +422,12 @@ function standalone_solution( $standalone_solutions ) {
 		<div class="lg:hidden">
 			<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
 		</div>
-
+		<div>
+			<?php calendly_modal() ?>
+			<?php terms_modal( $pricing_content['payment_terms'] ) ?>
+			<div class="flex w-full justify-center mt-16">
+				<button class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
+					@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
+			</div>
+		</div>
 	</section>

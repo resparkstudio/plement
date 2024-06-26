@@ -267,12 +267,4 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 
 		</div>
 	</div>
-	<div>
-		<?php calendly_modal() ?>
-		<?php terms_modal( $pricing_data['payment_terms'] ) ?>
-		<div class="flex w-full justify-center mt-16">
-			<button class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
-				@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
-		</div>
-	</div>
 </div>
