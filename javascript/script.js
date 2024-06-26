@@ -42,6 +42,16 @@ function initSwiper() {
 		},
 	});
 
+	new Swiper('.package-compare-mobile', {
+		modules: [Pagination],
+		slidesPerView: 1,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
+
 	new Swiper('.testimonials-swiper', {
 		modules: [Pagination],
 		slidesPerView: 1,
@@ -94,19 +104,6 @@ initSwiper();
 initStandalone();
 
 window.addEventListener('resize', debounce(initStandalone, 200));
-
-//on .pricing-button click take the value and add &a2={value} to .calendly-inline-widget data-url
-document.querySelectorAll('.pricing-button').forEach((button) => {
-	button.addEventListener('click', (e) => {
-		const value = e.target.value;
-		document
-			.querySelector('.calendly-inline-widget')
-			.setAttribute(
-				'data-url',
-				`https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`
-			);
-	});
-});
 
 const processLineAnimation = function () {
 	const animatedLine = document.querySelector('.process-line');

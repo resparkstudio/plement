@@ -1745,6 +1745,10 @@ h3 {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -2017,6 +2021,10 @@ h3 {
   margin-top: 60px;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2145,6 +2153,10 @@ h3 {
   height: 100vh;
 }
 
+.h-\[1rem\] {
+  height: 1rem;
+}
+
 .max-h-\[186px\] {
   max-height: 186px;
 }
@@ -2264,6 +2276,10 @@ h3 {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[1rem\] {
+  width: 1rem;
 }
 
 .min-w-\[12\.5px\] {
@@ -2562,6 +2578,10 @@ h3 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -2632,6 +2652,14 @@ h3 {
 
 .gap-\[10px\] {
   gap: 10px;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-\[6px\] {
+  gap: 6px;
 }
 
 .gap-x-12 {
@@ -2949,6 +2977,11 @@ h3 {
   padding-bottom: 20px;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -2979,6 +3012,14 @@ h3 {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
 }
 
 .text-left {
@@ -3334,6 +3375,10 @@ h3 {
   content: var(--tw-content);
 }
 
+.first-of-type\:mt-0:first-of-type {
+  margin-top: 0px;
+}
+
 .first-of-type\:rounded-l-\[4px\]:first-of-type {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -3341,6 +3386,14 @@ h3 {
 
 .first-of-type\:pt-0:first-of-type {
   padding-top: 0px;
+}
+
+.last-of-type\:mb-8:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.last-of-type\:mb-2:last-of-type {
+  margin-bottom: 0.5rem;
 }
 
 .last-of-type\:rounded-r-\[4px\]:last-of-type {
@@ -3648,6 +3701,10 @@ h3 {
     display: flex;
   }
 
+  .lg\:grid {
+    display: grid;
+  }
+
   .lg\:hidden {
     display: none;
   }
@@ -3864,6 +3921,22 @@ h3 {
 
   .lg\:pt-\[166px\] {
     padding-top: 166px;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .lg\:pt-20 {
+    padding-top: 5rem;
+  }
+
+  .lg\:pt-24 {
+    padding-top: 6rem;
+  }
+
+  .lg\:pt-16 {
+    padding-top: 4rem;
   }
 
   .lg\:text-left {

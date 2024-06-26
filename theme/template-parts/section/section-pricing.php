@@ -295,40 +295,6 @@ function package_cards( $packages ) {
 					</div>
 				</div>
 			<?php endforeach; ?>
-			<div
-				class="col-span-2 col-start-2 w-full justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
-				<div class="max-w-[349px]">
-					<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
-						<?php echo esc_html( $packages['custom_packages']['title'] ) ?>
-					</h4>
-					<p class="text-textGray font-medium">
-						<?php echo esc_html( $packages['custom_packages']['description'] ) ?>
-					</p>
-				</div>
-				<div>
-					<a href='<?php echo esc_url( '/contact-us' ) ?>' class='button group'>
-						<?php esc_html_e( 'Contact Us', 'plmt' ) ?>
-						<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-							<div
-								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-								</svg>
-							</div>
-							<div
-								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-								</svg>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
 		</div>
 	</div>
 	<?php
@@ -472,18 +438,16 @@ function standalone_solution( $standalone_solutions ) {
 					<div class="lg:container mx-auto">
 						<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 					</div>
-					<div class="container">
-						<?php calendly_modal() ?>
-						<?php terms_modal( $pricing_content['payment_terms'] ) ?>
-						<div class="flex w-full justify-center mt-16">
-							<button
-								class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
-								@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
-		<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
+		<div class="hidden lg:block">
+			<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
+		</div>
+
+		<div class="lg:hidden">
+			<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
+		</div>
 
 	</section>
