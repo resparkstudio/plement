@@ -1729,6 +1729,10 @@ h3 {
   visibility: visible;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .\!static {
   position: static !important;
 }
@@ -1839,6 +1843,10 @@ h3 {
 
 .z-\[99\] {
   z-index: 99;
+}
+
+.z-\[1\] {
+  z-index: 1;
 }
 
 .col-span-2 {
@@ -2867,6 +2875,11 @@ h3 {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
