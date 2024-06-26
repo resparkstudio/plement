@@ -201,8 +201,8 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 			<polyline points="6 9 12 15 18 9"></polyline>
 		</svg>
 	</button>
-	<div x-show="comparisonAccordionOpen" x-collapse x-cloak class="pt-10 lg:pt-24">
-		<div class="swiper package-compare-mobile">
+	<div x-show="comparisonAccordionOpen" x-collapse x-cloak>
+		<div class="swiper package-compare-mobile pt-10 lg:pt-24">
 			<div class="swiper-wrapper">
 				<?php $index = 0;
 				foreach ( $pricing_data['packages']['packages_list'] as $package ) :

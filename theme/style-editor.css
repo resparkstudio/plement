@@ -1578,6 +1578,10 @@ h3 {
   margin-top: 0.5rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -3261,6 +3265,10 @@ h3 {
 
   .lg\:mt-\[5\.75rem\] {
     margin-top: 5.75rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
   }
 
   .lg\:block {

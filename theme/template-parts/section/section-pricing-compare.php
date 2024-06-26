@@ -204,8 +204,8 @@ function comparison_footer_rows( $footer_rows ) {
 			<polyline points="6 9 12 15 18 9"></polyline>
 		</svg>
 	</button>
-	<div x-show="comparisonAccordionOpen" x-collapse x-cloak class="pt-10 lg:pt-24">
-		<div class="grid grid-cols-5 gap-6 overflow-x-auto">
+	<div x-show="comparisonAccordionOpen" x-collapse x-cloak>
+		<div class="grid grid-cols-5 gap-6 overflow-x-auto pt-10 lg:pt-24">
 			<h2>
 
 			</h2>
