@@ -8,7 +8,8 @@ if ( ! isset( $package_comparison_data ) || empty( $package_comparison_data ) ) 
 
 function minimal_package_card( $package ) {
 	?>
-	<a href="#pricing" class=" sticky top-0 w-full flex items-center gap-[6px] font-medium justify-center group text-lg">
+	<a href="#pricing"
+		class=" sticky top-0 w-full flex items-center gap-[6px] font-medium justify-center group text-lg hover:text-accent transition-colors duration-300">
 		<?php echo esc_attr( $package['title'] ) ?>
 		<div class="z-1 flex justify-center items-center relative overflow-hidden">
 			<div
