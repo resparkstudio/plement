@@ -141,7 +141,7 @@ function package_cards_mobile( $packages ) {
 	<div x-show="isPackages" x-cloak class="packages-list swiper">
 		<div class="swiper-wrapper">
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
-				<div class="swiper-slide h-full" x-data="{ readMoreOpen: false }">
+				<div class="swiper-slide h-full">
 					<div
 						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
@@ -181,8 +181,7 @@ function package_cards_mobile( $packages ) {
 							</button>
 						</div>
 						<div>
-							<ul class="text-sm space-y-3 grow prose overflow-hidden bg-gradientBottom"
-								:class="!readMoreOpen ? 'max-h-[186px]' : 'h-auto'">
+							<ul class="text-sm space-y-3 grow prose overflow-hidden">
 								<?php foreach ( $package['services'] as $service ) : ?>
 									<li class="flex items-center">
 										<svg class="w-2 h-2 fill-accent mr-2 shrink-0" viewBox="0 0 12 12"
@@ -195,18 +194,6 @@ function package_cards_mobile( $packages ) {
 									</li>
 								<?php endforeach; ?>
 							</ul>
-							<div class="mt-6 w-full flex justify-center "
-								x-show="!readMoreOpen && Boolean(<?php echo count( $package['services'] ) > 7 ?>)">
-								<button @click="readMoreOpen = true"
-									class="inline-flex gap-2 items-center  justify-center font-medium text-sm">See All
-									Services
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M0.839844 1.5L4.83984 5.5L8.83984 1.5" stroke="#272727" stroke-width="1.33333"
-											stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
-								</button>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -224,7 +211,7 @@ function package_cards( $packages ) {
 	<div x-show="isPackages" x-cloak>
 		<div class="mb-10 max-w-sm mx-auto grid gap-6 lg:grid-cols-4 items-start lg:max-w-none">
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
-				<div class="h-full" x-data="{ readMoreOpen: false }">
+				<div class="h-full">
 					<div
 						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
@@ -264,10 +251,9 @@ function package_cards( $packages ) {
 							</button>
 						</div>
 						<div>
-							<ul class="text-sm space-y-3 grow prose overflow-hidden <?php echo count( $package['services'] ) > 7 ? 'with-gradient' : '' ?>"
-								:class="!readMoreOpen ? 'max-h-[186px]' : 'h-auto hide-gradient'">
+							<ul class="text-sm space-y-3 grow prose overflow-hidden">
 								<?php foreach ( $package['services'] as $service ) : ?>
-									<li class="flex items-center">
+									<li class=" flex items-center">
 										<svg class="w-2 h-2 fill-accent mr-2 shrink-0" viewBox="0 0 12 12"
 											xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -278,19 +264,6 @@ function package_cards( $packages ) {
 									</li>
 								<?php endforeach; ?>
 							</ul>
-							<div class="mt-6 w-full flex justify-center "
-								x-show="!readMoreOpen && Boolean(<?php echo count( $package['services'] ) > 7 ?>)">
-								<button @click="readMoreOpen = true"
-									class="inline-flex gap-2 items-center  justify-center font-medium text-sm">See All
-									Services
-
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M0.839844 1.5L4.83984 5.5L8.83984 1.5" stroke="#272727" stroke-width="1.33333"
-											stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
-								</button>
-							</div>
 						</div>
 					</div>
 				</div>
