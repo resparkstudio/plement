@@ -26,6 +26,10 @@
 		theme: 'light',
 	});
 </script>
+<!-- Start cookieyes banner -->
+<script id="cookieyes" type="text/javascript"
+	src="https://cdn-cookieyes.com/client_data/7ee0da461f6d84df18a2e37b/script.js"></script>
+<!-- End cookieyes banner -->
 </body>
 
 </html>
