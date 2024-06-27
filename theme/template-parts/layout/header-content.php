@@ -14,7 +14,7 @@
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
-					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[44px]">
 			</a>
 		<?php else : ?>
 			<a class="site-title"

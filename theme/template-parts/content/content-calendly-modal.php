@@ -23,7 +23,7 @@
 				<div class="flex flex-col items-start justify-center">
 					<div class="calendly-inline-widget w-full mx-auto"
 						data-url="https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623"
-						style="min-width:320px;height:600px;max-width:1000px;"></div>
+						style="min-width:320px;height:700px;max-width:1000px;"></div>
 				</div>
 			</div>
 		</div>

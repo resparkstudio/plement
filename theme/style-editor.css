@@ -1905,6 +1905,10 @@ h3 {
   max-width: 24rem;
 }
 
+.max-w-\[34\.875rem\] {
+  max-width: 34.875rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2870,6 +2874,12 @@ h3 {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:shadow-testimonial:hover {
+  --tw-shadow: 5px 5px 30px -5px #012D191A;
+  --tw-shadow-colored: 5px 5px 30px -5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3126,6 +3136,10 @@ h3 {
     margin-top: 5.75rem;
   }
 
+  .lg\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3168,6 +3182,10 @@ h3 {
 
   .lg\:h-\[calc\(100vh-108px\)\] {
     height: calc(100vh - 108px);
+  }
+
+  .lg\:h-\[44px\] {
+    height: 44px;
   }
 
   .lg\:w-20 {

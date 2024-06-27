@@ -19,10 +19,9 @@ $shortcode = get_field( 'form_shortcode' );
 
 		<div id='main' class="">
 			<div class="container">
-				<h1
-					class="my-10 lg:mb-20 lg:mt-[5.75rem] text-[2.375rem] leading-[2.625rem] lg:text-7xl lg:leading-[5rem] max-w-[52.75rem] font-medium">
+				<h2 class="my-10 lg:mt-8 max-w-[34.875rem] font-medium">
 					<?php echo esc_html( $heading ) ?>
-				</h1>
+				</h2>
 			</div>
 			<div class=" relative">
 				<div class="absolute bg-lightGrayBg h-full w-1/4 left-0 top-0 hidden lg:block"></div>
