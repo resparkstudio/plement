@@ -178,11 +178,8 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 			document.getElementById('calendlyDiv').innerHTML = '';
 		}
 
-		Calendly.initInlineWidget({
+		Calendly.initPopupWidget({
 			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`,
-			parentElement: document.getElementById('calendlyDiv'),
-			prefill: {},
-			utm: {},
 		});
 	});
 });
@@ -210,11 +207,8 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 			return valueMap[item];
 		});
 
-		Calendly.initInlineWidget({
+		Calendly.initPopupWidget({
 			url: `https://calendly.com/tomasatplement/introduction-call?text_color=272727&primary_color=ed5623&month=2024-06&a2=${values.join(',')}`,
-			parentElement: document.getElementById('calendlyDiv'),
-			prefill: {},
-			utm: {},
 		});
 	});
 });

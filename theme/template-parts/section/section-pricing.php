@@ -221,7 +221,7 @@ function package_cards( $packages ) {
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
 							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
-							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
+							<button value="<?php echo esc_attr( $package['title'] ) ?>"
 								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
 								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
