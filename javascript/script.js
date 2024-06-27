@@ -29,7 +29,7 @@ function initSwiper() {
 		},
 	});
 
-	new Swiper('.packages-list', {
+	const packageSwiper = new Swiper('.packages-list', {
 		modules: [Pagination],
 		slidesPerView: 1.1,
 		centeredSlides: true,
@@ -42,7 +42,7 @@ function initSwiper() {
 		},
 	});
 
-	new Swiper('.package-compare-mobile', {
+	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
 		modules: [Pagination],
 		slidesPerView: 1,
 		pagination: {

@@ -64,7 +64,7 @@
 }
 
 .button_secondary {
-	@apply inline-flex leading-[1rem] px-6 font-semibold text-textBlack rounded-lg h-11 items-center gap-3 border border-lightGray;
+	@apply inline-flex leading-[1rem] px-6 font-semibold text-textBlack rounded-lg h-11 items-center gap-3 border border-lightGray hover:border-accent hover:text-accent transition-colors duration-300 ease-in-out;
 }
 
 .button_outlined {
@@ -79,12 +79,12 @@
 	@apply font-semibold;
 }
 
-.menu-primary-list > li > a:hover {
-	@apply text-accent;
+.menu-primary-list > li > a {
+	@apply hover:text-accent transition-colors duration-300;
 }
 
 .mobile-menu-primary-list {
-	@apply w-full   items-center gap-4 pb-8;
+	@apply w-full items-center gap-4 pb-8;
 }
 
 .mobile-menu-primary-list > li {
@@ -112,7 +112,7 @@
 }
 
 .best-value-package {
-	@apply !border-accent shadow-bestValuePackage;
+	@apply !border-accent;
 }
 
 .best-value-minimal-package {
@@ -170,7 +170,7 @@
 }
 
 .wpcf7-form {
-	@apply flex flex-col gap-8;
+	@apply flex flex-col gap-6;
 }
 
 .wpcf7-form label {
@@ -178,11 +178,11 @@
 }
 
 .wpcf7-form input[type="submit"] {
-	@apply inline-flex px-6 font-semibold text-white bg-accent rounded-lg h-11 items-center gap-3;
+	@apply cursor-pointer mt-4 inline-flex px-6 font-semibold text-white bg-accent rounded-lg h-11 items-center gap-3 hover:bg-accentHover transition-colors duration-300;
 }
 
-.wpcf7-form input[type="submit"]:hover {
-	@apply bg-accentHover;
+.wpcf7-form .single-line {
+	@apply flex flex-col gap-6 md:flex-row;
 }
 
 .gs {

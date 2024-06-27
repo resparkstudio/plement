@@ -21,15 +21,9 @@
 					</svg>
 				</button>
 				<div class="flex flex-col items-start justify-center">
-					<h2 class="lg:pl-[100px] lg:mt-10"><?php esc_html_e( 'Book a Discovery Call', 'plmt' ) ?></h2>
 					<div class="calendly-inline-widget w-full mx-auto"
 						data-url="https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623"
 						style="min-width:320px;height:600px;max-width:1000px;"></div>
-					<div class="lg:pl-[100px] text-textBlack font-medium text-lg">
-						<span class="inline-block mb-1 lg:mb-2"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
-						<a class="underline"
-							href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"><?php esc_html_e( 'Contact Us', 'plmt' ) ?></a>
-					</div>
 				</div>
 			</div>
 		</div>

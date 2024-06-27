@@ -10,7 +10,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 		return;
 	}
 	?>
-	<div class="w-[420px] shadow-testimonial py-6 px-4 lg:p-8 <?php echo $isMobile ? 'swiper-slide' : '' ?>">
+	<div class="w-[420px] shadow-testimonial py-6 px-4 lg:p-8 <?php echo $isMobile ? '!w-full' : '' ?>">
 
 		<div class="flex items-center mb-4">
 			<?php for ( $i = 0; $i < 5; $i++ ) : ?>
@@ -40,22 +40,34 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 ?>
 
 <section id="testimonials" class="py-16 lg:py-36">
-	<h2 class="container max-w-lg text-center mx-auto lg:mb-12">
+	<h2 class="container max-w-lg text-center mb-8 mx-auto lg:mb-12">
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
-	<div class="lg:hidden">
-		<div class="testimonials-swiper swiper ">
-			<div class="swiper-wrapper  shadow-testimonial my-8">
+	<div class="lg:hidden ">
+		<div class="testimonials-swiper  swiper ">
+			<div class="swiper-wrapper my-8">
 				<?php
 				if ( isset( $testimonials_content['testimonials_row_1'] ) ) :
 					foreach ( $testimonials_content['testimonials_row_1'] as $testimonial ) :
-						testimonial_card( $testimonial, true );
+						?>
+						<div class="px-4 swiper-slide w-[420px] flex">
+							<?php
+							testimonial_card( $testimonial, true );
+							?>
+						</div>
+						<?php
 					endforeach;
 				endif;
 
 				if ( isset( $testimonials_content['testimonials_row_2'] ) ) :
 					foreach ( $testimonials_content['testimonials_row_2'] as $testimonial ) :
-						testimonial_card( $testimonial, true );
+						?>
+						<div class="px-4 swiper-slide w-[420px] flex ">
+							<?php
+							testimonial_card( $testimonial, true );
+							?>
+						</div>
+						<?php
 					endforeach;
 				endif;
 				?>

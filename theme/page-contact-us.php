@@ -28,7 +28,7 @@ $shortcode = get_field( 'form_shortcode' );
 				<div class="absolute bg-lightGrayBg h-full w-1/4 left-0 top-0 hidden lg:block"></div>
 				<div
 					class="container flex flex-col-reverse lg:flex-row gap-8 justify-between items-center lg:items-start">
-					<div class="bg-lightGrayBg py-8 px-4 lg:p-14 lg:pl-0 max-w-[652px] w-full z-10">
+					<div class="bg-lightGrayBg py-8 px-4 lg:p-12 lg:pl-0 max-w-[652px] w-full z-10">
 						<svg class="mb-4 w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] rounded-md" width="50" height="50"
 							viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect width="50" height="50" rx="8" fill="#ED5623" />

@@ -14,7 +14,7 @@ function pricing_header( $pricing_content ) {
 		</h2>
 		<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
 			<div class="relative flex w-full p-1 bg-white rounded-full">
-				<span class="absolute inset-0 m-1 pointer-events-none bg-lightGrayBg rounded-full" aria-hidden="true">
+				<span class="absolute inset-0 m-1 pointer-events-none bg-[#f1f1f1] rounded-full" aria-hidden="true">
 					<span
 						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-150 ease-in-out"
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
@@ -80,13 +80,7 @@ function calendly_modal() {
 						</svg>
 					</button>
 					<div class="flex flex-col items-start justify-center">
-						<h2 class="lg:pl-[100px] lg:mt-10"><?php esc_html_e( 'Book a Discovery Call', 'plmt' ) ?></h2>
-						<div id="calendlyDiv" class="w-full h-[600px]"></div>
-						<div class="lg:pl-[100px] text-textBlack font-medium text-lg">
-							<span><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
-							<a class="underline"
-								href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"><?php esc_html_e( 'Contact Us', 'plmt' ) ?></a>
-						</div>
+						<div id="calendlyDiv" class="w-full h-[700px]"></div>
 					</div>
 				</div>
 			</div>
@@ -143,7 +137,7 @@ function package_cards_mobile( $packages ) {
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
 				<div class="swiper-slide h-full">
 					<div
-						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray hover:shadow-bestValuePackage hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
@@ -213,7 +207,7 @@ function package_cards( $packages ) {
 			<?php foreach ( $packages['packages_list'] as $package ) : ?>
 				<div class="h-full">
 					<div
-						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray hover:shadow-bestValuePackage hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'Best value', 'plmt' ) ?></span>
