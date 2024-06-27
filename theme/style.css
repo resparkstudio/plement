@@ -2151,6 +2151,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.h-\[57px\] {
+  height: 57px;
+}
+
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -2270,6 +2274,10 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[57px\] {
+  width: 57px;
 }
 
 .min-w-\[12\.5px\] {
@@ -2784,6 +2792,11 @@ div.wpcf7-validation-errors {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#88C941\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(136 201 65 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
