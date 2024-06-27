@@ -77,7 +77,7 @@ $contact_information = get_field( 'information', $contact_us_page_id );
 							</button>
 						</div>
 						<span class="bg-white w-[1px] h-[26px]"></span>
-						<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
+						<a target="_blank" href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
 							<svg class=" z-0 w-[20px] h-[20px] lg:w-[24px] lg:h-[25px]" width="24" height="25"
 								viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -113,7 +113,8 @@ $contact_information = get_field( 'information', $contact_us_page_id );
 			class="container border-t border-t-[#FFFFFF4D] pt-6 gap-4 text-sm flex flex-col-reverse md:flex-row md:gap-[20px]">
 			<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
 			<span class="hidden md:inline">|</span>
-			<a href="#"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+			<a
+				href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
 		</div>
 		<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
 

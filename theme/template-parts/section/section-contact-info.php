@@ -50,7 +50,7 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 				<div class="flex items-center gap-2">
 					<span class="text-lg"><?php echo esc_html( $contact_information['name'] ) ?></span>
 					<span class="w-[1px] h-[14px] bg-[#575757]"></span>
-					<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
+					<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>" target="_blank">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_247_5748)">
 								<path
