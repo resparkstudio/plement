@@ -7,6 +7,10 @@
  * @package Plement
  */
 
+$contact_us_page_id = get_page_by_path( 'contact-us' )->ID;
+
+$contact_information = get_field( 'information', $contact_us_page_id );
+
 ?>
 
 <footer id="colophon" class="bg-accent text-white h-[664px] z-0 relative lg:h-[495px] " x-data="{calendlyOpen: false}">
@@ -73,7 +77,7 @@
 							</button>
 						</div>
 						<span class="bg-white w-[1px] h-[26px]"></span>
-						<a href="#">
+						<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
 							<svg class=" z-0 w-[20px] h-[20px] lg:w-[24px] lg:h-[25px]" width="24" height="25"
 								viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path

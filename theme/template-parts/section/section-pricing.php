@@ -80,7 +80,7 @@ function calendly_modal() {
 						</svg>
 					</button>
 					<div class="flex flex-col items-start max-w-[1000px] w-full justify-center h-[90%]">
-						<div id="calendlyDiv" class="max-w-[1000px] w-full h-[700px]" @click.away="modalOpen=false"></div>
+						<div id="calendlyDiv" class="max-w-[1000px] w-full h-[800px]" @click.away="modalOpen=false"></div>
 					</div>
 				</div>
 			</div>
