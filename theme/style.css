@@ -1739,6 +1739,10 @@ div.wpcf7-validation-errors {
   }
 }
 
+.calendly-overlay .calendly-popup {
+  height: 750px !important;
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
@@ -2124,8 +2128,8 @@ div.wpcf7-validation-errors {
   height: 664px;
 }
 
-.h-\[700px\] {
-  height: 700px;
+.h-\[800px\] {
+  height: 800px;
 }
 
 .h-\[90\%\] {
@@ -2142,10 +2146,6 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[800px\] {
-  height: 800px;
 }
 
 .min-h-\[12\.5px\] {

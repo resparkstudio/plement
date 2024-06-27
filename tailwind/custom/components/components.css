@@ -221,3 +221,7 @@ div.wpcf7-validation-errors {
 .arrow-left {
 	@apply lg:group-even:before:content-[''] lg:group-even:before:absolute lg:group-even:before:top-[50px] lg:group-even:before:left-[-40px] lg:group-even:before:border-t-[12px] lg:group-even:before:border-r-[20px] lg:group-even:before:border-b-[12px] lg:group-even:before:border-l-[20px] lg:group-even:before:border-lightGray lg:group-even:before:border-t-transparent lg:group-even:before:border-l-transparent lg:group-even:before:border-b-transparent;
 }
+
+.calendly-overlay .calendly-popup {
+	@apply !h-[750px];
+}
