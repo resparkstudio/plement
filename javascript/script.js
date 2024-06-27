@@ -27,6 +27,7 @@ function initSwiper() {
 			bulletActiveClass: 'swiper-pagination-bullet-active',
 			bulletClass: 'swiper-pagination-bullet',
 		},
+		autoHeight: true,
 	});
 
 	const packageSwiper = new Swiper('.packages-list', {
@@ -64,6 +65,7 @@ function initSwiper() {
 			bulletActiveClass: 'swiper-pagination-bullet-active',
 			bulletClass: 'swiper-pagination-bullet',
 		},
+		autoHeight: true,
 	});
 }
 
@@ -82,6 +84,7 @@ function initStandalone() {
 				bulletActiveClass: 'swiper-pagination-bullet-active',
 				bulletClass: 'swiper-pagination-bullet',
 			},
+			autoHeight: true,
 		});
 	} else {
 		if (standaloneWrap) {
@@ -107,7 +110,7 @@ function debounce(func, wait) {
 initSwiper();
 initStandalone();
 
-window.addEventListener('resize', debounce(initStandalone, 200));
+window.addEventListener('resize', debounce(initStandalone, 100));
 
 const processLineAnimation = function () {
 	const animatedLine = document.querySelector('.process-line');

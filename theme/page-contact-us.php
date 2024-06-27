@@ -14,9 +14,7 @@ $shortcode = get_field( 'form_shortcode' );
 ?>
 
 <main class="relative z-10 bg-white">
-
 	<section id='primary'>
-
 		<div id='main' class="">
 			<div class="container">
 				<h2 class="my-10 lg:mt-8 max-w-[34.875rem] font-medium">

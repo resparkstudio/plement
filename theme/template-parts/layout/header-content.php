@@ -9,6 +9,12 @@
 
 ?>
 
+<style>
+	[x-cloak] {
+		display: none !important;
+	}
+</style>
+
 <header id="masthead" class="relative" x-data="{menuOpen: false}">
 	<div class="container py-[20px] lg:py-9 flex items-center justify-between relative z-[1] bg-white">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
@@ -78,7 +84,7 @@
 
 		</div>
 	</div>
-	<nav x-show="menuOpen" @click.away="menuOpen=false" x-cloak id="site-navigation"
+	<nav x-cloak x-show="menuOpen" @click.away="menuOpen=false" id="site-navigation"
 		class="absolute z-[100] top-[72px] lg:top-[108px] left-0 w-full flex flex-col pb-10 bg-lightGrayBg  px-4 py-10 lg:hidden"
 		aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
 		<?php
