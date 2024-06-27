@@ -37,7 +37,7 @@ function success_modal() {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-					<div class="flex flex-col justify-center items-center py-20 gap-3">
+					<div class="flex flex-col justify-center items-center gap-3">
 						<div class="bg-[#88C941] rounded-full w-[57px] h-[57px] mb-3 flex justify-center items-center">
 							<svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -67,9 +67,9 @@ function success_modal() {
 					<?php echo esc_html( $heading ) ?>
 				</h2>
 			</div>
-			<div class="relative" x-data="{successModalOpen: true}" @flash.window="
+			<div class="relative" x-data="{successModalOpen: false}" @flash.window="
 						successModalOpen = true;
-						setTimeout(() => successModalOpen = false, 2000);
+						setTimeout(() => successModalOpen = false, 3000);
 					">
 				<div class="absolute bg-lightGrayBg h-full w-1/4 left-0 top-0 hidden lg:block"></div>
 				<div
