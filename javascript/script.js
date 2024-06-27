@@ -9,7 +9,7 @@
  * https://esbuild.github.io/
  */
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Controller } from 'swiper/modules';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -30,7 +30,7 @@ function initSwiper() {
 	});
 
 	const packageSwiper = new Swiper('.packages-list', {
-		modules: [Pagination],
+		modules: [Pagination, Controller],
 		slidesPerView: 1.1,
 		centeredSlides: true,
 		spaceBetween: 16,
@@ -43,14 +43,18 @@ function initSwiper() {
 	});
 
 	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
-		modules: [Pagination],
+		modules: [Pagination, Controller],
 		slidesPerView: 1,
+		initialSlide: 2,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',
 			bulletClass: 'swiper-pagination-bullet',
 		},
 	});
+
+	packageSwiper.controller.control = packageCompareSwiper;
+	packageCompareSwiper.controller.control = packageSwiper;
 
 	new Swiper('.testimonials-swiper', {
 		modules: [Pagination],
