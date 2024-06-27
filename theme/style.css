@@ -1915,6 +1915,11 @@ div.wpcf7-validation-errors {
   margin-bottom: 4px;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .-ml-\[1px\] {
   margin-left: -1px;
 }
@@ -2153,6 +2158,10 @@ div.wpcf7-validation-errors {
 
 .h-\[57px\] {
   height: 57px;
+}
+
+.h-\[350px\] {
+  height: 350px;
 }
 
 .min-h-\[12\.5px\] {

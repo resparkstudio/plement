@@ -29,7 +29,7 @@ function success_modal() {
 					x-transition:leave="ease-in duration-200"
 					x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
 					x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-					class="max-w-[800px] relative w-full py-6 bg-lightGrayBg px-7 lg:px-[105px] sm:rounded-lg container">
+					class="max-w-[800px] relative w-full py-6 bg-lightGrayBg px-7 lg:px-[105px] h-[350px] sm:rounded-lg container">
 					<button @click="successModalOpen=false"
 						class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
 						<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -37,7 +37,7 @@ function success_modal() {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-					<div class="flex flex-col justify-center items-center py-20 gap-3">
+					<div class="flex flex-col justify-center items-center h-full gap-3">
 						<div class="bg-[#88C941] rounded-full w-[57px] h-[57px] mb-3 flex justify-center items-center">
 							<svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -69,7 +69,7 @@ function success_modal() {
 			</div>
 			<div class="relative" x-data="{successModalOpen: false}" @flash.window="
 						successModalOpen = true;
-						setTimeout(() => successModalOpen = false, 3000);
+						setTimeout(() => successModalOpen = false, 2000);
 					">
 				<div class="absolute bg-lightGrayBg h-full w-1/4 left-0 top-0 hidden lg:block"></div>
 				<div
