@@ -1740,7 +1740,8 @@ div.wpcf7-validation-errors {
 }
 
 .calendly-overlay .calendly-popup {
-  height: 750px !important;
+  height: 870px !important;
+  max-height: 870px !important;
 }
 
 /**

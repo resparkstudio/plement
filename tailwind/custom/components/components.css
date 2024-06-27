@@ -223,5 +223,5 @@ div.wpcf7-validation-errors {
 }
 
 .calendly-overlay .calendly-popup {
-	@apply !h-[750px];
+	@apply !h-[870px] !max-h-[870px];
 }
