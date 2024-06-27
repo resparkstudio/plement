@@ -179,7 +179,7 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 		}
 
 		Calendly.initPopupWidget({
-			url: `https://calendly.com/tomasatplement/intro-call?text_color=272727&primary_color=ed5623&a2=${value}`,
+			url: `https://calendly.com/tomasatplement/intro-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${value}`,
 		});
 	});
 });
@@ -208,7 +208,7 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 		});
 
 		Calendly.initPopupWidget({
-			url: `https://calendly.com/tomasatplement/introduction-call?text_color=272727&primary_color=ed5623&month=2024-06&a2=${values.join(',')}`,
+			url: `https://calendly.com/tomasatplement/introduction-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&month=2024-06&a2=${values.join(',')}`,
 		});
 	});
 });
