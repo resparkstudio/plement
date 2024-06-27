@@ -185,6 +185,11 @@
 	@apply flex flex-col gap-6 md:flex-row;
 }
 
+div.wpcf7-response-output,
+div.wpcf7-validation-errors {
+	@apply !hidden;
+}
+
 .gs {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
