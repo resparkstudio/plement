@@ -176,17 +176,25 @@ processLineAnimation();
 document.querySelectorAll('.pricing-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const value = e.target.value;
+		if (document.getElementById('calendlyDiv').hasChildNodes()) {
+			document.getElementById('calendlyDiv').innerHTML = '';
+		}
 
-		Calendly.initPopupWidget({
+		Calendly.initInlineWidget({
 			url: `https://calendly.com/plement/intro-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${value}`,
+			parentElement: document.getElementById('calendlyDiv'),
 		});
 	});
 });
 
 document.querySelectorAll('.contact-button').forEach((button) => {
 	button.addEventListener('click', () => {
-		Calendly.initPopupWidget({
+		if (document.getElementById('calendlyDiv').hasChildNodes()) {
+			document.getElementById('calendlyDiv').innerHTML = '';
+		}
+		Calendly.initInlineWidget({
 			url: `https://calendly.com/plement/introduction-call-1?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623`,
+			parentElement: document.getElementById('calendlyDiv'),
 		});
 	});
 });
@@ -214,8 +222,9 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 			return valueMap[item];
 		});
 
-		Calendly.initPopupWidget({
+		Calendly.initInlineWidget({
 			url: `https://calendly.com/plement/introduction-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${values.join(',')}`,
+			parentElement: document.getElementById('calendlyDiv'),
 		});
 	});
 });

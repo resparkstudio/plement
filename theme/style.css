@@ -2155,6 +2155,18 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -2284,8 +2296,20 @@ div.wpcf7-validation-errors {
   width: 20%;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
+}
+
+.min-w-\[320px\] {
+  min-width: 320px;
 }
 
 .max-w-20 {
@@ -2950,6 +2974,16 @@ div.wpcf7-validation-errors {
   padding-bottom: 1.25rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3118,6 +3152,11 @@ div.wpcf7-validation-errors {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-lightGray {
+  --tw-text-opacity: 1;
+  color: rgb(233 233 233 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3382,6 +3421,11 @@ div.wpcf7-validation-errors {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.hover\:text-gray-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3638,6 +3682,10 @@ div.wpcf7-validation-errors {
     margin-top: 2rem;
   }
 
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3684,6 +3732,14 @@ div.wpcf7-validation-errors {
 
   .lg\:h-\[calc\(100vh-108px\)\] {
     height: calc(100vh - 108px);
+  }
+
+  .lg\:h-\[800px\] {
+    height: 800px;
+  }
+
+  .lg\:h-\[750px\] {
+    height: 750px;
   }
 
   .lg\:w-20 {
@@ -3848,6 +3904,11 @@ div.wpcf7-validation-errors {
     padding-bottom: 2.25rem;
   }
 
+  .lg\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .lg\:pb-36 {
     padding-bottom: 9rem;
   }
@@ -3882,6 +3943,10 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[76px\] {
     padding-top: 76px;
+  }
+
+  .lg\:pl-\[100px\] {
+    padding-left: 100px;
   }
 
   .lg\:text-left {

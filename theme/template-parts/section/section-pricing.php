@@ -59,9 +59,34 @@ function currency_switch() {
 
 function calendly_modal() {
 	?>
-	<div class="flex flex-col items-start max-w-[1000px] w-full justify-center h-[90%]">
-		<div id="calendlyDiv" class="hidden max-w-[1000px] w-full h-[800px]" @click.away="modalOpen=false">
-		</div>
+	<div @keydown.escape.window="modalOpen = false" class="relative z-50 w-auto h-auto">
+		<template x-teleport="body">
+			<div x-show="modalOpen" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen"
+				x-cloak>
+				<div x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
+					x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300"
+					x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="modalOpen=false"
+					class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
+				<div x-show="modalOpen" x-trap.inert.noscroll="modalOpen" x-transition:enter="ease-out duration-300"
+					x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+					x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+					x-transition:leave="ease-in duration-200"
+					x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+					x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+					class="relative w-full py-14 lg:py-6 bg-lightGrayBg lg:px-[105px] sm:rounded-lg container">
+					<button @click="modalOpen=false"
+						class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
+						<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke-width="1.5" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<div class="flex flex-col items-start justify-center">
+						<div id="calendlyDiv" class="h-[600px] lg:h-[750px] min-w-[320px] w-full"></div>
+					</div>
+				</div>
+			</div>
+		</template>
 	</div>
 	<?php
 }
@@ -95,7 +120,8 @@ function terms_modal( $terms ) {
 					</button>
 					<div class="flex flex-col justify-center items-center py-28 gap-4">
 						<h3><?php echo esc_html( $terms['heading'] ) ?></h3>
-						<p class="max-w-md text-lg font-medium text-center"><?php echo esc_html( $terms['description'] ) ?>
+						<p class="max-w-md text-lg font-medium text-center">
+							<?php echo esc_html( $terms['description'] ) ?>
 						</p>
 					</div>
 				</div>
@@ -120,14 +146,18 @@ function package_cards_mobile( $packages ) {
 								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
-							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
+							<div class="font-medium text-[1.375rem] leading-7">
+								<?php echo esc_html( $package['title'] ) ?>
+							</div>
 							<div class="inline-flex items-baseline mb-3">
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '$' : '€'"></span>
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
-							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
+							<div class="mb-6 text-textGray font-medium">
+								<?php echo esc_html( $package['description'] ) ?>
+							</div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
 								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
@@ -190,15 +220,19 @@ function package_cards( $packages ) {
 								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
 						<?php endif; ?>
 						<div class="mb-9">
-							<div class="font-medium text-[1.375rem] leading-7"><?php echo esc_html( $package['title'] ) ?></div>
+							<div class="font-medium text-[1.375rem] leading-7">
+								<?php echo esc_html( $package['title'] ) ?>
+							</div>
 							<div class="inline-flex items-baseline mb-3">
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '$' : '€'"></span>
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
-							<div class="mb-6 text-textGray font-medium"><?php echo esc_html( $package['description'] ) ?></div>
-							<button value="<?php echo esc_attr( $package['title'] ) ?>"
+							<div class="mb-6 text-textGray font-medium">
+								<?php echo esc_html( $package['description'] ) ?>
+							</div>
+							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
 								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
 								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
 								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
@@ -282,7 +316,8 @@ function standalone_solution( $standalone_solutions ) {
 						class="relative inline-flex items-center justify-between w-full pt-10 px-4 pb-16 bg-white border-2 border-lightGray rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
 						:class="selectedServices.includes(id) ? 'border-textBlack' : ''">
 						<div class="block">
-							<p class="w-full text-xl font-medium"><?php echo esc_html( $solution['title'] ) ?></p>
+							<p class="w-full text-xl font-medium"><?php echo esc_html( $solution['title'] ) ?>
+							</p>
 							<div class="inline-flex items-baseline mb-4">
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '$' : '€'"></span>
