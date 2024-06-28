@@ -2760,6 +2760,10 @@ div.wpcf7-validation-errors {
   transition-duration: 150ms;
 }
 
+.transition-none {
+  transition-property: none;
+}
+
 .duration-150 {
   transition-duration: 150ms;
 }
@@ -2977,6 +2981,22 @@ div.wpcf7-validation-errors {
 .hover\:text-gray-50:hover {
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
+.hover\:transition-all:hover {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.hover\:transition-none:hover {
+  transition-property: none;
+}
+
+.hover\:transition-colors:hover {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .group:hover .group-hover\:translate-x-0 {
