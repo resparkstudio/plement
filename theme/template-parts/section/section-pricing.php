@@ -58,7 +58,8 @@ function currency_switch() {
 function calendly_modal() {
 	?>
 	<div class="flex flex-col items-start max-w-[1000px] w-full justify-center h-[90%]">
-		<div id="calendlyDiv" class="hidden max-w-[1000px] w-full h-[800px]" @click.away="modalOpen=false"></div>
+		<div id="calendlyDiv" class="hidden max-w-[1000px] w-full h-[800px]" @click.away="modalOpen=false">
+		</div>
 	</div>
 	<?php
 }

@@ -1915,11 +1915,6 @@ div.wpcf7-validation-errors {
   margin-bottom: 4px;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .-ml-\[1px\] {
   margin-left: -1px;
 }
@@ -2040,10 +2035,6 @@ div.wpcf7-validation-errors {
   display: flex;
 }
 
-.\!flex {
-  display: flex !important;
-}
-
 .inline-flex {
   display: inline-flex;
 }
@@ -2062,10 +2053,6 @@ div.wpcf7-validation-errors {
 
 .h-0\.5 {
   height: 0.125rem;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .h-2 {
@@ -2116,6 +2103,10 @@ div.wpcf7-validation-errors {
   height: 30px;
 }
 
+.h-\[350px\] {
+  height: 350px;
+}
+
 .h-\[40px\] {
   height: 40px;
 }
@@ -2126,6 +2117,10 @@ div.wpcf7-validation-errors {
 
 .h-\[52px\] {
   height: 52px;
+}
+
+.h-\[57px\] {
+  height: 57px;
 }
 
 .h-\[62px\] {
@@ -2156,14 +2151,6 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.h-\[57px\] {
-  height: 57px;
-}
-
-.h-\[350px\] {
-  height: 350px;
-}
-
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -2186,10 +2173,6 @@ div.wpcf7-validation-errors {
 
 .w-1\/4 {
   width: 25%;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .w-2 {
@@ -2268,6 +2251,10 @@ div.wpcf7-validation-errors {
   width: 46px;
 }
 
+.w-\[57px\] {
+  width: 57px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -2283,10 +2270,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[57px\] {
-  width: 57px;
 }
 
 .min-w-\[12\.5px\] {
@@ -2768,6 +2751,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(88 221 41 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#88C941\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(136 201 65 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#f1f1f1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -2803,9 +2791,9 @@ div.wpcf7-validation-errors {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#88C941\] {
+.bg-slate-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(136 201 65 / var(--tw-bg-opacity));
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
@@ -3058,11 +3046,6 @@ div.wpcf7-validation-errors {
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-lightGray {
-  --tw-text-opacity: 1;
-  color: rgb(233 233 233 / var(--tw-text-opacity));
 }
 
 .text-lightGrayBorder {
@@ -3345,11 +3328,6 @@ div.wpcf7-validation-errors {
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-50:hover {
-  --tw-text-opacity: 1;
-  color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-800:hover {

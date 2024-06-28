@@ -178,7 +178,15 @@ document.querySelectorAll('.pricing-button').forEach((button) => {
 		const value = e.target.value;
 
 		Calendly.initPopupWidget({
-			url: `https://calendly.com/tomasatplement/intro-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${value}`,
+			url: `https://calendly.com/plement/intro-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${value}`,
+		});
+	});
+});
+
+document.querySelectorAll('.contact-button').forEach((button) => {
+	button.addEventListener('click', () => {
+		Calendly.initPopupWidget({
+			url: `https://calendly.com/plement/introduction-call-1?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623`,
 		});
 	});
 });
@@ -207,7 +215,7 @@ document.querySelectorAll('.standalone-button').forEach((button) => {
 		});
 
 		Calendly.initPopupWidget({
-			url: `https://calendly.com/tomasatplement/introduction-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&month=2024-06&a2=${values.join(',')}`,
+			url: `https://calendly.com/plement/introduction-call?hide_gdpr_banner=1&text_color=272727&primary_color=ed5623&a2=${values.join(',')}`,
 		});
 	});
 });
