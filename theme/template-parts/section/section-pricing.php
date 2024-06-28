@@ -14,20 +14,22 @@ function pricing_header( $pricing_content ) {
 		</h2>
 		<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
 			<div class="relative flex w-full p-1 bg-white rounded-full">
-				<span class="absolute inset-0 m-1 pointer-events-none bg-[#f1f1f1] rounded-full" aria-hidden="true">
+				<span
+					class="absolute inset-0 m-1 pointer-events-none bg-[#F8F8FA]  transition-all duration-300 rounded-full"
+					aria-hidden="true">
 					<span
 						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-150 ease-in-out"
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
 				</span>
 				<button class="relative flex-1 py-4 rounded-full font-semibold transition-colors duration-150 ease-in-out"
-					:class="isPackages ? 'text-white' : 'text-textBlack'" @click="isPackages = true"
-					:aria-pressed="isPackages">
+					:class="isPackages ? 'text-white' : 'text-textBlack hover:bg-[#f1f1f1] duration-300'"
+					@click="isPackages = true" :aria-pressed="isPackages">
 					<?php esc_html_e( 'Packages', 'plmt' ) ?>
 				</button>
 				<button
 					class="relative flex-1 font-semibold py-4 rounded-full transition-colors duration-150 ease-in-out w-max"
-					:class="isPackages ? 'text-textBlack' : 'text-white'" @click="isPackages = false"
-					:aria-pressed="isPackages">
+					:class="isPackages ? 'text-textBlack hover:bg-[#f1f1f1] duration-300' : 'text-white'"
+					@click="isPackages = false" :aria-pressed="isPackages">
 					<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
 				</button>
 			</div>
