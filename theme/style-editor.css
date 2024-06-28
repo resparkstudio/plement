@@ -1592,6 +1592,10 @@ div.wpcf7-validation-errors {
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -1825,6 +1829,14 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
+.w-1\/6 {
+  width: 16.666667%;
+}
+
+.w-1\/5 {
+  width: 20%;
+}
+
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
 }
@@ -1943,6 +1955,10 @@ div.wpcf7-validation-errors {
 
 .grow {
   flex-grow: 1;
+}
+
+.table-fixed {
+  table-layout: fixed;
 }
 
 .translate-x-0 {
@@ -2094,8 +2110,16 @@ div.wpcf7-validation-errors {
   flex-wrap: wrap;
 }
 
+.content-end {
+  align-content: flex-end;
+}
+
 .items-start {
   align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -2104,6 +2128,10 @@ div.wpcf7-validation-errors {
 
 .items-baseline {
   align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
 }
 
 .justify-end {
@@ -2470,6 +2498,11 @@ div.wpcf7-validation-errors {
   padding-bottom: 20px;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -2504,6 +2537,10 @@ div.wpcf7-validation-errors {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -3394,6 +3431,10 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[166px\] {
     padding-top: 166px;
+  }
+
+  .lg\:pt-\[76px\] {
+    padding-top: 76px;
   }
 
   .lg\:text-left {

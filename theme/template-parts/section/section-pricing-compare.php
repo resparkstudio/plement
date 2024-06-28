@@ -9,7 +9,7 @@ if ( ! isset( $package_comparison_data ) || empty( $package_comparison_data ) ) 
 function minimal_package_card( $package ) {
 	?>
 	<a href="#pricing"
-		class=" sticky top-0 w-full flex items-center gap-[6px] font-medium justify-center group text-lg hover:text-accent transition-colors duration-300">
+		class="w-1/5 flex items-center gap-[6px] font-medium justify-center group text-lg hover:text-accent transition-colors duration-300">
 		<?php echo esc_attr( $package['title'] ) ?>
 		<div class="z-1 flex justify-center items-center relative overflow-hidden">
 			<div
@@ -165,24 +165,27 @@ function comparison_footer_rows( $footer_rows ) {
 		</svg>
 	</button>
 	<div x-show="comparisonAccordionOpen" x-collapse x-cloak>
-		<div class="grid grid-cols-5 gap-6 overflow-x-auto pt-10 lg:pt-24">
-			<h2>
-
-			</h2>
-			<?php foreach ( $pricing_data['packages']['packages_list'] as $package ) :
-				minimal_package_card( $package );
-			endforeach; ?>
-			<?php
-			foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
-				?>
-				<div class="col-span-5" x-data="{accordionOpen: true}">
-					<?php pricing_accordion_head( $feature_group ) ?>
-					<?php pricing_accordion_body( $feature_group['features'] ) ?>
+		<div class="lg:pt-[76px]">
+			<div class="sticky top-0 w-full z-[1]">
+				<div class="flex justify-end items-end h-auto bg-white py-5">
+					<?php foreach ( $pricing_data['packages']['packages_list'] as $package ) :
+						minimal_package_card( $package );
+					endforeach; ?>
 				</div>
+			</div>
+			<div class="grid grid-cols-5 gap-6 overflow-x-auto">
 				<?php
-			endforeach; ?>
-			<div class="col-span-5">
-				<?php comparison_footer_rows( $package_comparison_data['footer_rows'] ) ?>
+				foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
+					?>
+					<div class="col-span-5" x-data="{accordionOpen: true}">
+						<?php pricing_accordion_head( $feature_group ) ?>
+						<?php pricing_accordion_body( $feature_group['features'] ) ?>
+					</div>
+					<?php
+				endforeach; ?>
+				<div class="col-span-5">
+					<?php comparison_footer_rows( $package_comparison_data['footer_rows'] ) ?>
+				</div>
 			</div>
 		</div>
 	</div>
