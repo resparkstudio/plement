@@ -23,7 +23,7 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script>
 	tippy('[data-tippy-content]', {
-		theme: 'light',
+		theme: 'custom',
 	});
 </script>
 <!-- Start cookieyes banner -->

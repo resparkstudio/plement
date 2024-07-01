@@ -46,7 +46,7 @@ function integration_card( $integration ) {
 
 		<div class="flex items-center flex-col text-center w-full">
 			<h3 class="mb-3 lg:mb-4"><?php echo esc_html( $integrations_content['bottom']['heading'] ) ?></h3>
-			<p class="font-medium max-w-[343px] text-textGray text-lg mb-6">
+			<p class="font-medium max-w-[415px] text-textGray text-lg mb-6">
 				<?php echo esc_html( $integrations_content['bottom']['description'] ) ?>
 			</p>
 			<a href='<?php echo esc_url( home_url( '/contact-us' ) ) ?>' class='button group'>

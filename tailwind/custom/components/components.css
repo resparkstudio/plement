@@ -221,3 +221,11 @@ div.wpcf7-validation-errors {
 .calendly-overlay .calendly-popup {
 	@apply !h-[870px] !max-h-[870px];
 }
+
+.faq-answer {
+	@apply text-textGray;
+}
+
+.faq-answer a {
+	@apply text-accent hover:text-accentHover transition-colors duration-300;
+}

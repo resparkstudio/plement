@@ -7,13 +7,15 @@
  * @package Plement
  */
 
+$front_page_id      = get_option( 'page_on_front' );
 $contact_us_page_id = get_page_by_path( 'contact-us' )->ID;
 
 $contact_information = get_field( 'information', $contact_us_page_id );
+$faq_content         = get_field( 'faq', $front_page_id );
 
 ?>
 
-<footer id="colophon" class="bg-accent text-white h-[664px] z-0 relative lg:h-[495px] " x-data="{calendlyOpen: false}">
+<footer id="colophon" class="bg-accent text-white h-[700px] z-0 relative lg:h-[495px] " x-data="{calendlyOpen: false}">
 	<div class="fixed bottom-0 w-full  pt-16 lg:pt-[166px] pb-6 lg:pb-[46px]">
 		<div class="container flex flex-col gap-10 lg:flex-row justify-between lg:mb-[104px]">
 			<div>
@@ -49,7 +51,7 @@ $contact_information = get_field( 'information', $contact_us_page_id );
 					<span class="font-medium mb-2 inline-block"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
 					<div class="flex items-center gap-4">
 						<div x-data="{
-							copyText: 'hello@plement.io',
+							copyText: '<?php echo esc_html( $faq_content['email'] ) ?>',
 							copyNotification: false,
 							copyToClipboard() {
 								navigator.clipboard.writeText(this.copyText);
@@ -61,19 +63,23 @@ $contact_information = get_field( 'information', $contact_us_page_id );
 							}
 						}" class="relative z-20 flex items-center">
 							<button @click="copyToClipboard();" class="flex items-center gap-2 justify-center">
-								<svg x-show="!copyNotification" class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
-									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+								<svg x-show="!copyNotification" x-cloak
+									class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 448 512">
 									<path fill="currentColor"
 										d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z" />
 								</svg>
-								<svg x-show="copyNotification" class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
+								<svg x-show="copyNotification" x-cloak class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
 									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 									<path fill="currentColor"
 										d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" />
 								</svg>
-								<span x-show="!copyNotification" class="text-xl font-semibold">hello@plement.io</span>
-								<span x-show="copyNotification" class="text-xl font-semibold">Email
-									copied</span>
+								<span x-show="!copyNotification" x-cloak class="text-xl font-semibold">
+									<?php echo esc_html( $faq_content['email'] ) ?>
+								</span>
+								<span x-show="copyNotification" x-cloak class="text-xl font-semibold">
+									<?php esc_html_e( 'Email copied', 'plmt' ) ?>
+								</span>
 							</button>
 						</div>
 						<span class="bg-white w-[1px] h-[26px]"></span>
@@ -110,11 +116,25 @@ $contact_information = get_field( 'information', $contact_us_page_id );
 			</div>
 		</div>
 		<div
-			class="container border-t border-t-[#FFFFFF4D] pt-6 gap-4 text-sm flex flex-col-reverse md:flex-row md:gap-[20px]">
-			<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
-			<span class="hidden md:inline">|</span>
-			<a
-				href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+			class="container border-t border-t-[#FFFFFF4D] pt-6 gap-4 text-sm flex flex-row justify-between w-full items-end md:items-center md:gap-[20px]">
+
+			<div class="flex flex-col-reverse md:flex-row gap-4 md:gap-[20px]">
+				<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
+				<span class="hidden md:inline">|</span>
+				<a
+					href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+			</div>
+			<div>
+				<a href="http://respark.digital/" target="_blank">
+
+					<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M6.12161 5.85922C5.19456 6.78486 4.07607 7.53838 2.87061 8.00017C4.07839 8.46288 5.19888 9.21842 6.12699 10.1465C7.05515 11.0747 7.81072 12.1952 8.27344 13.403C8.73615 12.1952 9.49173 11.0747 10.4199 10.1465C11.348 9.21837 12.4686 8.46281 13.6764 8.0001C12.471 7.5383 11.3526 6.7848 10.4256 5.85918C9.49486 4.9298 8.73723 3.80706 8.27367 2.59667C7.8101 3.80707 7.05242 4.92982 6.12161 5.85922Z"
+							stroke="white" />
+					</svg>
+				</a>
+
+			</div>
 		</div>
 		<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
 

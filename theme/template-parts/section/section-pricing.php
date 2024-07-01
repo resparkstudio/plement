@@ -44,13 +44,13 @@ function pricing_header( $pricing_content ) {
 
 function currency_switch() {
 	?>
-	<div class=" w-full  justify-end hidden md:flex md:mb-6">
-		<form class="max-w-sm w-full justify-end md:flex items-center gap-2 ">
+	<div class="w-full justify-center md:justify-end flex mb-6 h-[30px] md:h-auto">
+		<form class=" w-full justify-center md:justify-end flex items-center gap-2 ">
 			<label for="currency"
-				class="block text-sm font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
+				class="w-max block text-sm font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
 			<select id="currency" x-model="currency" class="bg-lightGrayBg max-w-20 text-sm rounded-lg block w-full p-2.5">
-				<option value="usd" selected>USD</option>
-				<option value="eur">EUR</option>
+				<option value="eur" selected>EUR</option>
+				<option value="usd">USD</option>
 			</select>
 		</form>
 	</div>
@@ -82,7 +82,7 @@ function calendly_modal() {
 						</svg>
 					</button>
 					<div class="flex flex-col items-start justify-center">
-						<div id="calendlyDiv" class="h-[600px] lg:h-[750px] min-w-[320px] w-full"></div>
+						<div id="calendlyDiv" class="h-[600px] lg:h-[800px] min-w-[320px] w-full"></div>
 					</div>
 				</div>
 			</div>
@@ -399,7 +399,7 @@ function standalone_solution( $standalone_solutions ) {
 ?>
 
 	<section class="pb-16 lg:pb-36"
-		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'usd' }">
+		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'eur' }">
 		<div id="pricing" class="relative">
 			<div class=" relative flex flex-col justify-center overflow-hidden">
 				<div>
@@ -421,11 +421,11 @@ function standalone_solution( $standalone_solutions ) {
 				</div>
 			</div>
 		</div>
-		<div class="hidden lg:block">
+		<div x-show="isPackages" class="hidden lg:block">
 			<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
 		</div>
 
-		<div class="lg:hidden">
+		<div x-show="isPackages" class="lg:hidden">
 			<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
 		</div>
 		<div>

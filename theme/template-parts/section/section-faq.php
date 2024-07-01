@@ -26,9 +26,9 @@ function faq_item( $item ) {
 			<h4 class="text-left text-xl font-medium lg:text-[22px]"><?php echo esc_html( $item['question'] ) ?></h4>
 		</button>
 		<div x-show="activeAccordion==id" x-collapse x-cloak class="ml-[30px] w-full px-0 overflow-hidden pr-4">
-			<p class="text-lg font-medium text-darkGray mt-4">
-				<?php echo esc_html( $item['answer'] ) ?>
-			</p>
+			<div class="faq-answer text-lg font-medium mt-4">
+				<?php echo $item['answer'] ?>
+			</div>
 		</div>
 	</div>
 	<?php
@@ -48,7 +48,7 @@ function faq_item( $item ) {
 				<span
 					class="text-textGray font-medium mb-2 inline-block"><?php esc_html_e( 'Still got a question?', 'plmt' ) ?></span>
 				<div x-data="{
-							copyText: 'hello@plement.io',
+							copyText: '<?php echo esc_html( $faq_content['email'] ) ?>',
 							copyNotification: false,
 							copyToClipboard() {
 								navigator.clipboard.writeText(this.copyText);
@@ -60,19 +60,20 @@ function faq_item( $item ) {
 							}
 						}" class="relative z-20 flex items-center">
 					<button @click="copyToClipboard();" class="flex items-center gap-2 justify-center">
-						<svg x-show="!copyNotification" class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
+						<svg x-show="!copyNotification" x-cloak class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
 							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<path fill="currentColor"
 								d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z" />
 						</svg>
-						<svg x-show="copyNotification" class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
+						<svg x-show="copyNotification" x-cloak class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
 							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<path fill="currentColor"
 								d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" />
 						</svg>
-						<span x-show="!copyNotification" class="text-xl font-semibold">hello@plement.io</span>
-						<span x-show="copyNotification" class="text-xl font-semibold">Email
-							copied</span>
+						<span x-show="!copyNotification" x-cloak
+							class="text-xl font-semibold"><?php echo esc_html( $faq_content['email'] ) ?></span>
+						<span x-show="copyNotification" x-cloak
+							class="text-xl font-semibold"><?php esc_html_e( 'Email copied', 'plmt' ) ?></span>
 					</button>
 				</div>
 			</div>

@@ -52,6 +52,7 @@ function initSwiper() {
 			bulletActiveClass: 'swiper-pagination-bullet-active',
 			bulletClass: 'swiper-pagination-bullet',
 		},
+		autoHeight: true,
 	});
 
 	packageSwiper.controller.control = packageCompareSwiper;
@@ -236,7 +237,7 @@ const handleContactFormTransition = function () {
 		inputs.forEach(function (input) {
 			const label = input.parentElement.querySelector('label');
 			const inputField = input.querySelector('.wpcf7-form-control');
-			console.log(label);
+
 			if (!label) return;
 
 			inputField.addEventListener('input', function () {

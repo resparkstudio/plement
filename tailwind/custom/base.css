@@ -28,3 +28,30 @@ h2 {
 h3 {
 	@apply text-[1.5rem] leading-[31px] font-medium lg:text-[2rem] lg:leading-[41px];
 }
+
+.tippy-box[data-theme~="custom"] {
+	box-shadow: 5px 5px 30px -5px #012d191a;
+	background-color: white;
+	color: #272727;
+	padding: 22px;
+}
+
+.tippy-box[data-theme~="custom"][data-placement^="top"] > .tippy-arrow::before {
+	border-top-color: white;
+}
+.tippy-box[data-theme~="custom"][data-placement^="bottom"]
+	> .tippy-arrow::before {
+	border-bottom-color: white;
+}
+.tippy-box[data-theme~="custom"][data-placement^="left"]
+	> .tippy-arrow::before {
+	border-left-color: white;
+}
+.tippy-box[data-theme~="custom"][data-placement^="right"]
+	> .tippy-arrow::before {
+	border-right-color: white;
+}
+
+.tippy-box[data-theme~="custom"] > .tippy-svg-arrow {
+	fill: white;
+}

@@ -157,7 +157,7 @@ function comparison_footer_rows( $footer_rows ) {
 <div class="container pt-10 lg:pt-16" x-data="{comparisonAccordionOpen: false}">
 	<button @click="comparisonAccordionOpen=!comparisonAccordionOpen"
 		class="flex gap-1 items-center mx-auto w-max text-lg font-semibold underline hover:text-accent transition-colors duration-300 ">
-		<?php esc_html_e( "Compare Packages", 'plmt' ) ?>
+		<?php echo esc_html( $package_comparison_data['compare_button_text'] ) ?>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': comparisonAccordionOpen }"
 			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
 			stroke-linecap="round" stroke-linejoin="round">

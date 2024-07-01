@@ -69,7 +69,7 @@ function success_modal() {
 			</div>
 			<div class="relative" x-data="{successModalOpen: false}" @flash.window="
 						successModalOpen = true;
-						setTimeout(() => successModalOpen = false, 2000);
+						setTimeout(() => successModalOpen = false, 4000);
 					">
 				<div class="absolute bg-lightGrayBg h-full w-1/4 left-0 top-0 hidden lg:block"></div>
 				<div
