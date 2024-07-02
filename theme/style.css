@@ -657,6 +657,7 @@ h3 {
   background-color: white;
   color: #272727;
   padding: 22px;
+  white-space: break-spaces;
 }
 
 .tippy-box[data-theme~="custom"][data-placement^="top"] > .tippy-arrow::before {
@@ -2559,10 +2560,6 @@ div.wpcf7-validation-errors {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-
-.resize {
-  resize: both;
 }
 
 .grid-cols-1 {
