@@ -2199,6 +2199,10 @@ div.wpcf7-validation-errors {
   min-height: 12.5px;
 }
 
+.min-h-\[72px\] {
+  min-height: 72px;
+}
+
 .\!w-full {
   width: 100% !important;
 }
