@@ -99,7 +99,7 @@ function faq_item( $item ) {
 		<span
 			class="text-textGray font-medium inline-block mb-2"><?php esc_html_e( 'Still got a question?', 'plmt' ) ?></span>
 		<div x-data="{
-							copyText: 'hello@plement.io',
+							copyText: '<?php echo esc_html( $faq_content['email'] ) ?>',
 							copyNotification: false,
 							copyToClipboard() {
 								navigator.clipboard.writeText(this.copyText);
@@ -121,9 +121,10 @@ function faq_item( $item ) {
 					<path fill="currentColor"
 						d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" />
 				</svg>
-				<span x-show="!copyNotification" class="text-xl lg:text-[1.5rem] font-bold">hello@plement.io</span>
-				<span x-show="copyNotification" class="text-xl lg:text-[1.5rem] font-bold">Email
-					copied</span>
+				<span x-show="!copyNotification"
+					class="text-xl lg:text-[1.5rem] font-bold"><?php echo esc_html( $faq_content['email'] ) ?></span>
+				<span x-show="copyNotification"
+					class="text-xl lg:text-[1.5rem] font-bold"><?php esc_html_e( 'Email copied', 'plmt' ) ?></span>
 			</button>
 		</div>
 	</div>
