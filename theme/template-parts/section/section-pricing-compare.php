@@ -52,8 +52,8 @@ function pricing_accordion_body( $features ) {
 	?>
 	<div x-show="accordionOpen" x-collapse x-cloak>
 		<?php foreach ( $features as $feature ) : ?>
-			<div class="grid grid-cols-5 p-4 border-b border-lightGray">
-				<div class="flex items-center gap-3">
+			<div class="grid grid-cols-5 border-b border-lightGray">
+				<div class="flex items-center gap-3 p-4">
 					<div class="font-medium max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
@@ -72,7 +72,7 @@ function pricing_accordion_body( $features ) {
 					<?php endif; ?>
 				</div>
 				<?php foreach ( $feature['columns'] as $column ) : ?>
-					<div class=" justify-self-center flex flex-col gap-2 items-center justify-center">
+					<div class=" justify-self-center flex flex-col gap-2 items-center justify-center p-4">
 						<?php if ( $column['included'] ) : ?>
 							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<g clip-path="url(#clip0_515_6320)">
@@ -104,8 +104,8 @@ function comparison_footer_rows( $footer_rows ) {
 	?>
 	<div>
 		<?php foreach ( $footer_rows as $footer_row ) : ?>
-			<div class="grid grid-cols-5 px-4 py-3 border-b border-lightGray last-of-type:border-b-0">
-				<div class="flex items-center gap-3">
+			<div class="grid grid-cols-5 py-3 border-b border-lightGray last-of-type:border-b-0">
+				<div class="flex items-center gap-3 px-4">
 					<div class="font-medium"><?php echo esc_html( $footer_row['title'] ) ?></div>
 					<?php if ( isset( $footer_row['popup_text'] ) && ! empty( $footer_row['popup_text'] ) ) : ?>
 						<div class="relative">
@@ -124,7 +124,7 @@ function comparison_footer_rows( $footer_rows ) {
 					<?php endif; ?>
 				</div>
 				<?php foreach ( $footer_row['columns'] as $column ) : ?>
-					<div class=" justify-self-center flex flex-col gap-2 items-center justify-center">
+					<div class=" justify-self-center flex flex-col gap-2 items-center justify-center px-4">
 						<?php if ( $column['included'] ) : ?>
 							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<g clip-path="url(#clip0_515_6320)">
