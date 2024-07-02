@@ -37,7 +37,14 @@ function mobile_minimal_package_card( $package ) {
 
 function mobile_pricing_accordion_head( $feature_group ) {
 	?>
-	<button @click="mobileAccordionOpen=!mobileAccordionOpen"
+	<button @click="() => {
+		mobileAccordionOpen=!mobileAccordionOpen;
+		setTimeout(() => {
+			const swiper = document.querySelector('.package-compare-mobile').swiper;
+			swiper.updateAutoHeight();
+		}, 300);
+	}
+	"
 		class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
 		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': mobileAccordionOpen }"

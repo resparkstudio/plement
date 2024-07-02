@@ -53,6 +53,7 @@ function initSwiper() {
 			bulletClass: 'swiper-pagination-bullet',
 		},
 		autoHeight: true,
+		resizeObserver: true,
 	});
 
 	packageSwiper.controller.control = packageCompareSwiper;

@@ -1732,8 +1732,8 @@ div.wpcf7-validation-errors {
   height: 62px;
 }
 
-.h-\[664px\] {
-  height: 664px;
+.h-\[700px\] {
+  height: 700px;
 }
 
 .h-auto {
@@ -1746,10 +1746,6 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[700px\] {
-  height: 700px;
 }
 
 .min-h-\[12\.5px\] {
@@ -2112,6 +2108,10 @@ div.wpcf7-validation-errors {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-1 {
@@ -3063,10 +3063,6 @@ div.wpcf7-validation-errors {
     margin-bottom: 1.25rem;
   }
 
-  .md\:mb-6 {
-    margin-bottom: 1.5rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -3095,14 +3091,6 @@ div.wpcf7-validation-errors {
     height: auto;
   }
 
-  .md\:w-full {
-    width: 100%;
-  }
-
-  .md\:max-w-sm {
-    max-width: 24rem;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3121,10 +3109,6 @@ div.wpcf7-validation-errors {
 
   .md\:justify-end {
     justify-content: flex-end;
-  }
-
-  .md\:justify-between {
-    justify-content: space-between;
   }
 
   .md\:gap-14 {
