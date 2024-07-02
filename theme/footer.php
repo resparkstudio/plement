@@ -39,6 +39,7 @@
 			interactive: true,
 			trigger: 'click',
 			hideOnClick: 'toggle',
+			maxWidth: 'none',
 			onShow(instance) {
 				instance.popper.querySelector('button').addEventListener('click', () => {
 					instance.hide();
