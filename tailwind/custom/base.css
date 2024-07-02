@@ -39,6 +39,7 @@ h3 {
 	color: #272727;
 	padding: 22px;
 	white-space: break-spaces;
+	width: 300px;
 }
 
 .tippy-box[data-theme~="custom"][data-placement^="top"] > .tippy-arrow::before {

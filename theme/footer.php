@@ -38,7 +38,6 @@
 			content: `${content} <button class='tippy-close-button'>${xIcon}</button>`,
 			interactive: true,
 			trigger: 'click',
-			hideOnClick: 'toggle',
 			maxWidth: 'none',
 			onShow(instance) {
 				instance.popper.querySelector('button').addEventListener('click', () => {
