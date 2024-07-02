@@ -29,6 +29,10 @@ h3 {
 	@apply text-[1.5rem] leading-[31px] font-medium lg:text-[2rem] lg:leading-[41px];
 }
 
+.tippy-close-button {
+	@apply absolute top-0 right-0 translate-x-[10px] translate-y-[-10px];
+}
+
 .tippy-box[data-theme~="custom"] {
 	box-shadow: 5px 5px 30px -5px #012d191a;
 	background-color: white;
