@@ -34,12 +34,7 @@ h3 {
 }
 
 .tippy-box[data-theme~="custom"] {
-	box-shadow: 5px 5px 30px -5px #012d191a;
-	background-color: white;
-	color: #272727;
-	padding: 22px;
-	white-space: break-spaces;
-	width: 300px;
+	@apply shadow-testimonial bg-white text-textBlack p-4 lg:p-[22px] whitespace-break-spaces w-[300px];
 }
 
 .tippy-box[data-theme~="custom"][data-placement^="top"] > .tippy-arrow::before {

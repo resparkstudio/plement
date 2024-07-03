@@ -267,11 +267,7 @@ handleContactFormTransition();
 const handleScrollIntoView = () => {
 	const hash = window.location.hash.substring(1);
 	if (hash) {
-		const element = document.getElementById(hash);
-		console.log(element);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
+		document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 	}
 };
 

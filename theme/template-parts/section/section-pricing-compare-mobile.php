@@ -64,15 +64,14 @@ function mobile_pricing_accordion_body( $features, $index ) {
 				<div class="flex items-center gap-3">
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
-							<button data-content="<?php echo esc_attr( $feature['popup_text'] ) ?>"
-								class="tippy-button cursor-pointer font-medium max-w-[123px] sm:max-w-[243px] underline text-left">
-								<?php echo esc_html( $feature['title'] ) ?>
-							</button>
+							<div data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" class="cursor-pointer">
+								<div class="font-medium max-w-[123px]  sm:max-w-[243px] underline">
+									<?php echo esc_html( $feature['title'] ) ?>
+								</div>
+							</div>
 						</div>
 					<?php else : ?>
-						<div class="font-medium max-w-[123px]  sm:max-w-[243px]">
-							<?php echo esc_html( $feature['title'] ) ?>
-						</div>
+						<div class="font-medium max-w-[123px]  sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php endif; ?>
 				</div>
 				<div class="justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
@@ -111,15 +110,17 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 				<div class="flex items-center gap-3">
 					<?php if ( isset( $footer_row['popup_text'] ) && ! empty( $footer_row['popup_text'] ) ) : ?>
 						<div class="relative">
-							<button data-content="<?php echo esc_attr( $footer_row['popup_text'] ) ?>"
-								class="tippy-button cursor-pointer font-medium max-w-[123px] sm:max-w-[243px] underline text-left">
-								<?php echo esc_html( $footer_row['title'] ) ?>
-							</button>
+							<div data-tippy-content="<?php echo esc_attr( $footer_row['popup_text'] ) ?>" class="cursor-pointer">
+								<div class="font-medium max-w-[123px]  sm:max-w-[243px] underline">
+									<?php echo esc_html( $footer_row['title'] ) ?>
+								</div>
+							</div>
+
 						</div>
 					<?php else : ?>
-						<div class="font-medium max-w-[123px]  sm:max-w-[243px]">
-							<?php echo esc_html( $footer_row['title'] ) ?>
+						<div class="font-medium max-w-[123px]  sm:max-w-[243px]"><?php echo esc_html( $footer_row['title'] ) ?>
 						</div>
+
 					<?php endif; ?>
 				</div>
 				<div class=" justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
