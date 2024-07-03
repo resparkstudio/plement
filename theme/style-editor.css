@@ -1775,6 +1775,10 @@ div.wpcf7-validation-errors {
   min-height: 72px;
 }
 
+.min-h-\[120px\] {
+  min-height: 120px;
+}
+
 .\!w-full {
   width: 100% !important;
 }
@@ -2161,6 +2165,10 @@ div.wpcf7-validation-errors {
 
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -3136,6 +3144,10 @@ div.wpcf7-validation-errors {
     height: auto;
   }
 
+  .md\:min-h-\[72px\] {
+    min-height: 72px;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3615,6 +3627,10 @@ div.wpcf7-validation-errors {
 
   .xl\:mr-6 {
     margin-right: 1.5rem;
+  }
+
+  .xl\:min-h-\[72px\] {
+    min-height: 72px;
   }
 
   .xl\:flex-row {
