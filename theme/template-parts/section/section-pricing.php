@@ -120,7 +120,7 @@ function terms_modal( $terms ) {
 					</button>
 					<div class="flex flex-col justify-center items-center gap-4 w-max mx-auto">
 						<h3><?php echo esc_html( $terms['heading'] ) ?></h3>
-						<p class="max-w-[740px] text-lg font-medium text-center whitespace-break-spaces">
+						<p class="max-w-[740px] text-lg font-medium text-center whitespace-pre-line">
 							<?php echo esc_html( $terms['description'] ) ?>
 						</p>
 					</div>

@@ -2296,6 +2296,10 @@ div.wpcf7-validation-errors {
   overflow-x: auto;
 }
 
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
 .whitespace-break-spaces {
   white-space: break-spaces;
 }
