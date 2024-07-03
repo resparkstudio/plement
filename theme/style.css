@@ -4071,6 +4071,12 @@ div.wpcf7-validation-errors {
   }
 }
 
+@media (min-width: 1000px) {
+  .min-\[1000px\]\:min-h-\[96px\] {
+    min-height: 96px;
+  }
+}
+
 @media (min-width: 1312px) {
   .xl\:mb-0 {
     margin-bottom: 0px;
