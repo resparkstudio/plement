@@ -229,7 +229,7 @@ function package_cards( $packages ) {
 								<span class="font-medium text-[2rem] leading-[41px]"
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
-							<div class="mb-6 text-textGray font-medium min-h-[120px] min-[1000px]:min-h-[96px] xl:min-h-[72px]">
+							<div class="mb-6 text-textGray font-medium min-h-[120px] min-[1070px]:min-h-[96px] xl:min-h-[72px]">
 								<?php echo esc_html( $package['description'] ) ?>
 							</div>
 							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
