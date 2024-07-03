@@ -88,7 +88,7 @@ function pricing_accordion_body( $features ) {
 							</svg>
 						<?php endif; ?>
 						<?php if ( isset( $column['note'] ) && ! empty( $column['note'] ) ) : ?>
-							<p class="text-accent font-medium">
+							<p class="text-accent font-medium text-center">
 								<?php echo esc_html( $column['note'] ) ?>
 							</p>
 						<?php endif; ?>

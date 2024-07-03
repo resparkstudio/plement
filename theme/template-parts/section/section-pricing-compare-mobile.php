@@ -147,7 +147,7 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 						</svg>
 					<?php endif; ?>
 					<?php if ( isset( $footer_row['columns'][ $index ]['note'] ) && ! empty( $footer_row['columns'][ $index ]['note'] ) ) : ?>
-						<p class="text-accent font-medium">
+						<p class="text-accent font-medium text-center">
 							<?php echo esc_html( $footer_row['columns'][ $index ]['note'] ) ?>
 						</p>
 					<?php endif; ?>
