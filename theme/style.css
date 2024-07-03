@@ -2447,6 +2447,10 @@ div.wpcf7-validation-errors {
   max-width: 24rem;
 }
 
+.max-w-\[740px\] {
+  max-width: 740px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2739,6 +2743,10 @@ div.wpcf7-validation-errors {
   overflow-x: auto;
 }
 
+.whitespace-break-spaces {
+  white-space: break-spaces;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -2915,6 +2923,10 @@ div.wpcf7-validation-errors {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-20 {
+  padding: 5rem;
 }
 
 .px-0 {
