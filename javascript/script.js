@@ -109,9 +109,6 @@ function debounce(func, wait) {
 	};
 }
 
-initSwiper();
-initStandalone();
-
 window.addEventListener('resize', debounce(initStandalone, 100));
 
 const processLineAnimation = function () {
@@ -171,9 +168,6 @@ const processNumberAnimation = function () {
 		);
 	});
 };
-
-processNumberAnimation();
-processLineAnimation();
 
 document.querySelectorAll('.pricing-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
@@ -262,8 +256,6 @@ const handleContactFormTransition = function () {
 	}
 };
 
-handleContactFormTransition();
-
 const handleScrollIntoView = () => {
 	const hash = window.location.hash.substring(1);
 	if (hash) {
@@ -271,4 +263,26 @@ const handleScrollIntoView = () => {
 	}
 };
 
+const getUserCountry = async () => {
+	const response = await fetch('https://ipapi.co/json/');
+	const data = await response.json();
+	return data;
+};
+
+const handleCountry = async () => {
+	const response = await getUserCountry();
+
+	const country = response.country;
+
+	if (country === 'US') {
+		window.dispatchEvent(new CustomEvent('uscountry'));
+	}
+};
+
+initSwiper();
+initStandalone();
+processNumberAnimation();
+processLineAnimation();
+handleContactFormTransition();
 handleScrollIntoView();
+handleCountry();

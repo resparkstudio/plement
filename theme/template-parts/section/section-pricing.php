@@ -399,7 +399,8 @@ function standalone_solution( $standalone_solutions ) {
 ?>
 
 	<section class="pb-16 lg:pb-36"
-		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'eur' }">
+		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'eur' }"
+		@uscountry.window="currency = 'usd';">
 		<div id="pricing" class="relative">
 			<div class=" relative flex flex-col justify-center overflow-hidden">
 				<div>
