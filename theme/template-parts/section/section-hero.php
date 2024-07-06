@@ -56,17 +56,17 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<?php echo esc_html( $hero_content['hero_bottom']['company_logos']['text'] ) ?>
 			</p>
 			<div
-				class="relative flex overflow-hidden space-x-4 h-[40px] lg:max-w-xl items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
+				class="relative flex overflow-hidden space-x-4 lg:max-w-xl items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
 				<div class='flex space-x-4 animate-loop-scroll items-center'>
 					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain gs' width='125' height='40'>
+							class='max-w-none object-contain gs h-[40px]' width='125' height="40">
 					<?php endforeach; ?>
 				</div>
 				<div class='flex space-x-4 animate-loop-scroll items-center' aria-hidden='true'>
 					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain gs' width='125' height='40'>
+							class='max-w-none object-contain gs h-[40px]' width='125' height="40">
 					<?php endforeach; ?>
 				</div>
 			</div>
