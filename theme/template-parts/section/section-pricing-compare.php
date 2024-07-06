@@ -36,7 +36,7 @@ function minimal_package_card( $package ) {
 function pricing_accordion_head( $feature_group ) {
 	?>
 	<button @click="accordionOpen=!accordionOpen"
-		class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
+		class="refreshScrollTrigger flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
 		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': accordionOpen }" viewBox="0 0 24 24"
 			xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -146,7 +146,7 @@ function comparison_footer_rows( $footer_rows ) {
 
 <div class="container pt-10 lg:pt-16" x-data="{comparisonAccordionOpen: false}">
 	<button @click="comparisonAccordionOpen=!comparisonAccordionOpen"
-		class="flex gap-1 items-center mx-auto w-max text-lg font-semibold underline hover:text-accent transition-colors duration-300 ">
+		class="refreshScrollTrigger flex gap-1 items-center mx-auto w-max text-lg font-semibold underline hover:text-accent transition-colors duration-300 ">
 		<?php echo esc_html( $package_comparison_data['compare_button_text'] ) ?>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': comparisonAccordionOpen }"
 			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"

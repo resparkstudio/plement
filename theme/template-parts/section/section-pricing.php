@@ -21,13 +21,13 @@ function pricing_header( $pricing_content ) {
 						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
 				</span>
 				<button
-					class="relative flex-1 py-4 rounded-full font-semibold hover:transition-colors transition-none duration-300 ease-in-out"
+					class="refreshScrollTrigger relative flex-1 py-4 rounded-full font-semibold hover:transition-colors transition-none duration-300 ease-in-out"
 					:class="isPackages ? 'text-white' : 'text-textBlack hover:bg-[#f1f1f1]'" @click="isPackages = true"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Packages', 'plmt' ) ?>
 				</button>
 				<button
-					class="relative flex-1 font-semibold py-4 rounded-full hover:transition-colors transition-none duration-300 ease-in-out w-max"
+					class="refreshScrollTrigger relative flex-1 font-semibold py-4 rounded-full hover:transition-colors transition-none duration-300 ease-in-out w-max"
 					:class="isPackages ? 'text-textBlack hover:bg-[#f1f1f1]' : 'text-white'" @click="isPackages = false"
 					:aria-pressed="isPackages">
 					<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>

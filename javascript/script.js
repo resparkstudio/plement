@@ -279,6 +279,19 @@ const handleCountry = async () => {
 	}
 };
 
+const refreshScrollTrigger = () => {
+	ScrollTrigger.refresh();
+};
+
+const handleButtonsWithScrollTriggerRefresh = () => {
+	const buttons = document.querySelectorAll('.refreshScrollTrigger');
+	buttons.forEach((button) => {
+		button.addEventListener('click', () =>
+			setTimeout(refreshScrollTrigger, 1000)
+		);
+	});
+};
+
 initSwiper();
 initStandalone();
 processNumberAnimation();
@@ -286,3 +299,4 @@ processLineAnimation();
 handleContactFormTransition();
 handleScrollIntoView();
 handleCountry();
+handleButtonsWithScrollTriggerRefresh();
