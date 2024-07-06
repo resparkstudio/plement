@@ -2453,6 +2453,10 @@ div.wpcf7-validation-errors {
   max-width: 24rem;
 }
 
+.max-w-\[95\%\] {
+  max-width: 95%;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }

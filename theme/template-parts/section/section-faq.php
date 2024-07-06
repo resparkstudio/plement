@@ -25,7 +25,7 @@ function faq_item( $item ) {
 			</div>
 			<h4 class="text-left text-xl font-medium lg:text-[22px]"><?php echo esc_html( $item['question'] ) ?></h4>
 		</button>
-		<div x-show="activeAccordion==id" x-collapse x-cloak class="ml-[30px] w-full px-0 overflow-hidden pr-4">
+		<div x-show="activeAccordion==id" x-collapse x-cloak class="ml-[30px] w-full px-0 overflow-hidden pr-4 max-w-[95%]">
 			<div class="faq-answer text-lg font-medium mt-4">
 				<?php echo $item['answer'] ?>
 			</div>
