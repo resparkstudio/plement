@@ -25,7 +25,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 		<h5 class="text-lg font-medium mb-3"><?php echo esc_html( $testimonial['title'] ) ?></h5>
 		<p class="text-textGray mb-4"><?php echo esc_html( $testimonial['description'] ) ?></p>
 		<div class="font-medium [&_a]:underline">
-			- <?php echo $testimonial['client'] ?>
+			<?php echo $testimonial['client'] ?>
 		</div>
 	</div>
 	<?php
