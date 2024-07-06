@@ -83,7 +83,8 @@ $faq_content         = get_field( 'faq', $front_page_id );
 							</button>
 						</div>
 						<span class="bg-white w-[1px] h-[26px]"></span>
-						<a target="_blank" href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>">
+						<a target="_blank"
+							href="<?php echo esc_url( $contact_information['footer_linkedin']['url'] ) ?>">
 							<svg class=" z-0 w-[20px] h-[20px] lg:w-[24px] lg:h-[25px]" width="24" height="25"
 								viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
