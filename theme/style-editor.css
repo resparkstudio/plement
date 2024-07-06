@@ -3656,3 +3656,7 @@ div.wpcf7-validation-errors {
     padding-top: 0px;
   }
 }
+
+.\[\&_a\]\:underline a {
+  text-decoration-line: underline;
+}
