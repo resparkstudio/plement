@@ -10,7 +10,7 @@ function testimonial_card( $testimonial, $isMobile = false ) {
 		return;
 	}
 	?>
-	<div class="w-[420px] shadow-testimonial py-6 px-4 lg:p-8 <?php echo $isMobile ? '!w-full' : '' ?>">
+	<div class="w-[450px] shadow-testimonial py-6 px-4 lg:p-8 <?php echo $isMobile ? '!w-full' : '' ?>">
 
 		<div class="flex items-center mb-4">
 			<?php for ( $i = 0; $i < 5; $i++ ) : ?>

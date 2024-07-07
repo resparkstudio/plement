@@ -204,3 +204,70 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 		<?php
 }
+
+function plmt_arrow() {
+	?>
+		<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+			<div
+				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
+					viewBox="0 0 24 24">
+					<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+				</svg>
+			</div>
+			<div
+				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
+					viewBox="0 0 24 24">
+					<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+				</svg>
+			</div>
+		</div>
+		<?php
+}
+
+function plmt_link_with_arrow( $url, $text, $config = array() ) {
+	$defaults = array(
+		'classes' => '',
+	);
+
+	$config = wp_parse_args( $config, $defaults );
+
+	$classes = 'button group h-auto py-4 ' . $config['classes'];
+
+	?>
+		<a href='<?php echo esc_url( $url ) ?>' class='<?php echo esc_attr( $classes ) ?>'>
+			<?php echo $text ?>
+			<?php plmt_arrow() ?>
+		</a>
+		<?php
+}
+
+function plmt_button_with_arrow( $on_click, $text, $value, $config = array() ) {
+
+	$variant_map = array(
+		'primary' => 'button',
+		'outlined' => 'button_outlined',
+	);
+
+	$defaults = array(
+		'classes' => '',
+		'variant' => 'primary',
+	);
+
+	$config = wp_parse_args( $config, $defaults );
+
+	$selected_variant = ! empty( $config['variant'] ) ? $config['variant'] : 'primary';
+
+	$classes = 'group justify-center w-full ' . $config['classes'] . ' ' . $variant_map[ $selected_variant ];
+
+	?>
+		<button @click="<?php echo $on_click ?>" class="<?php echo esc_attr( $classes ) ?>"
+			value="<?php echo esc_attr( $value ) ?>">
+			<?php echo $text ?>
+			<?php plmt_arrow() ?>
+		</button>
+		<?php
+}

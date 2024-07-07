@@ -118,7 +118,7 @@ function terms_modal( $terms ) {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-					<div class="flex flex-col justify-center items-center gap-4 w-max mx-auto">
+					<div class="flex flex-col justify-center items-center gap-4 mx-auto w-full">
 						<h3><?php echo esc_html( $terms['heading'] ) ?></h3>
 						<p class="max-w-[740px] text-lg font-medium text-center whitespace-pre-line">
 							<?php echo esc_html( $terms['description'] ) ?>
@@ -158,28 +158,10 @@ function package_cards_mobile( $packages ) {
 							<div class="mb-6 text-textGray font-medium">
 								<?php echo esc_html( $package['description'] ) ?>
 							</div>
-							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
-								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
-								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
-								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-									<div
-										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
-											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-										</svg>
-									</div>
-									<div
-										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
-											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-										</svg>
-									</div>
-								</div>
-							</button>
+							<?php plmt_button_with_arrow( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), $package['title'], array(
+								"classes" => "pricing-button w-full",
+								"variant" => ! $package['is_best_value'] ?? 'outlined',
+							) ) ?>
 						</div>
 						<div>
 							<ul class="text-sm space-y-3 grow prose overflow-hidden">
@@ -232,28 +214,10 @@ function package_cards( $packages ) {
 							<div class="mb-6 text-textGray font-medium min-h-[120px] min-[1070px]:min-h-[96px] xl:min-h-[72px]">
 								<?php echo esc_html( $package['description'] ) ?>
 							</div>
-							<button @click="modalOpen=true" value="<?php echo esc_attr( $package['title'] ) ?>"
-								class="pricing-button group w-full justify-center <?php echo $package['is_best_value'] ? 'button' : 'button_outlined' ?>">
-								<?php esc_html_e( 'Choose Package', 'plmt' ) ?>
-								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-									<div
-										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
-											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-										</svg>
-									</div>
-									<div
-										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-											aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%"
-											height=" 100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-										</svg>
-									</div>
-								</div>
-							</button>
+							<?php plmt_button_with_arrow( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), $package['title'], array(
+								"classes" => "pricing-button w-full",
+								"variant" => ! $package['is_best_value'] ? 'outlined' : '',
+							) ) ?>
 						</div>
 						<div>
 							<ul class="text-sm space-y-3 grow prose overflow-hidden">
@@ -345,24 +309,7 @@ function standalone_solution( $standalone_solutions ) {
 					<button @click="modalOpen=true" :value="selectedServices"
 						class="standalone-button group w-full justify-center button bg-white text-accent hover:bg-white">
 						<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
-						<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-							<div
-								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-								</svg>
-							</div>
-							<div
-								class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-									aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-									preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-								</svg>
-							</div>
-						</div>
+						<?php plmt_arrow() ?>
 					</button>
 				</div>
 			</li>

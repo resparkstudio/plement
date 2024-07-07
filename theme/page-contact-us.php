@@ -37,7 +37,7 @@ function success_modal() {
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-					<div class="flex flex-col justify-center items-center h-full gap-3">
+					<div class="flex flex-col justify-center items-center h-full gap-3 w-full">
 						<div class="bg-[#88C941] rounded-full w-[57px] h-[57px] mb-3 flex justify-center items-center">
 							<svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path

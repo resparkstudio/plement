@@ -624,6 +624,19 @@ body {
   color: rgb(39 39 39 / var(--tw-text-opacity));
 }
 
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
 h2 {
   font-size: 2rem;
   font-weight: 500;
@@ -1442,6 +1455,8 @@ h3 {
   border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(237 86 35 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-weight: 600;
@@ -2216,6 +2231,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.h-\[48px\] {
+  height: 48px;
+}
+
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -2345,6 +2364,10 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
+.w-\[450px\] {
+  width: 450px;
+}
+
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
 }
@@ -2433,6 +2456,10 @@ div.wpcf7-validation-errors {
   max-width: 800px;
 }
 
+.max-w-\[95\%\] {
+  max-width: 95%;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -2451,10 +2478,6 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[95\%\] {
-  max-width: 95%;
 }
 
 .flex-1 {
@@ -2905,10 +2928,6 @@ div.wpcf7-validation-errors {
   padding: 0.625rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -3052,11 +3071,6 @@ div.wpcf7-validation-errors {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-\[1\.125rem\] {
@@ -3515,10 +3529,6 @@ div.wpcf7-validation-errors {
     --tw-scale-y: .95;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
-
-  .sm\:rounded-lg {
-    border-radius: 0.5rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -3608,11 +3618,6 @@ div.wpcf7-validation-errors {
 
   .md\:p-0 {
     padding: 0px;
-  }
-
-  .md\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
   }
 
   .md\:text-\[2rem\] {
@@ -3893,12 +3898,17 @@ div.wpcf7-validation-errors {
     padding: 3rem;
   }
 
+  .lg\:p-20 {
+    padding: 5rem;
+  }
+
   .lg\:p-8 {
     padding: 2rem;
   }
 
-  .lg\:p-20 {
-    padding: 5rem;
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .lg\:px-12 {
@@ -3929,11 +3939,6 @@ div.wpcf7-validation-errors {
   .lg\:py-9 {
     padding-top: 2.25rem;
     padding-bottom: 2.25rem;
-  }
-
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .lg\:pb-36 {

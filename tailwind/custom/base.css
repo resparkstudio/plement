@@ -21,6 +21,10 @@ body {
 	@apply bg-background text-textBlack font-dm;
 }
 
+h1 {
+	@apply text-4xl md:text-7xl font-medium;
+}
+
 h2 {
 	@apply text-[2rem] leading-[35px] font-medium lg:text-5xl lg:leading-[52px] tracking-[-0.02em];
 }

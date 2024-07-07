@@ -15,28 +15,9 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
-		<button @click="calendlyOpen=true"
-			class="contact-button group button xl:mr-6 mb-6 xl:mb-0 justify-center w-max">
-			<?php esc_html_e( 'Book a Meeting', 'plmt' ) ?>
-			<div class="z-1 flex justify-center items-center relative overflow-hidden ">
-				<div
-					class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-						aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-						preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-						<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-					</svg>
-				</div>
-				<div
-					class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-						aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
-						preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-						<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-					</svg>
-				</div>
-			</div>
-		</button>
+		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book a Meeting', 'plmt' ), null, array(
+			"classes" => "contact-button xl:mr-6 mb-6 xl:mb-0 w-max",
+		) ) ?>
 		<div
 			class="xl:pl-6 pt-6 xl:pt-0 border-t xl:border-t-0 xl:border-l border-textGray flex items-center gap-[10px]">
 			<div class="relative">

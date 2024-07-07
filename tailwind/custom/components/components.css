@@ -68,7 +68,7 @@
 }
 
 .button_outlined {
-	@apply inline-flex leading-[1rem] px-6 font-semibold border-2 border-accent text-accent rounded-lg h-11 items-center gap-3;
+	@apply inline-flex leading-[1rem] px-6 font-semibold border-2 border-accent text-accent rounded-lg h-11 items-center gap-3 bg-white;
 }
 
 .menu-primary-list {
