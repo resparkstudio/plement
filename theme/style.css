@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.0
+Version: 0.1.1
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2187,16 +2187,16 @@ div.wpcf7-validation-errors {
   height: 30px;
 }
 
-.h-\[350px\] {
-  height: 350px;
-}
-
 .h-\[40px\] {
   height: 40px;
 }
 
 .h-\[46px\] {
   height: 46px;
+}
+
+.h-\[48px\] {
+  height: 48px;
 }
 
 .h-\[52px\] {
@@ -2229,10 +2229,6 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[48px\] {
-  height: 48px;
 }
 
 .min-h-\[12\.5px\] {
@@ -2339,6 +2335,10 @@ div.wpcf7-validation-errors {
   width: 420px;
 }
 
+.w-\[450px\] {
+  width: 450px;
+}
+
 .w-\[46px\] {
   width: 46px;
 }
@@ -2362,10 +2362,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[450px\] {
-  width: 450px;
 }
 
 .min-w-\[12\.5px\] {
@@ -2450,10 +2446,6 @@ div.wpcf7-validation-errors {
 
 .max-w-\[740px\] {
   max-width: 740px;
-}
-
-.max-w-\[800px\] {
-  max-width: 800px;
 }
 
 .max-w-\[95\%\] {
@@ -2957,11 +2949,6 @@ div.wpcf7-validation-errors {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
 }
 
 .py-10 {
