@@ -229,3 +229,7 @@ div.wpcf7-validation-errors {
 .faq-answer a {
 	@apply text-accent hover:text-accentHover transition-colors duration-300;
 }
+
+.rich-text a {
+	@apply text-accent hover:text-accentHover transition-colors duration-300;
+}
