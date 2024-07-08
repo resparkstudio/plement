@@ -8,8 +8,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 ?>
 <section id='hero' class='container pt-10 pb-8 lg:pb-6 lg:h-[calc(100vh-108px)] flex flex-col justify-between'>
-	<div class='flex flex-col gap-12 items-center lg:flex-row lg:gap-14'>
-		<div class='hero-content lg:max-w-2xl'>
+	<div class='flex flex-col gap-12 items-center lg:flex-row lg:justify-between lg:gap-14'>
+		<div class='lg:w-1/2 hero-content lg:max-w-2xl'>
 			<h1 class='text-center mb-8 lg:text-left lg:mb-10'>
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
@@ -19,7 +19,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 					class='button_secondary h-auto py-4'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
 			</div>
 		</div>
-		<div>
+		<div class="lg:w-1/2">
 			<img src='<?php echo esc_url( $hero_content['hero_image']['url'] ) ?>'
 				alt='<?php echo esc_attr( $hero_content['hero_image']['alt'] ) ?>'>
 		</div>
