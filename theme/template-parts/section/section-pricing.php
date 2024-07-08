@@ -138,7 +138,7 @@ function package_cards_mobile( $packages ) {
 							</div>
 							<?php plmt_button_with_arrow( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), $package['title'], array(
 								"classes" => "pricing-button w-full",
-								"variant" => ! $package['is_best_value'] ?? 'outlined',
+								"variant" => ! $package['is_best_value'] ? 'outlined' : '',
 							) ) ?>
 						</div>
 						<div>
