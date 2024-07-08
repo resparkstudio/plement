@@ -6,6 +6,31 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 	return;
 }
 
+function tab_switcher() {
+	?>
+	<div class="relative flex w-full p-1 bg-white rounded-full">
+		<span class="absolute inset-0 m-1 pointer-events-none bg-[#F8F8FA] transition-all duration-300 rounded-full"
+			aria-hidden="true">
+			<span
+				class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-300 ease-in-out"
+				:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
+		</span>
+		<button
+			class="refreshScrollTrigger relative flex-1 py-4 rounded-full font-semibold hover:transition-colors transition-none duration-300 ease-in-out"
+			:class="isPackages ? 'text-white' : 'text-textBlack hover:bg-[#f1f1f1]'" @click="isPackages = true"
+			:aria-pressed="isPackages">
+			<?php esc_html_e( 'Packages', 'plmt' ) ?>
+		</button>
+		<button
+			class="refreshScrollTrigger relative flex-1 font-semibold py-4 rounded-full hover:transition-colors transition-none duration-300 ease-in-out w-max"
+			:class="isPackages ? 'text-textBlack hover:bg-[#f1f1f1]' : 'text-white'" @click="isPackages = false"
+			:aria-pressed="isPackages">
+			<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
+		</button>
+	</div>
+	<?php
+}
+
 function pricing_header( $pricing_content ) {
 	?>
 	<div class="relative flex flex-col items-center justify-center text-center mb-8 md:mb-2">
@@ -13,26 +38,7 @@ function pricing_header( $pricing_content ) {
 			<?php echo esc_html( $pricing_content['heading'] ) ?>
 		</h2>
 		<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
-			<div class="relative flex w-full p-1 bg-white rounded-full">
-				<span class="absolute inset-0 m-1 pointer-events-none bg-[#F8F8FA] transition-all duration-300 rounded-full"
-					aria-hidden="true">
-					<span
-						class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-300 ease-in-out"
-						:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
-				</span>
-				<button
-					class="refreshScrollTrigger relative flex-1 py-4 rounded-full font-semibold hover:transition-colors transition-none duration-300 ease-in-out"
-					:class="isPackages ? 'text-white' : 'text-textBlack hover:bg-[#f1f1f1]'" @click="isPackages = true"
-					:aria-pressed="isPackages">
-					<?php esc_html_e( 'Packages', 'plmt' ) ?>
-				</button>
-				<button
-					class="refreshScrollTrigger relative flex-1 font-semibold py-4 rounded-full hover:transition-colors transition-none duration-300 ease-in-out w-max"
-					:class="isPackages ? 'text-textBlack hover:bg-[#f1f1f1]' : 'text-white'" @click="isPackages = false"
-					:aria-pressed="isPackages">
-					<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
-				</button>
-			</div>
+			<?php tab_switcher() ?>
 		</div>
 		<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray"
 			x-text="isPackages ? '<?php echo esc_html( $pricing_content['description'] ) ?>' : '<?php echo esc_html( $pricing_content['standalone_description'] ) ?>'">
@@ -238,7 +244,6 @@ function standalone_solution( $standalone_solutions ) {
 
 	if ( empty( $standalone_solutions['standalone_list'] ) )
 		return;
-
 	?>
 	<div x-data="{selectedServices: [],
 				toggle(id) {
@@ -274,7 +279,8 @@ function standalone_solution( $standalone_solutions ) {
 					<?php circular_checkbox() ?>
 				</li>
 			<?php endforeach; ?>
-			<li class="hidden md:inline-flex flex-col justify-between w-full p-6 bg-accent text-white rounded-2xl">
+			<li
+				class="hidden md:inline-flex justify-between w-full  bg-accent text-white rounded-2xl  <?php echo count( $standalone_solutions['standalone_list'] ) % 4 === 0 ? 'col-span-2 col-start-2 flex-row items-center p-10' : 'flex-col p-6' ?>">
 				<div>
 					<div class=" text-[2.5rem] font-medium flex ">
 						<span class="selected-services-count" x-text="selectedServices.length">0</span>
@@ -294,7 +300,6 @@ function standalone_solution( $standalone_solutions ) {
 		</ul>
 		<div class="swiper-pagination !static mt-6"></div>
 		<div class="container">
-
 			<div class=" mt-8 inline-flex md:hidden flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
 				<div class="mb-6">
 					<div class="text-[2.5rem] font-medium flex">

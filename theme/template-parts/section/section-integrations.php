@@ -18,12 +18,9 @@ function integration_card( $integration ) {
 			alt="<?php echo esc_url( $integration['icon']['alt'] ) ?>">
 		<h4 class="mb-3 text-xl font-medium lg:text-[22px]"><?php echo esc_html( $integration['title'] ) ?></h4>
 		<p class="text-textDarkGray font-medium mb-6"><?php echo esc_html( $integration['description'] ) ?></p>
-		<div>
-			<?php foreach ( $integration['tags'] as $tag ) : ?>
-				<span
-					class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
-			<?php endforeach; ?>
-		</div>
+		<?php if ( isset( $integration['tags'] ) && ! empty( $integration['tags'] ) ) :
+			plmt_tag_chips( $integration['tags'] );
+		endif; ?>
 	</div>
 	<?php
 }

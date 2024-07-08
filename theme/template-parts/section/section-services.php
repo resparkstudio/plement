@@ -28,17 +28,12 @@ function services_list_mobile( $services ) {
 							</h4>
 							<div
 								class=" md:hidden max-w-[530px] md:opacity-0 md:invisible transition-opacity group-hover:md:opacity-100 group-hover:md:visible group-hover:md:block">
-								<p class="font-medium text-textDarkGray">
+								<p class="font-medium text-textDarkGray mb-6">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
-								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
-									<div class="mt-6">
-										<?php foreach ( $service['tags'] as $tag ) : ?>
-											<span
-												class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
-										<?php endforeach; ?>
-									</div>
-								<?php endif; ?>
+								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
+									plmt_tag_chips( $service['tags'] );
+								endif; ?>
 							</div>
 						</div>
 					</div>
@@ -80,14 +75,9 @@ function services_list( $services ) {
 							<p class="font-medium mb-6 text-textDarkGray">
 								<?php echo esc_html( $service['description'] ); ?>
 							</p>
-							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
-								<div>
-									<?php foreach ( $service['tags'] as $tag ) : ?>
-										<span
-											class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
-									<?php endforeach; ?>
-								</div>
-							<?php endif; ?>
+							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
+								plmt_tag_chips( $service['tags'] );
+							endif; ?>
 						</div>
 					</div>
 				</li>
