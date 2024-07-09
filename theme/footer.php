@@ -35,15 +35,10 @@
 			theme: 'custom',
 			placement: 'top',
 			allowHTML: true,
-			content: `${content} <button class='tippy-close-button'>${xIcon}</button>`,
+			content: `${content}`,
 			interactive: true,
 			trigger: 'click',
 			maxWidth: 'none',
-			onShow(instance) {
-				instance.popper.querySelector('button').addEventListener('click', () => {
-					instance.hide();
-				});
-			},
 		});
 	})
 </script>

@@ -64,11 +64,10 @@ function mobile_pricing_accordion_body( $features, $index ) {
 				<div class="flex items-center gap-3">
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
-							<div data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" class="cursor-pointer">
-								<div class="font-medium max-w-[123px]  sm:max-w-[243px] underline">
-									<?php echo esc_html( $feature['title'] ) ?>
-								</div>
-							</div>
+							<button data-content="<?php echo esc_attr( $feature['popup_text'] ) ?>"
+								class="tippy-button cursor-pointer font-medium max-w-[123px] sm:max-w-[243px] underline text-left">
+								<?php echo esc_html( $feature['title'] ) ?>
+							</button>
 						</div>
 					<?php else : ?>
 						<div class="font-medium max-w-[123px]  sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
