@@ -12,11 +12,6 @@
  * editor.
 */
 
-*,
-html {
-	@apply !scroll-smooth;
-}
-
 body {
 	@apply bg-background text-textBlack font-dm;
 }
