@@ -45,7 +45,7 @@ function mobile_pricing_accordion_head( $feature_group ) {
 		}, 300);
 	}
 	"
-		class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
+		class="refreshScrollTrigger flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
 		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': mobileAccordionOpen }"
 			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"

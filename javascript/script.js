@@ -306,7 +306,7 @@ const handleButtonsWithScrollTriggerRefresh = () => {
 	const buttons = document.querySelectorAll('.refreshScrollTrigger');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () =>
-			setTimeout(refreshScrollTrigger, 2000)
+			setTimeout(refreshScrollTrigger, 1000)
 		);
 	});
 };
