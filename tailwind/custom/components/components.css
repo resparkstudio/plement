@@ -231,5 +231,5 @@ div.wpcf7-validation-errors {
 }
 
 .rich-text a {
-	@apply text-accent hover:text-accentHover transition-colors duration-300;
+	@apply underline;
 }
