@@ -18,7 +18,7 @@ function statistics_counts( $stats ) {
 			<li class="max-w-[200px]">
 				<span
 					class="text-2xl font-bold mb-2 inline-block md:text-[2rem] md:mb-3"><?php echo esc_html( $stat['count'] ); ?></span>
-				<div class="font-medium md:text-lg rich-text"><?php echo $stat['description'] ?></div>
+				<div class="rich-text font-medium md:text-lg"><?php echo $stat['description'] ?></div>
 			</li>
 			<?php
 		}
