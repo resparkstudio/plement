@@ -256,31 +256,49 @@ const handleContactFormTransition = function () {
 	}
 };
 
-const handleScrollIntoView = () => {
-	const menuItems = document.querySelectorAll('.menu-item a');
-
-	if (window.location.pathname === '/') {
-		menuItems.forEach((item) => {
-			item.addEventListener('click', (e) => {
-				e.preventDefault();
-				const href = e.target.getAttribute('href').split('#')[1];
-				console.log(href);
-				const element = document.getElementById(href);
-				element.scrollIntoView({ behavior: 'smooth' });
-			});
-		});
-	}
-
-	const hash = window.location.hash.substring(1);
-	if (hash) {
-		setTimeout(() => {
-			const element = document.getElementById(hash);
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth' });
-			}
-		}, 500);
+const smoothScrollToElementById = (hash) => {
+	const element = document.getElementById(hash);
+	if (element) {
+		element.scrollIntoView({ behavior: 'smooth' });
 	}
 };
+
+const handleScrollIntoView = () => {
+	const menuItems = document.querySelectorAll('.menu-item a');
+	const scrollToLinks = document.querySelectorAll('.scroll-to');
+
+	const isHomePage = window.location.pathname === '/';
+
+	const addClickListener = (item) => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			const href = e.target.getAttribute('href');
+			const hash = href.split('#')[1];
+
+			if (!isHomePage) {
+				sessionStorage.setItem('scrollToHash', hash);
+				window.location.href = '/';
+			} else {
+				smoothScrollToElementById(hash);
+			}
+		});
+	};
+
+	menuItems.forEach(addClickListener);
+	scrollToLinks.forEach(addClickListener);
+};
+
+handleScrollIntoView();
+
+if (window.location.pathname === '/') {
+	window.addEventListener('load', () => {
+		const hash = sessionStorage.getItem('scrollToHash');
+		if (hash) {
+			smoothScrollToElementById(hash);
+			sessionStorage.removeItem('scrollToHash');
+		}
+	});
+}
 
 const getUserCountry = async () => {
 	const response = await fetch('https://ipapi.co/json/');
@@ -316,6 +334,5 @@ initStandalone();
 processNumberAnimation();
 processLineAnimation();
 handleContactFormTransition();
-handleScrollIntoView();
 handleCountry();
 handleButtonsWithScrollTriggerRefresh();

@@ -16,7 +16,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<div class='flex flex-wrap gap-6 justify-center lg:justify-start lg:gap-8'>
 				<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
 				<a href='#services'
-					class='button_secondary h-auto py-4'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
+					class='scroll-to button_secondary h-auto py-4'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
 			</div>
 		</div>
 		<div class="lg:w-1/2">
