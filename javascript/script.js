@@ -259,6 +259,18 @@ const handleContactFormTransition = function () {
 const handleScrollIntoView = () => {
 	const menuItems = document.querySelectorAll('.menu-item a');
 
+	if (window.location.pathname === '/') {
+		menuItems.forEach((item) => {
+			item.addEventListener('click', (e) => {
+				e.preventDefault();
+				const href = e.target.getAttribute('href').split('#')[1];
+				console.log(href);
+				const element = document.getElementById(href);
+				element.scrollIntoView({ behavior: 'smooth' });
+			});
+		});
+	}
+
 	const hash = window.location.hash.substring(1);
 	if (hash) {
 		setTimeout(() => {
