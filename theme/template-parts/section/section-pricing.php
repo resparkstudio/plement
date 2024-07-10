@@ -37,9 +37,11 @@ function pricing_header( $pricing_content ) {
 		<h2 class="mb-8 md:mb-12 max-w-[506px]">
 			<?php echo esc_html( $pricing_content['heading'] ) ?>
 		</h2>
-		<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
-			<?php tab_switcher() ?>
-		</div>
+		<?php if ( ! $pricing_content['standalone_solutions']['hide_standalone_solutions'] ) : ?>
+			<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
+				<?php tab_switcher() ?>
+			</div>
+		<?php endif; ?>
 		<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray"
 			x-text="isPackages ? '<?php echo esc_html( $pricing_content['description'] ) ?>' : '<?php echo esc_html( $pricing_content['standalone_description'] ) ?>'">
 			<?php echo esc_html( $pricing_content['description'] ) ?>
@@ -345,10 +347,11 @@ function standalone_solution( $standalone_solutions ) {
 					<div class="lg:hidden">
 						<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
 					</div>
-					<div class="lg:container mx-auto">
-						<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
-					</div>
-
+					<?php if ( ! $pricing_content['standalone_solutions']['hide_standalone_solutions'] ) : ?>
+						<div class="lg:container mx-auto">
+							<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
