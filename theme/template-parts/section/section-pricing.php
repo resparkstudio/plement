@@ -6,6 +6,8 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 	return;
 }
 
+$hide_standalone_solutions = $pricing_content['standalone_solutions']['hide_standalone_solutions'];
+
 function tab_switcher() {
 	?>
 	<div class="relative flex w-full p-1 bg-white rounded-full">
@@ -31,10 +33,10 @@ function tab_switcher() {
 	<?php
 }
 
-function pricing_header( $pricing_content ) {
+function pricing_header( $pricing_content, $hide_standalone_solutions ) {
 	?>
 	<div class="relative flex flex-col items-center justify-center text-center mb-8 md:mb-2">
-		<h2 class="mb-8 md:mb-12 max-w-[506px]">
+		<h2 class="mb-8 max-w-[506px] <?php echo ! $hide_standalone_solutions ? 'md:mb-12' : '' ?>">
 			<?php echo esc_html( $pricing_content['heading'] ) ?>
 		</h2>
 		<?php if ( ! $pricing_content['standalone_solutions']['hide_standalone_solutions'] ) : ?>
@@ -338,7 +340,7 @@ function standalone_solution( $standalone_solutions ) {
 				<div>
 					<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 					<div class="container">
-						<?php pricing_header( $pricing_content ) ?>
+						<?php pricing_header( $pricing_content, $hide_standalone_solutions ) ?>
 						<?php currency_switch() ?>
 						<div class="hidden lg:block">
 							<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
@@ -347,7 +349,7 @@ function standalone_solution( $standalone_solutions ) {
 					<div class="lg:hidden">
 						<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
 					</div>
-					<?php if ( ! $pricing_content['standalone_solutions']['hide_standalone_solutions'] ) : ?>
+					<?php if ( ! $hide_standalone_solutions ) : ?>
 						<div class="lg:container mx-auto">
 							<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
 						</div>
