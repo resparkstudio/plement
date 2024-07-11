@@ -15,7 +15,7 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 	<h3 class="mb-3"><?php echo esc_html( $contact_information['heading'] ) ?></h3>
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
-		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book a Meeting', 'plmt' ), null, array(
+		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
 			"classes" => "contact-button xl:mr-6 mb-6 xl:mb-0 w-max",
 		) ) ?>
 		<div
