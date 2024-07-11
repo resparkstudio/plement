@@ -16,7 +16,7 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 	<p class="text-textLightGray mb-8 lg:mb-10"><?php echo esc_html( $contact_information['description'] ) ?></p>
 	<div class="flex flex-col xl:flex-row xl:items-center">
 		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
-			"classes" => "contact-button xl:mr-6 mb-6 xl:mb-0 w-max",
+			"classes" => "contact-button xl:mr-6 mb-6 xl:mb-0 w-max max-w-[185px] !w-full",
 		) ) ?>
 		<div
 			class="xl:pl-6 pt-6 xl:pt-0 border-t xl:border-t-0 xl:border-l border-textGray flex items-center gap-[10px]">
