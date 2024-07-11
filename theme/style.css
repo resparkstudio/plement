@@ -2230,6 +2230,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.max-h-\[98vh\] {
+  max-height: 98vh;
+}
+
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -3748,6 +3752,18 @@ div.wpcf7-validation-errors {
 
   .lg\:h-\[calc\(100vh-108px\)\] {
     height: calc(100vh - 108px);
+  }
+
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:h-\[1000px\] {
+    height: 1000px;
+  }
+
+  .lg\:max-h-\[94vh\] {
+    max-height: 94vh;
   }
 
   .lg\:w-1\/2 {
