@@ -121,9 +121,14 @@ $faq_content         = get_field( 'faq', $front_page_id );
 
 			<div class="flex flex-col-reverse md:flex-row gap-4 md:gap-[20px]">
 				<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
-				<span class="hidden md:inline">|</span>
-				<a
-					href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+				<div class="flex flex-col md:flex-row gap-4 md:gap-[20px]">
+					<span class="hidden md:inline">|</span>
+					<a
+						href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+					<span class="hidden md:inline">|</span>
+					<a
+						href="<?php echo esc_url( home_url( '/terms-and-conditions' ) ) ?>"><?php esc_html_e( 'Terms and conditions', 'plmt' ) ?></a>
+				</div>
 			</div>
 			<div>
 				<a href="http://respark.digital/" target="_blank">
