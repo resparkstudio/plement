@@ -9,7 +9,7 @@
  * https://esbuild.github.io/
  */
 import Swiper from 'swiper';
-import { Pagination, Controller } from 'swiper/modules';
+import { Pagination, Controller, Navigation } from 'swiper/modules';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -60,14 +60,13 @@ function initSwiper() {
 	packageCompareSwiper.controller.control = packageSwiper;
 
 	new Swiper('.testimonials-swiper', {
-		modules: [Pagination],
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
+		modules: [Navigation],
+		slidesPerView: 'auto',
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.custom-swiper-button-next',
+			prevEl: '.custom-swiper-button-prev',
 		},
-		autoHeight: true,
 	});
 }
 
@@ -139,34 +138,8 @@ const processLineAnimation = function () {
 			scaleY: 1,
 			duration: 3,
 			ease: 'none',
-		}
+		},
 	);
-};
-
-const processNumberAnimation = function () {
-	const steps = document.querySelectorAll('.process-item');
-	steps.forEach((step) => {
-		const number = step.querySelector('.step-heading');
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: step,
-				start: 'center center',
-				toggleActions: 'play none none reverse',
-			},
-		});
-
-		tl.fromTo(
-			[number],
-			{
-				color: '#D8D8D8',
-			},
-			{
-				color: '#ED5623',
-				duration: 0.3,
-				ease: 'none',
-			}
-		);
-	});
 };
 
 document.querySelectorAll('.pricing-button').forEach((button) => {
@@ -324,14 +297,13 @@ const handleButtonsWithScrollTriggerRefresh = () => {
 	const buttons = document.querySelectorAll('.refreshScrollTrigger');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () =>
-			setTimeout(refreshScrollTrigger, 1000)
+			setTimeout(refreshScrollTrigger, 1000),
 		);
 	});
 };
 
 initSwiper();
 initStandalone();
-processNumberAnimation();
 processLineAnimation();
 handleContactFormTransition();
 handleCountry();

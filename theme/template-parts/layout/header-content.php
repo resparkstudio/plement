@@ -41,7 +41,7 @@
 		</nav><!-- #site-navigation -->
 
 		<div class="hidden lg:block">
-			<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
+			<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
 		</div>
 
 		<div class="lg:hidden">
@@ -77,7 +77,7 @@
 			)
 		);
 		?>
-		<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
+		<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
 			'classes' => 'w-max',
 		) ) ?>
 	</nav>

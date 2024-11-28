@@ -228,23 +228,6 @@ function plmt_arrow() {
 		<?php
 }
 
-function plmt_link_with_arrow( $url, $text, $config = array() ) {
-	$defaults = array(
-		'classes' => '',
-	);
-
-	$config = wp_parse_args( $config, $defaults );
-
-	$classes = 'button group h-auto py-4 ' . $config['classes'];
-
-	?>
-		<a href='<?php echo esc_url( $url ) ?>' class='<?php echo esc_attr( $classes ) ?>'>
-			<?php echo $text ?>
-			<?php plmt_arrow() ?>
-		</a>
-		<?php
-}
-
 function plmt_button_with_arrow( $on_click, $text, $value, $config = array() ) {
 
 	$variant_map = array(
@@ -316,8 +299,13 @@ function plmt_tag_chips( $tags ) {
 	?>
 		<div>
 			<?php foreach ( $tags as $tag ) : ?>
-				<span
-					class="mr-3 mb-3 text-sm px-4 py-[10px] font-medium rounded-full border border-textBlack inline-block text-center"><?php echo esc_html( $tag['title'] ) ?></span>
+				<span class="flex items-center gap-2 py-2 text-bodySmall">
+					<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+					<?php echo esc_html( $tag['title'] ) ?>
+				</span>
 			<?php endforeach; ?>
 		</div>
 		<?php

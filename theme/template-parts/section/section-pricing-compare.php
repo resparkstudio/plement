@@ -191,7 +191,7 @@ function comparison_footer_rows( $footer_rows ) {
 				</p>
 			</div>
 			<div>
-				<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
+				<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
 			</div>
 		</div>
 	</div>

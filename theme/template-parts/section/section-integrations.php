@@ -46,7 +46,7 @@ function integration_card( $integration ) {
 			<p class="font-medium max-w-[415px] text-textGray text-lg mb-6">
 				<?php echo esc_html( $integrations_content['bottom']['description'] ) ?>
 			</p>
-			<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
+			<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
 				'classes' => 'h-[48px]'
 			) ) ?>
 		</div>

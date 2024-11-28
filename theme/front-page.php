@@ -13,12 +13,13 @@ $page_sections = [
 	'hero',
 	'about',
 	'services',
-	'pricing',
-	'partner',
-	'process',
-	'integrations',
-	'faq',
+	'cta',
+	'services-tabs',
 	'testimonials',
+	'process',
+	'partner',
+	'faq',
+	'contact-us'
 ]
 	?>
 
