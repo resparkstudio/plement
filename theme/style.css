@@ -1932,14 +1932,6 @@ div.wpcf7-validation-errors {
   z-index: 99;
 }
 
-.order-2 {
-  order: 2;
-}
-
-.order-1 {
-  order: 1;
-}
-
 .order-last {
   order: 9999;
 }
@@ -2051,6 +2043,10 @@ div.wpcf7-validation-errors {
   margin-right: 1.25rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -2087,10 +2083,6 @@ div.wpcf7-validation-errors {
   margin-top: 2rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
 .block {
   display: block;
 }
@@ -2121,6 +2113,10 @@ div.wpcf7-validation-errors {
 
 .aspect-square {
   aspect-ratio: 1 / 1;
+}
+
+.\!h-auto {
+  height: auto !important;
 }
 
 .h-0 {
@@ -2233,10 +2229,6 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
-}
-
-.\!h-auto {
-  height: auto !important;
 }
 
 .max-h-\[16\.875rem\] {
@@ -2837,14 +2829,14 @@ div.wpcf7-validation-errors {
   border-color: rgb(87 87 87 / var(--tw-border-opacity));
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
 .border-textSecondary {
   --tw-border-opacity: 1;
   border-color: rgb(178 178 178 / var(--tw-border-opacity));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .border-b-lightGrayBorder {
@@ -2920,13 +2912,13 @@ div.wpcf7-validation-errors {
   background-color: rgb(39 39 39 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .bg-opacity-40 {
@@ -2998,6 +2990,11 @@ div.wpcf7-validation-errors {
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -3066,16 +3063,6 @@ div.wpcf7-validation-errors {
 .py-\[7\.5rem\] {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .pb-10 {
