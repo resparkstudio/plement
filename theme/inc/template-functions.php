@@ -310,3 +310,45 @@ function plmt_tag_chips( $tags ) {
 		</div>
 		<?php
 }
+
+function plmt_build_menu_tree( $menu, $parent_id ) {
+	$branch = array();
+
+	foreach ( $menu as $item ) {
+		if ( $item->menu_item_parent == $parent_id ) {
+			$children = plmt_build_menu_tree( $menu, $item->ID );
+
+			if ( $children ) {
+				$item->children = $children;
+			}
+
+			$url       = $item->url;
+			$tax_value = get_post_meta( $item->ID, '_menu_item_tax_value', true );
+			if ( $tax_value ) {
+				foreach ( $tax_value as $key => $value ) {
+					if ( $value != '' ) {
+						$url = add_query_arg( $key, $value, $url );
+					}
+				}
+			}
+
+			$branch[] = array(
+				'ID' => $item->ID,
+				'title' => $item->title,
+				'url' => $url,
+				'children' => $children ?? null,
+				'description' => get_field( 'description', $item->ID ) ?? '',
+				'image' => get_field( 'image', $item->ID ) ?? '',
+				'is_contact_us' => get_field( 'is_contact_us', $item->ID ) ?? false,
+				'parentID' => $item->menu_item_parent,
+			);
+		}
+	}
+
+	return $branch;
+}
+
+function plmt_menu_builder( $menu_id = '' ) {
+	$menu = wp_get_nav_menu_items( $menu_id );
+	return plmt_build_menu_tree( $menu, 0 );
+}

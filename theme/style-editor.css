@@ -987,8 +987,14 @@ body {
   color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
+#site-navigation {
+  width: 100%;
+}
+
 .menu-primary-list {
   display: none;
+  height: 5rem;
+  width: 100%;
   align-items: center;
   gap: 2rem;
 }
@@ -1000,6 +1006,14 @@ body {
 }
 
 .menu-primary-list > li {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-right-width: 1px;
+  --tw-border-opacity: 1;
+  border-right-color: rgb(178 178 178 / var(--tw-border-opacity));
   font-weight: 600;
 }
 
@@ -1421,6 +1435,10 @@ div.wpcf7-validation-errors {
   left: 0px;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .left-\[30px\] {
   left: 30px;
 }
@@ -1447,6 +1465,10 @@ div.wpcf7-validation-errors {
 
 .top-4 {
   top: 1rem;
+}
+
+.top-\[5rem\] {
+  top: 5rem;
 }
 
 .top-\[72px\] {
@@ -1756,6 +1778,10 @@ div.wpcf7-validation-errors {
   height: 57px;
 }
 
+.h-\[5rem\] {
+  height: 5rem;
+}
+
 .h-\[600px\] {
   height: 600px;
 }
@@ -2057,6 +2083,11 @@ div.wpcf7-validation-errors {
   flex-grow: 1;
 }
 
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2344,6 +2375,10 @@ div.wpcf7-validation-errors {
   border-bottom-width: 1px;
 }
 
+.border-r {
+  border-right-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -2397,6 +2432,16 @@ div.wpcf7-validation-errors {
   border-bottom-color: rgb(216 216 216 / var(--tw-border-opacity));
 }
 
+.border-b-textSecondary {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(178 178 178 / var(--tw-border-opacity));
+}
+
+.border-r-textSecondary {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(178 178 178 / var(--tw-border-opacity));
+}
+
 .border-t-\[\#FFFFFF4D\] {
   border-top-color: #FFFFFF4D;
 }
@@ -2409,6 +2454,11 @@ div.wpcf7-validation-errors {
 .border-t-darkGray {
   --tw-border-opacity: 1;
   border-top-color: rgb(100 100 100 / var(--tw-border-opacity));
+}
+
+.border-t-textSecondary {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(178 178 178 / var(--tw-border-opacity));
 }
 
 .bg-\[\#575757\] {
@@ -2548,6 +2598,16 @@ div.wpcf7-validation-errors {
   padding-right: 1.5rem;
 }
 
+.px-\[4\.125rem\] {
+  padding-left: 4.125rem;
+  padding-right: 4.125rem;
+}
+
+.px-\[75px\] {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -2598,9 +2658,9 @@ div.wpcf7-validation-errors {
   padding-bottom: 2rem;
 }
 
-.py-\[20px\] {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.py-\[3\.5625rem\] {
+  padding-top: 3.5625rem;
+  padding-bottom: 3.5625rem;
 }
 
 .py-\[3\.75rem\] {
@@ -2688,6 +2748,12 @@ div.wpcf7-validation-errors {
 
 .text-center {
   text-align: center;
+}
+
+.\!text-bodyBold {
+  font-size: 1rem !important;
+  line-height: 1.2rem !important;
+  font-weight: 700 !important;
 }
 
 .text-2xl {
@@ -2827,6 +2893,11 @@ div.wpcf7-validation-errors {
   line-height: 70px;
 }
 
+.\!text-accent {
+  --tw-text-opacity: 1 !important;
+  color: rgb(237 86 35 / var(--tw-text-opacity)) !important;
+}
+
 .text-accent {
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
@@ -2890,6 +2961,14 @@ div.wpcf7-validation-errors {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2904,6 +2983,12 @@ div.wpcf7-validation-errors {
 
 .transition-none {
   transition-property: none;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-transform {
@@ -3102,6 +3187,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-accent:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 86 35 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -3122,10 +3212,20 @@ div.wpcf7-validation-errors {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:transition-colors:hover {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .group:hover .group-hover\:block {
@@ -3379,8 +3479,8 @@ div.wpcf7-validation-errors {
     height: 3rem;
   }
 
-  .lg\:h-\[44px\] {
-    height: 44px;
+  .lg\:h-\[40px\] {
+    height: 40px;
   }
 
   .lg\:h-\[45px\] {
@@ -3591,11 +3691,6 @@ div.wpcf7-validation-errors {
     padding-bottom: 1.5rem;
   }
 
-  .lg\:py-9 {
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
-  }
-
   .lg\:py-\[7\.5rem\] {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
@@ -3773,6 +3868,22 @@ div.wpcf7-validation-errors {
 
   .xl\:max-h-none {
     max-height: none;
+  }
+
+  .xl\:max-h-\[25\.8125rem\] {
+    max-height: 25.8125rem;
+  }
+
+  .xl\:max-h-\[28\.8125rem\] {
+    max-height: 28.8125rem;
+  }
+
+  .xl\:max-h-\[30125rem\] {
+    max-height: 30125rem;
+  }
+
+  .xl\:max-h-\[30rem\] {
+    max-height: 30rem;
   }
 
   .xl\:min-h-\[72px\] {

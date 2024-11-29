@@ -19,7 +19,7 @@ if ( empty( $cta_content ) ) {
 			<?php plmt_button( $cta_content['link']['url'], $cta_content['link']['title'], ) ?>
 		</div>
 		<div class="h-[16.875rem]">
-			<img class="max-h-[16.875rem] absolute right-0 -bottom-20 lg:max-h-[22rem] xl:max-h-none lg:top-1/2 lg:-translate-y-1/2"
+			<img class="max-h-[16.875rem] absolute right-0 -bottom-20 lg:max-h-[22rem] xl:max-h-[30rem] lg:top-1/2 lg:-translate-y-1/2"
 				src="<?php echo esc_url( $cta_content['image']['url'] ) ?>"
 				alt="<?php echo esc_attr( $cta_content['image']['alt'] ) ?>">
 		</div>

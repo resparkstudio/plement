@@ -71,12 +71,16 @@
 	@apply border-accent text-accent inline-flex h-11 items-center gap-3 border-2 bg-white px-6 font-semibold leading-[1rem];
 }
 
+#site-navigation {
+	@apply w-full;
+}
+
 .menu-primary-list {
-	@apply hidden items-center gap-8 lg:flex;
+	@apply hidden h-[5rem] w-full items-center gap-8 lg:flex;
 }
 
 .menu-primary-list > li {
-	@apply font-semibold;
+	@apply border-r-textSecondary flex h-full w-full items-center justify-center border-r font-semibold;
 }
 
 .menu-primary-list > li > a {

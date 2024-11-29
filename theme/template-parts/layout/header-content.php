@@ -16,11 +16,11 @@
 </style>
 
 <header id="masthead" class="relative" x-data="{menuOpen: false}">
-	<div class="container py-[20px] lg:py-9 flex items-center justify-between relative z-[1] bg-white">
+	<div class="flex items-center justify-between relative z-[100] bg-white  border-b border-b-textSecondary">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="border-r border-r-textSecondary py-5 px-[75px]">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
-					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[44px]">
+					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[40px]">
 			</a>
 		<?php else : ?>
 			<a class="site-title"
@@ -29,20 +29,62 @@
 
 		<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id' => 'primary-menu',
-					'menu_class' => 'menu-primary-list',
-					'items_wrap' => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			$menu_locations = get_nav_menu_locations();
+			$menu_id        = $menu_locations['menu-1'];
 
-		<div class="hidden lg:block">
-			<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
-		</div>
+			$items = plmt_menu_builder( $menu_id );
+
+			?>
+			<ul class="hidden h-[5rem] w-full items-center lg:flex">
+				<?php
+				foreach ( $items as $item ) :
+					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
+					$has_children  = isset( $item['children'] ) && count( $item['children'] );
+					?>
+					<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
+						class="scroll-to border-r-textSecondary h-full w-full border-r font-semibold">
+						<a href="<?php echo esc_url( $item['url'] ); ?>"
+							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+							<?php if ( $has_children ) : ?>
+								<svg :class="open && 'rotate-180'" width="17" height="16" viewBox="0 0 17 16" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M14.295 5.80865C14.2571 5.71729 14.193 5.6392 14.1108 5.58426C14.0286 5.52932 13.9319 5.5 13.833 5.5H3.83301C3.73412 5.5 3.63745 5.52932 3.55522 5.58427C3.473 5.63921 3.40891 5.7173 3.37107 5.80866C3.33322 5.90003 3.32332 6.00056 3.34262 6.09755C3.36191 6.19455 3.40953 6.28364 3.47946 6.35356L8.47946 11.3535C8.52589 11.4 8.58101 11.4368 8.64167 11.4619C8.70233 11.4871 8.76735 11.5 8.83301 11.5C8.89867 11.5 8.96369 11.4871 9.02435 11.4619C9.08501 11.4368 9.14013 11.4 9.18656 11.3535L14.1866 6.35356C14.2565 6.28364 14.3041 6.19454 14.3234 6.09755C14.3427 6.00056 14.3328 5.90002 14.295 5.80865Z"
+										fill="currentColor" />
+								</svg>
+							<?php endif; ?>
+							<?php if ( $is_contact_us ) : ?>
+								<?php plmt_arrow(); ?>
+							<?php endif; ?>
+						</a>
+						<?php if ( $has_children ) : ?>
+							<ul x-cloak x-show='open' @mouseover='open = true' @click.away='open = false'
+								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-[5rem] bg-white absolute left-1/2 -translate-x-1/2 z-10 w-full focus:outline-none'
+								role='menu' aria-orientation='vertical' tabindex='-1'
+								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
+								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
+								x-transition:leave-end="opacity-0">
+								<?php foreach ( $item['children'] as $child ) : ?>
+									<li class="py-[3.5625rem] px-10">
+										<a href="<?php echo esc_url( $child['url'] ); ?>"
+											class="hover:text-accent transition-colors duration-300">
+											<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
+												alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
+											<p class="text-h5Bold mb-4">
+												<?php echo esc_html( $child['title'] ); ?>
+											</p>
+											<p class="text-bodySmall text-darkGray">
+												<?php echo esc_html( $child['description'] ); ?>
+											</p>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</nav><!-- #site-navigation -->
 
 		<div class="lg:hidden">
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
