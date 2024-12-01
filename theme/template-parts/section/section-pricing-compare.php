@@ -144,55 +144,23 @@ function comparison_footer_rows( $footer_rows ) {
 
 ?>
 
-<div class="container pt-10 lg:pt-16" x-data="{comparisonAccordionOpen: false}">
-	<button @click="comparisonAccordionOpen=!comparisonAccordionOpen"
-		class="refreshScrollTrigger flex gap-1 items-center mx-auto w-max text-lg font-semibold underline hover:text-accent transition-colors duration-300 ">
-		<?php echo esc_html( $package_comparison_data['compare_button_text'] ) ?>
-		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': comparisonAccordionOpen }"
-			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-			stroke-linecap="round" stroke-linejoin="round">
-			<polyline points="6 9 12 15 18 9"></polyline>
-		</svg>
-	</button>
-	<div x-show="comparisonAccordionOpen" x-collapse x-cloak>
-		<div class="lg:pt-[76px]">
-			<div class="sticky top-0 w-full z-[1]">
-				<div class="flex justify-end items-end h-auto bg-white py-5">
-					<?php foreach ( $pricing_data['packages']['packages_list'] as $package ) :
-						minimal_package_card( $package );
-					endforeach; ?>
-				</div>
-			</div>
-			<div class="grid grid-cols-5 gap-6 overflow-x-auto">
-				<?php
-				foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
-					?>
-					<div class="col-span-5" x-data="{accordionOpen: true}">
-						<?php pricing_accordion_head( $feature_group ) ?>
-						<?php pricing_accordion_body( $feature_group['features'] ) ?>
-					</div>
-					<?php
-				endforeach; ?>
-				<div class="col-span-5">
-					<?php comparison_footer_rows( $package_comparison_data['footer_rows'] ) ?>
-				</div>
-			</div>
+<div class="container pt-[3.75rem]">
+	<div class="sticky top-0 w-full z-[1]">
+		<div class="flex justify-end items-end h-auto bg-white py-5">
+			<?php foreach ( $pricing_data['packages'] as $package ) :
+				minimal_package_card( $package );
+			endforeach; ?>
 		</div>
 	</div>
-	<div class="grid grid-cols-4 pt-12 lg:pt-20">
-		<div
-			class="col-span-2 col-start-2 w-full justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
-			<div class="max-w-[349px]">
-				<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
-					<?php echo esc_html( $pricing_data['packages']['custom_packages']['title'] ) ?>
-				</h4>
-				<p class="text-textGray font-medium">
-					<?php echo esc_html( $pricing_data['packages']['custom_packages']['description'] ) ?>
-				</p>
+	<div class="grid grid-cols-5 gap-6 overflow-x-auto">
+		<?php
+		foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
+			?>
+			<div class="col-span-5" x-data="{accordionOpen: true}">
+				<?php pricing_accordion_head( $feature_group ) ?>
+				<?php pricing_accordion_body( $feature_group['features'] ) ?>
 			</div>
-			<div>
-				<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
-			</div>
-		</div>
+			<?php
+		endforeach; ?>
 	</div>
 </div>

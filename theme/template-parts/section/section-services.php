@@ -36,7 +36,7 @@ function services_list_mobile( $services, $heading ) {
 							</p>
 							<div>
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
-									plmt_tag_chips( $service['tags'] );
+									plmt_arrow_list( $service['tags'] );
 								endif; ?>
 							</div>
 						</div>
@@ -86,7 +86,7 @@ function services_list( $services, $heading ) {
 						</p>
 						<div class="group-hover:hidden">
 							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
-								plmt_tag_chips( $service['tags'] );
+								plmt_arrow_list( $service['tags'] );
 							endif; ?>
 						</div>
 

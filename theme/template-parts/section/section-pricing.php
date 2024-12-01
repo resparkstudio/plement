@@ -6,59 +6,17 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 	return;
 }
 
-$hide_standalone_solutions = $pricing_content['standalone_solutions']['hide_standalone_solutions'];
+$hide_standalone_solutions = isset( $pricing_content['standalone_solutions'] );
 
-function tab_switcher() {
-	?>
-	<div class="relative flex w-full p-1 bg-white rounded-full">
-		<span class="absolute inset-0 m-1 pointer-events-none bg-[#F8F8FA] transition-all duration-300 rounded-full"
-			aria-hidden="true">
-			<span
-				class="absolute inset-0 w-1/2 bg-textBlack rounded-full shadow-sm transform transition-transform duration-300 ease-in-out"
-				:class="isPackages ? 'translate-x-0' : 'translate-x-full'"></span>
-		</span>
-		<button
-			class="refreshScrollTrigger relative flex-1 py-4 rounded-full font-semibold hover:transition-colors transition-none duration-300 ease-in-out"
-			:class="isPackages ? 'text-white' : 'text-textBlack hover:bg-[#f1f1f1]'" @click="isPackages = true"
-			:aria-pressed="isPackages">
-			<?php esc_html_e( 'Packages', 'plmt' ) ?>
-		</button>
-		<button
-			class="refreshScrollTrigger relative flex-1 font-semibold py-4 rounded-full hover:transition-colors transition-none duration-300 ease-in-out w-max"
-			:class="isPackages ? 'text-textBlack hover:bg-[#f1f1f1]' : 'text-white'" @click="isPackages = false"
-			:aria-pressed="isPackages">
-			<?php esc_html_e( 'Stand-Alone Solutions', 'plmt' ) ?>
-		</button>
-	</div>
-	<?php
-}
-
-function pricing_header( $pricing_content, $hide_standalone_solutions ) {
-	?>
-	<div class="relative flex flex-col items-center justify-center text-center mb-8 md:mb-2">
-		<h2 class="mb-8 max-w-[506px] <?php echo ! $hide_standalone_solutions ? 'md:mb-12' : '' ?>">
-			<?php echo esc_html( $pricing_content['heading'] ) ?>
-		</h2>
-		<?php if ( ! $pricing_content['standalone_solutions']['hide_standalone_solutions'] ) : ?>
-			<div class="flex justify-center max-w-[25rem] m-auto w-full mb-4 md:mb-5">
-				<?php tab_switcher() ?>
-			</div>
-		<?php endif; ?>
-		<p class="max-w-[30rem] text-[1.125rem] leading-[1.75rem] text-textGray"
-			x-text="isPackages ? '<?php echo esc_html( $pricing_content['description'] ) ?>' : '<?php echo esc_html( $pricing_content['standalone_description'] ) ?>'">
-			<?php echo esc_html( $pricing_content['description'] ) ?>
-		</p>
-	</div>
-	<?php
-}
 
 function currency_switch() {
 	?>
-	<div class="w-full justify-center md:justify-end flex mb-6 h-[30px] md:h-auto">
+	<div class="w-full justify-center md:justify-end flex mb-10 h-[30px] md:h-auto">
 		<form class=" w-full justify-center md:justify-end flex items-center gap-2 ">
 			<label for="currency"
-				class="w-max block text-sm font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
-			<select id="currency" x-model="currency" class="bg-lightGrayBg max-w-20 text-sm rounded-lg block w-full p-2.5">
+				class="w-max block text-bodyBold lg:text-[1rem] lg:leading-[1.5rem] lg:font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
+			<select id="currency" x-model="currency"
+				class="bg-lightGrayBg max-w-20 text-bodyBold rounded-lg block w-full p-2.5 lg:text-[1rem] lg:leading-[1rem] lg:font-medium">
 				<option value="eur" selected>EUR</option>
 				<option value="usd">USD</option>
 			</select>
@@ -101,70 +59,44 @@ function calendly_modal() {
 	<?php
 }
 
-function terms_modal( $terms ) {
-	if ( empty( $terms ) )
-		return;
-
-	plmt_modal( "termsModalOpen", function () use ($terms) {
-		?>
-		<div class="flex flex-col justify-center items-center gap-4 mx-auto w-full">
-			<h3><?php echo esc_html( $terms['heading'] ) ?></h3>
-			<p class="max-w-[740px] text-lg font-medium text-center whitespace-pre-line">
-				<?php echo esc_html( $terms['description'] ) ?>
-			</p>
-		</div>
-		<?php
-	} );
-?>
-<?php
-}
-
 function package_cards_mobile( $packages ) {
-	if ( empty( $packages['packages_list'] ) )
+	if ( empty( $packages ) )
 		return;
 	?>
-	<div x-show="isPackages" x-cloak class="packages-list swiper">
+	<div class="packages-list swiper">
 		<div class="swiper-wrapper">
-			<?php foreach ( $packages['packages_list'] as $package ) : ?>
+			<?php foreach ( $packages as $package ) : ?>
 				<div class="swiper-slide h-full">
 					<div
-						class="relative flex flex-col h-full p-6 rounded-[4px] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] py-[4.125rem] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
 						<?php endif; ?>
-						<div class="mb-9">
-							<div class="font-medium text-[1.375rem] leading-7">
-								<?php echo esc_html( $package['title'] ) ?>
+						<div>
+							<div class="flex items-center justify-between mb-6">
+								<h4 class="text-h4Bold">
+									<?php echo esc_html( $package['title'] ) ?>
+								</h4>
+								<svg data-tippy-content="<?php echo esc_attr( $package['popup_text'] ) ?>" width="23"
+									height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M11.5 0.625C9.25024 0.625 7.051 1.29213 5.18039 2.54203C3.30978 3.79193 1.85182 5.56847 0.990875 7.64698C0.129929 9.72549 -0.0953343 12.0126 0.343573 14.2192C0.782479 16.4257 1.86584 18.4525 3.45667 20.0433C5.04749 21.6342 7.07432 22.7175 9.28085 23.1564C11.4874 23.5953 13.7745 23.3701 15.853 22.5091C17.9315 21.6482 19.7081 20.1902 20.958 18.3196C22.2079 16.449 22.875 14.2498 22.875 12C22.8716 8.98421 21.6721 6.09292 19.5396 3.96043C17.4071 1.82794 14.5158 0.628413 11.5 0.625ZM11.2813 5.87504C11.5409 5.87504 11.7947 5.95202 12.0105 6.09624C12.2263 6.24046 12.3946 6.44544 12.4939 6.68527C12.5932 6.9251 12.6192 7.189 12.5686 7.4436C12.518 7.6982 12.3929 7.93206 12.2094 8.11562C12.0258 8.29918 11.792 8.42418 11.5374 8.47482C11.2828 8.52546 11.0189 8.49947 10.779 8.40013C10.5392 8.30079 10.3342 8.13257 10.19 7.91673C10.0458 7.70089 9.96881 7.44713 9.96881 7.18754C9.96881 6.83944 10.1071 6.5056 10.3532 6.25946C10.5994 6.01332 10.9332 5.87504 11.2813 5.87504ZM12.375 18.125H11.5C11.268 18.125 11.0454 18.0328 10.8813 17.8687C10.7172 17.7046 10.625 17.4821 10.625 17.25V12C10.3929 12 10.1704 11.9078 10.0063 11.7437C9.8422 11.5796 9.75001 11.3571 9.75001 11.125C9.75001 10.8929 9.8422 10.6704 10.0063 10.5063C10.1704 10.3422 10.3929 10.25 10.625 10.25H11.5C11.7321 10.25 11.9546 10.3422 12.1187 10.5063C12.2828 10.6704 12.375 10.8929 12.375 11.125V16.375C12.6071 16.375 12.8296 16.4672 12.9937 16.6313C13.1578 16.7954 13.25 17.0179 13.25 17.25C13.25 17.4821 13.1578 17.7046 12.9937 17.8687C12.8296 18.0328 12.6071 18.125 12.375 18.125Z"
+										fill="#B2B2B2" />
+								</svg>
 							</div>
-							<div class="inline-flex items-baseline mb-3">
-								<span class="font-medium text-[2rem] leading-[41px]"
-									x-html="currency === 'usd' ? '$' : '€'"></span>
-								<span class="font-medium text-[2rem] leading-[41px]"
+							<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4">
+								<span x-html="currency === 'usd' ? '$' : '€'"></span>
+								<span
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
 							</div>
-							<div class="mb-6 text-textGray font-medium">
+							<div class="mb-6">
 								<?php echo esc_html( $package['description'] ) ?>
 							</div>
-							<?php plmt_button_with_arrow( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), $package['title'], array(
-								"classes" => "pricing-button w-full",
-								"variant" => ! $package['is_best_value'] ? 'outlined' : '',
+							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), array(
+								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
+								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
 							) ) ?>
-						</div>
-						<div>
-							<ul class="text-sm space-y-3 grow prose overflow-hidden">
-								<?php foreach ( $package['services'] as $service ) : ?>
-									<li class="flex items-center">
-										<svg class="w-2 h-2 fill-accent mr-2 shrink-0" viewBox="0 0 12 12"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-										</svg>
-										<span
-											class="text-textDarkGray font-medium"><?php echo esc_html( $service['title'] ) ?></span>
-									</li>
-								<?php endforeach; ?>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -176,51 +108,45 @@ function package_cards_mobile( $packages ) {
 }
 
 function package_cards( $packages ) {
-	if ( empty( $packages['packages_list'] ) )
+	if ( empty( $packages ) )
 		return;
 	?>
-	<div x-show="isPackages" x-cloak>
-		<div class="mb-10 max-w-sm mx-auto grid gap-6 lg:grid-cols-4 items-start lg:max-w-none">
-			<?php foreach ( $packages['packages_list'] as $package ) : ?>
+	<div x-cloak>
+		<div class="max-w-sm mx-auto grid lg:grid-cols-4 items-start lg:max-w-none">
+			<?php foreach ( $packages as $package ) : ?>
 				<div class="h-full">
 					<div
-						class="relative flex flex-col h-full p-6 py-10 rounded-[4px] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
-								class="uppercase bg-accent absolute top-4 right-0 px-3 py-2 text-xs rounded-l-[4px] text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
+								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
 						<?php endif; ?>
-						<div class="mb-9">
-							<div class="font-medium text-[1.375rem] leading-7">
-								<?php echo esc_html( $package['title'] ) ?>
+						<div class="h-full flex flex-col justify-between">
+							<div class="mb-6">
+								<div class="flex items-center justify-between mb-12">
+									<h4 class="text-h4Bold">
+										<?php echo esc_html( $package['title'] ) ?>
+									</h4>
+									<svg data-tippy-content="<?php echo esc_attr( $package['popup_text'] ) ?>" width="23"
+										height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M11.5 0.625C9.25024 0.625 7.051 1.29213 5.18039 2.54203C3.30978 3.79193 1.85182 5.56847 0.990875 7.64698C0.129929 9.72549 -0.0953343 12.0126 0.343573 14.2192C0.782479 16.4257 1.86584 18.4525 3.45667 20.0433C5.04749 21.6342 7.07432 22.7175 9.28085 23.1564C11.4874 23.5953 13.7745 23.3701 15.853 22.5091C17.9315 21.6482 19.7081 20.1902 20.958 18.3196C22.2079 16.449 22.875 14.2498 22.875 12C22.8716 8.98421 21.6721 6.09292 19.5396 3.96043C17.4071 1.82794 14.5158 0.628413 11.5 0.625ZM11.2813 5.87504C11.5409 5.87504 11.7947 5.95202 12.0105 6.09624C12.2263 6.24046 12.3946 6.44544 12.4939 6.68527C12.5932 6.9251 12.6192 7.189 12.5686 7.4436C12.518 7.6982 12.3929 7.93206 12.2094 8.11562C12.0258 8.29918 11.792 8.42418 11.5374 8.47482C11.2828 8.52546 11.0189 8.49947 10.779 8.40013C10.5392 8.30079 10.3342 8.13257 10.19 7.91673C10.0458 7.70089 9.96881 7.44713 9.96881 7.18754C9.96881 6.83944 10.1071 6.5056 10.3532 6.25946C10.5994 6.01332 10.9332 5.87504 11.2813 5.87504ZM12.375 18.125H11.5C11.268 18.125 11.0454 18.0328 10.8813 17.8687C10.7172 17.7046 10.625 17.4821 10.625 17.25V12C10.3929 12 10.1704 11.9078 10.0063 11.7437C9.8422 11.5796 9.75001 11.3571 9.75001 11.125C9.75001 10.8929 9.8422 10.6704 10.0063 10.5063C10.1704 10.3422 10.3929 10.25 10.625 10.25H11.5C11.7321 10.25 11.9546 10.3422 12.1187 10.5063C12.2828 10.6704 12.375 10.8929 12.375 11.125V16.375C12.6071 16.375 12.8296 16.4672 12.9937 16.6313C13.1578 16.7954 13.25 17.0179 13.25 17.25C13.25 17.4821 13.1578 17.7046 12.9937 17.8687C12.8296 18.0328 12.6071 18.125 12.375 18.125Z"
+											fill="#B2B2B2" />
+									</svg>
+								</div>
+								<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4 lg:mb-0">
+									<span x-html="currency === 'usd' ? '$' : '€'"></span>
+									<span
+										x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
+								</div>
+								<div class="lg:text-darkGray">
+									<?php echo esc_html( $package['description'] ) ?>
+								</div>
 							</div>
-							<div class="inline-flex items-baseline mb-3">
-								<span class="font-medium text-[2rem] leading-[41px]"
-									x-html="currency === 'usd' ? '$' : '€'"></span>
-								<span class="font-medium text-[2rem] leading-[41px]"
-									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
-							</div>
-							<div class="mb-6 text-textGray font-medium min-h-[120px] min-[1070px]:min-h-[96px] xl:min-h-[72px]">
-								<?php echo esc_html( $package['description'] ) ?>
-							</div>
-							<?php plmt_button_with_arrow( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), $package['title'], array(
-								"classes" => "pricing-button w-full",
-								"variant" => ! $package['is_best_value'] ? 'outlined' : '',
+							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), array(
+								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
+								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
 							) ) ?>
-						</div>
-						<div>
-							<ul class="text-sm space-y-3 grow prose overflow-hidden">
-								<?php foreach ( $package['services'] as $service ) : ?>
-									<li class=" flex items-center">
-										<svg class="w-2 h-2 fill-accent mr-2 shrink-0" viewBox="0 0 12 12"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-										</svg>
-										<span
-											class="text-textDarkGray font-medium"><?php echo esc_html( $service['title'] ) ?></span>
-									</li>
-								<?php endforeach; ?>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -257,7 +183,7 @@ function standalone_solution( $standalone_solutions ) {
 					} else {
 						this.selectedServices.push(id)
 					}
-				}}" class="standalone-list swiper" x-show="!isPackages">
+				}}" class="standalone-list swiper">
 		<ul class="standalone-wrap swiper-wrapper md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
 			<?php foreach ( $standalone_solutions['standalone_list'] as $solution ) : ?>
 				<li class="swiper-slide relative" x-data="{id: '<?php echo esc_attr( $solution['title'] ) ?>'}">
@@ -332,15 +258,12 @@ function standalone_solution( $standalone_solutions ) {
 
 ?>
 
-	<section class="pb-16 lg:pb-36"
-		x-data="{ isPackages: true, modalOpen: false, selectedPackage: '', termsModalOpen: false, currency: 'eur' }"
-		@uscountry.window="currency = 'usd';">
+	<div x-data="{ modalOpen: false, selectedPackage: '', currency: 'eur' }" @uscountry.window="currency = 'usd';">
 		<div id="pricing" class="relative">
-			<div class=" relative flex flex-col justify-center overflow-hidden">
+			<div class="relative flex flex-col justify-center overflow-hidden">
 				<div>
 					<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
 					<div class="container">
-						<?php pricing_header( $pricing_content, $hide_standalone_solutions ) ?>
 						<?php currency_switch() ?>
 						<div class="hidden lg:block">
 							<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
@@ -349,27 +272,14 @@ function standalone_solution( $standalone_solutions ) {
 					<div class="lg:hidden">
 						<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
 					</div>
-					<?php if ( ! $hide_standalone_solutions ) : ?>
-						<div class="lg:container mx-auto">
-							<?php isset( $pricing_content['standalone_solutions'] ) ? standalone_solution( $pricing_content['standalone_solutions'] ) : ''; ?>
-						</div>
-					<?php endif; ?>
 				</div>
 			</div>
 		</div>
-		<div x-show="isPackages" class="hidden lg:block">
+		<div class="hidden lg:block">
 			<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
 		</div>
 
-		<div x-show="isPackages" class="lg:hidden">
+		<div class="lg:hidden">
 			<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
 		</div>
-		<div>
-			<?php calendly_modal() ?>
-			<?php terms_modal( $pricing_content['payment_terms'] ) ?>
-			<div class="flex w-full justify-center mt-16">
-				<button class="text-lg font-semibold underline hover:text-accent transition-colors duration-300 "
-					@click="termsModalOpen=true"><?php esc_html_e( 'Payment terms' ) ?></button>
-			</div>
-		</div>
-	</section>
+	</div>

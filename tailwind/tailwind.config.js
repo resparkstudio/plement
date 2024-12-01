@@ -48,6 +48,7 @@ module.exports = {
 				darkGray: '#646464',
 				grayBorder: '#D6D6D6',
 				inputGray: '#F3F4F4',
+				chipGray: '#243135',
 			},
 			boxShadow: {
 				testimonial: '5px 5px 30px -5px #012D191A',
@@ -85,6 +86,7 @@ module.exports = {
 				h3: ['2.75rem', { lineHeight: '2.75rem', fontWeight: '800' }],
 				h4Regular: ['2rem', { lineHeight: '2.4rem', fontWeight: '400' }],
 				h4Bold: ['2rem', { lineHeight: '2rem', fontWeight: '700' }],
+				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 			},
 		},

@@ -301,6 +301,7 @@ const handleButtonsWithScrollTriggerRefresh = () => {
 		);
 	});
 };
+console.log('script.js loaded');
 
 initSwiper();
 initStandalone();

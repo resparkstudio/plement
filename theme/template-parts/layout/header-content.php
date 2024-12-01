@@ -16,9 +16,11 @@
 </style>
 
 <header id="masthead" class="relative" x-data="{menuOpen: false}">
-	<div class="flex items-center justify-between relative z-[100] bg-white  border-b border-b-textSecondary">
+	<div
+		class="flex items-center justify-between relative z-[100] bg-white container lg:max-w-none lg:p-0 lg:border-b lg:border-b-textSecondary">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="border-r border-r-textSecondary py-5 px-[75px]">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+				class="lg:border-r border-r-textSecondary py-5 lg:px-[75px]">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
 					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[40px]">
 			</a>
@@ -42,9 +44,9 @@
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
 					<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
-						class="scroll-to border-r-textSecondary h-full w-full border-r font-semibold">
+						class="border-r-textSecondary h-full w-full border-r font-semibold">
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?> <?php echo $has_children ? 'scroll-to' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
 							<?php if ( $has_children ) : ?>
 								<svg :class="open && 'rotate-180'" width="17" height="16" viewBox="0 0 17 16" fill="none"
 									xmlns="http://www.w3.org/2000/svg">

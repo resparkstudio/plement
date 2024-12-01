@@ -8,9 +8,9 @@ if ( ! isset( $package_comparison_data ) || empty( $package_comparison_data ) ) 
 
 function mobile_minimal_package_card( $package ) {
 	?>
-	<div class="relative mb-6">
+	<div class="relative mb-7">
 		<a href="#pricing"
-			class="w-full flex items-center gap-[6px] font-medium justify-center group text-lg hover:text-accent transition-colors duration-300">
+			class="w-full flex items-center gap-[6px] justify-center group text-title hover:text-accent transition-colors duration-300">
 			<?php echo esc_attr( $package['title'] ) ?>
 			<div class="z-1 flex justify-center items-center relative overflow-hidden">
 				<div
@@ -45,7 +45,7 @@ function mobile_pricing_accordion_head( $feature_group ) {
 		}, 300);
 	}
 	"
-		class="refreshScrollTrigger flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
+		class="refreshScrollTrigger flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-title">
 		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': mobileAccordionOpen }"
 			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
@@ -65,12 +65,12 @@ function mobile_pricing_accordion_body( $features, $index ) {
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
 							<button data-content="<?php echo esc_attr( $feature['popup_text'] ) ?>"
-								class="tippy-button cursor-pointer font-medium max-w-[123px] sm:max-w-[243px] underline text-left">
+								class="tippy-button cursor-pointer max-w-[123px] sm:max-w-[243px] underline text-left">
 								<?php echo esc_html( $feature['title'] ) ?>
 							</button>
 						</div>
 					<?php else : ?>
-						<div class="font-medium max-w-[123px]  sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
+						<div class="max-w-[123px] sm:max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php endif; ?>
 				</div>
 				<div class="justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
@@ -153,8 +153,8 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 
 <div class="container pt-10 lg:pt-16" x-data="{comparisonAccordionOpen: false}">
 	<button @click="comparisonAccordionOpen=!comparisonAccordionOpen"
-		class="refreshScrollTrigger flex gap-1 items-center mx-auto w-max text-lg font-semibold underline hover:text-accent transition-colors duration-300 ">
-		<?php echo esc_html( $package_comparison_data['compare_button_text'] ) ?>
+		class="refreshScrollTrigger flex gap-1 items-center mx-auto w-max text-title hover:text-accent transition-colors duration-300 ">
+		<span><?php esc_html_e( 'Compare packages' ) ?></span>
 		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': comparisonAccordionOpen }"
 			viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
 			stroke-linecap="round" stroke-linejoin="round">
@@ -165,7 +165,7 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 		<div class="swiper package-compare-mobile pt-10 lg:pt-24 mt-10">
 			<div class="swiper-wrapper">
 				<?php $index = 0;
-				foreach ( $pricing_data['packages']['packages_list'] as $package ) :
+				foreach ( $pricing_data['packages'] as $package ) :
 					?>
 					<div class="swiper-slide">
 						<?php
@@ -180,9 +180,6 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 							</div><?php
 						endforeach;
 						?>
-						<div class=" col-span-5">
-							<?php mobile_comparison_footer_rows( $package_comparison_data['footer_rows'], $index ) ?>
-						</div>
 					</div>
 					<?php
 					$index++;
@@ -191,20 +188,5 @@ function mobile_comparison_footer_rows( $footer_rows, $index ) {
 			<div class="swiper-pagination !static mt-6"></div>
 		</div>
 	</div>
-	<div class="lg:grid grid-cols-4 pt-12 lg:pt-20">
-		<div
-			class="col-span-2 col-start-2 w-full flex-col gap-y-6 justify-between items-center mx-auto flex p-8 rounded-[4px] bg-white border border-lightGray">
-			<div class="max-w-[349px]">
-				<h4 class="font-medium text-[1.375rem] leading-7 mb-[10px]">
-					<?php echo esc_html( $pricing_data['packages']['custom_packages']['title'] ) ?>
-				</h4>
-				<p class="text-textGray font-medium max-w-sm">
-					<?php echo esc_html( $pricing_data['packages']['custom_packages']['description'] ) ?>
-				</p>
-			</div>
 
-			<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
-
-		</div>
-	</div>
 </div>

@@ -295,7 +295,7 @@ function plmt_modal( $modal_id, $contentCallback ) {
 		<?php
 }
 
-function plmt_tag_chips( $tags ) {
+function plmt_arrow_list( $tags ) {
 	?>
 		<div>
 			<?php foreach ( $tags as $tag ) : ?>
@@ -306,6 +306,17 @@ function plmt_tag_chips( $tags ) {
 					</svg>
 					<?php echo esc_html( $tag['title'] ) ?>
 				</span>
+			<?php endforeach; ?>
+		</div>
+		<?php
+}
+
+function plmt_tag_chips( $tags ) {
+	?>
+		<div class="flex flex-wrap gap-2">
+			<?php foreach ( $tags as $tag ) : ?>
+				<span
+					class="bg-chipGray px-3 py-[6px] rounded-full text-lightGrayBg inline-block text-center text-bodySmall"><?php echo esc_html( $tag['chip'] ) ?></span>
 			<?php endforeach; ?>
 		</div>
 		<?php
@@ -322,20 +333,10 @@ function plmt_build_menu_tree( $menu, $parent_id ) {
 				$item->children = $children;
 			}
 
-			$url       = $item->url;
-			$tax_value = get_post_meta( $item->ID, '_menu_item_tax_value', true );
-			if ( $tax_value ) {
-				foreach ( $tax_value as $key => $value ) {
-					if ( $value != '' ) {
-						$url = add_query_arg( $key, $value, $url );
-					}
-				}
-			}
-
 			$branch[] = array(
 				'ID' => $item->ID,
 				'title' => $item->title,
-				'url' => $url,
+				'url' => $item->url,
 				'children' => $children ?? null,
 				'description' => get_field( 'description', $item->ID ) ?? '',
 				'image' => get_field( 'image', $item->ID ) ?? '',
