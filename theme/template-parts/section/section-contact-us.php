@@ -50,7 +50,6 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 				<img src="<?php echo esc_url( $contact_content['info_image']['url'] ) ?>"
 					alt="<?php echo esc_attr( $contact_content['info_image']['alt'] ) ?>"
 					class="rounded-full w-[40px] h-[40px] border border-textSecondary">
-
 			</div>
 		</div>
 		<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>

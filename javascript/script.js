@@ -68,6 +68,26 @@ function initSwiper() {
 			prevEl: '.custom-swiper-button-prev',
 		},
 	});
+
+	new Swiper('.help-center-gallery', {
+		modules: [Navigation],
+		// slidesPerView: 'auto',
+		breakpoints: {
+			768: {
+				slidesPerView: 1.2,
+				spaceBetween: 16,
+			},
+			1024: {
+				slidesPerView: 'auto',
+				spaceBetween: 16,
+			},
+		},
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.custom-swiper-button-next',
+			prevEl: '.custom-swiper-button-prev',
+		},
+	});
 }
 
 function initStandalone() {
