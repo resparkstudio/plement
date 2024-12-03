@@ -17,43 +17,53 @@ $links               = get_field( 'links', 'option' );
 ?>
 
 <footer id="colophon" class="bg-mainBlack text-white z-0 relative" x-data="{calendlyOpen: false}">
-	<div class=" bottom-0 w-full pt-20 pb-8 lg:pb-[4.75rem]">
-		<div class="container grid gird-cols-1 gap-10 lg:grid-cols-4 justify-between lg:mb-[104px]">
+	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
+		<div
+			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:grid-cols-4 lg:justify-between lg:mb-[104px]">
 			<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="py-5 lg:px-[75px]">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mb-[1.875rem]">
 					<img src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>"
-						class="lg:h-[40px]">
+						class="h-[40px]">
 				</a>
 			<?php else : ?>
 				<a class="site-title"
 					href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_url( bloginfo( 'name' ) ); ?></a>
 			<?php endif; ?>
 			<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
-				<nav aria-label="<?php esc_attr_e( 'Footer Menu', 'plement' ); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-2',
-							'menu_class' => 'footer-menu',
-							'depth' => 1,
-						)
-					);
-					?>
-				</nav>
+				<div>
+					<span
+						class="hidden lg:inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem"><?php esc_html_e( 'Menu', 'plmt' ) ?></span>
+					<nav class="text-center mb-[3.75rem] lg:mb-0 lg:text-left"
+						aria-label="<?php esc_attr_e( 'Footer Menu', 'plement' ); ?>">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-2',
+								'menu_class' => 'footer-menu',
+								'depth' => 1,
+							)
+						);
+						?>
+					</nav>
+				</div>
 			<?php endif; ?>
-			<nav>
-				<ul class="flex flex-col gap-10 lg:gap-5">
-					<?php foreach ( $links as $link ) : ?>
-						<li>
-							<a href="<?php echo esc_url( $link['link']['url'] ) ?>">
-								<?php echo esc_html( $link['link']['title'] ) ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			</nav>
-			<div class="mb-10 lg:mb-12">
-				<span class="font-medium mb-2 inline-block"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
+			<div class="hidden lg:block">
+				<span
+					class="inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e( 'Our Services', 'plmt' ) ?></span>
+				<nav>
+					<ul class="flex flex-col gap-10 lg:gap-5">
+						<?php foreach ( $links as $link ) : ?>
+							<li>
+								<a href="<?php echo esc_url( $link['link']['url'] ) ?>">
+									<?php echo esc_html( $link['link']['title'] ) ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</nav>
+			</div>
+			<div class="justify-self-start mb-10 lg:mb-12">
+				<span class="font-medium mb-4 inline-block"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
 				<div class="flex items-center gap-4">
 					<div x-data="{
 							copyText: '<?php echo esc_html( $faq_content['email'] ) ?>',
@@ -98,21 +108,21 @@ $links               = get_field( 'links', 'option' );
 				</div>
 			</div>
 		</div>
-		<div class="container lg:px-0">
+		<div class="lg:px-0">
 			<button
 				class="mb-[3.75rem] text-[2rem] leading-[2.2rem] text-accent border border-accent w-full py-6 lg:text-[3rem] lg:leading-[3.3rem] lg:mb-10 hover:text-white hover:bg-accent transition duration-300 ease-in-out">
 				<?php esc_html_e( "Let's talk", 'plmt' ) ?>
 			</button>
 		</div>
 		<div
-			class="container border-t border-t-[#FFFFFF4D] pt-6 text-sm flex flex-col-reverse md:flex-row gap-4 md:gap-[20px]">
+			class="text-center border-t border-t-[#FFFFFF4D] pt-1 md:pt-6 text-[0.875rem] leading-[1.3125rem] font-medium flex flex-col-reverse md:flex-row gap-2 md:gap-5">
 			<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
-			<div class="flex flex-col md:flex-row gap-4 md:gap-[20px]">
+			<div class="flex flex-col md:flex-row gap-2 md:gap-5">
 				<span class="hidden md:inline">|</span>
-				<a
+				<a class="underline md:no-underline"
 					href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
 				<span class="hidden md:inline">|</span>
-				<a
+				<a class="underline md:no-underline"
 					href="<?php echo esc_url( home_url( '/terms-and-conditions' ) ) ?>"><?php esc_html_e( 'Terms and conditions', 'plmt' ) ?></a>
 			</div>
 		</div>

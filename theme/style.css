@@ -2068,6 +2068,10 @@ div.wpcf7-validation-errors {
   margin-top: 2rem;
 }
 
+.mb-\[1\.875rem\] {
+  margin-bottom: 1.875rem;
+}
+
 .block {
   display: block;
 }
@@ -2190,10 +2194,6 @@ div.wpcf7-validation-errors {
 
 .h-\[60px\] {
   height: 60px;
-}
-
-.h-\[700px\] {
-  height: 700px;
 }
 
 .h-auto {
@@ -2585,6 +2585,10 @@ div.wpcf7-validation-errors {
   flex-wrap: wrap;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -2611,6 +2615,10 @@ div.wpcf7-validation-errors {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-1 {
@@ -2661,6 +2669,10 @@ div.wpcf7-validation-errors {
   gap: 6px;
 }
 
+.gap-\[1\.875rem\] {
+  gap: 1.875rem;
+}
+
 .gap-x-12 {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
@@ -2707,6 +2719,10 @@ div.wpcf7-validation-errors {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.justify-self-start {
+  justify-self: start;
 }
 
 .justify-self-center {
@@ -3112,10 +3128,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 1rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -3172,10 +3184,6 @@ div.wpcf7-validation-errors {
   padding-top: 2.5rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .pt-20 {
   padding-top: 5rem;
 }
@@ -3198,6 +3206,10 @@ div.wpcf7-validation-errors {
 
 .pt-\[7rem\] {
   padding-top: 7rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -3295,6 +3307,10 @@ div.wpcf7-validation-errors {
   line-height: 1.75rem;
 }
 
+.text-\[0\.875rem\] {
+  font-size: 0.875rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3325,6 +3341,14 @@ div.wpcf7-validation-errors {
 
 .leading-\[41px\] {
   line-height: 41px;
+}
+
+.leading-\[1\.3125rem\] {
+  line-height: 1.3125rem;
+}
+
+.leading-\[1rem\] {
+  line-height: 1rem;
 }
 
 .text-accent {
@@ -3798,6 +3822,10 @@ div.wpcf7-validation-errors {
     gap: 20px;
   }
 
+  .md\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .md\:space-y-14 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -3807,6 +3835,10 @@ div.wpcf7-validation-errors {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .md\:text-left {
@@ -3833,6 +3865,10 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
+  }
+
+  .md\:no-underline {
+    text-decoration-line: none;
   }
 }
 
@@ -3942,6 +3978,10 @@ div.wpcf7-validation-errors {
     display: block;
   }
 
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -3964,10 +4004,6 @@ div.wpcf7-validation-errors {
 
   .lg\:h-\[45px\] {
     height: 45px;
-  }
-
-  .lg\:h-\[495px\] {
-    height: 495px;
   }
 
   .lg\:h-\[5rem\] {
@@ -4136,6 +4172,10 @@ div.wpcf7-validation-errors {
     justify-content: space-between;
   }
 
+  .lg\:justify-items-start {
+    justify-items: start;
+  }
+
   .lg\:gap-0 {
     gap: 0px;
   }
@@ -4152,6 +4192,10 @@ div.wpcf7-validation-errors {
     gap: 1rem;
   }
 
+  .lg\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .lg\:gap-\[1\.8125rem\] {
     gap: 1.8125rem;
   }
@@ -4166,10 +4210,6 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[7\.5rem\] {
     gap: 7.5rem;
-  }
-
-  .lg\:gap-5 {
-    gap: 1.25rem;
   }
 
   .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
@@ -4311,8 +4351,8 @@ div.wpcf7-validation-errors {
     padding-bottom: 4.375rem;
   }
 
-  .lg\:pb-\[46px\] {
-    padding-bottom: 46px;
+  .lg\:pb-\[4\.75rem\] {
+    padding-bottom: 4.75rem;
   }
 
   .lg\:pb-\[5\.25rem\] {
@@ -4363,10 +4403,6 @@ div.wpcf7-validation-errors {
     padding-top: 10rem;
   }
 
-  .lg\:pt-\[166px\] {
-    padding-top: 166px;
-  }
-
   .lg\:pt-\[3\.75rem\] {
     padding-top: 3.75rem;
   }
@@ -4383,8 +4419,8 @@ div.wpcf7-validation-errors {
     padding-top: 7.5rem;
   }
 
-  .lg\:pb-\[4\.75rem\] {
-    padding-bottom: 4.75rem;
+  .lg\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .lg\:text-left {
