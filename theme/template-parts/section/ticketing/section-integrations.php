@@ -13,7 +13,7 @@ function integration_cards( $cards ) {
 	?>
 	<ul class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 		<?php foreach ( $cards as $card ) : ?>
-			<li class="bg-mainBlack p-10 h-full flex flex-col justify-between min-h-[23.5rem] lg:gap-[1.8125rem]">
+			<li class="bg-mainBlack px-10 py-7 h-full flex flex-col justify-between min-h-[23.5rem] lg:gap-[1.8125rem]">
 				<div>
 					<img class="w-8 h-8 mb-6" src="<?php echo esc_url( $card['image']['url'] ) ?>"
 						alt="<?php echo esc_url( $card['image']['alt'] ) ?>">
@@ -31,7 +31,7 @@ function integration_cards( $cards ) {
 
 ?>
 
-<section id="integrations" class="py-20">
+<section id="integrations" class="pt-[7.5rem] pb-20 lg:pt-[10rem]">
 	<div class="lg:container lg:mx-auto">
 		<h2 class="text-center text-h4Bold mb-10 lg:text-h3 lg:mb-[3.75rem]">
 			<?php echo esc_html( $integrations_content['heading'] ) ?>

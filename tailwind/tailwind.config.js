@@ -26,6 +26,7 @@ module.exports = {
 				dm: ['DM Sans', 'sans-serif'],
 			},
 			backgroundImage: {
+				services: 'url("../theme/assets/bg-services.png")',
 				gradientLeft:
 					'linear-gradient(90deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
 				gradientRight:

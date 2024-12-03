@@ -56,7 +56,7 @@
 }
 
 .button {
-	@apply bg-accent inline-flex h-11 items-center gap-3 px-6 py-[14px] font-semibold leading-[1rem] text-white transition duration-300 ease-in-out lg:py-5;
+	@apply bg-accent text-bodyBold inline-flex items-center gap-3 px-6 py-[0.875rem] text-white transition duration-300 ease-in-out;
 }
 
 .button:hover {
@@ -64,11 +64,11 @@
 }
 
 .button_secondary {
-	@apply text-textBlack border-lightGrayBg bg-lightGrayBg hover:border-accent hover:text-accent inline-flex h-11 items-center gap-3 border px-6 py-[14px] font-semibold leading-[1rem] transition-colors duration-300 ease-in-out lg:py-5;
+	@apply text-textBlack border-lightGrayBg bg-lightGrayBg hover:border-accent hover:text-accent text-bodyBold inline-flex items-center gap-3 border px-6 py-[0.875rem] transition-colors duration-300 ease-in-out;
 }
 
 .button_outlined {
-	@apply border-accent text-accent inline-flex h-11 items-center gap-3 border-2 bg-white px-6 font-semibold leading-[1rem];
+	@apply border-accent text-accent text-bodyBold inline-flex items-center gap-3 border-2 bg-white px-6 py-[0.875rem];
 }
 
 #site-navigation {

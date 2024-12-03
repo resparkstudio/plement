@@ -7,8 +7,8 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 
 ?>
 
-<section id="contact-us" class="container grid grid-cols-1 lg:grid-cols-3 py-16 lg:py-36 gap-10">
-	<div class="flex flex-col gap-3 lg:gap-0 lg:justify-between lg:max-w-[16.875rem]">
+<section id="contact-us" class="container grid grid-cols-1 lg:grid-cols-3 pb-[6.25rem] lg:pt-20 lg:pb-[7.5rem] gap-10">
+	<div class="flex flex-col gap-3 lg:gap-0 lg:justify-between lg:max-w-[16.875rem] lg:pl-10">
 		<h2 class="text-h4Bold lg:text-h1"><?php esc_html_e( $contact_content['heading'] ) ?></h2>
 		<p class="text-regular"><?php esc_html_e( $contact_content['bottom_text'] ) ?></p>
 	</div>
