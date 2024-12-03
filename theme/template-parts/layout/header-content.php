@@ -94,13 +94,13 @@
 				<div class=" text-center text-textBlack three col">
 					<div class="hamburger" id="hamburger-1">
 						<span
-							class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
 							:class="menuOpen ? 'translate-y-[6px] rotate-[45deg]' : ''"></span>
 						<span
-							class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							class="w-[21px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
 							:class="menuOpen ? 'opacity-0' : ''"></span>
 						<span
-							class="w-[25px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
 							:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg]' : ''"></span>
 					</div>
 				</div>
@@ -108,22 +108,71 @@
 
 		</div>
 	</div>
-	<nav x-cloak x-show="menuOpen" @click.away="menuOpen=false" id="site-navigation"
-		class="absolute z-[100] top-[72px] lg:top-[108px] left-0 w-full flex flex-col pb-10 bg-lightGrayBg  px-4 py-10 lg:hidden"
+	<nav x-data="{childOpen: false}" x-cloak x-show="menuOpen" x-trap.inert.noscroll="menuOpen"
+		@click.away="menuOpen=false" id="site-navigation"
+		class="absolute z-[100] top-0 left-0 w-full flex justify-end lg:hidden bg-[#0000003D] h-screen"
 		aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
 		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'menu-1',
-				'menu_id' => 'primary-menu',
-				'menu_class' => 'mobile-menu-primary-list',
-				'items_wrap' => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
-			)
-		);
+		$menu_locations = get_nav_menu_locations();
+		$menu_id        = $menu_locations['menu-1'];
+
+		$items = plmt_menu_builder( $menu_id );
+
 		?>
-		<?php plmt_icon_button( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
-			'classes' => 'w-max',
-		) ) ?>
+		<div class="relative">
+			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
+				class="absolute top-5 right-4 flex text-textBlack lg:hidden" aria-label="mobile menu"
+				aria-controls="mobileMenu">
+				<div class=" text-center text-textBlack three col">
+					<div class="hamburger" id="hamburger-1">
+						<span
+							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							:class="menuOpen ? 'translate-y-[6px] rotate-[45deg]' : ''"></span>
+						<span
+							class="w-[21px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							:class="menuOpen ? 'opacity-0' : ''"></span>
+						<span
+							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg]' : ''"></span>
+					</div>
+				</div>
+			</button>
+			<ul class="overflow-y-scroll bg-white h-screen w-[15.9375rem] pt-[7rem]">
+				<?php
+				foreach ( $items as $item ) :
+					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
+					$has_children  = isset( $item['children'] ) && count( $item['children'] );
+					?>
+					<li x-show="!childOpen" x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
+						class="px-4 text-center w-full font-semibold h-[10rem] <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>"
+						<?php echo $has_children ? '@click="childOpen = true"' : '' ?>>
+						<a href="<?php echo esc_url( $item['url'] ); ?>"
+							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+							<?php if ( $is_contact_us ) : ?>
+								<?php plmt_arrow(); ?>
+							<?php endif; ?>
+						</a>
+					</li>
+
+					<?php if ( $has_children ) : ?>
+						<ul x-show="childOpen">
+							<?php foreach ( $item['children'] as $item ) : ?>
+								<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
+									class="px-4 text-center w-full font-semibold h-[10rem] <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>">
+									<a href="<?php echo esc_url( $item['url'] ); ?>"
+										class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+										<?php if ( $is_contact_us ) : ?>
+											<?php plmt_arrow(); ?>
+										<?php endif; ?>
+									</a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+
+				<?php endforeach; ?>
+			</ul>
+		</div>
 	</nav>
 
 

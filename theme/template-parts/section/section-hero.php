@@ -21,7 +21,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 					'secondary' ) ) ?>
 			</div>
 			<div class='mt-6 lg:mt-10 lg:flex justify-between items-center'>
-				<div class='flex gap-4'>
+				<div class='flex gap-4 flex-wrap'>
 					<?php foreach ( $hero_content['hero_bottom']['partner_icons'] as $icon ) : ?>
 						<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
 							class='w-[150px] h-[62px] object-contain'>
