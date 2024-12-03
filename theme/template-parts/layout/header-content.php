@@ -144,10 +144,10 @@
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
 					<li x-show="!childOpen" x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
-						class="px-4 text-center w-full font-semibold h-[10rem] <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>"
+						class="px-4 text-center w-full font-semibold h-[10rem] hover:bg-accent <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>"
 						<?php echo $has_children ? '@click="childOpen = true"' : '' ?>>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+							class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
 							<?php if ( $is_contact_us ) : ?>
 								<?php plmt_arrow(); ?>
 							<?php endif; ?>
@@ -158,9 +158,9 @@
 						<ul x-show="childOpen">
 							<?php foreach ( $item['children'] as $item ) : ?>
 								<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
-									class="px-4 text-center w-full font-semibold h-[10rem] <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>">
+									class="px-4 text-center w-full font-semibold h-[10rem] hover:bg-accent <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>">
 									<a href="<?php echo esc_url( $item['url'] ); ?>"
-										class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white hover:bg-accent transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
+										class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
 										<?php if ( $is_contact_us ) : ?>
 											<?php plmt_arrow(); ?>
 										<?php endif; ?>

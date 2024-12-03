@@ -120,7 +120,7 @@
 }
 
 .footer-menu {
-	@apply mb-10 flex flex-col gap-6 lg:mb-0 lg:flex-row lg:items-center lg:gap-8;
+	@apply flex flex-col gap-10 lg:gap-5;
 }
 
 .footer-menu > li {

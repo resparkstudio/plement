@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_674e6b18b3b7c",
+    "title": "Site settings",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Site settings",
+    "menu_slug": "site-settings",
+    "parent_slug": "themes.php",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1733192499
+}

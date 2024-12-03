@@ -5,7 +5,8 @@ if ( ! isset( $benefits_content ) || empty( $benefits_content ) ) {
 	return;
 }
 ?>
-<section id="benefits" class="container bg-lightGrayBg py-[3.75rem] mb-20 lg:px-10 lg:mb-[7.5rem] lg:pb-[4.375rem]">
+<section id="benefits"
+	class="container bg-lightGrayBg py-[3.75rem] mb-20 lg:px-10 lg:mb-[7.5rem] lg:pb-6 bg-services bg-no-repeat bg-right-bottom bg-[length:212px_160px] lg:bg-[length:298px_226px]">
 	<h2 class="text-h4Bold md:text-center md:text-h2 mb-10 lg:mb-[3.75rem]">
 		<?php esc_html_e( $benefits_content['heading'] ) ?>
 	</h2>
