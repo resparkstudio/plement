@@ -9,42 +9,9 @@ if ( ! isset( $package_comparison_data ) || empty( $package_comparison_data ) ) 
 function minimal_package_card( $package ) {
 	?>
 	<a href="#pricing"
-		class="w-1/5 flex items-center gap-[6px] font-medium justify-center group text-lg hover:text-accent transition-colors duration-300">
+		class="w-1/5 flex items-center gap-[6px] justify-center group text-h5Bold hover:text-accent transition-colors duration-300">
 		<?php echo esc_attr( $package['title'] ) ?>
-		<div class="z-1 flex justify-center items-center relative overflow-hidden">
-			<div
-				class="justify-center items-center w-[1rem] h-[1rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
-					viewBox="0 0 24 24">
-					<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-				</svg>
-			</div>
-			<div
-				class="justify-center items-center w-[1rem] h-[1rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
-					viewBox="0 0 24 24">
-					<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
-				</svg>
-			</div>
-		</div>
 	</a>
-	<?php
-}
-
-function pricing_accordion_head( $feature_group ) {
-	?>
-	<button @click="accordionOpen=!accordionOpen"
-		class="refreshScrollTrigger flex items-center justify-between w-full p-4 text-left select-none group-hover:underline bg-lightGrayBg rounded-[4px] text-lg font-medium">
-		<span><?php echo esc_html( $feature_group['title'] ) ?></span>
-		<svg class="w-[26px] h-[26px] duration-200 ease-out" :class="{ 'rotate-180': accordionOpen }" viewBox="0 0 24 24"
-			xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-			stroke-linejoin="round">
-			<polyline points="6 9 12 15 18 9"></polyline>
-		</svg>
-
-	</button>
 	<?php
 }
 
@@ -57,9 +24,8 @@ function pricing_accordion_body( $features ) {
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
 							<div data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" class="cursor-pointer">
-								<div class="font-medium max-w-[243px] underline"><?php echo esc_html( $feature['title'] ) ?></div>
+								<div class="text-bodyBold max-w-[243px] underline"><?php echo esc_html( $feature['title'] ) ?></div>
 							</div>
-
 						</div>
 					<?php else : ?>
 						<div class="font-medium max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
@@ -144,9 +110,27 @@ function comparison_footer_rows( $footer_rows ) {
 
 ?>
 
-<div class="container pt-[3.75rem]">
-	<div class="sticky top-0 w-full z-[1]">
-		<div class="flex justify-end items-end h-auto bg-white py-5">
+<div class="container pt-[3.75rem]"
+	x-data="{selectedGroup: '<?php echo $package_comparison_data['feature_groups'][0]['title'] ?>'}">
+	<h3 class="text-h4Regular mb-10">
+		<?php echo esc_html( $package_comparison_data['heading'] ) ?>
+	</h3>
+	<div class="flex">
+		<?php
+		foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
+			?>
+			<button @click="selectedGroup = '<?php echo $feature_group['title'] ?>'"
+				:class="selectedGroup === '<?php echo $feature_group['title'] ?>' ? 'border-b-mainBlack' : 'border-b-textSecondary'"
+				class="w-full px-4 pt-6 pb-[0.875rem] border-b-2">
+				<?php echo esc_html( $feature_group['title'] ) ?>
+			</button>
+		<?php endforeach; ?>
+	</div>
+	<div class="w-full z-[1]">
+		<div class="flex justify-end items-end h-auto bg-white pt-14 pb-9">
+			<div class="w-1/5 justify-center text-h5Bold">
+				<?php esc_html_e( 'Parameter', 'plmt' ) ?>
+			</div>
 			<?php foreach ( $pricing_data['packages'] as $package ) :
 				minimal_package_card( $package );
 			endforeach; ?>
@@ -156,8 +140,8 @@ function comparison_footer_rows( $footer_rows ) {
 		<?php
 		foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
 			?>
-			<div class="col-span-5" x-data="{accordionOpen: true}">
-				<?php pricing_accordion_head( $feature_group ) ?>
+			<div x-show="selectedGroup === '<?php echo $feature_group['title'] ?>'" class="col-span-5"
+				x-data="{accordionOpen: true}">
 				<?php pricing_accordion_body( $feature_group['features'] ) ?>
 			</div>
 			<?php

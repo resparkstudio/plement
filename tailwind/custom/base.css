@@ -21,25 +21,25 @@ body {
 }
 
 .tippy-box[data-theme~='custom'] {
-	@apply shadow-testimonial text-textBlack w-[300px] whitespace-break-spaces bg-white p-4 lg:p-[22px];
+	@apply shadow-testimonial text-textBlack bg-lightGrayBg w-[300px] whitespace-break-spaces p-4 lg:p-[22px];
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
-	border-top-color: white;
+	border-top-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='bottom']
 	> .tippy-arrow::before {
-	border-bottom-color: white;
+	border-bottom-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='left']
 	> .tippy-arrow::before {
-	border-left-color: white;
+	border-left-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='right']
 	> .tippy-arrow::before {
-	border-right-color: white;
+	border-right-color: #f8f8fa;
 }
 
 .tippy-box[data-theme~='custom'] > .tippy-svg-arrow {
-	fill: white;
+	fill: #f8f8fa;
 }

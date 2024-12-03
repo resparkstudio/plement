@@ -68,7 +68,7 @@ function package_cards_mobile( $packages ) {
 			<?php foreach ( $packages as $package ) : ?>
 				<div class="swiper-slide h-full">
 					<div
-						class="relative flex flex-col h-full p-[1.875rem] py-[4.125rem] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] py-[4.125rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
@@ -116,7 +116,7 @@ function package_cards( $packages ) {
 			<?php foreach ( $packages as $package ) : ?>
 				<div class="h-full">
 					<div
-						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray lg:hover:shadow-testimonial lg:hover:scale-105 transition-all duration-300 <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
@@ -143,7 +143,7 @@ function package_cards( $packages ) {
 									<?php echo esc_html( $package['description'] ) ?>
 								</div>
 							</div>
-							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), array(
+							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
 								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
 							) ) ?>
