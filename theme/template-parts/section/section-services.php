@@ -76,8 +76,10 @@ function services_list( $services, $heading ) {
 				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true" class="group">
 					<div
 						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] group-hover:bg-accent">
-						<img class="w-[32px] h-[32px] rounded-md mb-4" src="<?php echo esc_url( $service['icon']['url'] ) ?>"
-							alt="<?php echo esc_url( $service['icon']['alt'] ) ?>">
+						<div class="w-[32px] h-[32px] rounded-md mb-4 bg-textSecondary group-hover:bg-white transition-all duration-300 ease-in-out"
+							style="mask-image: url(<?php echo esc_url( $service['icon']['url'] ) ?>)">
+
+						</div>
 						<h4 class="text-xl font-medium inline-block lg:text-[1.375rem] lg:leading-7 mb-2">
 							<?php echo esc_html( $service['title'] ); ?>
 						</h4>

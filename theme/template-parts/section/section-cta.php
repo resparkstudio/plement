@@ -16,7 +16,9 @@ if ( empty( $cta_content ) ) {
 			<div class="mb-6 text-darkGray text-title">
 				<?php echo $cta_content['description'] ?>
 			</div>
-			<?php plmt_button( $cta_content['link']['url'], $cta_content['link']['title'], ) ?>
+			<?php plmt_button( $cta_content['link']['url'], $cta_content['link']['title'], array(
+				"classes" => "w-full justify-center lg:w-auto",
+			) ) ?>
 		</div>
 		<div class="h-[16.875rem]">
 			<img class="max-h-[16.875rem] absolute right-0 -bottom-20 lg:max-h-[22rem] xl:max-h-[30rem] lg:top-1/2 lg:-translate-y-1/2"
