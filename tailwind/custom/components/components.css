@@ -124,7 +124,7 @@
 }
 
 .footer-menu > li {
-	@apply font-semibold;
+	@apply font-medium;
 }
 
 .wpcf7-form-control.wpcf7-text,

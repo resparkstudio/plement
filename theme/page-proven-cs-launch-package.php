@@ -15,7 +15,7 @@ $description = get_field( 'description' );
 
 <section class="container relative z-10 bg-white pb-[7.5rem]">
 	<div
-		class="pt-6 pb-[5.75rem] space-y-4 lg:pt-20 lg:pb-[7.5rem] lg:text-center lg:max-w-[39.75rem] lg:mx-auto lg:space-y-6">
+		class="pt-6 pb-[5.75rem] space-y-4 lg:pt-20 lg:pb-[3.9375rem] lg:text-center lg:max-w-[39.75rem] lg:mx-auto lg:space-y-6">
 		<?php if ( $heading ) : ?>
 			<h1 class="text-h1Mobile lg:text-h2"><?php esc_html_e( $heading ) ?></h1>
 		<?php endif; ?>

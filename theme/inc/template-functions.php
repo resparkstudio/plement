@@ -353,3 +353,39 @@ function plmt_menu_builder( $menu_id = '' ) {
 	$menu = wp_get_nav_menu_items( $menu_id );
 	return plmt_build_menu_tree( $menu, 0 );
 }
+
+function plmt_arrow_dom_node() {
+	$dom  = new DOMDocument();
+	$html = '<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+                <div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+                    </svg>
+                </div>
+                <div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+                    </svg>
+                </div>
+            </div>';
+	$dom->loadHTML( $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+	return $dom->documentElement;
+}
+
+function plmt_rich_content_link( $content ) {
+	// Get link from rich content and add plmt_arrow() output inside the a element
+	$dom = new DOMDocument();
+	libxml_use_internal_errors( true ); // Suppress warnings for invalid HTML
+	$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+	libxml_clear_errors();
+
+	$links = $dom->getElementsByTagName( 'a' );
+
+	foreach ( $links as $link ) {
+		// Add plmt_arrow() output inside the a element
+		$link->appendChild( new DOMText( ' ' ) );
+		$link->appendChild( $dom->importNode( plmt_arrow_dom_node(), true ) );
+	}
+
+	return $dom->saveHTML();
+}

@@ -5,7 +5,8 @@ if ( ! isset( $services_content ) || empty( $services_content ) ) {
 	return;
 }
 ?>
-<section id="services" class="container bg-lightGrayBg py-[3.75rem] lg:px-10 lg:pb-[4.375rem]">
+<section id="services"
+	class="container bg-lightGrayBg py-[3.75rem] lg:px-10 lg:pb-[4.375rem] bg-services bg-no-repeat bg-right-bottom bg-[length:212px_160px] lg:bg-[length:298px_226px]">
 	<h2 class="text-h4Bold md:text-center md:text-h2 mb-10 lg:mb-[3.75rem]">
 		<?php esc_html_e( $services_content['heading'] ) ?>
 	</h2>

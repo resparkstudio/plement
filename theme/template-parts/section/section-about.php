@@ -23,7 +23,7 @@ function statistics_counts( $stats ) {
 					<span
 						class="text-h3 md:text-displayLarge mb-2 inline-block md:mb-5"><?php echo esc_html( $stat['count'] ); ?></span>
 					<div class="rich-text text-darkGray text-title [&_a]:text-accent [&_a]:no-underline">
-						<?php echo $stat['description'] ?>
+						<?php echo plmt_rich_content_link( $stat['description'] ) ?>
 					</div>
 				</div>
 			</li>

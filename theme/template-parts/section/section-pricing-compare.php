@@ -109,7 +109,7 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 		foreach ( $package_comparison_data['feature_groups'] as $feature_group ) :
 			?>
 			<button @click="selectedGroup = '<?php echo $feature_group['title'] ?>'"
-				:class="selectedGroup === '<?php echo $feature_group['title'] ?>' ? 'border-b-mainBlack' : 'border-b-textSecondary'"
+				:class="selectedGroup === '<?php echo $feature_group['title'] ?>' ? 'border-b-mainBlack' : 'border-b-textSecondary text-darkGray'"
 				class="w-full px-4 pt-6 pb-[0.875rem] border-b-2">
 				<?php echo esc_html( $feature_group['title'] ) ?>
 			</button>

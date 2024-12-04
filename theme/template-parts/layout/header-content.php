@@ -67,9 +67,9 @@
 								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
 								x-transition:leave-end="opacity-0">
 								<?php foreach ( $item['children'] as $child ) : ?>
-									<li class="py-[3.5625rem] px-10">
-										<a href="<?php echo esc_url( $child['url'] ); ?>"
-											class="hover:text-accent transition-colors duration-300">
+									<li
+										class="py-[3.5625rem] px-10 hover:bg-lightGrayBg transition-colors duration-300 ease-in-out">
+										<a href="<?php echo esc_url( url: $child['url'] ); ?>">
 											<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
 												alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
 											<p class="text-h5Bold mb-4">
