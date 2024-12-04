@@ -1888,6 +1888,10 @@ div.wpcf7-validation-errors {
   top: 5rem;
 }
 
+.right-10 {
+  right: 2.5rem;
+}
+
 .-z-\[1\] {
   z-index: -1;
 }
@@ -2068,6 +2072,10 @@ div.wpcf7-validation-errors {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mb-\[7\.5rem\] {
+  margin-bottom: 7.5rem;
 }
 
 .block {
@@ -2341,6 +2349,10 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[11\.5rem\] {
+  width: 11.5rem;
 }
 
 .min-w-\[12\.5px\] {
@@ -2895,11 +2907,6 @@ div.wpcf7-validation-errors {
   background-color: rgb(36 49 53 / var(--tw-bg-opacity));
 }
 
-.bg-darkGray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 100 100 / var(--tw-bg-opacity));
-}
-
 .bg-lightGrayBg {
   --tw-bg-opacity: 1;
   background-color: rgb(248 248 250 / var(--tw-bg-opacity));
@@ -2920,6 +2927,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(39 39 39 / var(--tw-bg-opacity));
 }
 
+.bg-textSecondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(178 178 178 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -2927,11 +2939,6 @@ div.wpcf7-validation-errors {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-textSecondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(178 178 178 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
@@ -3240,6 +3247,14 @@ div.wpcf7-validation-errors {
 
 .pt-\[7rem\] {
   padding-top: 7rem;
+}
+
+.pt-\[8\.75rem\] {
+  padding-top: 8.75rem;
+}
+
+.pb-\[11\.25rem\] {
+  padding-bottom: 11.25rem;
 }
 
 .text-left {
@@ -3914,6 +3929,10 @@ div.wpcf7-validation-errors {
 }
 
 @media (min-width: 984px) {
+  .lg\:static {
+    position: static;
+  }
+
   .lg\:left-\[39px\] {
     left: 39px;
   }
@@ -4474,6 +4493,10 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[7\.5rem\] {
     padding-top: 7.5rem;
+  }
+
+  .lg\:pt-\[8\.75rem\] {
+    padding-top: 8.75rem;
   }
 
   .lg\:text-left {

@@ -7,7 +7,7 @@ if ( ! isset( $team_content ) || empty( $team_content ) ) {
 ?>
 
 
-<section id="team" class="bg-lightGrayBg container py-[3.75rem] lg:pt-20 lg:pb-[5.625rem] lg:px-10">
+<section id="team" class="bg-lightGrayBg container py-[3.75rem] lg:pt-20 lg:pb-[5.625rem] mb-[7.5rem] lg:mb-0 lg:px-10">
 	<div
 		class="flex flex-col gap-10 pb-10 lg:flex-row lg:items-center lg:justify-between lg:pb-[5.25rem] lg:border-b lg:border-b-[#15151533] lg:border-opacity-20">
 		<div class="max-w-[40.625rem] w-full">

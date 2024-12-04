@@ -7,7 +7,7 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 ?>
 
 <section id="cta"
-	class="container flex flex-col gap-10 pt-20 pb-[7.5rem] lg:flex-row lg:pt-[10rem] lg:pb-20 lg:items-center">
+	class="container relative flex flex-col gap-10 pt-[8.75rem] pb-[11.25rem] lg:flex-row lg:pt-[7.5rem] lg:pb-20 lg:items-center">
 	<div class="lg:w-2/3">
 		<h2 class="text-h4Bold mb-6 lg:text-h2">
 			<?php esc_html_e( $cta_content['heading'] ) ?>
@@ -27,7 +27,7 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 		</div>
 	</div>
 	<div class="lg:w-1/3">
-		<img class="hidden lg:block max-w-[14.5625rem] w-full mx-auto mb-10 lg:mb-0 lg:max-w-[24.3125rem]"
+		<img class="absolute top-0 right-10 lg:static w-[11.5rem] lg:block max-w-[14.5625rem] lg:w-full mx-auto mb-10 lg:mb-0 lg:max-w-[24.3125rem]"
 			src="<?php echo esc_url( $cta_content['image']['url'] ) ?>"
 			alt="<?php echo esc_attr( $cta_content['image']['alt'] ) ?>">
 	</div>
