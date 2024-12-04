@@ -8,8 +8,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 ?>
 <section id='hero' class='container pt-6 pb-20 lg:pt-[3.9375rem] lg:pb-[7.5rem] flex flex-col'>
-	<div class='flex flex-col-reverse gap-4 lg:items-center lg:flex-row lg:justify-between lg:gap-14'>
-		<div class='max-w-[12.375rem] ml-auto lg:w-1/2 hero-content lg:max-w-none'>
+	<div class='flex flex-col-reverse gap-4 lg:items-center lg:justify-start lg:flex-row lg:gap-[8rem]'>
+		<div class='max-w-[12.375rem] ml-auto lg:ml-0 hero-content lg:max-w-none'>
 			<img class="lg:max-w-[22.6875rem]" src="<?php echo esc_url( $hero_content['image']['url'] ) ?> "
 				alt="<?php esc_attr_e( $hero_content['image']['alt'] ) ?>">
 		</div>

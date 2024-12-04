@@ -1,7 +1,7 @@
 <div @keydown.escape.window="calendlyOpen = false" class="relative z-50 w-auto h-auto">
 	<template x-teleport="body">
 		<div x-show="calendlyOpen"
-			class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen px-4 lg:px-0" x-cloak>
+			class="fixed top-0 left-0 z-[1000] flex items-center justify-center w-screen h-screen px-4 lg:px-0" x-cloak>
 			<div x-show="calendlyOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
 				x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300"
 				x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="calendlyOpen=false"

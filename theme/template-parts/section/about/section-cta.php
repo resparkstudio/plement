@@ -19,7 +19,7 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 			<p class="text-darkGray mb-6 lg:mb-4">
 				<?php esc_html_e( $cta_content['button_text'] ) ?>
 			</p>
-			<div class="flex justify-center">
+			<div class="flex justify-center lg:justify-start">
 				<?php plmt_button( $cta_content['link']['url'], $cta_content['link']['title'], array(
 					'classes' => 'px-[4rem]',
 				) ) ?>
