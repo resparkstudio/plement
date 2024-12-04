@@ -13,7 +13,7 @@
 */
 
 body {
-	@apply bg-background text-mainBlack font-dm;
+	@apply bg-background text-mainBlack font-dm antialiased;
 }
 
 .tippy-close-button {

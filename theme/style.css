@@ -617,6 +617,8 @@ body {
   font-family: DM Sans, sans-serif;
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .tippy-close-button {
@@ -3214,6 +3216,10 @@ div.wpcf7-validation-errors {
   padding-top: 13rem;
 }
 
+.pt-\[2\.875rem\] {
+  padding-top: 2.875rem;
+}
+
 .pt-\[3\.75rem\] {
   padding-top: 3.75rem;
 }
@@ -3224,10 +3230,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[7rem\] {
   padding-top: 7rem;
-}
-
-.pt-\[2\.875rem\] {
-  padding-top: 2.875rem;
 }
 
 .text-left {
