@@ -1461,20 +1461,16 @@ div.wpcf7-validation-errors {
   z-index: 50;
 }
 
+.z-\[1000\] {
+  z-index: 1000;
+}
+
 .z-\[100\] {
   z-index: 100;
 }
 
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-\[99\] {
-  z-index: 99;
-}
-
-.z-\[1000\] {
-  z-index: 1000;
 }
 
 .order-last {
@@ -3018,6 +3014,10 @@ div.wpcf7-validation-errors {
   transition-duration: 150ms;
 }
 
+.delay-75 {
+  transition-delay: 75ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -3247,14 +3247,6 @@ div.wpcf7-validation-errors {
   outline-offset: 2px;
 }
 
-.group:hover .group-hover\:block {
-  display: block;
-}
-
-.group:hover .group-hover\:hidden {
-  display: none;
-}
-
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3282,6 +3274,14 @@ div.wpcf7-validation-errors {
 
 .group:hover .group-hover\:underline {
   text-decoration-line: underline;
+}
+
+.group:hover .group-hover\:opacity-0 {
+  opacity: 0;
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 
 .peer:checked ~ .peer-checked\:border-textBlack {
@@ -3541,6 +3541,10 @@ div.wpcf7-validation-errors {
     margin-bottom: 7.5rem;
   }
 
+  .lg\:ml-0 {
+    margin-left: 0px;
+  }
+
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -3551,10 +3555,6 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-20 {
     margin-top: 5rem;
-  }
-
-  .lg\:ml-0 {
-    margin-left: 0px;
   }
 
   .lg\:block {

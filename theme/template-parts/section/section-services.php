@@ -73,7 +73,7 @@ function services_list( $services, $heading ) {
 			$index = 0;
 			foreach ( $services as $service ) {
 				?>
-				<li class="group">
+				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true" class="group">
 					<div
 						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] group-hover:bg-accent">
 						<img class="w-[32px] h-[32px] rounded-md mb-4" src="<?php echo esc_url( $service['icon']['url'] ) ?>"
@@ -81,13 +81,17 @@ function services_list( $services, $heading ) {
 						<h4 class="text-xl font-medium inline-block lg:text-[1.375rem] lg:leading-7 mb-2">
 							<?php echo esc_html( $service['title'] ); ?>
 						</h4>
-						<p class="hidden group-hover:block text-bodySmall">
-							<?php echo esc_html( $service['description'] ); ?>
-						</p>
-						<div class="group-hover:hidden">
-							<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
-								plmt_arrow_list( $service['tags'] );
-							endif; ?>
+						<div class="relative">
+							<p
+								class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out delay-75">
+								<?php echo esc_html( $service['description'] ); ?>
+							</p>
+							<div
+								class="absolute top-0 left-0 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
+									plmt_arrow_list( $service['tags'] );
+								endif; ?>
+							</div>
 						</div>
 
 					</div>
