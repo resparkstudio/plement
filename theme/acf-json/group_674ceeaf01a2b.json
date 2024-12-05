@@ -374,11 +374,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_674d0c75d1fc7",
-            "label": "Gallery",
-            "name": "gallery",
+            "key": "field_6751f04eff972",
+            "label": "Gallery heading",
+            "name": "gallery_heading",
             "aria-label": "",
-            "type": "group",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -387,34 +387,40 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6751ef33b0e6b",
+            "label": "Gallery",
+            "name": "gallery",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_674d0c8cd1fc9",
-                    "label": "Heading",
-                    "name": "heading",
+                    "key": "field_6751ef42b0e6c",
+                    "label": "Image",
+                    "name": "image",
                     "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_674d0c92d1fca",
-                    "label": "Images",
-                    "name": "images",
-                    "aria-label": "",
-                    "type": "gallery",
+                    "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -425,8 +431,6 @@
                     },
                     "return_format": "array",
                     "library": "all",
-                    "min": "",
-                    "max": "",
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
@@ -434,8 +438,25 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "insert": "append",
-                    "preview_size": "medium"
+                    "preview_size": "medium",
+                    "parent_repeater": "field_6751ef33b0e6b"
+                },
+                {
+                    "key": "field_6751ef4eb0e6d",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_6751ef33b0e6b"
                 }
             ]
         }
@@ -458,5 +479,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733102746
+    "modified": 1733423193
 }
