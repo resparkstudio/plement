@@ -6,7 +6,7 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 }
 ?>
 
-<section id="cta" class="container text-center pt-[13rem] pb-20 lg:pt-[10rem] lg:pb-[8.875rem]">
+<section id="cta" class="container relative text-center pt-[13rem] pb-20 lg:pt-[10rem] lg:pb-[8.875rem]">
 	<h4 class="text-h4Bold mb-6 lg:text-h2 lg:mb-[2.375rem]">
 		<?php esc_html_e( $cta_content['heading'] ) ?>
 	</h4>
@@ -25,4 +25,9 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 			)
 		) ?>
 	</div>
+	<?php if ( isset( $cta_content['image'] ) && ! empty( $cta_content['image'] ) ) : ?>
+		<img class="absolute w-[11.5rem] top-[5rem] right-10 lg:right-0 lg:top-6 lg:w-[29.25rem]"
+			src="<?php echo esc_url( $cta_content['image']['url'] ) ?>"
+			alt="<?php esc_attr_e( $cta_content['image']['alt'] ) ?>">
+	<?php endif; ?>
 </section>
