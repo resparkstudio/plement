@@ -115,7 +115,7 @@ function package_cards( $packages ) {
 		<div class="max-w-sm mx-auto flex items-center lg:max-w-none">
 			<?php foreach ( $packages as $package ) : ?>
 				<div
-					class="h-full <?php echo $package['is_best_value'] ? 'h-[25.5rem] min-w-[23.75rem]' : 'h-[23.75rem] w-full' ?>">
+					class=" <?php echo $package['is_best_value'] ? 'h-[25.5rem] xl:min-w-[23.75rem]' : 'h-[23.75rem] w-full' ?>">
 					<div
 						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
