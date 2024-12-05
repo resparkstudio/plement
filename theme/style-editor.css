@@ -1421,6 +1421,10 @@ div.wpcf7-validation-errors {
   right: 0px;
 }
 
+.right-10 {
+  right: 2.5rem;
+}
+
 .right-4 {
   right: 1rem;
 }
@@ -1439,10 +1443,6 @@ div.wpcf7-validation-errors {
 
 .top-\[5rem\] {
   top: 5rem;
-}
-
-.right-10 {
-  right: 2.5rem;
 }
 
 .-z-\[1\] {
@@ -1571,6 +1571,10 @@ div.wpcf7-validation-errors {
   margin-bottom: 5.375rem;
 }
 
+.mb-\[7\.5rem\] {
+  margin-bottom: 7.5rem;
+}
+
 .mb-\[72px\] {
   margin-bottom: 72px;
 }
@@ -1625,10 +1629,6 @@ div.wpcf7-validation-errors {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mb-\[7\.5rem\] {
-  margin-bottom: 7.5rem;
 }
 
 .block {
@@ -1823,6 +1823,10 @@ div.wpcf7-validation-errors {
   width: 1.125rem;
 }
 
+.w-\[11\.5rem\] {
+  width: 11.5rem;
+}
+
 .w-\[15\.9375rem\] {
   width: 15.9375rem;
 }
@@ -1902,10 +1906,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[11\.5rem\] {
-  width: 11.5rem;
 }
 
 .min-w-\[12\.5px\] {
@@ -2494,6 +2494,10 @@ div.wpcf7-validation-errors {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#4B4B4B29\] {
+  background-color: #4B4B4B29;
+}
+
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
 }
@@ -2714,6 +2718,10 @@ div.wpcf7-validation-errors {
   padding-bottom: 0.875rem;
 }
 
+.pb-\[11\.25rem\] {
+  padding-bottom: 11.25rem;
+}
+
 .pb-\[2\.75rem\] {
   padding-bottom: 2.75rem;
 }
@@ -2804,10 +2812,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.75rem\] {
   padding-top: 8.75rem;
-}
-
-.pb-\[11\.25rem\] {
-  padding-bottom: 11.25rem;
 }
 
 .text-left {
@@ -3005,6 +3009,24 @@ div.wpcf7-validation-errors {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.backdrop-blur-0 {
+  --tw-backdrop-blur: blur(0);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.backdrop-blur-\[4\] {
+  --tw-backdrop-blur: blur(4);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.backdrop-blur-\[4px\] {
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
@@ -4046,10 +4068,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[7\.5rem\] {
     padding-top: 7.5rem;
-  }
-
-  .lg\:pt-\[8\.75rem\] {
-    padding-top: 8.75rem;
   }
 
   .lg\:text-left {

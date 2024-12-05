@@ -60,28 +60,31 @@
 							<?php endif; ?>
 						</a>
 						<?php if ( $has_children ) : ?>
-							<ul x-cloak x-show='open' @mouseover='open = true' @click.away='open = false'
-								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-[5rem] bg-white absolute left-1/2 -translate-x-1/2 z-10 w-full focus:outline-none'
-								role='menu' aria-orientation='vertical' tabindex='-1'
-								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
-								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
-								x-transition:leave-end="opacity-0">
-								<?php foreach ( $item['children'] as $child ) : ?>
-									<li
-										class="py-[3.5625rem] px-10 hover:bg-lightGrayBg transition-colors duration-300 ease-in-out">
-										<a href="<?php echo esc_url( url: $child['url'] ); ?>">
-											<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
-												alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
-											<p class="text-h5Bold mb-4">
-												<?php echo esc_html( $child['title'] ); ?>
-											</p>
-											<p class="text-bodySmall text-darkGray">
-												<?php echo esc_html( $child['description'] ); ?>
-											</p>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
+							<div x-show='open'
+								class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] h-screen backdrop-blur-[4px]">
+								<ul x-cloak @mouseover='open = true' @click.away='open = false'
+									class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-0 bg-white absolute left-1/2 -translate-x-1/2 z-10 w-full focus:outline-none'
+									role='menu' aria-orientation='vertical' tabindex='-1'
+									x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
+									x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
+									x-transition:leave-end="opacity-0">
+									<?php foreach ( $item['children'] as $child ) : ?>
+										<li
+											class="py-[3.5625rem] px-10 hover:bg-lightGrayBg transition-colors duration-300 ease-in-out">
+											<a href="<?php echo esc_url( url: $child['url'] ); ?>">
+												<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
+													alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
+												<p class="text-h5Bold mb-4">
+													<?php echo esc_html( $child['title'] ); ?>
+												</p>
+												<p class="text-bodySmall text-darkGray">
+													<?php echo esc_html( $child['description'] ); ?>
+												</p>
+											</a>
+										</li>
+									<?php endforeach; ?>
+								</ul>
+							</div>
 						<?php endif; ?>
 					</li>
 				<?php endforeach; ?>
