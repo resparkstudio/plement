@@ -75,7 +75,7 @@ function package_cards_mobile( $packages ) {
 						<?php endif; ?>
 						<div>
 							<div class="flex items-center justify-between mb-6">
-								<h4 class="text-h4Bold">
+								<h4 class="text-h4Bold <?php echo $package['is_best_value'] ? 'text-accent' : '' ?>">
 									<?php echo esc_html( $package['title'] ) ?>
 								</h4>
 								<svg data-tippy-content="<?php echo esc_attr( $package['popup_text'] ) ?>" width="23"
@@ -112,9 +112,10 @@ function package_cards( $packages ) {
 		return;
 	?>
 	<div x-cloak>
-		<div class="max-w-sm mx-auto grid lg:grid-cols-4 items-start lg:max-w-none">
+		<div class="max-w-sm mx-auto flex items-center lg:max-w-none">
 			<?php foreach ( $packages as $package ) : ?>
-				<div class="h-full">
+				<div
+					class="h-full <?php echo $package['is_best_value'] ? 'h-[25.5rem] min-w-[23.75rem]' : 'h-[23.75rem] w-full' ?>">
 					<div
 						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
@@ -124,7 +125,7 @@ function package_cards( $packages ) {
 						<div class="h-full flex flex-col justify-between">
 							<div class="mb-6">
 								<div class="flex items-center justify-between mb-12">
-									<h4 class="text-h4Bold">
+									<h4 class="text-h4Bold <?php echo $package['is_best_value'] ? 'text-accent' : '' ?>">
 										<?php echo esc_html( $package['title'] ) ?>
 									</h4>
 									<svg data-tippy-content="<?php echo esc_attr( $package['popup_text'] ) ?>" width="23"

@@ -7,7 +7,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 
 ?>
-<section id='hero' class='container pt-6 pb-4 lg:pb-6 lg:h-[calc(100vh-108px)] flex flex-col'>
+<section id='hero' class='container pt-6 pb-20 lg:pb-[7.5rem] flex flex-col'>
 	<div class='flex flex-col gap-12 items-center lg:flex-row lg:justify-between lg:gap-14'>
 		<div class='lg:w-1/2 hero-content lg:max-w-2xl'>
 			<h1 class='text-h1Mobile max-w-[33.125rem] w-full lg:text-h2 mb-8 lg:mb-10'>

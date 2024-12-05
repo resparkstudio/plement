@@ -15,9 +15,9 @@
 	}
 </style>
 
-<header id="masthead" class="relative" x-data="{menuOpen: false}">
+<header id="masthead" x-data="{menuOpen: false}">
 	<div
-		class="flex items-center justify-between relative z-[100] bg-white container lg:max-w-none lg:p-0 lg:border-b lg:border-b-textSecondary">
+		class="flex items-center justify-between z-[100] bg-white container lg:max-w-none lg:p-0 lg:border-b lg:border-b-textSecondary">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 				class="lg:border-r border-r-textSecondary py-5 lg:px-[75px]">
@@ -60,10 +60,10 @@
 							<?php endif; ?>
 						</a>
 						<?php if ( $has_children ) : ?>
-							<div x-show='open'
-								class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] h-screen backdrop-blur-[4px]">
-								<ul x-cloak @mouseover='open = true' @click.away='open = false'
-									class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-0 bg-white absolute left-1/2 -translate-x-1/2 z-10 w-full focus:outline-none'
+							<div x-cloak x-show='open'
+								class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
+								<ul x-cloak
+									class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-0 bg-white z-100 absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
 									role='menu' aria-orientation='vertical' tabindex='-1'
 									x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
 									x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
@@ -122,7 +122,7 @@
 		$items = plmt_menu_builder( $menu_id );
 
 		?>
-		<div class="relative">
+		<div>
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
 				class="absolute top-5 right-4 flex text-textBlack lg:hidden" aria-label="mobile menu"
 				aria-controls="mobileMenu">
