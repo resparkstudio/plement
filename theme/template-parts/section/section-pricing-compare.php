@@ -67,7 +67,7 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 		<div></div>
 		<?php foreach ( $pricing_data['packages'] as $package ) : ?>
 			<?php plmt_button( "modalOpen=true", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
-				"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
+				"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center hover:text-white hover:bg-mainBlack hover:border-mainBlack",
 				"variant" => 'secondary',
 				"is_button" => true
 			) ) ?>
@@ -110,7 +110,7 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 			?>
 			<button @click="selectedGroup = '<?php echo $feature_group['title'] ?>'"
 				:class="selectedGroup === '<?php echo $feature_group['title'] ?>' ? 'border-b-mainBlack' : 'border-b-textSecondary text-darkGray'"
-				class="w-full px-4 pt-6 pb-[0.875rem] border-b-2">
+				class="w-full px-4 pt-6 pb-[0.875rem] border-b-2 hover:text-[#272727] transition-colors ease-in-out">
 				<?php echo esc_html( $feature_group['title'] ) ?>
 			</button>
 		<?php endforeach; ?>

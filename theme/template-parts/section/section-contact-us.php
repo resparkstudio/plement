@@ -17,7 +17,7 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 	</div>
 	<div class="p-5 lg:p-10 bg-mainBlack text-white" x-data="{calendlyOpen: false}">
 		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
-			"classes" => "contact-button mb-10 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white",
+			"classes" => "contact-button mb-10 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent",
 		) ) ?>
 		<div class="mb-8">
 			<h3 class="mb-2 text-h5Bold lg:text-h4Regular"><?php esc_html_e( $contact_content['info_heading'] ) ?></h3>

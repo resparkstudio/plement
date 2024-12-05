@@ -60,7 +60,7 @@
 }
 
 .button:hover {
-	@apply bg-accentHover transition duration-300 ease-in-out;
+	@apply text-[#FFFFFFCC] transition duration-300 ease-in-out;
 }
 
 .button_secondary {
@@ -182,7 +182,7 @@
 }
 
 .wpcf7-form input[type='submit'] {
-	@apply text-h5Bold bg-accent hover:bg-accentHover inline-flex w-full cursor-pointer items-center gap-3 px-6 py-6 text-white transition-colors duration-300 lg:py-[2.375rem];
+	@apply text-h5Bold bg-accent inline-flex w-full cursor-pointer items-center gap-3 px-6 py-6 text-white transition-colors duration-300 hover:text-[#FFFFFFCC] lg:py-[2.375rem];
 }
 
 .wpcf7-spinner {
