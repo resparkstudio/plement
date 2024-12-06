@@ -89,9 +89,11 @@
 								</ul>
 							<?php endif; ?>
 						</div>
-						<div x-cloak x-show='open'
-							class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
-						</div>
+						<?php if ( $has_children ) : ?>
+							<div x-cloak x-show='open'
+								class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
+							</div>
+						<?php endif; ?>
 					</li>
 				<?php endforeach; ?>
 			</ul>
