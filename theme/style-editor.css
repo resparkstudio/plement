@@ -1479,6 +1479,10 @@ div.wpcf7-validation-errors {
   z-index: 1;
 }
 
+.z-\[10\] {
+  z-index: 10;
+}
+
 .order-last {
   order: 9999;
 }
@@ -3299,19 +3303,24 @@ div.wpcf7-validation-errors {
   background-color: rgb(248 248 250 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-mainBlack:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .hover\:text-\[\#111F24\]:hover {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#272727\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(39 39 39 / var(--tw-text-opacity));
 }
 
 .hover\:text-accent:hover {
@@ -3327,11 +3336,6 @@ div.wpcf7-validation-errors {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[\#272727\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(39 39 39 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
