@@ -321,7 +321,20 @@ const handleButtonsWithScrollTriggerRefresh = () => {
 		);
 	});
 };
-console.log('script.js loaded');
+
+const arrow =
+	'<div class="z-1 flex justify-center items-center relative overflow-hidden "><div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path></svg></div><div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path></svg></div></div>';
+
+//function adds arrow inside all a tags of rich-content container
+const addArrow = () => {
+	const richContent = document.querySelector('.rich-content');
+	if (!richContent) return;
+	const aTags = richContent.querySelectorAll('a');
+	aTags.forEach((a) => {
+		a.classList.add('group');
+		a.innerHTML += arrow;
+	});
+};
 
 initSwiper();
 initStandalone();
@@ -329,3 +342,4 @@ processLineAnimation();
 handleContactFormTransition();
 handleCountry();
 handleButtonsWithScrollTriggerRefresh();
+addArrow();
