@@ -6,8 +6,6 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 	return;
 }
 
-$hide_standalone_solutions = isset( $pricing_content['standalone_solutions'] );
-
 
 function currency_switch() {
 	?>
@@ -172,116 +170,31 @@ function circular_checkbox() {
 	</span>
 	<?php
 }
-function standalone_solution( $standalone_solutions ) {
-
-	if ( empty( $standalone_solutions['standalone_list'] ) )
-		return;
-	?>
-	<div x-data="{selectedServices: [],
-				toggle(id) {
-					if (this.selectedServices.includes(id)) {
-						const index = this.selectedServices.indexOf(id);
-						this.selectedServices.splice(index, 1)
-					} else {
-						this.selectedServices.push(id)
-					}
-				}}" class="standalone-list swiper">
-		<ul class="standalone-wrap swiper-wrapper md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
-			<?php foreach ( $standalone_solutions['standalone_list'] as $solution ) : ?>
-				<li class="swiper-slide relative" x-data="{id: '<?php echo esc_attr( $solution['title'] ) ?>'}">
-					<input type="checkbox" id="<?php echo esc_attr( $solution['title'] ) ?>"
-						value="<?php echo esc_attr( $solution['title'] ) ?>" class="hidden peer" required="">
-					<label @click="toggle(id)" for=" <?php echo esc_attr( $solution['title'] ) ?>"
-						class="relative inline-flex items-center justify-between w-full pt-10 px-4 pb-16 bg-white border-2 border-lightGray rounded-2xl cursor-pointer peer-checked:border-textBlack  hover:bg-gray-50"
-						:class="selectedServices.includes(id) ? 'border-textBlack' : ''">
-						<div class="block">
-							<p class="w-full text-xl font-medium"><?php echo esc_html( $solution['title'] ) ?>
-							</p>
-							<div class="inline-flex items-baseline mb-4">
-								<span class="font-medium text-[2rem] leading-[41px]"
-									x-html="currency === 'usd' ? '$' : '€'"></span>
-								<span class="font-medium text-[2rem] leading-[41px]"
-									x-html="currency === 'usd' ? <?php echo esc_html( $solution['price_usd'] ) ?> : <?php echo esc_html( $solution['price_eur'] ) ?>"></span>
-							</div>
-							<p class="max-w-[30rem] font-medium text-textGray">
-								<?php echo esc_html( $solution['description'] ) ?>
-							</p>
-						</div>
-					</label>
-					<?php circular_checkbox() ?>
-				</li>
-			<?php endforeach; ?>
-			<li
-				class="hidden md:inline-flex justify-between w-full  bg-accent text-white rounded-2xl  <?php echo count( $standalone_solutions['standalone_list'] ) % 4 === 0 ? 'col-span-2 col-start-2 flex-row items-center p-10' : 'flex-col p-6' ?>">
-				<div>
-					<div class=" text-[2.5rem] font-medium flex ">
-						<span class="selected-services-count" x-text="selectedServices.length">0</span>
-						/
-						<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
-					</div>
-					<span class="text-xl"><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
-				</div>
-				<div>
-					<button @click="modalOpen=true" :value="selectedServices"
-						class="standalone-button group w-full justify-center button bg-white text-accent hover:bg-white">
-						<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
-						<?php plmt_arrow() ?>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<div class="swiper-pagination !static mt-6"></div>
-		<div class="container">
-			<div class=" mt-8 inline-flex md:hidden flex-col justify-between w-full p-5 bg-accent text-white rounded-2xl">
-				<div class="mb-6">
-					<div class="text-[2.5rem] font-medium flex">
-						<span class="selected-services-count" x-text="selectedServices.length">0</span>
-						/
-						<span><?php echo count( $standalone_solutions['standalone_list'] ) ?></span>
-					</div>
-					<span><?php echo esc_html_e( 'Services selected', 'plmt' ) ?></span>
-				</div>
-				<div>
-					<button @click="modalOpen=true" :value="selectedServices"
-						class="standalone-button w-full justify-center button bg-white text-accent hover:bg-white">
-						<?php esc_html_e( 'Book a Call', 'plmt' ) ?>
-						<svg xmlns='http://www.w3.org/2000/svg' width='10' height='9' fill='none'
-							xmlns:v='https://vecta.io/nano'>
-							<path
-								d='M1.154.667a.67.67 0 0 0 .667.667h5.06l-5.92 5.92c-.062.062-.111.135-.144.216s-.051.167-.051.254.017.174.051.254.082.154.144.216.135.111.216.144.167.051.254.051.174-.017.254-.051.154-.082.216-.144l5.92-5.92v5.06A.67.67 0 0 0 8.487 8a.67.67 0 0 0 .667-.667V.667A.67.67 0 0 0 8.487 0H1.821a.67.67 0 0 0-.667.667z'
-								fill='#ED5623' />
-						</svg>
-					</button>
-				</div>
-			</div>
-		</div>
-		<?php
-}
 
 ?>
 
-	<div x-data="{ modalOpen: false, selectedPackage: '', currency: 'eur' }" @uscountry.window="currency = 'usd';">
-		<div id="pricing" class="relative">
-			<div class="relative flex flex-col justify-center overflow-hidden">
-				<div>
-					<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
-					<div class="container">
-						<?php currency_switch() ?>
-						<div class="hidden lg:block">
-							<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
-						</div>
+<div x-data="{ modalOpen: false, selectedPackage: '', currency: 'eur' }" @uscountry.window="currency = 'usd';">
+	<div id="pricing" class="relative">
+		<div class="relative flex flex-col justify-center overflow-hidden">
+			<div>
+				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
+				<div class="container">
+					<?php currency_switch() ?>
+					<div class="hidden lg:block">
+						<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
 					</div>
-					<div class="lg:hidden">
-						<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
-					</div>
+				</div>
+				<div class="lg:hidden">
+					<?php isset( $pricing_content['packages'] ) ? package_cards_mobile( $pricing_content['packages'] ) : ''; ?>
 				</div>
 			</div>
 		</div>
-		<div class="hidden lg:block">
-			<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
-		</div>
-
-		<div class="lg:hidden">
-			<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
-		</div>
 	</div>
+	<div class="hidden lg:block">
+		<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
+	</div>
+
+	<div class="lg:hidden">
+		<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
+	</div>
+</div>

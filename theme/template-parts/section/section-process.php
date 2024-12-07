@@ -40,7 +40,8 @@ function step_card( $step, $index ) {
 	</h2>
 	<div class="relative">
 		<div class="mx-auto max-w-[50rem] lg:w-full space-y-8 relative">
-			<div class="-z-[1] bg-lightGrayBorder w-[2px] h-full absolute top-0 bottom-0 left-[30px] lg:left-[39px]">
+			<div
+				class=" process-line-wrap -z-[1] bg-lightGrayBorder w-[2px] h-full absolute top-0 bottom-0 left-[30px] lg:left-[39px]">
 				<div class="process-line bg-accent w-full h-full"></div>
 			</div>
 			<?php
@@ -48,7 +49,7 @@ function step_card( $step, $index ) {
 			foreach ( $process_content['steps'] as $step ) :
 				$is_last = count( $process_content['steps'] ) === $index;
 				?>
-				<div class="relative gap-2 lg:gap-10 flex items-start <?php echo $is_last ? 'is-last' : '' ?>">
+				<div class="relative gap-2 lg:gap-10 flex items-start process-item <?php echo $is_last ? 'is-last' : '' ?>">
 					<!-- Icon -->
 					<?php step_icon( $index ) ?>
 					<?php step_card( $step, $index ) ?>
