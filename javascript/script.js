@@ -42,6 +42,10 @@ function initSwiper() {
 		},
 	});
 
+	packageSwiper.on('slideChange', function () {
+		tippy.hideAll({ duration: 0 });
+	});
+
 	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
 		modules: [Pagination, Controller],
 		slidesPerView: 1,
