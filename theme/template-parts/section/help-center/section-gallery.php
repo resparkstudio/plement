@@ -17,7 +17,7 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 			<?php foreach ( $gallery_content as $item ) : ?>
 				<?php if ( ! empty( $item['link'] ) ) : ?>
 					<div class="swiper-slide md:aspect-square md:!w-[26.25rem] bg-black group">
-						<a href="<?php echo esc_url( $item['link']['url'] ) ?>" class="w-full h-full  ">
+						<a href="<?php echo esc_url( $item['link']['url'] ) ?>" class="w-full h-full" target="_blank">
 							<img class="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300 ease-in-out"
 								src="<?php echo esc_url( $item['image']['url'] ) ?>"
 								alt="<?php echo esc_attr( $item['image']['alt'] ) ?>">

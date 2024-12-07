@@ -16,8 +16,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-let resizeTimeout;
-let standaloneList;
 function initSwiper() {
 	new Swiper('.services-list', {
 		modules: [Pagination],
@@ -226,6 +224,7 @@ const handleScrollIntoView = () => {
 		item.addEventListener('click', (e) => {
 			e.preventDefault();
 			const href = e.target.getAttribute('href');
+			if (!href) return;
 			const hash = href.split('#')[1];
 
 			if (!isHomePage) {

@@ -109,10 +109,10 @@ $links               = get_field( 'links', 'option' );
 			</div>
 		</div>
 		<div class="lg:px-0">
-			<button
-				class="mb-[3.75rem] text-[2rem] leading-[2.2rem] text-accent border border-accent w-full py-6 lg:text-[3rem] lg:leading-[3.3rem] lg:mb-10 hover:text-white hover:bg-accent transition duration-300 ease-in-out">
+			<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
+				class="inline-block text-center mb-[3.75rem] text-[2rem] leading-[2.2rem] text-accent border border-accent w-full py-6 lg:text-[3rem] lg:leading-[3.3rem] lg:mb-10 hover:text-white hover:bg-accent transition duration-300 ease-in-out">
 				<?php esc_html_e( "Let's talk", 'plmt' ) ?>
-			</button>
+			</a>
 		</div>
 		<div
 			class="text-center border-t border-t-[#FFFFFF4D] pt-1 md:pt-6 text-[0.875rem] leading-[1.3125rem] font-medium flex flex-col-reverse md:flex-row gap-2 md:gap-5">

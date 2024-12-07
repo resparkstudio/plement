@@ -353,3 +353,11 @@ function plmt_menu_builder( $menu_id = '' ) {
 	$menu = wp_get_nav_menu_items( $menu_id );
 	return plmt_build_menu_tree( $menu, 0 );
 }
+
+add_filter( 'wp_get_nav_menu_items', 'my_wp_get_nav_menu_items', 10, 3 );
+function my_wp_get_nav_menu_items( $items, $menu, $args ) {
+	foreach ( $items as $key => $item )
+		$items[ $key ]->description = '';
+
+	return $items;
+}
