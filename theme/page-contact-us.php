@@ -36,7 +36,7 @@ function success_modal() {
 
 ?>
 
-<main class="container relative z-10 bg-white">
+<main class="relative z-10 bg-white">
 	<div class="container">
 		<div class="flex flex-col lg:items-center py-10 gap-3 lg:pt-[3.75rem] lg:pb-[5.875rem] lg:gap-4">
 			<h2 class="text-h4Bold lg:text-h1">

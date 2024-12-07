@@ -94,6 +94,8 @@ function package_cards_mobile( $packages ) {
 							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), array(
 								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
+								"is_button" => true,
+								"value" => $package['title']
 							) ) ?>
 						</div>
 					</div>
@@ -145,7 +147,8 @@ function package_cards( $packages ) {
 							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
 								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
-								"is_button" => true
+								"is_button" => true,
+								"value" => $package['title']
 							) ) ?>
 						</div>
 					</div>
@@ -197,4 +200,5 @@ function circular_checkbox() {
 	<div class="lg:hidden">
 		<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
 	</div>
+	<?php calendly_modal() ?>
 </div>

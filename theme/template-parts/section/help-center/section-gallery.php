@@ -44,10 +44,31 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 								</div>
 							</div>
 						</a>
+						<a href="<?php echo esc_url( $item['link']['url'] ) ?>"
+							class="inline-flex items-center justify-between w-full py-4 px-6 lg:hidden bg-mainBlack text-white text-[1.125rem] font-medium">
+							<span><?php esc_html_e( 'Go to full page' ) ?></span>
+							<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+								<div
+									class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] ">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+										preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+									</svg>
+								</div>
+								<div
+									class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300  ">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										aria-hidden="true" role="img" class="iconify iconify--ic" width=" 100%" height=" 100%"
+										preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path>
+									</svg>
+								</div>
+							</div>
+						</a>
 					</div>
 				<?php else : ?>
 					<div class="swiper-slide md:aspect-square md:!w-[26.25rem]">
-
 						<img class="w-full h-full object-cover" src="<?php echo esc_url( $item['image']['url'] ) ?>"
 							alt="<?php echo esc_attr( $item['image']['alt'] ) ?>">
 					</div>

@@ -60,6 +60,7 @@
 		"@ryangjchandler/alpine-clipboard": "^2.3.0",
 		"alpinejs": "^3.14.1",
 		"gsap": "^3.12.5",
+		"split-type": "^0.3.4",
 		"swiper": "^11.1.4"
 	}
 }

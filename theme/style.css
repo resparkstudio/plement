@@ -2136,6 +2136,10 @@ div.wpcf7-validation-errors {
   height: 16.875rem;
 }
 
+.h-\[17px\] {
+  height: 17px;
+}
+
 .h-\[19px\] {
   height: 19px;
 }
@@ -2290,6 +2294,10 @@ div.wpcf7-validation-errors {
 
 .w-\[160px\] {
   width: 160px;
+}
+
+.w-\[17px\] {
+  width: 17px;
 }
 
 .w-\[1px\] {
@@ -2570,10 +2578,6 @@ div.wpcf7-validation-errors {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cursor-text {
-  cursor: text;
 }
 
 .select-none {
@@ -2883,6 +2887,11 @@ div.wpcf7-validation-errors {
 .border-t-textSecondary {
   --tw-border-opacity: 1;
   border-top-color: rgb(178 178 178 / var(--tw-border-opacity));
+}
+
+.\!bg-accent {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(237 86 35 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-\[\#0000003D\] {
@@ -3275,6 +3284,10 @@ div.wpcf7-validation-errors {
 
 .text-\[0\.875rem\] {
   font-size: 0.875rem;
+}
+
+.text-\[1\.125rem\] {
+  font-size: 1.125rem;
 }
 
 .text-\[1\.5rem\] {
@@ -3693,9 +3706,9 @@ div.wpcf7-validation-errors {
   border-color: rgb(17 31 36 / var(--tw-border-opacity));
 }
 
-.hover\:bg-\[\#CBCBCC\]:hover {
+.hover\:bg-\[\#F8F8FA\]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(203 203 204 / var(--tw-bg-opacity));
+  background-color: rgb(248 248 250 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-accent:hover {
@@ -3716,11 +3729,6 @@ div.wpcf7-validation-errors {
 .hover\:bg-mainBlack:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#F8F8FA\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 248 250 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#111F24\]:hover {

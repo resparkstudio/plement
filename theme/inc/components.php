@@ -11,6 +11,7 @@ function plmt_button( $url = '#', $text, $options = array() ) {
 		"target" => "_self",
 		"variant" => "primary",
 		'is_button' => false,
+		'value' => '',
 	);
 
 	$options = wp_parse_args( $options, $defaults );
@@ -23,7 +24,8 @@ function plmt_button( $url = '#', $text, $options = array() ) {
 
 	if ( $options['is_button'] ) {
 		?>
-		<button @click="<?php echo $url ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a><?php
+		<button value="<?php echo $options['value'] ?>" @click="<?php echo $url ?>"
+			class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a><?php
 	} else {
 		?>
 			<a href="<?php echo esc_url( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a>

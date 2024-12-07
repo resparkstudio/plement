@@ -46,7 +46,8 @@
 					<li class="border-r-textSecondary h-full w-full border-r font-semibold"
 						@mouseover='overlayOpen = <?php echo $has_children ? 1 : 0 ?>'>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyRegular group  transition-colors duration-300 <?php echo $is_contact_us ? 'hover:bg-accent text-accent !text-bodyBold gap-2' : '' ?> <?php echo $has_children || $is_contact_us ? 'scroll-to hover:bg-accent' : 'hover:bg-[#F8F8FA]' ?>">
+							class="group flex items-center justify-center h-full w-full text-bodyRegular group  transition-colors duration-300 <?php echo $is_contact_us ? 'hover:bg-accent text-accent !text-bodyBold gap-2' : '' ?> <?php echo $has_children || $is_contact_us ? 'hover:bg-accent' : 'hover:bg-[#F8F8FA]' ?>"
+							:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
 							<span class=" <?php echo $has_children || $is_contact_us ? 'group-hover:text-white' : '' ?>">
 								<?php echo esc_html( $item['title'] ); ?>
 							</span>
