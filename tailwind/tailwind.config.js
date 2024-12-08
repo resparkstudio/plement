@@ -76,6 +76,7 @@ module.exports = {
 				},
 			},
 			fontSize: {
+				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
 				displayLarge: ['4.25rem', { lineHeight: '4.25rem', fontWeight: '900' }],
 				title: ['1.125rem', { lineHeight: '1.4625rem', fontWeight: '500' }],
 				bodySmall: ['0.875rem', { lineHeight: '1.05rem', fontWeight: '400' }],

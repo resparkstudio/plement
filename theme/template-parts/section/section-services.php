@@ -30,14 +30,25 @@ function services_list_mobile( $services, $heading ) {
 								<?php echo esc_html( $service['title'] ); ?>
 							</h4>
 						</button>
-						<div x-cloak x-show="isExpanded" class="mt-2">
-							<p class="text-bodySmall">
+						<div x-cloak x-show="isExpanded" class="mt-4">
+							<p class="text-bodyRegular mb-8">
 								<?php echo esc_html( $service['description'] ); ?>
 							</p>
 							<div>
-								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
-									plmt_arrow_list( $service['tags'] );
-								endif; ?>
+								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
+									<div class="space-y-5">
+										<?php foreach ( $service['tags'] as $tag ) : ?>
+											<span class="flex items-center gap-3 text-bodyBold">
+												<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<?php echo esc_html( $tag['title'] ) ?>
+											</span>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
 							</div>
 						</div>
 

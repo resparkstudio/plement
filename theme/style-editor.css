@@ -28,7 +28,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
  */
 
 /**
- * This injects custom `@font-face` rules.
+* This injects custom `@font-face` rules.
  */
 
 /**
@@ -1625,6 +1625,14 @@ div.wpcf7-validation-errors {
   margin-top: 1.5rem;
 }
 
+.mb-\[2\.75rem\] {
+  margin-bottom: 2.75rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -1679,10 +1687,6 @@ div.wpcf7-validation-errors {
 
 .h-\[1\.125rem\] {
   height: 1.125rem;
-}
-
-.h-\[10rem\] {
-  height: 10rem;
 }
 
 .h-\[16\.875rem\] {
@@ -1777,6 +1781,10 @@ div.wpcf7-validation-errors {
   max-height: 16.875rem;
 }
 
+.min-h-6 {
+  min-height: 1.5rem;
+}
+
 .min-h-\[12\.5px\] {
   min-height: 12.5px;
 }
@@ -1835,10 +1843,6 @@ div.wpcf7-validation-errors {
 
 .w-\[11\.5rem\] {
   width: 11.5rem;
-}
-
-.w-\[15\.9375rem\] {
-  width: 15.9375rem;
 }
 
 .w-\[15px\] {
@@ -1926,6 +1930,10 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
+.min-w-6 {
+  min-width: 1.5rem;
+}
+
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
 }
@@ -1944,10 +1952,6 @@ div.wpcf7-validation-errors {
 
 .max-w-\[12\.375rem\] {
   max-width: 12.375rem;
-}
-
-.max-w-\[12\.5rem\] {
-  max-width: 12.5rem;
 }
 
 .max-w-\[123px\] {
@@ -2273,6 +2277,12 @@ div.wpcf7-validation-errors {
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2289,10 +2299,6 @@ div.wpcf7-validation-errors {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.justify-self-start {
-  justify-self: start;
 }
 
 .justify-self-center {
@@ -2337,6 +2343,11 @@ div.wpcf7-validation-errors {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .border-b {
@@ -2393,6 +2404,12 @@ div.wpcf7-validation-errors {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-y-darkGray {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(100 100 100 / var(--tw-border-opacity));
+  border-bottom-color: rgb(100 100 100 / var(--tw-border-opacity));
+}
+
 .border-b-lightGrayBorder {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(216 216 216 / var(--tw-border-opacity));
@@ -2440,6 +2457,11 @@ div.wpcf7-validation-errors {
 .border-t-textSecondary {
   --tw-border-opacity: 1;
   border-top-color: rgb(178 178 178 / var(--tw-border-opacity));
+}
+
+.border-b-lightGray {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .\!bg-accent {
@@ -2813,8 +2835,8 @@ div.wpcf7-validation-errors {
   padding-top: 7.5rem;
 }
 
-.pt-\[7rem\] {
-  padding-top: 7rem;
+.pt-\[8\.25rem\] {
+  padding-top: 8.25rem;
 }
 
 .pt-\[8\.75rem\] {
@@ -2867,6 +2889,12 @@ div.wpcf7-validation-errors {
   font-size: 0.875rem;
   line-height: 1.05rem;
   font-weight: 400;
+}
+
+.text-button {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
 }
 
 .text-h1Mobile {
@@ -3453,6 +3481,10 @@ div.wpcf7-validation-errors {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:max-w-\[12\.5rem\] {
+    max-width: 12.5rem;
   }
 
   .md\:max-w-\[68\.125rem\] {

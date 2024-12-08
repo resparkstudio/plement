@@ -33,7 +33,7 @@
 
 		tippy(button, {
 			theme: 'custom',
-			placement: 'top',
+			placement: 'bottom',
 			allowHTML: true,
 			content: `${content}`,
 			interactive: true,

@@ -19,7 +19,7 @@ function statistics_counts( $stats ) {
 		foreach ( $stats as $stat ) {
 			?>
 			<li class="border-r border-r-lightGray last-of-type:border-r-0">
-				<div class="max-w-[12.5rem] mx-auto">
+				<div class="md:max-w-[12.5rem] mx-auto">
 					<span
 						class="text-h3 md:text-displayLarge mb-2 inline-block md:mb-5"><?php echo esc_html( $stat['count'] ); ?></span>
 					<div class="rich-content text-darkGray text-title [&_a]:text-accent [&_a]:no-underline">

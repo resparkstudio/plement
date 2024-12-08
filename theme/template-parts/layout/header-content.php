@@ -127,7 +127,7 @@
 		$items = plmt_menu_builder( $menu_id );
 
 		?>
-		<div>
+		<div class="w-full">
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
 				class="absolute top-5 right-4 flex text-textBlack lg:hidden" aria-label="mobile menu"
 				aria-controls="mobileMenu">
@@ -145,36 +145,54 @@
 					</div>
 				</div>
 			</button>
-			<ul class="overflow-y-scroll bg-white h-screen w-[15.9375rem] pt-[7rem]">
+			<ul class="overflow-y-scroll bg-white h-screen w-full pt-[8.25rem]">
 				<?php
 				foreach ( $items as $item ) :
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
-					<li x-show="!childOpen" x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
-						class="px-4 text-center w-full font-semibold h-[10rem] hover:bg-accent <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>"
-						<?php echo $has_children ? '@click="childOpen = true"' : '' ?>>
+					<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false" class="w-full"
+						:class="childOpen ? 'mb-4' : 'mb-8'" <?php echo $has_children ? '@click="childOpen = !childOpen"' : '' ?>>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyRegular group  transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>">
-							<span class="group-hover:text-white">
+							class="px-4 py-3 group flex items-center h-full w-full text-h5Regular <?php echo $is_contact_us ? 'text-accent gap-2' : 'justify-between' ?>">
+							<span>
 								<?php echo esc_html( $item['title'] ); ?>
 							</span>
 							<?php if ( $is_contact_us ) : ?>
 								<?php plmt_arrow(); ?>
 							<?php endif; ?>
+							<?php if ( $has_children ) : ?>
+								<svg class="mr-4" :class="childOpen ? 'rotate-180' : ''" width="16" height="16"
+									viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M13.4619 5.80865C13.4241 5.71729 13.36 5.6392 13.2778 5.58426C13.1956 5.52932 13.0989 5.5 13 5.5H3C2.90111 5.5 2.80444 5.52932 2.72221 5.58427C2.63999 5.63921 2.5759 5.7173 2.53806 5.80866C2.50022 5.90003 2.49031 6.00056 2.50961 6.09755C2.5289 6.19455 2.57653 6.28364 2.64646 6.35356L7.64646 11.3535C7.69288 11.4 7.748 11.4368 7.80866 11.4619C7.86932 11.4871 7.93434 11.5 8 11.5C8.06566 11.5 8.13068 11.4871 8.19134 11.4619C8.252 11.4368 8.30712 11.4 8.35355 11.3535L13.3535 6.35356C13.4235 6.28364 13.4711 6.19454 13.4904 6.09755C13.5097 6.00056 13.4998 5.90002 13.4619 5.80865Z"
+										fill="#111F24" />
+								</svg>
+							<?php endif; ?>
 						</a>
 					</li>
-
 					<?php if ( $has_children ) : ?>
-						<ul x-show="childOpen">
+						<ul x-show="childOpen" class="space-y-3 mb-[2.75rem]">
 							<?php foreach ( $item['children'] as $item ) : ?>
 								<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
-									class="px-4 text-center w-full font-semibold h-[10rem] hover:bg-accent <?php echo $is_contact_us ? 'border border-accent' : 'border-t-textSecondary border-t' ?>">
+									class="w-full px-4">
 									<a href="<?php echo esc_url( $item['url'] ); ?>"
-										class="group flex items-center justify-center h-full w-full text-bodyRegular hover:text-white transition-colors duration-300 <?php echo $is_contact_us ? 'text-accent !text-bodyBold gap-2' : '' ?>"><?php echo esc_html( $item['title'] ); ?>
-										<?php if ( $is_contact_us ) : ?>
-											<?php plmt_arrow(); ?>
-										<?php endif; ?>
+										class="py-3 border-b-lightGray border-b group flex items-start gap-2 justify-between h-full w-full">
+										<div>
+											<span class="text-bodyBold mb-1">
+												<?php echo esc_html( $item['title'] ); ?>
+											</span>
+											<p class="text-bodySmall text-darkGray">
+												<?php echo esc_html( $item['description'] ); ?>
+											</p>
+										</div>
+										<svg class="min-w-6 min-h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.75 12H20.25" stroke="#ED5623" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path d="M13.5 5.25L20.25 12L13.5 18.75" stroke="#ED5623" stroke-width="1.5"
+												stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
 									</a>
 								</li>
 							<?php endforeach; ?>
