@@ -96,7 +96,7 @@
 
 		</nav><!-- #site-navigation -->
 
-		<div class="lg:hidden">
+		<div class="lg:hidden relative z-[1000]">
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
 				class="flex text-textBlack lg:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
 				<div class=" text-center text-textBlack three col">
@@ -128,23 +128,6 @@
 
 		?>
 		<div class="w-full">
-			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
-				class="absolute top-5 right-4 flex text-textBlack lg:hidden" aria-label="mobile menu"
-				aria-controls="mobileMenu">
-				<div class=" text-center text-textBlack three col">
-					<div class="hamburger" id="hamburger-1">
-						<span
-							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
-							:class="menuOpen ? 'translate-y-[6px] rotate-[45deg]' : ''"></span>
-						<span
-							class="w-[21px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
-							:class="menuOpen ? 'opacity-0' : ''"></span>
-						<span
-							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
-							:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg]' : ''"></span>
-					</div>
-				</div>
-			</button>
 			<ul class="overflow-y-scroll bg-white h-screen w-full pt-[8.25rem]">
 				<?php
 				foreach ( $items as $item ) :

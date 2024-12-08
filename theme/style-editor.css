@@ -1476,10 +1476,6 @@ div.wpcf7-validation-errors {
   top: 1rem;
 }
 
-.top-5 {
-  top: 1.25rem;
-}
-
 .top-\[5rem\] {
   top: 5rem;
 }
@@ -2272,16 +2268,16 @@ div.wpcf7-validation-errors {
   gap: 2rem;
 }
 
+.gap-\[0\.4em\] {
+  gap: 0.4em;
+}
+
 .gap-\[3\.75rem\] {
   gap: 3.75rem;
 }
 
 .gap-\[6px\] {
   gap: 6px;
-}
-
-.gap-\[0\.4em\] {
-  gap: 0.4em;
 }
 
 .gap-x-12 {
