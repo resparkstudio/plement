@@ -2727,6 +2727,10 @@ div.wpcf7-validation-errors {
   gap: 6px;
 }
 
+.gap-\[0\.4em\] {
+  gap: 0.4em;
+}
+
 .gap-x-12 {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
