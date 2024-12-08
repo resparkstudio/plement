@@ -129,7 +129,7 @@
 
 .wpcf7-form-control.wpcf7-text,
 .wpcf7-form-control.wpcf7-textarea {
-	@apply text-bodyRegular bg-inputGray block w-full px-8 py-[1.625rem] focus:outline-none disabled:pointer-events-none disabled:opacity-50;
+	@apply text-bodyRegular block w-full bg-[#F3F4F4] px-8 py-[1.625rem] text-[#1A1A1A] focus:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 
 .wpcf7-form-control.wpcf7-textarea {
@@ -196,6 +196,22 @@
 div.wpcf7-response-output,
 div.wpcf7-validation-errors {
 	@apply !hidden;
+}
+
+.wpcf7-form.invalid {
+	@apply gap-6;
+}
+
+.wpcf7-not-valid-tip {
+	@apply text-bodySmall absolute -bottom-4 text-[#FF4F4F];
+}
+
+.wpcf7-form-control-wrap {
+	@apply block;
+}
+
+.wpcf7-form-control-wrap:has([aria-invalid='true'])::after {
+	@apply absolute right-8 top-1/2 z-10 h-6 w-6 -translate-y-1/2 content-[url('./assets/WarningCircle.svg')];
 }
 
 .gs {
