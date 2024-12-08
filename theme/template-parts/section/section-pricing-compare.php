@@ -28,7 +28,7 @@ function pricing_accordion_body( $features ) {
 									<?php echo esc_html( $feature['title'] ) ?>
 								</div>
 
-								<svg class="compare-tippy w-[17px] h-[17px] cursor-pointer"
+								<svg class="compare-tippy min-w-[17px] min-h-[17px] cursor-pointer"
 									data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" width="17" height="17"
 									viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"
