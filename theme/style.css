@@ -2173,10 +2173,6 @@ div.wpcf7-validation-errors {
   height: 16.875rem;
 }
 
-.h-\[17px\] {
-  height: 17px;
-}
-
 .h-\[19px\] {
   height: 19px;
 }
@@ -2277,6 +2273,10 @@ div.wpcf7-validation-errors {
   min-height: 17.3125rem;
 }
 
+.min-h-\[17px\] {
+  min-height: 17px;
+}
+
 .min-h-\[23\.5rem\] {
   min-height: 23.5rem;
 }
@@ -2331,10 +2331,6 @@ div.wpcf7-validation-errors {
 
 .w-\[160px\] {
   width: 160px;
-}
-
-.w-\[17px\] {
-  width: 17px;
 }
 
 .w-\[1px\] {
@@ -2416,6 +2412,10 @@ div.wpcf7-validation-errors {
 
 .min-w-\[12\.5px\] {
   min-width: 12.5px;
+}
+
+.min-w-\[17px\] {
+  min-width: 17px;
 }
 
 .min-w-\[320px\] {
