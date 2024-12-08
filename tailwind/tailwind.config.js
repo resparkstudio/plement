@@ -91,6 +91,9 @@ module.exports = {
 				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 			},
+			transitionDuration: {
+				800: '800ms',
+			},
 		},
 		container: {
 			default: '1.25rem',

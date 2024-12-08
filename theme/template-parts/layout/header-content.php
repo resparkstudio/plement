@@ -118,8 +118,11 @@
 	</div>
 	<nav x-data="{childOpen: false}" x-cloak x-show="menuOpen" x-trap.inert.noscroll="menuOpen"
 		@click.away="menuOpen=false" id="site-navigation"
-		class="absolute z-[100] top-0 left-0 w-full flex justify-end lg:hidden bg-[#0000003D] h-screen"
-		aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
+		class="fixed inset-y-0 right-0 z-[100] w-full flex justify-end lg:hidden bg-[#0000003D] h-screen transition-[cubic-bezier(.13,1.24,.92,.93)]"
+		aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>" x-transition:enter="transform duration-800"
+		x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+		x-transition:leave="transform duration-800" x-transition:leave-start="translate-x-0"
+		x-transition:leave-end="translate-x-full">
 		<?php
 		$menu_locations = get_nav_menu_locations();
 		$menu_id        = $menu_locations['menu-1'];
