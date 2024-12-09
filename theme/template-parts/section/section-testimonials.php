@@ -56,6 +56,15 @@ function testimonial_card( $testimonial ) {
 					</div>
 					<?php
 				endforeach;
+				foreach ( $testimonials_content['testimonials'] as $testimonial ) :
+					?>
+					<div class="swiper-slide flex min-h-[23.75rem] lg:min-h-[26.25rem]">
+						<?php
+						testimonial_card( $testimonial );
+						?>
+					</div>
+					<?php
+				endforeach;
 			endif;
 			?>
 		</div>

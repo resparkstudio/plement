@@ -64,12 +64,15 @@ function initSwiper() {
 
 	new Swiper('.testimonials-swiper', {
 		modules: [Navigation],
+		loop: true,
+		loopAdditionalSlides: 4,
 		slidesPerView: 1.2,
 		breakpoints: {
 			768: {
 				slidesPerView: 2,
 			},
 		},
+		initialSlide: 1,
 		spaceBetween: 16,
 		navigation: {
 			nextEl: '.custom-swiper-button-next',
