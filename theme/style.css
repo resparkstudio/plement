@@ -1532,6 +1532,17 @@ body {
   font-weight: 500;
 }
 
+.footer-menu > li > a {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.footer-menu > li > a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(237 86 35 / var(--tw-text-opacity));
+}
+
 .wpcf7-form-control.wpcf7-text,
 .wpcf7-form-control.wpcf7-textarea {
   display: block;
@@ -2869,6 +2880,11 @@ div.wpcf7-validation-errors {
   border-style: solid;
 }
 
+.border-\[\#E8E8E8\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 232 232 / var(--tw-border-opacity));
+}
+
 .border-\[\#E9E9E9\] {
   --tw-border-opacity: 1;
   border-color: rgb(233 233 233 / var(--tw-border-opacity));
@@ -3338,6 +3354,10 @@ div.wpcf7-validation-errors {
   padding-top: 8.75rem;
 }
 
+.pt-\[4\.1875rem\] {
+  padding-top: 4.1875rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3530,6 +3550,11 @@ div.wpcf7-validation-errors {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\#FFF8EE\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 248 238 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -3590,10 +3615,6 @@ div.wpcf7-validation-errors {
   transition-delay: 75ms;
 }
 
-.duration-100 {
-  transition-duration: 100ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -3604,10 +3625,6 @@ div.wpcf7-validation-errors {
 
 .duration-500 {
   transition-duration: 500ms;
-}
-
-.duration-700 {
-  transition-duration: 700ms;
 }
 
 .duration-800 {
@@ -3831,6 +3848,10 @@ div.wpcf7-validation-errors {
   color: rgb(39 39 39 / var(--tw-text-opacity));
 }
 
+.hover\:text-\[\#FFFFFFCC\]:hover {
+  color: #FFFFFFCC;
+}
+
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
@@ -3863,6 +3884,26 @@ div.wpcf7-validation-errors {
 .disabled\:text-\[\#B2B2B2\]:disabled {
   --tw-text-opacity: 1;
   color: rgb(178 178 178 / var(--tw-text-opacity));
+}
+
+.group\/button:hover .group-hover\/button\:translate-x-0 {
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group\/button:hover .group-hover\/button\:translate-x-\[100\%\] {
+  --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group\/button:hover .group-hover\/button\:translate-y-0 {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group\/button:hover .group-hover\/button\:translate-y-\[-100\%\] {
+  --tw-translate-y: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:translate-x-0 {
@@ -3904,16 +3945,20 @@ div.wpcf7-validation-errors {
   text-decoration-line: underline;
 }
 
+.group\/container:hover .group-hover\/container\:opacity-100 {
+  opacity: 1;
+}
+
+.group\/container:hover .group-hover\/container\:opacity-60 {
+  opacity: 0.6;
+}
+
 .group:hover .group-hover\:opacity-0 {
   opacity: 0;
 }
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.group:hover .group-hover\:opacity-60 {
-  opacity: 0.6;
 }
 
 .peer:checked ~ .peer-checked\:bg-accent {

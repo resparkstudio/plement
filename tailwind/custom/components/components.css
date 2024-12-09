@@ -127,6 +127,10 @@
 	@apply font-medium;
 }
 
+.footer-menu > li > a {
+	@apply hover:text-accent transition-colors duration-200;
+}
+
 .wpcf7-form-control.wpcf7-text,
 .wpcf7-form-control.wpcf7-textarea {
 	@apply text-bodyRegular block w-full bg-[#F3F4F4] px-8 py-[1.625rem] text-[#1A1A1A] focus:outline-none disabled:pointer-events-none disabled:opacity-50;

@@ -118,7 +118,7 @@ function package_cards( $packages ) {
 				<div
 					class=" <?php echo $package['is_best_value'] ? 'h-[25.5rem] xl:min-w-[23.75rem]' : 'h-[23.75rem] w-full' ?>">
 					<div
-						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[4.1875rem]' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>

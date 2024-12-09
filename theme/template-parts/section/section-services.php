@@ -31,9 +31,11 @@ function services_list_mobile( $services, $heading ) {
 							</h4>
 						</button>
 						<div x-cloak x-show="isExpanded" class="mt-4">
-							<p class="text-bodyRegular mb-8">
-								<?php echo esc_html( $service['description'] ); ?>
-							</p>
+							<?php if ( isset( $service['description'] ) && ! empty( $service['description'] ) ) : ?>
+								<p class="text-bodyRegular mb-8">
+									<?php echo esc_html( $service['description'] ); ?>
+								</p>
+							<?php endif; ?>
 							<div>
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) : ?>
 									<div class="space-y-5">
@@ -58,8 +60,9 @@ function services_list_mobile( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li class="flex items-center justify-center border-t border-t-accent py-[4.625rem]">
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold text-accent">
+			<li
+				class="bg-accent text-white hover:text-[#FFFFFFCC] flex items-center justify-center border-t border-t-accent py-[4.625rem]">
+				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold">
 					<?php echo __( 'Contact Us', 'plmt' ) ?>
 				</a>
 			</li>
@@ -83,10 +86,11 @@ function services_list( $services, $heading ) {
 			<?php
 			$index = 0;
 			foreach ( $services as $service ) {
+				$has_description = isset( $service['description'] ) && ! empty( $service['description'] );
 				?>
 				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true" class="group">
 					<div
-						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] group-hover:bg-accent">
+						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] <?php echo $has_description ? 'group-hover:bg-accent' : '' ?>">
 						<div class="w-[32px] h-[32px] rounded-md mb-4 bg-textSecondary group-hover:bg-white transition-all duration-300 ease-in-out"
 							style="mask-image: url(<?php echo esc_url( $service['icon']['url'] ) ?>)">
 
@@ -95,12 +99,14 @@ function services_list( $services, $heading ) {
 							<?php echo esc_html( $service['title'] ); ?>
 						</h4>
 						<div class="relative">
-							<p
-								class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out delay-75">
-								<?php echo esc_html( $service['description'] ); ?>
-							</p>
+							<?php if ( $has_description ) : ?>
+								<p
+									class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out delay-75">
+									<?php echo esc_html( $service['description'] ); ?>
+								</p>
+							<?php endif; ?>
 							<div
-								class="absolute top-0 left-0 group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+								class="absolute top-0 left-0 <?php echo $has_description ? 'group-hover:opacity-0 transition-opacity duration-300 ease-in-out' : '' ?>">
 								<?php if ( isset( $service['tags'] ) && ! empty( $service['tags'] ) ) :
 									plmt_arrow_list( $service['tags'] );
 								endif; ?>
@@ -113,8 +119,8 @@ function services_list( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li class="flex items-center justify-center border border-accent">
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold text-accent">
+			<li class="bg-accent text-white hover:text-[#FFFFFFCC] flex items-center justify-center border border-accent">
+				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold">
 					<?php echo __( 'Contact Us', 'plmt' ) ?>
 				</a>
 			</li>
