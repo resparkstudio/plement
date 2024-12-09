@@ -1543,6 +1543,14 @@ body {
   color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
+.testimonials-swiper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  max-width: 58.75rem !important;
+  overflow: visible !important;
+}
+
 .wpcf7-form-control.wpcf7-text,
 .wpcf7-form-control.wpcf7-textarea {
   display: block;
@@ -2305,10 +2313,6 @@ div.wpcf7-validation-errors {
   min-height: 100%;
 }
 
-.\!w-\[26\.25rem\] {
-  width: 26.25rem !important;
-}
-
 .w-0 {
   width: 0px;
 }
@@ -2367,10 +2371,6 @@ div.wpcf7-validation-errors {
 
 .w-\[24px\] {
   width: 24px;
-}
-
-.w-\[26\.25rem\] {
-  width: 26.25rem;
 }
 
 .w-\[26px\] {

@@ -64,10 +64,13 @@ function initSwiper() {
 
 	new Swiper('.testimonials-swiper', {
 		modules: [Navigation],
-		slidesPerView: 'auto',
+		slidesPerView: 1.2,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+			},
+		},
 		spaceBetween: 16,
-		initialSlide: 1,
-		centeredSlides: true,
 		navigation: {
 			nextEl: '.custom-swiper-button-next',
 			prevEl: '.custom-swiper-button-prev',

@@ -10,7 +10,7 @@ function testimonial_card( $testimonial ) {
 		return;
 	}
 	?>
-	<div class="flex flex-col justify-between w-[26.25rem] h-full bg-lightGrayBg p-5 lg:p-10">
+	<div class="flex flex-col justify-between h-full bg-lightGrayBg p-5 lg:p-10">
 		<div>
 			<div class="flex items-center mb-2 gap-2">
 				<svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@ function testimonial_card( $testimonial ) {
 
 ?>
 
-<section id="testimonials" class="py-[7.5rem] lg:pb-[10rem]">
+<section id="testimonials" class="py-[7.5rem] lg:pb-[10rem] overflow-hidden">
 	<h2 class="container text-h4Bold lg:text-[3rem] lg:leading-[3.3rem] text-center mb-10 mx-auto lg:mb-[3.75rem]">
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
@@ -49,7 +49,7 @@ function testimonial_card( $testimonial ) {
 			if ( isset( $testimonials_content['testimonials'] ) ) :
 				foreach ( $testimonials_content['testimonials'] as $testimonial ) :
 					?>
-					<div class="px-4 swiper-slide !w-[26.25rem] flex min-h-[23.75rem] lg:min-h-[26.25rem]">
+					<div class="swiper-slide flex min-h-[23.75rem] lg:min-h-[26.25rem]">
 						<?php
 						testimonial_card( $testimonial );
 						?>
