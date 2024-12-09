@@ -66,6 +66,8 @@ function initSwiper() {
 		modules: [Navigation],
 		slidesPerView: 'auto',
 		spaceBetween: 16,
+		initialSlide: 1,
+		centeredSlides: true,
 		navigation: {
 			nextEl: '.custom-swiper-button-next',
 			prevEl: '.custom-swiper-button-prev',

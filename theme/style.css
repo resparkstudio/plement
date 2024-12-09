@@ -3342,6 +3342,10 @@ div.wpcf7-validation-errors {
   padding-top: 3.75rem;
 }
 
+.pt-\[4\.1875rem\] {
+  padding-top: 4.1875rem;
+}
+
 .pt-\[7\.5rem\] {
   padding-top: 7.5rem;
 }
@@ -3352,10 +3356,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.75rem\] {
   padding-top: 8.75rem;
-}
-
-.pt-\[4\.1875rem\] {
-  padding-top: 4.1875rem;
 }
 
 .text-left {
@@ -3505,6 +3505,11 @@ div.wpcf7-validation-errors {
   color: rgb(100 100 100 / var(--tw-text-opacity));
 }
 
+.text-\[\#FFF8EE\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 248 238 / var(--tw-text-opacity));
+}
+
 .text-accent {
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
@@ -3548,11 +3553,6 @@ div.wpcf7-validation-errors {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\#FFF8EE\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 248 238 / var(--tw-text-opacity));
 }
 
 .underline {
