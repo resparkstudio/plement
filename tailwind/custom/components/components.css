@@ -60,7 +60,7 @@
 }
 
 .button:hover {
-	@apply bg-[#CF491C] text-white transition duration-300 ease-in-out;
+	@apply bg-[#CF491C] transition duration-300 ease-in-out;
 }
 
 .button_secondary {
