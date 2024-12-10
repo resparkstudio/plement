@@ -20,7 +20,7 @@
 		class="flex items-center justify-between z-[100] bg-white container lg:max-w-none lg:p-0 lg:border-b lg:border-b-textSecondary">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="lg:border-r border-r-textSecondary py-5 lg:px-[75px]">
+				class="lg:border-r border-r-textSecondary py-[1.0625rem] lg:px-[75px]">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
 					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
 			</a>
@@ -37,7 +37,7 @@
 			$items = plmt_menu_builder( $menu_id );
 
 			?>
-			<ul class="hidden h-[5.375rem] w-full items-center lg:flex" @mouseover.away="overlayOpen = false"
+			<ul class="hidden h-[5rem] w-full items-center lg:flex" @mouseover.away="overlayOpen = false"
 				@click.away="overlayOpen = false">
 				<?php
 				foreach ( $items as $item ) :

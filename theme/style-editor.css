@@ -1808,12 +1808,12 @@ div.wpcf7-validation-errors {
   height: 48px;
 }
 
-.h-\[57px\] {
-  height: 57px;
+.h-\[5\.375rem\] {
+  height: 5.375rem;
 }
 
-.h-\[5rem\] {
-  height: 5rem;
+.h-\[57px\] {
+  height: 57px;
 }
 
 .h-\[600px\] {
@@ -1836,8 +1836,16 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.h-\[5\.375rem\] {
-  height: 5.375rem;
+.h-\[5rem\2c \] {
+  height: 5rem,;
+}
+
+.h-\[5re\] {
+  height: 5re;
+}
+
+.h-\[5rem\] {
+  height: 5rem;
 }
 
 .max-h-\[16\.875rem\] {
@@ -2769,6 +2777,11 @@ div.wpcf7-validation-errors {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-\[1\.0625rem\] {
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .py-\[3\.5625rem\] {
@@ -3815,6 +3828,10 @@ div.wpcf7-validation-errors {
     height: 1000px;
   }
 
+  .lg\:h-\[2\.875rem\] {
+    height: 2.875rem;
+  }
+
   .lg\:h-\[25px\] {
     height: 25px;
   }
@@ -3829,10 +3846,6 @@ div.wpcf7-validation-errors {
 
   .lg\:h-\[800px\] {
     height: 800px;
-  }
-
-  .lg\:h-\[2\.875rem\] {
-    height: 2.875rem;
   }
 
   .lg\:max-h-\[22rem\] {
@@ -3894,10 +3907,6 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .lg\:min-w-\[9\.375rem\] {
-    min-width: 9.375rem;
   }
 
   .lg\:max-w-2xl {
