@@ -1251,7 +1251,8 @@ body {
 }
 
 .wpcf7-form input[type='submit']:hover {
-  color: #FFFFFFCC;
+  --tw-bg-opacity: 1;
+  background-color: rgb(207 73 28 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 984px) {
@@ -3367,6 +3368,11 @@ div.wpcf7-validation-errors {
   border-color: rgb(17 31 36 / var(--tw-border-opacity));
 }
 
+.hover\:bg-\[\#CF491C\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(207 73 28 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-\[\#E8E8E8\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(232 232 232 / var(--tw-bg-opacity));
@@ -3400,10 +3406,6 @@ div.wpcf7-validation-errors {
 .hover\:text-\[\#272727\]:hover {
   --tw-text-opacity: 1;
   color: rgb(39 39 39 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[\#FFFFFFCC\]:hover {
-  color: #FFFFFFCC;
 }
 
 .hover\:text-accent:hover {
