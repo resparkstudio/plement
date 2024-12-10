@@ -902,7 +902,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(207 73 28 / var(--tw-bg-opacity));
+  background-color: rgb(237 86 35 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.875rem;
@@ -920,6 +920,8 @@ body {
 }
 
 .button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(207 73 28 / var(--tw-bg-opacity));
   color: #FFFFFFCC;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -953,9 +955,9 @@ body {
 
 .button_secondary:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(207 73 28 / var(--tw-border-opacity));
+  border-color: rgb(237 86 35 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
-  color: rgb(207 73 28 / var(--tw-text-opacity));
+  color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
 .button_outlined {
@@ -964,7 +966,7 @@ body {
   gap: 0.75rem;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(207 73 28 / var(--tw-border-opacity));
+  border-color: rgb(237 86 35 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
@@ -975,7 +977,7 @@ body {
   line-height: 1.2rem;
   font-weight: 700;
   --tw-text-opacity: 1;
-  color: rgb(207 73 28 / var(--tw-text-opacity));
+  color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
 #site-navigation {
