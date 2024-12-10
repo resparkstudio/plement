@@ -107,7 +107,7 @@ function services_column( $links ) {
 			<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mb-[1.875rem]">
 					<img src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>"
-						class="lg:min-w-[9.375rem] aspect-[150/46]">
+						class="h-[2.875rem] aspect-[150/46]">
 				</a>
 			<?php else : ?>
 				<a class="site-title"
