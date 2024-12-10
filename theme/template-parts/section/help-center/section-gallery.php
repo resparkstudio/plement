@@ -24,7 +24,7 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 								alt="<?php echo esc_attr( $item['image']['alt'] ) ?>">
 							<div
 								class="group/button absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center w-[22.25rem] py-4 px-6 bg-white justify-between text-accent opacity-0 group-hover/container:opacity-100 transition-all duration-200 hover:bg-accent hover:text-white">
-								<span><?php esc_html_e( 'Go to full page' ) ?></span>
+								<span class="font-bold"><?php esc_html_e( 'Go to full page' ) ?></span>
 								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 									<div
 										class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover/button:translate-x-0 group-hover/button:translate-y-0">

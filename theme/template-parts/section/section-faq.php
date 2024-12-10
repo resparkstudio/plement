@@ -24,7 +24,7 @@ function faq_item( $item ) {
 			<h4 class="text-left text-h5Bold"><?php echo esc_html( $item['question'] ) ?></h4>
 		</button>
 		<div x-show="activeAccordion==id" x-collapse x-cloak class="ml-[30px] w-full px-0 overflow-hidden pr-4 max-w-[95%]">
-			<div class="faq-answer text-darkGray text-bodyRegular mt-4">
+			<div class="faq-answer text-darkGray text-bodyRegular mt-4 mb-6">
 				<?php echo $item['answer'] ?>
 			</div>
 		</div>
@@ -54,7 +54,8 @@ function faq_item( $item ) {
 								}, 3000);
 							}
 						}" class="relative z-20 flex items-center">
-					<button @click="copyToClipboard();" class="flex items-center gap-2 justify-center">
+					<button @click="copyToClipboard();"
+						class="flex items-center gap-2 justify-center hover:text-accent duration-200 transition-colors">
 						<svg x-show="!copyNotification" x-cloak class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
 							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<path fill="currentColor"
@@ -65,10 +66,12 @@ function faq_item( $item ) {
 							<path fill="currentColor"
 								d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" />
 						</svg>
-						<span x-show="!copyNotification" x-cloak
-							class="text-h5Bold"><?php echo esc_html( $faq_content['email'] ) ?></span>
-						<span x-show="copyNotification" x-cloak
-							class="text-h5Bold"><?php esc_html_e( 'Email copied', 'plmt' ) ?></span>
+						<span x-show="!copyNotification" x-cloak class="text-xl font-semibold">
+							<?php echo esc_html( $faq_content['email'] ) ?>
+						</span>
+						<span x-show="copyNotification" x-cloak class="text-xl font-semibold">
+							<?php esc_html_e( 'Email copied', 'plmt' ) ?>
+						</span>
 					</button>
 				</div>
 			</div>

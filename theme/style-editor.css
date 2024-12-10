@@ -902,7 +902,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(237 86 35 / var(--tw-bg-opacity));
+  background-color: rgb(207 73 28 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.875rem;
@@ -953,9 +953,9 @@ body {
 
 .button_secondary:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(237 86 35 / var(--tw-border-opacity));
+  border-color: rgb(207 73 28 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
-  color: rgb(237 86 35 / var(--tw-text-opacity));
+  color: rgb(207 73 28 / var(--tw-text-opacity));
 }
 
 .button_outlined {
@@ -964,7 +964,7 @@ body {
   gap: 0.75rem;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(237 86 35 / var(--tw-border-opacity));
+  border-color: rgb(207 73 28 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 1.5rem;
@@ -975,7 +975,7 @@ body {
   line-height: 1.2rem;
   font-weight: 700;
   --tw-text-opacity: 1;
-  color: rgb(237 86 35 / var(--tw-text-opacity));
+  color: rgb(207 73 28 / var(--tw-text-opacity));
 }
 
 #site-navigation {
@@ -3366,6 +3366,11 @@ div.wpcf7-validation-errors {
   border-color: rgb(17 31 36 / var(--tw-border-opacity));
 }
 
+.hover\:bg-\[\#E8E8E8\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 232 232 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-\[\#F8F8FA\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 248 250 / var(--tw-bg-opacity));
@@ -3379,11 +3384,6 @@ div.wpcf7-validation-errors {
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-lightGrayBg:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 248 250 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-mainBlack:hover {

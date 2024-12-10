@@ -60,9 +60,9 @@ function services_list_mobile( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li
-				class="bg-accent text-white hover:text-[#FFFFFFCC] flex items-center justify-center border-t border-t-accent py-[4.625rem]">
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold">
+			<li class="bg-accent text-white hover:text-[#FFFFFFCC] border-t border-t-accent py-[4.625rem]">
+				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
+					class="text-center h-full w-full flex items-center justify-center text-h4Bold">
 					<?php echo __( 'Contact Us', 'plmt' ) ?>
 				</a>
 			</li>
@@ -119,8 +119,9 @@ function services_list( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li class="bg-accent text-white hover:text-[#FFFFFFCC] flex items-center justify-center border border-accent">
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>" class="text-center text-h4Bold">
+			<li class="bg-accent text-white hover:text-[#FFFFFFCC]  border border-accent">
+				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
+					class="h-full w-full flex items-center justify-center text-h4Bold">
 					<?php echo __( 'Contact Us', 'plmt' ) ?>
 				</a>
 			</li>

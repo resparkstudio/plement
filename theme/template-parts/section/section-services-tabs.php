@@ -15,7 +15,7 @@ function services_desktop( $services_tabs ) {
 			<?php foreach ( $services_tabs['tabs'] as $tab ) : ?>
 				<button @click="selectedTab = '<?php echo $tab['title'] ?>'"
 					:aria-selected="selectedTab === '<?php echo $tab['title'] ?>'"
-					:class="selectedTab === '<?php echo $tab['title'] ?>' ? 'text-accent' : 'text-white'"
+					:class="selectedTab === '<?php echo $tab['title'] ?>' ? 'text-accent bg-white' : 'text-white hover:text-accent transition-colors duration-200'"
 					class='w-full p-6 border border-darkGray'>
 					<?php echo esc_html( $tab['title'] ) ?>
 				</button>

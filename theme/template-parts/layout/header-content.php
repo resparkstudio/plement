@@ -37,14 +37,15 @@
 			$items = plmt_menu_builder( $menu_id );
 
 			?>
-			<ul class="hidden h-[5rem] w-full items-center lg:flex" @mouseover.away="overlayOpen = false">
+			<ul class="hidden h-[5rem] w-full items-center lg:flex" @mouseover.away="overlayOpen = false"
+				@click.away="overlayOpen = false">
 				<?php
 				foreach ( $items as $item ) :
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
 					<li class="border-r-textSecondary h-full w-full border-r font-semibold"
-						@mouseover='overlayOpen = <?php echo $has_children ? 1 : 0 ?>'>
+						@click='overlayOpen = <?php echo $has_children ? 1 : 0 ?>'>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
 							class="group flex items-center justify-center h-full w-full text-bodyRegular group  transition-colors duration-300 <?php echo $is_contact_us ? 'hover:bg-accent text-accent !text-bodyBold gap-2' : '' ?> <?php echo $has_children || $is_contact_us ? 'hover:bg-accent' : 'hover:bg-[#F8F8FA]' ?>"
 							:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
@@ -72,7 +73,7 @@
 								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
 								x-transition:leave-end="opacity-0">
 								<?php foreach ( $item['children'] as $child ) : ?>
-									<li class="hover:bg-lightGrayBg transition-colors duration-300 ease-in-out">
+									<li class="hover:bg-[#E8E8E8] transition-colors duration-300 ease-in-out">
 										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
 											class="inline-block py-[3.5625rem] px-10">
 											<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
