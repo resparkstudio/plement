@@ -1720,6 +1720,10 @@ div.wpcf7-validation-errors {
   aspect-ratio: 1 / 1;
 }
 
+.aspect-\[150\/46\] {
+  aspect-ratio: 150/46;
+}
+
 .\!h-auto {
   height: auto !important;
 }
@@ -1826,6 +1830,10 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[2\.875rem\] {
+  height: 2.875rem;
 }
 
 .max-h-\[16\.875rem\] {
@@ -3492,9 +3500,24 @@ div.wpcf7-validation-errors {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:bg-mainBlack {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 31 36 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-\[\#F8F8FA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 248 250 / var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-mainBlack {
+  --tw-text-opacity: 1;
+  color: rgb(17 31 36 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:underline {
@@ -3829,6 +3852,10 @@ div.wpcf7-validation-errors {
     height: 800px;
   }
 
+  .lg\:h-\[2\.875rem\] {
+    height: 2.875rem;
+  }
+
   .lg\:max-h-\[22rem\] {
     max-height: 22rem;
   }
@@ -3888,6 +3915,10 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .lg\:min-w-\[9\.375rem\] {
+    min-width: 9.375rem;
   }
 
   .lg\:max-w-2xl {

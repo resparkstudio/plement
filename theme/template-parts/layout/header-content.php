@@ -22,7 +22,7 @@
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 				class="lg:border-r border-r-textSecondary py-5 lg:px-[75px]">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
-					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[40px]">
+					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:min-w-[9.375rem] aspect-[150/46]">
 			</a>
 		<?php else : ?>
 			<a class="site-title"
@@ -44,17 +44,17 @@
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
-					<li class="border-r-textSecondary h-full w-full border-r font-semibold"
-						@click='overlayOpen = <?php echo $has_children ? 1 : 0 ?>'>
+					<li class="border-r-textSecondary h-full w-full border-r" <?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
+						@click='overlayOpen = <?php echo $has_children ? '!overlayOpen' : 0 ?>'>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyRegular group  transition-colors duration-300 <?php echo $is_contact_us ? 'hover:bg-accent text-accent !text-bodyBold gap-2' : '' ?> <?php echo $has_children || $is_contact_us ? 'hover:bg-accent' : 'hover:bg-[#F8F8FA]' ?>"
+							class="group flex items-center justify-center h-full w-full text-bodyBold group  transition-colors duration-300 <?php echo $is_contact_us ? 'hover:bg-accent text-accent gap-2' : '' ?> <?php echo $has_children || $is_contact_us ? 'hover:bg-accent' : 'hover:bg-[#E8E8E8]' ?>"
 							:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
 							<span class=" <?php echo $has_children || $is_contact_us ? 'group-hover:text-white' : '' ?>">
 								<?php echo esc_html( $item['title'] ); ?>
 							</span>
 							<?php if ( $has_children ) : ?>
-								<svg :class="overlayOpen && 'rotate-180 text-white'" width="17" height="16" viewBox="0 0 17 16"
-									fill="none" xmlns="http://www.w3.org/2000/svg">
+								<svg :class="overlayOpen && 'rotate-180 text-white'" class="group-hover:text-white" width="17"
+									height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M14.295 5.80865C14.2571 5.71729 14.193 5.6392 14.1108 5.58426C14.0286 5.52932 13.9319 5.5 13.833 5.5H3.83301C3.73412 5.5 3.63745 5.52932 3.55522 5.58427C3.473 5.63921 3.40891 5.7173 3.37107 5.80866C3.33322 5.90003 3.32332 6.00056 3.34262 6.09755C3.36191 6.19455 3.40953 6.28364 3.47946 6.35356L8.47946 11.3535C8.52589 11.4 8.58101 11.4368 8.64167 11.4619C8.70233 11.4871 8.76735 11.5 8.83301 11.5C8.89867 11.5 8.96369 11.4871 9.02435 11.4619C9.08501 11.4368 9.14013 11.4 9.18656 11.3535L14.1866 6.35356C14.2565 6.28364 14.3041 6.19454 14.3234 6.09755C14.3427 6.00056 14.3328 5.90002 14.295 5.80865Z"
 										fill="currentColor" />

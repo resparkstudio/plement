@@ -65,6 +65,12 @@ function statistics_counts( $stats ) {
 					class='max-w-none object-contain gs h-[60px]' width='200' height="60">
 			<?php endforeach; ?>
 		</div>
+		<div class='flex space-x-3 animate-loop-scroll items-center' aria-hidden='true'>
+			<?php foreach ( $companies['icons'] as $logo ) : ?>
+				<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
+					class='max-w-none object-contain gs h-[60px]' width='200' height="60">
+			<?php endforeach; ?>
+		</div>
 	</div>
 	<div class="md:hidden">
 		<?php

@@ -90,8 +90,8 @@ function services_list( $services, $heading ) {
 				?>
 				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true" class="group">
 					<div
-						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] <?php echo $has_description ? 'group-hover:bg-accent' : '' ?>">
-						<div class="w-[32px] h-[32px] rounded-md mb-4 bg-textSecondary group-hover:bg-white transition-all duration-300 ease-in-out"
+						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] <?php echo $has_description ? 'group-hover:bg-[#F8F8FA] group-hover:text-mainBlack' : '' ?>">
+						<div class="w-[32px] h-[32px] rounded-md mb-4 bg-textSecondary transition-all duration-300 ease-in-out <?php echo $has_description ? 'group-hover:bg-mainBlack' : '' ?>"
 							style="mask-image: url(<?php echo esc_url( $service['icon']['url'] ) ?>)">
 
 						</div>
