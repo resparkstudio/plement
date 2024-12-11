@@ -19,6 +19,11 @@ function mobile_menu( $links ) {
 	?>
 	<nav class="mb-[3.75rem] lg:hidden">
 		<ul class="text-center space-y-10">
+			<li class="text-button">
+				<a href="<?php echo esc_url( home_url( '/' ) ) ?>">
+					<?php echo esc_html_e( 'Home', 'plmt' ) ?>
+				</a>
+			</li>
 			<li x-data="{isExpanded: false}" class="text-button flex flex-col items-center">
 				<button @click="isExpanded = !isExpanded" class="flex items-center gap-2" :class="isExpanded ? 'mb-6' : ''">
 					<?php echo esc_html_e( 'Services', 'plmt' ) ?>

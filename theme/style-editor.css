@@ -1808,12 +1808,12 @@ div.wpcf7-validation-errors {
   height: 48px;
 }
 
-.h-\[5\.375rem\] {
-  height: 5.375rem;
-}
-
 .h-\[57px\] {
   height: 57px;
+}
+
+.h-\[5rem\] {
+  height: 5rem;
 }
 
 .h-\[600px\] {
@@ -1834,18 +1834,6 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[5rem\2c \] {
-  height: 5rem,;
-}
-
-.h-\[5re\] {
-  height: 5re;
-}
-
-.h-\[5rem\] {
-  height: 5rem;
 }
 
 .max-h-\[16\.875rem\] {
