@@ -716,6 +716,12 @@ body {
   }
 }
 
+@media (min-width: 1921px) {
+  .container {
+    max-width: 1921px;
+  }
+}
+
 .prose {
   color: var(--tw-prose-body);
 }
@@ -3700,6 +3706,12 @@ div.wpcf7-validation-errors {
       max-width: 1440px;
     }
   }
+
+  @media (min-width: 1921px) {
+    .lg\:container {
+      max-width: 1921px;
+    }
+  }
 }
 
 .before\:absolute::before {
@@ -4852,6 +4864,16 @@ div.wpcf7-validation-errors {
 
   .xl\:gap-28 {
     gap: 7rem;
+  }
+}
+
+@media (min-width: 1921px) {
+  .\33xl\:static {
+    position: static;
+  }
+
+  .\33xl\:relative {
+    position: relative;
   }
 }
 

@@ -7,8 +7,8 @@ if ( empty( $cta_content ) ) {
 }
 ?>
 
-<section id="cta" class="bg-lightGrayBg mt-20 mb-[9.75rem] pt-20 lg:mt-0 lg:mb-20 lg:py-[7.5rem]">
-	<div class="container flex flex-col lg:flex-row relative">
+<section id="cta" class="bg-lightGrayBg mt-20 mb-[9.75rem] pt-20 lg:mt-0 lg:mb-20 lg:py-[7.5rem] relative 3xl:static">
+	<div class="container mx-auto flex flex-col lg:flex-row 3xl:relative">
 		<div class="max-w-[35.4375rem]">
 			<h2 class="text-h4Bold lg:text-h2 mb-6">
 				<?php echo esc_html( $cta_content['title'] ); ?>
