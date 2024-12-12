@@ -69,7 +69,7 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 						</a>
 					</div>
 				<?php else : ?>
-					<div class="swiper-slide md:aspect-square md:!w-[26.25rem]">
+					<div class="swiper-slide md:aspect-square md:!w-[26.25rem] border border-[#E8E8E8]">
 						<img class="w-full h-full object-cover" src="<?php echo esc_url( $item['image']['url'] ) ?>"
 							alt="<?php echo esc_attr( $item['image']['alt'] ) ?>">
 					</div>
