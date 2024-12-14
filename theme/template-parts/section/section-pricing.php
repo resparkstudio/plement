@@ -112,14 +112,16 @@ function package_cards_mobile( $packages ) {
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>
-							<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
-								target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
-								class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
-								<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
-								<div class="text-accent">
-									<?php plmt_arrow() ?>
-								</div>
-							</a>
+							<?php if ( isset( $package['sow_file'] ) && ! empty( $package['sow_file'] ) ) : ?>
+								<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
+									target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
+									class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
+									<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
+									<div class="text-accent">
+										<?php plmt_arrow() ?>
+									</div>
+								</a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -135,9 +137,9 @@ function package_cards( $packages ) {
 		return;
 	?>
 	<div x-cloak>
-		<div class="max-w-sm mx-auto grid grid-cols-4 lg:max-w-none">
+		<div class="max-w-sm mx-auto grid grid-cols-[24%_24%_28%_24%] lg:max-w-none h-[calc(100%+24px)] items-center py-3">
 			<?php foreach ( $packages as $package ) : ?>
-				<div class="h-full <?php echo $package['is_best_value'] ? '' : 'w-full' ?>">
+				<div class="h-full <?php echo $package['is_best_value'] ? 'h-[calc(100%+24px)]' : 'w-full' ?>">
 					<div
 						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[4.1875rem]' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
@@ -189,14 +191,16 @@ function package_cards( $packages ) {
 									</div>
 								<?php endif; ?>
 							</div>
-							<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
-								target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
-								class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
-								<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
-								<div class="text-accent">
-									<?php plmt_arrow() ?>
-								</div>
-							</a>
+							<?php if ( isset( $package['sow_file'] ) && ! empty( $package['sow_file'] ) ) : ?>
+								<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
+									target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
+									class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
+									<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
+									<div class="text-accent">
+										<?php plmt_arrow() ?>
+									</div>
+								</a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
