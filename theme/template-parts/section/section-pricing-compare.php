@@ -71,7 +71,7 @@ function pricing_accordion_body( $features ) {
 	<?php
 }
 
-function comparison_footer_rows( $pricing_data, $sow_files ) {
+function comparison_footer_rows( $pricing_data ) {
 
 	?>
 	<div class="grid grid-cols-5 pt-[2.875rem] pb-4 gap-6">
@@ -85,20 +85,6 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 			) ) ?>
 		<?php endforeach; ?>
 	</div>
-	<div class="grid grid-cols-5 py-3 border-b border-lightGray last-of-type:border-b-0">
-		<div></div>
-		<?php foreach ( $sow_files as $file ) : ?>
-			<a href="<?php echo esc_url( $file['file']['url'] ) ?>" target="<?php echo esc_attr( $file['file']['target'] ) ?>"
-				class="group hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
-				<?php echo esc_html( $file['text'] ) ?>
-				<div class="text-accent">
-					<?php plmt_arrow() ?>
-				</div>
-
-			</a>
-		<?php endforeach; ?>
-	</div>
-
 	<?php
 }
 
@@ -143,6 +129,6 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 	</div>
 
 
-	<?php comparison_footer_rows( $pricing_data, $package_comparison_data['sow_files'] ) ?>
+	<?php comparison_footer_rows( $pricing_data, ) ?>
 
 </div>
