@@ -205,6 +205,52 @@
                             "ui_on_text": "",
                             "ui_off_text": "",
                             "parent_repeater": "field_674b3c49c435a"
+                        },
+                        {
+                            "key": "field_675ccf201c870",
+                            "label": "Services",
+                            "name": "services",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_675ccf3a1c871",
+                                    "label": "Service",
+                                    "name": "service",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_675ccf201c870"
+                                }
+                            ],
+                            "parent_repeater": "field_674b3c49c435a"
                         }
                     ]
                 }
@@ -473,7 +519,7 @@
                             "label": "File",
                             "name": "file",
                             "aria-label": "",
-                            "type": "file",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -483,10 +529,6 @@
                                 "id": ""
                             },
                             "return_format": "array",
-                            "library": "all",
-                            "min_size": "",
-                            "max_size": "",
-                            "mime_types": "",
                             "parent_repeater": "field_674f8f71f30de"
                         }
                     ]
@@ -512,5 +554,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733267380
+    "modified": 1734135616
 }

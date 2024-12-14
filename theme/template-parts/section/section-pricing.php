@@ -113,17 +113,16 @@ function package_cards( $packages ) {
 		return;
 	?>
 	<div x-cloak>
-		<div class="max-w-sm mx-auto flex items-center lg:max-w-none">
+		<div class="max-w-sm mx-auto grid grid-cols-4 lg:max-w-none">
 			<?php foreach ( $packages as $package ) : ?>
-				<div
-					class=" <?php echo $package['is_best_value'] ? 'h-[25.5rem] xl:min-w-[23.75rem]' : 'h-[23.75rem] w-full' ?>">
+				<div class="h-full <?php echo $package['is_best_value'] ? '' : 'w-full' ?>">
 					<div
 						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[4.1875rem]' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
 						<?php endif; ?>
-						<div class="h-full flex flex-col justify-between">
+						<div class="h-full flex flex-col">
 							<div class="mb-6">
 								<div class="flex items-center justify-between mb-12">
 									<h4 class="text-h4Bold <?php echo $package['is_best_value'] ? 'text-accent' : '' ?>">
@@ -152,7 +151,22 @@ function package_cards( $packages ) {
 								"is_button" => true,
 								"value" => $package['title']
 							) ) ?>
+							<?php if ( isset( $package['services'] ) ) : ?>
+								<div class="flex flex-col gap-4 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
+									<?php foreach ( $package['services'] as $service ) : ?>
+										<div class="flex items-start gap-2">
+											<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+											<p class="text-bodyRegular"><?php echo esc_html( $service['service'] ) ?></p>
+										</div>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 						</div>
+
 					</div>
 				</div>
 			<?php endforeach; ?>

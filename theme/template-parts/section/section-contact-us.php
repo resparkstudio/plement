@@ -25,9 +25,9 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 		</div>
 		<div class="flex flex-col xl:flex-row xl:items-center">
 			<div class="flex items-center justify-between w-full">
-				<div>
-					<div class="flex items-center gap-1">
-						<a href="<?php echo esc_url( $contact_content['linkedin']['url'] ) ?>" target="_blank">
+				<a href="<?php echo esc_url( $contact_content['linkedin']['url'] ) ?>" target="_blank">
+					<div>
+						<div class="flex items-center gap-1">
 							<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<g clip-path="url(#clip0_247_5748)">
@@ -41,12 +41,12 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 									</clipPath>
 								</defs>
 							</svg>
-						</a>
-						<span class="text-title"><?php echo esc_html( $contact_content['info_name'] ) ?></span>
+							<span class="text-title"><?php echo esc_html( $contact_content['info_name'] ) ?></span>
+						</div>
+						<p class="text-textSecondary text-bodySmall mt-1">
+							<?php echo esc_html( $contact_content['info_occupation'] ) ?>
 					</div>
-					<p class="text-textSecondary text-bodySmall mt-1">
-						<?php echo esc_html( $contact_content['info_occupation'] ) ?>
-				</div>
+				</a>
 				<img src="<?php echo esc_url( $contact_content['info_image']['url'] ) ?>"
 					alt="<?php echo esc_attr( $contact_content['info_image']['alt'] ) ?>"
 					class="rounded-full w-[40px] h-[40px] border border-textSecondary">

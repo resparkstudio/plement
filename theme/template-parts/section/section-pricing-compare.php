@@ -88,19 +88,12 @@ function comparison_footer_rows( $pricing_data, $sow_files ) {
 	<div class="grid grid-cols-5 py-3 border-b border-lightGray last-of-type:border-b-0">
 		<div></div>
 		<?php foreach ( $sow_files as $file ) : ?>
-			<a href="<?php echo esc_url( $file['file']['url'] ) ?>"
-				class=" justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
+			<a href="<?php echo esc_url( $file['file']['url'] ) ?>" target="<?php echo esc_attr( $file['file']['target'] ) ?>"
+				class="group hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
 				<?php echo esc_html( $file['text'] ) ?>
-
-				<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M7.21875 8.59473L10.5 11.8751L13.7812 8.59473" stroke="#646464" stroke-width="1.5"
-						stroke-linecap="round" stroke-linejoin="round" />
-					<path d="M10.5 3.125V11.8727" stroke="#646464" stroke-width="1.5" stroke-linecap="round"
-						stroke-linejoin="round" />
-					<path
-						d="M17.375 11.875V16.25C17.375 16.4158 17.3092 16.5747 17.1919 16.6919C17.0747 16.8092 16.9158 16.875 16.75 16.875H4.25C4.08424 16.875 3.92527 16.8092 3.80806 16.6919C3.69085 16.5747 3.625 16.4158 3.625 16.25V11.875"
-						stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
+				<div class="text-accent">
+					<?php plmt_arrow() ?>
+				</div>
 
 			</a>
 		<?php endforeach; ?>

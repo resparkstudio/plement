@@ -72,7 +72,7 @@ function initSwiper() {
 				slidesPerView: 2,
 			},
 		},
-		initialSlide: 1,
+		initialSlide: 2,
 		spaceBetween: 16,
 		navigation: {
 			nextEl: '.custom-swiper-button-next',

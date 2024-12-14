@@ -25,11 +25,11 @@ function plmt_button( $url = '#', $text, $options = array() ) {
 	if ( $options['is_button'] ) {
 		?>
 		<button value="<?php echo $options['value'] ?>" @click="<?php echo $url ?>"
-			class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a><?php
+			class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></button><?php
 	} else {
 		?>
-			<a href="<?php echo esc_url( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a>
-			<?php
+		<a href="<?php echo esc_url( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a>
+		<?php
 	}
 }
 
@@ -47,9 +47,9 @@ function plmt_icon_button( $url = '#', $text, $options = array() ) {
 		$classes .= " " . $options['classes'];
 	}
 	?>
-		<a href='<?php echo esc_url( $url ) ?>' class='<?php echo esc_attr( $classes ) ?>'>
-			<?php echo $text ?>
-			<?php plmt_arrow() ?>
-		</a>
-		<?php
+	<a href='<?php echo esc_url( $url ) ?>' class='<?php echo esc_attr( $classes ) ?>'>
+		<?php echo $text ?>
+		<?php plmt_arrow() ?>
+	</a>
+	<?php
 }
