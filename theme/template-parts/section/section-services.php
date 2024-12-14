@@ -75,6 +75,12 @@ function services_list( $services, $heading ) {
 	if ( empty( $services ) ) {
 		return;
 	}
+
+	$services_count = count( $services );
+
+	$contact_us_only   = ( $services_count - 2 ) % 3 === 0;
+	$contact_us_second = ( $services_count - 2 ) % 3 === 1;
+	var_dump( $contact_us_second );
 	?>
 	<div class="container ">
 		<ul class="grid grid-cols-3 h-full">
@@ -87,8 +93,10 @@ function services_list( $services, $heading ) {
 			$index = 0;
 			foreach ( $services as $service ) {
 				$has_description = isset( $service['description'] ) && ! empty( $service['description'] );
+				$is_last         = $index === $services_count - 1;
 				?>
-				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true" class="group">
+				<li x-data="{active: false}" @mouseout="active = false" @mouseover="active = true"
+					class="group <?php echo $is_last && $contact_us_second ? 'col-start-2 col-end-3' : '' ?>">
 					<div
 						class="h-full flex flex-col px-10 py-[3.75rem] border border-darkGray min-h-[360px] <?php echo $has_description ? 'group-hover:bg-[#F8F8FA] group-hover:text-mainBlack' : '' ?>">
 						<div class="w-[32px] h-[32px] rounded-md mb-4 bg-textSecondary transition-all duration-300 ease-in-out <?php echo $has_description ? 'group-hover:bg-mainBlack' : '' ?>"
@@ -119,7 +127,8 @@ function services_list( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li class="bg-accent text-white hover:bg-[#CF491C] border border-accent transition duration-200">
+			<li class=" bg-accent text-white hover:bg-[#CF491C] border border-accent transition duration-200 min-h-[360px] <?php echo $contact_us_only ? 'col-start-3 col-end-4' : '' ?>"
+				<?php echo $contact_us_only ? 'col-start-3 col-end-4' : '' ?>>
 				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
 					class="h-full w-full flex items-center justify-center text-h4Bold">
 					<?php echo __( 'Contact Us', 'plmt' ) ?>
