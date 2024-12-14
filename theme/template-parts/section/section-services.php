@@ -80,7 +80,7 @@ function services_list( $services, $heading ) {
 
 	$contact_us_only   = ( $services_count - 2 ) % 3 === 0;
 	$contact_us_second = ( $services_count - 2 ) % 3 === 1;
-	var_dump( $contact_us_second );
+
 	?>
 	<div class="container ">
 		<ul class="grid grid-cols-3 h-full">
