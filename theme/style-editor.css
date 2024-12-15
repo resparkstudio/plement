@@ -1552,10 +1552,6 @@ div.wpcf7-validation-errors {
   grid-column: span 5 / span 5;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-start-2 {
   grid-column-start: 2;
 }

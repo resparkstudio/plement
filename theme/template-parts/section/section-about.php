@@ -75,6 +75,11 @@ function statistics_counts( $stats ) {
 	<div class="md:hidden">
 		<?php
 		$companies['icons'] = array_chunk( $companies['icons'], ceil( count( $companies['icons'] ) ) / 3 );
+		if ( count( $companies['icons'] ) > 3 ) {
+			$last_chunk            = array_pop( $companies['icons'] );
+			$companies['icons'][2] = array_merge( $companies['icons'][2], $last_chunk );
+		}
+
 		foreach ( $companies['icons'] as $companies ) :
 			?>
 			<div
