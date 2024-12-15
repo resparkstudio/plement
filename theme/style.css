@@ -3280,6 +3280,11 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
+.px-\[5\.625rem\] {
+  padding-left: 5.625rem;
+  padding-right: 5.625rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }

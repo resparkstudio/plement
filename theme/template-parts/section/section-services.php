@@ -84,10 +84,15 @@ function services_list( $services, $heading ) {
 	?>
 	<div class="container ">
 		<ul class="grid grid-cols-3 h-full">
-			<li class="flex items-center justify-center">
+			<li class="flex items-center justify-center flex-col gap-[3.75rem]">
 				<h2 class="text-center text-h4Bold lg:text-h3">
 					<?php echo esc_html( $heading ) ?>
 				</h2>
+				<?php if ( $contact_us_only ) : ?>
+					<?php plmt_button( home_url( '/contact-us' ), __( 'Contact Us', 'plmt' ), array(
+						"classes" => "px-[5.625rem]"
+					) ) ?>
+				<?php endif; ?>
 			</li>
 			<?php
 			$index = 0;
@@ -127,13 +132,15 @@ function services_list( $services, $heading ) {
 				$index++;
 			}
 			?>
-			<li class=" bg-accent text-white hover:bg-[#CF491C] border border-accent transition duration-200 min-h-[360px] <?php echo $contact_us_only ? 'col-start-3 col-end-4' : '' ?>"
-				<?php echo $contact_us_only ? 'col-start-3 col-end-4' : '' ?>>
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
-					class="h-full w-full flex items-center justify-center text-h4Bold">
-					<?php echo __( 'Contact Us', 'plmt' ) ?>
-				</a>
-			</li>
+			<?php if ( ! $contact_us_only ) : ?>
+				<li
+					class=" bg-accent text-white hover:bg-[#CF491C] border border-accent transition duration-200 min-h-[360px] <?php echo $contact_us_second ? 'col-start-3 col-end-4' : '' ?>">
+					<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
+						class="h-full w-full flex items-center justify-center text-h4Bold">
+						<?php echo __( 'Contact Us', 'plmt' ) ?>
+					</a>
+				</li>
+			<?php endif; ?>
 		</ul>
 	</div>
 	<?php
