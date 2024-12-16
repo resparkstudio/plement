@@ -79,24 +79,30 @@ function statistics_counts( $stats ) {
 			$last_chunk            = array_pop( $companies['icons'] );
 			$companies['icons'][1] = array_merge( $companies['icons'][1], $last_chunk );
 		}
+		$index = 0;
 
 		foreach ( $companies['icons'] as $companies ) :
+
 			?>
 			<div
 				class="relative flex overflow-hidden space-x-3 items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
-				<div class='flex space-x-3 animate-loop-scroll items-center'>
+				<div
+					class='flex space-x-3 items-center <?php echo $index === 0 ? 'animate-loop-scroll' : 'animate-loop-scroll2' ?>'>
 					<?php foreach ( $companies as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
 							class='max-w-none object-contain gs h-[60px]' width='200' height="60">
 					<?php endforeach; ?>
 				</div>
-				<div class='flex space-x-3 animate-loop-scroll items-center' aria-hidden='true'>
+				<div class='flex space-x-3 items-center <?php echo $index === 0 ? 'animate-loop-scroll' : 'animate-loop-scroll2' ?>'
+					aria-hidden='true'>
 					<?php foreach ( $companies as $logo ) : ?>
 						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
 							class='max-w-none object-contain gs h-[60px]' width='200' height="60">
 					<?php endforeach; ?>
 				</div>
 			</div>
-		<?php endforeach; ?>
+			<?php
+			$index++;
+		endforeach; ?>
 	</div>
 </section>

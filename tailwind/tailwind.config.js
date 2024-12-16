@@ -58,6 +58,7 @@ module.exports = {
 			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
+				'loop-scroll2': 'loop-scroll2 50s linear infinite',
 				marquee: 'marquee 80s linear infinite',
 				marquee2: 'marquee2 80s linear infinite',
 			},
@@ -65,6 +66,10 @@ module.exports = {
 				'loop-scroll': {
 					from: { transform: 'translateX(0)' },
 					to: { transform: 'translateX(-100%)' },
+				},
+				'loop-scroll2': {
+					from: { transform: 'translateX(-100%)' },
+					to: { transform: 'translateX(0)' },
 				},
 				marquee: {
 					'0%': { transform: 'translateX(0%)' },

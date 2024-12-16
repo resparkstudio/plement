@@ -2220,6 +2220,20 @@ div.wpcf7-validation-errors {
   animation: loop-scroll 50s linear infinite;
 }
 
+@keyframes loop-scroll2 {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-loop-scroll2 {
+  animation: loop-scroll2 50s linear infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -3259,48 +3273,6 @@ div.wpcf7-validation-errors {
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
-@media (min-width: 984px) {
-  .lg\:container {
-    width: 100%;
-  }
-
-  @media (min-width: 600px) {
-    .lg\:container {
-      max-width: 600px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .lg\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 984px) {
-    .lg\:container {
-      max-width: 984px;
-    }
-  }
-
-  @media (min-width: 1312px) {
-    .lg\:container {
-      max-width: 1312px;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .lg\:container {
-      max-width: 1440px;
-    }
-  }
-
-  @media (min-width: 1921px) {
-    .lg\:container {
-      max-width: 1921px;
-    }
-  }
-}
-
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -3947,6 +3919,10 @@ div.wpcf7-validation-errors {
     max-width: 42rem;
   }
 
+  .lg\:max-w-\[1440px\] {
+    max-width: 1440px;
+  }
+
   .lg\:max-w-\[16\.875rem\] {
     max-width: 16.875rem;
   }
@@ -3993,10 +3969,6 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-none {
     max-width: none;
-  }
-
-  .lg\:max-w-\[1440px\] {
-    max-width: 1440px;
   }
 
   .lg\:-translate-y-1\/2 {
