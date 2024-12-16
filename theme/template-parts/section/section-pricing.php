@@ -137,11 +137,11 @@ function package_cards( $packages ) {
 		return;
 	?>
 	<div x-cloak>
-		<div class="max-w-sm mx-auto grid grid-cols-[24%_24%_28%_24%] lg:max-w-none items-center py-3">
+		<div class="max-w-sm mx-auto grid grid-cols-[24%_24%_28%_24%] lg:max-w-none items-center py-[14px]">
 			<?php foreach ( $packages as $package ) : ?>
-				<div class=" <?php echo $package['is_best_value'] ? '!h-[calc(100%+24px)]' : 'h-full w-full' ?>">
+				<div class=" <?php echo $package['is_best_value'] ? '!h-[calc(100%+28px)]' : 'h-full w-full' ?>">
 					<div
-						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[4.1875rem]' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[3.25rem]' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
@@ -149,8 +149,7 @@ function package_cards( $packages ) {
 						<div class="h-full flex flex-col justify-between">
 							<div>
 								<div class="mb-6">
-									<div
-										class="flex items-center justify-between <?php echo $package['is_best_value'] ? 'mb-8' : 'mb-12' ?>">
+									<div class="flex items-center justify-between mb-8">
 										<h4 class="text-h4Bold <?php echo $package['is_best_value'] ? 'text-accent' : '' ?>">
 											<?php echo esc_html( $package['title'] ) ?>
 										</h4>
@@ -162,7 +161,7 @@ function package_cards( $packages ) {
 												fill="#B2B2B2" />
 										</svg>
 									</div>
-									<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4 lg:mb-0">
+									<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4 lg:mb-2.5">
 										<span x-html="currency === 'usd' ? '$' : '€'"></span>
 										<span
 											x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>

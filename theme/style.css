@@ -2197,6 +2197,10 @@ div.wpcf7-validation-errors {
   aspect-ratio: 1 / 1;
 }
 
+.\!h-\[calc\(100\%\+24px\)\] {
+  height: calc(100% + 24px) !important;
+}
+
 .\!h-auto {
   height: auto !important;
 }
@@ -2289,10 +2293,6 @@ div.wpcf7-validation-errors {
   height: 60px;
 }
 
-.h-\[calc\(100\%\+24px\)\] {
-  height: calc(100% + 24px);
-}
-
 .h-auto {
   height: auto;
 }
@@ -2305,8 +2305,8 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.\!h-\[calc\(100\%\+24px\)\] {
-  height: calc(100% + 24px) !important;
+.\!h-\[calc\(100\%\+28px\)\] {
+  height: calc(100% + 28px) !important;
 }
 
 .max-h-\[16\.875rem\] {
@@ -2345,12 +2345,12 @@ div.wpcf7-validation-errors {
   min-height: 360px;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .min-h-\[4\.5rem\] {
   min-height: 4.5rem;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .w-0 {
@@ -3307,6 +3307,16 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
+.py-\[0\.875rem\] {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
+.py-\[14px\] {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3433,6 +3443,14 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.75rem\] {
   padding-top: 8.75rem;
+}
+
+.pt-\[\] {
+  padding-top: ;
+}
+
+.pt-\[3\.25rem\] {
+  padding-top: 3.25rem;
 }
 
 .text-left {
@@ -4267,6 +4285,14 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .lg\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .lg\:mb-2\.5 {
+    margin-bottom: 0.625rem;
   }
 
   .lg\:block {
