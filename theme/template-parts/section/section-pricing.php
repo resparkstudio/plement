@@ -84,7 +84,7 @@ function package_cards_mobile( $packages ) {
 										fill="#B2B2B2" />
 								</svg>
 							</div>
-							<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4">
+							<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-2.5">
 								<span x-html="currency === 'usd' ? '$' : '€'"></span>
 								<span
 									x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
@@ -161,7 +161,7 @@ function package_cards( $packages ) {
 												fill="#B2B2B2" />
 										</svg>
 									</div>
-									<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-4 lg:mb-2.5">
+									<div class="text-h4Bold lg:text-h2 inline-flex items-baseline mb-2.5">
 										<span x-html="currency === 'usd' ? '$' : '€'"></span>
 										<span
 											x-html="currency === 'usd' ? '<?php echo esc_html( $package['price_usd'] ) ?>' : '<?php echo esc_html( $package['price_eur'] ) ?>'"></span>
