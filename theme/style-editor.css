@@ -1858,6 +1858,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.\!h-\[calc\(100\%\+24px\)\] {
+  height: calc(100% + 24px) !important;
+}
+
 .max-h-\[16\.875rem\] {
   max-height: 16.875rem;
 }
@@ -1896,6 +1900,10 @@ div.wpcf7-validation-errors {
 
 .min-h-full {
   min-height: 100%;
+}
+
+.min-h-\[4\.5rem\] {
+  min-height: 4.5rem;
 }
 
 .w-0 {
