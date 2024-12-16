@@ -141,7 +141,7 @@ function package_cards( $packages ) {
 			<?php foreach ( $packages as $package ) : ?>
 				<div class=" <?php echo $package['is_best_value'] ? '!h-[calc(100%+28px)]' : 'h-full w-full' ?>">
 					<div
-						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[3.25rem]' : '' ?>">
+						class="relative flex flex-col h-full p-[1.875rem] pt-10 pb-[2.75rem] bg-white border border-lightGray <?php echo $package['is_best_value'] ? 'best-value-package pt-[54px]' : '' ?>">
 						<?php if ( $package['is_best_value'] ) : ?>
 							<span
 								class="uppercase bg-accent absolute top-0 left-0 px-3 py-2 text-bodyBold text-white font-bold"><?php esc_html_e( 'MOST POPULAR', 'plmt' ) ?></span>
