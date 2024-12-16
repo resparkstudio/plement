@@ -32,7 +32,7 @@ function integration_cards( $cards ) {
 ?>
 
 <section id="integrations" class="pt-[7.5rem] pb-20 lg:pt-[10rem]">
-	<div class="lg:container lg:mx-auto">
+	<div class="lg:max-w-[1440px] lg:mx-auto">
 		<h2 class="text-center text-h4Bold mb-10 lg:text-h3 lg:mb-[3.75rem]">
 			<?php echo esc_html( $integrations_content['heading'] ) ?>
 		</h2>

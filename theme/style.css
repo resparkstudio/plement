@@ -3185,6 +3185,11 @@ div.wpcf7-validation-errors {
   padding-right: 4rem;
 }
 
+.px-\[5\.625rem\] {
+  padding-left: 5.625rem;
+  padding-right: 5.625rem;
+}
+
 .px-\[6\.625rem\] {
   padding-left: 6.625rem;
   padding-right: 6.625rem;
@@ -3278,11 +3283,6 @@ div.wpcf7-validation-errors {
 .py-\[7\.5rem\] {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-}
-
-.px-\[5\.625rem\] {
-  padding-left: 5.625rem;
-  padding-right: 5.625rem;
 }
 
 .pb-10 {
@@ -4440,6 +4440,10 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:max-w-\[1440px\] {
+    max-width: 1440px;
   }
 
   .lg\:-translate-y-1\/2 {
