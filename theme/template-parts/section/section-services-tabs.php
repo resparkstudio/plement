@@ -28,7 +28,7 @@ function services_desktop( $services_tabs ) {
 						<h3 class='text-h3 mb-4'>
 							<?php echo esc_html( $tab['title'] ) ?>
 						</h3>
-						<div class='mb-8 text-title text-textSecondary'>
+						<div class='mb-8 text-title text-textSecondary whitespace-pre-line'>
 							<?php echo $tab['description'] ?>
 						</div>
 						<ul class="space-y-5 mb-8">
@@ -75,7 +75,7 @@ function services_mobile( $services_tabs ) {
 						</svg>
 					</button>
 					<div x-cloak x-show="isExpanded" class="mt-4">
-						<p class="text-textSecondary mb-8">
+						<p class="text-textSecondary mb-8 whitespace-pre-line">
 							<?php echo esc_html( $tab['description'] ); ?>
 						</p>
 						<ul class="space-y-5 mb-8">

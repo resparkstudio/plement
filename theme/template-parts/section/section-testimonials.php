@@ -21,7 +21,7 @@ function testimonial_card( $testimonial ) {
 				<span class="text-bodyBold"><?php echo esc_html_e( $testimonial['rating'] ) ?></span>
 			</div>
 			<h5 class="text-bodyBold mb-3 lg:text-h5Bold lg:mb-4"><?php echo esc_html( $testimonial['title'] ) ?></h5>
-			<p class="mb-3"><?php echo esc_html( $testimonial['description'] ) ?></p>
+			<p class="mb-3 whitespace-pre-line"><?php echo esc_html( $testimonial['description'] ) ?></p>
 		</div>
 		<div class="flex items-center gap-5">
 			<img class="rounded-full w-[3.75rem] h-[3.75rem]" src="<?php echo esc_url( $testimonial['image']['url'] ) ?>"

@@ -32,7 +32,7 @@ function services_list_mobile( $services, $heading ) {
 						</button>
 						<div x-cloak x-show="isExpanded" class="mt-4">
 							<?php if ( isset( $service['description'] ) && ! empty( $service['description'] ) ) : ?>
-								<p class="text-bodyRegular mb-8">
+								<p class="text-bodyRegular mb-8 whitespace-pre-line">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
 							<?php endif; ?>
@@ -114,7 +114,7 @@ function services_list( $services, $heading ) {
 						<div class="relative">
 							<?php if ( $has_description ) : ?>
 								<p
-									class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out delay-75">
+									class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out delay-75 whitespace-pre-line">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
 							<?php endif; ?>

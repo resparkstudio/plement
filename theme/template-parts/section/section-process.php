@@ -26,7 +26,7 @@ function step_card( $step, $index ) {
 	?>
 	<div class="max-w-[680px] rounded-[4px] translate-y-3">
 		<h2 class="text-title lg:text-h5Bold mb-1"><?php echo esc_html( $step['title'] ) ?></h2>
-		<p class="text-bodyRegular text-darkGray"><?php echo esc_html( $step['description'] ) ?></p>
+		<p class="text-bodyRegular text-darkGray whitespace-pre-line"><?php echo esc_html( $step['description'] ) ?></p>
 	</div>
 	<?php
 }
