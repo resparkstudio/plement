@@ -24,7 +24,7 @@ if ( ! isset( $services_content ) || empty( $services_content ) ) {
 			</div>
 		<?php endforeach; ?>
 	</div>
-	<p class="text-h5Bold text-accent lg:text-h4Bold">
+	<p class="text-h5Bold text-accent lg:text-h4Bold whitespace-pre-line">
 		<?php esc_html_e( $services_content['bottom_text'] ) ?>
 	</p>
 </section>
