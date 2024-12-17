@@ -24,7 +24,7 @@ if ( ! isset( $benefits_content ) || empty( $benefits_content ) ) {
 			</div>
 		<?php endforeach; ?>
 	</div>
-	<p class="text-h5Bold text-accent lg:text-h4Regular max-w-[52.6875rem]">
+	<p class="text-h5Bold text-accent lg:text-h4Bold max-w-[52.6875rem]">
 		<?php esc_html_e( $benefits_content['bottom_text'] ) ?>
 	</p>
 </section>
