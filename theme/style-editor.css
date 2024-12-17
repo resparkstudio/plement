@@ -1495,20 +1495,12 @@ div.wpcf7-validation-errors {
   right: 2.5rem;
 }
 
-.right-4 {
-  right: 1rem;
-}
-
 .top-0 {
   top: 0px;
 }
 
 .top-1\/2 {
   top: 50%;
-}
-
-.top-4 {
-  top: 1rem;
 }
 
 .top-\[5rem\] {
@@ -1729,10 +1721,6 @@ div.wpcf7-validation-errors {
   display: inline-block;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: flex;
 }
@@ -1865,6 +1853,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.h-\[14px\] {
+  height: 14px;
+}
+
 .max-h-\[16\.875rem\] {
   max-height: 16.875rem;
 }
@@ -1981,10 +1973,6 @@ div.wpcf7-validation-errors {
   width: 3.75rem;
 }
 
-.w-\[30px\] {
-  width: 30px;
-}
-
 .w-\[32px\] {
   width: 32px;
 }
@@ -2012,6 +2000,10 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[14px\] {
+  width: 14px;
 }
 
 .min-w-6 {
@@ -2136,6 +2128,10 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .-translate-x-1\/2 {
@@ -2453,16 +2449,8 @@ div.wpcf7-validation-errors {
   border-radius: 0.375rem;
 }
 
-.\!border-0 {
-  border-width: 0px !important;
-}
-
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-y {
@@ -3556,11 +3544,6 @@ div.wpcf7-validation-errors {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.peer:checked ~ .peer-checked\:bg-accent {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 86 35 / var(--tw-bg-opacity));
 }
 
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"][class~="is-selected"] *))) {

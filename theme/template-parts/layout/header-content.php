@@ -82,7 +82,7 @@
 												<?php echo esc_html( $child['title'] ); ?>
 											</p>
 											<?php if ( isset( $child['description'] ) ) : ?>
-												<p class="text-bodySmall text-darkGray">
+												<p class="text-bodyRegular text-darkGray">
 													<?php echo esc_html( $child['description'] ); ?>
 												</p>
 											<?php endif; ?>
