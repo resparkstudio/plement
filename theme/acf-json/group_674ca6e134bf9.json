@@ -384,9 +384,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "319"
+                "value": "tailored-optimization-package.php"
             }
         ]
     ],
@@ -399,5 +399,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733077471
+    "modified": 1734519988
 }
