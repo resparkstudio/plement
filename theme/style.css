@@ -2348,6 +2348,10 @@ div.wpcf7-validation-errors {
   min-height: 100%;
 }
 
+.min-h-\[26\.25rem\] {
+  min-height: 26.25rem;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2862,6 +2866,18 @@ div.wpcf7-validation-errors {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .justify-self-center {
@@ -4320,6 +4336,10 @@ div.wpcf7-validation-errors {
     min-height: 26.25rem;
   }
 
+  .lg\:min-h-\[23\.5rem\] {
+    min-height: 23.5rem;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4855,6 +4875,14 @@ div.wpcf7-validation-errors {
 
   .lg\:last-of-type\:border-r-0:last-of-type {
     border-right-width: 0px;
+  }
+
+  .group\/container:hover .group-hover\/container\:lg\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .group\/container:hover .group-hover\/container\:lg\:opacity-100 {
+    opacity: 1;
   }
 }
 

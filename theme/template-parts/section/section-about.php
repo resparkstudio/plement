@@ -47,7 +47,7 @@ function statistics_counts( $stats ) {
 
 <section id="companies" class="py-20 lg:pb-[10.25rem]">
 	<div class="container">
-		<h2 class="text-h4Bold mb-4 lg:mb-10">
+		<h2 class="text-h4Bold mb-8 lg:mb-10">
 			<?php echo esc_html( $companies['title'] ); ?>
 		</h2>
 	</div>
@@ -72,7 +72,7 @@ function statistics_counts( $stats ) {
 			<?php endforeach; ?>
 		</div>
 	</div>
-	<div class="md:hidden">
+	<div class="md:hidden space-y-6">
 		<?php
 		$companies['icons'] = array_chunk( $companies['icons'], ceil( count( $companies['icons'] ) ) / 2 );
 		if ( count( $companies['icons'] ) > 2 ) {

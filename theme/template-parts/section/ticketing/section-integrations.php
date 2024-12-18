@@ -13,7 +13,8 @@ function integration_cards( $cards ) {
 	?>
 	<ul class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 		<?php foreach ( $cards as $card ) : ?>
-			<li class="bg-mainBlack px-10 py-7 h-full flex flex-col justify-between min-h-[23.5rem] lg:gap-[1.8125rem]">
+			<li
+				class="bg-mainBlack px-10 py-7 h-full flex flex-col justify-between min-h-[26.25rem] lg:min-h-[23.5rem] lg:gap-[1.8125rem]">
 				<div>
 					<img class="w-8 h-8 mb-6" src="<?php echo esc_url( $card['image']['url'] ) ?>"
 						alt="<?php echo esc_url( $card['image']['alt'] ) ?>">

@@ -19,11 +19,11 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 					<div
 						class="swiper-slide md:aspect-square md:!w-[26.25rem] bg-black group/container border border-[#E8E8E8]">
 						<a href="<?php echo esc_url( $item['link']['url'] ) ?>" class="w-full h-full" target="_blank">
-							<img class="w-full h-full object-cover group-hover/container:opacity-60 transition-opacity duration-300 ease-in-out"
+							<img class="w-full h-full object-cover group-hover/container:lg:opacity-60 transition-opacity duration-300 ease-in-out"
 								src="<?php echo esc_url( $item['image']['url'] ) ?>"
 								alt="<?php echo esc_attr( $item['image']['alt'] ) ?>">
 							<div
-								class="group/button absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center w-[22.25rem] py-4 px-6 bg-white justify-between text-accent opacity-0 group-hover/container:opacity-100 transition-all duration-200 hover:bg-accent hover:text-white">
+								class="group/button absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center w-[22.25rem] py-4 px-6 bg-white justify-between text-accent opacity-0 group-hover/container:lg:opacity-100 transition-all duration-200 hover:bg-accent hover:text-white">
 								<span class="font-bold"><?php esc_html_e( 'Go to full page' ) ?></span>
 								<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 									<div
@@ -45,10 +45,10 @@ if ( ! isset( $gallery_content ) || empty( $gallery_content ) ) {
 								</div>
 							</div>
 						</a>
-						<a href="<?php echo esc_url( $item['link']['url'] ) ?>"
+						<a href="<?php echo esc_url( $item['link']['url'] ) ?>" target="_blank"
 							class="inline-flex items-center justify-between w-full py-4 px-6 lg:hidden bg-mainBlack text-white text-[1.125rem] font-medium">
 							<span><?php esc_html_e( 'Go to full page' ) ?></span>
-							<div class="z-1 flex justify-center items-center relative overflow-hidden ">
+							<div class="z-1 flex justify-center items-center relative overflow-hidden">
 								<div
 									class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] ">
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
