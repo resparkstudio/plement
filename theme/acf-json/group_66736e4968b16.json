@@ -221,9 +221,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "86"
+                "value": "contact-us.php"
             }
         ]
     ],
@@ -236,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733104156
+    "modified": 1734520359
 }

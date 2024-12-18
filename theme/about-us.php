@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: About us
  * The template for About us page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Contact Us
  * The template for displaying ftont page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

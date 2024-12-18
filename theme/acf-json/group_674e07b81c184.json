@@ -554,9 +554,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "535"
+                "value": "about-us.php"
             }
         ]
     ],
@@ -569,5 +569,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733167488
+    "modified": 1734520350
 }

@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for Proven CS Launch Package  page
+ * Template Name: Custom Ticketing System
+ * The template for Custom Ticketing System
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

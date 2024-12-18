@@ -571,9 +571,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "317"
+                "value": "admin-assits-service.php"
             }
         ]
     ],
@@ -586,5 +586,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733379860
+    "modified": 1734520409
 }

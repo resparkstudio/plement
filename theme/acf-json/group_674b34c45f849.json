@@ -494,9 +494,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "313"
+                "value": "cx-implementation-packages.php"
             }
         ]
     ],
@@ -509,5 +509,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734176129
+    "modified": 1734520337
 }

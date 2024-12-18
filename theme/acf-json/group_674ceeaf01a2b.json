@@ -464,9 +464,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "323"
+                "value": "help-center-development.php"
             }
         ]
     ],
@@ -479,5 +479,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733423193
+    "modified": 1734520371
 }

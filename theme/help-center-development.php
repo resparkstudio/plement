@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Help Center Development
  * The template for Help Center development page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

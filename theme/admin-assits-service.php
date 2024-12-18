@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Zendesk Admin Assits Service
  * The template for Zendesk Admin Assits Service  page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Proven CS Launch Package
  * The template for Proven CS Launch Package  page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

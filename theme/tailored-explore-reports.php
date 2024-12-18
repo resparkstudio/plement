@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Tailored Explore Reports
  * The template for Tailored Explore Reports page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
