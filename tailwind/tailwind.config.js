@@ -26,6 +26,7 @@ module.exports = {
 				dm: ['DM Sans', 'sans-serif'],
 			},
 			backgroundImage: {
+				services: 'url("../theme/assets/bg-services.png")',
 				gradientLeft:
 					'linear-gradient(90deg, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%)',
 				gradientRight:
@@ -34,16 +35,21 @@ module.exports = {
 					'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)',
 			},
 			colors: {
+				mainBlack: '#111F24',
 				textBlack: '#272727',
 				textGray: '#575757',
 				textLightGray: '#A5A5A5',
+				textSecondary: '#B2B2B2',
 				textDarkGray: '#4D4D4D',
 				accent: '#ED5623',
 				accentHover: '#ef6739',
 				lightGray: '#E9E9E9',
 				lightGrayBg: '#F8F8FA',
 				lightGrayBorder: '#D8D8D8',
+				darkGray: '#646464',
 				grayBorder: '#D6D6D6',
+				inputGray: '#F3F4F4',
+				chipGray: '#243135',
 			},
 			boxShadow: {
 				testimonial: '5px 5px 30px -5px #012D191A',
@@ -52,6 +58,7 @@ module.exports = {
 			},
 			animation: {
 				'loop-scroll': 'loop-scroll 50s linear infinite',
+				'loop-scroll2': 'loop-scroll2 50s linear infinite',
 				marquee: 'marquee 80s linear infinite',
 				marquee2: 'marquee2 80s linear infinite',
 			},
@@ -59,6 +66,10 @@ module.exports = {
 				'loop-scroll': {
 					from: { transform: 'translateX(0)' },
 					to: { transform: 'translateX(-100%)' },
+				},
+				'loop-scroll2': {
+					from: { transform: 'translateX(-100%)' },
+					to: { transform: 'translateX(0)' },
 				},
 				marquee: {
 					'0%': { transform: 'translateX(0%)' },
@@ -68,6 +79,25 @@ module.exports = {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(0)' },
 				},
+			},
+			fontSize: {
+				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
+				displayLarge: ['4.25rem', { lineHeight: '4.25rem', fontWeight: '900' }],
+				title: ['1.125rem', { lineHeight: '1.4625rem', fontWeight: '500' }],
+				bodySmall: ['0.875rem', { lineHeight: '1.05rem', fontWeight: '400' }],
+				bodyBold: ['1rem', { lineHeight: '1.2rem', fontWeight: '700' }],
+				bodyRegular: ['1rem', { lineHeight: '1.3rem', fontWeight: '400' }],
+				h1: ['3.375rem', { lineHeight: '3.375rem', fontWeight: '800' }],
+				h1Mobile: ['2.5rem', { lineHeight: '2.5rem', fontWeight: '800' }],
+				h2: ['3rem', { lineHeight: '3.3rem', fontWeight: '800' }],
+				h3: ['2.75rem', { lineHeight: '2.75rem', fontWeight: '800' }],
+				h4Regular: ['2rem', { lineHeight: '2.4rem', fontWeight: '400' }],
+				h4Bold: ['2rem', { lineHeight: '2rem', fontWeight: '700' }],
+				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
+				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
+			},
+			transitionDuration: {
+				800: '800ms',
 			},
 		},
 		container: {
@@ -81,6 +111,7 @@ module.exports = {
 			lg: '984px',
 			xl: '1312px',
 			'2xl': '1440px',
+			'3xl': '1921px',
 		},
 	},
 	corePlugins: {

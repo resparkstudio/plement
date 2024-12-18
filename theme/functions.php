@@ -192,6 +192,11 @@ add_filter( 'tiny_mce_before_init', 'plmt_tinymce_add_class' );
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Functions which return specific template components.
+ */
+require get_template_directory() . '/inc/components.php';
+
+/**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';

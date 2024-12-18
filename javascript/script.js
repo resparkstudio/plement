@@ -9,15 +9,14 @@
  * https://esbuild.github.io/
  */
 import Swiper from 'swiper';
-import { Pagination, Controller } from 'swiper/modules';
+import { Pagination, Controller, Navigation } from 'swiper/modules';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
-let resizeTimeout;
-let standaloneList;
 function initSwiper() {
 	new Swiper('.services-list', {
 		modules: [Pagination],
@@ -43,6 +42,10 @@ function initSwiper() {
 		},
 	});
 
+	packageSwiper.on('slideChange', function () {
+		tippy.hideAll({ duration: 0 });
+	});
+
 	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
 		modules: [Pagination, Controller],
 		slidesPerView: 1,
@@ -60,56 +63,44 @@ function initSwiper() {
 	packageCompareSwiper.controller.control = packageSwiper;
 
 	new Swiper('.testimonials-swiper', {
-		modules: [Pagination],
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
+		modules: [Navigation],
+		loop: true,
+		loopAdditionalSlides: 4,
+		slidesPerView: 1.2,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+			},
 		},
+		initialSlide: 2,
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.custom-swiper-button-next',
+			prevEl: '.custom-swiper-button-prev',
+		},
+	});
+
+	new Swiper('.help-center-gallery', {
+		modules: [Navigation],
 		autoHeight: true,
+		// slidesPerView: 'auto',
+		breakpoints: {
+			768: {
+				slidesPerView: 1.2,
+				spaceBetween: 16,
+			},
+			1024: {
+				slidesPerView: 'auto',
+				spaceBetween: 16,
+			},
+		},
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.custom-swiper-button-next',
+			prevEl: '.custom-swiper-button-prev',
+		},
 	});
 }
-
-function initStandalone() {
-	const standaloneWrap = document.querySelector('.standalone-wrap');
-	if (window.innerWidth < 768) {
-		standaloneWrap.classList.add('swiper-wrapper');
-
-		standaloneList = new Swiper('.standalone-list', {
-			modules: [Pagination],
-			slidesPerView: 1.1,
-			centeredSlides: true,
-			spaceBetween: 16,
-			pagination: {
-				el: '.swiper-pagination',
-				bulletActiveClass: 'swiper-pagination-bullet-active',
-				bulletClass: 'swiper-pagination-bullet',
-			},
-			autoHeight: true,
-		});
-	} else {
-		if (standaloneWrap) {
-			standaloneWrap.classList.remove('swiper-wrapper');
-		}
-		if (standaloneList) {
-			standaloneList.destroy();
-		}
-	}
-}
-
-function debounce(func, wait) {
-	return function executedFunction(...args) {
-		const later = () => {
-			clearTimeout(resizeTimeout);
-			func(...args);
-		};
-		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(later, wait);
-	};
-}
-
-window.addEventListener('resize', debounce(initStandalone, 100));
 
 const processLineAnimation = function () {
 	const animatedLine = document.querySelector('.process-line');
@@ -139,34 +130,8 @@ const processLineAnimation = function () {
 			scaleY: 1,
 			duration: 3,
 			ease: 'none',
-		}
+		},
 	);
-};
-
-const processNumberAnimation = function () {
-	const steps = document.querySelectorAll('.process-item');
-	steps.forEach((step) => {
-		const number = step.querySelector('.step-heading');
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: step,
-				start: 'center center',
-				toggleActions: 'play none none reverse',
-			},
-		});
-
-		tl.fromTo(
-			[number],
-			{
-				color: '#D8D8D8',
-			},
-			{
-				color: '#ED5623',
-				duration: 0.3,
-				ease: 'none',
-			}
-		);
-	});
 };
 
 document.querySelectorAll('.pricing-button').forEach((button) => {
@@ -273,6 +238,7 @@ const handleScrollIntoView = () => {
 		item.addEventListener('click', (e) => {
 			e.preventDefault();
 			const href = e.target.getAttribute('href');
+			if (!href) return;
 			const hash = href.split('#')[1];
 
 			if (!isHomePage) {
@@ -324,15 +290,44 @@ const handleButtonsWithScrollTriggerRefresh = () => {
 	const buttons = document.querySelectorAll('.refreshScrollTrigger');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () =>
-			setTimeout(refreshScrollTrigger, 1000)
+			setTimeout(refreshScrollTrigger, 1000),
 		);
 	});
 };
 
+const arrow =
+	'<div class="z-1 flex justify-center items-center relative overflow-hidden "><div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path></svg></div><div class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"></path></svg></div></div>';
+
+const addArrow = () => {
+	const richContent = document.querySelector('.rich-content');
+	if (!richContent) return;
+	const aTags = richContent.querySelectorAll('a');
+	aTags.forEach((a) => {
+		const span = document.createElement('span');
+		span.innerHTML = a.innerHTML;
+		a.innerHTML = '';
+		a.appendChild(span);
+		span.insertAdjacentHTML('beforeend', arrow);
+		a.classList.add('group', 'inline-block');
+		span.classList.add('flex', 'items-center');
+	});
+};
+
+const handleTextSplit = () => {
+	const elements = document.querySelectorAll('.split-text');
+	if (!elements) return;
+
+	elements.forEach((element) => {
+		const split = new SplitType(element, {
+			types: 'words',
+		});
+	});
+};
+
 initSwiper();
-initStandalone();
-processNumberAnimation();
 processLineAnimation();
 handleContactFormTransition();
 handleCountry();
 handleButtonsWithScrollTriggerRefresh();
+addArrow();
+handleTextSplit();

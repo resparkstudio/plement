@@ -7,49 +7,31 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 
 ?>
-<section id='hero' class='container pt-10 pb-8 lg:pb-6 lg:h-[calc(100vh-108px)] flex flex-col justify-between'>
+<section id='hero' class='container pt-6 pb-20 lg:pb-[7.5rem] flex flex-col'>
 	<div class='flex flex-col gap-12 items-center lg:flex-row lg:justify-between lg:gap-14'>
 		<div class='lg:w-1/2 hero-content lg:max-w-2xl'>
-			<h1 class='text-center mb-8 lg:text-left lg:mb-10'>
+			<h1 class='text-h1Mobile max-w-[33.125rem] w-full lg:text-h2 mb-8 lg:mb-10'>
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
-			<div class='flex flex-wrap gap-6 justify-center lg:justify-start lg:gap-8'>
-				<?php plmt_link_with_arrow( home_url( '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ) ) ?>
-				<a href='#services'
-					class='scroll-to button_secondary h-auto py-4'><?php esc_html_e( 'Our services', 'plmt' ) ?></a>
+			<div class='flex'>
+				<?php plmt_button( home_url( path: '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
+					'classes' => 'w-full justify-center lg:w-auto lg:px-[5.625rem] lg:py-5'
+				) ) ?>
+				<?php plmt_button( '#services', esc_html__( 'Our services', 'plmt' ), array( 'classes' => 'h-full w-full justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5', 'variant' =>
+					'secondary' ) ) ?>
+			</div>
+			<div class='mt-6 lg:mt-10 lg:flex justify-between items-center'>
+				<div class='flex gap-8 flex-wrap'>
+					<?php foreach ( $hero_content['hero_bottom']['partner_icons'] as $icon ) : ?>
+						<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
+							class='h-[3rem]'>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
-		<div class="lg:w-1/2">
-			<img src='<?php echo esc_url( $hero_content['hero_image']['url'] ) ?>'
+		<div class="hidden lg:block lg:w-1/2">
+			<img class="w-full" src='<?php echo esc_url( $hero_content['hero_image']['url'] ) ?>'
 				alt='<?php echo esc_attr( $hero_content['hero_image']['alt'] ) ?>'>
-		</div>
-	</div>
-	<div class='mt-[60px] lg:flex justify-between items-center'>
-		<div class='hidden lg:flex gap-4'>
-			<?php foreach ( $hero_content['hero_bottom']['partner_icons'] as $icon ) : ?>
-				<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
-					class='w-[150px] h-[62px] object-contain'>
-			<?php endforeach; ?>
-		</div>
-		<div class='lg:flex'>
-			<p class='text-textGray font-medium text-sm max-w-40 text-center mx-auto mb-4 lg:mb-0 lg:mr-4 lg:text-left'>
-				<?php echo esc_html( $hero_content['hero_bottom']['company_logos']['text'] ) ?>
-			</p>
-			<div
-				class="relative flex overflow-hidden space-x-4 lg:max-w-xl items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
-				<div class='flex space-x-4 animate-loop-scroll items-center'>
-					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
-						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain gs h-[40px]' width='125' height="40">
-					<?php endforeach; ?>
-				</div>
-				<div class='flex space-x-4 animate-loop-scroll items-center' aria-hidden='true'>
-					<?php foreach ( $hero_content['hero_bottom']['company_logos']['logos'] as $logo ) : ?>
-						<img src='<?php echo esc_url( $logo['url'] ) ?>' alt='<?php echo esc_attr( $logo['alt'] ) ?>'
-							class='max-w-none object-contain gs h-[40px]' width='125' height="40">
-					<?php endforeach; ?>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
