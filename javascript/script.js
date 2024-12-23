@@ -35,6 +35,7 @@ function initSwiper() {
 		centeredSlides: true,
 		spaceBetween: 16,
 		initialSlide: 2,
+		autoHeight: true,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',
