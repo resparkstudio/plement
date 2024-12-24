@@ -32,9 +32,9 @@ function initSwiper() {
 	const packageSwiper = new Swiper('.packages-list', {
 		modules: [Pagination, Controller],
 		slidesPerView: 1.1,
-		centeredSlides: true,
 		spaceBetween: 16,
 		initialSlide: 2,
+		autoHeight: true,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',
