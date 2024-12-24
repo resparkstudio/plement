@@ -31,11 +31,10 @@ function step_card( $step, $index ) {
 
 <section id="team" class="bg-lightGrayBg py-[5rem]">
 	<div class="lg:container lg:mx-auto">
-
 		<h2 class="text-h4Bold mb-10 lg:mb-[3.75rem] lg:text-h2 text-center">
 			<?php esc_html_e( $team_content['heading'] ) ?>
 		</h2>
-		<div class="flex flex-col-reverse gap-10 pb-10 lg:flex-row lg:justify-between lg:pb-[5.25rem] lg:gap-6">
+		<div class="flex flex-col-reverse gap-10 lg:flex-row lg:justify-between lg:gap-6">
 			<div class="px-4 max-w-[40.625rem] w-full">
 				<div class="text-title mb-8"><?php echo $team_content['description'] ?></div>
 				<div class="relative">
