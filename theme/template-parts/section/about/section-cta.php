@@ -7,7 +7,7 @@ if ( ! isset( $cta_content ) || empty( $cta_content ) ) {
 ?>
 
 <section id="cta"
-	class="container relative flex flex-col gap-20 lg:gap-[4.875rem] pt-[5rem] pb-[7.5rem] lg:flex-row lg:pt-[7.5rem] lg:pb-20 lg:items-center">
+	class="container relative flex flex-col gap-20 lg:gap-[4.875rem] pt-[5rem] pb-[7.5rem] lg:flex-row lg:py-[10rem] lg:items-center">
 	<div class="lg:w-1/2 bg-mainBlack text-white p-6">
 		<h2 class="text-h4Bold mb-[2.25rem] lg:text-h2">
 			<?php esc_html_e( $cta_content['heading_1'] ) ?>
