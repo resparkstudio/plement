@@ -21,16 +21,17 @@ get_header();
 		<div class="flex flex-wrap gap-2 mb-[1.875rem] lg:mb-[2.625rem]">
 			<?php
 			foreach ( $categories as $category ) {
-				$category_link = get_category_link( $category->term_id );
+				$category_param = $_GET['category'] ?? '';
+				$active_class   = $category_param === $category->slug ? 'active' : '';
 				?>
-				<a href="<?php echo esc_url( $category_link ); ?>"
-					class="text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out"><?php echo esc_html( $category->name ); ?></a>
+				<button value="<?php echo $category->slug ?>"
+					class="category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo $active_class ?>"><?php echo esc_html( $category->name ); ?></button>
 				<?php
 			}
 			?>
 		</div>
 
-		<div class="space-y-[1.875rem]">
+		<div class="case-studies-container space-y-[1.875rem]">
 			<?php if ( have_posts() ) : ?>
 
 				<?php
@@ -43,7 +44,22 @@ get_header();
 				endwhile;
 
 				// Previous/next page navigation.
-				plmt_the_posts_navigation();
+				global $wp_query;
+				$total_posts     = $wp_query->found_posts;
+				$posts_per_page  = $wp_query->query_vars['posts_per_page'];
+				$current_page    = max( 1, get_query_var( 'paged' ) );
+				$displayed_posts = $current_page * $posts_per_page;
+				$remaining_posts = max( 0, $total_posts - $displayed_posts );
+
+				if ( $wp_query->max_num_pages > 1 ) : ?>
+					<button id="load-more"
+						class="w-full md:w-auto mx-auto flex justify-center items-center text-accent border border-accent text-title py-4 px-[4.6875rem] hover:bg-accentHover hover:text-white transition duration-200 ease-in-out">
+						<?php esc_html_e( 'See more', 'plement' ); ?>
+						<?php if ( $remaining_posts > 0 ) : ?>
+							(<?php echo esc_html( $remaining_posts ); ?>)
+						<?php endif; ?>
+					</button>
+				<?php endif;
 
 			else :
 

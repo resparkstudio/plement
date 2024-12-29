@@ -345,6 +345,53 @@ const handleTextSplit = () => {
 	});
 };
 
+const setQueryParams = (key, value) => {
+	const url = new URL(window.location.href);
+	const params = new URLSearchParams(url.search.slice(1));
+
+	if (value === '' || value === 'all') {
+		params.delete(key);
+	} else {
+		params.set(key, value);
+	}
+	window.history.pushState({}, '', `${url.pathname}?${params}`);
+};
+
+const filtersCategory = document.querySelector('#filters-category');
+const categoryFilter = document.querySelectorAll('.category-filter');
+const filterCaseStudies = (category) => {
+	setQueryParams('category', category);
+
+	fetch('/wp-admin/admin-ajax.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: new URLSearchParams({
+			action: 'filter_case_studies',
+			category: category,
+		}),
+	}).then((response) => {
+		response.text().then((text) => {
+			const caseStudies = document.querySelector('.case-studies-container');
+			caseStudies.innerHTML = text;
+
+			categoryFilter.forEach((filter) => {
+				filter.classList.remove('active');
+				if (filter.value === category) {
+					filter.classList.add('active');
+				}
+			});
+		});
+	});
+};
+
+categoryFilter.forEach((filter) => {
+	filter.addEventListener('click', () => {
+		filterCaseStudies(filter.value);
+	});
+});
+
 initSwiper();
 processLineAnimation();
 handleContactFormTransition();

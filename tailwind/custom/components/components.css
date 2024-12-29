@@ -269,3 +269,7 @@ div.wpcf7-validation-errors {
 .rich-text a {
 	@apply underline;
 }
+
+.category-filter.active {
+	@apply bg-mainBlack text-white;
+}

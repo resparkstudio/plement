@@ -361,3 +361,47 @@ function my_wp_get_nav_menu_items( $items, $menu, $args ) {
 
 	return $items;
 }
+
+function plmt_modify_case_study_archive_query( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'case-study' ) ) {
+		$query->set( 'posts_per_page', 3 );
+	}
+}
+add_action( 'pre_get_posts', 'plmt_modify_case_study_archive_query' );
+
+
+function filter_case_studies() {
+	$category = $_POST['category'];
+
+	$ajaxposts = new WP_Query(
+		array(
+			'post_type' => 'case-study',
+			'posts_per_page' => -1,
+			'order' => 'desc',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => $category,
+				),
+			),
+		)
+	);
+
+	// wp_send_json($ajaxposts);
+	$response = '';
+
+	if ( $ajaxposts->have_posts() ) {
+		while ( $ajaxposts->have_posts() ) :
+			$ajaxposts->the_post();
+			$response .= get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
+		endwhile;
+	} else {
+		$response = 'No case studies found';
+	}
+
+	echo $response;
+	exit;
+}
+add_action( 'wp_ajax_filter_case_studies', 'filter_case_studies' );
+add_action( 'wp_ajax_nopriv_filter_case_studies', 'filter_case_studies' );

@@ -1417,6 +1417,13 @@ div.wpcf7-validation-errors {
   text-decoration-line: underline;
 }
 
+.category-filter.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 31 36 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
@@ -1471,6 +1478,14 @@ div.wpcf7-validation-errors {
   bottom: -5rem;
 }
 
+.-left-\[3\.125rem\] {
+  left: -3.125rem;
+}
+
+.-right-\[3\.125rem\] {
+  right: -3.125rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -1517,38 +1532,6 @@ div.wpcf7-validation-errors {
 
 .top-\[6rem\] {
   top: 6rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.-left-10 {
-  left: -2.5rem;
-}
-
-.-right-10 {
-  right: -2.5rem;
-}
-
-.-left-12 {
-  left: -3rem;
-}
-
-.-right-12 {
-  right: -3rem;
-}
-
-.-left-\[3\.125rem\] {
-  left: -3.125rem;
-}
-
-.-right-\[50px\] {
-  right: -50px;
-}
-
-.-right-\[3\.125rem\] {
-  right: -3.125rem;
 }
 
 .-z-\[1\] {
@@ -1689,6 +1672,10 @@ div.wpcf7-validation-errors {
   margin-bottom: 3.75rem;
 }
 
+.mb-\[4\.375rem\] {
+  margin-bottom: 4.375rem;
+}
+
 .mb-\[4\.6875rem\] {
   margin-bottom: 4.6875rem;
 }
@@ -1761,14 +1748,6 @@ div.wpcf7-validation-errors {
   margin-top: 1.875rem;
 }
 
-.mb-\[6\.875rem\] {
-  margin-bottom: 6.875rem;
-}
-
-.mb-\[4\.375rem\] {
-  margin-bottom: 4.375rem;
-}
-
 .block {
   display: block;
 }
@@ -1777,12 +1756,12 @@ div.wpcf7-validation-errors {
   display: inline-block;
 }
 
-.flex {
-  display: flex;
-}
-
 .\!flex {
   display: flex !important;
+}
+
+.flex {
+  display: flex;
 }
 
 .inline-flex {
@@ -2082,18 +2061,6 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
-}
-
 .min-w-6 {
   min-width: 1.5rem;
 }
@@ -2269,11 +2236,6 @@ div.wpcf7-validation-errors {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2346,10 +2308,6 @@ div.wpcf7-validation-errors {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-cols-\[200px\2c 1fr\] {
-  grid-template-columns: 200px 1fr;
 }
 
 .grid-cols-\[24\%_24\%_28\%_24\%\] {
@@ -2550,14 +2508,6 @@ div.wpcf7-validation-errors {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-visible {
-  overflow: visible;
-}
-
-.\!overflow-visible {
-  overflow: visible !important;
 }
 
 .overflow-x-auto {
@@ -2885,6 +2835,11 @@ div.wpcf7-validation-errors {
   padding-right: 1rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -2898,6 +2853,11 @@ div.wpcf7-validation-errors {
 .px-\[4\.125rem\] {
   padding-left: 4.125rem;
   padding-right: 4.125rem;
+}
+
+.px-\[4\.6875rem\] {
+  padding-left: 4.6875rem;
+  padding-right: 4.6875rem;
 }
 
 .px-\[5\.625rem\] {
@@ -3020,16 +2980,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
-.\!px-10 {
-  padding-left: 2.5rem !important;
-  padding-right: 2.5rem !important;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3130,6 +3080,10 @@ div.wpcf7-validation-errors {
   padding-top: 1rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -3168,10 +3122,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.25rem\] {
   padding-top: 8.25rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -3278,6 +3228,10 @@ div.wpcf7-validation-errors {
   font-weight: 700;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -3288,10 +3242,6 @@ div.wpcf7-validation-errors {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-extrabold {
-  font-weight: 800;
 }
 
 .uppercase {
@@ -3306,16 +3256,16 @@ div.wpcf7-validation-errors {
   line-height: 1.5rem;
 }
 
+.leading-\[1\.65rem\] {
+  line-height: 1.65rem;
+}
+
 .leading-\[1rem\] {
   line-height: 1rem;
 }
 
 .leading-\[2\.2rem\] {
   line-height: 2.2rem;
-}
-
-.leading-\[1\.65rem\] {
-  line-height: 1.65rem;
 }
 
 .text-\[\#646464\] {
@@ -3652,6 +3602,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(237 86 35 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-accentHover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 103 57 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -3850,6 +3805,10 @@ div.wpcf7-validation-errors {
     width: 50%;
   }
 
+  .md\:w-auto {
+    width: auto;
+  }
+
   .md\:max-w-\[12\.5rem\] {
     max-width: 12.5rem;
   }
@@ -4022,6 +3981,10 @@ div.wpcf7-validation-errors {
     margin-bottom: 5.4375rem;
   }
 
+  .lg\:mb-\[6\.875rem\] {
+    margin-bottom: 6.875rem;
+  }
+
   .lg\:mb-\[7\.5rem\] {
     margin-bottom: 7.5rem;
   }
@@ -4036,10 +3999,6 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-20 {
     margin-top: 5rem;
-  }
-
-  .lg\:mb-\[6\.875rem\] {
-    margin-bottom: 6.875rem;
   }
 
   .lg\:block {
@@ -4228,16 +4187,16 @@ div.wpcf7-validation-errors {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-\[200px\2c 1fr\] {
+    grid-template-columns: 200px 1fr;
+  }
+
   .lg\:grid-cols-\[repeat\(2\2c 420px\)\] {
     grid-template-columns: repeat(2,420px);
   }
 
   .lg\:grid-cols-\[repeat\(2\2c 520px\)\] {
     grid-template-columns: repeat(2,520px);
-  }
-
-  .lg\:grid-cols-\[200px\2c 1fr\] {
-    grid-template-columns: 200px 1fr;
   }
 
   .lg\:flex-row {
@@ -4471,10 +4430,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pb-\[5\.875rem\] {
     padding-bottom: 5.875rem;
-  }
-
-  .lg\:pb-\[6\.875rem\] {
-    padding-bottom: 6.875rem;
   }
 
   .lg\:pb-\[60px\] {
