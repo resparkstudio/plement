@@ -31,18 +31,20 @@ get_header();
 			?>
 		</div>
 
-		<div class="case-studies-container space-y-[1.875rem]">
+		<div>
 			<?php if ( have_posts() ) : ?>
+				<div class="case-studies-container space-y-[1.875rem]">
 
+					<?php
+					// Start the Loop.
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/content/content', 'case-study' );
+
+						// End the loop.
+					endwhile; ?>
+				</div>
 				<?php
-				// Start the Loop.
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/content/content', 'case-study' );
-
-					// End the loop.
-				endwhile;
-
 				// Previous/next page navigation.
 				global $wp_query;
 				$total_posts     = $wp_query->found_posts;
@@ -52,8 +54,8 @@ get_header();
 				$remaining_posts = max( 0, $total_posts - $displayed_posts );
 
 				if ( $wp_query->max_num_pages > 1 ) : ?>
-					<button id="load-more"
-						class="w-full md:w-auto mx-auto flex justify-center items-center text-accent border border-accent text-title py-4 px-[4.6875rem] hover:bg-accentHover hover:text-white transition duration-200 ease-in-out">
+					<button
+						class="mt-8 load-more-button w-full md:w-auto mx-auto flex justify-center items-center text-accent border border-accent text-title py-4 px-[4.6875rem] hover:bg-accentHover hover:text-white transition duration-200 ease-in-out">
 						<?php esc_html_e( 'See more', 'plement' ); ?>
 						<?php if ( $remaining_posts > 0 ) : ?>
 							(<?php echo esc_html( $remaining_posts ); ?>)

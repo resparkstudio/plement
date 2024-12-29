@@ -392,6 +392,35 @@ categoryFilter.forEach((filter) => {
 	});
 });
 
+const loadMoreButton = document.querySelector('.load-more-button');
+const loadMoreCaseStudies = (page) => {
+	fetch('/wp-admin/admin-ajax.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: new URLSearchParams({
+			action: 'load_more_case_studies',
+			page: page,
+		}),
+	}).then((response) => {
+		response.json().then((response) => {
+			const caseStudies = document.querySelector('.case-studies-container');
+			caseStudies.insertAdjacentHTML('beforeend', response.html);
+
+			if (!response.has_more_posts) {
+				loadMoreButton.style.display = 'none';
+			}
+		});
+	});
+};
+
+let page = 0;
+loadMoreButton.addEventListener('click', () => {
+	page++;
+	loadMoreCaseStudies(page);
+});
+
 initSwiper();
 processLineAnimation();
 handleContactFormTransition();

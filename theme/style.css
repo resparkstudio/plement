@@ -2195,6 +2195,10 @@ div.wpcf7-validation-errors {
   margin-top: 1.875rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
