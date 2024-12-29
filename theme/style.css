@@ -1966,6 +1966,38 @@ div.wpcf7-validation-errors {
   top: 6rem;
 }
 
+.left-10 {
+  left: 2.5rem;
+}
+
+.-left-10 {
+  left: -2.5rem;
+}
+
+.-right-10 {
+  right: -2.5rem;
+}
+
+.-left-12 {
+  left: -3rem;
+}
+
+.-right-12 {
+  right: -3rem;
+}
+
+.-left-\[3\.125rem\] {
+  left: -3.125rem;
+}
+
+.-right-\[50px\] {
+  right: -50px;
+}
+
+.-right-\[3\.125rem\] {
+  right: -3.125rem;
+}
+
 .-z-\[1\] {
   z-index: -1;
 }
@@ -2176,6 +2208,14 @@ div.wpcf7-validation-errors {
   margin-top: 1.875rem;
 }
 
+.mb-\[6\.875rem\] {
+  margin-bottom: 6.875rem;
+}
+
+.mb-\[4\.375rem\] {
+  margin-bottom: 4.375rem;
+}
+
 .block {
   display: block;
 }
@@ -2186,6 +2226,10 @@ div.wpcf7-validation-errors {
 
 .flex {
   display: flex;
+}
+
+.\!flex {
+  display: flex !important;
 }
 
 .inline-flex {
@@ -2436,10 +2480,6 @@ div.wpcf7-validation-errors {
   width: 22.25rem;
 }
 
-.w-\[23\.25rem\] {
-  width: 23.25rem;
-}
-
 .w-\[24px\] {
   width: 24px;
 }
@@ -2487,6 +2527,18 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .min-w-6 {
@@ -2661,6 +2713,11 @@ div.wpcf7-validation-errors {
 
 .translate-y-\[6px\] {
   --tw-translate-y: 6px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-1\/2 {
+  --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2940,6 +2997,14 @@ div.wpcf7-validation-errors {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.\!overflow-visible {
+  overflow: visible !important;
 }
 
 .overflow-x-auto {
@@ -3402,6 +3467,16 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
+.\!px-10 {
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3428,6 +3503,10 @@ div.wpcf7-validation-errors {
 
 .pb-\[2\.75rem\] {
   padding-bottom: 2.75rem;
+}
+
+.pb-\[4\.375rem\] {
+  padding-bottom: 4.375rem;
 }
 
 .pb-\[5\.5rem\] {
@@ -3502,6 +3581,10 @@ div.wpcf7-validation-errors {
   padding-top: 1.5rem;
 }
 
+.pt-8 {
+  padding-top: 2rem;
+}
+
 .pt-\[1\.875rem\] {
   padding-top: 1.875rem;
 }
@@ -3534,12 +3617,8 @@ div.wpcf7-validation-errors {
   padding-top: 8.25rem;
 }
 
-.pb-\[4\.375rem\] {
-  padding-bottom: 4.375rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -3658,6 +3737,10 @@ div.wpcf7-validation-errors {
   font-weight: 600;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -3676,6 +3759,10 @@ div.wpcf7-validation-errors {
 
 .leading-\[2\.2rem\] {
   line-height: 2.2rem;
+}
+
+.leading-\[1\.65rem\] {
+  line-height: 1.65rem;
 }
 
 .text-\[\#646464\] {
@@ -4398,6 +4485,10 @@ div.wpcf7-validation-errors {
     margin-top: 5rem;
   }
 
+  .lg\:mb-\[6\.875rem\] {
+    margin-bottom: 6.875rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -4474,6 +4565,10 @@ div.wpcf7-validation-errors {
     width: 19px;
   }
 
+  .lg\:w-\[23\.25rem\] {
+    width: 23.25rem;
+  }
+
   .lg\:w-\[24px\] {
     width: 24px;
   }
@@ -4501,10 +4596,6 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .lg\:w-\[23\.25rem\] {
-    width: 23.25rem;
   }
 
   .lg\:max-w-2xl {
@@ -4590,6 +4681,10 @@ div.wpcf7-validation-errors {
 
   .lg\:grid-cols-\[repeat\(2\2c 520px\)\] {
     grid-template-columns: repeat(2,520px);
+  }
+
+  .lg\:grid-cols-\[200px\2c 1fr\] {
+    grid-template-columns: 200px 1fr;
   }
 
   .lg\:flex-row {
@@ -4825,6 +4920,10 @@ div.wpcf7-validation-errors {
     padding-bottom: 5.875rem;
   }
 
+  .lg\:pb-\[6\.875rem\] {
+    padding-bottom: 6.875rem;
+  }
+
   .lg\:pb-\[60px\] {
     padding-bottom: 60px;
   }
@@ -4879,10 +4978,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[7\.5rem\] {
     padding-top: 7.5rem;
-  }
-
-  .lg\:pb-\[6\.875rem\] {
-    padding-bottom: 6.875rem;
   }
 
   .lg\:text-left {
@@ -5088,8 +5183,8 @@ div.wpcf7-validation-errors {
   color: rgb(239 103 57 / var(--tw-text-opacity));
 }
 
-.\[\&_iframe\]\:relative iframe {
-  position: relative;
+.\[\&_iframe\]\:h-auto iframe {
+  height: auto;
 }
 
 .\[\&_iframe\]\:w-full iframe {

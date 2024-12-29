@@ -100,6 +100,27 @@ function initSwiper() {
 			prevEl: '.custom-swiper-button-prev',
 		},
 	});
+
+	new Swiper('.other-studies-swiper', {
+		modules: [Pagination, Navigation],
+		autoHeight: true,
+		slidesPerView: 1,
+		breakpoints: {
+			1024: {
+				slidesPerView: 2,
+			},
+		},
+		spaceBetween: 16,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+		navigation: {
+			nextEl: '.custom-swiper-button-next',
+			prevEl: '.custom-swiper-button-prev',
+		},
+	});
 }
 
 const processLineAnimation = function () {
