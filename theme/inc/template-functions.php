@@ -205,11 +205,11 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 		<?php
 }
 
-function plmt_arrow() {
+function plmt_arrow( $width_class = 'w-[1.125rem]', $height_class = 'h-[1.125rem]' ) {
 	?>
 		<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 			<div
-				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+				class="justify-center items-center transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0 <?php echo $width_class . ' ' . $height_class ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
 					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
 					viewBox="0 0 24 24">
@@ -217,7 +217,7 @@ function plmt_arrow() {
 				</svg>
 			</div>
 			<div
-				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+				class="justify-center items-center transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%] <?php echo $width_class . ' ' . $height_class ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
 					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
 					viewBox="0 0 24 24">
