@@ -373,7 +373,7 @@ const filterCaseStudies = (category) => {
 		},
 		body: new URLSearchParams({
 			action: 'filter_case_studies',
-			category: category,
+			category: category || 'all',
 		}),
 	}).then((response) => {
 		response.text().then((text) => {

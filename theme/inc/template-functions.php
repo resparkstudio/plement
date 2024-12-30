@@ -373,18 +373,25 @@ add_action( 'pre_get_posts', 'plmt_modify_case_study_archive_query' );
 function filter_case_studies() {
 	$category = $_POST['category'];
 
+	// Sanitize input
+	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
+
+	// Prepare tax query
+	$tax_query = $category === 'all' ? array() : array(
+		array(
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => $category,
+		),
+	);
+
+
 	$ajaxposts = new WP_Query(
 		array(
 			'post_type' => 'case-study',
 			'posts_per_page' => -1,
 			'order' => 'desc',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => $category,
-				),
-			),
+			'tax_query' => $tax_query,
 		)
 	);
 

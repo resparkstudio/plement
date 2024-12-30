@@ -1964,6 +1964,10 @@ div.wpcf7-validation-errors {
   min-height: 100%;
 }
 
+.\!w-auto {
+  width: auto !important;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2075,19 +2079,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-min {
-  width: -moz-min-content;
-  width: min-content;
-}
-
-.\!w-full {
-  width: 100% !important;
-}
-
-.\!w-auto {
-  width: auto !important;
 }
 
 .min-w-6 {
@@ -2638,13 +2629,13 @@ div.wpcf7-validation-errors {
   border-color: rgb(178 178 178 / var(--tw-border-opacity));
 }
 
+.border-transparent {
+  border-color: transparent;
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-transparent {
-  border-color: transparent;
 }
 
 .border-y-darkGray {
@@ -3339,6 +3330,10 @@ div.wpcf7-validation-errors {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-inherit {
+  color: inherit;
+}
+
 .text-lightGrayBg {
   --tw-text-opacity: 1;
   color: rgb(248 248 250 / var(--tw-text-opacity));
@@ -3367,10 +3362,6 @@ div.wpcf7-validation-errors {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-inherit {
-  color: inherit;
 }
 
 .underline {
@@ -3642,14 +3633,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 0px;
 }
 
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
-}
-
-.hover\:border:hover {
-  border-width: 1px;
-}
-
 .hover\:border-accent:hover {
   --tw-border-opacity: 1;
   border-color: rgb(237 86 35 / var(--tw-border-opacity));
@@ -3784,6 +3767,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:text-accent {
+  --tw-text-opacity: 1;
+  color: rgb(237 86 35 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:text-mainBlack {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
@@ -3792,11 +3780,6 @@ div.wpcf7-validation-errors {
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-accent {
-  --tw-text-opacity: 1;
-  color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:underline {
