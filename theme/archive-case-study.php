@@ -15,20 +15,30 @@ get_header();
 		<?php
 		$categories = get_categories( array(
 			'taxonomy' => 'category',
-			'hide_empty' => false,
+			'hide_empty' => true,
 		) );
 		?>
-		<div class="flex flex-wrap gap-2 mb-[1.875rem] lg:mb-[2.625rem]">
-			<?php
-			foreach ( $categories as $category ) {
-				$category_param = $_GET['category'] ?? '';
-				$active_class   = $category_param === $category->slug ? 'active' : '';
-				?>
-				<button value="<?php echo $category->slug ?>"
-					class="category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo $active_class ?>"><?php echo esc_html( $category->name ); ?></button>
-				<?php
-			}
-			?>
+		<div class="swiper-container mb-[1.875rem] lg:mb-[2.625rem]">
+			<div class="swiper studies-category-swiper">
+				<div class="swiper-wrapper">
+					<button
+						class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out">
+						<?php esc_html_e( 'All Cases', 'plmt' ) ?>
+					</button>
+					<?php
+					foreach ( $categories as $category ) {
+						$category_param = $_GET['category'] ?? '';
+						$active_class   = $category_param === $category->slug ? 'active' : '';
+						?>
+						<button value="<?php echo $category->slug ?>"
+							class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo $active_class ?>">
+							<?php echo esc_html( $category->name ); ?>
+						</button>
+						<?php
+					}
+					?>
+				</div>
+			</div>
 		</div>
 
 		<div>

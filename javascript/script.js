@@ -121,6 +121,11 @@ function initSwiper() {
 			prevEl: '.custom-swiper-button-prev',
 		},
 	});
+
+	new Swiper('.studies-category-swiper', {
+		slidesPerView: 'auto',
+		spaceBetween: 8,
+	});
 }
 
 const processLineAnimation = function () {

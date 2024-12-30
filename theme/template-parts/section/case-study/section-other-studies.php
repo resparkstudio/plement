@@ -11,21 +11,21 @@
 			foreach ( $case_studies as $case_study ) {
 				$thumbnail = get_the_post_thumbnail_url( $case_study->ID, 'medium' );
 				?>
-				<article class="swiper-slide ">
-					<div class="flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5">
+				<article
+					class="swiper-slide group flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 border border-transparent hover:border-accent transition duration-200 ease-in-out">
+					<a href="<?php echo esc_url( get_the_permalink( $case_study->ID ) ) ?>"
+						class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6">
 						<div class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem]">
 							<img src="<?php echo esc_url( $thumbnail ); ?>"
 								alt="<?php echo esc_attr( $case_study->post_title ); ?>">
 						</div>
 						<div class="max-w-[43.5rem] w-full">
 							<header
-								class="flex items-center lg:items-end [&_svg]:w-[24px] [&_svg]:h-[24px] [&_svg]:text-accent gap-[0.625rem] mb-5 lg:mb-9 group hover:text-accent trasition duration-200 ease-in-out">
+								class="flex items-center lg:items-end [&_svg]:w-[24px] [&_svg]:h-[24px] [&_svg]:text-accent gap-[0.625rem] mb-5 lg:mb-9 group-hover:text-accent trasition duration-200 ease-in-out">
 								<h2 class="text-h5Bold">
-									<a href="<?php esc_url( get_the_permalink( $case_study->ID ) ) ?>" rel="bookmark">
-										<?php
-										echo get_the_title( $case_study->ID );
-										?>
-									</a>
+									<?php
+									echo get_the_title( $case_study->ID );
+									?>
 								</h2>
 								<?php plmt_arrow( 'w-[24px]', 'h-[24px]' ); ?>
 							</header><!-- .entry-header -->
@@ -44,7 +44,7 @@
 								?>
 							</div>
 						</div>
-					</div>
+					</a>
 				</article><!-- #post-${ID} -->
 				<?php
 			}
