@@ -1945,6 +1945,10 @@ div.wpcf7-validation-errors {
   left: 50%;
 }
 
+.left-\[2px\] {
+  left: 2px;
+}
+
 .left-\[30px\] {
   left: 30px;
 }
@@ -1959,6 +1963,10 @@ div.wpcf7-validation-errors {
 
 .right-10 {
   right: 2.5rem;
+}
+
+.right-\[2px\] {
+  right: 2px;
 }
 
 .top-0 {
@@ -2191,12 +2199,12 @@ div.wpcf7-validation-errors {
   margin-top: 1.5rem;
 }
 
-.mt-\[1\.875rem\] {
-  margin-top: 1.875rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-\[1\.875rem\] {
+  margin-top: 1.875rem;
 }
 
 .block {
@@ -2259,6 +2267,10 @@ div.wpcf7-validation-errors {
   height: 1.25rem;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -2305,10 +2317,6 @@ div.wpcf7-validation-errors {
 
 .h-\[3\.75rem\] {
   height: 3.75rem;
-}
-
-.h-\[30px\] {
-  height: 30px;
 }
 
 .h-\[32px\] {
@@ -2409,6 +2417,10 @@ div.wpcf7-validation-errors {
 
 .w-0\.5 {
   width: 0.125rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-1\/5 {
@@ -2528,20 +2540,20 @@ div.wpcf7-validation-errors {
   min-width: 320px;
 }
 
-.max-w-20 {
-  max-width: 5rem;
-}
-
-.max-w-\[10\.4375rem\] {
-  max-width: 10.4375rem;
-}
-
 .max-w-\[13\.4375rem\] {
   max-width: 13.4375rem;
 }
 
+.max-w-\[13\.75rem\] {
+  max-width: 13.75rem;
+}
+
 .max-w-\[14\.5625rem\] {
   max-width: 14.5625rem;
+}
+
+.max-w-\[20\.0625rem\] {
+  max-width: 20.0625rem;
 }
 
 .max-w-\[21\.5rem\] {
@@ -2751,6 +2763,10 @@ div.wpcf7-validation-errors {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -2969,6 +2985,10 @@ div.wpcf7-validation-errors {
   overflow-y: scroll;
 }
 
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .whitespace-pre-line {
   white-space: pre-line;
 }
@@ -3150,6 +3170,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(136 201 65 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F3F4F4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 244 / var(--tw-bg-opacity));
+}
+
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: rgb(237 86 35 / var(--tw-bg-opacity));
@@ -3236,14 +3261,6 @@ div.wpcf7-validation-errors {
 
 .p-10 {
   padding: 2.5rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-2\.5 {
-  padding: 0.625rem;
 }
 
 .p-3 {
@@ -3675,6 +3692,10 @@ div.wpcf7-validation-errors {
   line-height: 1.75rem;
 }
 
+.text-\[2\.25rem\] {
+  font-size: 2.25rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3717,6 +3738,10 @@ div.wpcf7-validation-errors {
 
 .leading-\[2\.2rem\] {
   line-height: 2.2rem;
+}
+
+.leading-\[2\.25rem\] {
+  line-height: 2.25rem;
 }
 
 .text-\[\#646464\] {
@@ -3784,6 +3809,12 @@ div.wpcf7-validation-errors {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .backdrop-blur-\[4px\] {
@@ -4033,9 +4064,9 @@ div.wpcf7-validation-errors {
   padding-bottom: 0px;
 }
 
-.hover\:border-mainBlack:hover {
+.hover\:border-accent:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(17 31 36 / var(--tw-border-opacity));
+  border-color: rgb(237 86 35 / var(--tw-border-opacity));
 }
 
 .hover\:bg-\[\#CF491C\]:hover {
@@ -4242,10 +4273,6 @@ div.wpcf7-validation-errors {
 
   .md\:aspect-square {
     aspect-ratio: 1 / 1;
-  }
-
-  .md\:h-auto {
-    height: auto;
   }
 
   .md\:\!w-\[26\.25rem\] {
@@ -4581,14 +4608,6 @@ div.wpcf7-validation-errors {
     max-width: 22.9375rem;
   }
 
-  .lg\:max-w-\[23\.5625rem\] {
-    max-width: 23.5625rem;
-  }
-
-  .lg\:max-w-\[24\.125rem\] {
-    max-width: 24.125rem;
-  }
-
   .lg\:max-w-\[24\.3125rem\] {
     max-width: 24.3125rem;
   }
@@ -4847,6 +4866,10 @@ div.wpcf7-validation-errors {
     padding-bottom: 7.5rem;
   }
 
+  .lg\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .lg\:pb-6 {
     padding-bottom: 1.5rem;
   }
@@ -5041,10 +5064,6 @@ div.wpcf7-validation-errors {
     line-height: 1.5rem;
   }
 
-  .lg\:leading-\[1rem\] {
-    line-height: 1rem;
-  }
-
   .lg\:leading-\[2\.5rem\] {
     line-height: 2.5rem;
   }
@@ -5140,6 +5159,10 @@ div.wpcf7-validation-errors {
 .\[\&_a\]\:hover\:text-accentHover:hover a {
   --tw-text-opacity: 1;
   color: rgb(239 103 57 / var(--tw-text-opacity));
+}
+
+.\[\&_iframe\]\:aspect-\[595\/337\] iframe {
+  aspect-ratio: 595/337;
 }
 
 .\[\&_iframe\]\:h-auto iframe {

@@ -42,6 +42,7 @@ get_header();
 			?>
 		</div>
 	</div>
+	<h3 class="text-[2.25rem] leading-[2.25rem] font-extrabold lg:text-h2 mb-10 lg:mb-8">Other case studies</h3>
 	<?php
 	get_template_part( 'template-parts/section/case-study/section-other-studies' );
 	?>

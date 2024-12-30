@@ -9,16 +9,25 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 
 function currency_switch() {
 	?>
-	<div class="w-full justify-center md:justify-end flex mb-10 h-[30px] md:h-auto">
-		<form class=" w-full justify-center md:justify-end flex items-center gap-2 ">
-			<label for="currency"
-				class="w-max block text-bodyBold lg:text-[1rem] lg:leading-[1.5rem] lg:font-medium"><?php esc_html_e( 'Display Price in:', 'plmt' ) ?></label>
-			<select id="currency" x-model="currency"
-				class="focus:outline-none bg-lightGrayBg max-w-20 text-bodyBold rounded-lg block w-full p-2.5 lg:text-[1rem] lg:leading-[1rem] lg:font-medium">
-				<option value="eur" selected>EUR</option>
-				<option value="usd">USD</option>
-			</select>
-		</form>
+	<div class="w-full justify-center md:justify-end flex items-center gap-4 flex-wrap mb-10">
+		<label for="currency" class="w-max block text-bodyBold lg:text-[1rem] lg:leading-[1.5rem] lg:font-medium">
+			<?php esc_html_e( 'Display Price in:', 'plmt' ) ?>
+		</label>
+		<div
+			class="relative max-w-[13.75rem] grid items-center justify-center w-full h-8 grid-cols-2 bg-[#F3F4F4] select-none">
+			<button value="eur" :class="currency==='eur' ? 'font-bold' : ''" @click="currency='eur'" type="button"
+				class="relative z-20 inline-flex items-center justify-center w-full h-7 px-3 transition-all cursor-pointer whitespace-nowrap">
+				EUR
+			</button>
+			<button value="usd" :class="currency==='usd' ? 'font-bold' : ''" @click="currency='usd'" type="button"
+				class="relative z-20 inline-flex items-center justify-center w-full h-7 px-3 transition-all cursor-pointer whitespace-nowrap">
+				USD
+			</button>
+			<div :class="currency==='eur' ? 'left-[2px]' : 'right-[2px]'" x-transition
+				class="absolute z-10 w-1/2 h-7 duration-300 ease-out" x-cloak>
+				<div class="w-full h-7 bg-white shadow-sm"></div>
+			</div>
+		</div>
 	</div>
 	<?php
 }

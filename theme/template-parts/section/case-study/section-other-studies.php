@@ -4,7 +4,7 @@
 			<?php
 			$case_studies = get_posts( array(
 				'post_type' => 'case-study',
-				'posts_per_page' => 3,
+				'posts_per_page' => 6,
 				'post__not_in' => array( get_the_ID() ),
 			) );
 

@@ -14,7 +14,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<?php echo $hero_content['heading'] ?>
 			</h1>
 		</div>
-		<div class="ml-auto max-w-[10.4375rem] lg:max-w-[23.5625rem] w-full">
+		<div class="ml-auto max-w-[20.0625rem] lg:max-w-[40.25rem] w-full">
 			<img src="<?php echo esc_url( $hero_content['image']['url'] ) ?>"
 				alt="<?php echo esc_attr( $hero_content['image']['alt'] ) ?>">
 		</div>

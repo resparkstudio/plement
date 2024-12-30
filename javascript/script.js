@@ -249,33 +249,33 @@ const smoothScrollToElementById = (hash) => {
 	}
 };
 
-const handleScrollIntoView = () => {
-	const menuItems = document.querySelectorAll('.menu-item a');
-	const scrollToLinks = document.querySelectorAll('.scroll-to');
+// const handleScrollIntoView = () => {
+// 	const menuItems = document.querySelectorAll('.menu-item a');
+// 	const scrollToLinks = document.querySelectorAll('.scroll-to');
 
-	const isHomePage = window.location.pathname === '/';
+// 	const isHomePage = window.location.pathname === '/';
 
-	const addClickListener = (item) => {
-		item.addEventListener('click', (e) => {
-			e.preventDefault();
-			const href = e.target.getAttribute('href');
-			if (!href) return;
-			const hash = href.split('#')[1];
+// 	const addClickListener = (item) => {
+// 		item.addEventListener('click', (e) => {
+// 			e.preventDefault();
+// 			const href = e.target.getAttribute('href');
+// 			if (!href) return;
+// 			const hash = href.split('#')[1];
 
-			if (!isHomePage) {
-				sessionStorage.setItem('scrollToHash', hash);
-				window.location.href = '/';
-			} else {
-				smoothScrollToElementById(hash);
-			}
-		});
-	};
+// 			if (!isHomePage) {
+// 				sessionStorage.setItem('scrollToHash', hash);
+// 				window.location.href = '/';
+// 			} else {
+// 				smoothScrollToElementById(hash);
+// 			}
+// 		});
+// 	};
 
-	menuItems.forEach(addClickListener);
-	scrollToLinks.forEach(addClickListener);
-};
+// 	menuItems.forEach(addClickListener);
+// 	scrollToLinks.forEach(addClickListener);
+// };
 
-handleScrollIntoView();
+// handleScrollIntoView();
 
 if (window.location.pathname === '/') {
 	window.addEventListener('load', () => {
@@ -339,7 +339,7 @@ const handleTextSplit = () => {
 	if (!elements) return;
 
 	elements.forEach((element) => {
-		const split = new SplitType(element, {
+		new SplitType(element, {
 			types: 'words',
 		});
 	});
@@ -357,7 +357,6 @@ const setQueryParams = (key, value) => {
 	window.history.pushState({}, '', `${url.pathname}?${params}`);
 };
 
-const filtersCategory = document.querySelector('#filters-category');
 const categoryFilter = document.querySelectorAll('.category-filter');
 const filterCaseStudies = (category) => {
 	setQueryParams('category', category);
@@ -416,10 +415,12 @@ const loadMoreCaseStudies = (page) => {
 };
 
 let page = 0;
-loadMoreButton.addEventListener('click', () => {
-	page++;
-	loadMoreCaseStudies(page);
-});
+if (loadMoreButton) {
+	loadMoreButton.addEventListener('click', () => {
+		page++;
+		loadMoreCaseStudies(page);
+	});
+}
 
 initSwiper();
 processLineAnimation();
