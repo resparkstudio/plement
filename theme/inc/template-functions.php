@@ -381,7 +381,7 @@ function filter_case_studies() {
 		array(
 			'taxonomy' => 'category',
 			'field' => 'slug',
-			'terms' => $category,
+			'terms' => explode( ',', $category ),
 		),
 	);
 

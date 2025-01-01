@@ -256,28 +256,30 @@ const smoothScrollToElementById = (hash) => {
 
 // const handleScrollIntoView = () => {
 // 	const menuItems = document.querySelectorAll('.menu-item a');
-// 	const scrollToLinks = document.querySelectorAll('.scroll-to');
+const scrollToLinks = document.querySelectorAll('.scroll-to');
 
-// 	const isHomePage = window.location.pathname === '/';
+const isHomePage = window.location.pathname === '/';
 
-// 	const addClickListener = (item) => {
-// 		item.addEventListener('click', (e) => {
-// 			e.preventDefault();
-// 			const href = e.target.getAttribute('href');
-// 			if (!href) return;
-// 			const hash = href.split('#')[1];
+const addClickListener = (item) => {
+	item.addEventListener('click', (e) => {
+		e.preventDefault();
+		const href = e.target.getAttribute('href');
+		if (!href) return;
+		const hash = href.split('#')[1];
 
-// 			if (!isHomePage) {
-// 				sessionStorage.setItem('scrollToHash', hash);
-// 				window.location.href = '/';
-// 			} else {
-// 				smoothScrollToElementById(hash);
-// 			}
-// 		});
-// 	};
+		if (!isHomePage) {
+			sessionStorage.setItem('scrollToHash', hash);
+			window.location.href = '/';
+		} else {
+			smoothScrollToElementById(hash);
+		}
+	});
+};
 
 // 	menuItems.forEach(addClickListener);
-// 	scrollToLinks.forEach(addClickListener);
+if (scrollToLinks) {
+	scrollToLinks.forEach(addClickListener);
+}
 // };
 
 // handleScrollIntoView();
@@ -362,9 +364,32 @@ const setQueryParams = (key, value) => {
 	window.history.pushState({}, '', `${url.pathname}?${params}`);
 };
 
+const getParamValue = (param) => {
+	const url = new URL(window.location.href);
+	const params = new URLSearchParams(url.search.slice(1));
+	const value = params.get(param);
+
+	return value;
+};
+
 const categoryFilter = document.querySelectorAll('.category-filter');
 const filterCaseStudies = (category) => {
-	setQueryParams('category', category);
+	//get current category filter from URL
+	const currentCategory = getParamValue('category');
+
+	//if the category is the same as the current category, remove that specific category from the URL
+	let updatedFilter = category;
+	if (currentCategory) {
+		if (!category) {
+			updatedFilter = '';
+		} else if (currentCategory.includes(category)) {
+			updatedFilter = currentCategory.replace(category, '');
+		} else {
+			updatedFilter = currentCategory + ',' + category;
+		}
+	}
+
+	setQueryParams('category', updatedFilter);
 
 	fetch('/wp-admin/admin-ajax.php', {
 		method: 'POST',
@@ -373,7 +398,7 @@ const filterCaseStudies = (category) => {
 		},
 		body: new URLSearchParams({
 			action: 'filter_case_studies',
-			category: category || 'all',
+			category: updatedFilter || 'all',
 		}),
 	}).then((response) => {
 		response.text().then((text) => {
@@ -382,7 +407,13 @@ const filterCaseStudies = (category) => {
 
 			categoryFilter.forEach((filter) => {
 				filter.classList.remove('active');
-				if (filter.value === category) {
+
+				if (updatedFilter === '' && !filter.value) {
+					filter.classList.add('active');
+					return;
+				}
+
+				if (filter.value && updatedFilter.includes(filter.value)) {
 					filter.classList.add('active');
 				}
 			});
