@@ -9,7 +9,7 @@ function step_icon( $index ) {
 	if ( ! isset( $index ) )
 		return;
 	?>
-	<div class="aspect-square bg-accent rounded-full h-[9px] w-[9px]">
+	<div class="aspect-square bg-accent rounded-full h-[9px] w-[9px] z-10">
 	</div>
 	<?php
 }
@@ -40,8 +40,8 @@ function step_card( $step, $index ) {
 				<div class="relative">
 					<div class="mx-auto max-w-[50rem] lg:w-full space-y-8 relative">
 						<div
-							class=" process-line-wrap bg-lightGray w-[2px] h-[97%] absolute top-[25px] bottom-0 left-[4px]">
-							<div class="process-line bg-accent w-full h-[97%]"></div>
+							class="process-line-wrap bg-lightGray w-[2px] h-[97%] absolute top-[25px] bottom-0 left-[4px]">
+							<div class="process-line bg-accent w-full h-[97%] !z-10"></div>
 						</div>
 						<?php
 						$index = 1;
@@ -49,7 +49,12 @@ function step_card( $step, $index ) {
 							$is_last = count( $team_content['history'] ) === $index;
 							?>
 							<div
-								class="relative gap-4 flex items-center process-item <?php echo $is_last ? 'is-last' : '' ?>">
+								class="relative gap-4 flex items-center process-item <?php echo $is_last ? 'is-last' : '' ?> <?php echo $step['indent'] ? 'pl-6' : '' ?>">
+								<?php if ( $step['indent'] ) : ?>
+									<div
+										class="bg-lightGray w-[22px] h-[2px] absolute top-1/2 -translate-y-1/2 bottom-0 left-[7px]">
+									</div>
+								<?php endif; ?>
 								<?php step_icon( $index ) ?>
 								<?php step_card( $step, $index ) ?>
 							</div>

@@ -266,6 +266,27 @@
                             "prepend": "",
                             "append": "",
                             "parent_repeater": "field_6769f71a280ef"
+                        },
+                        {
+                            "key": "field_6775b49f67ab9",
+                            "label": "Indent",
+                            "name": "indent",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "parent_repeater": "field_6769f71a280ef"
                         }
                     ]
                 },
@@ -545,5 +566,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735034227
+    "modified": 1735767226
 }
