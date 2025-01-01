@@ -1957,6 +1957,10 @@ div.wpcf7-validation-errors {
   left: 4px;
 }
 
+.left-\[6\.5px\] {
+  left: 6.5px;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -1989,24 +1993,8 @@ div.wpcf7-validation-errors {
   top: 6rem;
 }
 
-.left-2 {
-  left: 0.5rem;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.left-\[6px\] {
-  left: 6px;
-}
-
-.left-\[5px\] {
-  left: 5px;
-}
-
-.left-\[7px\] {
-  left: 7px;
+.\!z-10 {
+  z-index: 10 !important;
 }
 
 .-z-\[1\] {
@@ -2039,14 +2027,6 @@ div.wpcf7-validation-errors {
 
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-\[9\] {
-  z-index: 9;
-}
-
-.\!z-10 {
-  z-index: 10 !important;
 }
 
 .order-last {
@@ -2399,10 +2379,6 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.h-\[100\%\] {
-  height: 100%;
-}
-
 .max-h-\[16\.875rem\] {
   max-height: 16.875rem;
 }
@@ -2511,6 +2487,10 @@ div.wpcf7-validation-errors {
   width: 22.25rem;
 }
 
+.w-\[22px\] {
+  width: 22px;
+}
+
 .w-\[24px\] {
   width: 24px;
 }
@@ -2558,22 +2538,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[100\%\] {
-  width: 100%;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-\[23px\] {
-  width: 23px;
-}
-
-.w-\[22px\] {
-  width: 22px;
 }
 
 .min-w-6 {
@@ -3576,6 +3540,10 @@ div.wpcf7-validation-errors {
   padding-left: 1.25rem;
 }
 
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -3646,10 +3614,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.25rem\] {
   padding-top: 8.25rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
 }
 
 .text-left {
