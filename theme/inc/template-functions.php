@@ -389,7 +389,8 @@ function filter_case_studies() {
 	$ajaxposts = new WP_Query(
 		array(
 			'post_type' => 'case-study',
-			'posts_per_page' => -1,
+			'posts_per_page' => 3,
+			'paged' => 1,
 			'order' => 'desc',
 			'tax_query' => $tax_query,
 		)
@@ -401,13 +402,17 @@ function filter_case_studies() {
 	if ( $ajaxposts->have_posts() ) {
 		while ( $ajaxposts->have_posts() ) :
 			$ajaxposts->the_post();
-			$response .= get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
+			ob_start();
+			get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
+			$response .= ob_get_clean();
 		endwhile;
 	} else {
 		$response = 'No case studies found';
 	}
 
-	echo $response;
+	$more_count = $ajaxposts->found_posts - 3;
+
+	wp_send_json( array( 'html' => $response, 'moreCount' => $more_count >= 0 ? $more_count : 0 ) );
 	exit;
 }
 add_action( 'wp_ajax_filter_case_studies', 'filter_case_studies' );
@@ -417,12 +422,27 @@ function load_more_case_studies() {
 	$paged          = $_POST['page'] + 1;
 	$posts_per_page = 3;
 
+	$category = $_POST['category'];
+
+	// Sanitize input
+	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
+
+	// Prepare tax query
+	$tax_query = $category === 'all' ? array() : array(
+		array(
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => explode( ',', $category ),
+		),
+	);
+
 	$ajaxposts = new WP_Query(
 		array(
 			'post_type' => 'case-study',
 			'posts_per_page' => $posts_per_page,
 			'paged' => $paged,
 			'order' => 'desc',
+			'tax_query' => $tax_query,
 		)
 	);
 
@@ -446,6 +466,7 @@ function load_more_case_studies() {
 		array(
 			'html' => $response,
 			'has_more_posts' => $has_more_posts,
+			'tax_query' => $tax_query,
 		)
 	);
 
