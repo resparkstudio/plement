@@ -51,27 +51,29 @@ const processLineAnimation = function () {
 		},
 	);
 
-	const horizontalLineTl = gsap.timeline({
-		scrollTrigger: {
-			trigger: horizontalLine,
-			start: 'top center',
-			end: 'bottom center',
-			scrub: 1,
-		},
-	});
+	if (horizontalLine) {
+		const horizontalLineTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: horizontalLine,
+				start: 'top center',
+				end: 'bottom center',
+				scrub: 1,
+			},
+		});
 
-	horizontalLineTl.fromTo(
-		horizontalLine,
-		{
-			scaleX: 0,
-			transformOrigin: 'left center',
-		},
-		{
-			scaleX: 1,
-			duration: 3,
-			ease: 'none',
-		},
-	);
+		horizontalLineTl.fromTo(
+			horizontalLine,
+			{
+				scaleX: 0,
+				transformOrigin: 'left center',
+			},
+			{
+				scaleX: 1,
+				duration: 3,
+				ease: 'none',
+			},
+		);
+	}
 };
 
 document.querySelectorAll('.pricing-button').forEach((button) => {
