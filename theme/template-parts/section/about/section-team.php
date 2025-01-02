@@ -39,9 +39,8 @@ function step_card( $step, $index ) {
 				<div class="text-title mb-8"><?php echo $team_content['description'] ?></div>
 				<div class="relative">
 					<div class="mx-auto max-w-[50rem] lg:w-full space-y-8 relative">
-						<div
-							class="process-line-wrap bg-lightGray w-[2px] h-[97%] absolute top-[25px] bottom-0 left-[4px]">
-							<div class="process-line bg-accent w-full h-[97%] !z-10"></div>
+						<div class="bg-accent w-[2px] h-[90%] absolute top-[25px] bottom-0 left-[4px]">
+							<div class=" bg-accent w-full h-[90%] !z-10"></div>
 						</div>
 						<?php
 						$index = 1;
@@ -52,8 +51,7 @@ function step_card( $step, $index ) {
 								class="relative gap-4 flex items-center process-item <?php echo $is_last ? 'is-last' : '' ?> <?php echo $step['indent'] ? 'pl-6' : '' ?>">
 								<?php if ( $step['indent'] ) : ?>
 									<div
-										class="bg-lightGray w-[22px] h-[2px] absolute top-1/2 -translate-y-1/2 bottom-0 left-[6.5px]">
-										<div class="process-line-horizontal bg-accent w-full h-full"></div>
+										class="bg-accent w-[22px] h-[2px] absolute top-1/2 -translate-y-1/2 bottom-0 left-[6.5px]">
 									</div>
 								<?php endif; ?>
 								<?php step_icon( $index ) ?>

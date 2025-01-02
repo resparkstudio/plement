@@ -24,14 +24,14 @@ get_header();
 			<div class="swiper studies-category-swiper">
 				<div class="swiper-wrapper">
 					<button
-						class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo empty( $active_category_filter ) ? 'active' : '' ?>">
+						class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo empty( $active_category_filter ) ? 'active' : '' ?>">
 						<?php esc_html_e( 'All Cases', 'plmt' ) ?>
 					</button>
 					<?php
 					foreach ( $categories as $category ) {
 						?>
 						<button value="<?php echo $category->slug ?>"
-							class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] rounded-lg  hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo str_contains( $active_category_filter, $category->slug ) ? 'active' : '' ?>">
+							class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] hover:text-white hover:bg-mainBlack text-bodyBold transition duration-200 ease-in-out <?php echo str_contains( $active_category_filter, $category->slug ) ? 'active' : '' ?>">
 							<?php echo esc_html( $category->name ); ?>
 						</button>
 						<?php

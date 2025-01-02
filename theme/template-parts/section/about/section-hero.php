@@ -20,7 +20,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<div class='flex gap-8 flex-wrap'>
 					<?php foreach ( $hero_content['icons'] as $icon ) : ?>
 						<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
-							class='h-10'>
+							class='h-[3rem]'>
 					<?php endforeach; ?>
 				</div>
 			</div>
