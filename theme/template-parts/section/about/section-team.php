@@ -30,7 +30,7 @@ function step_card( $step, $index ) {
 
 
 <section id="team" class="bg-lightGrayBg py-[5rem]">
-	<div class="lg:container lg:mx-auto">
+	<div class="lg:max-w-[90rem] lg:mx-auto">
 		<h2 class="text-h4Bold mb-10 lg:mb-[3.75rem] lg:text-h2 text-center">
 			<?php esc_html_e( $team_content['heading'] ) ?>
 		</h2>
