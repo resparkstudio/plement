@@ -3492,48 +3492,6 @@ div.wpcf7-validation-errors {
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
-@media (min-width: 984px) {
-  .lg\:container {
-    width: 100%;
-  }
-
-  @media (min-width: 600px) {
-    .lg\:container {
-      max-width: 600px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .lg\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 984px) {
-    .lg\:container {
-      max-width: 984px;
-    }
-  }
-
-  @media (min-width: 1312px) {
-    .lg\:container {
-      max-width: 1312px;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .lg\:container {
-      max-width: 1440px;
-    }
-  }
-
-  @media (min-width: 1921px) {
-    .lg\:container {
-      max-width: 1921px;
-    }
-  }
-}
-
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -4226,16 +4184,12 @@ div.wpcf7-validation-errors {
     max-width: 61.625rem;
   }
 
-  .lg\:max-w-none {
-    max-width: none;
-  }
-
-  .lg\:max-w-\[82rem\] {
-    max-width: 82rem;
-  }
-
   .lg\:max-w-\[90rem\] {
     max-width: 90rem;
+  }
+
+  .lg\:max-w-none {
+    max-width: none;
   }
 
   .lg\:-translate-y-1\/2 {

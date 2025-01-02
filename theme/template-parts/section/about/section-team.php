@@ -53,6 +53,7 @@ function step_card( $step, $index ) {
 								<?php if ( $step['indent'] ) : ?>
 									<div
 										class="bg-lightGray w-[22px] h-[2px] absolute top-1/2 -translate-y-1/2 bottom-0 left-[6.5px]">
+										<div class="process-line-horizontal bg-accent w-full h-full"></div>
 									</div>
 								<?php endif; ?>
 								<?php step_icon( $index ) ?>

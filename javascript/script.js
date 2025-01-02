@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const processLineAnimation = function () {
 	const animatedLine = document.querySelector('.process-line');
+	const horizontalLine = document.querySelector('.process-line-horizontal');
 	if (!animatedLine) return;
 	const lastItem = document.querySelector('.process-item.is-last');
 	const lastItemHeight = lastItem.offsetHeight;
@@ -45,6 +46,28 @@ const processLineAnimation = function () {
 		},
 		{
 			scaleY: 1,
+			duration: 3,
+			ease: 'none',
+		},
+	);
+
+	const horizontalLineTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: horizontalLine,
+			start: 'top center',
+			end: 'bottom center',
+			scrub: 1,
+		},
+	});
+
+	horizontalLineTl.fromTo(
+		horizontalLine,
+		{
+			scaleX: 0,
+			transformOrigin: 'left center',
+		},
+		{
+			scaleX: 1,
 			duration: 3,
 			ease: 'none',
 		},
