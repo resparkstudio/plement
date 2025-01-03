@@ -15,7 +15,7 @@ get_header();
 		<div class="">
 			<?php get_template_part( 'template-parts/section/case-study/section-contact-info' ); ?>
 		</div>
-		<div class="space-y-[3.75rem]">
+		<div class="space-y-10 lg:space-y-8">
 			<?php
 			while ( have_posts() ) :
 				the_post();

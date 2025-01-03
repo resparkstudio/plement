@@ -2526,10 +2526,10 @@ div.wpcf7-validation-errors {
   margin-bottom: calc(1.875rem * var(--tw-space-y-reverse));
 }
 
-.space-y-\[3\.75rem\] > :not([hidden]) ~ :not([hidden]) {
+.space-y-\[2rem\] > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(3.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3.75rem * var(--tw-space-y-reverse));
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .justify-self-center {
@@ -4286,6 +4286,12 @@ div.wpcf7-validation-errors {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
   }
 
   .lg\:border {
