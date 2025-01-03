@@ -68,7 +68,7 @@
 }
 
 .button_outlined {
-	@apply border-accent text-accent text-bodyBold inline-flex items-center gap-3 border-2 bg-white px-6 py-[0.875rem];
+	@apply border-accent text-accent text-bodyBold hover:bg-accent inline-flex items-center gap-3 border bg-white px-6 py-[0.875rem] transition-colors duration-200 ease-in-out hover:text-white;
 }
 
 #site-navigation {

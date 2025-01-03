@@ -34,6 +34,8 @@ get_header();
 							get_template_part( 'template-parts/section/case-study/section-timeline-block' );
 						} elseif ( get_row_layout() == 'testimonial_block' ) {
 							get_template_part( 'template-parts/section/case-study/section-testimonial-block' );
+						} elseif ( get_row_layout() == 'tools_block' ) {
+							get_template_part( 'template-parts/section/case-study/section-tools-block' );
 						}
 					}
 				}

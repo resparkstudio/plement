@@ -15,6 +15,7 @@ $page_sections = [
 	'services',
 	'cta',
 	'services-tabs',
+	'case-studies',
 	'testimonials',
 	'process',
 	'partner',
