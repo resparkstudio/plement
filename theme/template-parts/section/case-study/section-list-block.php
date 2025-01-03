@@ -13,7 +13,7 @@
 				while ( have_rows( 'items' ) ) :
 					the_row();
 					?>
-					<li class="<?php echo $list_type === 'icon_top' ? 'flex flex-col gap-5' : 'flex items-start gap-5' ?>">
+					<li class="<?php echo $list_type === 'icon_top' ? 'flex gap-5' : 'flex items-start gap-5' ?>">
 						<svg class="flex-shrink-0 " width="32" height="32" viewBox="0 0 32 32" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
 							<path d="M2 7.95809L15.8219 16L29.7277 7.95809L15.8219 0L2 7.95809Z" fill="#ED5623" />
