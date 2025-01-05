@@ -205,11 +205,11 @@ function plmt_html5_comment( $comment, $args, $depth ) {
 		<?php
 }
 
-function plmt_arrow() {
+function plmt_arrow( $width_class = 'w-[1.125rem]', $height_class = 'h-[1.125rem]' ) {
 	?>
 		<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 			<div
-				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0">
+				class="justify-center items-center transition-transform duration-300 absolute translate-x-[-100%] translate-y-[100%] group-hover:translate-x-0 group-hover:translate-y-0 <?php echo $width_class . ' ' . $height_class ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
 					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
 					viewBox="0 0 24 24">
@@ -217,7 +217,7 @@ function plmt_arrow() {
 				</svg>
 			</div>
 			<div
-				class="justify-center items-center w-[1.125rem] h-[1.125rem] transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%]">
+				class="justify-center items-center transition-transform duration-300 group-hover:translate-x-[100%] group-hover:translate-y-[-100%] <?php echo $width_class . ' ' . $height_class ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
 					role="img" class="iconify iconify--ic" width=" 100%" height=" 100%" preserveAspectRatio="xMidYMid meet"
 					viewBox="0 0 24 24">
@@ -361,3 +361,129 @@ function my_wp_get_nav_menu_items( $items, $menu, $args ) {
 
 	return $items;
 }
+
+function plmt_modify_case_study_archive_query( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'case-study' ) ) {
+		$query->set( 'posts_per_page', 3 );
+	}
+}
+add_action( 'pre_get_posts', 'plmt_modify_case_study_archive_query' );
+
+
+function filter_case_studies() {
+	$category = $_POST['category'];
+
+	// Sanitize input
+	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
+
+	$categories_array = explode( ',', string: $category );
+	$categories_array = array_filter( $categories_array );
+
+	$tax_query = array();
+
+	if ( $category !== 'all' && ! empty( $categories_array ) ) {
+		$tax_query = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $categories_array,
+			),
+		);
+	}
+
+
+	$ajaxposts = new WP_Query(
+		array(
+			'post_type' => 'case-study',
+			'posts_per_page' => 3,
+			'paged' => 1,
+			'order' => 'desc',
+			'tax_query' => $tax_query,
+		)
+	);
+
+	// wp_send_json($ajaxposts);
+	$response = '';
+
+	if ( $ajaxposts->have_posts() ) {
+		while ( $ajaxposts->have_posts() ) :
+			$ajaxposts->the_post();
+			ob_start();
+			get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
+			$response .= ob_get_clean();
+		endwhile;
+	} else {
+		$response = 'No case studies found';
+	}
+
+	$more_count = $ajaxposts->found_posts - 3;
+
+	wp_send_json( array( 'html' => $response, 'moreCount' => $more_count >= 0 ? $more_count : 0 ) );
+	exit;
+}
+add_action( 'wp_ajax_filter_case_studies', 'filter_case_studies' );
+add_action( 'wp_ajax_nopriv_filter_case_studies', 'filter_case_studies' );
+
+function load_more_case_studies() {
+	$paged          = $_POST['page'] + 1;
+	$posts_per_page = 3;
+
+	$category = $_POST['category'];
+
+	// Sanitize input
+	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
+
+	$categories_array = explode( ',', string: $category );
+	$categories_array = array_filter( $categories_array );
+
+	$tax_query = array();
+
+	if ( $category !== 'all' && ! empty( $categories_array ) ) {
+		$tax_query = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $categories_array,
+			),
+		);
+	}
+
+	$ajaxposts = new WP_Query(
+		array(
+			'post_type' => 'case-study',
+			'posts_per_page' => $posts_per_page,
+			'paged' => $paged,
+			'order' => 'desc',
+			'tax_query' => $tax_query,
+		)
+	);
+
+
+	$response = '';
+
+	if ( $ajaxposts->have_posts() ) {
+		while ( $ajaxposts->have_posts() ) :
+			$ajaxposts->the_post();
+			ob_start();
+			get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
+			$response .= ob_get_clean();
+		endwhile;
+	} else {
+		$response = 'No case studies found';
+	}
+
+	$has_more_posts = $ajaxposts->max_num_pages > $paged;
+
+	wp_send_json(
+		array(
+			'html' => $response,
+			'has_more_posts' => $has_more_posts,
+			'tax_query' => $tax_query,
+		)
+	);
+
+	exit;
+}
+
+add_action( 'wp_ajax_load_more_case_studies', 'load_more_case_studies' );
+add_action( 'wp_ajax_nopriv_load_more_case_studies', 'load_more_case_studies' );

@@ -9,7 +9,7 @@ if ( ! isset( $services_tabs ) || empty( $services_tabs ) ) {
 
 function services_desktop( $services_tabs ) {
 	?>
-	<div x-data="{ selectedTab: '<?php echo $services_tabs['tabs'][0]['title'] ?>'}" class='mb-6 text-title'>
+	<div x-data="{ selectedTab: '<?php echo $services_tabs['tabs'][0]['title'] ?>'}" class='text-title'>
 		<div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
 			class="flex mb-[5.375rem]" role="tablist" aria-label="tab options">
 			<?php foreach ( $services_tabs['tabs'] as $tab ) : ?>

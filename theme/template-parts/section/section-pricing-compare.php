@@ -23,7 +23,7 @@ function pricing_accordion_body( $features ) {
 				<div class="flex items-center gap-3 p-4">
 					<?php if ( isset( $feature['popup_text'] ) && ! empty( $feature['popup_text'] ) ) : ?>
 						<div class="relative">
-							<div class="text-bodyBold max-w-[243px] split-text flex gap-[0.4em] flex-wrap">
+							<div class="text-bodyBold font-medium max-w-[243px] split-text flex gap-[0.4em] flex-wrap">
 								<?php echo esc_html( $feature['title'] ) ?>
 								<svg class="compare-tippy min-w-[17px] min-h-[17px] cursor-pointer"
 									data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" width="17" height="17"
@@ -78,7 +78,7 @@ function comparison_footer_rows( $pricing_data ) {
 		<div></div>
 		<?php foreach ( $pricing_data['packages'] as $package ) : ?>
 			<?php plmt_button( "modalOpen=true", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
-				"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center hover:text-white hover:bg-mainBlack hover:border-mainBlack",
+				"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center hover:text-accent hover:border-accent",
 				"variant" => 'secondary',
 				"is_button" => true,
 				"value" => $package['title'],
@@ -109,7 +109,7 @@ function comparison_footer_rows( $pricing_data ) {
 	<div class="w-full z-[1]">
 		<div class="flex justify-end items-end h-auto bg-white pt-14 pb-9">
 			<div class="w-1/5 justify-center text-h5Bold">
-				<?php esc_html_e( 'Parameter', 'plmt' ) ?>
+
 			</div>
 			<?php foreach ( $pricing_data['packages'] as $package ) :
 				minimal_package_card( $package );

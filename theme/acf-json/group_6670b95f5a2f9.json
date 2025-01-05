@@ -612,11 +612,11 @@
                     "append": ""
                 },
                 {
-                    "key": "field_674601d3c26c5",
-                    "label": "Description",
-                    "name": "description",
+                    "key": "field_6776d5aa75500",
+                    "label": "Benefits",
+                    "name": "benefits",
                     "aria-label": "",
-                    "type": "wysiwyg",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -625,11 +625,36 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_6776d5b975501",
+                            "label": "Benefit",
+                            "name": "benefit",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_6776d5aa75500"
+                        }
+                    ]
                 },
                 {
                     "key": "field_674601ddc26c6",
@@ -1739,5 +1764,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732822408
+    "modified": 1735841220
 }

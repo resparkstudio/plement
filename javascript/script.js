@@ -8,102 +8,20 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
-import Swiper from 'swiper';
-import { Pagination, Controller, Navigation } from 'swiper/modules';
+
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
+import './filter';
+import initSwiper from './swiper';
+
 gsap.registerPlugin(ScrollTrigger);
-
-function initSwiper() {
-	new Swiper('.services-list', {
-		modules: [Pagination],
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-		autoHeight: true,
-	});
-
-	const packageSwiper = new Swiper('.packages-list', {
-		modules: [Pagination, Controller],
-		slidesPerView: 1.1,
-		spaceBetween: 16,
-		initialSlide: 2,
-		autoHeight: true,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-	});
-
-	packageSwiper.on('slideChange', function () {
-		tippy.hideAll({ duration: 0 });
-	});
-
-	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
-		modules: [Pagination, Controller],
-		slidesPerView: 1,
-		initialSlide: 2,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-		autoHeight: true,
-		resizeObserver: true,
-	});
-
-	packageSwiper.controller.control = packageCompareSwiper;
-	packageCompareSwiper.controller.control = packageSwiper;
-
-	new Swiper('.testimonials-swiper', {
-		modules: [Navigation],
-		loop: true,
-		loopAdditionalSlides: 4,
-		slidesPerView: 1.2,
-		breakpoints: {
-			768: {
-				slidesPerView: 2,
-			},
-		},
-		initialSlide: 2,
-		spaceBetween: 16,
-		navigation: {
-			nextEl: '.custom-swiper-button-next',
-			prevEl: '.custom-swiper-button-prev',
-		},
-	});
-
-	new Swiper('.help-center-gallery', {
-		modules: [Navigation],
-		autoHeight: true,
-		// slidesPerView: 'auto',
-		breakpoints: {
-			768: {
-				slidesPerView: 1.2,
-				spaceBetween: 16,
-			},
-			1024: {
-				slidesPerView: 'auto',
-				spaceBetween: 16,
-			},
-		},
-		spaceBetween: 16,
-		navigation: {
-			nextEl: '.custom-swiper-button-next',
-			prevEl: '.custom-swiper-button-prev',
-		},
-	});
-}
 
 const processLineAnimation = function () {
 	const animatedLine = document.querySelector('.process-line');
+	const horizontalLine = document.querySelector('.process-line-horizontal');
 	if (!animatedLine) return;
 	const lastItem = document.querySelector('.process-item.is-last');
 	const lastItemHeight = lastItem.offsetHeight;
@@ -132,6 +50,30 @@ const processLineAnimation = function () {
 			ease: 'none',
 		},
 	);
+
+	if (horizontalLine) {
+		const horizontalLineTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: horizontalLine,
+				start: 'top center',
+				end: 'bottom center',
+				scrub: 1,
+			},
+		});
+
+		horizontalLineTl.fromTo(
+			horizontalLine,
+			{
+				scaleX: 0,
+				transformOrigin: 'left center',
+			},
+			{
+				scaleX: 1,
+				duration: 3,
+				ease: 'none',
+			},
+		);
+	}
 };
 
 document.querySelectorAll('.pricing-button').forEach((button) => {
@@ -228,33 +170,35 @@ const smoothScrollToElementById = (hash) => {
 	}
 };
 
-const handleScrollIntoView = () => {
-	const menuItems = document.querySelectorAll('.menu-item a');
-	const scrollToLinks = document.querySelectorAll('.scroll-to');
+// const handleScrollIntoView = () => {
+// 	const menuItems = document.querySelectorAll('.menu-item a');
+const scrollToLinks = document.querySelectorAll('.scroll-to');
 
-	const isHomePage = window.location.pathname === '/';
+const isHomePage = window.location.pathname === '/';
 
-	const addClickListener = (item) => {
-		item.addEventListener('click', (e) => {
-			e.preventDefault();
-			const href = e.target.getAttribute('href');
-			if (!href) return;
-			const hash = href.split('#')[1];
+const addClickListener = (item) => {
+	item.addEventListener('click', (e) => {
+		e.preventDefault();
+		const href = e.target.getAttribute('href');
+		if (!href) return;
+		const hash = href.split('#')[1];
 
-			if (!isHomePage) {
-				sessionStorage.setItem('scrollToHash', hash);
-				window.location.href = '/';
-			} else {
-				smoothScrollToElementById(hash);
-			}
-		});
-	};
-
-	menuItems.forEach(addClickListener);
-	scrollToLinks.forEach(addClickListener);
+		if (!isHomePage) {
+			sessionStorage.setItem('scrollToHash', hash);
+			window.location.href = '/';
+		} else {
+			smoothScrollToElementById(hash);
+		}
+	});
 };
 
-handleScrollIntoView();
+// 	menuItems.forEach(addClickListener);
+if (scrollToLinks) {
+	scrollToLinks.forEach(addClickListener);
+}
+// };
+
+// handleScrollIntoView();
 
 if (window.location.pathname === '/') {
 	window.addEventListener('load', () => {
@@ -318,7 +262,7 @@ const handleTextSplit = () => {
 	if (!elements) return;
 
 	elements.forEach((element) => {
-		const split = new SplitType(element, {
+		new SplitType(element, {
 			types: 'words',
 		});
 	});

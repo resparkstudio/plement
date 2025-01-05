@@ -7,14 +7,14 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 
 ?>
-<section id='hero' class='container pt-6 pb-8 lg:pt-20 lg:pb-6 flex flex-col'>
+<section id='hero' class='container pt-6 mb-2 lg:py-5 lg:mb-0 flex flex-col'>
 	<div class='flex flex-col gap-4 lg:items-center lg:flex-row lg:justify-between lg:gap-[6.5625rem]'>
 		<div class='w-full max-w-[50.9375rem]'>
 			<h1 class='text-h4Bold w-full lg:text-h2'>
 				<?php echo $hero_content['heading'] ?>
 			</h1>
 		</div>
-		<div class="ml-auto max-w-[10.4375rem] lg:max-w-[23.5625rem] w-full">
+		<div class="ml-auto max-w-[20.0625rem] lg:max-w-[40.25rem] w-full">
 			<img src="<?php echo esc_url( $hero_content['image']['url'] ) ?>"
 				alt="<?php echo esc_attr( $hero_content['image']['alt'] ) ?>">
 		</div>

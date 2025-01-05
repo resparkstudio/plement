@@ -147,7 +147,7 @@ function services_list( $services, $heading ) {
 }
 
 ?>
-<section id="services" class="bg-mainBlack text-white">
+<section id="operations" class="bg-mainBlack text-white">
 	<div class="hidden md:block">
 		<?php isset( $services_content['services_list'] ) && services_list( $services_content['services_list'], $services_content['heading'] ); ?>
 	</div>

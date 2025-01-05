@@ -4,6 +4,7 @@ function plmt_button( $url = '#', $text, $options = array() ) {
 	$variants = array(
 		"primary" => "button",
 		"secondary" => "button_secondary",
+		"outlined" => "button_outlined",
 	);
 
 	$defaults = array(
