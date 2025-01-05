@@ -3457,6 +3457,11 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
+.px-\[4\.625rem\] {
+  padding-left: 4.625rem;
+  padding-right: 4.625rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3802,6 +3807,11 @@ div.wpcf7-validation-errors {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-mainBlack {
+  --tw-text-opacity: 1;
+  color: rgb(17 31 36 / var(--tw-text-opacity));
 }
 
 .underline {

@@ -33,7 +33,7 @@ function step_card( $step, $index ) {
 
 ?>
 
-<section id="process" class="container pb-[7.5rem] lg:pb-[10rem]">
+<section id="process" class="container pt-[10rem] lg:pt-[8.75rem]">
 	<h2
 		class="text-h4Bold lg:text-[3rem] lg:leading-[3.3rem] lg:font-extrabold text-left lg:mx-auto mb-8 lg:mb-20 lg:text-center">
 		<?php echo esc_html( $process_content['heading'] ) ?>

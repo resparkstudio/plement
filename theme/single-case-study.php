@@ -10,7 +10,17 @@
 get_header();
 ?>
 
-<section id="primary" class="container pt-8 lg:pt-[3.75rem] pb-[4.375rem] lg:pb-[7.5rem]">
+<section id="primary" class="container pt-6 pb-[4.375rem] lg:pb-[7.5rem]">
+	<div class="mb-6 lg:mb-4">
+		<a href="<?php echo esc_url( home_url( '/case-studies' ) ) ?>"
+			class="flex items-center gap-2 text-mainBlack hover:text-accent transition duration-200 ease-in-out">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M20.4853 12.4853H3.51472M3.51472 12.4853L12 20.9706M3.51472 12.4853L12 4" stroke="currentColor"
+					stroke-width="1.5" />
+			</svg>
+			<?php esc_html_e( 'Back to all case studies', 'plmt' ) ?>
+		</a>
+	</div>
 	<div class="flex flex-col-reverse lg:flex-row gap-[3.4375rem] mb-[4.375rem] lg:mb-[6.875rem]">
 		<div class="">
 			<?php get_template_part( 'template-parts/section/case-study/section-contact-info' ); ?>
