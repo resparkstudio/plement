@@ -3469,10 +3469,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 1rem;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
-}
-
 .pb-9 {
   padding-bottom: 2.25rem;
 }
@@ -3487,10 +3483,6 @@ div.wpcf7-validation-errors {
 
 .pb-\[4\.375rem\] {
   padding-bottom: 4.375rem;
-}
-
-.pb-\[5\.5rem\] {
-  padding-bottom: 5.5rem;
 }
 
 .pb-\[5\.75rem\] {
@@ -3511,10 +3503,6 @@ div.wpcf7-validation-errors {
 
 .pb-\[7\.75rem\] {
   padding-bottom: 7.75rem;
-}
-
-.pb-\[8\.25rem\] {
-  padding-bottom: 8.25rem;
 }
 
 .pl-10 {
@@ -4442,6 +4430,10 @@ div.wpcf7-validation-errors {
     margin-bottom: 7.5rem;
   }
 
+  .lg\:mb-\[8\.75rem\] {
+    margin-bottom: 8.75rem;
+  }
+
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -4456,10 +4448,6 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-6 {
     margin-top: 1.5rem;
-  }
-
-  .lg\:mb-\[8\.75rem\] {
-    margin-bottom: 8.75rem;
   }
 
   .lg\:block {
@@ -4855,10 +4843,6 @@ div.wpcf7-validation-errors {
     padding-bottom: 7.5rem;
   }
 
-  .lg\:pb-0 {
-    padding-bottom: 0px;
-  }
-
   .lg\:pb-6 {
     padding-bottom: 1.5rem;
   }
@@ -4893,10 +4877,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pb-\[5\.875rem\] {
     padding-bottom: 5.875rem;
-  }
-
-  .lg\:pb-\[60px\] {
-    padding-bottom: 60px;
   }
 
   .lg\:pb-\[7\.5rem\] {
@@ -4953,10 +4933,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[8\.75rem\] {
     padding-top: 8.75rem;
-  }
-
-  .lg\:pt-5 {
-    padding-top: 1.25rem;
   }
 
   .lg\:text-left {

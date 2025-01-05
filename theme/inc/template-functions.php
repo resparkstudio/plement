@@ -376,14 +376,20 @@ function filter_case_studies() {
 	// Sanitize input
 	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
 
-	// Prepare tax query
-	$tax_query = $category === 'all' ? array() : array(
-		array(
-			'taxonomy' => 'category',
-			'field' => 'slug',
-			'terms' => explode( ',', $category ),
-		),
-	);
+	$categories_array = explode( ',', string: $category );
+	$categories_array = array_filter( $categories_array );
+
+	$tax_query = array();
+
+	if ( $category !== 'all' && ! empty( $categories_array ) ) {
+		$tax_query = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $categories_array,
+			),
+		);
+	}
 
 
 	$ajaxposts = new WP_Query(
@@ -427,14 +433,20 @@ function load_more_case_studies() {
 	// Sanitize input
 	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
 
-	// Prepare tax query
-	$tax_query = $category === 'all' ? array() : array(
-		array(
-			'taxonomy' => 'category',
-			'field' => 'slug',
-			'terms' => explode( ',', $category ),
-		),
-	);
+	$categories_array = explode( ',', string: $category );
+	$categories_array = array_filter( $categories_array );
+
+	$tax_query = array();
+
+	if ( $category !== 'all' && ! empty( $categories_array ) ) {
+		$tax_query = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $categories_array,
+			),
+		);
+	}
 
 	$ajaxposts = new WP_Query(
 		array(

@@ -54,8 +54,11 @@ const filterCaseStudies = (category) => {
 			categoryFilter.forEach((filter) => {
 				filter.classList.remove('active');
 
-				if (updatedFilter === '' && !filter.value) {
+				const filterWithoutSeparator = updatedFilter.replace(/,/g, '');
+
+				if (filterWithoutSeparator === '' && !filter.value) {
 					filter.classList.add('active');
+					setQueryParams('category', '');
 					return;
 				}
 
