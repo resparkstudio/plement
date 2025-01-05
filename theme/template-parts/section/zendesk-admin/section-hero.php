@@ -7,7 +7,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 
 ?>
-<section id='hero' class='container pt-6 pb-[5.5rem] lg:pt-[3.75rem] lg:pb-[7.5rem] flex flex-col'>
+<section id='hero' class='container pt-6 mb-20 lg:py-5 flex flex-col'>
 	<div class='flex flex-col gap-12 items-center lg:flex-row lg:justify-center lg:gap-[3.75rem]'>
 		<div class="hidden lg:block">
 			<img class="w-full max-w-[26.125rem]" src='<?php echo esc_url( $hero_content['image']['url'] ) ?>'

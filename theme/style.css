@@ -2973,12 +2973,6 @@ div.wpcf7-validation-errors {
   margin-bottom: calc(1.875rem * var(--tw-space-y-reverse));
 }
 
-.space-y-\[2rem\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
 .justify-self-center {
   justify-self: center;
 }
@@ -4464,6 +4458,10 @@ div.wpcf7-validation-errors {
     margin-top: 1.5rem;
   }
 
+  .lg\:mb-\[8\.75rem\] {
+    margin-bottom: 8.75rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -4955,6 +4953,10 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-\[8\.75rem\] {
     padding-top: 8.75rem;
+  }
+
+  .lg\:pt-5 {
+    padding-top: 1.25rem;
   }
 
   .lg\:text-left {
