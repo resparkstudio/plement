@@ -13,7 +13,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<h1 class='text-h1Mobile max-w-[33.125rem] w-full lg:text-h2 mb-6 lg:pl-10'>
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
-			<div class="border-l-2 pl-4 lg:pl-10 border-l-accent">
+			<div class="border-l-2 pl-4 lg:pl-10 border-l-accent text-title">
 				<?php echo $hero_content['description'] ?>
 			</div>
 			<div class='mt-6 flex justify-between items-center lg:pl-10'>
