@@ -15,8 +15,7 @@
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 						<?php if ( $thumbnail ) { ?>
 							<div>
-								<div
-									class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] [&_img]:object-contain">
+								<div class="flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
 									<img src="<?php echo esc_url( $thumbnail ); ?>"
 										alt="<?php echo esc_attr( $case_study->post_title ); ?>">
 								</div>
