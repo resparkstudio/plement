@@ -87,7 +87,7 @@
                 "layout_67711092dc580": {
                     "key": "layout_67711092dc580",
                     "name": "text_block",
-                    "label": "Text block",
+                    "label": "Key issues block",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -157,7 +157,7 @@
                 "layout_677110b9dc584": {
                     "key": "layout_677110b9dc584",
                     "name": "list_block",
-                    "label": "List block",
+                    "label": "Solutions block",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -625,5 +625,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735910043
+    "modified": 1736507555
 }

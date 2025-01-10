@@ -13,10 +13,12 @@
 				?>
 				<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5">
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6">
-						<div class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem]">
-							<img src="<?php echo esc_url( $thumbnail ); ?>"
-								alt="<?php echo esc_attr( $case_study->post_title ); ?>">
-						</div>
+						<?php if ( $thumbnail ) { ?>
+							<div class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem]">
+								<img src="<?php echo esc_url( $thumbnail ); ?>"
+									alt="<?php echo esc_attr( $case_study->post_title ); ?>">
+							</div>
+						<?php } ?>
 						<div class="max-w-[43.5rem] w-full">
 							<header class="mb-5 lg:mb-9">
 								<h2 class="text-h5Bold">
