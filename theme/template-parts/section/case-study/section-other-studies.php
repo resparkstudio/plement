@@ -16,7 +16,7 @@
 						<?php if ( $thumbnail ) { ?>
 							<div>
 								<div
-									class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] object-contain">
+									class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] [&_img]:object-contain">
 									<img src="<?php echo esc_url( $thumbnail ); ?>"
 										alt="<?php echo esc_attr( $case_study->post_title ); ?>">
 								</div>
