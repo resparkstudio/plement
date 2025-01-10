@@ -43,7 +43,7 @@
 			</a>
 		</div>
 		<div
-			class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:lg:aspect-[340/197] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] [&_img]:lg:w-[340px] [&_img]:lg:h-[197px]">
+			class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:lg:aspect-[340/197] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] [&_img]:lg:w-[340px] [&_img]:object-contain [&_img]:lg:h-[197px]">
 			<?php plmt_post_thumbnail(); ?>
 		</div>
 	</div>
