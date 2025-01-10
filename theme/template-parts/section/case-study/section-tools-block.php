@@ -1,5 +1,5 @@
-<section class="bg-lightGrayBg pt-5 lg:p-10 grid grid-cols-1 lg:grid-cols-[200px,1fr] gap-[1.25rem]">
-	<div class="px-5 lg:px-0">
+<section class="bg-lightGrayBg p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[200px,1fr] gap-[1.25rem]">
+	<div>
 		<h2 class="font-extrabold text-[1.5rem] leading-[1.65rem] lg:text-h4Bold">
 			<?php the_sub_field( 'title' ); ?>
 		</h2>
