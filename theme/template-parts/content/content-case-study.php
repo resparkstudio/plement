@@ -42,7 +42,7 @@
 				<span class="text-bodyBold"><?php esc_html_e( 'READ THE FULL CASE STUDY', 'plmt' ); ?></span>
 			</a>
 		</div>
-		<div class="flex-shrink-0 [&_img]:h-[100px] [&_img]:object-contain [&_img]:lg:h-[197px]">
+		<div class="flex-shrink-0 [&_img]:h-[100px] [&_img]:max-w-[200px] [&_img]:object-contain [&_img]:lg:h-[197px]">
 			<?php plmt_post_thumbnail(); ?>
 		</div>
 	</div>
