@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.21
+Version: 0.1.22
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2373,6 +2373,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.\!h-full {
+  height: 100% !important;
+}
+
 .min-h-6 {
   min-height: 1.5rem;
 }
@@ -2975,6 +2979,17 @@ div.wpcf7-validation-errors {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.875rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.875rem * var(--tw-space-y-reverse));
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-\[\#526369\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(82 99 105 / var(--tw-divide-opacity));
 }
 
 .justify-self-center {
@@ -3596,6 +3611,14 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.25rem\] {
   padding-top: 8.25rem;
+}
+
+.\!pt-0 {
+  padding-top: 0px !important;
+}
+
+.\!pb-0 {
+  padding-bottom: 0px !important;
 }
 
 .text-left {
