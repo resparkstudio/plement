@@ -364,7 +364,7 @@ function my_wp_get_nav_menu_items( $items, $menu, $args ) {
 
 function plmt_modify_case_study_archive_query( $query ) {
 	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'case-study' ) ) {
-		$query->set( 'posts_per_page', 3 );
+		$query->set( 'posts_per_page', 6 );
 	}
 }
 add_action( 'pre_get_posts', 'plmt_modify_case_study_archive_query' );
@@ -395,7 +395,7 @@ function filter_case_studies() {
 	$ajaxposts = new WP_Query(
 		array(
 			'post_type' => 'case-study',
-			'posts_per_page' => 3,
+			'posts_per_page' => 6,
 			'paged' => 1,
 			'order' => 'desc',
 			'tax_query' => $tax_query,

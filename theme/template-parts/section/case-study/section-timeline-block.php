@@ -16,7 +16,7 @@
 					<li
 						class="flex flex-col gap-[0.375rem] py-[1.875rem] border-b border-b-[#526369] <?php echo $is_first ? 'border-t border-t-[#526369]' : ''; ?>">
 						<h3 class="text-title"><?php the_sub_field( 'title' ); ?></h3>
-						<div class="text-bodySmall"><?php the_sub_field( 'text' ); ?></div>
+						<div><?php the_sub_field( 'text' ); ?></div>
 					</li>
 					<?php
 				endwhile;
