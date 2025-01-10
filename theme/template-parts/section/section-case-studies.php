@@ -45,9 +45,10 @@ if ( empty( $case_studies ) ) {
 				foreach ( $case_studies as $case_study ) {
 					$thumbnail = get_the_post_thumbnail_url( $case_study->ID, 'medium' );
 					?>
-					<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5">
-						<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6">
-							<div class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem]">
+					<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
+						<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
+							<div
+								class="flex-shrink-0 [&_img]:aspect-[172/100] [&_img]:w-[10.75rem] [&_img]:h-[6.25rem] [&_img]:object-contain">
 								<img src="<?php echo esc_url( $thumbnail ); ?>"
 									alt="<?php echo esc_attr( $case_study->post_title ); ?>">
 							</div>
