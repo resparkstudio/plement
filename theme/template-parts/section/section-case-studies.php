@@ -97,7 +97,7 @@ if ( empty( $case_studies ) ) {
 			<div class="flex justify-center">
 				<?php plmt_button( home_url( '/case-studies' ), __( 'View all cases', 'plmt' ), array(
 					'variant' => 'outlined',
-					'classes' => 'mt-10 px-[4.625rem] text-title w-full md:w-auto',
+					'classes' => 'mt-10 px-[4.625rem] text-title w-full md:w-auto justify-center',
 				) ); ?>
 			</div>
 		</div>

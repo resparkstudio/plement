@@ -83,7 +83,7 @@ function mobile_pricing_accordion_body( $features, $index ) {
 						<div class="font-medium max-w-[243px]"><?php echo esc_html( $feature['title'] ) ?></div>
 					<?php endif; ?>
 				</div>
-				<div class="justify-self-center flex flex-col gap-2 items-center justify-center w-[160px]">
+				<div class="justify-self-center flex flex-col gap-2 items-center justify-center min-w-[6.25rem]">
 					<?php if ( $feature['columns'][ $index ]['included'] ) : ?>
 						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_515_6320)">
