@@ -9,12 +9,17 @@
  * @package Plement
  */
 
+$calendly_url_packages = get_field( 'calendly_url_packages', 'option' );
+$calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
+
 ?>
 
 </div><!-- #content -->
 
 <?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
 
+<div class="calendly-url-packages" data-url="<?php echo $calendly_url_packages ?>"></div>
+<div class="calendly-url-contact" data-url="<?php echo $calendly_url_contact ?>"></div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
