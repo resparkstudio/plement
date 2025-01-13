@@ -7,7 +7,11 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 
 ?>
 
-<section id="contact-us" class="container grid grid-cols-1 lg:grid-cols-3 pb-[6.25rem] lg:pt-20 lg:pb-[7.5rem] gap-10">
+<section id="contact-us" class="container grid grid-cols-1 lg:grid-cols-3 pb-[6.25rem] lg:pt-20 lg:pb-[7.5rem] gap-10"
+	x-data="{successModalOpen: false}" @flash.window="
+						successModalOpen = true;
+						setTimeout(() => successModalOpen = false, 4000);
+						">
 	<div class="flex flex-col gap-3 lg:gap-0 lg:justify-between lg:max-w-[16.875rem] lg:pl-10">
 		<h2 class="text-h4Bold lg:text-h1"><?php esc_html_e( $contact_content['heading'] ) ?></h2>
 		<p class="text-regular"><?php esc_html_e( $contact_content['bottom_text'] ) ?></p>
@@ -15,6 +19,7 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 	<div class="order-last lg:order-none">
 		<?php echo apply_shortcodes( '[contact-form-7 id="0ec1d42" title="Contact form 1"]' ); ?>
 	</div>
+
 	<div class="p-5 lg:p-10 bg-mainBlack text-white" x-data="{calendlyOpen: false}">
 		<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
 			"classes" => "contact-button mb-10 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent",
@@ -54,4 +59,10 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 		</div>
 		<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
 	</div>
+	<?php success_modal(); ?>
 </section>
+<script>
+	document.addEventListener('wpcf7mailsent', function (event) {
+		window.dispatchEvent(new CustomEvent('flash'))
+	}, false);
+</script>
