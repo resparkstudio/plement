@@ -29,6 +29,8 @@ $calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
 <script>
 	tippy('.compare-tippy', {
 		theme: 'custom',
+		interactive: true,
+		trigger: 'click',
 		onTrigger: () => {
 			console.log('clicked');
 		}
