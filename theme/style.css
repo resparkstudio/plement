@@ -2064,14 +2064,14 @@ div.wpcf7-validation-errors {
   margin-right: auto;
 }
 
-.my-\[4px\] {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.my-\[4px\] {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .mb-1 {
@@ -2454,6 +2454,10 @@ div.wpcf7-validation-errors {
   width: 1.125rem;
 }
 
+.w-\[100px\] {
+  width: 100px;
+}
+
 .w-\[11\.5rem\] {
   width: 11.5rem;
 }
@@ -2537,10 +2541,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[100px\] {
-  width: 100px;
 }
 
 .min-w-6 {
