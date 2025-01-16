@@ -2382,6 +2382,10 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .min-h-6 {
   min-height: 1.5rem;
 }
@@ -2541,6 +2545,10 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .min-w-6 {

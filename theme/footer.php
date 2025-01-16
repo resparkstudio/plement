@@ -29,9 +29,9 @@ $calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
 <script>
 	tippy('.compare-tippy', {
 		theme: 'custom',
-	});
-	tippy('.tippy-test', {
-		theme: 'custom',
+		onTrigger: () => {
+			console.log('clicked');
+		}
 	});
 
 	tippy('.pricing-mobile-tippy', {
