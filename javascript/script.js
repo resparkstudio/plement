@@ -252,7 +252,6 @@ const handleTextSplit = () => {
 initSwiper();
 processLineAnimation();
 handleContactFormTransition();
-handleCountry();
 handleButtonsWithScrollTriggerRefresh();
 addArrow();
 handleTextSplit();

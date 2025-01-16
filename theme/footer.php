@@ -27,6 +27,12 @@ $calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script>
+	tippy('.compare-tippy-mobile', {
+		theme: 'custom',
+		interactive: true,
+		trigger: 'click',
+	});
+
 	tippy('.compare-tippy', {
 		theme: 'custom',
 	});
