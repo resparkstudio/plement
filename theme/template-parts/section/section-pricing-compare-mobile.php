@@ -66,7 +66,7 @@ function mobile_pricing_accordion_body( $features, $index ) {
 						<div class="relative">
 							<div class="text-bodyRegular max-w-[243px] split-text flex gap-[0.4em] flex-wrap">
 								<?php echo esc_html( $feature['title'] ) ?>
-								<svg class="compare-tippy-mobile min-w-[17px] min-h-[17px] cursor-pointer"
+								<svg class="compare-tippy min-w-[17px] min-h-[17px] cursor-pointer"
 									data-tippy-content="<?php echo esc_attr( $feature['popup_text'] ) ?>" width="17" height="17"
 									viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"

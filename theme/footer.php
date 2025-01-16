@@ -30,8 +30,7 @@ $calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
 	tippy('.compare-tippy', {
 		theme: 'custom',
 	});
-
-	tippy('.compare-tippy-mobile', {
+	tippy('.tippy-test', {
 		theme: 'custom',
 	});
 
