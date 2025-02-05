@@ -50,6 +50,7 @@ function mobile_menu( $links ) {
 					<?php echo esc_html_e( 'Home', 'plmt' ) ?>
 				</a>
 			</li>
+			<?php services_link( links: $links ); ?>
 			<li class="text-button">
 				<a href="<?php echo esc_url( home_url( '/case-studies' ) ) ?>">
 					<?php echo esc_html_e( 'Case studies', 'plmt' ) ?>
@@ -186,7 +187,7 @@ function services_column( $links ) {
 		</div>
 		<div
 			class="text-center border-t border-t-[#FFFFFF4D] pt-1 md:pt-6 text-[0.875rem] leading-[1.3125rem] font-medium flex flex-col-reverse md:flex-row gap-2 md:gap-5">
-			<span><?php esc_html_e( '© 2024 Plement. All rights reserved.', 'plmt' ) ?></span>
+			<span><?php esc_html_e( '© 2025 Plement, MB.', 'plmt' ) ?></span>
 			<div class="flex flex-col md:flex-row gap-2 md:gap-5">
 				<span class="hidden md:inline">|</span>
 				<a class="underline md:no-underline"

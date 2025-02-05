@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.32
+Version: 0.1.33
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2064,11 +2064,6 @@ div.wpcf7-validation-errors {
   margin-right: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-\[4px\] {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -2302,6 +2297,10 @@ div.wpcf7-validation-errors {
   height: 14px;
 }
 
+.h-\[17px\] {
+  height: 17px;
+}
+
 .h-\[19px\] {
   height: 19px;
 }
@@ -2382,10 +2381,6 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .min-h-6 {
   min-height: 1.5rem;
 }
@@ -2458,10 +2453,6 @@ div.wpcf7-validation-errors {
   width: 1.125rem;
 }
 
-.w-\[100px\] {
-  width: 100px;
-}
-
 .w-\[11\.5rem\] {
   width: 11.5rem;
 }
@@ -2472,6 +2463,10 @@ div.wpcf7-validation-errors {
 
 .w-\[15px\] {
   width: 15px;
+}
+
+.w-\[17px\] {
+  width: 17px;
 }
 
 .w-\[1px\] {
@@ -2545,10 +2540,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .min-w-6 {
@@ -3213,11 +3204,6 @@ div.wpcf7-validation-errors {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-chipGray {
@@ -5201,6 +5187,10 @@ div.wpcf7-validation-errors {
 
 .\[\&_img\]\:h-\[61px\] img {
   height: 61px;
+}
+
+.\[\&_img\]\:w-auto img {
+  width: auto;
 }
 
 .\[\&_img\]\:max-w-\[340px\] img {
