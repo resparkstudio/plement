@@ -13,28 +13,27 @@
 				?>
 				<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
-						<?php if ( $thumbnail ) { ?>
-							<div>
-								<div class="flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
-									<img src="<?php echo esc_url( $thumbnail ); ?>"
-										alt="<?php echo esc_attr( $case_study->post_title ); ?>">
+						<div>
+							<?php if ( $thumbnail ) { ?>
+								<div>
+									<div class="flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
+										<img src="<?php echo esc_url( $thumbnail ); ?>"
+											alt="<?php echo esc_attr( $case_study->post_title ); ?>">
+									</div>
 								</div>
-							</div>
-						<?php } ?>
-						<div class="max-w-[43.5rem] w-full">
-							<header class="mb-5 lg:mb-9">
+							<?php } ?>
+							<header class="mb-5 lg:mt-6 lg:mb-9">
 								<h2 class="text-h5Bold">
 									<?php
 									echo get_the_title( $case_study->ID );
 									?>
 								</h2>
 							</header><!-- .entry-header -->
-
-
 							<div class="border-l-2 border-l-accent pl-5 mb-5 lg:mb-9">
 								<?php echo get_the_excerpt( $case_study->ID ) ?>
 							</div><!-- .entry-content -->
-
+						</div>
+						<div class="max-w-[43.5rem] w-full">
 							<div>
 								<?php
 								$category = get_the_category( $case_study->ID );
