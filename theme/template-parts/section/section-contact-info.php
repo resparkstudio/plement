@@ -8,8 +8,8 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 
 ?>
 
-<div class="h-full p-5 lg:p-10 flex flex-col lg:justify-between bg-mainBlack text-white" x-data="{calendlyOpen: false}">
-	<?php plmt_button_with_arrow( "calendlyOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
+<div class="h-full p-5 lg:p-10 flex flex-col lg:justify-between bg-mainBlack text-white" x-data="{filloutOpen: false}">
+	<?php plmt_button_with_arrow( "filloutOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
 		"classes" => "contact-button mb-10 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent",
 	) ) ?>
 	<div>
@@ -48,5 +48,5 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 			</div>
 		</div>
 	</div>
-	<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
+	<?php get_template_part( 'template-parts/content/content-fillout-modal' ); ?>
 </div>

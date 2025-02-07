@@ -43,8 +43,19 @@
 			</a>
 		</div>
 		<div
-			class="flex-shrink-0 [&_img]:w-auto [&_img]:h-[100px] [&_img]:object-contain [&_img]:lg:h-[197px] lg:flex items-center">
-			<?php plmt_post_thumbnail(); ?>
+			class="flex-shrink-0 [&_img]:w-auto [&_img]:h-[100px] [&_img]:object-contain [&_img]:lg:h-[197px] lg:flex items-center lg:bg-white">
+			<div class="hidden lg:block">
+				<?php plmt_post_thumbnail(); ?>
+			</div>
+			<div class="lg:hidden">
+				<?php $mobile_image = get_field( 'mobile_image' );
+				if ( $mobile_image ) : ?>
+					<img src="<?php echo esc_url( $mobile_image['url'] ); ?>"
+						alt="<?php echo esc_attr( $mobile_image['alt'] ); ?>" class="w-full h-auto">
+				<?php else : ?>
+					<?php plmt_post_thumbnail(); ?>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </article><!-- #post-${ID} -->
