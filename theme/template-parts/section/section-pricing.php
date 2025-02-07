@@ -32,7 +32,7 @@ function currency_switch() {
 	<?php
 }
 
-function calendly_modal() {
+function fillout_modal() {
 	?>
 	<div @keydown.escape.window="modalOpen = false" class="relative z-50 w-auto h-auto">
 		<template x-teleport="body">
@@ -57,7 +57,10 @@ function calendly_modal() {
 						</svg>
 					</button>
 					<div class="flex flex-col items-start justify-center">
-						<div id="calendlyDiv" class="h-[600px] lg:h-[1000px] lg:max-h-[94vh] min-w-[320px] w-full"></div>
+						<div class="pricing-fillout" style="width:100%;height:500px;" data-fillout-id="9SvwFGShaWus"
+							data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize>
+						</div>
+						<script src="https://server.fillout.com/embed/v1/"></script>
 					</div>
 				</div>
 			</div>
@@ -103,7 +106,7 @@ function package_cards_mobile( $packages ) {
 							<div class="mb-6">
 								<?php echo esc_html( $package['description'] ) ?>
 							</div>
-							<?php plmt_button( "modalOpen=true", esc_html__( 'Choose Package', 'plmt' ), array(
+							<?php plmt_button( "modalOpen=true;selectedPackage='" . esc_js( $package['title'] ) . "'", esc_html__( 'Choose Package', 'plmt' ), array(
 								"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 								"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
 								"is_button" => true,
@@ -183,12 +186,13 @@ function package_cards( $packages ) {
 										<?php echo esc_html( $package['description'] ) ?>
 									</div>
 								</div>
-								<?php plmt_button( "modalOpen=true", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
+								<?php plmt_button( "modalOpen=true;selectedPackage='" . esc_js( $package['title'] ) . "'", esc_html__( 'Choose ' . $package['title'], 'plmt' ), array(
 									"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 									"variant" => ! $package['is_best_value'] ? 'secondary' : 'primary',
 									"is_button" => true,
 									"value" => $package['title']
 								) ) ?>
+
 								<?php if ( isset( $package['services'] ) ) : ?>
 									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
 										<?php foreach ( $package['services'] as $service ) : ?>
@@ -249,5 +253,5 @@ function package_cards( $packages ) {
 	<div class="lg:hidden">
 		<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
 	</div>
-	<?php calendly_modal() ?>
+	<?php fillout_modal() ?>
 </div>

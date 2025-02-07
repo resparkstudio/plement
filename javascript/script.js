@@ -79,36 +79,11 @@ const processLineAnimation = function () {
 document.querySelectorAll('.pricing-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const value = e.target.value;
-		if (document.getElementById('calendlyDiv').hasChildNodes()) {
-			document.getElementById('calendlyDiv').innerHTML = '';
-		}
 
-		const calendlyUrlElement = document.querySelector('.calendly-url-packages');
-		const calendlyUrl = calendlyUrlElement.dataset.url;
+		const filloutDiv = document.querySelector('.pricing-fillout');
 
-		if (calendlyUrl) {
-			Calendly.initInlineWidget({
-				url: `${calendlyUrl}&a2=${value}`,
-				parentElement: document.getElementById('calendlyDiv'),
-			});
-		}
-	});
-});
-
-document.querySelectorAll('.contact-button').forEach((button) => {
-	button.addEventListener('click', () => {
-		if (document.getElementById('calendlyDiv').hasChildNodes()) {
-			document.getElementById('calendlyDiv').innerHTML = '';
-		}
-
-		const calendlyUrlElement = document.querySelector('.calendly-url-contact');
-		const calendlyUrl = calendlyUrlElement.dataset.url;
-
-		if (calendlyUrl) {
-			Calendly.initInlineWidget({
-				url: calendlyUrl,
-				parentElement: document.getElementById('calendlyDiv'),
-			});
+		if (filloutDiv) {
+			filloutDiv.dataset.source = `Package ${value}`;
 		}
 	});
 });

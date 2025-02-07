@@ -116,7 +116,7 @@ function services_column( $links ) {
 }
 ?>
 
-<footer id="colophon" class="bg-mainBlack text-white z-0 relative" x-data="{calendlyOpen: false}">
+<footer id="colophon" class="bg-mainBlack text-white z-0 relative" x-data="{filloutOpen: false}">
 	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
 		<div
 			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:grid-cols-4 lg:justify-between lg:mb-[104px]">
@@ -197,7 +197,7 @@ function services_column( $links ) {
 					href="<?php echo esc_url( home_url( '/terms-and-conditions' ) ) ?>"><?php esc_html_e( 'Terms and conditions', 'plmt' ) ?></a>
 			</div>
 		</div>
-		<?php get_template_part( 'template-parts/content/content-calendly-modal' ); ?>
+		<?php get_template_part( 'template-parts/content/content-fillout-modal' ); ?>
 
 	</div>
 </footer><!-- #colophon -->
