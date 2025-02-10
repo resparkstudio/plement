@@ -9,15 +9,15 @@
 			) );
 
 			foreach ( $case_studies as $case_study ) {
-				$thumbnail = get_the_post_thumbnail_url( $case_study->ID, 'medium' );
+				$mobile_image = get_field( 'mobile_image', $case_study->ID );
 				?>
 				<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 						<div>
-							<?php if ( $thumbnail ) { ?>
+							<?php if ( $mobile_image ) { ?>
 								<div>
 									<div class="flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
-										<img src="<?php echo esc_url( $thumbnail ); ?>"
+										<img src="<?php echo esc_url( $mobile_image['url'] ); ?>"
 											alt="<?php echo esc_attr( $case_study->post_title ); ?>">
 									</div>
 								</div>

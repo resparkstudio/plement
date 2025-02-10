@@ -43,15 +43,17 @@ if ( empty( $case_studies ) ) {
 			<div class="swiper-wrapper !flex">
 				<?php
 				foreach ( $case_studies as $case_study ) {
-					$thumbnail = get_the_post_thumbnail_url( $case_study->ID, 'medium' );
+					$mobile_image = get_field( 'mobile_image', $case_study->ID );
 					?>
 					<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
 						<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
-							<div class="flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
-								<img src="<?php echo esc_url( $thumbnail ); ?>"
-									alt="<?php echo esc_attr( $case_study->post_title ); ?>">
-							</div>
-							<div class="max-w-[43.5rem] w-full">
+							<div>
+								<?php if ( $mobile_image ) : ?>
+									<div class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
+										<img src="<?php echo esc_url( $mobile_image['url'] ); ?>"
+											alt="<?php echo esc_attr( $case_study->post_title ); ?>">
+									</div>
+								<?php endif; ?>
 								<header class="mb-5 lg:mb-9">
 									<h2 class="text-h5Bold">
 										<?php
@@ -64,7 +66,8 @@ if ( empty( $case_studies ) ) {
 								<div class="border-l-2 border-l-accent pl-5 mb-5 lg:mb-9">
 									<?php echo get_the_excerpt( $case_study->ID ) ?>
 								</div><!-- .entry-content -->
-
+							</div>
+							<div class="max-w-[43.5rem] w-full">
 								<div>
 									<?php
 									$category = get_the_category( $case_study->ID );
