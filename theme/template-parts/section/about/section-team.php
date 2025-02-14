@@ -66,7 +66,7 @@ function step_card( $step, $index ) {
 			<div class="lg:max-w-[40.25rem] w-full">
 				<img class="w-full" src="<?php echo esc_url( $team_content['image']['url'] ) ?>"
 					alt="<?php esc_attr_e( $team_content['image']['alt'] ) ?>">
-				<div class="flex justify-between mt-3 px-4 lg:px-0">
+				<div class="flex justify-between mt-3 px-4 lg:px-0 flex-wrap gap-1">
 
 					<a class="flex items-center gap-3 text-title underline hover:text-accentHover transition duration-200 ease-in-out"
 						href="<?php esc_url( $team_content['linkedin']['name']['url'] ) ?>"
