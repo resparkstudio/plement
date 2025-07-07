@@ -19,23 +19,15 @@ const getParamValue = (param) => {
 };
 
 const categoryFilter = document.querySelectorAll('.category-filter');
-const filterCaseStudies = (category) => {
-	//get current category filter from URL
-	const currentCategory = getParamValue('category');
+const toolFilter = document.querySelectorAll('.tool-filter');
 
-	//if the category is the same as the current category, remove that specific category from the URL
-	let updatedFilter = category;
-	if (currentCategory) {
-		if (!category) {
-			updatedFilter = '';
-		} else if (currentCategory.includes(category)) {
-			updatedFilter = currentCategory.replace(category, '');
-		} else {
-			updatedFilter = currentCategory + ',' + category;
-		}
-	}
+const filterCaseStudies = (category, tool) => {
+	// Set the filters directly (no multiple selection logic)
+	const updatedCategoryFilter = category || '';
+	const updatedToolFilter = tool || '';
 
-	setQueryParams('category', updatedFilter);
+	setQueryParams('category', updatedCategoryFilter);
+	setQueryParams('tool', updatedToolFilter);
 
 	fetch('/wp-admin/admin-ajax.php', {
 		method: 'POST',
@@ -44,25 +36,38 @@ const filterCaseStudies = (category) => {
 		},
 		body: new URLSearchParams({
 			action: 'filter_case_studies',
-			category: updatedFilter || 'all',
+			category: category || 'all',
+			tool: tool || 'all',
 		}),
 	}).then((response) => {
 		response.json().then((response) => {
 			const caseStudies = document.querySelector('.case-studies-container');
 			caseStudies.innerHTML = response.html;
 
+			// Remove active class from all category filters first
 			categoryFilter.forEach((filter) => {
 				filter.classList.remove('active');
+			});
 
-				const filterWithoutSeparator = updatedFilter.replace(/,/g, '');
-
-				if (filterWithoutSeparator === '' && !filter.value) {
+			// Add active class only to the selected category filter
+			categoryFilter.forEach((filter) => {
+				if (updatedCategoryFilter === '' && !filter.value) {
 					filter.classList.add('active');
-					setQueryParams('category', '');
-					return;
+				} else if (filter.value && filter.value === updatedCategoryFilter) {
+					filter.classList.add('active');
 				}
+			});
 
-				if (filter.value && updatedFilter.includes(filter.value)) {
+			// Remove active class from all tool filters first
+			toolFilter.forEach((filter) => {
+				filter.classList.remove('active');
+			});
+
+			// Add active class only to the selected tool filter
+			toolFilter.forEach((filter) => {
+				if (updatedToolFilter === '' && !filter.value) {
+					filter.classList.add('active');
+				} else if (filter.value && filter.value === updatedToolFilter) {
 					filter.classList.add('active');
 				}
 			});
@@ -80,7 +85,7 @@ const filterCaseStudies = (category) => {
 };
 
 const loadMoreButton = document.querySelector('.load-more-button');
-const loadMoreCaseStudies = (page, category) => {
+const loadMoreCaseStudies = (page, category, tool) => {
 	fetch('/wp-admin/admin-ajax.php', {
 		method: 'POST',
 		headers: {
@@ -90,6 +95,7 @@ const loadMoreCaseStudies = (page, category) => {
 			action: 'load_more_case_studies',
 			page: page,
 			category: category || 'all',
+			tool: tool || 'all',
 		}),
 	}).then((response) => {
 		response.json().then((response) => {
@@ -104,10 +110,26 @@ const loadMoreCaseStudies = (page, category) => {
 };
 
 let page = 0;
+
+// Category filter event listeners
 categoryFilter.forEach((filter) => {
 	filter.addEventListener('click', () => {
 		page = 0;
-		filterCaseStudies(filter.value);
+		const categoryValue = filter.getAttribute('data-value');
+		const currentTool = getParamValue('tool');
+
+		filterCaseStudies(categoryValue, currentTool);
+	});
+});
+
+// Tool filter event listeners
+toolFilter.forEach((filter) => {
+	filter.addEventListener('click', () => {
+		page = 0;
+		const toolValue = filter.getAttribute('data-value');
+		const currentCategory = getParamValue('category');
+
+		filterCaseStudies(currentCategory, toolValue);
 	});
 });
 
@@ -115,6 +137,7 @@ if (loadMoreButton) {
 	loadMoreButton.addEventListener('click', () => {
 		page++;
 		const currentCategory = getParamValue('category');
-		loadMoreCaseStudies(page, currentCategory);
+		const currentTool = getParamValue('tool');
+		loadMoreCaseStudies(page, currentCategory, currentTool);
 	});
 }

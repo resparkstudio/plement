@@ -50,6 +50,7 @@ module.exports = {
 				grayBorder: '#D6D6D6',
 				inputGray: '#F3F4F4',
 				chipGray: '#243135',
+				darkGray2: '#1F2E34',
 			},
 			boxShadow: {
 				testimonial: '5px 5px 30px -5px #012D191A',
@@ -83,17 +84,25 @@ module.exports = {
 			fontSize: {
 				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
 				displayLarge: ['4.25rem', { lineHeight: '4.25rem', fontWeight: '900' }],
+				displayLargeMobile: [
+					'2.5rem',
+					{ lineHeight: '110%', fontWeight: '800' },
+				],
 				title: ['1.125rem', { lineHeight: '1.4625rem', fontWeight: '500' }],
+				titleMobile: ['1rem', { lineHeight: '120%', fontWeight: '400' }],
 				bodySmall: ['0.875rem', { lineHeight: '1.05rem', fontWeight: '400' }],
 				bodyBold: ['1rem', { lineHeight: '1.2rem', fontWeight: '700' }],
 				bodyRegular: ['1rem', { lineHeight: '1.3rem', fontWeight: '400' }],
 				h1: ['3.375rem', { lineHeight: '3.375rem', fontWeight: '800' }],
 				h1Mobile: ['2.5rem', { lineHeight: '2.5rem', fontWeight: '800' }],
 				h2: ['3rem', { lineHeight: '3.3rem', fontWeight: '800' }],
+				h2Mobile: ['2rem', { lineHeight: '100%', fontWeight: '800' }],
 				h3: ['2.75rem', { lineHeight: '2.75rem', fontWeight: '800' }],
 				h4Regular: ['2rem', { lineHeight: '2.4rem', fontWeight: '400' }],
 				h4Bold: ['2rem', { lineHeight: '2rem', fontWeight: '700' }],
+				h4BoldMobile: ['1.5rem', { lineHeight: '100%', fontWeight: '700' }],
 				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
+				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 			},
 			transitionDuration: {

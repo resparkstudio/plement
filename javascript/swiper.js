@@ -110,6 +110,17 @@ function initSwiper() {
 		slidesPerView: 'auto',
 		spaceBetween: 8,
 	});
+
+	new Swiper('.compare-swiper', {
+		modules: [Pagination],
+		slidesPerView: 1.1,
+		spaceBetween: 16,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+	});
 }
 
 export default initSwiper;

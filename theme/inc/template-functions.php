@@ -369,125 +369,6 @@ function plmt_modify_case_study_archive_query( $query ) {
 }
 add_action( 'pre_get_posts', 'plmt_modify_case_study_archive_query' );
 
-
-function filter_case_studies() {
-	$category = $_POST['category'];
-
-	// Sanitize input
-	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
-
-	$categories_array = explode( ',', string: $category );
-	$categories_array = array_filter( $categories_array );
-
-	$tax_query = array();
-
-	if ( $category !== 'all' && ! empty( $categories_array ) ) {
-		$tax_query = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'slug',
-				'terms' => $categories_array,
-			),
-		);
-	}
-
-
-	$ajaxposts = new WP_Query(
-		array(
-			'post_type' => 'case-study',
-			'posts_per_page' => 6,
-			'paged' => 1,
-			'order' => 'desc',
-			'tax_query' => $tax_query,
-		)
-	);
-
-	// wp_send_json($ajaxposts);
-	$response = '';
-
-	if ( $ajaxposts->have_posts() ) {
-		while ( $ajaxposts->have_posts() ) :
-			$ajaxposts->the_post();
-			ob_start();
-			get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
-			$response .= ob_get_clean();
-		endwhile;
-	} else {
-		$response = 'No case studies found';
-	}
-
-	$more_count = $ajaxposts->found_posts - 3;
-
-	wp_send_json( array( 'html' => $response, 'moreCount' => $more_count >= 0 ? $more_count : 0 ) );
-	exit;
-}
-add_action( 'wp_ajax_filter_case_studies', 'filter_case_studies' );
-add_action( 'wp_ajax_nopriv_filter_case_studies', 'filter_case_studies' );
-
-function load_more_case_studies() {
-	$paged          = $_POST['page'] + 1;
-	$posts_per_page = 3;
-
-	$category = $_POST['category'];
-
-	// Sanitize input
-	$category = isset( $_POST['category'] ) ? sanitize_text_field( $_POST['category'] ) : '';
-
-	$categories_array = explode( ',', string: $category );
-	$categories_array = array_filter( $categories_array );
-
-	$tax_query = array();
-
-	if ( $category !== 'all' && ! empty( $categories_array ) ) {
-		$tax_query = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'slug',
-				'terms' => $categories_array,
-			),
-		);
-	}
-
-	$ajaxposts = new WP_Query(
-		array(
-			'post_type' => 'case-study',
-			'posts_per_page' => $posts_per_page,
-			'paged' => $paged,
-			'order' => 'desc',
-			'tax_query' => $tax_query,
-		)
-	);
-
-
-	$response = '';
-
-	if ( $ajaxposts->have_posts() ) {
-		while ( $ajaxposts->have_posts() ) :
-			$ajaxposts->the_post();
-			ob_start();
-			get_template_part( 'template-parts/content/content', 'case-study', array( 'taxonomy' => 'category' ) );
-			$response .= ob_get_clean();
-		endwhile;
-	} else {
-		$response = 'No case studies found';
-	}
-
-	$has_more_posts = $ajaxposts->max_num_pages > $paged;
-
-	wp_send_json(
-		array(
-			'html' => $response,
-			'has_more_posts' => $has_more_posts,
-			'tax_query' => $tax_query,
-		)
-	);
-
-	exit;
-}
-
-add_action( 'wp_ajax_load_more_case_studies', 'load_more_case_studies' );
-add_action( 'wp_ajax_nopriv_load_more_case_studies', 'load_more_case_studies' );
-
 function success_modal() {
 	plmt_modal( "successModalOpen", function () {
 		?>
@@ -507,5 +388,73 @@ function success_modal() {
 			<?php
 	} )
 		?>
+		<?php
+}
+
+function plmt_tool_tag( $tool ) {
+	$tool_icon = get_field( 'icon', $tool->taxonomy . '_' . $tool->term_id );
+
+	if ( $tool_icon ) {
+		$icon_html = '<img src="' . esc_url( $tool_icon['url'] ) . '" alt="' . esc_attr( $tool_icon['alt'] ) . '" class="w-4 lg:w-5 h-auto shrink-0">';
+	} else {
+		$icon_html = '';
+	}
+
+	$tool_name = esc_html( $tool->name );
+
+	?>
+		<div
+			class="bg-accent/10 text-accent p-2 lg:text-bodyBold absolute top-4 right-4 flex items-center gap-1 text-bodySmall font-bold">
+			<?php echo $icon_html; ?>
+			<?php echo esc_html( $tool_name ); ?>
+		</div>
+		<?php
+}
+
+function plmt_dropdown( $options, $button_text = 'Select Item', $button_class = '' ) {
+	?>
+		<div class="relative" x-data="{selectOpen: false, selectedItem: {value: 'all', title: 'All'}}"
+			@click.away="selectOpen = false">
+			<button @click="selectOpen = !selectOpen" :class="{ 'bg-mainBlack text-white' : selectOpen }"
+				class="relative min-h-[39px] flex items-center justify-between w-full py-[0.625rem] pl-4 pr-[2.625rem] text-left bg-lightGrayBg cursor-default text-darkGray focus:outline-none text-bodySmall font-bold lg:text-bodyBold">
+				<span x-text="selectedItem ? `<?php echo esc_attr( $button_text ) ?> ${selectedItem.title}` : 'Select Item'"
+					class="truncate">
+					<?php echo esc_html( $button_text ); ?> <span x-text="selectedItem.title"></span>
+				</span>
+				<span class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+					<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+						:class="{ 'rotate-180' : selectOpen }">
+						<path
+							d="M13.4619 6.30865C13.4241 6.21729 13.36 6.1392 13.2778 6.08426C13.1956 6.02932 13.0989 6 13 6H3C2.90111 6 2.80444 6.02932 2.72221 6.08427C2.63999 6.13921 2.5759 6.2173 2.53806 6.30866C2.50022 6.40003 2.49031 6.50056 2.50961 6.59755C2.5289 6.69455 2.57653 6.78364 2.64646 6.85356L7.64646 11.8535C7.69288 11.9 7.748 11.9368 7.80866 11.9619C7.86932 11.9871 7.93434 12 8 12C8.06566 12 8.13068 11.9871 8.19134 11.9619C8.252 11.9368 8.30712 11.9 8.35355 11.8535L13.3535 6.85356C13.4235 6.78364 13.4711 6.69454 13.4904 6.59755C13.5097 6.50056 13.4998 6.40002 13.4619 6.30865Z"
+							fill="currentColor" />
+					</svg>
+
+				</span>
+			</button>
+			<ul x-show="selectOpen"
+				class="absolute z-[100] w-full py-3 mt-0.5 overflow-auto text-bodySmall font-bold lg:text-bodyBold bg-mainBlack ring-1 ring-black ring-opacity-5 focus:outline-none"
+				x-cloak>
+				<li data-value="all"
+					@click="selectedItem = { value: 'all', title: '<?php echo esc_js( 'All' ); ?>' }; selectOpen = false"
+					class="relative z-[100] flex items-center h-full pb-[0.3125rem] pl-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
+					<?php esc_html_e( 'All', 'plmt' ); ?>
+				</li>
+				<?php foreach ( $options as $value => $label ) : ?>
+					<li data-value="<?php echo esc_attr( $value ); ?>"
+						@click="selectedItem = { value: '<?php echo esc_js( $value ); ?>', title: '<?php echo esc_js( $label ); ?>' }; selectOpen = false"
+						class="relative z-[100] flex items-center h-full py-[0.3125rem] pl-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
+						<svg x-show="selectedItem.value==item.value"
+							class="absolute left-0 w-4 h-4 ml-2 stroke-current text-neutral-400"
+							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="20 6 9 17 4 12"></polyline>
+						</svg>
+						<span class="block truncate">
+							<?php echo esc_html( $label ); ?>
+						</span>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
 		<?php
 }

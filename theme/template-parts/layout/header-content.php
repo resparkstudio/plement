@@ -17,10 +17,10 @@
 
 <header id="masthead" x-data="{menuOpen: false}" class="sticky top-0 z-[1000]">
 	<div
-		class="flex items-center justify-between z-[100] bg-white container lg:max-w-none lg:p-0 lg:border-b lg:border-b-textSecondary">
+		class="flex items-center justify-between z-[100] bg-mainBlack container lg:max-w-none lg:p-0 lg:border-b lg:border-b-darkGray">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="lg:border-r border-r-textSecondary py-[1.0625rem] lg:px-[75px]">
+				class="lg:border-r border-r-darkGray py-[1.0625rem] lg:px-[75px]">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
 					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
 			</a>
@@ -44,10 +44,10 @@
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
-					<li class="border-r-textSecondary h-full w-full border-r" <?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
+					<li class="text-white border-r-darkGray h-full w-full border-r" <?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
 						@click='overlayOpen = <?php echo $has_children ? '!overlayOpen' : 0 ?>'>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="group flex items-center justify-center h-full w-full text-bodyBold transition-colors duration-300 hover:bg-accent <?php echo $is_contact_us ? 'text-accent gap-2' : '' ?>"
+							class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300 hover:bg-accent <?php echo $is_contact_us ? 'text-accent gap-2' : '' ?>"
 							:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
 							<span class="group-hover:text-white">
 								<?php echo esc_html( $item['title'] ); ?>
@@ -67,24 +67,43 @@
 						<?php if ( $has_children ) : ?>
 
 							<ul x-cloak x-show='overlayOpen'
-								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-[5rem] bg-white z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
+								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-[5rem] bg-mainBlack z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
 								role='menu' aria-orientation='vertical' tabindex='-1'
 								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
 								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
 								x-transition:leave-end="opacity-0">
-								<?php foreach ( $item['children'] as $child ) : ?>
-									<li class="hover:bg-[#E8E8E8] transition-colors duration-300 ease-in-out">
+								<?php foreach ( $item['children'] as $child ) :
+									$bullets = get_field( 'bullets', $child['ID'] );
+									?>
+									<li class="hover:bg-darkGray2 transition-colors duration-300 ease-in-out">
 										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
 											class="inline-block py-[3.5625rem] px-10">
-											<img class="w-5 h-5 mb-3" src="<?php echo esc_url( $child['image']['url'] ) ?>"
-												alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
-											<p class="text-h5Bold mb-4">
-												<?php echo esc_html( $child['title'] ); ?>
-											</p>
+											<div class="flex items-center gap-2 mb-4">
+												<img class="w-5 h-5" src="<?php echo esc_url( $child['image']['url'] ) ?>"
+													alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
+												<p class="text-h5Bold">
+													<?php echo esc_html( $child['title'] ); ?>
+												</p>
+											</div>
 											<?php if ( isset( $child['description'] ) ) : ?>
-												<p class="text-bodyRegular text-darkGray">
+												<p class="text-bodyRegular text-textSecondary">
 													<?php echo esc_html( $child['description'] ); ?>
 												</p>
+											<?php endif; ?>
+											<?php if ( $bullets ) : ?>
+												<ul class="mt-4 space-y-2">
+													<?php foreach ( $bullets as $bullet ) : ?>
+														<li class="flex items-center gap-2">
+															<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+																xmlns="http://www.w3.org/2000/svg">
+																<circle cx="8" cy="8" r="2" fill="#B2B2B2" />
+															</svg>
+															<span class="text-bodySmall text-textSecondary">
+																<?php echo esc_html( $bullet['item'] ); ?>
+															</span>
+														</li>
+													<?php endforeach; ?>
+												</ul>
 											<?php endif; ?>
 										</a>
 									</li>

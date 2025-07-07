@@ -10,7 +10,7 @@
 ?>
 
 <article id="case-study-<?php the_ID(); ?>"
-	class="flex flex-col-reverse lg:flex-row justify-between bg-lightGrayBg p-5 lg:p-10 gap-5">
+	class="flex flex-col-reverse lg:flex-row justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 relative">
 	<div href="<?php echo esc_url( get_permalink() ); ?>"
 		class="flex flex-col-reverse lg:flex-row justify-between gap-5 w-full no-underline text-inherit">
 		<div class="max-w-[43.5rem] w-full">
@@ -42,8 +42,14 @@
 				<span class="text-bodyBold"><?php esc_html_e( 'READ THE FULL CASE STUDY', 'plmt' ); ?></span>
 			</a>
 		</div>
+		<?php
+		//get tool taxonomy
+		$tools = get_the_terms( get_the_ID(), 'tool' );
+		if ( $tools ) :
+			plmt_tool_tag( $tools[0] );
+		endif; ?>
 		<div
-			class="flex-shrink-0 [&_img]:w-auto [&_img]:h-[100px] [&_img]:object-contain [&_img]:lg:h-[197px] lg:flex items-center lg:bg-white">
+			class="flex-shrink-0 [&_img]:w-auto [&_img]:h-[100px] [&_img]:object-contain [&_img]:lg:h-[197px] lg:flex items-center">
 			<div class="hidden lg:block">
 				<?php plmt_post_thumbnail(); ?>
 			</div>
