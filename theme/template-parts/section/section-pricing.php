@@ -113,11 +113,11 @@ function package_cards_mobile( $packages ) {
 								"value" => $package['title']
 							) ) ?>
 							<?php if ( isset( $package['services'] ) ) : ?>
-								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
+								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-5 mt-5">
 									<?php foreach ( $package['services'] as $service ) : ?>
 										<div class="flex items-start gap-2">
-											<svg class="flex-shrink-0 w-[14px] h-[14px]" width="16" height="17" viewBox="0 0 16 17"
-												fill="none" xmlns="http://www.w3.org/2000/svg">
+											<svg class="flex-shrink-0 w-[1.125rem] h-[1.125rem]" width="16" height="17"
+												viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
 													stroke-linecap="round" stroke-linejoin="round" />
 											</svg>
@@ -213,15 +213,15 @@ function package_cards( $packages ) {
 								) ) ?>
 
 								<?php if ( isset( $package['services'] ) ) : ?>
-									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
+									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-4 mt-4">
 										<?php foreach ( $package['services'] as $service ) : ?>
 											<div class="flex items-start gap-2">
-												<svg class="flex-shrink-0 w-[14px] h-[14px]" width="16" height="17" viewBox="0 0 16 17"
-													fill="none" xmlns="http://www.w3.org/2000/svg">
+												<svg class="flex-shrink-0 w-[1.125rem] h-[1.125rem]" width="16" height="17"
+													viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
 														stroke-linecap="round" stroke-linejoin="round" />
 												</svg>
-												<p class="text-bodySmall"><?php echo esc_html( $service['service'] ) ?></p>
+												<p class="text-bodyRegular"><?php echo esc_html( $service['service'] ) ?></p>
 											</div>
 										<?php endforeach; ?>
 									</div>
