@@ -2734,12 +2734,20 @@ div.wpcf7-validation-errors {
   max-width: 52.6875rem;
 }
 
+.max-w-\[54\.375rem\] {
+  max-width: 54.375rem;
+}
+
 .max-w-\[652px\] {
   max-width: 652px;
 }
 
 .max-w-\[680px\] {
   max-width: 680px;
+}
+
+.max-w-\[9\.25rem\] {
+  max-width: 9.25rem;
 }
 
 .max-w-\[95\%\] {
@@ -5013,6 +5021,10 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-2xl {
     max-width: 42rem;
+  }
+
+  .lg\:max-w-\[14\.6875rem\] {
+    max-width: 14.6875rem;
   }
 
   .lg\:max-w-\[1440px\] {

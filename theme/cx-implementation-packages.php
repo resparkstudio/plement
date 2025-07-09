@@ -16,7 +16,8 @@ $description = get_field( 'description' );
 
 <section class="relative z-10 bg-white pb-[7.5rem]">
 	<?php get_template_part( 'template-parts/section/zendesk/section-hero' ) ?>
-	<div class="bg-lightGrayBg pb-7 lg:pb-16">
+	<?php get_template_part( 'template-parts/section/zendesk/section-info' ) ?>
+	<div class="bg-lightGrayBg mt-6 lg:mt-20 pb-7 lg:pb-16">
 		<div
 			class="container pt-6 pb-[5.75rem] space-y-4 lg:pt-20 lg:pb-[3.9375rem] lg:text-center lg:max-w-[39.75rem] lg:mx-auto lg:space-y-6">
 			<?php if ( $heading ) : ?>
