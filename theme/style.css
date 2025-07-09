@@ -2754,6 +2754,14 @@ div.wpcf7-validation-errors {
   max-width: 24rem;
 }
 
+.max-w-\[25rem\] {
+  max-width: 25rem;
+}
+
+.max-w-\[21\.875rem\] {
+  max-width: 21.875rem;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -3821,6 +3829,10 @@ div.wpcf7-validation-errors {
   padding-top: 8.25rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3963,6 +3975,10 @@ div.wpcf7-validation-errors {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[3rem\] {
+  font-size: 3rem;
 }
 
 .font-bold {
@@ -5195,6 +5211,10 @@ div.wpcf7-validation-errors {
     gap: 8.375rem;
   }
 
+  .lg\:gap-12 {
+    gap: 3rem;
+  }
+
   .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -5444,6 +5464,10 @@ div.wpcf7-validation-errors {
     padding-top: 8.75rem;
   }
 
+  .lg\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
   .lg\:text-left {
     text-align: left;
   }
@@ -5548,6 +5572,10 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
+  }
+
+  .lg\:text-\[5\.625rem\] {
+    font-size: 5.625rem;
   }
 
   .lg\:font-extrabold {

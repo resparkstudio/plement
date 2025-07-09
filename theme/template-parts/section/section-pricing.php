@@ -246,12 +246,6 @@ function package_cards( $packages ) {
 			</div>
 		</div>
 	</div>
-	<div class="hidden lg:block">
-		<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
-	</div>
 
-	<div class="lg:hidden">
-		<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
-	</div>
 	<?php fillout_modal() ?>
 </div>

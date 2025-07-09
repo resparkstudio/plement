@@ -67,7 +67,7 @@
 						<?php if ( $has_children ) : ?>
 
 							<ul x-cloak x-show='overlayOpen'
-								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-3 top-[5rem] bg-mainBlack z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
+								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem] bg-mainBlack z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
 								role='menu' aria-orientation='vertical' tabindex='-1'
 								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
 								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
