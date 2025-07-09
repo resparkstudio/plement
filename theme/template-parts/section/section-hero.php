@@ -33,7 +33,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 					<?php plmt_button( home_url( path: '/contact-us' ), esc_html__( 'Contact Us', 'plmt' ), array(
 						'classes' => 'w-full justify-center lg:w-auto lg:px-[5.625rem] lg:py-5'
 					) ) ?>
-					<?php plmt_button( '#services', esc_html__( 'Our services', 'plmt' ), array( 'classes' => 'h-full w-full justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5', 'variant' =>
+					<?php plmt_button( '#services', esc_html__( 'Our services', 'plmt' ), array( 'classes' => 'h-full w-full justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5 text-white border-darkGray2 !bg-darkGray2', 'variant' =>
 						'secondary' ) ) ?>
 				</div>
 			</div>

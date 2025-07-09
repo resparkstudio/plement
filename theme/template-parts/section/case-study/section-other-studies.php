@@ -10,8 +10,14 @@
 
 			foreach ( $case_studies as $case_study ) {
 				$mobile_image = get_field( 'mobile_image', $case_study->ID );
+				$tools        = get_the_terms( $case_study->ID, 'tool' );
+
 				?>
 				<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
+					<?php
+					if ( $tools ) :
+						plmt_tool_tag( $tools[0] );
+					endif; ?>
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 						<div>
 							<?php if ( $mobile_image ) { ?>

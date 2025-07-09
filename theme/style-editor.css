@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.37
+Version: 0.1.38
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2805,6 +2805,11 @@ div.wpcf7-validation-errors {
   border-color: rgb(100 100 100 / var(--tw-border-opacity));
 }
 
+.border-darkGray2 {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 46 52 / var(--tw-border-opacity));
+}
+
 .border-lightGray {
   --tw-border-opacity: 1;
   border-color: rgb(233 233 233 / var(--tw-border-opacity));
@@ -2893,6 +2898,11 @@ div.wpcf7-validation-errors {
 .\!bg-accent {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(237 86 35 / var(--tw-bg-opacity)) !important;
+}
+
+.\!bg-darkGray2 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(31 46 52 / var(--tw-bg-opacity)) !important;
 }
 
 .\!bg-white {
@@ -4628,16 +4638,16 @@ div.wpcf7-validation-errors {
     max-width: 39.6875rem;
   }
 
-  .lg\:max-w-\[39\.75rem\] {
-    max-width: 39.75rem;
-  }
-
   .lg\:max-w-\[40\.25rem\] {
     max-width: 40.25rem;
   }
 
   .lg\:max-w-\[61\.625rem\] {
     max-width: 61.625rem;
+  }
+
+  .lg\:max-w-\[82rems\] {
+    max-width: 82rems;
   }
 
   .lg\:max-w-\[90rem\] {

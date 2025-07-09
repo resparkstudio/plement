@@ -26,7 +26,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 						) ) ?>
 					<?php endif; ?>
 					<?php if ( $hero_content['secondary_button'] ) : ?>
-						<?php plmt_button( esc_url( $hero_content['secondary_button']['url'] ), esc_attr( $hero_content['secondary_button']['title'] ), array( 'classes' => 'h-full w-full justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5', 'variant' =>
+						<?php plmt_button( esc_url( $hero_content['secondary_button']['url'] ), esc_attr( $hero_content['secondary_button']['title'] ), array( 'classes' => 'h-full w-full justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5 text-white border-darkGray2 !bg-darkGray2', 'variant' =>
 							'secondary' ) ) ?>
 					<?php endif; ?>
 				</div>
