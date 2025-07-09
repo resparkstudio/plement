@@ -18,10 +18,10 @@ $is_dark = $args['is_dark'];
 
 <header id="masthead" x-data="{menuOpen: false}" class="sticky top-0 z-[1000]">
 	<div
-		class="flex items-center justify-between z-[100] bg-mainBlack container lg:max-w-none lg:p-0 lg:border-b lg:border-b-darkGray">
+		class="flex items-center justify-between z-[100]  container lg:max-w-none lg:p-0 lg:border-b  <?php echo $is_dark ? 'bg-mainBlack lg:border-b-darkGray' : 'bg-white lg:border-b-lightGray' ?>">
 		<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="lg:border-r border-r-darkGray py-[1.0625rem] lg:px-[75px]">
+				class="lg:border-r py-[1.0625rem] lg:px-[75px] <?php echo $is_dark ? 'border-r-darkGray' : 'border-r-lightGray' ?>">
 				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
 					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
 			</a>
@@ -45,7 +45,8 @@ $is_dark = $args['is_dark'];
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
 					$has_children  = isset( $item['children'] ) && count( $item['children'] );
 					?>
-					<li class="text-white border-r-darkGray h-full w-full border-r" <?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
+					<li class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>"
+						<?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
 						@click='overlayOpen = <?php echo $has_children ? '!overlayOpen' : 0 ?>'>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
 							class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300 hover:bg-accent <?php echo $is_contact_us ? 'text-accent gap-2' : '' ?>"
@@ -68,7 +69,7 @@ $is_dark = $args['is_dark'];
 						<?php if ( $has_children ) : ?>
 
 							<ul x-cloak x-show='overlayOpen'
-								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem] bg-mainBlack z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none'
+								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem]  z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>'
 								role='menu' aria-orientation='vertical' tabindex='-1'
 								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
 								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
@@ -76,7 +77,8 @@ $is_dark = $args['is_dark'];
 								<?php foreach ( $item['children'] as $child ) :
 									$bullets = get_field( 'bullets', $child['ID'] );
 									?>
-									<li class="hover:bg-darkGray2 transition-colors duration-300 ease-in-out">
+									<li
+										class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
 										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
 											class="inline-block py-[3.5625rem] px-10">
 											<div class="flex items-center gap-2 mb-4">
