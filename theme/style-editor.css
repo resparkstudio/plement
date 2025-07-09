@@ -1698,6 +1698,10 @@ div.wpcf7-validation-errors {
   margin-bottom: 2rem;
 }
 
+.mb-\[0\.625rem\] {
+  margin-bottom: 0.625rem;
+}
+
 .mb-\[1\.875rem\] {
   margin-bottom: 1.875rem;
 }
@@ -1762,6 +1766,14 @@ div.wpcf7-validation-errors {
   margin-right: 1.25rem;
 }
 
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1808,18 +1820,6 @@ div.wpcf7-validation-errors {
 
 .mt-\[3\.25rem\] {
   margin-top: 3.25rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mt-0\.5 {
-  margin-top: 0.125rem;
-}
-
-.mb-\[0\.625rem\] {
-  margin-bottom: 0.625rem;
 }
 
 .block {
@@ -1998,10 +1998,6 @@ div.wpcf7-validation-errors {
   height: 100vh;
 }
 
-.max-h-56 {
-  max-height: 14rem;
-}
-
 .min-h-6 {
   min-height: 1.5rem;
 }
@@ -2034,8 +2030,8 @@ div.wpcf7-validation-errors {
   min-height: 360px;
 }
 
-.min-h-\[38px\] {
-  min-height: 38px;
+.min-h-\[39px\] {
+  min-height: 39px;
 }
 
 .min-h-\[4\.5rem\] {
@@ -2044,14 +2040,6 @@ div.wpcf7-validation-errors {
 
 .min-h-full {
   min-height: 100%;
-}
-
-.min-h-\[39px\] {
-  min-height: 39px;
-}
-
-.\!w-auto {
-  width: auto !important;
 }
 
 .w-0 {
@@ -2080,10 +2068,6 @@ div.wpcf7-validation-errors {
 
 .w-6 {
   width: 1.5rem;
-}
-
-.w-64 {
-  width: 16rem;
 }
 
 .w-7 {
@@ -2532,6 +2516,10 @@ div.wpcf7-validation-errors {
   gap: 3.5rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2803,10 +2791,6 @@ div.wpcf7-validation-errors {
 .border-mainBlack {
   --tw-border-opacity: 1;
   border-color: rgb(17 31 36 / var(--tw-border-opacity));
-}
-
-.border-neutral-200\/70 {
-  border-color: rgb(229 229 229 / 0.7);
 }
 
 .border-textSecondary {
@@ -3173,6 +3157,11 @@ div.wpcf7-validation-errors {
   padding-bottom: 2rem;
 }
 
+.py-\[0\.3125rem\] {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+}
+
 .py-\[0\.5938rem\] {
   padding-top: 0.5938rem;
   padding-bottom: 0.5938rem;
@@ -3233,11 +3222,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.5rem;
 }
 
-.py-\[0\.3125rem\] {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-}
-
 .\!pb-0 {
   padding-bottom: 0px !important;
 }
@@ -3264,6 +3248,10 @@ div.wpcf7-validation-errors {
 
 .pb-9 {
   padding-bottom: 2.25rem;
+}
+
+.pb-\[0\.3125rem\] {
+  padding-bottom: 0.3125rem;
 }
 
 .pb-\[0\.875rem\] {
@@ -3314,20 +3302,12 @@ div.wpcf7-validation-errors {
   padding-left: 1.5rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pr-10 {
-  padding-right: 2.5rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pr-\[2\.625rem\] {
+  padding-right: 2.625rem;
 }
 
 .pt-1 {
@@ -3392,14 +3372,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.25rem\] {
   padding-top: 8.25rem;
-}
-
-.pr-\[2\.625rem\] {
-  padding-right: 2.625rem;
-}
-
-.pb-\[0\.3125rem\] {
-  padding-bottom: 0.3125rem;
 }
 
 .text-left {
@@ -3529,11 +3501,6 @@ div.wpcf7-validation-errors {
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-title {
   font-size: 1.125rem;
   line-height: 1.4625rem;
@@ -3628,19 +3595,9 @@ div.wpcf7-validation-errors {
   color: rgb(100 100 100 / var(--tw-text-opacity));
 }
 
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .text-inherit {
@@ -3691,11 +3648,6 @@ div.wpcf7-validation-errors {
   color: rgb(255 255 255 / 0.8);
 }
 
-.\!text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -3710,12 +3662,6 @@ div.wpcf7-validation-errors {
 
 .opacity-100 {
   opacity: 1;
-}
-
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-sm {
@@ -3743,14 +3689,6 @@ div.wpcf7-validation-errors {
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.\!transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter !important;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter !important;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
-  transition-duration: 150ms !important;
 }
 
 .transition {
@@ -4024,11 +3962,6 @@ div.wpcf7-validation-errors {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-mainBlack:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 31 36 / var(--tw-bg-opacity));
-}
-
 .hover\:text-\[\#111F24\]:hover {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
@@ -4062,21 +3995,6 @@ div.wpcf7-validation-errors {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-neutral-400:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity));
-}
-
-.focus\:ring-offset-2:focus {
-  --tw-ring-offset-width: 2px;
 }
 
 .disabled\:pointer-events-none:disabled {
@@ -4168,14 +4086,6 @@ div.wpcf7-validation-errors {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.data-\[disabled\]\:pointer-events-none[data-disabled] {
-  pointer-events: none;
-}
-
-.data-\[disabled\]\:opacity-50[data-disabled] {
-  opacity: 0.5;
 }
 
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"][class~="is-selected"] *))) {
@@ -4397,8 +4307,16 @@ div.wpcf7-validation-errors {
     margin-bottom: 1rem;
   }
 
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
   .lg\:mb-6 {
     margin-bottom: 1.5rem;
+  }
+
+  .lg\:mb-7 {
+    margin-bottom: 1.75rem;
   }
 
   .lg\:mb-8 {
@@ -4419,10 +4337,6 @@ div.wpcf7-validation-errors {
 
   .lg\:mb-\[2\.375rem\] {
     margin-bottom: 2.375rem;
-  }
-
-  .lg\:mb-\[2\.625rem\] {
-    margin-bottom: 2.625rem;
   }
 
   .lg\:mb-\[3\.375rem\] {
@@ -4463,6 +4377,14 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .lg\:mt-14 {
+    margin-top: 3.5rem;
   }
 
   .lg\:mt-20 {
@@ -4539,6 +4461,10 @@ div.wpcf7-validation-errors {
 
   .lg\:min-h-\[26\.25rem\] {
     min-height: 26.25rem;
+  }
+
+  .lg\:min-h-\[calc\(100vh-5rem\)\] {
+    min-height: calc(100vh - 5rem);
   }
 
   .lg\:w-1\/2 {
@@ -4656,6 +4582,10 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-\[35\.125rem\] {
     max-width: 35.125rem;
+  }
+
+  .lg\:max-w-\[37\.25rem\] {
+    max-width: 37.25rem;
   }
 
   .lg\:max-w-\[39\.6875rem\] {
@@ -4788,6 +4718,10 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[1\.8125rem\] {
     gap: 1.8125rem;
+  }
+
+  .lg\:gap-\[3\.375rem\] {
+    gap: 3.375rem;
   }
 
   .lg\:gap-\[3\.75rem\] {
@@ -4931,6 +4865,11 @@ div.wpcf7-validation-errors {
     padding-bottom: 9rem;
   }
 
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .lg\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -5064,6 +5003,10 @@ div.wpcf7-validation-errors {
 
   .lg\:text-center {
     text-align: center;
+  }
+
+  .lg\:text-right {
+    text-align: right;
   }
 
   .lg\:\!text-\[3rem\] {

@@ -16,6 +16,7 @@ $page_sections = [
 	'compare',
 	'license',
 	'steps',
+	'partnership',
 	'case-studies',
 	'testimonials',
 	'partner',
