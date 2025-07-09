@@ -20,12 +20,12 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				</div>
 				<?php if ( $hero_content['heading'] ) : ?>
 					<h1
-						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[33.125rem] w-full mb-8 lg:mb-6'>
+						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[33.125rem] w-full mb-4 lg:mb-6'>
 						<?php echo $hero_content['heading'] ?>
 					</h1>
 				<?php endif; ?>
 				<?php if ( $hero_content['subtext'] ) : ?>
-					<p class='text-h5Mobile lg:text-h5Regular text-white/80 mb-6 lg:mb-6'>
+					<p class='text-titleMobile lg:text-h5Regular text-white/80 mb-4 lg:mb-6'>
 						<?php echo esc_html( $hero_content['subtext'] ) ?>
 					</p>
 				<?php endif; ?>

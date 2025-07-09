@@ -8,7 +8,7 @@
  * @package Plement
  */
 
-get_header();
+get_header( null, array( 'type' => 'light' ) );
 
 ?>
 

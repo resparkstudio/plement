@@ -7,6 +7,7 @@
  * @package Plement
  */
 
+$is_dark = $args['is_dark'];
 ?>
 
 <style>
@@ -119,17 +120,17 @@
 		<div class="lg:hidden relative z-[1000]">
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
 				class="flex text-textBlack lg:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
-				<div class=" text-center text-textBlack three col">
+				<div class=" text-center  three col <?php echo $is_dark ? 'text-white' : 'text-textBlack' ?>">
 					<div class="hamburger" id="hamburger-1">
 						<span
-							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
-							:class="menuOpen ? 'translate-y-[6px] rotate-[45deg]' : ''"></span>
+							class="w-[24px] h-[2px] rounded-full block my-[4px] mx-auto transition-all duration-300 ease-in-out <?php echo $is_dark ? 'bg-white' : 'bg-textBlack' ?>"
+							:class="menuOpen ? 'translate-y-[6px] rotate-[45deg] !bg-white' : ''"></span>
 						<span
-							class="w-[21px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
+							class="w-[21px] h-[2px] rounded-full block my-[4px] mx-auto transition-all duration-300 ease-in-out <?php echo $is_dark ? 'bg-white' : 'bg-textBlack' ?>"
 							:class="menuOpen ? 'opacity-0' : ''"></span>
 						<span
-							class="w-[24px] h-[2px] rounded-full bg-textBlack block my-[4px] mx-auto transition-all duration-300 ease-in-out"
-							:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg]' : ''"></span>
+							class="w-[24px] h-[2px] rounded-full block my-[4px] mx-auto transition-all duration-300 ease-in-out <?php echo $is_dark ? 'bg-white' : 'bg-textBlack' ?>"
+							:class="menuOpen ? 'translate-y-[-6px] rotate-[-45deg] !bg-white' : ''"></span>
 					</div>
 				</div>
 			</button>
@@ -151,7 +152,7 @@
 
 		?>
 		<div class="w-full">
-			<ul class="overflow-y-scroll bg-white h-screen w-full pt-[8.25rem]">
+			<ul class="overflow-y-scroll bg-mainBlack text-white h-screen w-full pt-[8.25rem]">
 				<?php
 				foreach ( $items as $item ) :
 					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
@@ -160,7 +161,7 @@
 					<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false" class="w-full"
 						:class="childOpen ? 'mb-4' : 'mb-8'" <?php echo $has_children ? '@click="childOpen = !childOpen"' : '' ?>>
 						<a href="<?php echo esc_url( $item['url'] ); ?>"
-							class="px-4 py-3 group flex items-center h-full w-full text-h5Regular <?php echo $is_contact_us ? 'text-accent gap-2' : 'justify-between' ?>">
+							class="text-white px-4 py-3 group flex items-center h-full w-full text-h5Regular <?php echo $is_contact_us ? 'text-accent gap-2' : 'justify-between' ?>">
 							<span>
 								<?php echo esc_html( $item['title'] ); ?>
 							</span>
@@ -168,29 +169,51 @@
 								<?php plmt_arrow(); ?>
 							<?php endif; ?>
 							<?php if ( $has_children ) : ?>
-								<svg class="mr-4" :class="childOpen ? 'rotate-180' : ''" width="16" height="16"
-									viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+								<svg class="mr-4" width="16" height="16" viewBox="0 0 16 16" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M13.4619 5.80865C13.4241 5.71729 13.36 5.6392 13.2778 5.58426C13.1956 5.52932 13.0989 5.5 13 5.5H3C2.90111 5.5 2.80444 5.52932 2.72221 5.58427C2.63999 5.63921 2.5759 5.7173 2.53806 5.80866C2.50022 5.90003 2.49031 6.00056 2.50961 6.09755C2.5289 6.19455 2.57653 6.28364 2.64646 6.35356L7.64646 11.3535C7.69288 11.4 7.748 11.4368 7.80866 11.4619C7.86932 11.4871 7.93434 11.5 8 11.5C8.06566 11.5 8.13068 11.4871 8.19134 11.4619C8.252 11.4368 8.30712 11.4 8.35355 11.3535L13.3535 6.35356C13.4235 6.28364 13.4711 6.19454 13.4904 6.09755C13.5097 6.00056 13.4998 5.90002 13.4619 5.80865Z"
-										fill="#111F24" />
+										fill="white" />
 								</svg>
+
 							<?php endif; ?>
 						</a>
 					</li>
 					<?php if ( $has_children ) : ?>
 						<ul x-show="childOpen" class="space-y-3 mb-[2.75rem]">
-							<?php foreach ( $item['children'] as $item ) : ?>
+							<?php foreach ( $item['children'] as $item ) :
+								$bullets = get_field( 'bullets', $item['ID'] );
+								?>
 								<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
 									class="w-full px-4">
 									<a href="<?php echo esc_url( $item['url'] ); ?>"
 										class="py-3 border-b-lightGray border-b group flex items-start gap-2 justify-between h-full w-full">
 										<div>
-											<span class="text-bodyBold mb-1">
-												<?php echo esc_html( $item['title'] ); ?>
-											</span>
-											<p class="text-bodySmall text-darkGray">
-												<?php echo esc_html( $item['description'] ); ?>
-											</p>
+											<div class="flex items-center gap-1 mb-3">
+												<?php if ( isset( $item['image'] ) && $item['image'] ) : ?>
+													<img class="w-5 h-5 mr-2" src="<?php echo esc_url( $item['image']['url'] ); ?>"
+														alt="<?php echo esc_attr( $item['title'] ); ?> image">
+												<?php endif; ?>
+												<span class="text-bodyBold">
+													<?php echo esc_html( $item['title'] ); ?>
+												</span>
+											</div>
+											<?php if ( $bullets ) : ?>
+												<ul class="space-y-1">
+													<?php foreach ( $bullets as $bullet ) : ?>
+														<li class="flex items-center gap-2 text-bodySmall">
+															<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+																xmlns="http://www.w3.org/2000/svg">
+																<circle cx="8" cy="8" r="2" fill="#B2B2B2" />
+															</svg>
+															<span class="text-bodySmall text-textSecondary">
+																<?php echo esc_html( $bullet['item'] ); ?>
+															</span>
+														</li>
+													<?php endforeach; ?>
+												</ul>
+											<?php endif; ?>
 										</div>
 										<svg class="min-w-6 min-h-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
 											xmlns="http://www.w3.org/2000/svg">

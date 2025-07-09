@@ -14,7 +14,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<div class='lg:w-1/2 hero-content lg:max-w-2xl px-5 lg:px-0'>
 				<?php if ( $hero_content['heading'] ) : ?>
 					<h1
-						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[33.125rem] w-full mb-8 lg:mb-6'>
+						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[33.125rem] w-full mb-4 lg:mb-6'>
 						<?php echo $hero_content['heading'] ?>
 					</h1>
 				<?php endif; ?>
