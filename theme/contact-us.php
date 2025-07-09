@@ -8,7 +8,8 @@
  * @package Plement
  */
 
-get_header();
+get_header( null, array( 'type' => 'light' ) );
+
 $heading     = get_field( 'heading' );
 $description = get_field( 'description' );
 $shortcode   = get_field( 'form_shortcode' );

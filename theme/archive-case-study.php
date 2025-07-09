@@ -9,7 +9,8 @@
 
 $active_category_filter = $_GET['category'] ?? '';
 
-get_header();
+get_header( null, array( 'type' => 'light' ) );
+
 ?>
 
 <section id="primary">
