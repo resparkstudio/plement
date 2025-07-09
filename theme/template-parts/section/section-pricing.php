@@ -126,10 +126,29 @@ function package_cards_mobile( $packages ) {
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>
+							<?php if ( $package['bottom_items'] ) : ?>
+								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
+									<?php foreach ( $package['bottom_items'] as $item ) : ?>
+										<div class="flex items-start gap-2">
+											<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+												src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+												alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+											<div class="text-bodySmall">
+												<span>
+													<?php echo esc_html( $item['text'] ) ?>
+												</span>
+												<span class="font-bold">
+													<?php echo esc_html( $item['bold_text'] ) ?>
+												</span>
+											</div>
+										</div>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 							<?php if ( isset( $package['sow_file'] ) && ! empty( $package['sow_file'] ) ) : ?>
 								<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
 									target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
-									class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
+									class="group mt-5 py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
 									<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
 									<div class="text-accent">
 										<?php plmt_arrow() ?>
@@ -203,6 +222,25 @@ function package_cards( $packages ) {
 														stroke-linecap="round" stroke-linejoin="round" />
 												</svg>
 												<p class="text-bodySmall"><?php echo esc_html( $service['service'] ) ?></p>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+								<?php if ( $package['bottom_items'] ) : ?>
+									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
+										<?php foreach ( $package['bottom_items'] as $item ) : ?>
+											<div class="flex items-start gap-2">
+												<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+													src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+													alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+												<div class="text-bodyRegular">
+													<span>
+														<?php echo esc_html( $item['text'] ) ?>
+													</span>
+													<span class="font-bold">
+														<?php echo esc_html( $item['bold_text'] ) ?>
+													</span>
+												</div>
 											</div>
 										<?php endforeach; ?>
 									</div>
