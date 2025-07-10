@@ -80,7 +80,7 @@ $is_dark = $args['is_dark'];
 									<li
 										class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
 										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
-											class="inline-block py-[3.5625rem] px-10">
+											class="inline-block py-5 px-10 w-full h-full">
 											<div class="flex items-center gap-2 mb-4">
 												<img class="w-5 h-5" src="<?php echo esc_url( $child['image']['url'] ) ?>"
 													alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
@@ -171,14 +171,12 @@ $is_dark = $args['is_dark'];
 								<?php plmt_arrow(); ?>
 							<?php endif; ?>
 							<?php if ( $has_children ) : ?>
-
 								<svg class="mr-4" width="16" height="16" viewBox="0 0 16 16" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M13.4619 5.80865C13.4241 5.71729 13.36 5.6392 13.2778 5.58426C13.1956 5.52932 13.0989 5.5 13 5.5H3C2.90111 5.5 2.80444 5.52932 2.72221 5.58427C2.63999 5.63921 2.5759 5.7173 2.53806 5.80866C2.50022 5.90003 2.49031 6.00056 2.50961 6.09755C2.5289 6.19455 2.57653 6.28364 2.64646 6.35356L7.64646 11.3535C7.69288 11.4 7.748 11.4368 7.80866 11.4619C7.86932 11.4871 7.93434 11.5 8 11.5C8.06566 11.5 8.13068 11.4871 8.19134 11.4619C8.252 11.4368 8.30712 11.4 8.35355 11.3535L13.3535 6.35356C13.4235 6.28364 13.4711 6.19454 13.4904 6.09755C13.5097 6.00056 13.4998 5.90002 13.4619 5.80865Z"
 										fill="white" />
 								</svg>
-
 							<?php endif; ?>
 						</a>
 					</li>

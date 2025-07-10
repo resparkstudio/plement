@@ -65,13 +65,13 @@ if ( ! function_exists( 'plmt_compare_slider' ) ) {
 }
 
 ?>
-<section id='compare' class="lg:container mx-auto pt-[7.5rem]">
+<section id='compare' class="lg:container mx-auto pt-6 lg:pt-[7.5rem]">
 	<div class="bg-lightGrayBg lg:px-[5.1875rem] py-16">
 		<?php if ( $compare['heading'] ) : ?>
-			<h2 class="text-center text-h1 font-bold mb-6"><?php echo $compare['heading']; ?></h2>
+			<h2 class="text-center text-h1Mobile lg:text-h1 font-bold mb-4 lg:mb-6"><?php echo $compare['heading']; ?></h2>
 		<?php endif; ?>
 		<?php if ( $compare['subtext'] ) : ?>
-			<p class="text-center text-h5Mobile lg:text-title mb-6 text-darkGray">
+			<p class="text-center text-titleMobile lg:text-title mb-4 lg:mb-6 text-darkGray">
 				<?php echo esc_html( $compare['subtext'] ); ?>
 			</p>
 		<?php endif; ?>

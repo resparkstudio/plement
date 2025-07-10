@@ -8,9 +8,9 @@ if ( ! isset( $partnership ) || empty( $partnership ) ) {
 ?>
 
 <section id='partnership' class='bg-lightGrayBg py-7 lg:py-4'>
-	<div class="container mx-auto">
+	<div class="">
 		<div class='flex flex-col gap-8 items-center lg:flex-row lg:justify-between lg:gap-[3.375rem]]'>
-			<div class='lg:w-1/2 partnership-content lg:max-w-2xl text-center lg:text-left'>
+			<div class='container partnership-content lg:max-w-2xl text-center lg:text-left'>
 				<?php if ( $partnership['heading'] ) : ?>
 					<h2 class='text-h1Mobile lg:text-h1 mb-4 lg:mb-5'><?php echo esc_html( $partnership['heading'] ) ?></h2>
 				<?php endif; ?>
@@ -30,7 +30,7 @@ if ( ! isset( $partnership ) || empty( $partnership ) ) {
 					) ) ?>
 				</div>
 			</div>
-			<div class="lg:w-1/2">
+			<div>
 				<img class="w-auto h-full hidden lg:block" src='<?php echo esc_url( $partnership['image']['url'] ) ?>'
 					alt='<?php echo esc_attr( $partnership['image']['alt'] ) ?>'>
 				<img class="w-auto h-full lg:hidden" src='<?php echo esc_url( $partnership['mobile_image']['url'] ) ?>'

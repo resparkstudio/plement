@@ -15,7 +15,7 @@ function services_desktop( $services_tabs, $bottom_link ) {
 			<?php foreach ( $services_tabs as $tab ) : ?>
 				<button @click="selectedTab = '<?php echo $tab['title'] ?>'"
 					:aria-selected="selectedTab === '<?php echo $tab['title'] ?>'"
-					:class="selectedTab === '<?php echo $tab['title'] ?>' ? 'text-accent bg-white' : 'text-white hover:text-accent transition-colors duration-200'"
+					:class="selectedTab === '<?php echo $tab['title'] ?>' ? 'text-accent  !border-accent' : 'text-white hover:text-accent transition-colors duration-200'"
 					class='w-full p-6 border border-darkGray'>
 					<?php echo esc_html( $tab['title'] ) ?>
 				</button>
@@ -119,7 +119,7 @@ function services_mobile( $services_tabs, $bottom_link ) {
 }
 ?>
 
-<section id='services' class='container'>
+<section id='services' class='lg:container mx-auto'>
 	<div class="bg-mainBlack pt-[3.75rem] lg:pt-20 text-white"
 		x-data="{toolSelected: '<?php echo $services_tabs['tabs'][0]['tab_button']['title'] ?>'}">
 		<div class="flex justify-center w-full mb-6 lg:mb-8">

@@ -14,7 +14,7 @@ function currency_switch() {
 			<?php esc_html_e( 'Display Price in:', 'plmt' ) ?>
 		</label>
 		<div
-			class="relative max-w-[13.75rem] grid items-center justify-center w-full h-8 grid-cols-2 bg-[#F3F4F4] select-none">
+			class="relative lg:max-w-[13.75rem] grid items-center justify-center w-full h-8 grid-cols-2 bg-[#F3F4F4] select-none">
 			<button value="eur" :class="currency==='eur' ? 'font-bold' : ''" @click="currency='eur'" type="button"
 				class="relative z-20 inline-flex items-center justify-center w-full h-7 px-3 transition-all cursor-pointer whitespace-nowrap">
 				EUR
@@ -272,7 +272,7 @@ function package_cards( $packages ) {
 		<div class="relative flex flex-col justify-center overflow-hidden">
 			<div>
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
-				<div class="container">
+				<div>
 					<?php currency_switch() ?>
 					<div class="hidden lg:block">
 						<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
