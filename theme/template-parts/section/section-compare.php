@@ -8,7 +8,7 @@ if ( ! isset( $compare ) || empty( $compare ) ) {
 if ( ! function_exists( 'plmt_compare_card' ) ) {
 	function plmt_compare_card( $item ) {
 		?>
-		<div class="p-7 border border-lightGray">
+		<div class="p-5 lg:p-7 border border-lightGray">
 			<div class="flex items-center gap-2 pb-4 border-b border-lightGray">
 				<img src="<?php echo esc_url( $item['icon']['url'] ); ?>" alt="<?php echo esc_attr( $item['icon']['alt'] ); ?>">
 				<p class="text-h4Bold">
@@ -18,7 +18,8 @@ if ( ! function_exists( 'plmt_compare_card' ) ) {
 			<div class="mt-4 pb-4 border-b border-lightGray">
 				<?php foreach ( $item['bullets'] as $bullet ) : ?>
 					<div class="flex items-center gap-2 py-2">
-						<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg class="shrink-0" width="16" height="17" viewBox="0 0 16 17" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
 							<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2" stroke-linecap="round"
 								stroke-linejoin="round" />
 						</svg>
@@ -51,7 +52,7 @@ if ( ! function_exists( 'plmt_compare_slider' ) ) {
 	function plmt_compare_slider( $items ) {
 		?>
 		<div class="swiper compare-slider">
-			<div class="swiper-wrapper">
+			<div class="swiper-wrapper pt-[1px]">
 				<?php foreach ( $items as $item ) : ?>
 					<div class="swiper-slide">
 						<?php plmt_compare_card( $item ); ?>

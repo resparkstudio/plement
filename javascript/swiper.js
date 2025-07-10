@@ -14,7 +14,7 @@ function initSwiper() {
 	});
 
 	const packageSwiper = new Swiper('.packages-list', {
-		modules: [Pagination, Controller],
+		modules: [Pagination],
 		slidesPerView: 1.1,
 		spaceBetween: 16,
 		initialSlide: 2,
@@ -24,10 +24,6 @@ function initSwiper() {
 			bulletActiveClass: 'swiper-pagination-bullet-active',
 			bulletClass: 'swiper-pagination-bullet',
 		},
-	});
-
-	packageSwiper.on('slideChange', function () {
-		tippy.hideAll({ duration: 0 });
 	});
 
 	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
@@ -91,6 +87,7 @@ function initSwiper() {
 			},
 		},
 		spaceBetween: 16,
+		loop: true,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',
@@ -107,10 +104,10 @@ function initSwiper() {
 		spaceBetween: 8,
 	});
 
-	new Swiper('.compare-swiper', {
+	new Swiper('.compare-slider', {
 		modules: [Pagination],
-		slidesPerView: 1.1,
-		spaceBetween: 16,
+		slidesPerView: 1.05,
+		spaceBetween: 8,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',

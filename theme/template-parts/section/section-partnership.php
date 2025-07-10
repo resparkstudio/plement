@@ -7,7 +7,7 @@ if ( ! isset( $partnership ) || empty( $partnership ) ) {
 
 ?>
 
-<section id='partnership' class='bg-lightGrayBg py-7 lg:py-4'>
+<section id='partnership' class='bg-lightGrayBg py-7 lg:py-4 mt-6 lg:mt-[7.5rem]'>
 	<div class="">
 		<div class='flex flex-col gap-8 items-center lg:flex-row lg:justify-between lg:gap-[3.375rem]]'>
 			<div class='container partnership-content lg:max-w-2xl text-center lg:text-left'>

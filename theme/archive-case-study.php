@@ -40,7 +40,7 @@ get_header( null, array( 'type' => 'light' ) );
 			}
 		}
 		?>
-		<div class="flex gap-2 mb-[0.625rem] lg:mb-6">
+		<div class="flex gap-2 mb-[0.625rem] lg:mb-6 overflow-x-auto">
 			<?php plmt_dropdown( $tool_options, __( 'Filter by tools:', 'plmt' ), 'tool-filter' ); ?>
 			<?php plmt_dropdown( $categories_options, __( 'Filter by category:', 'plmt' ), 'category-filter' ); ?>
 		</div>

@@ -74,7 +74,7 @@ function package_cards_mobile( $packages ) {
 		return;
 	?>
 	<div class="packages-list swiper">
-		<div class="swiper-wrapper">
+		<div class="swiper-wrapper pt-[1px]">
 			<?php foreach ( $packages as $package ) : ?>
 				<div class="swiper-slide h-full">
 					<div

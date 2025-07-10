@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.41
+Version: 0.1.42
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2190,10 +2190,6 @@ div.wpcf7-validation-errors {
   margin-bottom: 9.75rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .ml-\[30px\] {
   margin-left: 30px;
 }
@@ -2328,10 +2324,6 @@ div.wpcf7-validation-errors {
 
 .h-10 {
   height: 2.5rem;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .h-5 {
@@ -3445,10 +3437,6 @@ div.wpcf7-validation-errors {
   background-repeat: no-repeat;
 }
 
-.stroke-current {
-  stroke: currentColor;
-}
-
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -3481,10 +3469,6 @@ div.wpcf7-validation-errors {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-7 {
-  padding: 1.75rem;
 }
 
 .p-\[1\.875rem\] {
@@ -3750,10 +3734,6 @@ div.wpcf7-validation-errors {
   padding-bottom: 7.75rem;
 }
 
-.pl-3 {
-  padding-left: 0.75rem;
-}
-
 .pl-4 {
   padding-left: 1rem;
 }
@@ -3808,6 +3788,10 @@ div.wpcf7-validation-errors {
 
 .pt-\[13rem\] {
   padding-top: 13rem;
+}
+
+.pt-\[1px\] {
+  padding-top: 1px;
 }
 
 .pt-\[2\.875rem\] {
@@ -4070,11 +4054,6 @@ div.wpcf7-validation-errors {
 .text-mainBlack {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
-}
-
-.text-neutral-400 {
-  --tw-text-opacity: 1;
-  color: rgb(163 163 163 / var(--tw-text-opacity));
 }
 
 .text-textBlack {
@@ -4847,6 +4826,10 @@ div.wpcf7-validation-errors {
     margin-top: 3.5rem;
   }
 
+  .lg\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .lg\:mt-20 {
     margin-top: 5rem;
   }
@@ -5293,6 +5276,10 @@ div.wpcf7-validation-errors {
     padding: 1rem;
   }
 
+  .lg\:p-7 {
+    padding: 1.75rem;
+  }
+
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -5484,10 +5471,6 @@ div.wpcf7-validation-errors {
 
   .lg\:text-center {
     text-align: center;
-  }
-
-  .lg\:text-right {
-    text-align: right;
   }
 
   .lg\:\!text-\[3rem\] {

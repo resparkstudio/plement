@@ -436,22 +436,29 @@ function plmt_dropdown( $options, $button_text = 'Select Item', $button_class = 
 				x-cloak>
 				<li data-value="all"
 					@click="selectedItem = { value: 'all', title: '<?php echo esc_js( 'All' ); ?>' }; selectOpen = false"
-					class="relative z-[100] flex items-center h-full pb-[0.3125rem] pl-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
-					<?php esc_html_e( 'All', 'plmt' ); ?>
+					class="relative z-[100] flex items-center justify-between h-full pb-[0.3125rem] px-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
+					<span>
+						<?php esc_html_e( 'All', 'plmt' ); ?>
+					</span>
+					<svg x-show="selectedItem.value=='all'" width="18" height="18" viewBox="0 0 18 18" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M14 6L7.3333 13L4 9.5" stroke="#ED5623" stroke-width="1.5" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+
 				</li>
 				<?php foreach ( $options as $value => $label ) : ?>
 					<li data-value="<?php echo esc_attr( $value ); ?>"
 						@click="selectedItem = { value: '<?php echo esc_js( $value ); ?>', title: '<?php echo esc_js( $label ); ?>' }; selectOpen = false"
-						class="relative z-[100] flex items-center h-full py-[0.3125rem] pl-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
-						<svg x-show="selectedItem.value==item.value"
-							class="absolute left-0 w-4 h-4 ml-2 stroke-current text-neutral-400"
-							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<polyline points="20 6 9 17 4 12"></polyline>
-						</svg>
+						class="relative z-[100] flex items-center justify-between h-full py-[0.3125rem] px-3 text-white cursor-default select-none <?php echo esc_attr( $button_class ); ?>">
 						<span class="block truncate">
 							<?php echo esc_html( $label ); ?>
 						</span>
+						<svg x-show="selectedItem.value=='<?php echo esc_js( $value ); ?>'" width="18" height="18"
+							viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14 6L7.3333 13L4 9.5" stroke="#ED5623" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
 					</li>
 				<?php endforeach; ?>
 			</ul>

@@ -148,7 +148,7 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 		<div class="bg-lightGrayBg py-7 lg:py-20 mt-14 lg:mt-20">
 			<div
 				class="container mx-auto flex flex-col gap-5 lg:gap-10 <?php echo $is_even ? 'lg:flex-row' : 'lg:flex-row-reverse'; ?>">
-				<div class="<?php echo $is_even ? 'text-center lg:text-left' : 'text-center lg:text-right'; ?>">
+				<div class="text-center">
 					<?php if ( $is_with_image ) : ?>
 						<img class="w-full h-full object-contain mb-6 lg:hidden"
 							src="<?php echo esc_url( $service['image']['url'] ); ?>"
@@ -160,14 +160,6 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 					<p class="text-titleMobile lg:text-title text-darkGray lg:mb-6">
 						<?php echo esc_html( $service['subtext'] ); ?>
 					</p>
-					<div class="hidden lg:block">
-						<?php plmt_button( esc_url( $service['button']['url'] ), esc_html( $service['button']['title'] ) ) ?>
-						<?php if ( $service['bottom_text'] ) : ?>
-							<p class="text-accent mt-10 text-h4Bold">
-								<?php echo esc_html( $service['bottom_text'] ); ?>
-							</p>
-						<?php endif; ?>
-					</div>
 				</div>
 				<div class="lg:max-w-[39.6875rem] w-full">
 					<?php if ( $is_with_image ) : ?>
@@ -177,13 +169,13 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 					<?php else : ?>
 						<?php plmt_steps_list( $service['steps_heading'], $service['steps'] ); ?>
 					<?php endif; ?>
-					<?php if ( $service['bottom_text'] ) : ?>
-						<p class="lg:hidden text-center text-accent text-h4BoldMobile mt-5">
-							<?php echo esc_html( $service['bottom_text'] ); ?>
-						</p>
-					<?php endif; ?>
 				</div>
 			</div>
+			<?php if ( $service['bottom_text'] ) : ?>
+				<p class="container text-center text-accent text-h4BoldMobile lg:text-h4Bold mt-5 lg:mt-16">
+					<?php echo esc_html( $service['bottom_text'] ); ?>
+				</p>
+			<?php endif; ?>
 			<?php if ( $is_with_gallery && ! empty( $service['gallery'] ) ) : ?>
 				<div class="container mx-auto mt-6 lg:mt-14">
 					<?php plmt_gallery( $service['gallery'] ); ?>
