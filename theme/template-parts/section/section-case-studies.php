@@ -13,7 +13,7 @@ if ( empty( $case_studies ) ) {
 
 ?>
 <section class="container pt-[10rem] lg:pt-[8.75rem]">
-	<div class="flex items-center justify-between mb-10">
+	<div class=" flex items-center justify-between mb-10">
 		<h3 class="text-h4Bold lg:text-h2">
 			<?php esc_html_e( 'Case studies', 'plmt' ); ?>
 		</h3>
@@ -38,14 +38,15 @@ if ( empty( $case_studies ) ) {
 			</button>
 		</div>
 	</div>
-	<div class="swiper-container relative mx-auto">
-		<div class="swiper other-studies-swiper">
+	<div class=" overflow-visible swiper-container relative">
+		<div class="swiper other-studies-swiper !overflow-visible">
 			<div class="swiper-wrapper !flex">
 				<?php
 				foreach ( $case_studies as $case_study ) {
 					$mobile_image = get_field( 'mobile_image', $case_study->ID );
 					$tools        = get_the_terms( $case_study->ID, 'tool' ); ?>
-					<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
+					<article
+						class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-auto self-stretch lg:max-w-[39.9375rem]">
 						<?php
 						if ( $tools ) :
 							plmt_tool_tag( $tools[0] );

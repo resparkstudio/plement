@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Controller, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 function initSwiper() {
 	new Swiper('.services-list', {
@@ -13,7 +13,7 @@ function initSwiper() {
 		autoHeight: true,
 	});
 
-	const packageSwiper = new Swiper('.packages-list', {
+	new Swiper('.packages-list', {
 		modules: [Pagination],
 		slidesPerView: 1.1,
 		spaceBetween: 16,
@@ -25,22 +25,6 @@ function initSwiper() {
 			bulletClass: 'swiper-pagination-bullet',
 		},
 	});
-
-	const packageCompareSwiper = new Swiper('.package-compare-mobile', {
-		modules: [Pagination, Controller],
-		slidesPerView: 1,
-		initialSlide: 2,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-		autoHeight: true,
-		resizeObserver: true,
-	});
-
-	packageSwiper.controller.control = packageCompareSwiper;
-	packageCompareSwiper.controller.control = packageSwiper;
 
 	new Swiper('.testimonials-swiper', {
 		modules: [Navigation],
@@ -83,7 +67,7 @@ function initSwiper() {
 		slidesPerView: 1,
 		breakpoints: {
 			1024: {
-				slidesPerView: 2,
+				slidesPerView: 'auto',
 			},
 		},
 		spaceBetween: 16,

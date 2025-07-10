@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.42
+Version: 0.1.43
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2670,6 +2670,10 @@ div.wpcf7-validation-errors {
   border-color: rgb(82 99 105 / var(--tw-divide-opacity));
 }
 
+.self-stretch {
+  align-self: stretch;
+}
+
 .justify-self-center {
   justify-self: center;
 }
@@ -2680,6 +2684,14 @@ div.wpcf7-validation-errors {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.\!overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .overflow-x-auto {
@@ -4594,6 +4606,10 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-\[39\.6875rem\] {
     max-width: 39.6875rem;
+  }
+
+  .lg\:max-w-\[39\.9375rem\] {
+    max-width: 39.9375rem;
   }
 
   .lg\:max-w-\[40\.25rem\] {
