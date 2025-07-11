@@ -19,63 +19,6 @@ import initSwiper from './swiper';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const processLineAnimation = function () {
-	const animatedLine = document.querySelector('.process-line');
-	const horizontalLine = document.querySelector('.process-line-horizontal');
-	if (!animatedLine) return;
-	const lastItem = document.querySelector('.process-item.is-last');
-	const lastItemHeight = lastItem.offsetHeight;
-	const animatedLineWrap = document.querySelector('.process-line-wrap');
-	animatedLineWrap.style.height = `calc(100% - ${lastItemHeight}px * 0.8)`;
-
-	gsap.set(animatedLine, { transformOrigin: 'center top' });
-
-	const tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: animatedLineWrap,
-			start: 'top center',
-			end: 'bottom center',
-			scrub: 1,
-		},
-	});
-
-	tl.fromTo(
-		animatedLine,
-		{
-			scaleY: 0,
-		},
-		{
-			scaleY: 1,
-			duration: 3,
-			ease: 'none',
-		},
-	);
-
-	if (horizontalLine) {
-		const horizontalLineTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: horizontalLine,
-				start: 'top center',
-				end: 'bottom center',
-				scrub: 1,
-			},
-		});
-
-		horizontalLineTl.fromTo(
-			horizontalLine,
-			{
-				scaleX: 0,
-				transformOrigin: 'left center',
-			},
-			{
-				scaleX: 1,
-				duration: 3,
-				ease: 'none',
-			},
-		);
-	}
-};
-
 document.querySelectorAll('.pricing-button').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const value = e.target.value;
@@ -166,22 +109,6 @@ if (window.location.pathname === '/') {
 	});
 }
 
-const getUserCountry = async () => {
-	const response = await fetch('https://ipapi.co/json/');
-	const data = await response.json();
-	return data;
-};
-
-const handleCountry = async () => {
-	const response = await getUserCountry();
-
-	const country = response.country;
-
-	if (country === 'US') {
-		window.dispatchEvent(new CustomEvent('uscountry'));
-	}
-};
-
 const refreshScrollTrigger = () => {
 	ScrollTrigger.refresh();
 };
@@ -230,7 +157,6 @@ const handleTextSplit = () => {
 };
 
 initSwiper();
-processLineAnimation();
 handleContactFormTransition();
 handleButtonsWithScrollTriggerRefresh();
 addArrow();
