@@ -12,7 +12,7 @@ if ( empty( $case_studies ) ) {
 }
 
 ?>
-<section class="container pt-[10rem] lg:pt-[8.75rem]">
+<section class="container pt-[3.25rem] lg:pt-[8.75rem]">
 	<div class=" flex items-center justify-between mb-10">
 		<h3 class="text-h4Bold lg:text-h2">
 			<?php esc_html_e( 'Case studies', 'plmt' ); ?>
