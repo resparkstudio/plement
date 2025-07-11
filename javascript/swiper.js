@@ -98,6 +98,11 @@ function initSwiper() {
 			bulletClass: 'swiper-pagination-bullet',
 		},
 	});
+
+	new Swiper('.filter-slider', {
+		slidesPerView: 'auto',
+		spaceBetween: 8,
+	});
 }
 
 export default initSwiper;
