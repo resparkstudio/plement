@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.47
+Version: 0.1.48
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -223,6 +223,18 @@ body {
 
 .tippy-box[data-theme~='custom'] > .tippy-svg-arrow {
   fill: #f8f8fa;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 984px) {
+  .container {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
 }
 
 /**

@@ -43,3 +43,7 @@ body {
 .tippy-box[data-theme~='custom'] > .tippy-svg-arrow {
 	fill: #f8f8fa;
 }
+
+.container {
+	@apply px-6 lg:!px-16;
+}
