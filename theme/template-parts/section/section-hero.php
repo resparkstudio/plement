@@ -15,7 +15,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				<div class='flex gap-3 flex-wrap mb-6'>
 					<?php foreach ( $hero_content['top_icons'] as $icon ) : ?>
 						<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
-							class='h-10 w-auto'>
+							class='h-10 lg:h-[3.5rem] w-auto'>
 					<?php endforeach; ?>
 				</div>
 				<?php if ( $hero_content['heading'] ) : ?>

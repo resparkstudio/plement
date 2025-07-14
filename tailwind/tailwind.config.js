@@ -110,9 +110,13 @@ module.exports = {
 			},
 		},
 		container: {
-			default: '1.25rem',
-			sm: '2rem',
-			lg: '4rem',
+			padding: {
+				DEFAULT: '1.5rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '4rem',
+				'2xl': '4rem',
+			},
 		},
 		screens: {
 			sm: '600px',

@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.46
+Version: 0.1.47
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -237,11 +237,15 @@ body {
 
 .container {
   width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 @media (min-width: 600px) {
   .container {
     max-width: 600px;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 
@@ -254,18 +258,24 @@ body {
 @media (min-width: 984px) {
   .container {
     max-width: 984px;
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 
 @media (min-width: 1312px) {
   .container {
     max-width: 1312px;
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 
@@ -3784,11 +3794,15 @@ div.wpcf7-validation-errors {
 @media (min-width: 984px) {
   .lg\:container {
     width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   @media (min-width: 600px) {
     .lg\:container {
       max-width: 600px;
+      padding-right: 2rem;
+      padding-left: 2rem;
     }
   }
 
@@ -3801,18 +3815,24 @@ div.wpcf7-validation-errors {
   @media (min-width: 984px) {
     .lg\:container {
       max-width: 984px;
+      padding-right: 4rem;
+      padding-left: 4rem;
     }
   }
 
   @media (min-width: 1312px) {
     .lg\:container {
       max-width: 1312px;
+      padding-right: 4rem;
+      padding-left: 4rem;
     }
   }
 
   @media (min-width: 1440px) {
     .lg\:container {
       max-width: 1440px;
+      padding-right: 4rem;
+      padding-left: 4rem;
     }
   }
 
@@ -4455,6 +4475,10 @@ div.wpcf7-validation-errors {
     height: 3.25rem;
   }
 
+  .lg\:h-\[3\.5rem\] {
+    height: 3.5rem;
+  }
+
   .lg\:h-\[45px\] {
     height: 45px;
   }
@@ -4960,10 +4984,6 @@ div.wpcf7-validation-errors {
 
   .lg\:pb-\[10\.875rem\] {
     padding-bottom: 10.875rem;
-  }
-
-  .lg\:pb-\[10rem\] {
-    padding-bottom: 10rem;
   }
 
   .lg\:pb-\[4\.375rem\] {

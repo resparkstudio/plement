@@ -39,7 +39,7 @@ function testimonial_card( $testimonial ) {
 
 ?>
 
-<section id="testimonials" class="pt-[7.5rem] pb-6 lg:pb-[10rem] overflow-hidden">
+<section id="testimonials" class="pt-[3.25rem] pb-6 lg:pt-[7.5rem] lg:pb-[7.5rem] overflow-hidden">
 	<h2 class="container text-h4Bold lg:text-[3rem] lg:leading-[3.3rem] text-center mb-10 mx-auto lg:mb-[3.75rem]">
 		<?php echo esc_html( $testimonials_content['heading'] ) ?>
 	</h2>
