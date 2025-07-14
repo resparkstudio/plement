@@ -116,6 +116,7 @@ module.exports = {
 				lg: '4rem',
 				xl: '4rem',
 				'2xl': '4rem',
+				'3xl': '4rem',
 			},
 		},
 		screens: {
@@ -124,7 +125,7 @@ module.exports = {
 			lg: '984px',
 			xl: '1312px',
 			'2xl': '1440px',
-			'3xl': '1921px',
+			'3xl': '1440px',
 		},
 	},
 	corePlugins: {
