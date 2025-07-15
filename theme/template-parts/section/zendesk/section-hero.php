@@ -21,11 +21,11 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<div class='flex flex-wrap'>
 				<?php if ( $hero_content['primary_button'] ) : ?>
 					<?php plmt_button( esc_url( $hero_content['primary_button']['url'] ), esc_attr( $hero_content['primary_button']['title'] ), array(
-						'classes' => 'w-max justify-center lg:w-auto lg:px-[5.625rem] lg:py-5'
+						'classes' => 'w-full py-3 lg:w-max justify-center lg:w-auto lg:px-[5.625rem] lg:py-5'
 					) ) ?>
 				<?php endif; ?>
 				<?php if ( $hero_content['secondary_button'] ) : ?>
-					<?php plmt_button( esc_url( $hero_content['secondary_button']['url'] ), esc_attr( $hero_content['secondary_button']['title'] ), array( 'classes' => 'h-full w-max justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5 text-white border-darkGray2 !bg-darkGray2', 'variant' =>
+					<?php plmt_button( esc_url( $hero_content['secondary_button']['url'] ), esc_attr( $hero_content['secondary_button']['title'] ), array( 'classes' => 'h-full w-max justify-center lg:w-auto scroll-to lg:px-[5.625rem] lg:py-5 text-white border-darkGray2 !bg-darkGray2 hidden lg:inline-flex', 'variant' =>
 						'secondary' ) ) ?>
 				<?php endif; ?>
 			</div>

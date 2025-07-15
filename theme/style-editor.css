@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.49
+Version: 0.1.50
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -232,8 +232,8 @@ body {
 
 @media (min-width: 984px) {
   .container {
-    padding-left: 4rem !important;
-    padding-right: 4rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 }
 
@@ -270,24 +270,24 @@ body {
 @media (min-width: 984px) {
   .container {
     max-width: 984px;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
 @media (min-width: 1312px) {
   .container {
     max-width: 1312px;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -2221,10 +2221,6 @@ div.wpcf7-validation-errors {
   max-width: 21.5rem;
 }
 
-.max-w-\[21\.875rem\] {
-  max-width: 21.875rem;
-}
-
 .max-w-\[243px\] {
   max-width: 243px;
 }
@@ -2271,6 +2267,10 @@ div.wpcf7-validation-errors {
 
 .max-w-\[43\.5rem\] {
   max-width: 43.5rem;
+}
+
+.max-w-\[48\.125rem\] {
+  max-width: 48.125rem;
 }
 
 .max-w-\[50\.9375rem\] {
@@ -2346,6 +2346,11 @@ div.wpcf7-validation-errors {
 
 .translate-x-\[-100\%\] {
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-\[1\.25rem\] {
+  --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3821,24 +3826,24 @@ div.wpcf7-validation-errors {
   @media (min-width: 984px) {
     .lg\:container {
       max-width: 984px;
-      padding-right: 4rem;
-      padding-left: 4rem;
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
     }
   }
 
   @media (min-width: 1312px) {
     .lg\:container {
       max-width: 1312px;
-      padding-right: 4rem;
-      padding-left: 4rem;
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
     }
   }
 
   @media (min-width: 1440px) {
     .lg\:container {
       max-width: 1440px;
-      padding-right: 4rem;
-      padding-left: 4rem;
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
     }
   }
 }
@@ -4443,6 +4448,10 @@ div.wpcf7-validation-errors {
     display: flex;
   }
 
+  .lg\:inline-flex {
+    display: inline-flex;
+  }
+
   .lg\:grid {
     display: grid;
   }
@@ -4634,10 +4643,6 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-\[39\.6875rem\] {
     max-width: 39.6875rem;
-  }
-
-  .lg\:max-w-\[39\.9375rem\] {
-    max-width: 39.9375rem;
   }
 
   .lg\:max-w-\[40\.25rem\] {
@@ -5070,6 +5075,10 @@ div.wpcf7-validation-errors {
     font-size: 3rem !important;
   }
 
+  .lg\:text-\[1\.125rem\] {
+    font-size: 1.125rem;
+  }
+
   .lg\:text-\[1\.375rem\] {
     font-size: 1.375rem;
   }
@@ -5174,6 +5183,10 @@ div.wpcf7-validation-errors {
 
   .lg\:leading-7 {
     line-height: 1.75rem;
+  }
+
+  .lg\:leading-\[1\.4625rem\] {
+    line-height: 1.4625rem;
   }
 
   .lg\:leading-\[1\.5rem\] {

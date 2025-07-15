@@ -45,5 +45,5 @@ body {
 }
 
 .container {
-	@apply px-6 lg:!px-16;
+	@apply px-6 lg:!px-[1.25rem];
 }

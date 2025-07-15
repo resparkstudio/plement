@@ -113,10 +113,10 @@ module.exports = {
 			padding: {
 				DEFAULT: '1.5rem',
 				sm: '2rem',
-				lg: '4rem',
-				xl: '4rem',
-				'2xl': '4rem',
-				'3xl': '4rem',
+				lg: '1.25rem',
+				xl: '1.25rem',
+				'2xl': '1.25rem',
+				'3xl': '1.25rem',
 			},
 		},
 		screens: {

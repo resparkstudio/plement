@@ -67,11 +67,10 @@ function initSwiper() {
 		slidesPerView: 1,
 		breakpoints: {
 			1024: {
-				slidesPerView: 'auto',
+				slidesPerView: 2,
 			},
 		},
 		spaceBetween: 16,
-		loop: true,
 		pagination: {
 			el: '.swiper-pagination',
 			bulletActiveClass: 'swiper-pagination-bullet-active',

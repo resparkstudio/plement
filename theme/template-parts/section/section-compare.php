@@ -68,14 +68,17 @@ if ( ! function_exists( 'plmt_compare_slider' ) ) {
 ?>
 <section id='compare' class="lg:container mx-auto pt-6 lg:pt-[7.5rem]">
 	<div class="bg-lightGrayBg lg:px-[5.1875rem] py-16">
-		<?php if ( $compare['heading'] ) : ?>
-			<h2 class="text-center text-h1Mobile lg:text-h1 font-bold mb-4 lg:mb-6"><?php echo $compare['heading']; ?></h2>
-		<?php endif; ?>
-		<?php if ( $compare['subtext'] ) : ?>
-			<p class="text-center text-titleMobile lg:text-title mb-4 lg:mb-6 text-darkGray">
-				<?php echo esc_html( $compare['subtext'] ); ?>
-			</p>
-		<?php endif; ?>
+		<div class="container">
+			<?php if ( $compare['heading'] ) : ?>
+				<h2 class="text-center text-h1Mobile lg:text-h1 font-bold mb-4 lg:mb-6"><?php echo $compare['heading']; ?>
+				</h2>
+			<?php endif; ?>
+			<?php if ( $compare['subtext'] ) : ?>
+				<p class="text-center text-titleMobile lg:text-title mb-4 lg:mb-6 text-darkGray">
+					<?php echo esc_html( $compare['subtext'] ); ?>
+				</p>
+			<?php endif; ?>
+		</div>
 
 		<div class="hidden lg:grid grid-cols-2 gap-[1.875rem]">
 			<?php foreach ( $compare['services'] as $item ) : ?>
@@ -86,8 +89,8 @@ if ( ! function_exists( 'plmt_compare_slider' ) ) {
 			<?php plmt_compare_slider( $compare['services'] ); ?>
 		</div>
 		<?php if ( $compare['bottom_button'] ) : ?>
-			<div class="mt-6 flex justify-center">
-				<?php plmt_button( $compare['bottom_button']['url'], $compare['bottom_button']['title'], array( 'classes' => 'justify-center' ) ) ?>
+			<div class="container mt-6 flex justify-center">
+				<?php plmt_button( $compare['bottom_button']['url'], $compare['bottom_button']['title'], array( 'classes' => 'justify-center w-full lg:w-auto' ) ) ?>
 			</div>
 		<?php endif; ?>
 	</div>

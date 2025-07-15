@@ -8,10 +8,10 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 ?>
 <section id='hero'
-	class='pt-6 mb-6 lg:py-[4.25rem] lg:mb-[7.5rem] flex flex-col bg-mainBlack text-white relative lg:min-h-[calc(100vh-5rem)]'>
+	class='py-16 mb-6 lg:py-[4.25rem] lg:mb-[7.5rem] flex flex-col bg-mainBlack text-white relative lg:min-h-[calc(100vh-5rem)]'>
 	<div class="lg:container mx-auto lg:my-auto">
 		<div class='flex flex-col gap-4 items-center lg:flex-row lg:justify-between lg:gap-14'>
-			<div class='lg:w-1/2 hero-content lg:max-w-2xl px-5 lg:px-0'>
+			<div class='hero-content w-full px-5 lg:px-0'>
 				<div class='flex gap-3 flex-wrap mb-6'>
 					<?php foreach ( $hero_content['top_icons'] as $icon ) : ?>
 						<img src='<?php echo esc_url( $icon['url'] ) ?>' alt='<?php echo esc_attr( $icon['alt'] ) ?>'
@@ -20,7 +20,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				</div>
 				<?php if ( $hero_content['heading'] ) : ?>
 					<h1
-						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[33.125rem] w-full mb-4 lg:mb-6'>
+						class='text-[3rem] font-semibold lg:text-[5.625rem] lg:font-medium leading-[100%] max-w-[48.125rem] w-full mb-4 lg:mb-6'>
 						<?php echo $hero_content['heading'] ?>
 					</h1>
 				<?php endif; ?>
@@ -43,11 +43,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 						src='<?php echo esc_url( $hero_content['hero_image']['url'] ) ?>'
 						alt='<?php echo esc_attr( $hero_content['hero_image']['alt'] ) ?>'>
 				<?php endif; ?>
-				<?php if ( $hero_content['mobile_image'] ) : ?>
-					<img class="w-full ml-auto max-w-[21.875rem] h-auto lg:hidden"
-						src='<?php echo esc_url( $hero_content['mobile_image']['url'] ) ?>'
-						alt='<?php echo esc_attr( $hero_content['mobile_image']['alt'] ) ?>'>
-				<?php endif; ?>
+
 			</div>
 		</div>
 	</div>
