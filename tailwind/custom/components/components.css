@@ -273,3 +273,9 @@ div.wpcf7-validation-errors {
 .category-filter.active {
 	@apply bg-mainBlack text-white;
 }
+
+.wpcf7-form-control.wpcf7-text,
+.wpcf7-form-control.wpcf7-textarea,
+.wpcf7-form input[type='submit'] {
+	@apply !rounded-none;
+}
