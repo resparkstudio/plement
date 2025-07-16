@@ -47,3 +47,8 @@ body {
 .container {
 	@apply px-6 lg:!px-[1.25rem];
 }
+
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
