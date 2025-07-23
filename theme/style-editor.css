@@ -2191,6 +2191,14 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
+.w-\[12\.5rem\] {
+  width: 12.5rem;
+}
+
+.\!w-\[12\.5rem\] {
+  width: 12.5rem !important;
+}
+
 .min-w-6 {
   min-width: 1.5rem;
 }
@@ -2330,6 +2338,14 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-\[12\.5rem\] {
+  max-width: 12.5rem;
+}
+
+.max-w-\[56\.25rem\] {
+  max-width: 56.25rem;
 }
 
 .flex-shrink-0 {
@@ -4140,6 +4156,16 @@ div.wpcf7-validation-errors {
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
+@media (max-width: 1440px) {
+  .max-\[1440px\]\:block {
+    display: block;
+  }
+
+  .max-\[1440px\]\:hidden {
+    display: none;
+  }
+}
+
 @media not all and (min-width: 984px) {
   .max-lg\:max-w-2xl {
     max-width: 42rem;
@@ -4523,6 +4549,10 @@ div.wpcf7-validation-errors {
     min-height: calc(100vh - 5rem);
   }
 
+  .lg\:min-h-\[6\.5625rem\] {
+    min-height: 6.5625rem;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4594,6 +4624,10 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .lg\:w-\[12\.5rem\] {
+    width: 12.5rem;
   }
 
   .lg\:max-w-2xl {
@@ -5256,6 +5290,14 @@ div.wpcf7-validation-errors {
 @media (min-width: 1440px) {
   .\33xl\:static {
     position: static;
+  }
+
+  .min-\[1440px\]\:block {
+    display: block;
+  }
+
+  .min-\[1440px\]\:hidden {
+    display: none;
   }
 }
 

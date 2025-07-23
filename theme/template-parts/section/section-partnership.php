@@ -31,11 +31,20 @@ if ( ! isset( $partnership ) || empty( $partnership ) ) {
 				</div>
 			</div>
 			<div>
-				<img class="w-auto h-full hidden lg:block translate-x-[1.25rem]"
-					src='<?php echo esc_url( $partnership['image']['url'] ) ?>'
-					alt='<?php echo esc_attr( $partnership['image']['alt'] ) ?>'>
-				<img class="w-auto h-full lg:hidden" src='<?php echo esc_url( $partnership['mobile_image']['url'] ) ?>'
-					alt='<?php echo esc_attr( $partnership['mobile_image']['alt'] ) ?>'>
+				<?php if ( $partnership['image'] ) : ?>
+					<img class="w-auto h-full hidden lg:block min-[1440px]:hidden translate-x-[1.25rem]"
+						src='<?php echo esc_url( $partnership['image']['url'] ) ?>'
+						alt='<?php echo esc_attr( $partnership['image']['alt'] ) ?>'>
+				<?php endif; ?>
+				<?php if ( $partnership['mobile_image'] ) : ?>
+					<img class="w-auto h-full lg:hidden" src='<?php echo esc_url( $partnership['mobile_image']['url'] ) ?>'
+						alt='<?php echo esc_attr( $partnership['mobile_image']['alt'] ) ?>'>
+				<?php endif; ?>
+				<?php if ( $partnership['large_screen_image'] ) : ?>
+					<img class="w-auto h-full hidden min-[1440px]:block translate-x-[1.25rem]"
+						src='<?php echo esc_url( $partnership['large_screen_image']['url'] ) ?>'
+						alt='<?php echo esc_attr( $partnership['large_screen_image']['alt'] ) ?>'>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

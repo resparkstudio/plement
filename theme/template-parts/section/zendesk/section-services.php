@@ -147,7 +147,7 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 		?>
 		<div class="bg-lightGrayBg py-7 lg:py-20 mt-14 lg:mt-20">
 			<div
-				class="container mx-auto flex flex-col gap-5 lg:gap-10 lg:items-center <?php echo $is_even ? 'lg:flex-row' : 'lg:flex-row-reverse'; ?>">
+				class="container mx-auto flex flex-col gap-10 lg:items-center <?php echo $is_even ? 'lg:flex-row' : 'lg:flex-row-reverse'; ?>">
 				<div class="text-center">
 					<?php if ( $is_with_image ) : ?>
 						<img class="w-full h-full object-contain mb-6 lg:hidden"
@@ -177,7 +177,7 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 				</div>
 			</div>
 			<?php if ( $service['bottom_text'] ) : ?>
-				<p class="container text-center text-accent text-h4BoldMobile lg:text-h4Bold mt-5 lg:mt-16">
+				<p class="container text-center text-accent text-h4BoldMobile lg:text-h4Bold mt-10 lg:mt-16 max-w-[56.25rem]">
 					<?php echo esc_html( $service['bottom_text'] ); ?>
 				</p>
 			<?php endif; ?>

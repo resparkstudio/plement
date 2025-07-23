@@ -40,7 +40,8 @@ if ( ! isset( $steps ) || empty( $steps ) ) {
 							class="w-[1.375rem] h-[1.375rem] lg:w-7 lg:h-7">
 						<?php echo esc_html( $step['title'] ); ?>
 					</div>
-					<div class="bg-darkGray/30 text-lightGrayBg p-3 lg:p-4 text-center">
+					<div
+						class="bg-darkGray/30 text-lightGrayBg p-3 lg:p-4 text-center lg:min-h-[6.5625rem] lg:flex flex-col justify-center">
 						<?php foreach ( $step['tasks'] as $task ) : ?>
 							<p class="text-bodySmall lg:text-[1.125rem] lg:leading-[1.4625rem]">
 								<?php echo esc_html( $task['item'] ); ?>
