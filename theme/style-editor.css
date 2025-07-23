@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.52
+Version: 0.1.54
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2058,6 +2058,10 @@ div.wpcf7-validation-errors {
   min-height: 100%;
 }
 
+.\!w-\[12\.5rem\] {
+  width: 12.5rem !important;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2191,14 +2195,6 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
-.w-\[12\.5rem\] {
-  width: 12.5rem;
-}
-
-.\!w-\[12\.5rem\] {
-  width: 12.5rem !important;
-}
-
 .min-w-6 {
   min-width: 1.5rem;
 }
@@ -2308,6 +2304,10 @@ div.wpcf7-validation-errors {
   max-width: 54.375rem;
 }
 
+.max-w-\[56\.25rem\] {
+  max-width: 56.25rem;
+}
+
 .max-w-\[652px\] {
   max-width: 652px;
 }
@@ -2338,14 +2338,6 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[12\.5rem\] {
-  max-width: 12.5rem;
-}
-
-.max-w-\[56\.25rem\] {
-  max-width: 56.25rem;
 }
 
 .flex-shrink-0 {
@@ -4156,16 +4148,6 @@ div.wpcf7-validation-errors {
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
-@media (max-width: 1440px) {
-  .max-\[1440px\]\:block {
-    display: block;
-  }
-
-  .max-\[1440px\]\:hidden {
-    display: none;
-  }
-}
-
 @media not all and (min-width: 984px) {
   .max-lg\:max-w-2xl {
     max-width: 42rem;
@@ -4545,12 +4527,12 @@ div.wpcf7-validation-errors {
     min-height: 26.25rem;
   }
 
-  .lg\:min-h-\[calc\(100vh-5rem\)\] {
-    min-height: calc(100vh - 5rem);
-  }
-
   .lg\:min-h-\[6\.5625rem\] {
     min-height: 6.5625rem;
+  }
+
+  .lg\:min-h-\[calc\(100vh-5rem\)\] {
+    min-height: calc(100vh - 5rem);
   }
 
   .lg\:w-1\/2 {
@@ -4579,6 +4561,10 @@ div.wpcf7-validation-errors {
 
   .lg\:w-8 {
     width: 2rem;
+  }
+
+  .lg\:w-\[12\.5rem\] {
+    width: 12.5rem;
   }
 
   .lg\:w-\[19px\] {
@@ -4624,10 +4610,6 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .lg\:w-\[12\.5rem\] {
-    width: 12.5rem;
   }
 
   .lg\:max-w-2xl {
