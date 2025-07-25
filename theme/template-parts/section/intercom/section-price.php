@@ -1,7 +1,7 @@
 <?php
 $price_content = get_field( 'price' );
 
-if ( ! isset( $price_content ) || empty( $price_content ) ) {
+if ( ! isset( $price_content ) || empty( $price_content ) || ! isset( $price_content['price_card'] ) || empty( $price_content['price_card'] ) ) {
 	return;
 }
 
