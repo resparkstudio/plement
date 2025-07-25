@@ -1551,6 +1551,26 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "key": "field_6883adcb9a918",
+                    "label": "Hide section",
+                    "name": "hide_section",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         }
@@ -1573,5 +1593,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753453630
+    "modified": 1753460182
 }
