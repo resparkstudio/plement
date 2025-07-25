@@ -18,12 +18,15 @@ if ( ! function_exists( 'plmt_price_card' ) ) {
 				<span class="text-accent text-h3 font-bold lg:text-h4Bold">
 					<?php esc_html_e( 'Price ', 'plement' ); ?>
 				</span>
-				<span class="text-h2Mobile lg:text-h2" x-show="currency === 'eur'">
-					<?php echo esc_html( $price['price_usd'] ); ?>
-				</span>
-				<span class="text-h2Mobile lg:text-h2" x-show="currency === 'usd'">
-					<?php echo esc_html( $price['price_eur'] ); ?>
-				</span>
+				<div class="flex items-center">
+					<span x-html="currency === 'usd' ? '$' : '€'"></span>
+					<span class="text-h2Mobile lg:text-h2" x-show="currency === 'eur'">
+						<?php echo esc_html( $price['price_usd'] ); ?>
+					</span>
+					<span class="text-h2Mobile lg:text-h2" x-show="currency === 'usd'">
+						<?php echo esc_html( $price['price_eur'] ); ?>
+					</span>
+				</div>
 			</div>
 			<div class="mt-5 lg:mt-4 flex flex-col gap-3">
 				<?php foreach ( $price['services'] as $service ) : ?>

@@ -7,7 +7,7 @@ if ( ! isset( $info_section ) || empty( $info_section ) ) {
 
 ?>
 
-<section class="container flex flex-col lg:flex-row gap-4 lg:gap-10">
+<section id="info" class="container flex flex-col lg:flex-row gap-4 lg:gap-10 lg:items-center lg:justify-between">
 	<div class=" space-y-4 lg:space-y-6 max-w-[54.375rem] w-full">
 		<?php if ( $info_section['heading'] ) : ?>
 			<h2 class="text-h2Mobile lg:text-h2"><?php echo esc_html( $info_section['heading'] ); ?></h2>
