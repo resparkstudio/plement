@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.1.56
+Version: 0.1.57
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -4356,6 +4356,11 @@ div.wpcf7-validation-errors {
     margin-right: auto;
   }
 
+  .lg\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
   .lg\:my-auto {
     margin-top: auto;
     margin-bottom: auto;
@@ -4666,6 +4671,10 @@ div.wpcf7-validation-errors {
     max-width: 16.875rem;
   }
 
+  .lg\:max-w-\[18\.5625rem\] {
+    max-width: 18.5625rem;
+  }
+
   .lg\:max-w-\[22\.9375rem\] {
     max-width: 22.9375rem;
   }
@@ -4772,6 +4781,10 @@ div.wpcf7-validation-errors {
 
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
   }
 
   .lg\:items-center {
@@ -4957,6 +4970,16 @@ div.wpcf7-validation-errors {
     padding-right: 2.5rem;
   }
 
+  .lg\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .lg\:px-7 {
     padding-left: 1.75rem;
     padding-right: 1.75rem;
@@ -5020,6 +5043,11 @@ div.wpcf7-validation-errors {
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .lg\:py-\[0\.875rem\] {

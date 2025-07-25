@@ -19,7 +19,7 @@ if ( ! function_exists( 'plmt_price_card' ) ) {
 					<?php esc_html_e( 'Price ', 'plement' ); ?>
 				</span>
 				<div class="flex items-center">
-					<span x-html="currency === 'usd' ? '$' : '€'"></span>
+					<span class="text-h2Mobile lg:text-h2" x-html="currency === 'usd' ? '$' : '€'"></span>
 					<span class="text-h2Mobile lg:text-h2" x-show="currency === 'eur'">
 						<?php echo esc_html( $price['price_usd'] ); ?>
 					</span>
