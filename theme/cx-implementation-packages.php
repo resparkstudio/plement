@@ -35,7 +35,9 @@ $hide_pricing = get_field( 'hide_pricing' );
 		</div>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/section/intercom/section-price' ) ?>
-	<?php get_template_part( 'template-parts/section/zendesk/section-large-service' ) ?>
+	<?php if ( $hide_pricing ) : ?>
+		<?php get_template_part( 'template-parts/section/zendesk/section-large-service' ) ?>
+	<?php endif; ?>
 	<?php get_template_part( 'template-parts/section/zendesk/section-services' ) ?>
 </section>
 
