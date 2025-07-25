@@ -14,7 +14,7 @@ $heading     = get_field( 'heading' );
 $description = get_field( 'description' );
 ?>
 
-<section class="relative z-10 bg-white pb-14 lg:pb-20">
+<section class="relative z-10 bg-white pb-14 lg:pb-20" x-data="{currency: 'eur'}">
 	<?php get_template_part( 'template-parts/section/zendesk/section-hero' ) ?>
 	<?php get_template_part( 'template-parts/section/zendesk/section-info' ) ?>
 	<div class="bg-lightGrayBg mt-6 lg:mt-20 pb-7 lg:pb-16">
@@ -31,6 +31,7 @@ $description = get_field( 'description' );
 			<?php get_template_part( 'template-parts/section/section-pricing' ) ?>
 		</div>
 	</div>
+	<?php get_template_part( 'template-parts/section/intercom/section-price' ) ?>
 	<?php get_template_part( 'template-parts/section/zendesk/section-services' ) ?>
 </section>
 

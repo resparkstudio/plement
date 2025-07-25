@@ -267,7 +267,7 @@ function package_cards( $packages ) {
 
 ?>
 
-<div x-data="{ modalOpen: false, selectedPackage: '', currency: 'eur' }" @uscountry.window="currency = 'usd';">
+<div x-data="{ modalOpen: false, selectedPackage: '' }" @uscountry.window="currency = 'usd';">
 	<div id="pricing" class="relative">
 		<div class="relative flex flex-col justify-center overflow-hidden">
 			<div>
