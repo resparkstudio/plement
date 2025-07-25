@@ -11,7 +11,6 @@ if ( ! function_exists( 'plmt_price_card' ) ) {
 		<div class="relative border border-accent w-full px-5 lg:px-7 pt-12 lg:pt-16 pb-5 lg:pb-8">
 			<div class="absolute top-0 left-0 text-bodyBold">
 				<div class="py-2 px-6 lg:py-3 lg:px-[1.875rem] text-white bg-accent">
-
 					<?php esc_html_e( $price['bead_text'], ); ?>
 				</div>
 			</div>
@@ -65,7 +64,7 @@ if ( ! function_exists( 'plmt_price_card' ) ) {
 ?>
 
 <section id="price" class="bg-lightGrayBg mt-14 lg:mt-20 py-8 lg:py-20">
-	<div class="container flex flex-col lg:flex-row lg:gap-16">
+	<div class="container flex flex-col lg:items-center lg:flex-row lg:gap-16">
 		<div class="text-center max-w-[39rem]	">
 			<h2 class="text-displayLargeMobile lg:text-displayLarge mb-4 lg:mb-6">
 				<?php echo esc_html( $price_content['heading'] ); ?>
