@@ -69,8 +69,6 @@ const smoothScrollToElementById = (hash) => {
 	}
 };
 
-// const handleScrollIntoView = () => {
-// 	const menuItems = document.querySelectorAll('.menu-item a');
 const scrollToLinks = document.querySelectorAll('.scroll-to');
 
 const isHomePage = window.location.pathname === '/';
@@ -91,22 +89,8 @@ const addClickListener = (item) => {
 	});
 };
 
-// 	menuItems.forEach(addClickListener);
 if (scrollToLinks) {
 	scrollToLinks.forEach(addClickListener);
-}
-// };
-
-// handleScrollIntoView();
-
-if (window.location.pathname === '/') {
-	window.addEventListener('load', () => {
-		const hash = sessionStorage.getItem('scrollToHash');
-		if (hash) {
-			smoothScrollToElementById(hash);
-			sessionStorage.removeItem('scrollToHash');
-		}
-	});
 }
 
 const refreshScrollTrigger = () => {
@@ -115,6 +99,9 @@ const refreshScrollTrigger = () => {
 
 const handleButtonsWithScrollTriggerRefresh = () => {
 	const buttons = document.querySelectorAll('.refreshScrollTrigger');
+
+	if (!buttons || buttons.length === 0) return;
+
 	buttons.forEach((button) => {
 		button.addEventListener('click', () =>
 			setTimeout(refreshScrollTrigger, 1000),
@@ -147,7 +134,7 @@ const addArrow = () => {
 
 const handleTextSplit = () => {
 	const elements = document.querySelectorAll('.split-text');
-	if (!elements) return;
+	if (!elements || elements.length === 0) return;
 
 	elements.forEach((element) => {
 		new SplitType(element, {
