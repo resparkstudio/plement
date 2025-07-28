@@ -15,7 +15,7 @@ if ( ! defined( 'PLMT_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'PLMT_VERSION', '0.1.37' );
+	define( 'PLMT_VERSION', '0.2.00' );
 }
 
 if ( ! defined( 'PLMT_TYPOGRAPHY_CLASSES' ) ) {
@@ -210,3 +210,8 @@ require get_template_directory() . '/inc/customizer.php';
  * SVG icons functions and filters.
  */
 require get_template_directory() . '/inc/svg-icons.php';
+
+/**
+ * Ajax functions.
+ */
+require get_template_directory() . '/inc/ajax.php';

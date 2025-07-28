@@ -16,7 +16,7 @@ if ( ! isset( $contact_content ) || empty( $contact_content ) ) {
 		<h2 class="text-h4Bold lg:text-h1"><?php esc_html_e( $contact_content['heading'] ) ?></h2>
 		<p class="text-regular"><?php esc_html_e( $contact_content['bottom_text'] ) ?></p>
 	</div>
-	<div class="order-last lg:order-none">
+	<div>
 		<?php echo apply_shortcodes( '[contact-form-7 id="0ec1d42" title="Contact form 1"]' ); ?>
 	</div>
 

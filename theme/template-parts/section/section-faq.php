@@ -34,7 +34,7 @@ function faq_item( $item ) {
 
 ?>
 
-<section id="faq" class="container py-[7.5rem] lg:py-20">
+<section id="faq" class="container pb-[7.5rem] pt-6 mt-6 lg:mt-0 lg:pt-[7.5rem] lg:pb-20">
 	<div
 		class="grid grid-cols-1 justify-center items-start gap-x-12 gap-y-6 xl:gap-28 lg:grid-cols-2 lg:justify-between max-lg:max-w-2xl  max-w-full">
 		<div class="w-full h-full flex flex-col justify-between">

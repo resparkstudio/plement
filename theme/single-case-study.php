@@ -7,7 +7,8 @@
  * @package Plement
  */
 
-get_header();
+get_header( null, array( 'type' => 'light' ) );
+
 ?>
 
 <section id="primary" class="container pt-6 pb-[4.375rem] lg:pb-[7.5rem]">

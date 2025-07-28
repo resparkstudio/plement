@@ -7,30 +7,6 @@ if ( ! isset( $pricing_content ) || empty( $pricing_content ) ) {
 }
 
 
-function currency_switch() {
-	?>
-	<div class="w-full justify-center md:justify-end flex items-center gap-4 flex-wrap mb-10">
-		<label for="currency" class="w-max block text-bodyBold lg:text-[1rem] lg:leading-[1.5rem] lg:font-medium">
-			<?php esc_html_e( 'Display Price in:', 'plmt' ) ?>
-		</label>
-		<div
-			class="relative max-w-[13.75rem] grid items-center justify-center w-full h-8 grid-cols-2 bg-[#F3F4F4] select-none">
-			<button value="eur" :class="currency==='eur' ? 'font-bold' : ''" @click="currency='eur'" type="button"
-				class="relative z-20 inline-flex items-center justify-center w-full h-7 px-3 transition-all cursor-pointer whitespace-nowrap">
-				EUR
-			</button>
-			<button value="usd" :class="currency==='usd' ? 'font-bold' : ''" @click="currency='usd'" type="button"
-				class="relative z-20 inline-flex items-center justify-center w-full h-7 px-3 transition-all cursor-pointer whitespace-nowrap">
-				USD
-			</button>
-			<div :class="currency==='eur' ? 'left-[2px]' : 'right-[2px]'" x-transition
-				class="absolute z-10 w-1/2 h-7 duration-300 ease-out" x-cloak>
-				<div class="w-full h-7 bg-white shadow-sm"></div>
-			</div>
-		</div>
-	</div>
-	<?php
-}
 
 function fillout_modal() {
 	?>
@@ -74,7 +50,7 @@ function package_cards_mobile( $packages ) {
 		return;
 	?>
 	<div class="packages-list swiper">
-		<div class="swiper-wrapper">
+		<div class="swiper-wrapper pt-[1px]">
 			<?php foreach ( $packages as $package ) : ?>
 				<div class="swiper-slide h-full">
 					<div
@@ -113,11 +89,11 @@ function package_cards_mobile( $packages ) {
 								"value" => $package['title']
 							) ) ?>
 							<?php if ( isset( $package['services'] ) ) : ?>
-								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
+								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-5 mt-5">
 									<?php foreach ( $package['services'] as $service ) : ?>
 										<div class="flex items-start gap-2">
-											<svg class="flex-shrink-0 w-[14px] h-[14px]" width="16" height="17" viewBox="0 0 16 17"
-												fill="none" xmlns="http://www.w3.org/2000/svg">
+											<svg class="flex-shrink-0 w-[1.125rem] h-[1.125rem]" width="16" height="17"
+												viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
 													stroke-linecap="round" stroke-linejoin="round" />
 											</svg>
@@ -126,10 +102,29 @@ function package_cards_mobile( $packages ) {
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>
+							<?php if ( $package['bottom_items'] ) : ?>
+								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
+									<?php foreach ( $package['bottom_items'] as $item ) : ?>
+										<div class="flex items-start gap-2">
+											<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+												src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+												alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+											<div class="text-bodySmall">
+												<span>
+													<?php echo esc_html( $item['text'] ) ?>
+												</span>
+												<span class="font-bold">
+													<?php echo esc_html( $item['bold_text'] ) ?>
+												</span>
+											</div>
+										</div>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 							<?php if ( isset( $package['sow_file'] ) && ! empty( $package['sow_file'] ) ) : ?>
 								<a href="<?php echo esc_url( $package['sow_file']['url'] ) ?>"
 									target="<?php echo esc_attr( $package['sow_file']['target'] ) ?>"
-									class="group mt-[1.875rem] py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
+									class="group mt-5 py-2 hover:text-accent justify-self-center flex gap-2 items-center justify-center text-bodySmall text-darkGray">
 									<?php esc_html_e( 'Open SOW Doc', 'plmt' ) ?>
 									<div class="text-accent">
 										<?php plmt_arrow() ?>
@@ -194,15 +189,34 @@ function package_cards( $packages ) {
 								) ) ?>
 
 								<?php if ( isset( $package['services'] ) ) : ?>
-									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-[1.875rem] mt-[1.875rem]">
+									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-4 mt-4">
 										<?php foreach ( $package['services'] as $service ) : ?>
 											<div class="flex items-start gap-2">
-												<svg class="flex-shrink-0 w-[14px] h-[14px]" width="16" height="17" viewBox="0 0 16 17"
-													fill="none" xmlns="http://www.w3.org/2000/svg">
+												<svg class="flex-shrink-0 w-[1.125rem] h-[1.125rem]" width="16" height="17"
+													viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2"
 														stroke-linecap="round" stroke-linejoin="round" />
 												</svg>
-												<p class="text-bodySmall"><?php echo esc_html( $service['service'] ) ?></p>
+												<p class="text-bodyRegular"><?php echo esc_html( $service['service'] ) ?></p>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+								<?php if ( $package['bottom_items'] ) : ?>
+									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
+										<?php foreach ( $package['bottom_items'] as $item ) : ?>
+											<div class="flex items-start gap-2">
+												<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+													src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+													alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+												<div class="text-bodyRegular">
+													<span>
+														<?php echo esc_html( $item['text'] ) ?>
+													</span>
+													<span class="font-bold">
+														<?php echo esc_html( $item['bold_text'] ) ?>
+													</span>
+												</div>
 											</div>
 										<?php endforeach; ?>
 									</div>
@@ -229,12 +243,12 @@ function package_cards( $packages ) {
 
 ?>
 
-<div x-data="{ modalOpen: false, selectedPackage: '', currency: 'eur' }" @uscountry.window="currency = 'usd';">
+<div x-data="{ modalOpen: false, selectedPackage: '' }" @uscountry.window="currency = 'usd';">
 	<div id="pricing" class="relative">
 		<div class="relative flex flex-col justify-center overflow-hidden">
 			<div>
 				<input id="selected-package" type="hidden" x-bind:value="selectedPackage">
-				<div class="container">
+				<div>
 					<?php currency_switch() ?>
 					<div class="hidden lg:block">
 						<?php isset( $pricing_content['packages'] ) ? package_cards( $pricing_content['packages'] ) : ''; ?>
@@ -246,12 +260,6 @@ function package_cards( $packages ) {
 			</div>
 		</div>
 	</div>
-	<div class="hidden lg:block">
-		<?php get_template_part( 'template-parts/section/section-pricing-compare' ); ?>
-	</div>
 
-	<div class="lg:hidden">
-		<?php get_template_part( 'template-parts/section/section-pricing-compare-mobile' ); ?>
-	</div>
 	<?php fillout_modal() ?>
 </div>

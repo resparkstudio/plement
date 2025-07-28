@@ -9,7 +9,8 @@
 
 $active_category_filter = $_GET['category'] ?? '';
 
-get_header();
+get_header( null, array( 'type' => 'light' ) );
+
 ?>
 
 <section id="primary">
@@ -19,25 +20,30 @@ get_header();
 			'taxonomy' => 'category',
 			'hide_empty' => true,
 		) );
+
+		$tools = get_terms( array(
+			'taxonomy' => 'tool',
+			'hide_empty' => true,
+		) );
+
+		$tool_options = array();
+		if ( $tools ) {
+			foreach ( $tools as $tool ) {
+				$tool_options[ $tool->slug ] = $tool->name;
+			}
+		}
+
+		$categories_options = array();
+		if ( $categories ) {
+			foreach ( $categories as $category ) {
+				$categories_options[ $category->slug ] = $category->name;
+			}
+		}
 		?>
-		<div class="swiper-container mb-[1.875rem] lg:mb-[2.625rem]">
-			<div class="swiper studies-category-swiper">
-				<div class="swiper-wrapper">
-					<button
-						class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] hover:text-white hover:bg-mainBlack text-bodyBold !transition duration-200 ease-in-out  <?php echo empty( $active_category_filter ) ? 'active' : '' ?>">
-						<?php esc_html_e( 'All Cases', 'plmt' ) ?>
-					</button>
-					<?php
-					foreach ( $categories as $category ) {
-						?>
-						<button value="<?php echo $category->slug ?>"
-							class="swiper-slide !w-auto category-filter text-darkGray bg-lightGrayBg px-4 py-[0.625rem] hover:text-white hover:bg-mainBlack text-bodyBold !transition duration-200 ease-in-out  <?php echo str_contains( $active_category_filter, $category->slug ) ? 'active' : '' ?>">
-							<?php echo esc_html( $category->name ); ?>
-						</button>
-						<?php
-					}
-					?>
-				</div>
+		<div class="mb-[0.625rem] lg:mb-6 swiper filter-slider !overflow-visible">
+			<div class="swiper-wrapper overflow-visible">
+				<?php plmt_dropdown( $tool_options, __( 'Filter by tools:', 'plmt' ), 'tool-filter' ); ?>
+				<?php plmt_dropdown( $categories_options, __( 'Filter by category:', 'plmt' ), 'category-filter' ); ?>
 			</div>
 		</div>
 

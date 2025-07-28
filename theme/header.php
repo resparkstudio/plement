@@ -10,6 +10,16 @@
  * @package Plement
  */
 
+$type = 'dark';
+
+if ( isset( $args['type'] ) && $args['type'] === 'light' ) {
+	$type = 'light';
+}
+
+
+$is_dark = $type === 'dark';
+
+
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -38,6 +48,8 @@
 	<div id="page" class="relative" x-data="{overlayOpen: false}">
 		<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'plement' ); ?></a>
 
-		<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
+		<?php get_template_part( 'template-parts/layout/header', 'content', array(
+			'is_dark' => $is_dark,
+		) ); ?>
 
 		<div id="content">
