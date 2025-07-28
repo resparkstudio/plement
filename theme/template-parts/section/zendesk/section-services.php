@@ -128,7 +128,7 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 								<?php echo esc_html( $index + 1 ); ?>
 							</span>
 						<?php endif; ?>
-						<p class="text-bodySmall lg:text-h5Regular">
+						<p class="text-bodyRegular lg:text-h5Regular">
 							<?php echo esc_html( $step['text'] ); ?>
 						</p>
 					</div>
