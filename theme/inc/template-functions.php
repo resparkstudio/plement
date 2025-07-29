@@ -340,6 +340,7 @@ function plmt_build_menu_tree( $menu, $parent_id ) {
 				'children' => $children ?? null,
 				'description' => get_field( 'description', $item->ID ) ?? '',
 				'image' => get_field( 'image', $item->ID ) ?? '',
+				'dark_image' => get_field( 'dark_image', $item->ID ) ?? '',
 				'is_contact_us' => get_field( 'is_contact_us', $item->ID ) ?? false,
 				'parentID' => $item->menu_item_parent,
 			);

@@ -48,6 +48,31 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_6888a6d39e01f",
+            "label": "Dark image",
+            "name": "dark_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_6748f3b0b4361",
             "label": "Is contact us",
             "name": "is_contact_us",
@@ -131,5 +156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751625235
+    "modified": 1753786078
 }

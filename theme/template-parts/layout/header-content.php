@@ -97,26 +97,34 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
 											class="inline-block py-5 px-10 w-full h-full">
 											<div class="flex items-center gap-2 mb-4">
-												<img class="w-5 h-5" src="<?php echo esc_url( $child['image']['url'] ) ?>"
-													alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
+												<?php if ( isset( $child['image'] ) && $child['image'] && $is_dark ) : ?>
+													<img class="w-5 h-5" src="<?php echo esc_url( $child['image']['url'] ) ?>"
+														alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
+												<?php endif; ?>
+												<?php if ( isset( $child['dark_image'] ) && $child['dark_image'] && ! $is_dark ) : ?>
+													<img class="w-5 h-5" src="<?php echo esc_url( $child['dark_image']['url'] ); ?>"
+														alt="<?php echo esc_attr( $child['title'] ); ?> dark_image">
+												<?php endif; ?>
 												<p class="text-h5Bold">
 													<?php echo esc_html( $child['title'] ); ?>
 												</p>
 											</div>
 											<?php if ( isset( $child['description'] ) ) : ?>
-												<p class="text-bodyRegular text-textSecondary">
+												<p
+													class="text-bodyRegular <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
 													<?php echo esc_html( $child['description'] ); ?>
 												</p>
 											<?php endif; ?>
 											<?php if ( $bullets ) : ?>
 												<ul class="mt-4 space-y-2">
 													<?php foreach ( $bullets as $bullet ) : ?>
-														<li class="flex items-center gap-2">
+														<li
+															class="flex items-center gap-2 <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
 															<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 																xmlns="http://www.w3.org/2000/svg">
-																<circle cx="8" cy="8" r="2" fill="#B2B2B2" />
+																<circle cx="8" cy="8" r="2" fill="currentColor" />
 															</svg>
-															<span class="text-bodySmall text-textSecondary">
+															<span class="text-bodySmall">
 																<?php echo esc_html( $bullet['item'] ); ?>
 															</span>
 														</li>
@@ -206,9 +214,13 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 										class="py-3 border-b-lightGray border-b group flex items-start gap-2 justify-between h-full w-full">
 										<div>
 											<div class="flex items-center gap-1 mb-3">
-												<?php if ( isset( $item['image'] ) && $item['image'] ) : ?>
+												<?php if ( isset( $item['image'] ) && $item['image'] && $is_dark ) : ?>
 													<img class="w-5 h-5 mr-2" src="<?php echo esc_url( $item['image']['url'] ); ?>"
 														alt="<?php echo esc_attr( $item['title'] ); ?> image">
+												<?php endif; ?>
+												<?php if ( isset( $item['dark_image'] ) && $item['dark_image'] && ! $is_dark ) : ?>
+													<img class="w-5 h-5 mr-2" src="<?php echo esc_url( $item['dark_image']['url'] ); ?>"
+														alt="<?php echo esc_attr( $item['title'] ); ?> dark_image">
 												<?php endif; ?>
 												<span class="text-bodyBold">
 													<?php echo esc_html( $item['title'] ); ?>
