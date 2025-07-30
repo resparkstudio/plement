@@ -994,23 +994,6 @@
                                     "parent_repeater": "field_6867cd2802c32"
                                 },
                                 {
-                                    "key": "field_674608a503e9a",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "parent_repeater": "field_6867cd2802c32"
-                                },
-                                {
                                     "key": "field_674608ac03e9b",
                                     "label": "Image",
                                     "name": "image",
@@ -2504,5 +2487,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753306287
+    "modified": 1753872309
 }
