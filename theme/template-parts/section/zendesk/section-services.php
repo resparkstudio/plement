@@ -147,7 +147,7 @@ if ( ! function_exists( 'plmt_steps_list' ) ) {
 		?>
 		<div class="bg-lightGrayBg py-7 lg:py-20 mt-14 lg:mt-20">
 			<div
-				class="container mx-auto flex flex-col gap-10 lg:items-center <?php echo $is_even ? 'lg:flex-row' : 'lg:flex-row-reverse'; ?>">
+				class="container mx-auto flex flex-col gap-10 lg:items-center <?php echo $is_even ? 'lg:flex-row-reverse' : 'lg:flex-row'; ?>">
 				<div class="text-center">
 					<?php if ( $is_with_image ) : ?>
 						<img class="w-full h-full object-contain mb-6 lg:hidden"

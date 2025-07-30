@@ -8,8 +8,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 
 ?>
 <section id='hero' class='container pt-6 pb-20 lg:pb-[7.5rem] lg:pt-[4.5rem] flex flex-col'>
-	<div class='flex flex-col gap-12 items-center lg:flex-row lg:gap-[8.375rem]'>
-		<div class='lg:w-1/2 hero-content lg:max-w-2xl'>
+	<div class='flex flex-col gap-12 items-center lg:flex-row lg:gap-[2.25rem]'>
+		<div class='lg:w-1/2 hero-content lg:max-w-[43.5rem]'>
 			<h1 class='text-h1Mobile max-w-[33.125rem] w-full lg:text-h2 mb-6 lg:pl-10'>
 				<?php echo esc_html( $hero_content['heading'] ) ?>
 			</h1>
@@ -25,8 +25,8 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 				</div>
 			</div>
 		</div>
-		<div class="hidden lg:block lg:max-w-[16.25rem]">
-			<img class="w-full" src='<?php echo esc_url( $hero_content['image']['url'] ) ?>'
+		<div class="hidden lg:flex w-full justify-center lg:max-w-[34.375rem]">
+			<img class="w-full max-w-[19.375rem]" src='<?php echo esc_url( $hero_content['image']['url'] ) ?>'
 				alt='<?php echo esc_attr( $hero_content['image']['alt'] ) ?>'>
 		</div>
 	</div>
