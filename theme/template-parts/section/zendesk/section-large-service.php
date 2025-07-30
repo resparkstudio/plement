@@ -26,10 +26,10 @@ if ( ! isset( $large_service_content ) || empty( $large_service_content ) ) {
 							<?php echo esc_html( $index + 1 ); ?>
 						</span>
 						<div>
-							<h3 class="text-bodyBold mb-1">
+							<h3 class="text-bodyBold lg:text-h5Bold mb-1">
 								<?php echo esc_html( $step['title'] ); ?>
 							</h3>
-							<p class="text-bodyRegular">
+							<p class="text-bodyRegular lg:text-h5Regular">
 								<?php echo esc_html( $step['description'] ); ?>
 							</p>
 						</div>

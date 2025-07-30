@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.02
+Version: 0.2.04
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2228,6 +2228,10 @@ div.wpcf7-validation-errors {
   max-width: 14.75rem;
 }
 
+.max-w-\[19\.375rem\] {
+  max-width: 19.375rem;
+}
+
 .max-w-\[20\.0625rem\] {
   max-width: 20.0625rem;
 }
@@ -2346,10 +2350,6 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[19\.375rem\] {
-  max-width: 19.375rem;
 }
 
 .flex-shrink-0 {
@@ -4667,10 +4667,6 @@ div.wpcf7-validation-errors {
     max-width: 1440px;
   }
 
-  .lg\:max-w-\[16\.25rem\] {
-    max-width: 16.25rem;
-  }
-
   .lg\:max-w-\[16\.875rem\] {
     max-width: 16.875rem;
   }
@@ -4699,6 +4695,10 @@ div.wpcf7-validation-errors {
     max-width: 31.625rem;
   }
 
+  .lg\:max-w-\[34\.375rem\] {
+    max-width: 34.375rem;
+  }
+
   .lg\:max-w-\[34\.9375rem\] {
     max-width: 34.9375rem;
   }
@@ -4719,6 +4719,10 @@ div.wpcf7-validation-errors {
     max-width: 40.25rem;
   }
 
+  .lg\:max-w-\[43\.5rem\] {
+    max-width: 43.5rem;
+  }
+
   .lg\:max-w-\[61\.625rem\] {
     max-width: 61.625rem;
   }
@@ -4733,18 +4737,6 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-none {
     max-width: none;
-  }
-
-  .lg\:max-w-\[19\.375rem\] {
-    max-width: 19.375rem;
-  }
-
-  .lg\:max-w-\[34\.375rem\] {
-    max-width: 34.375rem;
-  }
-
-  .lg\:max-w-\[43\.5rem\] {
-    max-width: 43.5rem;
   }
 
   .lg\:-translate-x-1\/2 {
@@ -4823,10 +4815,6 @@ div.wpcf7-validation-errors {
     justify-content: space-between;
   }
 
-  .lg\:justify-around {
-    justify-content: space-around;
-  }
-
   .lg\:justify-items-start {
     justify-items: start;
   }
@@ -4867,6 +4855,10 @@ div.wpcf7-validation-errors {
     gap: 1.8125rem;
   }
 
+  .lg\:gap-\[2\.25rem\] {
+    gap: 2.25rem;
+  }
+
   .lg\:gap-\[3\.375rem\] {
     gap: 3.375rem;
   }
@@ -4889,14 +4881,6 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[7\.5rem\] {
     gap: 7.5rem;
-  }
-
-  .lg\:gap-\[8\.375rem\] {
-    gap: 8.375rem;
-  }
-
-  .lg\:gap-\[2\.25rem\] {
-    gap: 2.25rem;
   }
 
   .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
