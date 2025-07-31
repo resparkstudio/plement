@@ -414,7 +414,7 @@ function plmt_tool_tag( $tool ) {
 
 function plmt_dropdown( $options, $button_text = 'Select Item', $button_class = '' ) {
 	?>
-		<div class="relative swiper-slide !max-w-min"
+		<div class="relative max-w-[13.1875rem] w-full sm:max-w-max"
 			x-data="{selectOpen: false, selectedItem: {value: 'all', title: 'All'}}" @click.away="selectOpen = false">
 			<button @click="selectOpen = !selectOpen" :class="{ 'bg-mainBlack text-white' : selectOpen }"
 				class="relative min-h-[39px] flex items-center justify-between w-full py-[0.625rem] pl-4 pr-[2.625rem] text-left bg-lightGrayBg cursor-default text-darkGray focus:outline-none text-bodySmall font-bold lg:text-bodyBold">

@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Controller } from 'swiper/modules';
 
 function initSwiper() {
 	new Swiper('.services-list', {
@@ -61,8 +61,8 @@ function initSwiper() {
 		},
 	});
 
-	new Swiper('.other-studies-swiper', {
-		modules: [Pagination, Navigation],
+	const mainStudiesSwiper = new Swiper('.other-studies-swiper', {
+		modules: [Pagination, Navigation, Controller],
 		autoHeight: true,
 		slidesPerView: 1,
 		breakpoints: {
@@ -81,6 +81,24 @@ function initSwiper() {
 			prevEl: '.custom-swiper-button-prev',
 		},
 	});
+
+	const subStudiesSwiper = new Swiper('.other-studies-swiper', {
+		modules: [Navigation, Controller],
+		autoHeight: true,
+		slidesPerView: 1,
+		breakpoints: {
+			1024: {
+				slidesPerView: 2,
+			},
+		},
+		spaceBetween: 16,
+		navigation: {
+			nextEl: '.custom-desktop-swiper-button-next',
+			prevEl: '.custom-desktop-swiper-button-prev',
+		},
+	});
+
+	mainStudiesSwiper.controller.control = subStudiesSwiper;
 
 	new Swiper('.studies-category-swiper', {
 		slidesPerView: 'auto',
