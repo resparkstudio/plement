@@ -2658,6 +2658,10 @@ div.wpcf7-validation-errors {
   min-width: 6.25rem;
 }
 
+.min-w-\[13\.1875rem\] {
+  min-width: 13.1875rem;
+}
+
 .\!max-w-min {
   max-width: -moz-min-content !important;
   max-width: min-content !important;
@@ -2797,6 +2801,10 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-\[13\.1875rem\] {
+  max-width: 13.1875rem;
 }
 
 .flex-shrink-0 {
@@ -5184,6 +5192,11 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:max-w-max {
+    max-width: -moz-max-content;
+    max-width: max-content;
   }
 
   .lg\:-translate-x-1\/2 {
