@@ -20,7 +20,7 @@ if ( ! isset( $hero_content ) || empty( $hero_content ) ) {
 			<div class='flex flex-wrap'>
 				<?php if ( $hero_content['primary_button'] ) : ?>
 					<?php plmt_button( esc_url( $hero_content['primary_button']['url'] ), esc_attr( $hero_content['primary_button']['title'] ), array(
-						'classes' => 'w-[10rem] lg:w-[16.875rem] w-full !px-0 py-3 justify-center lg:w-auto lg:py-5'
+						'classes' => 'w-[10rem] lg:!w-[16.875rem] w-full !px-0 py-3 justify-center lg:w-auto lg:py-5'
 					) ) ?>
 				<?php endif; ?>
 				<?php if ( $hero_content['secondary_button'] ) : ?>
