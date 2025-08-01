@@ -65,13 +65,14 @@ const handleContactFormTransition = function () {
 const smoothScrollToElementById = (hash) => {
 	const element = document.getElementById(hash);
 	if (element) {
-		element.scrollIntoView({ behavior: 'smooth' });
+		const yOffset = -120;
+		const y =
+			element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+		window.scrollTo({ top: y, behavior: 'smooth' });
 	}
 };
 
 const scrollToLinks = document.querySelectorAll('.scroll-to');
-
-const isHomePage = window.location.pathname === '/';
 
 const addClickListener = (item) => {
 	item.addEventListener('click', (e) => {
@@ -79,13 +80,7 @@ const addClickListener = (item) => {
 		const href = e.target.getAttribute('href');
 		if (!href) return;
 		const hash = href.split('#')[1];
-
-		if (!isHomePage) {
-			sessionStorage.setItem('scrollToHash', hash);
-			window.location.href = '/';
-		} else {
-			smoothScrollToElementById(hash);
-		}
+		smoothScrollToElementById(hash);
 	});
 };
 
