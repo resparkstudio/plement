@@ -21,7 +21,7 @@ body {
 }
 
 .tippy-box[data-theme~='custom'] {
-	@apply shadow-testimonial text-textBlack bg-lightGrayBg w-[300px] whitespace-break-spaces p-4 lg:p-[22px];
+	@apply shadow-testimonial text-darkGray bg-lightGrayBg w-[300px] whitespace-break-spaces p-4 lg:p-[22px];
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {

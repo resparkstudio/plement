@@ -105,18 +105,25 @@ function package_cards_mobile( $packages ) {
 							<?php if ( $package['bottom_items'] ) : ?>
 								<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
 									<?php foreach ( $package['bottom_items'] as $item ) : ?>
-										<div class="flex items-start gap-2">
-											<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
-												src="<?php echo esc_url( $item['icon']['url'] ) ?>"
-												alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
-											<div class="text-bodySmall">
-												<span>
-													<?php echo esc_html( $item['text'] ) ?>
-												</span>
-												<span class="font-bold">
-													<?php echo esc_html( $item['bold_text'] ) ?>
-												</span>
+										<div class="flex items-start gap-1">
+											<div class="flex items-start gap-2">
+												<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+													src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+													alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+												<div class="text-bodySmall">
+													<span>
+														<?php echo esc_html( $item['text'] ) ?>
+													</span>
+													<span class="font-bold">
+														<?php echo esc_html( $item['bold_text'] ) ?>
+													</span>
+												</div>
 											</div>
+											<?php if ( isset( $item['tooltip'] ) && ! empty( $item['tooltip'] ) ) : ?>
+												<div class="shrink-0">
+													<?php bottom_tooltip( esc_html( $item['tooltip'] ), true ) ?>
+												</div>
+											<?php endif; ?>
 										</div>
 									<?php endforeach; ?>
 								</div>
@@ -205,18 +212,25 @@ function package_cards( $packages ) {
 								<?php if ( $package['bottom_items'] ) : ?>
 									<div class="flex flex-col gap-3 border-t border-t-[#E9E9E9] pt-3 mt-3">
 										<?php foreach ( $package['bottom_items'] as $item ) : ?>
-											<div class="flex items-start gap-2">
-												<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
-													src="<?php echo esc_url( $item['icon']['url'] ) ?>"
-													alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
-												<div class="text-bodyRegular">
-													<span>
-														<?php echo esc_html( $item['text'] ) ?>
-													</span>
-													<span class="font-bold">
-														<?php echo esc_html( $item['bold_text'] ) ?>
-													</span>
+											<div class="flex items-center gap-1">
+												<div class="flex items-start gap-2">
+													<img class="flex-shrink-0 w-[1.125rem] h-[1.125rem]"
+														src="<?php echo esc_url( $item['icon']['url'] ) ?>"
+														alt="<?php echo esc_attr( $item['icon']['alt'] ) ?>">
+													<div class="text-bodyRegular">
+														<span>
+															<?php echo esc_html( $item['text'] ) ?>
+														</span>
+														<span class="font-bold">
+															<?php echo esc_html( $item['bold_text'] ) ?>
+														</span>
+													</div>
 												</div>
+												<?php if ( $item['tooltip'] ) : ?>
+													<div class="shrink-0">
+														<?php bottom_tooltip( $item['tooltip'] ) ?>
+													</div>
+												<?php endif; ?>
 											</div>
 										<?php endforeach; ?>
 									</div>
