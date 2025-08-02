@@ -30,12 +30,29 @@ $shortcode   = get_field( 'form_shortcode' );
 						successModalOpen = true;
 						setTimeout(() => successModalOpen = false, 4000);
 						">
-			<div class="flex flex-col-reverse lg:flex-row gap-8 justify-between items-center lg:items-stretch">
-				<div class="max-w-[652px] w-full z-10">
+			<div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10">
+				<div class="h-full z-10 order-last lg:order-none mt-6 lg:mt-0">
 					<?php echo apply_shortcodes( $shortcode ); ?>
 				</div>
 				<div>
-					<?php get_template_part( 'template-parts/section/section-contact-info' ); ?>
+					<?php
+					$information = get_field( 'information' );
+					$mapped_info = array(
+						'bead' => $information['bead'],
+						'info_heading' => $information['heading'],
+						'info_text' => $information['description'],
+						'info_image' => $information['image'],
+						'info_name' => $information['name'],
+						'info_occupation' => $information['position'],
+						'linkedin' => $information['linkedin'],
+					);
+					plmt_dark_info_card( $mapped_info ); ?>
+				</div>
+				<div class="mt-6 lg:mt-0">
+					<?php
+					$strategy_block = get_field( 'strategy_block' );
+
+					plmt_light_info_card( $strategy_block ); ?>
 				</div>
 			</div>
 			<?php success_modal(); ?>
