@@ -51,6 +51,21 @@ $calendly_url_contact  = get_field( 'calendly_url_contact', 'option' );
 		theme: 'custom',
 		placement: 'bottom-end',
 	});
+
+	tippy('.bottom-item-tippy', {
+		theme: 'custom',
+		placement: 'top-start',
+	});
+
+	tippy('.bottom-item-mobile-tippy', {
+		theme: 'custom',
+		placement: 'top-end',
+		allowHTML: true,
+		content: `${content}`,
+		interactive: true,
+		trigger: 'click',
+		maxWidth: 'none',
+	});
 </script>
 <!-- Start cookieyes banner -->
 <script id="cookieyes" type="text/javascript"

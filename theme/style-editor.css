@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.06
+Version: 0.2.07
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -190,7 +190,7 @@ body {
   background-color: rgb(248 248 250 / var(--tw-bg-opacity));
   padding: 1rem;
   --tw-text-opacity: 1;
-  color: rgb(39 39 39 / var(--tw-text-opacity));
+  color: rgb(100 100 100 / var(--tw-text-opacity));
   --tw-shadow: 5px 5px 30px -5px #012D191A;
   --tw-shadow-colored: 5px 5px 30px -5px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1592,6 +1592,10 @@ div.wpcf7-validation-errors {
   top: 50%;
 }
 
+.top-3 {
+  top: 0.75rem;
+}
+
 .top-4 {
   top: 1rem;
 }
@@ -1642,6 +1646,10 @@ div.wpcf7-validation-errors {
 
 .z-\[1\] {
   z-index: 1;
+}
+
+.order-last {
+  order: 9999;
 }
 
 .col-span-5 {
@@ -2106,10 +2114,6 @@ div.wpcf7-validation-errors {
   width: 1.375rem;
 }
 
-.w-\[10rem\] {
-  width: 10rem;
-}
-
 .w-\[11\.5rem\] {
   width: 11.5rem;
 }
@@ -2321,10 +2325,6 @@ div.wpcf7-validation-errors {
 
 .max-w-\[56\.25rem\] {
   max-width: 56.25rem;
-}
-
-.max-w-\[652px\] {
-  max-width: 652px;
 }
 
 .max-w-\[680px\] {
@@ -4360,12 +4360,24 @@ div.wpcf7-validation-errors {
     right: 0px;
   }
 
+  .lg\:right-5 {
+    right: 1.25rem;
+  }
+
   .lg\:top-1\/2 {
     top: 50%;
   }
 
+  .lg\:top-4 {
+    top: 1rem;
+  }
+
   .lg\:top-6 {
     top: 1.5rem;
+  }
+
+  .lg\:order-none {
+    order: 0;
   }
 
   .lg\:mx-auto {
@@ -4619,10 +4631,6 @@ div.wpcf7-validation-errors {
     width: 2rem;
   }
 
-  .lg\:w-\[16\.875rem\] {
-    width: 16.875rem;
-  }
-
   .lg\:w-\[19px\] {
     width: 19px;
   }
@@ -4682,10 +4690,6 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-\[1440px\] {
     max-width: 1440px;
-  }
-
-  .lg\:max-w-\[16\.875rem\] {
-    max-width: 16.875rem;
   }
 
   .lg\:max-w-\[18\.5625rem\] {
@@ -4816,10 +4820,6 @@ div.wpcf7-validation-errors {
     align-items: center;
   }
 
-  .lg\:items-stretch {
-    align-items: stretch;
-  }
-
   .lg\:justify-start {
     justify-content: flex-start;
   }
@@ -4834,10 +4834,6 @@ div.wpcf7-validation-errors {
 
   .lg\:justify-items-start {
     justify-items: start;
-  }
-
-  .lg\:gap-0 {
-    gap: 0px;
   }
 
   .lg\:gap-10 {
@@ -5166,6 +5162,10 @@ div.wpcf7-validation-errors {
 
   .lg\:pt-10 {
     padding-top: 2.5rem;
+  }
+
+  .lg\:pt-14 {
+    padding-top: 3.5rem;
   }
 
   .lg\:pt-16 {
