@@ -84,9 +84,7 @@ if ( ! function_exists( 'plmt_price_card' ) ) {
 			</p>
 			<div class="hidden lg:block">
 
-				<?php plmt_button( $price_content['button']['url'], $price_content['button']['title'], array(
-					'classes' => 'px-14',
-				) ); ?>
+				<?php plmt_button( $price_content['button']['url'], $price_content['button']['title'], array() ); ?>
 			</div>
 		</div>
 		<div class="max-w-[38.9375rem] w-full">
