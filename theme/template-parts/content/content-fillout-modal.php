@@ -12,7 +12,7 @@
 				x-transition:leave="ease-in duration-200"
 				x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
 				x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-				class="relative w-full py-14 lg:py-6 bg-lightGrayBg lg:px-[105px] container">
+				class="relative w-full py-14 lg:py-6 bg-lightGrayBg lg:px-[105px] container h-screen overflow-y-auto lg:overflow-hidden lg:h-auto">
 				<button @click="filloutOpen=false"
 					class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
 					<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
