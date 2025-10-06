@@ -514,7 +514,7 @@ function plmt_tag_chips($tags) {
 			<?php if ($contact_content['bead']) : ?>
 				<span>
 					<div
-						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:relative lg:justify-self-start lg:mb-10">
+						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:relative lg:justify-self-start lg:mb-12">
 						<?php esc_html_e($contact_content['bead']); ?>
 					</div>
 				</span>
@@ -526,7 +526,7 @@ function plmt_tag_chips($tags) {
 				<p class="text-textSecondary text-bodyRegular"><?php esc_html_e($contact_content['info_text']) ?></p>
 			</div>
 			<?php plmt_button_with_arrow("filloutOpen=true", esc_html__('Book Meeting', 'plmt'), null, array(
-				"classes" => "contact-button mb-5 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent",
+				"classes" => "contact-button mb-5 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent lg:mb-10",
 			)) ?>
 			<div class="flex flex-col xl:flex-row xl:items-center">
 				<div class="flex items-center justify-between w-full">
