@@ -33,6 +33,7 @@ $shortcode   = get_field('form_shortcode');
 						">
 			<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
 				<div class="h-full z-10 order-last lg:order-none mt-6 lg:mt-0">
+					<h2 class="text-h4RegularMobile lg:text-h4Regular mb-3 lg:mb-5">Send us a Message or RFP</h2>
 					<?php echo apply_shortcodes($shortcode); ?>
 				</div>
 				<div>
