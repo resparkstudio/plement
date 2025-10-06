@@ -13,42 +13,157 @@
 */
 
 body {
-	@apply bg-background text-mainBlack font-dm antialiased;
+  @apply bg-background text-mainBlack font-dm antialiased;
 }
 
 .tippy-close-button {
-	@apply absolute right-0 top-0 translate-x-[10px] translate-y-[-10px];
+  @apply absolute right-0 top-0 translate-x-[10px] translate-y-[-10px];
 }
 
 .tippy-box[data-theme~='custom'] {
-	@apply shadow-testimonial text-darkGray bg-lightGrayBg w-[300px] whitespace-break-spaces p-4 lg:p-[22px];
+  @apply shadow-testimonial text-darkGray bg-lightGrayBg w-[300px] whitespace-break-spaces p-4 lg:p-[22px];
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
-	border-top-color: #f8f8fa;
+  border-top-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='bottom']
-	> .tippy-arrow::before {
-	border-bottom-color: #f8f8fa;
+  > .tippy-arrow::before {
+  border-bottom-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='left']
-	> .tippy-arrow::before {
-	border-left-color: #f8f8fa;
+  > .tippy-arrow::before {
+  border-left-color: #f8f8fa;
 }
 .tippy-box[data-theme~='custom'][data-placement^='right']
-	> .tippy-arrow::before {
-	border-right-color: #f8f8fa;
+  > .tippy-arrow::before {
+  border-right-color: #f8f8fa;
 }
 
 .tippy-box[data-theme~='custom'] > .tippy-svg-arrow {
-	fill: #f8f8fa;
+  fill: #f8f8fa;
 }
 
 .container {
-	@apply px-6 lg:!px-[1.25rem];
+  @apply px-6 lg:!px-[1.25rem];
 }
 
 input {
-	border-radius: 0;
-	-webkit-appearance: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.cky-consent-container {
+  font-family: 'DM Sans';
+}
+
+.cky-btn {
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+
+.codedropz-upload-handler {
+  background-color: #ed56230d;
+  border-color: #ed5623;
+  margin-bottom: 0;
+}
+
+.codedropz-upload-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.codedropz-upload-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  color: #ed5623;
+  width: 100%;
+}
+
+.codedropz-upload-inner h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.dnd-upload-counter {
+  display: none;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar {
+  border-radius: 0;
+  background: #ed56231a;
+}
+
+.dnd-upload-status .dnd-upload-details .dnd-progress-bar span {
+  background: #ed5623;
+}
+
+.dnd-upload-image {
+  display: none;
+}
+
+.dnd-upload-status .dnd-upload-details {
+  padding-left: 0;
+  width: 100%;
+  background: #f8f8fa;
+  padding: 0.75rem;
+}
+
+.dnd-upload-status .dnd-upload-details .name {
+  color: #646464;
+  font-size: 0.875rem;
+}
+
+.dnd-progress-bar span {
+  padding-right: 0.5rem;
+  font-weight: 700;
+}
+
+.dnd-upload-status .dnd-upload-details .name em {
+  color: #b2b2b2;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.dnd-upload-status .dnd-upload-details .remove-file {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.dnd-upload-status .dnd-upload-details .remove-file span:after {
+  background-image: url('http://plement.local/wp-content/uploads/2025/10/Icon.svg');
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.codedropz-upload-wrapper {
+  margin-bottom: 1rem;
+}
+
+.form-name-email-wrap {
+  display: flex;
+  gap: 0.25rem;
+}
+
+@media only screen and (max-width: 983px) {
+  .form-name-email-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .wpcf7-form.invalid .form-name-email-wrap {
+    gap: 1.5rem;
+  }
+}
+
+.codedropz-upload-inner span {
+  display: none;
+}
+
+.codedropz-btn-wrap a {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
 }
