@@ -23,12 +23,18 @@ if (! isset($contact_content) || empty($contact_content)) {
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
 
-		<div class="order-last lg:order-none mt-6 lg:mt-0">
+		<div class="order-last lg:order-none lg:mt-0">
 			<h2 class="text-h4RegularMobile lg:text-h4Regular mb-3 lg:mb-5">Send us a Message or RFP</h2>
 			<?php echo apply_shortcodes('[contact-form-7 id="0ec1d42" title="Contact form 1"]'); ?>
 		</div>
 
 		<?php plmt_dark_info_card($contact_content) ?>
+
+		<div class="w-full flex items-center gap-2 my-6 lg:hidden">
+			<div class="h-px grow bg-accent opacity-15"></div>
+			<span class="text-accent text-caption1Regular">OR</span>
+			<div class="h-px grow bg-accent opacity-15"></div>
+		</div>
 
 		<?php success_modal(); ?>
 	</div>
