@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying the footer content
  *
@@ -7,78 +8,78 @@
  * @package Plement
  */
 
-$front_page_id      = get_option( 'page_on_front' );
-$contact_us_page_id = get_page_by_path( 'contact-us' )->ID;
+$front_page_id      = get_option('page_on_front');
+$contact_us_page_id = get_page_by_path('contact-us')->ID;
 
-$contact_information = get_field( 'information', $contact_us_page_id );
-$faq_content         = get_field( 'faq', $front_page_id );
-$logo                = get_field( 'logo', 'option' );
-$links               = get_field( 'links', 'option' );
+$contact_information = get_field('information', $contact_us_page_id);
+$faq_content         = get_field('faq', $front_page_id);
+$logo                = get_field('logo', 'option');
+$links               = get_field('links', 'option');
 
-function services_link( $links ) {
-	?>
+function services_link($links) {
+?>
 	<li x-data="{isExpanded: false}" class="text-button flex flex-col items-center">
 		<button @click="isExpanded = !isExpanded" class="flex items-center gap-2" :class="isExpanded ? 'mb-6' : ''">
-			<?php echo esc_html_e( 'Services', 'plmt' ) ?>
+			<?php echo esc_html_e('Services', 'plmt') ?>
 			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M13.4619 5.80865C13.4241 5.71729 13.36 5.6392 13.2778 5.58426C13.1956 5.52932 13.0989 5.5 13 5.5H3C2.90111 5.5 2.80444 5.52932 2.72221 5.58427C2.63999 5.63921 2.5759 5.7173 2.53806 5.80866C2.50022 5.90003 2.49031 6.00056 2.50961 6.09755C2.5289 6.19455 2.57653 6.28364 2.64646 6.35356L7.64646 11.3535C7.69288 11.4 7.748 11.4368 7.80866 11.4619C7.86932 11.4871 7.93434 11.5 8 11.5C8.06566 11.5 8.13068 11.4871 8.19134 11.4619C8.252 11.4368 8.30712 11.4 8.35355 11.3535L13.3535 6.35356C13.4235 6.28364 13.4711 6.19454 13.4904 6.09755C13.5097 6.00056 13.4998 5.90002 13.4619 5.80865Z"
 					fill="white" />
 			</svg>
 		</button>
-		<?php if ( ! empty( $links ) ) : ?>
+		<?php if (! empty($links)) : ?>
 			<ul x-show="isExpanded" x-cloak class="space-y-8 py-6 border-y border-y-darkGray">
-				<?php foreach ( $links as $link ) : ?>
+				<?php foreach ($links as $link) : ?>
 					<li class="text-bodyRegular">
-						<a href="<?php echo esc_url( $link['link']['url'] ) ?>">
-							<?php echo esc_html( $link['link']['title'] ) ?>
+						<a href="<?php echo esc_url($link['link']['url']) ?>">
+							<?php echo esc_html($link['link']['title']) ?>
 						</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
 		<?php endif; ?>
 	</li>
-	<?php
+<?php
 }
 
-function mobile_menu( $links ) {
-	?>
+function mobile_menu($links) {
+?>
 	<nav class="mb-[3.75rem] lg:hidden">
 		<ul class="text-center space-y-10">
 			<li class="text-button">
-				<a href="<?php echo esc_url( home_url( '/' ) ) ?>">
-					<?php echo esc_html_e( 'Home', 'plmt' ) ?>
+				<a href="<?php echo esc_url(home_url('/')) ?>">
+					<?php echo esc_html_e('Home', 'plmt') ?>
 				</a>
 			</li>
-			<?php services_link( links: $links ); ?>
+			<?php services_link(links: $links); ?>
 			<li class="text-button">
-				<a href="<?php echo esc_url( home_url( '/case-studies' ) ) ?>">
-					<?php echo esc_html_e( 'Case studies', 'plmt' ) ?>
-				</a>
-			</li>
-			<li class="text-button">
-				<a href="<?php echo esc_url( home_url( '/about-us' ) ) ?>">
-					<?php echo esc_html_e( 'About', 'plmt' ) ?>
+				<a href="<?php echo esc_url(home_url('/case-studies')) ?>">
+					<?php echo esc_html_e('Case studies', 'plmt') ?>
 				</a>
 			</li>
 			<li class="text-button">
-				<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>">
-					<?php echo esc_html_e( 'Contact Us', 'plmt' ) ?>
+				<a href="<?php echo esc_url(home_url('/about-us')) ?>">
+					<?php echo esc_html_e('About', 'plmt') ?>
+				</a>
+			</li>
+			<li class="text-button">
+				<a href="<?php echo esc_url(home_url('/contact-us')) ?>">
+					<?php echo esc_html_e('Contact Us', 'plmt') ?>
 				</a>
 			</li>
 		</ul>
 	</nav>
-	<?php
+<?php
 }
 
 function menu_colunn() {
-	?>
-	<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
+?>
+	<?php if (has_nav_menu('menu-2')) : ?>
 		<div class="hidden lg:block">
 			<span
-				class="hidden lg:inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e( 'Menu', 'plmt' ) ?></span>
+				class="hidden lg:inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e('Menu', 'plmt') ?></span>
 			<nav class="text-center mb-[3.75rem] lg:mb-0 lg:text-left"
-				aria-label="<?php esc_attr_e( 'Footer Menu', 'plement' ); ?>">
+				aria-label="<?php esc_attr_e('Footer Menu', 'plement'); ?>">
 				<?php
 				wp_nav_menu(
 					array(
@@ -91,28 +92,27 @@ function menu_colunn() {
 			</nav>
 		</div>
 	<?php endif;
-
 }
 
-function services_column( $links ) {
+function services_column($links) {
 	?>
 	<div class="hidden lg:block">
 		<span
-			class="inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e( 'Our Services', 'plmt' ) ?></span>
+			class="inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e('Our Services', 'plmt') ?></span>
 		<nav>
 			<ul class="flex flex-col gap-10 lg:gap-5">
-				<?php foreach ( $links as $link ) : ?>
+				<?php foreach ($links as $link) : ?>
 					<li>
 						<a class="hover:text-accent duration-200 transition-colors"
-							href="<?php echo esc_url( $link['link']['url'] ) ?>">
-							<?php echo esc_html( $link['link']['title'] ) ?>
+							href="<?php echo esc_url($link['link']['url']) ?>">
+							<?php echo esc_html($link['link']['title']) ?>
 						</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
 		</nav>
 	</div>
-	<?php
+<?php
 }
 ?>
 
@@ -120,23 +120,23 @@ function services_column( $links ) {
 	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
 		<div
 			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:grid-cols-4 lg:justify-between lg:mb-[104px]">
-			<?php if ( get_theme_mod( 'site_logo' ) ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mb-[1.875rem]">
-					<img src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ); ?>"
+			<?php if (get_theme_mod('site_logo')) : ?>
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="mb-[1.875rem]">
+					<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
 						class="h-[2.875rem] aspect-[150/46]">
 				</a>
 			<?php else : ?>
 				<a class="site-title"
-					href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_url( bloginfo( 'name' ) ); ?></a>
+					href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
 			<?php endif; ?>
-			<?php mobile_menu( $links ); ?>
+			<?php mobile_menu($links); ?>
 			<?php menu_colunn(); ?>
-			<?php services_column( $links ); ?>
+			<?php services_column($links); ?>
 			<div class="text-center mb-10 lg:text-left lg:mb-12">
-				<span class="font-medium mb-4 inline-block"><?php esc_html_e( 'Got a question?', 'plmt' ) ?></span>
+				<span class="font-medium mb-4 inline-block"><?php esc_html_e('Got a question?', 'plmt') ?></span>
 				<div class="flex items-center gap-4">
 					<div x-data="{
-							copyText: '<?php echo esc_html( $faq_content['email'] ) ?>',
+							copyText: '<?php echo esc_html($faq_content['email']) ?>',
 							copyNotification: false,
 							copyToClipboard() {
 								navigator.clipboard.writeText(this.copyText);
@@ -160,15 +160,15 @@ function services_column( $links ) {
 									d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" />
 							</svg>
 							<span x-show="!copyNotification" x-cloak class="text-xl font-semibold">
-								<?php echo esc_html( $faq_content['email'] ) ?>
+								<?php echo esc_html($faq_content['email']) ?>
 							</span>
 							<span x-show="copyNotification" x-cloak class="text-xl font-semibold">
-								<?php esc_html_e( 'Email copied', 'plmt' ) ?>
+								<?php esc_html_e('Email copied', 'plmt') ?>
 							</span>
 						</button>
 					</div>
 					<span class="bg-white w-[1px] h-[26px]"></span>
-					<a target="_blank" href="<?php echo esc_url( $contact_information['footer_linkedin']['url'] ) ?>">
+					<a target="_blank" href="<?php echo esc_url($contact_information['footer_linkedin']['url']) ?>">
 						<svg class=" z-0 w-[20px] h-[20px] lg:w-[24px] lg:h-[25px] text-[#FFF8EE] hover:text-accent duration-200 transition-colors"
 							width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
@@ -180,24 +180,24 @@ function services_column( $links ) {
 			</div>
 		</div>
 		<div class="lg:px-0">
-			<a href="<?php echo esc_url( home_url( '/contact-us' ) ) ?>"
+			<a href="<?php echo esc_url(home_url('/contact-us')) ?>"
 				class="inline-block text-center mb-[3.75rem] text-[2rem] leading-[2.2rem] text-accent border border-accent w-full py-6 lg:text-[3rem] lg:leading-[3.3rem] lg:mb-10 hover:text-white hover:bg-accent transition duration-300 ease-in-out">
-				<?php esc_html_e( "Let's talk", 'plmt' ) ?>
+				<?php esc_html_e("Let's talk", 'plmt') ?>
 			</a>
 		</div>
 		<div
 			class="text-center border-t border-t-[#FFFFFF4D] pt-1 md:pt-6 text-[0.875rem] leading-[1.3125rem] font-medium flex flex-col-reverse md:flex-row gap-2 md:gap-5">
-			<span><?php esc_html_e( '© 2025 Plement, MB.', 'plmt' ) ?></span>
+			<span><?php printf(__('© %s Plement, MB.', 'plmt'), date('Y')) ?></span>
 			<div class="flex flex-col md:flex-row gap-2 md:gap-5">
 				<span class="hidden md:inline">|</span>
 				<a class="underline md:no-underline"
-					href="<?php echo esc_url( home_url( '/privacy-policy' ) ) ?>"><?php esc_html_e( 'Privacy policy', 'plmt' ) ?></a>
+					href="<?php echo esc_url(home_url('/privacy-policy')) ?>"><?php esc_html_e('Privacy policy', 'plmt') ?></a>
 				<span class="hidden md:inline">|</span>
 				<a class="underline md:no-underline"
-					href="<?php echo esc_url( home_url( '/terms-and-conditions' ) ) ?>"><?php esc_html_e( 'Terms and conditions', 'plmt' ) ?></a>
+					href="<?php echo esc_url(home_url('/terms-and-conditions')) ?>"><?php esc_html_e('Terms and conditions', 'plmt') ?></a>
 			</div>
 		</div>
-		<?php get_template_part( 'template-parts/content/content-fillout-modal' ); ?>
+		<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
 
 	</div>
 </footer><!-- #colophon -->
