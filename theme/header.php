@@ -12,7 +12,7 @@
 
 $type = 'dark';
 
-if ( isset( $args['type'] ) && $args['type'] === 'light' ) {
+if (isset($args['type']) && $args['type'] === 'light') {
 	$type = 'light';
 }
 
@@ -24,7 +24,7 @@ $is_dark = $type === 'dark';
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
@@ -45,11 +45,11 @@ $is_dark = $type === 'dark';
 
 	<?php wp_body_open(); ?>
 
-	<div id="page" class="relative" x-data="{overlayOpen: false}">
-		<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'plement' ); ?></a>
+	<div id="page" class="relative">
+		<a href="#content" class="sr-only"><?php esc_html_e('Skip to content', 'plement'); ?></a>
 
-		<?php get_template_part( 'template-parts/layout/header', 'content', array(
+		<?php get_template_part('template-parts/layout/header', 'content', array(
 			'is_dark' => $is_dark,
-		) ); ?>
+		)); ?>
 
 		<div id="content">

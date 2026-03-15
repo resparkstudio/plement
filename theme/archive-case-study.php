@@ -9,51 +9,51 @@
 
 $active_category_filter = $_GET['category'] ?? '';
 
-get_header( null, array( 'type' => 'light' ) );
+get_header(null, array('type' => 'light'));
 
 ?>
 
 <section id="primary">
 	<main id="main" class="container pt-4 pb-20 lg:pt-10">
 		<?php
-		$categories = get_categories( array(
+		$categories = get_categories(array(
 			'taxonomy' => 'category',
 			'hide_empty' => true,
-		) );
+		));
 
-		$tools = get_terms( array(
+		$tools = get_terms(array(
 			'taxonomy' => 'tool',
 			'hide_empty' => true,
-		) );
+		));
 
 		$tool_options = array();
-		if ( $tools ) {
-			foreach ( $tools as $tool ) {
-				$tool_options[ $tool->slug ] = $tool->name;
+		if ($tools) {
+			foreach ($tools as $tool) {
+				$tool_options[$tool->slug] = $tool->name;
 			}
 		}
 
 		$categories_options = array();
-		if ( $categories ) {
-			foreach ( $categories as $category ) {
-				$categories_options[ $category->slug ] = $category->name;
+		if ($categories) {
+			foreach ($categories as $category) {
+				$categories_options[$category->slug] = $category->name;
 			}
 		}
 		?>
 		<div class="mb-[0.625rem] lg:mb-6 flex flex-col sm:flex-row gap-2">
-			<?php plmt_dropdown( $tool_options, __( 'Filter by tools:', 'plmt' ), 'tool-filter' ); ?>
-			<?php plmt_dropdown( $categories_options, __( 'Filter by category:', 'plmt' ), 'category-filter' ); ?>
+			<?php plmt_dropdown($tool_options, __('Filter by tools:', 'plmt'), 'tool-filter'); ?>
+			<?php plmt_dropdown($categories_options, __('Filter by category:', 'plmt'), 'category-filter'); ?>
 		</div>
 
 		<div>
-			<?php if ( have_posts() ) : ?>
+			<?php if (have_posts()): ?>
 				<div class="case-studies-container space-y-[1.875rem]">
 
 					<?php
 					// Start the Loop.
-					while ( have_posts() ) :
+					while (have_posts()):
 						the_post();
-						get_template_part( 'template-parts/content/content', 'case-study' );
+						get_template_part('template-parts/content/content', 'case-study');
 
 						// End the loop.
 					endwhile; ?>
@@ -63,24 +63,24 @@ get_header( null, array( 'type' => 'light' ) );
 				global $wp_query;
 				$total_posts     = $wp_query->found_posts;
 				$posts_per_page  = $wp_query->query_vars['posts_per_page'];
-				$current_page    = max( 1, get_query_var( 'paged' ) );
+				$current_page    = max(1, get_query_var('paged'));
 				$displayed_posts = $current_page * $posts_per_page;
-				$remaining_posts = max( 0, $total_posts - $displayed_posts );
+				$remaining_posts = max(0, $total_posts - $displayed_posts);
 
-				if ( $wp_query->max_num_pages > 1 ) : ?>
+				if ($wp_query->max_num_pages > 1): ?>
 					<button
 						class="mt-8 load-more-button w-full md:w-auto mx-auto flex justify-center items-center text-accent border border-accent text-title py-4 px-[4.6875rem] hover:bg-accentHover hover:text-white transition duration-200 ease-in-out">
-						<?php esc_html_e( 'See more', 'plement' ); ?>
-						<?php if ( $remaining_posts > 0 ) : ?>
-							(<?php echo esc_html( $remaining_posts ); ?>)
+						<?php esc_html_e('See more', 'plement'); ?>
+						<?php if ($remaining_posts > 0): ?>
+							(<?php echo esc_html($remaining_posts); ?>)
 						<?php endif; ?>
 					</button>
 				<?php endif;
 
-			else :
+			else:
 
 				// If no content, include the "No posts found" template.
-				get_template_part( 'template-parts/content/content', 'none' );
+				get_template_part('template-parts/content/content', 'none');
 
 			endif;
 			?>

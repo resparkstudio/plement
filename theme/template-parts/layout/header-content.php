@@ -9,11 +9,12 @@
 
 $is_dark = $args['is_dark'];
 
-if ( ! function_exists( 'plmt_header_button' ) ) {
-	function plmt_header_button( $item, $has_children, $is_contact_us = false ) {
-		$use_span  = empty( $item['url'] ) || $item['url'] === '#';
+if (!function_exists('plmt_header_button')) {
+	function plmt_header_button($item, $has_children, $is_contact_us = false)
+	{
+		$use_span  = empty($item['url']) || $item['url'] === '#';
 		$tag       = $use_span ? 'span' : 'a';
-		$href_attr = $use_span ? '' : 'href="' . esc_url( $item['url'] ) . '"';
+		$href_attr = $use_span ? '' : 'href="' . esc_url($item['url']) . '"';
 		?>
 		<<?php echo $tag; ?> 		<?php echo $href_attr; ?>
 			class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300
@@ -21,9 +22,9 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 			<?php echo $use_span ? 'cursor-pointer' : '' ?>"
 			:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
 			<span class="group-hover:text-white">
-				<?php echo esc_html( $item['title'] ); ?>
+				<?php echo esc_html($item['title']); ?>
 			</span>
-			<?php if ( $has_children ) : ?>
+			<?php if ($has_children): ?>
 				<svg :class="overlayOpen && 'rotate-180 text-white'" class="group-hover:text-white" width="17" height="16"
 					viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -31,13 +32,118 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 						fill="currentColor" />
 				</svg>
 			<?php endif; ?>
-			<?php if ( $is_contact_us ) : ?>
+			<?php if ($is_contact_us): ?>
 				<?php plmt_arrow(); ?>
 			<?php endif; ?>
 		</<?php echo $tag; ?>>
 		<?php
 	}
 }
+
+function plmt_header_logos($is_dark)
+{
+	if (get_theme_mod('site_logo') && $is_dark): ?>
+		<a href="<?php echo esc_url(home_url('/')); ?>"
+			class="lg:border-r py-[1.0625rem] lg:px-[75px] <?php echo $is_dark ? 'border-r-darkGray' : 'border-r-lightGray' ?>">
+			<img src="<?php echo esc_attr(get_theme_mod('site_logo')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+				class="lg:h-[2.875rem] aspect-[150/46]">
+		</a>
+	<?php elseif (get_theme_mod('site_logo_dark') && !$is_dark): ?>
+		<a href="<?php echo esc_url(home_url('/')); ?>"
+			class="lg:border-r py-[1.0625rem] lg:px-[75px] <?php echo $is_dark ? 'border-r-darkGray' : 'border-r-lightGray' ?>">
+			<img src="<?php echo esc_attr(get_theme_mod('site_logo_dark')); ?>"
+				alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
+		</a>
+	<?php endif;
+}
+
+function plmt_header_menu_bullets($bullets, $is_dark)
+{
+	if (!$bullets)
+		return null;
+	?>
+
+	<ul class="mt-4 space-y-2">
+		<?php foreach ($bullets as $bullet): ?>
+			<li class="flex items-center gap-2 <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="8" cy="8" r="2" fill="currentColor" />
+				</svg>
+				<span class="text-bodySmall">
+					<?php echo esc_html($bullet['item']); ?>
+				</span>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+}
+
+function plmt_header_desktop_menu_card($card, $is_dark, )
+{
+	$bullets = get_field('bullets', $card['ID']);
+	?>
+	<li
+		class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
+		<a href="<?php echo esc_url(url: $card['url']); ?>" class="inline-block py-5 px-10 w-full h-full">
+			<div class="flex items-center gap-2 mb-4">
+				<?php if (isset($card['image']) && $card['image'] && $is_dark): ?>
+					<img class="w-5 h-5" src="<?php echo esc_url($card['image']['url']) ?>"
+						alt="<?php echo esc_attr($card['image']['alt']) ?>">
+				<?php endif; ?>
+				<?php if (isset($card['dark_image']) && $card['dark_image'] && !$is_dark): ?>
+					<img class="w-5 h-5" src="<?php echo esc_url($card['dark_image']['url']); ?>"
+						alt="<?php echo esc_attr($card['title']); ?> dark_image">
+				<?php endif; ?>
+				<p class="text-h5Bold">
+					<?php echo esc_html($card['title']); ?>
+				</p>
+			</div>
+			<?php if (isset($card['description'])): ?>
+				<p class="text-bodyRegular <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
+					<?php echo esc_html($card['description']); ?>
+				</p>
+			<?php endif; ?>
+			<?php plmt_header_menu_bullets($bullets, $is_dark) ?>
+		</a>
+	</li>
+	<?php
+}
+
+function plmt_header_simple_button($item, $is_contact_us, $is_dark)
+{
+	?>
+	<li
+		class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>">
+		<?php plmt_header_button($item, false, $is_contact_us); ?>
+	</li>
+	<?php
+}
+
+function plmt_header_dropdown_button($item, $is_contact_us, $is_dark)
+{
+	?>
+	<li x-data="{overlayOpen: false}"
+		class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>"
+		@click="if (activeMenu === <?php echo $item['ID']; ?>) { activeMenu = null; overlayOpen = false } else { activeMenu = <?php echo $item['ID']; ?>; overlayOpen = true }"
+		@click.away="activeMenu = null; overlayOpen = false" @mouseleave="activeMenu = null; overlayOpen = false">
+		<?php plmt_header_button($item, true, $is_contact_us); ?>
+		<ul x-cloak x-show="overlayOpen" class=' border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem] z-[1000] absolute left-1/2
+		-translate-x-1/2 w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>' role='menu'
+			aria-orientation='vertical' tabindex='-1' x-transition:enter="transition-opacity duration-200"
+			x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+			x-transition:leave="transition duration-200" x-transition:leave-end="opacity-0">
+			<?php foreach ($item['children'] as $child):
+				plmt_header_desktop_menu_card($child, $is_dark);
+			endforeach; ?>
+		</ul>
+		<div x-cloak x-show='overlayOpen' @click="activeMenu = null; overlayOpen = false"
+			@mouseenter="activeMenu = null; overlayOpen = false"
+			class="absolute bg-[#4B4B4B29] w-screen h-screen left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
+		</div>
+	</li>
+	<?php
+}
+
 ?>
 
 <style>
@@ -49,94 +155,29 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 <header id="masthead" x-data="{menuOpen: false}" class="sticky top-0 z-[1000]">
 	<div
 		class="flex items-center justify-between z-[100]  container lg:max-w-none lg:p-0 lg:border-b  <?php echo $is_dark ? 'bg-mainBlack lg:border-b-darkGray' : 'bg-white lg:border-b-lightGray' ?>">
-		<?php if ( get_theme_mod( 'site_logo' ) && $is_dark ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="lg:border-r py-[1.0625rem] lg:px-[75px] <?php echo $is_dark ? 'border-r-darkGray' : 'border-r-lightGray' ?>">
-				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo' ) ); ?>"
-					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
-			</a>
-		<?php elseif ( get_theme_mod( 'site_logo_dark' ) && ! $is_dark ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="lg:border-r py-[1.0625rem] lg:px-[75px] <?php echo $is_dark ? 'border-r-darkGray' : 'border-r-lightGray' ?>">
-				<img src="<?php echo esc_attr( get_theme_mod( 'site_logo_dark' ) ); ?>"
-					alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="lg:h-[2.875rem] aspect-[150/46]">
-			</a>
-		<?php endif; ?>
+		<?php plmt_header_logos($is_dark) ?>
 
-		<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>">
+		<nav id="site-navigation" aria-label="<?php esc_attr_e('Main Navigation', 'plement'); ?>">
 			<?php
 			$menu_locations = get_nav_menu_locations();
 			$menu_id        = $menu_locations['menu-1'];
 
-			$items = plmt_menu_builder( $menu_id );
+			$items = plmt_menu_builder($menu_id);
 
 			?>
-			<ul class="hidden h-[5rem] w-full items-center lg:flex" @mouseover.away="overlayOpen = false"
-				@click.away="overlayOpen = false">
+			<ul x-data="{activeMenu: ''}" class="hidden h-[5rem] w-full items-center lg:flex">
 				<?php
-				foreach ( $items as $item ) :
-					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
-					$has_children  = isset( $item['children'] ) && count( $item['children'] );
+				foreach ($items as $item):
+					$is_contact_us = isset($item['is_contact_us']) && $item['is_contact_us'];
+					$has_children  = isset($item['children']) && count($item['children']);
+
+					if ($has_children):
+						plmt_header_dropdown_button($item, $is_contact_us, $is_dark);
+					else:
+						plmt_header_simple_button($item, $is_contact_us, $is_dark);
+					endif;
 					?>
-					<li class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>"
-						<?php echo ! $has_children ? '@mouseover="overlayOpen = false"' : '' ?>
-						@click='overlayOpen = <?php echo $has_children ? '!overlayOpen' : 0 ?>'>
-						<?php plmt_header_button( $item, $has_children, $is_contact_us ); ?>
-						<?php if ( $has_children ) : ?>
-							<ul x-cloak x-show='overlayOpen'
-								class='border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem]  z-[1000] absolute left-1/2 -translate-x-1/2  w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>'
-								role='menu' aria-orientation='vertical' tabindex='-1'
-								x-transition:enter="transition-opacity duration-200" x-transition:enter-start="opacity-0"
-								x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200"
-								x-transition:leave-end="opacity-0">
-								<?php foreach ( $item['children'] as $child ) :
-									$bullets = get_field( 'bullets', $child['ID'] );
-									?>
-									<li
-										class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
-										<a href="<?php echo esc_url( url: $child['url'] ); ?>"
-											class="inline-block py-5 px-10 w-full h-full">
-											<div class="flex items-center gap-2 mb-4">
-												<?php if ( isset( $child['image'] ) && $child['image'] && $is_dark ) : ?>
-													<img class="w-5 h-5" src="<?php echo esc_url( $child['image']['url'] ) ?>"
-														alt="<?php echo esc_attr( $child['image']['alt'] ) ?>">
-												<?php endif; ?>
-												<?php if ( isset( $child['dark_image'] ) && $child['dark_image'] && ! $is_dark ) : ?>
-													<img class="w-5 h-5" src="<?php echo esc_url( $child['dark_image']['url'] ); ?>"
-														alt="<?php echo esc_attr( $child['title'] ); ?> dark_image">
-												<?php endif; ?>
-												<p class="text-h5Bold">
-													<?php echo esc_html( $child['title'] ); ?>
-												</p>
-											</div>
-											<?php if ( isset( $child['description'] ) ) : ?>
-												<p
-													class="text-bodyRegular <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
-													<?php echo esc_html( $child['description'] ); ?>
-												</p>
-											<?php endif; ?>
-											<?php if ( $bullets ) : ?>
-												<ul class="mt-4 space-y-2">
-													<?php foreach ( $bullets as $bullet ) : ?>
-														<li
-															class="flex items-center gap-2 <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
-															<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-																xmlns="http://www.w3.org/2000/svg">
-																<circle cx="8" cy="8" r="2" fill="currentColor" />
-															</svg>
-															<span class="text-bodySmall">
-																<?php echo esc_html( $bullet['item'] ); ?>
-															</span>
-														</li>
-													<?php endforeach; ?>
-												</ul>
-											<?php endif; ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endif; ?>
-					</li>
+
 				<?php endforeach; ?>
 			</ul>
 
@@ -165,7 +206,7 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 	<nav x-data="{childOpen: false}" x-cloak x-show="menuOpen" x-trap.inert.noscroll="menuOpen"
 		@click.away="menuOpen=false" id="site-navigation"
 		class="fixed inset-y-0 right-0 z-[100] w-full flex justify-end lg:hidden bg-[#0000003D] h-screen transition-[cubic-bezier(.13,1.24,.92,.93)]"
-		aria-label="<?php esc_attr_e( 'Main Navigation', 'plement' ); ?>" x-transition:enter="transform duration-800"
+		aria-label="<?php esc_attr_e('Main Navigation', 'plement'); ?>" x-transition:enter="transform duration-800"
 		x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
 		x-transition:leave="transform duration-800" x-transition:leave-start="translate-x-0"
 		x-transition:leave-end="translate-x-full">
@@ -173,27 +214,27 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 		$menu_locations = get_nav_menu_locations();
 		$menu_id        = $menu_locations['menu-1'];
 
-		$items = plmt_menu_builder( $menu_id );
+		$items = plmt_menu_builder($menu_id);
 
 		?>
 		<div class="w-full">
 			<ul class="overflow-y-scroll bg-mainBlack text-white h-screen w-full pt-[8.25rem]">
 				<?php
-				foreach ( $items as $item ) :
-					$is_contact_us = isset( $item['is_contact_us'] ) && $item['is_contact_us'];
-					$has_children  = isset( $item['children'] ) && count( $item['children'] );
+				foreach ($items as $item):
+					$is_contact_us = isset($item['is_contact_us']) && $item['is_contact_us'];
+					$has_children  = isset($item['children']) && count($item['children']);
 					?>
 					<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false" class="w-full"
 						:class="childOpen ? 'mb-4' : 'mb-8'" <?php echo $has_children ? '@click="childOpen = !childOpen"' : '' ?>>
-						<a href="<?php echo esc_url( $item['url'] ); ?>"
+						<a href="<?php echo esc_url($item['url']); ?>"
 							class="text-white px-4 py-3 group flex items-center h-full w-full text-h5Regular <?php echo $is_contact_us ? 'text-accent gap-2' : 'justify-between' ?>">
 							<span>
-								<?php echo esc_html( $item['title'] ); ?>
+								<?php echo esc_html($item['title']); ?>
 							</span>
-							<?php if ( $is_contact_us ) : ?>
+							<?php if ($is_contact_us): ?>
 								<?php plmt_arrow(); ?>
 							<?php endif; ?>
-							<?php if ( $has_children ) : ?>
+							<?php if ($has_children): ?>
 								<svg class="mr-4" width="16" height="16" viewBox="0 0 16 16" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -203,39 +244,39 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 							<?php endif; ?>
 						</a>
 					</li>
-					<?php if ( $has_children ) : ?>
+					<?php if ($has_children): ?>
 						<ul x-show="childOpen" class="space-y-3 mb-[2.75rem]">
-							<?php foreach ( $item['children'] as $item ) :
-								$bullets = get_field( 'bullets', $item['ID'] );
+							<?php foreach ($item['children'] as $item):
+								$bullets = get_field('bullets', $item['ID']);
 								?>
 								<li x-data="{open: false}" @mouseover='open = true' @mouseover.away="open = false"
 									class="w-full px-4">
-									<a href="<?php echo esc_url( $item['url'] ); ?>"
+									<a href="<?php echo esc_url($item['url']); ?>"
 										class="py-3 border-b-lightGray border-b group flex items-start gap-2 justify-between h-full w-full">
 										<div>
 											<div class="flex items-center gap-1 mb-3">
-												<?php if ( isset( $item['image'] ) && $item['image'] && $is_dark ) : ?>
-													<img class="w-5 h-5 mr-2" src="<?php echo esc_url( $item['image']['url'] ); ?>"
-														alt="<?php echo esc_attr( $item['title'] ); ?> image">
+												<?php if (isset($item['image']) && $item['image'] && $is_dark): ?>
+													<img class="w-5 h-5 mr-2" src="<?php echo esc_url($item['image']['url']); ?>"
+														alt="<?php echo esc_attr($item['title']); ?> image">
 												<?php endif; ?>
-												<?php if ( isset( $item['dark_image'] ) && $item['dark_image'] && ! $is_dark ) : ?>
-													<img class="w-5 h-5 mr-2" src="<?php echo esc_url( $item['dark_image']['url'] ); ?>"
-														alt="<?php echo esc_attr( $item['title'] ); ?> dark_image">
+												<?php if (isset($item['dark_image']) && $item['dark_image'] && !$is_dark): ?>
+													<img class="w-5 h-5 mr-2" src="<?php echo esc_url($item['dark_image']['url']); ?>"
+														alt="<?php echo esc_attr($item['title']); ?> dark_image">
 												<?php endif; ?>
 												<span class="text-bodyBold">
-													<?php echo esc_html( $item['title'] ); ?>
+													<?php echo esc_html($item['title']); ?>
 												</span>
 											</div>
-											<?php if ( $bullets ) : ?>
+											<?php if ($bullets): ?>
 												<ul class="space-y-1">
-													<?php foreach ( $bullets as $bullet ) : ?>
+													<?php foreach ($bullets as $bullet): ?>
 														<li class="flex items-center gap-2 text-bodySmall">
 															<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
 																xmlns="http://www.w3.org/2000/svg">
 																<circle cx="8" cy="8" r="2" fill="#B2B2B2" />
 															</svg>
 															<span class="text-bodySmall text-textSecondary">
-																<?php echo esc_html( $bullet['item'] ); ?>
+																<?php echo esc_html($bullet['item']); ?>
 															</span>
 														</li>
 													<?php endforeach; ?>
@@ -259,10 +300,4 @@ if ( ! function_exists( 'plmt_header_button' ) ) {
 			</ul>
 		</div>
 	</nav>
-
-
 </header><!-- #masthead -->
-
-<div x-cloak x-show='overlayOpen'
-	class="absolute bg-[#4B4B4B29] w-full left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
-</div>

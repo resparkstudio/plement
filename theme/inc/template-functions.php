@@ -9,7 +9,8 @@
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function plmt_pingback_header() {
+function plmt_pingback_header()
+{
 	if (is_singular() && pings_open()) {
 		printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
 	}
@@ -23,7 +24,8 @@ add_action('wp_head', 'plmt_pingback_header');
  *
  * @return array Returns the modified fields.
  */
-function plmt_comment_form_defaults($defaults) {
+function plmt_comment_form_defaults($defaults)
+{
 	$comment_field = $defaults['comment_field'];
 
 	// Adjust height of comment form.
@@ -36,7 +38,8 @@ add_filter('comment_form_defaults', 'plmt_comment_form_defaults');
 /**
  * Filters the default archive titles.
  */
-function plmt_get_the_archive_title() {
+function plmt_get_the_archive_title()
+{
 	if (is_category()) {
 		$title = __('Category Archives: ', 'plement') . '<span>' . single_term_title('', false) . '</span>';
 	} elseif (is_tag()) {
@@ -73,14 +76,16 @@ add_filter('get_the_archive_title', 'plmt_get_the_archive_title');
 /**
  * Determines whether the post thumbnail can be displayed.
  */
-function plmt_can_show_post_thumbnail() {
-	return apply_filters('plmt_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail());
+function plmt_can_show_post_thumbnail()
+{
+	return apply_filters('plmt_can_show_post_thumbnail', !post_password_required() && !is_attachment() && has_post_thumbnail());
 }
 
 /**
  * Returns the size for avatars used in the theme.
  */
-function plmt_get_avatar_size() {
+function plmt_get_avatar_size()
+{
 	return 60;
 }
 
@@ -89,9 +94,10 @@ function plmt_get_avatar_size() {
  *
  * @param string $more_string The string shown within the more link.
  */
-function plmt_continue_reading_link($more_string) {
+function plmt_continue_reading_link($more_string)
+{
 
-	if (! is_admin()) {
+	if (!is_admin()) {
 		$continue_reading = sprintf(
 			/* translators: %s: Name of current post. */
 			wp_kses(__('Continue reading %s', 'plement'), array('span' => array('class' => array()))),
@@ -121,18 +127,19 @@ add_filter('the_content_more_link', 'plmt_continue_reading_link');
  * @param array      $args    An array of arguments.
  * @param int        $depth   Depth of the current comment.
  */
-function plmt_html5_comment($comment, $args, $depth) {
+function plmt_html5_comment($comment, $args, $depth)
+{
 	$tag = ('div' === $args['style']) ? 'div' : 'li';
 
 	$commenter          = wp_get_current_commenter();
-	$show_pending_links = ! empty($commenter['comment_author']);
+	$show_pending_links = !empty($commenter['comment_author']);
 
 	if ($commenter['comment_author_email']) {
 		$moderation_note = __('Your comment is awaiting moderation.', 'plement');
 	} else {
 		$moderation_note = __('Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'plement');
 	}
-?>
+	?>
 	<<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class($comment->has_children ? 'parent' : '', $comment); ?>>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 			<footer class="comment-meta">
@@ -145,7 +152,7 @@ function plmt_html5_comment($comment, $args, $depth) {
 					<?php
 					$comment_author = get_comment_author_link($comment);
 
-					if ('0' === $comment->comment_approved && ! $show_pending_links) {
+					if ('0' === $comment->comment_approved && !$show_pending_links) {
 						$comment_author = get_comment_author($comment);
 					}
 
@@ -177,7 +184,7 @@ function plmt_html5_comment($comment, $args, $depth) {
 					?>
 				</div><!-- .comment-metadata -->
 
-				<?php if ('0' === $comment->comment_approved) : ?>
+				<?php if ('0' === $comment->comment_approved): ?>
 					<em class="comment-awaiting-moderation"><?php echo esc_html($moderation_note); ?></em>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
@@ -203,10 +210,11 @@ function plmt_html5_comment($comment, $args, $depth) {
 			}
 			?>
 		</article><!-- .comment-body -->
-	<?php
+		<?php
 }
 
-function plmt_arrow($width_class = 'w-[1.125rem]', $height_class = 'h-[1.125rem]') {
+function plmt_arrow($width_class = 'w-[1.125rem]', $height_class = 'h-[1.125rem]')
+{
 	?>
 		<div class="z-1 flex justify-center items-center relative overflow-hidden ">
 			<div
@@ -226,10 +234,11 @@ function plmt_arrow($width_class = 'w-[1.125rem]', $height_class = 'h-[1.125rem]
 				</svg>
 			</div>
 		</div>
-	<?php
+		<?php
 }
 
-function plmt_button_with_arrow($on_click, $text, $value, $config = array()) {
+function plmt_button_with_arrow($on_click, $text, $value, $config = array())
+{
 
 	$variant_map = array(
 		'primary' => 'button',
@@ -243,7 +252,7 @@ function plmt_button_with_arrow($on_click, $text, $value, $config = array()) {
 
 	$config = wp_parse_args($config, $defaults);
 
-	$selected_variant = ! empty($config['variant']) ? $config['variant'] : 'primary';
+	$selected_variant = !empty($config['variant']) ? $config['variant'] : 'primary';
 
 	$classes = 'group justify-center w-full ' . $config['classes'] . ' ' . $variant_map[$selected_variant];
 
@@ -253,10 +262,11 @@ function plmt_button_with_arrow($on_click, $text, $value, $config = array()) {
 			<?php echo $text ?>
 			<?php plmt_arrow() ?>
 		</button>
-	<?php
+		<?php
 }
 
-function plmt_modal($modal_id, $contentCallback) {
+function plmt_modal($modal_id, $contentCallback)
+{
 	ob_start();
 	call_user_func($contentCallback);
 	$content = ob_get_clean();
@@ -273,8 +283,7 @@ function plmt_modal($modal_id, $contentCallback) {
 						x-transition:leave-end="opacity-0" @click="<?php echo esc_attr($modal_id) ?>=false"
 						class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
 					<div x-show="<?php echo esc_attr($modal_id) ?>"
-						x-trap.inert.noscroll="<?php echo esc_attr($modal_id) ?>"
-						x-transition:enter="ease-out duration-300"
+						x-trap.inert.noscroll="<?php echo esc_attr($modal_id) ?>" x-transition:enter="ease-out duration-300"
 						x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 						x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
 						x-transition:leave="ease-in duration-200"
@@ -293,13 +302,14 @@ function plmt_modal($modal_id, $contentCallback) {
 				</div>
 			</template>
 		</div>
-	<?php
+		<?php
 }
 
-function plmt_arrow_list($tags) {
+function plmt_arrow_list($tags)
+{
 	?>
 		<div>
-			<?php foreach ($tags as $tag) : ?>
+			<?php foreach ($tags as $tag): ?>
 				<span class="flex items-center gap-2 py-2 text-bodySmall">
 					<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M13.5 5.00024L6.5 11.9999L3 8.50024" stroke="#ED5623" stroke-width="2" stroke-linecap="round"
@@ -309,70 +319,76 @@ function plmt_arrow_list($tags) {
 				</span>
 			<?php endforeach; ?>
 		</div>
-	<?php
+		<?php
 }
 
-function plmt_tag_chips($tags) {
+function plmt_tag_chips($tags)
+{
 	?>
 		<div class="flex flex-wrap gap-2">
-			<?php foreach ($tags as $tag) : ?>
+			<?php foreach ($tags as $tag): ?>
 				<span
 					class="bg-chipGray px-3 py-[6px] rounded-full text-lightGrayBg inline-block text-center text-bodySmall"><?php echo esc_html($tag['chip']) ?></span>
 			<?php endforeach; ?>
 		</div>
 		<?php
-	}
+}
 
-	function plmt_build_menu_tree($menu, $parent_id) {
-		$branch = array();
+function plmt_build_menu_tree($menu, $parent_id)
+{
+	$branch = array();
 
-		foreach ($menu as $item) {
-			if ($item->menu_item_parent == $parent_id) {
-				$children = plmt_build_menu_tree($menu, $item->ID);
+	foreach ($menu as $item) {
+		if ($item->menu_item_parent == $parent_id) {
+			$children = plmt_build_menu_tree($menu, $item->ID);
 
-				if ($children) {
-					$item->children = $children;
-				}
-
-				$branch[] = array(
-					'ID' => $item->ID,
-					'title' => $item->title,
-					'url' => $item->url,
-					'children' => $children ?? null,
-					'description' => get_field('description', $item->ID) ?? '',
-					'image' => get_field('image', $item->ID) ?? '',
-					'dark_image' => get_field('dark_image', $item->ID) ?? '',
-					'is_contact_us' => get_field('is_contact_us', $item->ID) ?? false,
-					'parentID' => $item->menu_item_parent,
-				);
+			if ($children) {
+				$item->children = $children;
 			}
-		}
 
-		return $branch;
-	}
-
-	function plmt_menu_builder($menu_id = '') {
-		$menu = wp_get_nav_menu_items($menu_id);
-		return plmt_build_menu_tree($menu, 0);
-	}
-
-	add_filter('wp_get_nav_menu_items', 'my_wp_get_nav_menu_items', 10, 3);
-	function my_wp_get_nav_menu_items($items, $menu, $args) {
-		foreach ($items as $key => $item)
-			$items[$key]->description = '';
-
-		return $items;
-	}
-
-	function plmt_modify_case_study_archive_query($query) {
-		if (! is_admin() && $query->is_main_query() && is_post_type_archive('case-study')) {
-			$query->set('posts_per_page', 6);
+			$branch[] = array(
+				'ID' => $item->ID,
+				'title' => $item->title,
+				'url' => $item->url,
+				'children' => $children ?? null,
+				'description' => get_field('description', $item->ID) ?? '',
+				'image' => get_field('image', $item->ID) ?? '',
+				'dark_image' => get_field('dark_image', $item->ID) ?? '',
+				'is_contact_us' => get_field('is_contact_us', $item->ID) ?? false,
+				'parentID' => $item->menu_item_parent,
+			);
 		}
 	}
-	add_action('pre_get_posts', 'plmt_modify_case_study_archive_query');
 
-	function success_modal() {
-		plmt_modal("successModalOpen", function () {
+	return $branch;
+}
+
+function plmt_menu_builder($menu_id = '')
+{
+	$menu = wp_get_nav_menu_items($menu_id);
+	return plmt_build_menu_tree($menu, 0);
+}
+
+add_filter('wp_get_nav_menu_items', 'my_wp_get_nav_menu_items', 10, 3);
+function my_wp_get_nav_menu_items($items, $menu, $args)
+{
+	foreach ($items as $key => $item)
+		$items[$key]->description = '';
+
+	return $items;
+}
+
+function plmt_modify_case_study_archive_query($query)
+{
+	if (!is_admin() && $query->is_main_query() && is_post_type_archive('case-study')) {
+		$query->set('posts_per_page', 6);
+	}
+}
+add_action('pre_get_posts', 'plmt_modify_case_study_archive_query');
+
+function success_modal()
+{
+	plmt_modal("successModalOpen", function () {
 		?>
 			<div class="flex flex-col justify-center items-center h-full gap-3 w-full">
 				<div class="bg-[#88C941] rounded-full w-[57px] h-[57px] mb-3 flex justify-center items-center">
@@ -387,22 +403,23 @@ function plmt_tag_chips($tags) {
 					<?php esc_html_e("We have received your message and will respond to you soon", "plmt") ?>
 				</p>
 			</div>
-		<?php
-		})
+			<?php
+	})
 		?>
-	<?php
+		<?php
+}
+
+function plmt_tool_tag($tool)
+{
+	$tool_icon = get_field('icon', $tool->taxonomy . '_' . $tool->term_id);
+
+	if ($tool_icon) {
+		$icon_html = '<img src="' . esc_url($tool_icon['url']) . '" alt="' . esc_attr($tool_icon['alt']) . '" class="w-4 lg:w-5 h-auto shrink-0">';
+	} else {
+		$icon_html = '';
 	}
 
-	function plmt_tool_tag($tool) {
-		$tool_icon = get_field('icon', $tool->taxonomy . '_' . $tool->term_id);
-
-		if ($tool_icon) {
-			$icon_html = '<img src="' . esc_url($tool_icon['url']) . '" alt="' . esc_attr($tool_icon['alt']) . '" class="w-4 lg:w-5 h-auto shrink-0">';
-		} else {
-			$icon_html = '';
-		}
-
-		$tool_name = esc_html($tool->name);
+	$tool_name = esc_html($tool->name);
 
 	?>
 		<div
@@ -410,10 +427,11 @@ function plmt_tag_chips($tags) {
 			<?php echo $icon_html; ?>
 			<?php echo esc_html($tool_name); ?>
 		</div>
-	<?php
-	}
+		<?php
+}
 
-	function plmt_dropdown($options, $button_text = 'Select Item', $button_class = '') {
+function plmt_dropdown($options, $button_text = 'Select Item', $button_class = '')
+{
 	?>
 		<div class="relative w-full sm:max-w-max" x-data="{selectOpen: false, selectedItem: {value: 'all', title: 'All'}}"
 			@click.away="selectOpen = false">
@@ -449,7 +467,7 @@ function plmt_tag_chips($tags) {
 					</svg>
 
 				</li>
-				<?php foreach ($options as $value => $label) : ?>
+				<?php foreach ($options as $value => $label): ?>
 					<li data-value="<?php echo esc_attr($value); ?>"
 						@click="selectedItem = { value: '<?php echo esc_js($value); ?>', title: '<?php echo esc_js($label); ?>' }; selectOpen = false"
 						class="relative z-[100] flex items-center justify-between h-full py-[0.3125rem] px-3 text-white cursor-default select-none <?php echo esc_attr($button_class); ?>">
@@ -465,9 +483,10 @@ function plmt_tag_chips($tags) {
 				<?php endforeach; ?>
 			</ul>
 		</div>
-	<?php
-	}
-	function currency_switch() {
+		<?php
+}
+function currency_switch()
+{
 	?>
 		<div class="w-full justify-center md:justify-end flex items-center gap-4 flex-wrap mb-10">
 			<label for="currency" class="w-max block text-bodyBold lg:text-[1rem] lg:leading-[1.5rem] lg:font-medium">
@@ -489,10 +508,11 @@ function plmt_tag_chips($tags) {
 				</div>
 			</div>
 		</div>
-	<?php
-	}
+		<?php
+}
 
-	function bottom_tooltip($content, $is_mobile = false) {
+function bottom_tooltip($content, $is_mobile = false)
+{
 	?>
 		<svg class="<?php echo $is_mobile ? 'bottom-item-mobile-tippy' : 'bottom-item-tippy' ?>"
 			data-tippy-content="<?php echo esc_attr($content) ?>" width="18" height="19" viewBox="0 0 18 19" fill="none"
@@ -505,13 +525,15 @@ function plmt_tag_chips($tags) {
 				fill="#646464" />
 		</svg>
 
-	<?php
-	}
+		<?php
+}
 
-	function plmt_dark_info_card($contact_content) {
+function plmt_dark_info_card($contact_content)
+{
 	?>
-		<div class="h-full relative p-5 pt-12 lg:p-10 lg:pt-14 bg-mainBlack text-white lg:flex lg:flex-col lg:justify-center" x-data="{filloutOpen: false}">
-			<?php if ($contact_content['bead']) : ?>
+		<div class="h-full relative p-5 pt-12 lg:p-10 lg:pt-14 bg-mainBlack text-white lg:flex lg:flex-col lg:justify-center"
+			x-data="{filloutOpen: false}">
+			<?php if ($contact_content['bead']): ?>
 				<span>
 					<div
 						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:relative lg:justify-self-start lg:mb-12">
@@ -521,7 +543,8 @@ function plmt_tag_chips($tags) {
 			<?php endif; ?>
 
 			<div class="mb-5">
-				<h3 class="mb-2 text-h4RegularMobile lg:text-h4Regular"><?php esc_html_e($contact_content['info_heading']) ?>
+				<h3 class="mb-2 text-h4RegularMobile lg:text-h4Regular">
+					<?php esc_html_e($contact_content['info_heading']) ?>
 				</h3>
 				<p class="text-textSecondary text-bodyRegular"><?php esc_html_e($contact_content['info_text']) ?></p>
 			</div>
@@ -559,12 +582,13 @@ function plmt_tag_chips($tags) {
 			</div>
 			<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
 		</div>
-	<?php
-	}
-	function plmt_light_info_card($contact_content) {
+		<?php
+}
+function plmt_light_info_card($contact_content)
+{
 	?>
 		<div class="h-full relative p-5 pt-12 lg:p-10 lg:pt-14 bg-lightGrayBg" x-data="{strategyFilloutOpen: false}">
-			<?php if ($contact_content['bead']) : ?>
+			<?php if ($contact_content['bead']): ?>
 				<span>
 					<div
 						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:top-4 lg:right-5">
@@ -586,5 +610,279 @@ function plmt_tag_chips($tags) {
 			</p>
 			<?php get_template_part('template-parts/content/content-strategy-modal'); ?>
 		</div>
-	<?php
+		<?php
+}
+
+function plmt_arrow_left()
+{
+	?>
+		<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M13.6575 8.3236H2.34375M2.34375 8.3236L8.0006 13.9805M2.34375 8.3236L8.0006 2.66675"
+				stroke="currentColor" stroke-width="1.5" />
+		</svg>
+		<?php
+}
+
+function plmt_blog_card_taxonomy_beads($blog)
+{
+	$industries = get_the_terms($blog->ID, 'industry');
+	$platforms  = get_the_terms($blog->ID, 'blog-platform');
+	?>
+		<div class="flex gap-2">
+			<?php if ($industries && !is_wp_error($industries)): ?>
+				<span class="text-xs lg:text-sm font-bold text-darkGray bg-lightGrayBg px-2 py-1">
+					<?php echo esc_html($industries[0]->name) ?>
+				</span>
+			<?php endif; ?>
+			<?php if ($platforms && !is_wp_error($platforms)): ?>
+				<span class="text-xs lg:text-sm font-bold text-accent bg-accent/15 px-2 py-1">
+					<?php echo esc_html($platforms[0]->name) ?>
+				</span>
+			<?php endif; ?>
+		</div>
+		<?php
+}
+
+function clock_icon()
+{
+	?>
+		<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M13.5 8C13.5 6.54131 12.9208 5.14213 11.8893 4.11068C10.8579 3.07923 9.45869 2.5 8 2.5C6.54131 2.5 5.14213 3.07923 4.11068 4.11068C3.07923 5.14213 2.5 6.54131 2.5 8C2.5 8.72227 2.64222 9.43753 2.91862 10.1048C3.19502 10.7721 3.59996 11.3786 4.11068 11.8893C4.62139 12.4 5.22791 12.805 5.89518 13.0814C6.56247 13.3578 7.27773 13.5 8 13.5C8.72227 13.5 9.43753 13.3578 10.1048 13.0814C10.7721 12.805 11.3786 12.4 11.8893 11.8893C12.4 11.3786 12.805 10.7721 13.0814 10.1048C13.3578 9.43753 13.5 8.72227 13.5 8ZM14.5 8C14.5 8.85359 14.3319 9.69901 14.0052 10.4876C13.6786 11.2762 13.1999 11.9928 12.5964 12.5964C11.9928 13.1999 11.2762 13.6786 10.4876 14.0052C9.69901 14.3319 8.85359 14.5 8 14.5C7.14641 14.5 6.30099 14.3319 5.51237 14.0052C4.72382 13.6786 4.00718 13.1999 3.40365 12.5964C2.80011 11.9928 2.32145 11.2762 1.99479 10.4876C1.66814 9.69901 1.5 8.85359 1.5 8C1.5 6.27609 2.18466 4.62263 3.40365 3.40365C4.62263 2.18466 6.27609 1.5 8 1.5C9.72391 1.5 11.3774 2.18466 12.5964 3.40365C13.8153 4.62263 14.5 6.27609 14.5 8Z"
+				fill="#646464" />
+			<path
+				d="M7.5 4.66675C7.5 4.39061 7.72386 4.16675 8 4.16675C8.27614 4.16675 8.5 4.39061 8.5 4.66675V7.79305L10.3535 9.64657C10.5488 9.84183 10.5488 10.1583 10.3535 10.3536C10.1583 10.5489 9.84175 10.5489 9.64648 10.3536L7.64648 8.3536C7.55272 8.25983 7.5 8.13269 7.5 8.00008V4.66675Z"
+				fill="#646464" />
+		</svg>
+		<?php
+}
+
+function plmt_blog_data_row($blog)
+{
+	$author         = get_field('author', $blog->ID);
+	$read_time      = get_field('read_time', $blog->ID);
+	$date           = get_field('date', $blog->ID);
+	$formatted_date = $date ? date_i18n('j M Y', strtotime($date)) : '';
+
+	?>
+		<div class="text-xs lg:text-sm text-darkGray flex gap-4">
+			<div>
+				<?php if ($author): ?>
+					<span>
+						<?php esc_html_e($author) ?> •
+					</span>
+				<?php endif; ?>
+				<?php if ($formatted_date): ?>
+					<span>
+						<?php esc_html_e($formatted_date) ?>
+					</span>
+				<?php endif; ?>
+			</div>
+			<?php if ($read_time): ?>
+				<div class="flex gap-1 items-center">
+					<?php clock_icon() ?>
+					<span>
+						<?php echo sprintf('%s min', esc_html($read_time)) ?>
+					</span>
+				</div>
+			<?php endif; ?>
+		</div>
+		<?php
+}
+
+function plmt_tinymce_custom_styles($init_array)
+{
+	$new_styles = [
+		[
+			'title' => 'Subheading',
+			'block' => 'h6',
+			'classes' => 'article-subheading',
+		],
+		[
+			'title' => 'Checklist',
+			'selector' => 'ul',
+			'classes' => 'article-checklist',
+		],
+	];
+
+	$existing_styles = [];
+
+	if (!empty($init_array['style_formats'])) {
+		$decoded = json_decode($init_array['style_formats'], true);
+
+		if (is_array($decoded)) {
+			$existing_styles = $decoded;
+		}
 	}
+
+	$init_array['style_formats'] = wp_json_encode(array_merge($existing_styles, $new_styles));
+
+	return $init_array;
+}
+add_filter('tiny_mce_before_init', 'plmt_tinymce_custom_styles');
+
+function plmt_add_tinymce_style_dropdown($buttons)
+{
+	if (!in_array('styleselect', $buttons, true)) {
+		array_unshift($buttons, 'styleselect');
+	}
+
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'plmt_add_tinymce_style_dropdown');
+
+function plmt_get_filtered_blogs($industry = '', $platform = '')
+{
+	$tax_query = ['relation' => 'AND'];
+
+	if ($industry) {
+		$tax_query[] = [
+			'taxonomy' => 'industry',
+			'field' => 'slug',
+			'terms' => $industry,
+		];
+	}
+
+	if ($platform) {
+		$tax_query[] = [
+			'taxonomy' => 'blog-platform',
+			'field' => 'slug',
+			'terms' => $platform,
+		];
+	}
+
+	$featured_args = [
+		'post_type' => 'blog-post',
+		'posts_per_page' => 1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'meta_query' => [
+			[
+				'key' => 'featured',
+				'value' => 1,
+				'compare' => '=',
+			],
+		],
+	];
+
+	if (count($tax_query) > 1) {
+		$featured_args['tax_query'] = $tax_query;
+	}
+
+	$featured_blog    = get_posts($featured_args);
+	$featured_blog_id = !empty($featured_blog) ? $featured_blog[0]->ID : 0;
+
+	$blogs_args = [
+		'post_type' => 'blog-post',
+		'posts_per_page' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post__not_in' => $featured_blog_id ? [$featured_blog_id] : [],
+	];
+
+	if (count($tax_query) > 1) {
+		$blogs_args['tax_query'] = $tax_query;
+	}
+
+	$blogs = get_posts($blogs_args);
+
+	return [
+		'featured_blog' => $featured_blog,
+		'blogs' => $blogs,
+	];
+}
+
+function featured_blog_card($blog)
+{
+	$excerpt = get_field('excerpt', $blog->ID);
+	?>
+		<div class="flex flex-col-reverse lg:flex-row w-full justify-between gap-4 lg:gap-8 pb-4 lg:pb-8">
+			<div>
+				<?php plmt_blog_card_taxonomy_beads($blog); ?>
+				<div class="mt-3 mb-2 lg:mb-3 lg:mt-6">
+					<?php plmt_blog_data_row($blog); ?>
+				</div>
+				<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>">
+					<h3 class="text-h5Mobile lg:text-h4Bold">
+						<?php echo esc_html(get_the_title($blog)) ?>
+					</h3>
+				</a>
+				<?php if ($excerpt): ?>
+					<p class="text-darkGray text-sm lg:text-bodyRegular mt-2 lg:mt-3">
+						<?php esc_html_e($excerpt); ?>
+					</p>
+				<?php endif; ?>
+			</div>
+			<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>"
+				class="max-w-[40rem] w-full h-auto aspect-[343/240] lg:aspect-[640/316]">
+				<?php
+				if (has_post_thumbnail($blog->ID)) {
+					echo get_the_post_thumbnail($blog->ID, 'medium_large', [
+						'class' => 'max-w-[40rem] w-full h-auto object-cover aspect-[343/240] lg:aspect-[640/316]',
+						'alt' => get_the_title($blog->ID),
+					]);
+				}
+				?>
+			</a>
+		</div>
+		<?php
+}
+
+function blog_card($blog)
+{
+	?>
+		<div
+			class="flex w-full justify-between gap-8 py-4 lg:py-8 border-b border-b-lightGray first:pt-0 last:border-0 last:pb-0">
+			<div>
+				<?php plmt_blog_card_taxonomy_beads($blog); ?>
+				<div class="mt-3 mb-2 lg:mb-3 lg:mt-6">
+					<?php plmt_blog_data_row($blog); ?>
+				</div>
+				<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>">
+					<h3 class="text-h5Mobile lg:text-h4Bold">
+						<?php echo esc_html(get_the_title($blog)) ?>
+					</h3>
+				</a>
+			</div>
+			<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>"
+				class="max-w-[23rem] w-full h-auto object-cover hidden lg:block">
+				<?php
+				if (has_post_thumbnail($blog->ID)) {
+					echo get_the_post_thumbnail($blog->ID, 'medium_large', [
+						'class' => 'max-w-[23rem] w-full h-auto object-cover',
+						'alt' => get_the_title($blog->ID),
+					]);
+				}
+				?>
+			</a>
+
+		</div>
+		<?php
+
+}
+
+function plmt_render_blog_results($industry = '', $platform = '')
+{
+	$data = plmt_get_filtered_blogs($industry, $platform);
+
+	$featured_blog = $data['featured_blog'];
+	$blogs         = $data['blogs'];
+
+	ob_start();
+	?>
+
+		<?php if ($featured_blog): ?>
+			<?php featured_blog_card($featured_blog[0]); ?>
+		<?php endif; ?>
+
+		<?php if ($blogs): ?>
+			<?php foreach ($blogs as $blog): ?>
+				<?php blog_card($blog); ?>
+			<?php endforeach; ?>
+		<?php elseif (!$featured_blog): ?>
+			<p>No blog posts found.</p>
+		<?php endif; ?>
+
+		<?php
+		return ob_get_clean();
+}

@@ -71,6 +71,14 @@
 	@apply border-accent text-accent text-bodyBold hover:bg-accent inline-flex items-center gap-3 border bg-white px-6 py-[0.875rem] transition-colors duration-200 ease-in-out hover:text-white;
 }
 
+.icon_button_outlined {
+	@apply border-accent text-accent text-bodyRegular hover:bg-accent inline-flex items-center gap-3 border px-6 py-4 font-medium transition-colors duration-200 ease-in-out hover:text-white;
+}
+
+.icon_button_outlined_dark {
+	@apply border-mainBlack text-mainBlack text-bodyRegular bg-white inline-flex items-center gap-3 border px-6 py-4 font-medium transition-colors duration-200 ease-in-out hover:text-white hover:bg-accent hover:border-accent;
+}
+
 #site-navigation {
 	@apply w-full;
 }
@@ -278,4 +286,81 @@ div.wpcf7-validation-errors {
 .wpcf7-form-control.wpcf7-textarea,
 .wpcf7-form input[type='submit'] {
 	@apply !rounded-none;
+}
+
+.article-content h4 {
+	@apply text-h4BoldMobile lg:text-h4Bold mb-3
+}
+
+.article-content ul {
+	@apply space-y-2 lg:space-y-3  text-darkGray
+}
+
+.article-content ul li {
+	@apply pl-6 relative
+}
+
+.article-content ul:not(.article-checklist) li::before {
+	@apply content-[''] w-[5px] h-[5px] bg-accent absolute top-1/2 -translate-y-1/2 left-0 rounded-full;
+}
+
+.article-content .article-checklist li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.2em;
+	width: 12px;
+	height: 16px;
+	background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%228%22%20viewBox%3D%220%200%2010%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.000355184%203.92849L1.3022%202.62203L3.43963%204.72252L8.18075%20-0.000133097L9.49183%201.30633L3.43963%207.32622L0.000355184%203.92849Z%22%20fill%3D%22%23ED5623%22%2F%3E%3C%2Fsvg%3E');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.article-content ol {
+	counter-reset: item;
+	@apply space-y-2 lg:space-y-3;
+}
+
+.article-content ol li {
+	counter-increment: item;
+	@apply pl-12 py-3 pr-3 relative bg-lightGrayBg min-h-[3.125rem] text-darkGray;
+}
+
+.article-content ol li::before {
+	content: counter(item);
+	@apply absolute left-3 top-1/2 -translate-y-1/2 font-bold text-white bg-mainBlack text-bodySmall w-[26px] h-[26px] flex items-center justify-center;
+}
+
+.article-content img {
+	@apply w-full;
+}
+
+.article-content p {
+	@apply text-darkGray text-bodySmall lg:text-bodyRegular;
+}
+
+.article-content strong, b {
+	@apply text-mainBlack;
+}
+
+.article-content .article-subheading {
+	@apply text-xs lg:text-sm font-bold mb-3;
+}
+
+.article-content blockquote {
+	@apply flex items-center gap-4 lg:gap-10;
+}
+
+.article-content blockquote p {
+	@apply text-h4BoldMobile lg:text-h4Bold text-mainBlack;
+}
+
+.article-content blockquote::before {
+	content: "";
+	background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2221%22%20height%3D%2220%22%20viewBox%3D%220%200%2021%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M14.6512%2020L12.8605%2018.159C13.7287%2016.5969%2014.4884%2015.0349%2015.1395%2013.4728C15.7907%2011.9665%2016.1705%2010.4881%2016.2791%209.03765L12.2093%208.11715V0H21L21%205.85774C21%209.3166%2020.3488%2012.106%2019.0465%2014.2259C17.6899%2016.4017%2016.2248%2018.3264%2014.6512%2020ZM2.44186%2020L0.651165%2018.159C1.51938%2016.5969%202.27907%2015.0349%202.93023%2013.4728C3.58139%2011.9665%203.96124%2010.4881%204.06977%209.03765L0%208.11715L0%200L8.7907%200V5.85774C8.7907%209.3166%208.13953%2012.106%206.83721%2014.2259C5.48062%2016.4017%204.0155%2018.3264%202.44186%2020Z%22%20fill%3D%22%23ED5623%22%2F%3E%3C%2Fsvg%3E');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	@apply w-[21px] h-[20px] lg:w-[41px] lg:h-[38px] shrink-0;
 }

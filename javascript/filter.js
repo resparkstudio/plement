@@ -141,3 +141,100 @@ if (loadMoreButton) {
 		loadMoreCaseStudies(page, currentCategory, currentTool);
 	});
 }
+
+const industryFilter = document.querySelectorAll('.industry-filter');
+const platformFilter = document.querySelectorAll('.platform-filter');
+
+industryFilter.forEach((filter) => {
+	filter.addEventListener('click', () => {
+		page = 0;
+		const industryValue = filter.getAttribute('data-value');
+		const currentPlatform = getParamValue('platform');
+
+		filterBlogs(industryValue, currentPlatform);
+	});
+});
+
+platformFilter.forEach((filter) => {
+	filter.addEventListener('click', () => {
+		page = 0;
+		const platformValue = filter.getAttribute('data-value');
+		const currentIndustry = getParamValue('industry');
+
+		filterBlogs(currentIndustry, platformValue);
+	});
+});
+
+const filterBlogs = (industry, platform) =>{
+	const results = document.getElementById('blogs-results');
+
+	setQueryParams('industry', industry);
+	setQueryParams('platform', platform);
+	const fetchBlogs = async (industry, platform) => {
+		results.style.opacity = '0.5';
+
+		try {
+			const response = await fetch('/wp-admin/admin-ajax.php?action=plmt_filter_blogs', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					industry: industry !== 'all' ? industry : '',
+					platform: platform !== 'all' ? platform : '',
+				}),
+			});
+
+			const data = await response.json();
+
+			if (data.success && data.data.html !== undefined) {
+				results.innerHTML = data.data.html;
+			}
+		} catch (error) {
+			console.error('Blog filter AJAX error:', error);
+		} finally {
+			results.style.opacity = '1';
+		}
+	};
+
+	fetchBlogs(industry, platform)
+
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	const industrySelect = document.getElementById('blog-industry');
+	const platformSelect = document.getElementById('blog-platform');
+	const results = document.getElementById('blogs-results');
+
+	if (!industrySelect || !platformSelect || !results) return;
+
+	const fetchBlogs = async () => {
+		results.style.opacity = '0.5';
+
+		try {
+			const response = await fetch('/wp-admin/admin-ajax.php?action=plmt_filter_blogs', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					industry: industrySelect.value,
+					platform: platformSelect.value,
+				}),
+			});
+
+			const data = await response.json();
+
+			if (data.success && data.data.html !== undefined) {
+				results.innerHTML = data.data.html;
+			}
+		} catch (error) {
+			console.error('Blog filter AJAX error:', error);
+		} finally {
+			results.style.opacity = '1';
+		}
+	};
+
+	industrySelect.addEventListener('change', fetchBlogs);
+	platformSelect.addEventListener('change', fetchBlogs);
+});

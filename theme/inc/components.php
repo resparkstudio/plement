@@ -1,6 +1,7 @@
 <?php
 
-function plmt_button( $url = '#', $text, $options = array() ) {
+function plmt_button($url = '#', $text, $options = array())
+{
 	$variants = array(
 		"primary" => "button",
 		"secondary" => "button_secondary",
@@ -15,40 +16,51 @@ function plmt_button( $url = '#', $text, $options = array() ) {
 		'value' => '',
 	);
 
-	$options = wp_parse_args( $options, $defaults );
+	$options = wp_parse_args($options, $defaults);
 
-	$classes = $variants[ $options['variant'] ];
+	$classes = $variants[$options['variant']];
 
-	if ( ! empty( $options['classes'] ) ) {
+	if (!empty($options['classes'])) {
 		$classes .= " " . $options['classes'];
 	}
 
-	if ( $options['is_button'] ) {
+	if ($options['is_button']) {
 		?>
 		<button value="<?php echo $options['value'] ?>" @click="<?php echo $url ?>"
-			class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></button><?php
+			class="<?php echo esc_attr($classes) ?>"><?php echo $text ?></button><?php
 	} else {
 		?>
-		<a href="<?php echo esc_url( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a>
+		<a href="<?php echo esc_url($url) ?>" class="<?php echo esc_attr($classes) ?>"><?php echo $text ?></a>
 		<?php
 	}
 }
 
-function plmt_icon_button( $url = '#', $text, $options = array() ) {
+function plmt_icon_button($url = '#', $text, $options = array())
+{
+	$variants = array(
+		"primary" => "button",
+		"outlined" => "icon_button_outlined",
+		"outlined_dark" => "icon_button_outlined_dark",
+	);
+
 	$defaults = array(
 		"classes" => "",
 		"target" => "_self",
+		"variant" => "primary",
 	);
 
-	$options = wp_parse_args( $options, $defaults );
+	$options = wp_parse_args($options, $defaults);
 
-	$classes = "button group h-auto";
+	$classes = "group h-auto";
 
-	if ( ! empty( $options['classes'] ) ) {
+	$classes .= ' ' . $variants[$options['variant']];
+
+	if (!empty($options['classes'])) {
 		$classes .= " " . $options['classes'];
 	}
 	?>
-	<a href='<?php echo esc_url( $url ) ?>' class='<?php echo esc_attr( $classes ) ?>'>
+	<a href='<?php echo esc_url($url) ?>' class='
+	<?php echo esc_attr($classes) ?>'>
 		<?php echo $text ?>
 		<?php plmt_arrow() ?>
 	</a>

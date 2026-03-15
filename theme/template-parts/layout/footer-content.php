@@ -14,124 +14,102 @@ $contact_us_page_id = get_page_by_path('contact-us')->ID;
 $contact_information = get_field('information', $contact_us_page_id);
 $faq_content         = get_field('faq', $front_page_id);
 $logo                = get_field('logo', 'option');
-$links               = get_field('links', 'option');
 
-function services_link($links) {
-?>
+function mobile_menu_dropdown($title, $items)
+{
+	?>
 	<li x-data="{isExpanded: false}" class="text-button flex flex-col items-center">
 		<button @click="isExpanded = !isExpanded" class="flex items-center gap-2" :class="isExpanded ? 'mb-6' : ''">
-			<?php echo esc_html_e('Services', 'plmt') ?>
+			<?php echo esc_html($title) ?>
 			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M13.4619 5.80865C13.4241 5.71729 13.36 5.6392 13.2778 5.58426C13.1956 5.52932 13.0989 5.5 13 5.5H3C2.90111 5.5 2.80444 5.52932 2.72221 5.58427C2.63999 5.63921 2.5759 5.7173 2.53806 5.80866C2.50022 5.90003 2.49031 6.00056 2.50961 6.09755C2.5289 6.19455 2.57653 6.28364 2.64646 6.35356L7.64646 11.3535C7.69288 11.4 7.748 11.4368 7.80866 11.4619C7.86932 11.4871 7.93434 11.5 8 11.5C8.06566 11.5 8.13068 11.4871 8.19134 11.4619C8.252 11.4368 8.30712 11.4 8.35355 11.3535L13.3535 6.35356C13.4235 6.28364 13.4711 6.19454 13.4904 6.09755C13.5097 6.00056 13.4998 5.90002 13.4619 5.80865Z"
 					fill="white" />
 			</svg>
 		</button>
-		<?php if (! empty($links)) : ?>
-			<ul x-show="isExpanded" x-cloak class="space-y-8 py-6 border-y border-y-darkGray">
-				<?php foreach ($links as $link) : ?>
-					<li class="text-bodyRegular">
-						<a href="<?php echo esc_url($link['link']['url']) ?>">
-							<?php echo esc_html($link['link']['title']) ?>
-						</a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		<?php endif; ?>
+		<ul x-show="isExpanded" x-cloak class="space-y-8 py-6 border-y border-y-darkGray">
+			<?php foreach ($items as $item): ?>
+				<li class="text-bodyRegular">
+					<a href="<?php echo esc_url($item['url']) ?>">
+						<?php echo esc_html($item['title']) ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</li>
-<?php
+	<?php
 }
 
-function mobile_menu($links) {
-?>
+function mobile_menu()
+{
+	$menu_locations = get_nav_menu_locations();
+	$menu_id        = $menu_locations['menu-3'];
+
+	$items = plmt_menu_builder($menu_id);
+	?>
 	<nav class="mb-[3.75rem] lg:hidden">
 		<ul class="text-center space-y-10">
-			<li class="text-button">
-				<a href="<?php echo esc_url(home_url('/')) ?>">
-					<?php echo esc_html_e('Home', 'plmt') ?>
-				</a>
-			</li>
-			<?php services_link(links: $links); ?>
-			<li class="text-button">
-				<a href="<?php echo esc_url(home_url('/case-studies')) ?>">
-					<?php echo esc_html_e('Case studies', 'plmt') ?>
-				</a>
-			</li>
-			<li class="text-button">
-				<a href="<?php echo esc_url(home_url('/about-us')) ?>">
-					<?php echo esc_html_e('About', 'plmt') ?>
-				</a>
-			</li>
-			<li class="text-button">
-				<a href="<?php echo esc_url(home_url('/contact-us')) ?>">
-					<?php echo esc_html_e('Contact Us', 'plmt') ?>
-				</a>
-			</li>
-		</ul>
-	</nav>
-<?php
-}
-
-function menu_colunn() {
-?>
-	<?php if (has_nav_menu('menu-2')) : ?>
-		<div class="hidden lg:block">
-			<span
-				class="hidden lg:inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e('Menu', 'plmt') ?></span>
-			<nav class="text-center mb-[3.75rem] lg:mb-0 lg:text-left"
-				aria-label="<?php esc_attr_e('Footer Menu', 'plement'); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-2',
-						'menu_class' => 'footer-menu',
-						'depth' => 1,
-					)
-				);
+			<?php foreach ($items as $top_level_item):
+				$has_children = $top_level_item['children'];
 				?>
-			</nav>
-		</div>
-	<?php endif;
-}
-
-function services_column($links) {
-	?>
-	<div class="hidden lg:block">
-		<span
-			class="inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]"><?php esc_html_e('Our Services', 'plmt') ?></span>
-		<nav>
-			<ul class="flex flex-col gap-10 lg:gap-5">
-				<?php foreach ($links as $link) : ?>
-					<li>
-						<a class="hover:text-accent duration-200 transition-colors"
-							href="<?php echo esc_url($link['link']['url']) ?>">
-							<?php echo esc_html($link['link']['title']) ?>
+				<?php if ($has_children): ?>
+					<?php mobile_menu_dropdown($top_level_item['title'], $top_level_item['children']); ?>
+				<?php else: ?>
+					<li class="text-button">
+						<a href="<?php echo $top_level_item['url'] ?>">
+							<?php echo esc_html($top_level_item['title']) ?>
 						</a>
 					</li>
-				<?php endforeach; ?>
-			</ul>
-		</nav>
-	</div>
-<?php
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</ul>
+	</nav>
+	<?php
+}
+
+function menu_colunn()
+{
+	$menu_locations = get_nav_menu_locations();
+	$menu_id        = $menu_locations['menu-2'];
+
+	$items = plmt_menu_builder($menu_id);
+	?>
+	<?php if (has_nav_menu('menu-2')): ?>
+		<div class="hidden lg:grid grid-flow-col gap-16">
+			<?php foreach ($items as $top_level_item): ?>
+				<div>
+					<span class="hidden lg:inline-block uppercase text-textSecondary font-bold mb-8 leading-[1rem]">
+						<?php echo esc_html($top_level_item['title']); ?>
+					</span>
+					<div class="flex flex-col gap-5 text-bodyRegular font-medium">
+						<?php foreach ($top_level_item['children'] as $child):
+							?>
+							<a href="<?php esc_url($child['url']) ?>" class="hover:text-accent transition-colors duration-200">
+								<?php echo esc_html($child['title']) ?>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
+	<?php endif;
 }
 ?>
 
 <footer id="colophon" class="bg-mainBlack text-white z-0 relative" x-data="{filloutOpen: false}">
 	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
 		<div
-			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:grid-cols-4 lg:justify-between lg:mb-[104px]">
-			<?php if (get_theme_mod('site_logo')) : ?>
+			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:flex lg:justify-between lg:mb-[104px]">
+			<?php if (get_theme_mod('site_logo')): ?>
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="mb-[1.875rem]">
 					<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
 						class="h-[2.875rem] aspect-[150/46]">
 				</a>
-			<?php else : ?>
-				<a class="site-title"
-					href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
+			<?php else: ?>
+				<a class="site-title" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
 			<?php endif; ?>
-			<?php mobile_menu($links); ?>
+			<?php mobile_menu(); ?>
 			<?php menu_colunn(); ?>
-			<?php services_column($links); ?>
 			<div class="text-center mb-10 lg:text-left lg:mb-12">
 				<span class="font-medium mb-4 inline-block"><?php esc_html_e('Got a question?', 'plmt') ?></span>
 				<div class="flex items-center gap-4">
