@@ -874,32 +874,26 @@ function featured_blog_card($blog)
 function blog_card($blog)
 {
 	?>
-		<div
+		<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>"
 			class="flex w-full justify-between gap-8 py-4 lg:py-8 border-b border-b-lightGray first:pt-0 last:border-0 last:pb-0">
 			<div>
 				<?php plmt_blog_card_taxonomy_beads($blog); ?>
 				<div class="mt-3 mb-2 lg:mb-3 lg:mt-6">
 					<?php plmt_blog_data_row($blog); ?>
 				</div>
-				<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>">
-					<h3 class="text-h5Mobile lg:text-h4Bold">
-						<?php echo esc_html(get_the_title($blog)) ?>
-					</h3>
-				</a>
+				<h3 class="text-h5Mobile lg:text-h4Bold">
+					<?php echo esc_html(get_the_title($blog)) ?>
+				</h3>
 			</div>
-			<a href="<?php echo esc_url(get_permalink($blog->ID)) ?>"
-				class="max-w-[23rem] w-full h-auto object-cover hidden lg:block">
-				<?php
-				if (has_post_thumbnail($blog->ID)) {
-					echo get_the_post_thumbnail($blog->ID, 'medium_large', [
+			<?php if (has_post_thumbnail($blog->ID)): ?>
+				<div class="max-w-[23rem] w-full h-auto object-cover hidden lg:block">
+					<?php echo get_the_post_thumbnail($blog->ID, 'medium_large', [
 						'class' => 'max-w-[23rem] w-full h-auto object-cover',
 						'alt' => get_the_title($blog->ID),
-					]);
-				}
-				?>
-			</a>
-
-		</div>
+					]); ?>
+				</div>
+			<?php endif; ?>
+		</a>
 		<?php
 
 }
