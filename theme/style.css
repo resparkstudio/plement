@@ -3224,6 +3224,10 @@ div.wpcf7-validation-errors {
   max-width: 24rem;
 }
 
+.max-w-\[57\.5rem\] {
+  max-width: 57.5rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -3369,6 +3373,18 @@ div.wpcf7-validation-errors {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .grid-flow-col {
@@ -3525,6 +3541,10 @@ div.wpcf7-validation-errors {
 
 .gap-\[9\.1875rem\] {
   gap: 9.1875rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
 }
 
 .gap-x-12 {
@@ -6363,6 +6383,12 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
+  }
+
+  .lg\:text-bodySmall {
+    font-size: 0.875rem;
+    line-height: 1.05rem;
+    font-weight: 400;
   }
 
   .lg\:font-extrabold {

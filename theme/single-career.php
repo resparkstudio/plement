@@ -104,9 +104,9 @@ function career_apply_section()
 		<?php career_info_tabs($info_tabs) ?>
 	</div>
 	<div class="article-content max-w-[45rem] mx-auto mt-8 lg:mt-10">
-		<?php the_content(); ?>
+		<?php get_template_part('template-parts/section/careers/section-career-content') ?>
 	</div>
-	<div class="maw-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
+	<div class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
 		<?php career_apply_section() ?>
 	</div>
 </div>
