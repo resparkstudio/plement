@@ -3852,6 +3852,10 @@ div.wpcf7-validation-errors {
   padding-top: 3.5rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -3910,10 +3914,6 @@ div.wpcf7-validation-errors {
 
 .pt-\[8\.25rem\] {
   padding-top: 8.25rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
 }
 
 .text-left {
@@ -5392,6 +5392,10 @@ div.wpcf7-validation-errors {
     justify-items: start;
   }
 
+  .lg\:gap-0 {
+    gap: 0px;
+  }
+
   .lg\:gap-1 {
     gap: 0.25rem;
   }
@@ -5454,10 +5458,6 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[7\.5rem\] {
     gap: 7.5rem;
-  }
-
-  .lg\:gap-0 {
-    gap: 0px;
   }
 
   .lg\:space-y-4 > :not([hidden]) ~ :not([hidden]) {

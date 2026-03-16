@@ -8,7 +8,7 @@ if (!$enabled) {
 
 ?>
 
-<section id='cta' class='bg-lightGrayBg py-7 lg:py-4 mt-6 lg:mt-[7.5rem]'>
+<section id='cta' class='py-7 lg:py-4 mt-6 lg:mt-[7.5rem]'>
 	<div class="">
 		<div class='container flex flex-col gap-8 items-center lg:flex-row lg:justify-between lg:gap-[3.375rem]]'>
 			<div class=' partnership-content lg:max-w-2xl text-center lg:text-left'>
@@ -24,7 +24,7 @@ if (!$enabled) {
 				<?php endif; ?>
 
 				<div class='flex justify-center lg:justify-start'>
-					<?php plmt_button(esc_url($ctaSection['button']['url']), esc_attr($ctaSection['button']['title']), array(
+					<?php plmt_icon_button(esc_url($ctaSection['button']['url']), esc_attr($ctaSection['button']['title']), array(
 						'classes' => 'w-full justify-center lg:w-auto',
 					)) ?>
 				</div>
