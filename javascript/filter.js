@@ -165,11 +165,15 @@ platformFilter.forEach((filter) => {
 	});
 });
 
-const filterBlogs = (industry, platform) =>{
+const filterBlogs = (industry, platform) => {
 	const results = document.getElementById('blogs-results');
 
-	setQueryParams('industry', industry);
-	setQueryParams('platform', platform);
+	if (industry) {
+		setQueryParams('industry', industry);
+	}
+	if (platform) {
+		setQueryParams('platform', platform);
+	}
 	const fetchBlogs = async (industry, platform) => {
 		results.style.opacity = '0.5';
 

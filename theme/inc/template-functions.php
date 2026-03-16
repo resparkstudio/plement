@@ -751,11 +751,36 @@ function plmt_get_filtered_blogs($industry = '', $platform = '')
 		];
 	}
 
+
+	$filters_active = !empty($industry) || !empty($platform);
+
+	if ($filters_active) {
+		$blogs_args = [
+			'post_type' => 'blog-post',
+			'posts_per_page' => -1,
+			'post_status' => array('publish', 'draft'),
+			'orderby' => 'date',
+			'order' => 'DESC',
+		];
+
+		if (count($tax_query) > 1) {
+			$blogs_args['tax_query'] = $tax_query;
+		}
+
+		$blogs = get_posts($blogs_args);
+
+		return [
+			'featured_blog' => [],
+			'blogs' => $blogs,
+		];
+	}
+
 	$featured_args = [
 		'post_type' => 'blog-post',
 		'posts_per_page' => 1,
 		'orderby' => 'date',
 		'order' => 'DESC',
+		'post_status' => array('publish', 'draft'),
 		'meta_query' => [
 			[
 				'key' => 'featured',
@@ -777,6 +802,7 @@ function plmt_get_filtered_blogs($industry = '', $platform = '')
 		'posts_per_page' => -1,
 		'orderby' => 'date',
 		'order' => 'DESC',
+		'post_status' => array('publish', 'draft'),
 		'post__not_in' => $featured_blog_id ? [$featured_blog_id] : [],
 	];
 
