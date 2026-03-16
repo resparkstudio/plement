@@ -1,12 +1,12 @@
 <?php
 $industry_terms = get_terms([
 	'taxonomy' => 'industry',
-	'hide_empty' => true,
+	// 'hide_empty' => true,
 ]);
 
 $platform_terms = get_terms([
 	'taxonomy' => 'blog-platform',
-	'hide_empty' => true,
+	// 'hide_empty' => true,
 ]);
 
 $industry_options = array();
