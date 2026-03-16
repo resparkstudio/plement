@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.10
+Version: 0.2.11
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2605,16 +2605,6 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
-.w-min {
-  width: -moz-min-content;
-  width: min-content;
-}
-
-.\!w-min {
-  width: -moz-min-content !important;
-  width: min-content !important;
-}
-
 .min-w-6 {
   min-width: 1.5rem;
 }
@@ -2755,6 +2745,10 @@ div.wpcf7-validation-errors {
   max-width: 57.25rem;
 }
 
+.max-w-\[57\.5rem\] {
+  max-width: 57.5rem;
+}
+
 .max-w-\[680px\] {
   max-width: 680px;
 }
@@ -2785,10 +2779,6 @@ div.wpcf7-validation-errors {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[57\.5rem\] {
-  max-width: 57.5rem;
 }
 
 .flex-1 {
@@ -2938,18 +2928,6 @@ div.wpcf7-validation-errors {
           user-select: none;
 }
 
-.list-inside {
-  list-style-position: inside;
-}
-
-.list-decimal {
-  list-style-type: decimal;
-}
-
-.list-disc {
-  list-style-type: disc;
-}
-
 .grid-flow-col {
   grid-auto-flow: column;
 }
@@ -3062,6 +3040,10 @@ div.wpcf7-validation-errors {
   gap: 1.5rem;
 }
 
+.gap-7 {
+  gap: 1.75rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
@@ -3104,10 +3086,6 @@ div.wpcf7-validation-errors {
 
 .gap-\[9\.1875rem\] {
   gap: 9.1875rem;
-}
-
-.gap-7 {
-  gap: 1.75rem;
 }
 
 .gap-x-12 {
@@ -5946,12 +5924,6 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
-  }
-
-  .lg\:text-bodySmall {
-    font-size: 0.875rem;
-    line-height: 1.05rem;
-    font-weight: 400;
   }
 
   .lg\:font-extrabold {

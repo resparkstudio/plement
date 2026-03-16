@@ -93,7 +93,7 @@ function career_apply_section()
 				<?php esc_html_e($excerpt); ?>
 			</p>
 		<?php endif; ?>
-		<a href='#apply' class='button text-title font-medium mt-3 lg:mt-4 w-full justify-center md:w-auto'>
+		<a href='#apply' class='button text-title font-medium mt-3 lg:mt-4 w-full justify-center md:w-auto scroll-to '>
 			<?php esc_html_e('Apply for this role') ?>
 			<span class="-rotate-90">
 				<?php plmt_arrow_left() ?>

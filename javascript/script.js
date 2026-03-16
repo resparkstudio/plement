@@ -149,6 +149,34 @@ function preventFormValidationOnUpload() {
   });
 }
 
+function initBlogContentsScroll() {
+  const blogScrollToLinks = document.querySelectorAll('.blog-scroll-to');
+
+  if (!blogScrollToLinks || blogScrollToLinks.length === 0) return;
+
+  blogScrollToLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      //scroll to the heading in the page that has same inner content as the link
+      const linkText = link.textContent.trim();
+      const headings = document.querySelectorAll('.article-content h4');
+      let targetHeading = null;
+
+      headings.forEach(heading => {
+        if (heading.textContent.trim() === linkText) {
+          targetHeading = heading;
+        }
+      })
+
+      if(targetHeading) {
+        const yOffset = -120;
+        const y = targetHeading.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initSwiper();
   handleContactFormTransition();
@@ -156,4 +184,5 @@ document.addEventListener('DOMContentLoaded', function () {
   addArrow();
   handleTextSplit();
   preventFormValidationOnUpload();
+  initBlogContentsScroll();
 });

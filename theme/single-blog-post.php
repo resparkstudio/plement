@@ -60,7 +60,8 @@ function plmt_blog_contents($headings)
 		<ul>
 			<?php foreach ($headings as $heading): ?>
 				<li>
-					<a href="#<?php echo $heading['id'] ?>" class="text-title hover:text-accent transition-all duration-200">
+					<a href="#<?php echo $heading['id'] ?>"
+						class="blog-scroll-to text-title hover:text-accent transition-all duration-200">
 						<?php echo esc_html($heading['text']) ?>
 					</a>
 				</li>
