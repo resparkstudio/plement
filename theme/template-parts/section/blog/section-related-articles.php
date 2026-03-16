@@ -2,6 +2,7 @@
 $related_articles = get_posts(array(
 	'post_type' => 'blog-post',
 	'posts_per_page' => 3,
+	'post_status' => array('publish', 'draft'),
 	'post__not_in' => array(get_the_ID()),
 ));
 
