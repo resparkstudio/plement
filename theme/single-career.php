@@ -68,10 +68,10 @@ function career_apply_section()
 				<?php esc_html_e('Send your application to tomas@plementops.com') ?>
 			</p>
 		</div>
-		<?php plmt_icon_button('#', esc_html('Send application'), [
-			'classes' => 'justify-center',
-			'variant' => 'outlined_dark'
-		]) ?>
+		<button @click="filloutOpen=true" class="icon_button_outlined_dark group">
+			<?php echo esc_html__('Send application', 'plmt') ?>
+			<?php plmt_arrow() ?>
+		</button>
 	</div>
 	<?php
 }
@@ -106,8 +106,9 @@ function career_apply_section()
 	<div class="article-content max-w-[45rem] mx-auto mt-8 lg:mt-10">
 		<?php get_template_part('template-parts/section/careers/section-career-content') ?>
 	</div>
-	<div class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
+	<div x-data="{filloutOpen: false}" class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
 		<?php career_apply_section() ?>
+		<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
 	</div>
 </div>
 <?php

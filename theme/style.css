@@ -3052,6 +3052,16 @@ div.wpcf7-validation-errors {
   width: 100vw;
 }
 
+.w-min {
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.\!w-min {
+  width: -moz-min-content !important;
+  width: min-content !important;
+}
+
 .min-w-6 {
   min-width: 1.5rem;
 }
