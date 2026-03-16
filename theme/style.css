@@ -5232,6 +5232,16 @@ div.wpcf7-validation-errors {
     width: auto;
   }
 
+  .md\:w-max {
+    width: -moz-max-content;
+    width: max-content;
+  }
+
+  .md\:w-min {
+    width: -moz-min-content;
+    width: min-content;
+  }
+
   .md\:max-w-\[12\.5rem\] {
     max-width: 12.5rem;
   }

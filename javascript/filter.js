@@ -165,17 +165,36 @@ platformFilter.forEach((filter) => {
 	});
 });
 
+const blogsLoadMoreBtn = document.getElementById('blogs-load-more');
+let blogOffset = blogsLoadMoreBtn
+	? parseInt(blogsLoadMoreBtn.dataset.offset || '0', 10)
+	: 0;
+let currentBlogIndustry = getParamValue('industry') || '';
+let currentBlogPlatform = getParamValue('platform') || '';
+
+const updateBlogLoadMore = (hasMore, nextOffset) => {
+	if (!blogsLoadMoreBtn) return;
+	blogOffset = nextOffset;
+	blogsLoadMoreBtn.dataset.offset = nextOffset;
+	if (hasMore) {
+		blogsLoadMoreBtn.classList.remove('hidden');
+	} else {
+		blogsLoadMoreBtn.classList.add('hidden');
+	}
+};
+
 const filterBlogs = (industry, platform) => {
 	const results = document.getElementById('blogs-results');
 
-	if (industry) {
-		setQueryParams('industry', industry);
-	}
-	if (platform) {
-		setQueryParams('platform', platform);
-	}
-	const fetchBlogs = async (industry, platform) => {
+	currentBlogIndustry = industry !== 'all' ? industry || '' : '';
+	currentBlogPlatform = platform !== 'all' ? platform || '' : '';
+
+	if (industry) setQueryParams('industry', industry);
+	if (platform) setQueryParams('platform', platform);
+
+	const fetchBlogs = async () => {
 		results.style.opacity = '0.5';
+		if (blogsLoadMoreBtn) blogsLoadMoreBtn.classList.add('hidden');
 
 		try {
 			const response = await fetch('/wp-admin/admin-ajax.php?action=plmt_filter_blogs', {
@@ -184,8 +203,8 @@ const filterBlogs = (industry, platform) => {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					industry: industry !== 'all' ? industry : '',
-					platform: platform !== 'all' ? platform : '',
+					industry: currentBlogIndustry,
+					platform: currentBlogPlatform,
 				}),
 			});
 
@@ -193,6 +212,7 @@ const filterBlogs = (industry, platform) => {
 
 			if (data.success && data.data.html !== undefined) {
 				results.innerHTML = data.data.html;
+				updateBlogLoadMore(data.data.has_more, data.data.next_offset);
 			}
 		} catch (error) {
 			console.error('Blog filter AJAX error:', error);
@@ -201,8 +221,39 @@ const filterBlogs = (industry, platform) => {
 		}
 	};
 
-	fetchBlogs(industry, platform)
+	fetchBlogs();
+};
 
+if (blogsLoadMoreBtn) {
+	blogsLoadMoreBtn.addEventListener('click', async () => {
+		blogsLoadMoreBtn.disabled = true;
+		const results = document.getElementById('blogs-results');
+
+		try {
+			const response = await fetch('/wp-admin/admin-ajax.php?action=plmt_load_more_blogs', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					industry: currentBlogIndustry,
+					platform: currentBlogPlatform,
+					offset: blogOffset,
+				}),
+			});
+
+			const data = await response.json();
+
+			if (data.success && data.data.html !== undefined) {
+				results.insertAdjacentHTML('beforeend', data.data.html);
+				updateBlogLoadMore(data.data.has_more, data.data.next_offset);
+			}
+		} catch (error) {
+			console.error('Blog load more AJAX error:', error);
+		} finally {
+			blogsLoadMoreBtn.disabled = false;
+		}
+	});
 }
 
 document.addEventListener('DOMContentLoaded', function () {

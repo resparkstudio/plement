@@ -1,12 +1,12 @@
 <?php
 $industry_terms = get_terms([
 	'taxonomy' => 'industry',
-	// 'hide_empty' => true,
+	'hide_empty' => false,
 ]);
 
 $platform_terms = get_terms([
 	'taxonomy' => 'blog-platform',
-	// 'hide_empty' => true,
+	'hide_empty' => false,
 ]);
 
 $industry_options = array();
@@ -33,7 +33,15 @@ $filters_enabled = get_field('filters_enabled');
 			<?php plmt_dropdown($platform_options, __('Filter by Platform:', 'plmt'), 'platform-filter'); ?>
 		</div>
 	<?php endif; ?>
+	<?php $initial_result = plmt_render_blog_results('', '', 0, 5); ?>
 	<div id="blogs-results">
-		<?php echo plmt_render_blog_results('', ''); ?>
+		<?php echo $initial_result['html']; ?>
+	</div>
+	<div class="flex justify-center  mt-8 lg:mt-10">
+		<button id="blogs-load-more"
+			class="button w-full md:w-auto justify-center group <?php echo $initial_result['has_more'] ? '' : 'hidden'; ?>"
+			data-offset="<?php echo esc_attr($initial_result['next_offset']); ?>">
+			<?php esc_html_e('Load more', 'plmt'); ?>
+		</button>
 	</div>
 </div>

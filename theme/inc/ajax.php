@@ -143,11 +143,34 @@ function plmt_filter_blogs_ajax()
 	$industry = isset($body['industry']) ? sanitize_text_field($body['industry']) : '';
 	$platform = isset($body['platform']) ? sanitize_text_field($body['platform']) : '';
 
+	$result = plmt_render_blog_results($industry, $platform, 0, 5);
 
 	wp_send_json_success([
-		'html' => plmt_render_blog_results($industry, $platform),
+		'html' => $result['html'],
+		'has_more' => $result['has_more'],
+		'next_offset' => $result['next_offset'],
 	]);
 }
 
 add_action('wp_ajax_plmt_filter_blogs', 'plmt_filter_blogs_ajax');
 add_action('wp_ajax_nopriv_plmt_filter_blogs', 'plmt_filter_blogs_ajax');
+
+function plmt_load_more_blogs()
+{
+	$body = json_decode(file_get_contents('php://input'), true);
+
+	$industry = isset($body['industry']) ? sanitize_text_field($body['industry']) : '';
+	$platform = isset($body['platform']) ? sanitize_text_field($body['platform']) : '';
+	$offset   = isset($body['offset']) ? intval($body['offset']) : 0;
+
+	$result = plmt_render_blog_results($industry, $platform, $offset, 5);
+
+	wp_send_json_success([
+		'html' => $result['html'],
+		'has_more' => $result['has_more'],
+		'next_offset' => $result['next_offset'],
+	]);
+}
+
+add_action('wp_ajax_plmt_load_more_blogs', 'plmt_load_more_blogs');
+add_action('wp_ajax_nopriv_plmt_load_more_blogs', 'plmt_load_more_blogs');

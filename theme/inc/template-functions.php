@@ -731,7 +731,7 @@ function plmt_add_tinymce_style_dropdown($buttons)
 }
 add_filter('mce_buttons_2', 'plmt_add_tinymce_style_dropdown');
 
-function plmt_get_filtered_blogs($industry = '', $platform = '')
+function plmt_get_filtered_blogs($industry = '', $platform = '', $offset = 0, $per_page = 5)
 {
 	$tax_query = ['relation' => 'AND'];
 
@@ -751,30 +751,39 @@ function plmt_get_filtered_blogs($industry = '', $platform = '')
 		];
 	}
 
-
 	$filters_active = !empty($industry) || !empty($platform);
 
 	if ($filters_active) {
+		// Fetch one extra post to detect whether more exist after this page.
 		$blogs_args = [
 			'post_type' => 'blog-post',
-			'posts_per_page' => -1,
+			'posts_per_page' => $per_page + 1,
 			'post_status' => array('publish', 'draft'),
 			'orderby' => 'date',
 			'order' => 'DESC',
+			'offset' => $offset,
 		];
 
 		if (count($tax_query) > 1) {
 			$blogs_args['tax_query'] = $tax_query;
 		}
 
-		$blogs = get_posts($blogs_args);
+		$blogs    = get_posts($blogs_args);
+		$has_more = count($blogs) > $per_page;
+
+		if ($has_more) {
+			array_pop($blogs);
+		}
 
 		return [
 			'featured_blog' => [],
 			'blogs' => $blogs,
+			'has_more' => $has_more,
+			'next_offset' => $offset + count($blogs),
 		];
 	}
 
+	// No filters active — show featured blog prominently on the first page.
 	$featured_args = [
 		'post_type' => 'blog-post',
 		'posts_per_page' => 1,
@@ -790,19 +799,20 @@ function plmt_get_filtered_blogs($industry = '', $platform = '')
 		],
 	];
 
-	if (count($tax_query) > 1) {
-		$featured_args['tax_query'] = $tax_query;
-	}
-
 	$featured_blog    = get_posts($featured_args);
 	$featured_blog_id = !empty($featured_blog) ? $featured_blog[0]->ID : 0;
 
+	// First page (offset 0): featured takes one slot, show per_page-1 regular posts.
+	// Subsequent pages: show full per_page regular posts.
+	$regular_limit = $offset === 0 ? $per_page - 1 : $per_page;
+
 	$blogs_args = [
 		'post_type' => 'blog-post',
-		'posts_per_page' => -1,
+		'posts_per_page' => $regular_limit + 1,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'post_status' => array('publish', 'draft'),
+		'offset' => $offset,
 		'post__not_in' => $featured_blog_id ? [$featured_blog_id] : [],
 	];
 
@@ -810,11 +820,18 @@ function plmt_get_filtered_blogs($industry = '', $platform = '')
 		$blogs_args['tax_query'] = $tax_query;
 	}
 
-	$blogs = get_posts($blogs_args);
+	$blogs    = get_posts($blogs_args);
+	$has_more = count($blogs) > $regular_limit;
+
+	if ($has_more) {
+		array_pop($blogs);
+	}
 
 	return [
-		'featured_blog' => $featured_blog,
+		'featured_blog' => $offset === 0 ? $featured_blog : [],
 		'blogs' => $blogs,
+		'has_more' => $has_more,
+		'next_offset' => $offset + count($blogs),
 	];
 }
 
@@ -887,17 +904,16 @@ function blog_card($blog)
 
 }
 
-function plmt_render_blog_results($industry = '', $platform = '')
+function plmt_render_blog_results($industry = '', $platform = '', $offset = 0, $per_page = 5)
 {
-	$data = plmt_get_filtered_blogs($industry, $platform);
+	$data = plmt_get_filtered_blogs($industry, $platform, $offset, $per_page);
 
 	$featured_blog = $data['featured_blog'];
 	$blogs         = $data['blogs'];
 
 	ob_start();
-	?>
 
-		<?php if ($featured_blog): ?>
+	if ($featured_blog): ?>
 			<?php featured_blog_card($featured_blog[0]); ?>
 		<?php endif; ?>
 
@@ -907,8 +923,11 @@ function plmt_render_blog_results($industry = '', $platform = '')
 			<?php endforeach; ?>
 		<?php elseif (!$featured_blog): ?>
 			<p>No blog posts found.</p>
-		<?php endif; ?>
+		<?php endif;
 
-		<?php
-		return ob_get_clean();
+		return [
+			'html' => ob_get_clean(),
+			'has_more' => $data['has_more'],
+			'next_offset' => $data['next_offset'],
+		];
 }
