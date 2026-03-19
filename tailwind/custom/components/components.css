@@ -289,15 +289,15 @@ div.wpcf7-validation-errors {
 }
 
 .article-content h1 {
-	@apply text-h1Mobile lg:text-h1 mb-3 font-bold;
+	@apply text-h1MobileBold lg:text-h1Bold mb-3
 }
 
 .article-content h2 {
-	@apply text-h2Mobile lg:text-h2 mb-3 font-bold;
+	@apply text-h2MobileBold lg:text-h2Bold mb-3
 }
 
 .article-content h3 {
-	@apply text-h3Mobile lg:text-h3 mb-3 font-bold;
+	@apply text-h3MobileBold lg:text-h3Bold mb-3
 }
 
 .article-content h4 {
