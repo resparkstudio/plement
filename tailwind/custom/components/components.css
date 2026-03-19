@@ -288,6 +288,18 @@ div.wpcf7-validation-errors {
 	@apply !rounded-none;
 }
 
+.article-content h1 {
+	@apply text-h1Mobile lg:text-h1 mb-3
+}
+
+.article-content h2 {
+	@apply text-h2Mobile lg:text-h2 mb-3
+}
+
+.article-content h3 {
+	@apply text-h3Mobile lg:text-h3 mb-3
+}
+
 .article-content h4 {
 	@apply text-h4BoldMobile lg:text-h4Bold mb-3
 }

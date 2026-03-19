@@ -159,7 +159,7 @@ function initBlogContentsScroll() {
       e.preventDefault();
       //scroll to the heading in the page that has same inner content as the link
       const linkText = link.textContent.trim();
-      const headings = document.querySelectorAll('.article-content h4');
+      const headings = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6');
       let targetHeading = null;
 
       headings.forEach(heading => {
@@ -168,7 +168,7 @@ function initBlogContentsScroll() {
         }
       })
 
-      if(targetHeading) {
+      if (targetHeading) {
         const yOffset = -120;
         const y = targetHeading.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });

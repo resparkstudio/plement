@@ -30,16 +30,16 @@ function plmt_get_headings_from_content($content)
 	$dom = new DOMDocument();
 	$dom->loadHTML('<?xml encoding="utf-8" ?>' . $content);
 
-	for ($i = 1; $i <= 6; $i++) {
-		$elements = $dom->getElementsByTagName('h' . $i);
+	$xpath = new DOMXPath($dom);
+	$nodes = $xpath->query('//h1|//h2|//h3|//h4|//h5|//h6');
 
-		foreach ($elements as $element) {
-			$headings[] = [
-				'tag' => 'h' . $i,
-				'text' => trim($element->textContent),
-				'id' => $element->getAttribute('id'),
-			];
-		}
+	foreach ($nodes as $node) {
+		$tag        = strtolower($node->nodeName);
+		$headings[] = [
+			'tag' => $tag,
+			'text' => trim($node->textContent),
+			'id' => $node->getAttribute('id'),
+		];
 	}
 
 	libxml_clear_errors();
@@ -132,9 +132,9 @@ function plmt_blog_contents($headings)
 			?>
 		</div>
 	</div>
-	<div class="flex-col gap-6 lg:gap-0 lg:flex-row flex mx-auto mt-6 lg:mt-10 max-w-[75rem] w-full">
+	<div class="flex-col gap-6 lg:grid grid-cols-[1fr_720px_1fr] flex mx-auto mt-6 lg:mt-10 max-w-[75rem] w-full">
 		<?php plmt_blog_contents($headings) ?>
-		<div class="article-content max-w-[45rem] w-full mx-auto ">
+		<div class="article-content max-w-[45rem] w-full mx-auto">
 			<?php the_content(); ?>
 		</div>
 	</div>
