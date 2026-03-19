@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.13
+Version: 0.2.14
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2993,40 +2993,12 @@ div.wpcf7-validation-errors {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.grid-cols-\[24\%_24\%_28\%_24\%\] {
-  grid-template-columns: 24% 24% 28% 24%;
-}
-
-.grid-cols-\[1fr_3fr\] {
-  grid-template-columns: 1fr 3fr;
-}
-
-.grid-cols-\[1fr_4fr\] {
-  grid-template-columns: 1fr 4fr;
-}
-
-.grid-cols-\[1fr_5fr\] {
-  grid-template-columns: 1fr 5fr;
-}
-
-.grid-cols-\[1fr_6fr\] {
-  grid-template-columns: 1fr 6fr;
-}
-
-.grid-cols-\[200px_720px\] {
-  grid-template-columns: 200px 720px;
-}
-
-.grid-cols-\[300px_720px\] {
-  grid-template-columns: 300px 720px;
-}
-
-.grid-cols-\[300px_720px_1fr\] {
-  grid-template-columns: 300px 720px 1fr;
-}
-
 .grid-cols-\[1fr_720px_1fr\] {
   grid-template-columns: 1fr 720px 1fr;
+}
+
+.grid-cols-\[24\%_24\%_28\%_24\%\] {
+  grid-template-columns: 24% 24% 28% 24%;
 }
 
 .flex-col {
@@ -5475,10 +5447,6 @@ div.wpcf7-validation-errors {
 
   .lg\:justify-items-start {
     justify-items: start;
-  }
-
-  .lg\:gap-0 {
-    gap: 0px;
   }
 
   .lg\:gap-1 {
