@@ -54,10 +54,10 @@ function plmt_blog_contents($headings)
 {
 	?>
 	<div class="hidden lg:block sticky top-24 self-start max-h-[70vh] overflow-auto w-full">
-		<span class="text-title font-bold mb-2">
+		<span class="text-title font-bold">
 			<?php esc_html_e('Contents', 'plmt'); ?>
 		</span>
-		<ul class="space-y-2">
+		<ul class="mt-2 space-y-2">
 			<?php foreach ($headings as $heading): ?>
 				<li>
 					<a href="#<?php echo $heading['id'] ?>"
