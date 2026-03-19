@@ -53,11 +53,11 @@ $headings = plmt_get_headings_from_content(get_the_content());
 function plmt_blog_contents($headings)
 {
 	?>
-	<div class="hidden lg:block">
+	<div class="hidden lg:block sticky top-24 self-start max-h-[70vh] overflow-auto w-full">
 		<span class="text-title font-bold">
 			<?php esc_html_e('Contents', 'plmt'); ?>
 		</span>
-		<ul>
+		<ul class="space-y-2">
 			<?php foreach ($headings as $heading): ?>
 				<li>
 					<a href="#<?php echo $heading['id'] ?>"
@@ -132,7 +132,8 @@ function plmt_blog_contents($headings)
 			?>
 		</div>
 	</div>
-	<div class="flex-col gap-6 lg:grid grid-cols-[1fr_720px_1fr] flex mx-auto mt-6 lg:mt-10 max-w-[75rem] w-full">
+	<div
+		class="relative flex-col gap-6 lg:gap-12 lg:grid grid-cols-[1fr_720px_1fr] flex mx-auto mt-6 lg:mt-10 max-w-[75rem] w-full">
 		<?php plmt_blog_contents($headings) ?>
 		<div class="article-content max-w-[45rem] w-full mx-auto">
 			<?php the_content(); ?>
