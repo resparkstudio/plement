@@ -54,7 +54,7 @@ function plmt_blog_contents($headings)
 {
 	?>
 	<div class="hidden lg:block sticky top-24 self-start max-h-[70vh] overflow-auto w-full">
-		<span class="text-title font-bold">
+		<span class="text-title font-bold mb-2">
 			<?php esc_html_e('Contents', 'plmt'); ?>
 		</span>
 		<ul class="space-y-2">
