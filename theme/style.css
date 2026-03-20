@@ -2264,9 +2264,8 @@ div.wpcf7-validation-errors {
 
 @media (min-width: 984px) {
   .article-content p {
-    font-size: 1rem;
-    line-height: 1.3rem;
-    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -2465,6 +2464,10 @@ div.wpcf7-validation-errors {
   top: 50%;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-3 {
   top: 0.75rem;
 }
@@ -2482,10 +2485,6 @@ div.wpcf7-validation-errors {
 }
 
 .top-\[6rem\] {
-  top: 6rem;
-}
-
-.top-24 {
   top: 6rem;
 }
 
@@ -5916,6 +5915,10 @@ div.wpcf7-validation-errors {
     gap: 2.5rem;
   }
 
+  .lg\:gap-12 {
+    gap: 3rem;
+  }
+
   .lg\:gap-14 {
     gap: 3.5rem;
   }
@@ -5970,10 +5973,6 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[7\.5rem\] {
     gap: 7.5rem;
-  }
-
-  .lg\:gap-12 {
-    gap: 3rem;
   }
 
   .lg\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -6421,6 +6420,11 @@ div.wpcf7-validation-errors {
     font-size: 1.25rem;
     line-height: 1.875rem;
     font-weight: 400;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .lg\:text-sm {

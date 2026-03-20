@@ -1,26 +1,27 @@
 <?php
 
-$contact_information = get_field( 'information' );
+$contact_information = get_field('information');
 
-if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
+if (!isset($contact_information) || empty($contact_information)) {
 	return;
 }
 
 ?>
 
 <div class="h-full p-5 lg:p-10 flex flex-col lg:justify-between bg-mainBlack text-white" x-data="{filloutOpen: false}">
-	<?php plmt_button_with_arrow( "filloutOpen=true", esc_html__( 'Book Meeting', 'plmt' ), null, array(
+	<?php plmt_button_with_arrow("filloutOpen=true", esc_html__('Book Meeting', 'plmt'), null, array(
 		"classes" => "contact-button mb-10 bg-transparent border border-accent justify-between text-accent !h-auto py-4 px-6 text-title hover:text-white hover:bg-accent",
-	) ) ?>
+	)) ?>
 	<div>
 		<div class="mb-8">
-			<h3 class="mb-2 text-h5Bold lg:text-h4Regular"><?php esc_html_e( $contact_information['heading'] ) ?></h3>
-			<p class="text-textSecondary text-bodyRegular"><?php esc_html_e( $contact_information['description'] ) ?>
+			<h3 class="mb-2 text-h5Bold lg:text-h4Regular"><?php esc_html_e($contact_information['heading']) ?></h3>
+			<p class="text-textSecondary text-bodyRegular lg:text-lg">
+				<?php esc_html_e($contact_information['description']) ?>
 			</p>
 		</div>
 		<div class="flex flex-col xl:flex-row xl:items-center">
 			<div class="flex items-center justify-between w-full">
-				<a href="<?php echo esc_url( $contact_information['linkedin']['url'] ) ?>" target="_blank">
+				<a href="<?php echo esc_url($contact_information['linkedin']['url']) ?>" target="_blank">
 					<div>
 						<div class="flex items-center gap-1">
 							<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -36,17 +37,17 @@ if ( ! isset( $contact_information ) || empty( $contact_information ) ) {
 									</clipPath>
 								</defs>
 							</svg>
-							<span class="text-title"><?php echo esc_html( $contact_information['name'] ) ?></span>
+							<span class="text-title"><?php echo esc_html($contact_information['name']) ?></span>
 						</div>
 						<p class="text-textSecondary text-bodySmall mt-1">
-							<?php echo esc_html( $contact_information['position'] ) ?>
+							<?php echo esc_html($contact_information['position']) ?>
 					</div>
 				</a>
-				<img src="<?php echo esc_url( $contact_information['image']['url'] ) ?>"
-					alt="<?php echo esc_attr( $contact_information['image']['alt'] ) ?>"
+				<img src="<?php echo esc_url($contact_information['image']['url']) ?>"
+					alt="<?php echo esc_attr($contact_information['image']['alt']) ?>"
 					class="rounded-full w-[40px] h-[40px] border border-textSecondary">
 			</div>
 		</div>
 	</div>
-	<?php get_template_part( 'template-parts/content/content-fillout-modal' ); ?>
+	<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
 </div>

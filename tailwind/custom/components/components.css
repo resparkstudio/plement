@@ -349,7 +349,7 @@ div.wpcf7-validation-errors {
 }
 
 .article-content p {
-	@apply text-darkGray text-bodySmall lg:text-bodyRegular;
+	@apply text-darkGray text-bodySmall lg:text-lg;
 }
 
 .article-content strong, b {

@@ -32,7 +32,7 @@ function plmt_render_paragraphs($section)
 	?>
 	<div>
 		<?php plmt_render_career_heading($section) ?>
-		<div class="flex flex-col w-full gap-4 lg:gap-5 text-bodySmall lg:text-bodyRegular">
+		<div class="flex flex-col w-full gap-4 lg:gap-5 text-bodySmall lg:text-lg">
 			<?php
 			foreach ($section['paragraphs'] as $paragraph) {
 				echo $paragraph['paragraph'];
@@ -53,7 +53,7 @@ function plmt_render_disc_list($section)
 	<div>
 		<?php plmt_render_career_heading($section) ?>
 
-		<ul class="text-bodySmall lg:text-bodyRegular text-darkGray">
+		<ul class="text-bodySmall lg:text-lg text-darkGray">
 			<?php foreach ($section['list'] as $item): ?>
 				<li>
 					<?php echo $item['list_item'] ?>
@@ -74,7 +74,7 @@ function plmt_render_check_list($section)
 	<div>
 		<?php plmt_render_career_heading($section) ?>
 
-		<ul class="article-checklist text-bodySmall lg:text-bodyRegular text-darkGray">
+		<ul class="article-checklist text-bodySmall lg:text-lg text-darkGray">
 			<?php foreach ($section['list'] as $item): ?>
 				<li>
 					<?php echo $item['list_item'] ?>
@@ -95,7 +95,7 @@ function plmt_render_ordered_list($section)
 	<div>
 		<?php plmt_render_career_heading($section) ?>
 
-		<ol class="text-bodySmall lg:text-bodyRegular text-darkGray">
+		<ol class="text-bodySmall lg:text-lg text-darkGray">
 			<?php foreach ($section['list'] as $item): ?>
 				<li>
 					<?php echo $item['list_item'] ?>

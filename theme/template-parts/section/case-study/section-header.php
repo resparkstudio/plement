@@ -8,15 +8,15 @@
 	</header><!-- .entry-header -->
 
 
-	<div class="border-l-2 border-l-accent pl-5 lg:pl-10 mb-6 lg:mb-8">
+	<div class="border-l-2 border-l-accent pl-5 lg:pl-10 mb-6 lg:mb-8 lg:text-lg">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<div>
 		<?php
 		$category = get_the_category();
-		if ( $category ) {
-			echo '<span class="text-darkGray">' . esc_html( $category[0]->name ) . '</span>';
+		if ($category) {
+			echo '<span class="text-darkGray">' . esc_html($category[0]->name) . '</span>';
 		}
 		?>
 	</div>
