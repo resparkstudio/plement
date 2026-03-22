@@ -1054,9 +1054,6 @@ input {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -1064,6 +1061,15 @@ input {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+@media (min-width: 984px) {
+  .button {
+    font-size: 1.125rem;
+  }
 }
 
 .button:hover {
@@ -1089,14 +1095,20 @@ input {
   padding-right: 1.5rem;
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(39 39 39 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+@media (min-width: 984px) {
+  .button_secondary {
+    font-size: 1.125rem;
+  }
 }
 
 .button_secondary:hover {
@@ -1119,14 +1131,20 @@ input {
   padding-right: 1.5rem;
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+@media (min-width: 984px) {
+  .button_outlined {
+    font-size: 1.125rem;
+  }
 }
 
 .button_outlined:hover {
@@ -1147,14 +1165,20 @@ input {
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.3rem;
-  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media (min-width: 984px) {
+  .icon_button_outlined {
+    font-size: 1.125rem;
+  }
 }
 
 .icon_button_outlined:hover {
@@ -1177,14 +1201,20 @@ input {
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.3rem;
-  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media (min-width: 984px) {
+  .icon_button_outlined_dark {
+    font-size: 1.125rem;
+  }
 }
 
 .icon_button_outlined_dark:hover {
@@ -1332,11 +1362,18 @@ input {
   padding-right: 2rem;
   padding-top: 1.625rem;
   padding-bottom: 1.625rem;
-  font-size: 1rem;
-  line-height: 1.3rem;
-  font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(26 26 26 / var(--tw-text-opacity));
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media (min-width: 984px) {
+  .wpcf7-form-control.wpcf7-text,
+.wpcf7-form-control.wpcf7-textarea {
+    font-size: 1.125rem;
+  }
 }
 
 .wpcf7-form-control.wpcf7-text:focus,
@@ -1507,11 +1544,17 @@ div.wpcf7-validation-errors {
 .wpcf7-not-valid-tip {
   position: absolute;
   bottom: -1rem;
-  font-size: 0.875rem;
-  line-height: 1.05rem;
-  font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(255 79 79 / var(--tw-text-opacity));
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.05rem;
+}
+
+@media (min-width: 984px) {
+  .wpcf7-not-valid-tip {
+    font-size: 1rem;
+  }
 }
 
 .wpcf7-form-control-wrap {
@@ -1796,11 +1839,17 @@ div.wpcf7-validation-errors {
   justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
-  font-size: 0.875rem;
-  line-height: 1.05rem;
-  font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.05rem;
+}
+
+@media (min-width: 984px) {
+  .article-content ol li::before {
+    font-size: 1rem;
+  }
 }
 
 .article-content img {
@@ -1808,11 +1857,11 @@ div.wpcf7-validation-errors {
 }
 
 .article-content p {
-  font-size: 0.875rem;
-  line-height: 1.05rem;
-  font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(100 100 100 / var(--tw-text-opacity));
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.05rem;
 }
 
 @media (min-width: 984px) {
@@ -1884,6 +1933,42 @@ div.wpcf7-validation-errors {
   .article-content blockquote::before {
     height: 38px;
     width: 41px;
+  }
+}
+
+.text-bodyRegular {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media (min-width: 984px) {
+  .text-bodyRegular {
+    font-size: 1.125rem;
+  }
+}
+
+.text-bodySmall {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.05rem;
+}
+
+@media (min-width: 984px) {
+  .text-bodySmall {
+    font-size: 1rem;
+  }
+}
+
+.text-bodyBold {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+@media (min-width: 984px) {
+  .text-bodyBold {
+    font-size: 1.125rem;
   }
 }
 
@@ -4020,24 +4105,6 @@ div.wpcf7-validation-errors {
   font-size: 3rem;
 }
 
-.text-bodyBold {
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: 700;
-}
-
-.text-bodyRegular {
-  font-size: 1rem;
-  line-height: 1.3rem;
-  font-weight: 400;
-}
-
-.text-bodySmall {
-  font-size: 0.875rem;
-  line-height: 1.05rem;
-  font-weight: 400;
-}
-
 .text-button {
   font-size: 1rem;
   line-height: 1rem;
@@ -5913,18 +5980,6 @@ div.wpcf7-validation-errors {
 
   .lg\:text-\[5\.625rem\] {
     font-size: 5.625rem;
-  }
-
-  .lg\:text-bodyBold {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    font-weight: 700;
-  }
-
-  .lg\:text-bodyRegular {
-    font-size: 1rem;
-    line-height: 1.3rem;
-    font-weight: 400;
   }
 
   .lg\:text-displayLarge {
