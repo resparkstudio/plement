@@ -111,7 +111,7 @@ function menu_colunn()
 			<?php menu_colunn(); ?>
 			<div class="text-center mb-10 lg:text-left lg:mb-12">
 				<span class="font-medium mb-4 inline-block"><?php esc_html_e('Got a question?', 'plmt') ?></span>
-				<div class="flex items-center gap-4">
+				<div class="flex items-center gap-4 lg:min-w-[330px]">
 					<div x-data="{
 							copyText: '<?php echo esc_html($faq_content['email']) ?>',
 							copyNotification: false,
@@ -125,7 +125,7 @@ function menu_colunn()
 							}
 						}" class="relative z-20 flex items-center">
 						<button @click="copyToClipboard();"
-							class="flex items-center gap-2 justify-center hover:text-accent duration-200 transition-colors">
+							class="flex items-center gap-2 justify-center lg:justify-end lg:w-full hover:text-accent duration-200 transition-colors">
 							<svg x-show="!copyNotification" x-cloak class="w-[15px] h-[19px] lg:w-[19px] lg:h-[25px]"
 								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 								<path fill="currentColor"
