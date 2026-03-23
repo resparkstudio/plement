@@ -423,7 +423,7 @@ function plmt_tool_tag($tool)
 
 	?>
 		<div
-			class="bg-accent/10 text-accent p-2 lg:text-bodyBold absolute top-4 right-4 flex items-center gap-1 text-bodySmall font-bold">
+			class="bg-accent/10 text-accent p-2 lg:text-bodyBold absolute top-4 right-4 flex items-center gap-1 text-badges">
 			<?php echo $icon_html; ?>
 			<?php echo esc_html($tool_name); ?>
 		</div>
@@ -536,7 +536,7 @@ function plmt_dark_info_card($contact_content)
 			<?php if ($contact_content['bead']): ?>
 				<span>
 					<div
-						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:relative lg:justify-self-start lg:mb-12">
+						class="absolute top-3 right-0 bg-accent/15 text-accent text-badges py-1 px-2 lg:relative lg:justify-self-start lg:mb-12">
 						<?php esc_html_e($contact_content['bead']); ?>
 					</div>
 				</span>
@@ -590,8 +590,7 @@ function plmt_light_info_card($contact_content)
 		<div class="h-full relative p-5 pt-12 lg:p-10 lg:pt-14 bg-lightGrayBg" x-data="{strategyFilloutOpen: false}">
 			<?php if ($contact_content['bead']): ?>
 				<span>
-					<div
-						class="absolute top-3 right-0 bg-accent/15 text-accent text-bodySmall font-bold py-1 px-2 lg:top-4 lg:right-5">
+					<div class="absolute top-3 right-0 bg-accent/15 text-accent text-badges py-1 px-2 lg:top-4 lg:right-5">
 						<?php esc_html_e($contact_content['bead']); ?>
 					</div>
 				</span>

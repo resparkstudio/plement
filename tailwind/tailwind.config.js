@@ -113,6 +113,7 @@ module.exports = {
 				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 				caption1Regular: ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],
+				badges: ['0.875rem', { lineHeight: '120%', fontWeight: '700' }],
 			},
 			transitionDuration: {
 				800: '800ms',
