@@ -172,6 +172,15 @@ body {
   color: rgb(17 31 36 / var(--tw-text-opacity));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+@media (min-width: 984px) {
+  body {
+    font-size: 1.125rem;
+  }
 }
 
 .tippy-close-button {
