@@ -14,7 +14,6 @@ $contact_us_page_id = get_page_by_path('contact-us')->ID;
 $contact_information = get_field('information', $contact_us_page_id);
 $faq_content         = get_field('faq', $front_page_id);
 $logo                = get_field('logo', 'option');
-
 function mobile_menu_dropdown($title, $items)
 {
 	?>
@@ -99,7 +98,7 @@ function menu_colunn()
 <footer id="colophon" class="bg-mainBlack text-white z-0 relative" x-data="{filloutOpen: false}">
 	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
 		<div
-			class="grid gird-cols-1 jusitify-center justify-items-center lg:justify-items-start lg:flex lg:justify-between lg:mb-[104px]">
+			class="grid gird-cols-1 jusitify-center justify-items-center lg:grid-cols-[200px_1fr_300px] lg:justify-between lg:mb-[104px]">
 			<?php if (get_theme_mod('site_logo')): ?>
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="mb-[1.875rem]">
 					<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
