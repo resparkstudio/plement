@@ -83,7 +83,7 @@ function menu_colunn()
 					<div class="flex flex-col gap-5 text-bodyRegular font-medium">
 						<?php foreach ($top_level_item['children'] as $child):
 							?>
-							<a href="<?php esc_url($child['url']) ?>" class="hover:text-accent transition-colors duration-200">
+							<a href="<?php echo esc_url($child['url']) ?>" class="hover:text-accent transition-colors duration-200">
 								<?php echo esc_html($child['title']) ?>
 							</a>
 						<?php endforeach; ?>
