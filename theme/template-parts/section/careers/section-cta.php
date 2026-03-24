@@ -22,12 +22,13 @@ if (!$enabled) {
 						<?php echo esc_html($ctaSection['description']) ?>
 					</p>
 				<?php endif; ?>
-
-				<div class='flex justify-center lg:justify-start'>
-					<?php plmt_icon_button(esc_url($ctaSection['button']['url']), esc_attr($ctaSection['button']['title']), array(
-						'classes' => 'w-full justify-center lg:w-auto',
-					)) ?>
-				</div>
+				<?php if ($ctaSection['button']): ?>
+					<div class='flex justify-center lg:justify-start'>
+						<?php plmt_icon_button(esc_url($ctaSection['button']['url']), esc_attr($ctaSection['button']['title']), array(
+							'classes' => 'w-full justify-center lg:w-auto',
+						)) ?>
+					</div>
+				<?php endif; ?>
 			</div>
 			<div>
 				<?php if ($ctaSection['image']): ?>
