@@ -11,7 +11,8 @@ get_header(null, array('type' => 'light'));
 
 $excerpt    = get_field('excerpt');
 $info_tabs  = get_field('info_tabs');
-$apply_link = get_field('apply_link');
+$apply_info = get_field('apply_info');
+
 function career_info_tabs($tabs)
 {
 	if (!$tabs)
@@ -56,26 +57,32 @@ function career_info_tabs($tabs)
 	<?php
 }
 
-function career_apply_section($apply_link)
+function career_apply_section($apply_info)
 {
-	if (!$apply_link)
+	if (!$apply_info)
 		return null;
 
 	?>
 	<div id="apply" class="bg-mainBlack flex p-4 lg:p-8 w-full flex-col gap-4 lg:flex-row justify-between">
 		<div class="text-left flex lg:flex-col gap-6 lg:gap-1">
-			<p class="text-white text-h5Mobile lg:text-h5Bold">
-				<?php esc_html_e('Ready to apply?') ?>
-			</p>
-			<p class="text-[#888888] text-sm lg:text-bodyRegular text-right lg:text-left">
-				<?php esc_html_e('Send your application to tomas@plementops.com') ?>
-			</p>
+			<?php if ($apply_info['heading']): ?>
+				<h4 class="text-white text-h5Mobile lg:text-h5Bold">
+					<?php echo esc_html($apply_info['heading']) ?>
+				</h4>
+			<?php endif; ?>
+			<?php if ($apply_info['description']): ?>
+				<p class="text-[#888888] text-sm lg:text-bodyRegular text-right lg:text-left">
+					<?php echo esc_html($apply_info['description']) ?>
+				</p>
+			<?php endif; ?>
 		</div>
-		<a href="<?php echo esc_url($apply_link['url']) ?>" class="icon_button_outlined_dark group"
-			target="<?php echo esc_attr($apply_link['target']) ?>">
-			<?php echo esc_html($apply_link['title']) ?>
-			<?php plmt_arrow() ?>
-		</a>
+		<?php if ($apply_info['link']): ?>
+			<a href="<?php echo esc_url($apply_info['link']['url']) ?>" class="icon_button_outlined_dark group"
+				target="<?php echo esc_attr($apply_info['link']['target']) ?>">
+				<?php echo esc_html($apply_info['link']['title']) ?>
+				<?php plmt_arrow() ?>
+			</a>
+		<?php endif; ?>
 	</div>
 	<?php
 }
@@ -111,8 +118,7 @@ function career_apply_section($apply_link)
 		<?php get_template_part('template-parts/section/careers/section-career-content') ?>
 	</div>
 	<div x-data="{filloutOpen: false}" class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
-		<?php career_apply_section($apply_link) ?>
-		<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
+		<?php career_apply_section($apply_info) ?>
 	</div>
 </div>
 <?php
