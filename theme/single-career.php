@@ -110,7 +110,7 @@ function career_apply_section($apply_link)
 		<?php get_template_part('template-parts/section/careers/section-career-content') ?>
 	</div>
 	<div x-data="{filloutOpen: false}" class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-8 lg:mt-10">
-		<?php career_apply_section() ?>
+		<?php career_apply_section($apply_link) ?>
 		<?php get_template_part('template-parts/content/content-fillout-modal'); ?>
 	</div>
 </div>
