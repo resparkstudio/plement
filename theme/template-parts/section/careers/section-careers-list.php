@@ -18,8 +18,6 @@ foreach ($careers as $career) {
 		foreach ($terms as $term) {
 			$grouped_careers[$term->name][] = $career;
 		}
-	} else {
-		$grouped_careers['Uncategorized'][] = $career;
 	}
 }
 

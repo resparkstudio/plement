@@ -20,6 +20,22 @@
             "endpoint": 0
         },
         {
+            "key": "field_69c2b30d72234",
+            "label": "Apply link",
+            "name": "apply_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_69b46f6d61644",
             "label": "Excerpt",
             "name": "excerpt",
@@ -1009,5 +1025,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773668477
+    "modified": 1774367518
 }
