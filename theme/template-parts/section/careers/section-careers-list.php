@@ -18,6 +18,8 @@ foreach ($careers as $career) {
 		foreach ($terms as $term) {
 			$grouped_careers[$term->name][] = $career;
 		}
+	} else {
+		$grouped_careers['Uncategorized'][] = $career;
 	}
 }
 
@@ -94,7 +96,9 @@ function desktop_career_card($career)
 	<div class="container py-10 lg:py-20 space-y-6">
 		<?php foreach ($grouped_careers as $category_name => $careers_in_category): ?>
 			<div>
-				<h2 class="text-h4BoldMobile lg:text-h4Bold mb-4"><?php echo esc_html($category_name); ?></h2>
+				<?php if ($category_name !== 'Uncategorized'): ?>
+					<h2 class="text-h4BoldMobile lg:text-h4Bold mb-4"><?php echo esc_html($category_name); ?></h2>
+				<?php endif; ?>
 
 				<div class="space-y-4">
 					<?php foreach ($careers_in_category as $career):
