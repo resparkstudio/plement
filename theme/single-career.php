@@ -9,9 +9,9 @@
 
 get_header(null, array('type' => 'light'));
 
-$excerpt   = get_field('excerpt');
-$info_tabs = get_field('info_tabs');
-
+$excerpt    = get_field('excerpt');
+$info_tabs  = get_field('info_tabs');
+$apply_link = get_field('apply_link');
 function career_info_tabs($tabs)
 {
 	if (!$tabs)
@@ -56,8 +56,11 @@ function career_info_tabs($tabs)
 	<?php
 }
 
-function career_apply_section()
+function career_apply_section($apply_link)
 {
+	if (!$apply_link)
+		return null;
+
 	?>
 	<div id="apply" class="bg-mainBlack flex p-4 lg:p-8 w-full flex-col gap-4 lg:flex-row justify-between">
 		<div class="text-left flex lg:flex-col gap-6 lg:gap-1">
@@ -68,8 +71,8 @@ function career_apply_section()
 				<?php esc_html_e('Send your application to tomas@plementops.com') ?>
 			</p>
 		</div>
-		<button @click="filloutOpen=true" class="icon_button_outlined_dark group">
-			<?php echo esc_html__('Send application', 'plmt') ?>
+		<button href="<?php echo esc_url($apply_link['url']) ?>" class="icon_button_outlined_dark group">
+			<?php echo esc_html($apply_link['title']) ?>
 			<?php plmt_arrow() ?>
 		</button>
 	</div>
