@@ -71,10 +71,11 @@ function career_apply_section($apply_link)
 				<?php esc_html_e('Send your application to tomas@plementops.com') ?>
 			</p>
 		</div>
-		<button href="<?php echo esc_url($apply_link['url']) ?>" class="icon_button_outlined_dark group">
+		<a href="<?php echo esc_url($apply_link['url']) ?>" class="icon_button_outlined_dark group"
+			target="<?php echo esc_attr($apply_link['target']) ?>">
 			<?php echo esc_html($apply_link['title']) ?>
 			<?php plmt_arrow() ?>
-		</button>
+		</a>
 	</div>
 	<?php
 }
