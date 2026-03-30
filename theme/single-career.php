@@ -63,7 +63,7 @@ function career_apply_section($apply_info)
 		return null;
 
 	?>
-	<div id="apply" class="bg-mainBlack flex p-4 lg:p-8 w-full flex-col gap-4 lg:flex-row justify-between">
+	<div id="apply" class="bg-mainBlack flex p-4 lg:p-8 w-full flex-col gap-4 lg:flex-row justify-between lg:items-center">
 		<div class="text-left flex lg:flex-col gap-6 lg:gap-1">
 			<?php if ($apply_info['heading']): ?>
 				<h4 class="text-white text-h5Mobile lg:text-h5Bold">
