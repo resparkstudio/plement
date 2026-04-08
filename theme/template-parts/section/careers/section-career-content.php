@@ -1,5 +1,6 @@
 <?php
 $about_plement    = get_field('about_plement');
+$who_its_for      = get_field('who_its_for');
 $role_overview    = get_field('role_overview');
 $responsibilities = get_field('responsibilities');
 $skills           = get_field('skills');
@@ -111,6 +112,7 @@ function plmt_render_ordered_list($section)
 <div class="flex flex-col w-full gap-7 lg:gap-10">
 	<?php
 	plmt_render_paragraphs($about_plement);
+	plmt_render_paragraphs($who_its_for);
 	plmt_render_paragraphs($role_overview);
 	plmt_render_disc_list($responsibilities);
 	plmt_render_disc_list($skills);
