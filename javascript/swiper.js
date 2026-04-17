@@ -17,7 +17,7 @@ function initSwiper() {
 		modules: [Pagination],
 		slidesPerView: 1.1,
 		spaceBetween: 16,
-		initialSlide: 2,
+		initialSlide: 1,
 		autoHeight: true,
 		pagination: {
 			el: '.swiper-pagination',
