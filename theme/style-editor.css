@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.20
+Version: 0.2.21
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -3096,10 +3096,6 @@ div.wpcf7-validation-errors {
 
 .grid-cols-\[1fr_720px_1fr\] {
   grid-template-columns: 1fr 720px 1fr;
-}
-
-.grid-cols-\[24\%_24\%_28\%_24\%\] {
-  grid-template-columns: 24% 24% 28% 24%;
 }
 
 .flex-col {
