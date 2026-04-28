@@ -14,6 +14,7 @@ $contact_us_page_id = get_page_by_path('contact-us')->ID;
 $contact_information = get_field('information', $contact_us_page_id);
 $faq_content         = get_field('faq', $front_page_id);
 $logo                = get_field('logo', 'option');
+$social_links        = get_field('social_links', 'option');
 function mobile_menu_dropdown($title, $items)
 {
 	?>
@@ -99,14 +100,29 @@ function menu_colunn()
 	<div class=" container bottom-0 w-full py-20 lg:pb-[4.75rem]">
 		<div
 			class="grid gird-cols-1 jusitify-center justify-items-center lg:grid-cols-[200px_1fr_300px] lg:justify-between lg:mb-[104px]">
-			<?php if (get_theme_mod('site_logo')): ?>
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="mb-[1.875rem]">
-					<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
-						class="h-[2.875rem] aspect-[150/46]">
-				</a>
-			<?php else: ?>
-				<a class="site-title" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
-			<?php endif; ?>
+			<div class="mb-[1.875rem]">
+				<?php if (get_theme_mod('site_logo')): ?>
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block ">
+						<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>"
+							class="h-[2.875rem] aspect-[150/46]">
+					</a>
+				<?php else: ?>
+					<a class="site-title"
+						href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
+				<?php endif; ?>
+
+				<?php if ($social_links): ?>
+					<div class="flex items-center gap-2 mt-2">
+						<?php foreach ($social_links as $social_link): ?>
+							<a href="<?php echo esc_url($social_link['link']['url']); ?>"
+								target="<?php echo esc_attr($social_link['link']['target']); ?>">
+								<img src="<?php echo esc_url($social_link['icon']['url']); ?>"
+									alt="<?php echo esc_attr($social_link['icon']['alt']); ?>" class="w-6 h-6">
+							</a>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+			</div>
 			<?php mobile_menu(); ?>
 			<?php menu_colunn(); ?>
 			<div class="text-center mb-10 lg:text-left lg:mb-12">
