@@ -131,9 +131,9 @@ if (!function_exists('plmt_steps_list')) {
 								<?php echo esc_html($index + 1); ?>
 							</span>
 						<?php endif; ?>
-						<p class="text-bodyRegular lg:text-h5Regular">
+						<div class="text-bodyRegular lg:text-h5Regular">
 							<?php echo $step['text']; ?>
-						</p>
+						</div>
 					</div>
 				<?php endforeach; ?>
 			</div>
