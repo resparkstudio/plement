@@ -132,7 +132,7 @@ if (!function_exists('plmt_steps_list')) {
 							</span>
 						<?php endif; ?>
 						<p class="text-bodyRegular lg:text-h5Regular">
-							<?php echo esc_html($step['text']); ?>
+							<?php echo $step['text']; ?>
 						</p>
 					</div>
 				<?php endforeach; ?>
