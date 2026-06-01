@@ -83,7 +83,7 @@ module.exports = {
 			},
 			fontSize: {
 				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
-				displayLarge: ['4.25rem', { lineHeight: '4.25rem', fontWeight: '900' }],
+				displayLarge: ['4rem', { lineHeight: '4rem', fontWeight: '800' }],
 				displayLargeMobile: [
 					'2.5rem',
 					{ lineHeight: '110%', fontWeight: '800' },
@@ -113,7 +113,7 @@ module.exports = {
 				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 				caption1Regular: ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],
-				badges: ['0.875rem', { lineHeight: '120%', fontWeight: '700' }],
+				badges: ['0.875rem', { d: '120%', fontWeight: '700' }],
 				badgesMobile: ['0.75rem', { lineHeight: '120%', fontWeight: '700' }],
 			},
 			transitionDuration: {

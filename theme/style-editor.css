@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.24
+Version: 0.2.25
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -4161,13 +4161,8 @@ div.wpcf7-validation-errors {
   font-size: 2rem;
 }
 
-.text-\[3rem\] {
-  font-size: 3rem;
-}
-
 .text-badges {
   font-size: 0.875rem;
-  line-height: 120%;
   font-weight: 700;
 }
 
@@ -4327,10 +4322,6 @@ div.wpcf7-validation-errors {
 
 .leading-\[1\.65rem\] {
   line-height: 1.65rem;
-}
-
-.leading-\[100\%\] {
-  line-height: 100%;
 }
 
 .leading-\[1rem\] {
@@ -5091,9 +5082,9 @@ div.wpcf7-validation-errors {
   }
 
   .md\:text-displayLarge {
-    font-size: 4.25rem;
-    line-height: 4.25rem;
-    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 800;
   }
 
   .md\:text-h2 {
@@ -5652,6 +5643,10 @@ div.wpcf7-validation-errors {
     flex-direction: row;
   }
 
+  .lg\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .lg\:flex-col {
     flex-direction: column;
   }
@@ -6117,20 +6112,15 @@ div.wpcf7-validation-errors {
     font-size: 3rem;
   }
 
-  .lg\:text-\[5\.625rem\] {
-    font-size: 5.625rem;
-  }
-
   .lg\:text-badges {
     font-size: 0.875rem;
-    line-height: 120%;
     font-weight: 700;
   }
 
   .lg\:text-displayLarge {
-    font-size: 4.25rem;
-    line-height: 4.25rem;
-    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 800;
   }
 
   .lg\:text-h1 {
@@ -6193,10 +6183,6 @@ div.wpcf7-validation-errors {
 
   .lg\:font-extrabold {
     font-weight: 800;
-  }
-
-  .lg\:font-medium {
-    font-weight: 500;
   }
 
   .lg\:leading-7 {
