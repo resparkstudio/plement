@@ -19,7 +19,7 @@ if (!function_exists('plmt_package_price')) {
 		$price_eur = $package['price_eur'];
 		$price_usd = $package['price_usd'];
 		?>
-		<div x-data="{currency: 'eur'}" class="flex flex-col gap-2 border-l-accent border-l-[3px] pl-6 py-4 mt-6">
+		<div class="flex flex-col gap-2 border-l-accent border-l-[3px] pl-6 py-4 mt-6">
 			<div class="flex items-center gap-4 flex-wrap">
 				<label for="currency" class=" text-[0.875rem] w-max block font-medium lg:text-[1rem]">
 					<?php esc_html_e('Display Price in:', 'plmt') ?>

@@ -73,7 +73,7 @@ function render_card($card)
 		</div>
 	<?php endif; ?>
 	<div
-		class="hidden lg:block relative after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
+		class="max-w-[90rem] mx-auto hidden lg:block relative after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
 
 		<?php if ($has_top_row): ?>
 			<div class="mb-4 swiper marquee-slider">
@@ -84,12 +84,12 @@ function render_card($card)
 						</div>
 					<?php endforeach; ?>
 					<?php foreach ($cards_carousel['top_row_cards'] as $card): ?>
-						<div class="swiper-slide max-w-[340px]">
+						<div class="swiper-slide max-w-[340px]" aria-hidden="true">
 							<?php render_card($card); ?>
 						</div>
 					<?php endforeach; ?>
 					<?php foreach ($cards_carousel['top_row_cards'] as $card): ?>
-						<div class="swiper-slide max-w-[340px]">
+						<div class="swiper-slide max-w-[340px]" aria-hidden="true">
 							<?php render_card($card); ?>
 						</div>
 					<?php endforeach; ?>
@@ -107,12 +107,12 @@ function render_card($card)
 						</div>
 					<?php endforeach; ?>
 					<?php foreach ($cards_carousel['bottom_row_cards'] as $card): ?>
-						<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
+						<div class="swiper-slide marquee-slider-reverse max-w-[340px]" aria-hidden="true">
 							<?php render_card($card); ?>
 						</div>
 					<?php endforeach; ?>
 					<?php foreach ($cards_carousel['bottom_row_cards'] as $card): ?>
-						<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
+						<div class="swiper-slide marquee-slider-reverse max-w-[340px]" aria-hidden="true">
 							<?php render_card($card); ?>
 						</div>
 					<?php endforeach; ?>
