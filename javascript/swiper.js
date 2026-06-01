@@ -1,7 +1,19 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation, Controller } from 'swiper/modules';
+import { Pagination, Navigation, Controller, Autoplay } from 'swiper/modules';
 
 function initSwiper() {
+	new Swiper('.cards-swiper', {
+		modules: [Pagination],
+		slidesPerView: 1.2,
+		spaceBetween: 16,
+		pagination: {
+			el: '.swiper-pagination',
+			bulletActiveClass: 'swiper-pagination-bullet-active',
+			bulletClass: 'swiper-pagination-bullet',
+		},
+		slidesOffsetBefore: 16,
+	});
+
 	new Swiper('.services-list', {
 		modules: [Pagination],
 		slidesPerView: 1,
@@ -120,6 +132,37 @@ function initSwiper() {
 		slidesPerView: 'auto',
 		spaceBetween: 8,
 	});
+
+	new Swiper('.marquee-slider', {
+		modules: [Autoplay],
+		slidesPerView: 'auto',
+		spaceBetween: 16,
+		loop: true,
+		speed: 10000,
+		freeMode: true,
+		autoplay: {
+			stopOnLastSlide: false,
+			delay: 0,
+			disableOnInteraction: false,
+		},
+	});
+
+	new Swiper('.marquee-slider-reverse', {
+		modules: [Autoplay],
+		slidesPerView: 'auto',
+		spaceBetween: 16,
+		loop: true,
+		speed: 10000,
+		freeMode: true,
+		autoplay: {
+			stopOnLastSlide: false,
+			delay: 0,
+			disableOnInteraction: false,
+			reverseDirection: true,
+		},
+	});
+
+
 }
 
 export default initSwiper;

@@ -167,3 +167,10 @@ input {
   position: absolute;
   inset: 0;
 }
+
+.marquee-slider > .swiper-wrapper {
+    transition-timing-function: linear;
+}
+.marquee-slider-reverse > .swiper-wrapper {
+    transition-timing-function: linear;
+}

@@ -12,7 +12,7 @@ if (empty($case_studies)) {
 }
 
 ?>
-<section class="overflow-hidden pt-[3.25rem] lg:pt-[8.75rem]">
+<section class="overflow-hidden pb-6 lg:pb-0 pt-[3.25rem] lg:pt-[8.75rem]">
 	<div class="container">
 
 		<div class=" flex items-center justify-between mb-10">

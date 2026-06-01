@@ -9,14 +9,15 @@
 
 get_header();
 
-$page_sections = [ 
+$page_sections = [
 	'hero',
 	'about',
 	'services-tabs',
-	'compare',
 	'license',
+	'compare',
 	'steps',
 	'case-studies',
+	'trust',
 	'partnership',
 	'testimonials',
 	'partner',
@@ -29,8 +30,8 @@ $page_sections = [
 
 	<section id='primary'>
 		<div id='main'>
-			<?php foreach ( $page_sections as $section ) : ?>
-				<?php get_template_part( 'template-parts/section/section-' . $section ); ?>
+			<?php foreach ($page_sections as $section): ?>
+				<?php get_template_part('template-parts/section/section-' . $section); ?>
 			<?php endforeach; ?>
 		</div>
 	</section>
