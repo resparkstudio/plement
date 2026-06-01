@@ -13,6 +13,8 @@ $excerpt    = get_field('excerpt');
 $info_tabs  = get_field('info_tabs');
 $apply_info = get_field('apply_info');
 
+$info_tabs_count = is_array($info_tabs) ? count($info_tabs) : 0;
+
 function career_info_tabs($tabs)
 {
 	if (!$tabs)
@@ -111,7 +113,7 @@ function career_apply_section($apply_info)
 			</span>
 		</a>
 	</div>
-	<div class="max-w-[45rem] w-full mx-auto mt-6 lg:mt-10">
+	<div class="w-full mx-auto mt-6 lg:mt-10 <?php echo $info_tabs_count <= 6 ? 'max-w-[45rem]' : ''; ?>">
 		<?php career_info_tabs($info_tabs) ?>
 	</div>
 	<div class="article-content max-w-[45rem] mx-auto mt-8 lg:mt-10">
