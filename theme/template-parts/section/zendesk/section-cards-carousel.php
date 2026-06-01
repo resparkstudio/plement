@@ -4,6 +4,14 @@ $cards_carousel = get_field('cards_carousel');
 if (!$cards_carousel)
 	return null;
 
+$has_top_row    = isset($cards_carousel['top_row_cards']) && !empty($cards_carousel['top_row_cards']);
+$has_bottom_row = isset($cards_carousel['bottom_row_cards']) && !empty($cards_carousel['bottom_row_cards']);
+
+
+if (!$has_top_row && !$has_bottom_row) {
+	return null;
+}
+
 function render_card($card)
 {
 	?>
@@ -38,7 +46,7 @@ function render_card($card)
 <section id="cards-carousel" class="bg-lightGrayBg py-7 lg:py-16 mb-20">
 	<div class="container mb-10 lg:mb-16">
 		<?php if ($cards_carousel['heading']): ?>
-			<h2 class="text-h1Mobile lg:text-h1 ">
+			<h2 class="text-h1Mobile lg:text-h1">
 				<?php echo $cards_carousel['heading']; ?>
 			</h2>
 		<?php endif; ?>
@@ -48,49 +56,68 @@ function render_card($card)
 			</p>
 		<?php endif; ?>
 	</div>
-	<div class="lg:hidden ">
-		<div class="swiper cards-swiper w-full">
-			<div class="swiper-wrapper !w-full">
-				<?php foreach ($cards_carousel['cards'] as $card): ?>
-					<div class="swiper-slide">
-						<?php render_card($card); ?>
-					</div>
-				<?php endforeach; ?>
+	<?php if ($has_top_row || $has_bottom_row): ?>
+		<div class="lg:hidden">
+			<div class="swiper cards-swiper w-full">
+				<div class="swiper-wrapper !w-full">
+					<?php
+					$merged_cards = array_merge($cards_carousel['top_row_cards'], $cards_carousel['bottom_row_cards']);
+					foreach ($merged_cards as $card): ?>
+						<div class="swiper-slide">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				<div class="swiper-pagination !static mt-6"></div>
 			</div>
-			<div class="swiper-pagination !static mt-6"></div>
 		</div>
-	</div>
+	<?php endif; ?>
 	<div
 		class="hidden lg:block relative after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
-		<div class="mb-4 swiper marquee-slider ">
-			<div class='swiper-wrapper'>
-				<?php foreach ($cards_carousel['cards'] as $card): ?>
-					<div class="swiper-slide max-w-[340px]">
-						<?php render_card($card); ?>
-					</div>
-				<?php endforeach; ?>
-				<?php foreach ($cards_carousel['cards'] as $card): ?>
-					<div class="swiper-slide max-w-[340px]">
-						<?php render_card($card); ?>
-					</div>
-				<?php endforeach; ?>
-			</div>
-		</div>
 
-		<div
-			class=" swiper marquee-slider-reverse items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
-			<div class='swiper-wrapper marquee-slider-reverse'>
-				<?php foreach ($cards_carousel['cards'] as $card): ?>
-					<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
-						<?php render_card($card); ?>
-					</div>
-				<?php endforeach; ?>
-				<?php foreach ($cards_carousel['cards'] as $card): ?>
-					<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
-						<?php render_card($card); ?>
-					</div>
-				<?php endforeach; ?>
+		<?php if ($has_top_row): ?>
+			<div class="mb-4 swiper marquee-slider">
+				<div class='swiper-wrapper'>
+					<?php foreach ($cards_carousel['top_row_cards'] as $card): ?>
+						<div class="swiper-slide max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+					<?php foreach ($cards_carousel['top_row_cards'] as $card): ?>
+						<div class="swiper-slide max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+					<?php foreach ($cards_carousel['top_row_cards'] as $card): ?>
+						<div class="swiper-slide max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+				</div>
 			</div>
-		</div>
+		<?php endif; ?>
+
+		<?php if ($has_bottom_row): ?>
+			<div
+				class="swiper marquee-slider-reverse items-center after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 before:z-10 after:block after:bg-gradientRight  before:content-[''] before:absolute before:top-0 before:left-0  before:bottom-0 before:block before:bg-gradientLeft before:w-14 after:w-14">
+				<div class='swiper-wrapper marquee-slider-reverse'>
+					<?php foreach ($cards_carousel['bottom_row_cards'] as $card): ?>
+						<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+					<?php foreach ($cards_carousel['bottom_row_cards'] as $card): ?>
+						<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+					<?php foreach ($cards_carousel['bottom_row_cards'] as $card): ?>
+						<div class="swiper-slide marquee-slider-reverse max-w-[340px]">
+							<?php render_card($card); ?>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>

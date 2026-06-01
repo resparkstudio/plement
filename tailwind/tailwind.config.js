@@ -113,7 +113,7 @@ module.exports = {
 				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 				caption1Regular: ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],
-				badges: ['0.875rem', { d: '120%', fontWeight: '700' }],
+				badges: ['0.875rem', { lineHeight: '120%', fontWeight: '700' }],
 				badgesMobile: ['0.75rem', { lineHeight: '120%', fontWeight: '700' }],
 			},
 			transitionDuration: {
@@ -124,7 +124,7 @@ module.exports = {
 			padding: {
 				DEFAULT: '1.5rem',
 				sm: '2rem',
-				lg: '1.25rem',
+				; lg: '1.25rem',
 				xl: '1.25rem',
 				'2xl': '1.25rem',
 				'3xl': '1.25rem',

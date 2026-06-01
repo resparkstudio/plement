@@ -4163,6 +4163,7 @@ div.wpcf7-validation-errors {
 
 .text-badges {
   font-size: 0.875rem;
+  line-height: 120%;
   font-weight: 700;
 }
 
@@ -6114,6 +6115,7 @@ div.wpcf7-validation-errors {
 
   .lg\:text-badges {
     font-size: 0.875rem;
+    line-height: 120%;
     font-weight: 700;
   }
 

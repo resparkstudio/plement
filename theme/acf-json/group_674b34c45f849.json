@@ -258,9 +258,9 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6a1bf06da9282",
-                    "label": "Cards",
-                    "name": "cards",
+                    "key": "field_6a1d658a16c7c",
+                    "label": "Top row cards",
+                    "name": "top_row_cards",
                     "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
@@ -280,7 +280,7 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
-                            "key": "field_6a1bf079a9284",
+                            "key": "field_6a1d658a16c7d",
                             "label": "Icon",
                             "name": "icon",
                             "aria-label": "",
@@ -303,10 +303,10 @@
                             "max_size": "",
                             "mime_types": "",
                             "preview_size": "medium",
-                            "parent_repeater": "field_6a1bf06da9282"
+                            "parent_repeater": "field_6a1d658a16c7c"
                         },
                         {
-                            "key": "field_6a1bf074a9283",
+                            "key": "field_6a1d658a16c7e",
                             "label": "Title",
                             "name": "title",
                             "aria-label": "",
@@ -324,10 +324,10 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "parent_repeater": "field_6a1bf06da9282"
+                            "parent_repeater": "field_6a1d658a16c7c"
                         },
                         {
-                            "key": "field_6a1bf081a9285",
+                            "key": "field_6a1d658a16c7f",
                             "label": "Bullet points",
                             "name": "bullet_points",
                             "aria-label": "",
@@ -340,8 +340,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "layout": "table",
-                            "pagination": 0,
+                            "layout": "",
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
@@ -349,7 +348,7 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_6a1bf089a9286",
+                                    "key": "field_6a1d658a16c80",
                                     "label": "Bullet point",
                                     "name": "bullet_point",
                                     "aria-label": "",
@@ -367,10 +366,126 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "parent_repeater": "field_6a1bf081a9285"
+                                    "parent_repeater": "field_6a1d658a16c7f"
                                 }
                             ],
-                            "parent_repeater": "field_6a1bf06da9282"
+                            "parent_repeater": "field_6a1d658a16c7c"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_6a1d659916c81",
+                    "label": "Bottom row cards",
+                    "name": "bottom_row_cards",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_6a1d659916c82",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_6a1d659916c81"
+                        },
+                        {
+                            "key": "field_6a1d659a16c83",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_6a1d659916c81"
+                        },
+                        {
+                            "key": "field_6a1d659a16c84",
+                            "label": "Bullet points",
+                            "name": "bullet_points",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a1d659a16c85",
+                                    "label": "Bullet point",
+                                    "name": "bullet_point",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6a1d659a16c84"
+                                }
+                            ],
+                            "parent_repeater": "field_6a1d659916c81"
                         }
                     ]
                 }
@@ -2248,5 +2363,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1780303115
+    "modified": 1780312110
 }
