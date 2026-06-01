@@ -1,5 +1,11 @@
 <?php
 
+$price = get_field('price');
+
+if ($price && isset($price['hide_section']) && $price['hide_section'] === true) {
+	return null;
+}
+
 $priced_packages = get_field('priced_packages');
 
 if (!$priced_packages)
