@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.30
+Version: 0.2.31
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2954,6 +2954,10 @@ div.wpcf7-validation-errors {
   height: 1rem;
 }
 
+.h-\[2\.125rem\] {
+  height: 2.125rem;
+}
+
 .h-\[2\.375rem\] {
   height: 2.375rem;
 }
@@ -3887,8 +3891,20 @@ div.wpcf7-validation-errors {
   border-bottom-width: 1px;
 }
 
+.\!border-b-\[1px\] {
+  border-bottom-width: 1px !important;
+}
+
+.\!border-t-\[1px\] {
+  border-top-width: 1px !important;
+}
+
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-b-0 {
+  border-bottom-width: 0px;
 }
 
 .border-b-2 {
@@ -3909,6 +3925,10 @@ div.wpcf7-validation-errors {
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-t-0 {
+  border-top-width: 0px;
 }
 
 .border-solid {
@@ -5466,6 +5486,10 @@ div.wpcf7-validation-errors {
     aspect-ratio: 1 / 1;
   }
 
+  .md\:h-\[3\.25rem\] {
+    height: 3.25rem;
+  }
+
   .md\:\!w-\[26\.25rem\] {
     width: 26.25rem !important;
   }
@@ -5504,6 +5528,10 @@ div.wpcf7-validation-errors {
 
   .md\:justify-end {
     justify-content: flex-end;
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem;
   }
 
   .md\:gap-5 {
@@ -6221,6 +6249,14 @@ div.wpcf7-validation-errors {
     border-width: 1px;
   }
 
+  .lg\:\!border-l-\[1px\] {
+    border-left-width: 1px !important;
+  }
+
+  .lg\:\!border-r-\[1px\] {
+    border-right-width: 1px !important;
+  }
+
   .lg\:border-b {
     border-bottom-width: 1px;
   }
@@ -6229,12 +6265,24 @@ div.wpcf7-validation-errors {
     border-bottom-width: 0px;
   }
 
+  .lg\:border-b-\[1px\] {
+    border-bottom-width: 1px;
+  }
+
+  .lg\:border-l-0 {
+    border-left-width: 0px;
+  }
+
   .lg\:border-r {
     border-right-width: 1px;
   }
 
   .lg\:border-r-0 {
     border-right-width: 0px;
+  }
+
+  .lg\:border-t-\[1px\] {
+    border-top-width: 1px;
   }
 
   .lg\:border-grayBorder {

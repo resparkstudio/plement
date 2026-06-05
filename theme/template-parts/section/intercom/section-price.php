@@ -67,8 +67,8 @@ if (!function_exists('plmt_tabbed_steps_list')) {
 				<div class="flex flex-col lg:flex-row w-full justify-center">
 					<?php foreach ($step['stages'] as $index => $stage): ?>
 						<button @click="active = <?php echo esc_attr($index) ?>"
-							class="py-3 px-6 border text-[1.125rem] lg:text-[1.25rem]"
-							:class="active === <?php echo esc_attr($index) ?> ? 'text-accent border-accent font-bold' : 'text-textSecondary border-textSecondary'">
+							class="py-3 px-6 border text-[1.125rem] lg:text-[1.25rem] <?php echo $index === 0 ? 'border-b-0 lg:border-b-[1px] lg:border-r-0' : ''; ?> <?php echo $index === 1 ? 'border-t-0 lg:border-t-[1px] lg:border-l-0' : ''; ?> "
+							:class="active === <?php echo esc_attr($index) ?> ? 'text-accent border-accent font-bold !border-t-[1px] !border-b-[1px] lg:!border-l-[1px] lg:!border-r-[1px]' : 'text-textSecondary border-textSecondary'">
 							<?php echo esc_html($stage['title']); ?>
 						</button>
 					<?php endforeach; ?>
