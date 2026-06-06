@@ -17,7 +17,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 					class="max-w-[10.25rem] lg:max-w-[13rem] h-auto mb-6 w-full">
 			<?php endif; ?>
 			<?php if ($hero_content['heading']): ?>
-				<h1 class='text-displayLargeMobile lg:text-displayLarge w-full mb-6'>
+				<h1 class='text-displayLargeMobile lg:text-displayLarge min-[1920px]:text-[6rem] w-full mb-6'>
 					<?php echo $hero_content['heading'] ?>
 				</h1>
 			<?php endif; ?>
