@@ -19,7 +19,8 @@ if (!isset($hero_content) || empty($hero_content)) {
 					<?php endforeach; ?>
 				</div>
 				<?php if ($hero_content['heading']): ?>
-					<h1 class='text-displayLargeMobile lg:text-displayLarge max-w-[48.125rem] w-full mb-4 lg:mb-6'>
+					<h1
+						class='text-displayLargeMobile lg:text-displayLarge min-[1920px]:text-[6rem] max-w-[48.125rem] w-full mb-4 lg:mb-6'>
 						<?php echo $hero_content['heading'] ?>
 					</h1>
 				<?php endif; ?>
