@@ -63,7 +63,7 @@ function filter_case_studies()
 		$response = 'No case studies found';
 	}
 
-	$more_count = $ajaxposts->found_posts - 3;
+	$more_count = $ajaxposts->found_posts - 6;
 
 	wp_send_json(array('html' => $response, 'moreCount' => $more_count >= 0 ? $more_count : 0));
 	exit;
@@ -74,7 +74,7 @@ add_action('wp_ajax_nopriv_filter_case_studies', 'filter_case_studies');
 function load_more_case_studies()
 {
 	$paged          = $_POST['page'] + 1;
-	$posts_per_page = 3;
+	$posts_per_page = 6;
 
 	$category = $_POST['category'];
 

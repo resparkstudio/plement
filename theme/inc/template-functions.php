@@ -409,23 +409,30 @@ function success_modal()
 		<?php
 }
 
-function plmt_tool_tag($tool)
+function plmt_tool_tag($tools)
 {
-	$tool_icon = get_field('icon', $tool->taxonomy . '_' . $tool->term_id);
-
-	if ($tool_icon) {
-		$icon_html = '<img src="' . esc_url($tool_icon['url']) . '" alt="' . esc_attr($tool_icon['alt']) . '" class="w-4 lg:w-5 h-auto shrink-0">';
-	} else {
-		$icon_html = '';
-	}
-
-	$tool_name = esc_html($tool->name);
-
 	?>
-		<div
-			class="bg-accent/10 text-accent p-2 lg:text-bodyBold absolute top-4 right-4 flex items-center gap-1 text-badges">
-			<?php echo $icon_html; ?>
-			<?php echo esc_html($tool_name); ?>
+		<div class="absolute top-4 right-4 flex items-center gap-2">
+			<?php
+			foreach ($tools as $tool) {
+				$tool_icon = get_field('icon', $tool->taxonomy . '_' . $tool->term_id);
+
+				if ($tool_icon) {
+					$icon_html = '<img src="' . esc_url($tool_icon['url']) . '" alt="' . esc_attr($tool_icon['alt']) . '" class="w-4 lg:w-5 h-auto shrink-0">';
+				} else {
+					$icon_html = '';
+				}
+
+				$tool_name = esc_html($tool->name);
+
+				?>
+				<div class="bg-accent/10 text-accent p-2 lg:text-bodyBold flex items-center gap-1 text-badges h-[2.25rem]">
+					<?php echo $icon_html; ?>
+					<?php echo esc_html($tool_name); ?>
+				</div>
+				<?php
+			}
+			?>
 		</div>
 		<?php
 }
