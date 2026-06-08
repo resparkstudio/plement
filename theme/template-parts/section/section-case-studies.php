@@ -46,7 +46,9 @@ if (empty($case_studies)) {
 					<?php
 					foreach ($case_studies as $case_study) {
 						$mobile_image = get_field('mobile_image', $case_study->ID);
-						$tools        = get_the_terms($case_study->ID, 'tool'); ?>
+						$tools        = get_the_terms($case_study->ID, 'tool');
+						$image        = get_the_post_thumbnail_url($case_study->ID, 'full');
+						?>
 						<article
 							class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-auto self-stretch">
 							<?php
@@ -57,8 +59,16 @@ if (empty($case_studies)) {
 							<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 								<div>
 									<?php if ($mobile_image): ?>
-										<div class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain">
+										<div
+											class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain lg:hidden">
 											<img src="<?php echo esc_url($mobile_image['url']); ?>"
+												alt="<?php echo esc_attr($case_study->post_title); ?>">
+										</div>
+									<?php endif; ?>
+									<?php if ($image): ?>
+										<div
+											class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain hidden lg:flex">
+											<img src="<?php echo esc_url($image); ?>"
 												alt="<?php echo esc_attr($case_study->post_title); ?>">
 										</div>
 									<?php endif; ?>
