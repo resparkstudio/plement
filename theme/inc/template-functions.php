@@ -411,9 +411,6 @@ function success_modal()
 
 function plmt_tool_tag($tools)
 {
-	if (count($tools) === 0)
-		return;
-
 	?>
 		<div class="absolute top-4 right-4 flex items-center gap-2">
 			<?php
