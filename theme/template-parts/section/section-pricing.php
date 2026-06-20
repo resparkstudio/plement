@@ -191,7 +191,7 @@ function package_cards($packages)
 										<?php echo esc_html($package['description']) ?>
 									</div>
 								</div>
-								<?php plmt_button("modalOpen=true;selectedPackage='" . esc_js($package['title']) . "'", esc_html__('Choose ' . $package['title'], 'plmt'), array(
+								<?php plmt_button("modalOpen=true;selectedPackage='" . esc_js($package['title']) . "'", esc_html__($package['button_text'], 'plmt'), array(
 									"classes" => "pricing-button w-full text-bodyBold h-auto py-5 justify-center",
 									"variant" => !$package['is_best_value'] ? 'secondary' : 'primary',
 									"is_button" => true,
