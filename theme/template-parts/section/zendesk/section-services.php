@@ -7,6 +7,24 @@ if (!isset($services) || empty($services)) {
 
 $services_count = count($services);
 
+function checkmark_icon()
+{
+	?>
+	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g clip-path="url(#clip0_1876_13600)">
+			<path
+				d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
+				fill="#ED5623" />
+		</g>
+		<defs>
+			<clipPath id="clip0_1876_13600">
+				<rect width="24" height="24" fill="white" />
+			</clipPath>
+		</defs>
+	</svg>
+	<?php
+}
+
 if (!function_exists('plmt_gallery')) {
 	function plmt_gallery($gallery)
 	{
@@ -104,26 +122,21 @@ if (!function_exists('plmt_gallery')) {
 }
 
 if (!function_exists('plmt_steps_list')) {
-	function plmt_steps_list($steps_heading, $steps, $is_horizontal = false)
+	function plmt_steps_list($steps_heading, $steps, $list_type = 'numbered')
 	{
 		?>
-		<div
-			class="bg-lightGrayBg px-3 lg:px-8 py-4 lg:py-8 w-full <?php echo $is_horizontal ? 'flex flex-col lg:flex-row items-center justify-center gap-16' : ''; ?>">
+		<div class="bg-lightGrayBg px-3 lg:px-8 py-4 lg:py-8 w-full">
 			<?php if ($steps_heading): ?>
-				<h3
-					class="text-h4BoldMobile lg:text-h4Bold <?php echo $is_horizontal ? 'lg:text-left' : 'text-center mb-4 lg:mb-6' ?>">
+				<h3 class="text-h4BoldMobile lg:text-h4Bold text-center mb-4 lg:mb-6">
 					<?php echo esc_html($steps_heading); ?>
 				</h3>
 			<?php endif; ?>
-			<div class="flex flex-col gap-3 lg:gap-8   <?php echo $is_horizontal ? 'lg:max-w-[37.25rem]' : 'mx-auto' ?>">
-				<?php foreach ($steps as $index => $step):
-					$has_icon  = !empty($step['icon']);
-					$icon_html = $has_icon ? '<img src="' . esc_url($step['icon']['url']) . '" alt="' . esc_attr($step['icon']['alt']) . '" class="w-6 h-6 lg:w-8 lg:h-8">' : '';
-					?>
-					<div class="flex gap-3 lg:gap-4  <?php echo $has_icon ? 'items-start' : 'items-center'; ?>">
-						<?php if ($has_icon): ?>
+			<div class="flex flex-col gap-3 lg:gap-8 mx-auto">
+				<?php foreach ($steps as $index => $step): ?>
+					<div class="flex gap-3 lg:gap-4  <?php echo $list_type === 'checklist' ? 'items-start' : 'items-center'; ?>">
+						<?php if ($list_type === 'checklist'): ?>
 							<span class="shrink-0">
-								<?php echo $icon_html; ?>
+								<?php checkmark_icon(); ?>
 							</span>
 						<?php else: ?>
 							<span
@@ -145,23 +158,24 @@ if (!function_exists('plmt_steps_list')) {
 
 ?>
 <section id='services'>
-	<?php foreach ($services as $index => $service):
-		$is_with_image   = $service['type'] === 'with_image';
-		$is_with_gallery = $service['type'] === 'with_gallery';
-		?>
+	<?php foreach ($services as $index => $service): ?>
 		<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-16 lg:items-center">
-			<div class="text-center lg:text-left <?php echo $is_with_image ? 'flex flex-col lg:block' : ''; ?>">
-				<?php if ($is_with_image): ?>
-					<img class="w-full h-full object-contain mb-6 lg:hidden"
-						src="<?php echo esc_url($service['image']['url']); ?>"
-						alt="<?php echo esc_attr($service['image']['alt']); ?>">
+			<div class="text-center lg:text-left">
+				<?php if ($service['badge']): ?>
+					<p class="text-badgesMobile lg:text-badges text-accent bg-accent/15 w-fit py-1 px-2 mb-4 lg:mb-6">
+						<?php echo esc_html($service['badge']); ?>
+					</p>
 				<?php endif; ?>
-				<h2 class="mb-4 lg:mb-6 text-h2Mobile lg:text-h2">
-					<?php echo esc_html($service['title']); ?>
-				</h2>
-				<p class="text-darkGray mb-4 lg:mb-6">
-					<?php echo esc_html($service['subtext']); ?>
-				</p>
+				<?php if ($service['title']): ?>
+					<h2 class="mb-4 lg:mb-6 text-h2Mobile lg:text-h2">
+						<?php echo esc_html($service['title']); ?>
+					</h2>
+				<?php endif; ?>
+				<?php if ($service['subtext']): ?>
+					<p class="text-darkGray mb-4 lg:mb-6">
+						<?php echo esc_html($service['subtext']); ?>
+					</p>
+				<?php endif; ?>
 				<?php if ($service['bottom_text']): ?>
 					<p class="text-h5Mobile lg:text-h5Bold text-accent">
 						<?php echo esc_html($service['bottom_text']); ?>
@@ -173,27 +187,11 @@ if (!function_exists('plmt_steps_list')) {
 					)) ?>
 				</div>
 			</div>
-			<div class="w-full h-full <?php echo $is_with_image ? 'hidden lg:block' : ''; ?>">
-				<?php if ($is_with_image): ?>
-					<img class="w-full h-full object-contain hidden lg:block"
-						src="<?php echo esc_url($service['image']['url']); ?>"
-						alt="<?php echo esc_attr($service['image']['alt']); ?>">
-				<?php else: ?>
-					<?php plmt_steps_list($service['steps_heading'], $service['steps']); ?>
-				<?php endif; ?>
+			<div class="w-full h-full">
+				<?php plmt_steps_list($service['steps_heading'], $service['steps'], $service['list_type']); ?>
 			</div>
 		</div>
-		<?php if ($is_with_gallery && !empty($service['gallery'])): ?>
-			<div class="container mx-auto mt-6 lg:mt-14">
-				<?php plmt_gallery($service['gallery']); ?>
-			</div>
-		<?php endif; ?>
-		<?php if ($is_with_image): ?>
-			<div class="container mx-auto mt-6 lg:mt-14">
-				<?php plmt_steps_list($service['steps_heading'], $service['steps'], true); ?>
-			</div>
-		<?php endif; ?>
-		<div class="container mx-auto lg:hidden <?php echo $is_with_gallery || $is_with_image ? 'mt-6' : 'mt-7' ?>">
+		<div class="container mx-auto lg:hidden mt-7">
 			<?php plmt_button(esc_url($service['button']['url']), esc_html($service['button']['title']), array(
 				'classes' => 'w-full justify-center',
 			)) ?>
