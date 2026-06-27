@@ -108,7 +108,7 @@ if (!function_exists('plmt_steps_list')) {
 	{
 		?>
 		<div
-			class="bg-accent/5 px-3 lg:px-8 py-4 lg:py-8 w-full <?php echo $is_horizontal ? 'flex flex-col lg:flex-row items-center justify-center gap-16' : ''; ?>">
+			class="bg-lightGrayBg px-3 lg:px-8 py-4 lg:py-8 w-full <?php echo $is_horizontal ? 'flex flex-col lg:flex-row items-center justify-center gap-16' : ''; ?>">
 			<?php if ($steps_heading): ?>
 				<h3
 					class="text-h4BoldMobile lg:text-h4Bold <?php echo $is_horizontal ? 'lg:text-left' : 'text-center mb-4 lg:mb-6' ?>">
@@ -144,15 +144,13 @@ if (!function_exists('plmt_steps_list')) {
 
 
 ?>
-<section id='services' class="bg-lightGrayBg">
+<section id='services'>
 	<?php foreach ($services as $index => $service):
-		$is_even         = $index % 2 === 0;
 		$is_with_image   = $service['type'] === 'with_image';
 		$is_with_gallery = $service['type'] === 'with_gallery';
 		?>
 		<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-16 lg:items-center">
-			<div
-				class="text-center lg:text-left <?php echo $is_even ? 'lg:order-first' : 'lg:order-last'; ?> <?php echo $is_with_image ? 'flex flex-col lg:block' : ''; ?>">
+			<div class="text-center lg:text-left <?php echo $is_with_image ? 'flex flex-col lg:block' : ''; ?>">
 				<?php if ($is_with_image): ?>
 					<img class="w-full h-full object-contain mb-6 lg:hidden"
 						src="<?php echo esc_url($service['image']['url']); ?>"
@@ -175,8 +173,7 @@ if (!function_exists('plmt_steps_list')) {
 					)) ?>
 				</div>
 			</div>
-			<div
-				class="w-full h-full <?php echo $is_even ? 'lg:order-last' : 'lg:order-first'; ?> <?php echo $is_with_image ? 'hidden lg:block' : ''; ?>">
+			<div class="w-full h-full <?php echo $is_with_image ? 'hidden lg:block' : ''; ?>">
 				<?php if ($is_with_image): ?>
 					<img class="w-full h-full object-contain hidden lg:block"
 						src="<?php echo esc_url($service['image']['url']); ?>"
