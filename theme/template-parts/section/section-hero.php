@@ -5,7 +5,6 @@ if (!isset($hero_content) || empty($hero_content)) {
 	return;
 }
 
-
 ?>
 <section id='hero'
 	class='py-16 mb-6 lg:py-[4.25rem] lg:mb-[7.5rem] flex flex-col bg-mainBlack text-white relative lg:min-h-[calc(100vh-5rem)]'>
@@ -13,10 +12,12 @@ if (!isset($hero_content) || empty($hero_content)) {
 		<div class='flex flex-col gap-4 items-center lg:flex-row lg:justify-between lg:gap-14'>
 			<div class='hero-content w-full px-5 lg:px-0 z-10'>
 				<div class='flex gap-3 flex-wrap mb-6'>
-					<?php foreach ($hero_content['top_icons'] as $icon): ?>
-						<img src='<?php echo esc_url($icon['url']) ?>' alt='<?php echo esc_attr($icon['alt']) ?>'
-							class='h-10 lg:h-[3.5rem] w-auto'>
-					<?php endforeach; ?>
+					<?php if ($hero_content['top_icons']): ?>
+						<?php foreach ($hero_content['top_icons'] as $icon): ?>
+							<img src='<?php echo esc_url($icon['url']) ?>' alt='<?php echo esc_attr($icon['alt']) ?>'
+								class='h-10 lg:h-[3.5rem] w-auto'>
+						<?php endforeach; ?>
+					<?php endif; ?>
 				</div>
 				<?php if ($hero_content['heading']): ?>
 					<h1
