@@ -7,24 +7,6 @@ if (!isset($services) || empty($services)) {
 
 $services_count = count($services);
 
-function checkmark_icon()
-{
-	?>
-	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g clip-path="url(#clip0_1876_13600)">
-			<path
-				d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
-				fill="#ED5623" />
-		</g>
-		<defs>
-			<clipPath id="clip0_1876_13600">
-				<rect width="24" height="24" fill="white" />
-			</clipPath>
-		</defs>
-	</svg>
-	<?php
-}
-
 if (!function_exists('plmt_gallery')) {
 	function plmt_gallery($gallery)
 	{
@@ -127,7 +109,7 @@ if (!function_exists('plmt_steps_list')) {
 		?>
 		<div class="bg-lightGrayBg px-3 lg:px-8 py-4 lg:py-8 w-full">
 			<?php if ($steps_heading): ?>
-				<h3 class="text-h4BoldMobile lg:text-h4Bold text-center mb-4 lg:mb-6">
+				<h3 class="text-darkGray text-titleMobile lg:text-title !font-bold mb-4 lg:mb-6">
 					<?php echo esc_html($steps_heading); ?>
 				</h3>
 			<?php endif; ?>
@@ -136,7 +118,7 @@ if (!function_exists('plmt_steps_list')) {
 					<div class="flex gap-3 lg:gap-4  <?php echo $list_type === 'checklist' ? 'items-start' : 'items-center'; ?>">
 						<?php if ($list_type === 'checklist'): ?>
 							<span class="shrink-0">
-								<?php checkmark_icon(); ?>
+								<?php plmt_checkmark_icon(); ?>
 							</span>
 						<?php else: ?>
 							<span
@@ -144,7 +126,7 @@ if (!function_exists('plmt_steps_list')) {
 								<?php echo esc_html($index + 1); ?>
 							</span>
 						<?php endif; ?>
-						<div class="text-bodyRegular lg:text-h5Regular">
+						<div class="text-bodyRegularMobile lg:text-h5Regular">
 							<?php echo $step['text']; ?>
 						</div>
 					</div>
@@ -177,26 +159,30 @@ if (!function_exists('plmt_steps_list')) {
 					</p>
 				<?php endif; ?>
 				<?php if ($service['bottom_text']): ?>
-					<p class="text-h5Mobile lg:text-h5Bold text-accent">
+					<p class="text-titleMobile lg:text-title !font-bold text-accent">
 						<?php echo esc_html($service['bottom_text']); ?>
 					</p>
 				<?php endif; ?>
 				<div class=" hidden lg:block mt-6">
-					<?php plmt_button(esc_url($service['button']['url']), esc_html($service['button']['title']), array(
-						'classes' => '',
-					)) ?>
+					<a href="<?php echo esc_url($service['button']['url']) ?>" target="_blank"
+						class="inline-flex items-center gap-2 text-mainBlack font-bold text-[1.125rem] leading-[120%] hover:text-accent transition-colors duration-200">
+						<?php plmt_arrow_circle_icon(); ?>
+						<?php echo esc_html($service['button']['title']); ?>
+					</a>
 				</div>
 			</div>
-			<div class="w-full h-full">
+			<div class=" w-full h-full">
 				<?php plmt_steps_list($service['steps_heading'], $service['steps'], $service['list_type']); ?>
 			</div>
 		</div>
 		<div class="container mx-auto lg:hidden mt-7">
-			<?php plmt_button(esc_url($service['button']['url']), esc_html($service['button']['title']), array(
-				'classes' => 'w-full justify-center',
-			)) ?>
+			<a href="<?php echo esc_url($service['button']['url']) ?>" target="_blank"
+				class="w-full inline-flex justify-center items-center gap-2 text-mainBlack font-bold text-[1.125rem] leading-[120%] hover:text-accent transition-colors duration-200">
+				<?php plmt_arrow_circle_icon(); ?>
+				<?php echo esc_html($service['button']['title']); ?>
+			</a>
 		</div>
-		<?php if ($index !== $services_count - 1): ?>
+		<?php if ($index !== $services_count): ?>
 			<?php divider() ?>
 		<?php endif; ?>
 	<?php endforeach; ?>

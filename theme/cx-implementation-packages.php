@@ -36,6 +36,7 @@ $hide_pricing = get_field('hide_pricing');
 	<div class="py-8 lg:py-20">
 		<?php get_template_part('template-parts/section/intercom/section-price') ?>
 		<?php get_template_part('template-parts/section/zendesk/section-services') ?>
+		<?php get_template_part('template-parts/section/zendesk/section-bottom-block') ?>
 	</div>
 </section>
 

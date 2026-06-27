@@ -82,6 +82,11 @@ module.exports = {
 				},
 			},
 			fontSize: {
+				bodyRegular: ['1.125rem', { lineHeight: '130%', fontWeight: '400' }],
+				bodyRegularMobile: [
+					'1rem',
+					{ lineHeight: '130%', fontWeight: '400' },
+				],
 				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
 				displayLarge: ['4rem', { lineHeight: '4rem', fontWeight: '800' }],
 				displayLargeMobile: [

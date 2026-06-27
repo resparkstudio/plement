@@ -168,6 +168,7 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   font-family: DM Sans, sans-serif;
+  line-height: 130%;
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
   -webkit-font-smoothing: antialiased;
@@ -1182,6 +1183,7 @@ input {
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  line-height: 130%;
   --tw-text-opacity: 1;
   color: rgb(237 86 35 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1218,6 +1220,7 @@ input {
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  line-height: 130%;
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1379,6 +1382,7 @@ input {
   padding-right: 2rem;
   padding-top: 1.625rem;
   padding-bottom: 1.625rem;
+  line-height: 130%;
   --tw-text-opacity: 1;
   color: rgb(26 26 26 / var(--tw-text-opacity));
   font-size: 1rem;
@@ -2751,6 +2755,11 @@ div.wpcf7-validation-errors {
   width: auto;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2762,11 +2771,6 @@ div.wpcf7-validation-errors {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .min-w-6 {
@@ -4056,6 +4060,18 @@ div.wpcf7-validation-errors {
   font-weight: 700;
 }
 
+.text-badgesMobile {
+  font-size: 0.75rem;
+  line-height: 120%;
+  font-weight: 700;
+}
+
+.text-bodyRegular {
+  font-size: 1.125rem;
+  line-height: 130%;
+  font-weight: 400;
+}
+
 .text-button {
   font-size: 1rem;
   line-height: 1rem;
@@ -4172,10 +4188,14 @@ div.wpcf7-validation-errors {
   line-height: 1rem;
 }
 
-.text-badgesMobile {
-  font-size: 0.75rem;
-  line-height: 120%;
-  font-weight: 700;
+.text-bodyRegularMobile {
+  font-size: 1rem;
+  line-height: 130%;
+  font-weight: 400;
+}
+
+.\!font-bold {
+  font-weight: 700 !important;
 }
 
 .font-bold {
@@ -4212,6 +4232,10 @@ div.wpcf7-validation-errors {
 
 .leading-\[1\.65rem\] {
   line-height: 1.65rem;
+}
+
+.leading-\[120\%\] {
+  line-height: 120%;
 }
 
 .leading-\[1rem\] {
@@ -5014,11 +5038,6 @@ div.wpcf7-validation-errors {
     margin-bottom: auto;
   }
 
-  .lg\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .lg\:mb-10 {
     margin-bottom: 2.5rem;
   }
@@ -5099,10 +5118,6 @@ div.wpcf7-validation-errors {
     margin-top: 2.5rem;
   }
 
-  .lg\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
   .lg\:mt-16 {
     margin-top: 4rem;
   }
@@ -5175,10 +5190,6 @@ div.wpcf7-validation-errors {
     height: 1.75rem;
   }
 
-  .lg\:h-8 {
-    height: 2rem;
-  }
-
   .lg\:h-\[2\.875rem\] {
     height: 2.875rem;
   }
@@ -5245,10 +5256,6 @@ div.wpcf7-validation-errors {
 
   .lg\:w-7 {
     width: 1.75rem;
-  }
-
-  .lg\:w-8 {
-    width: 2rem;
   }
 
   .lg\:w-\[19px\] {
@@ -5318,10 +5325,6 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-\[34\.375rem\] {
     max-width: 34.375rem;
-  }
-
-  .lg\:max-w-\[37\.25rem\] {
-    max-width: 37.25rem;
   }
 
   .lg\:max-w-\[40\.25rem\] {
@@ -5786,6 +5789,18 @@ div.wpcf7-validation-errors {
     font-size: 3rem;
   }
 
+  .lg\:text-badges {
+    font-size: 0.875rem;
+    line-height: 120%;
+    font-weight: 700;
+  }
+
+  .lg\:text-bodyRegular {
+    font-size: 1.125rem;
+    line-height: 130%;
+    font-weight: 400;
+  }
+
   .lg\:text-displayLarge {
     font-size: 4rem;
     line-height: 4rem;
@@ -5848,12 +5863,6 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
-  }
-
-  .lg\:text-badges {
-    font-size: 0.875rem;
-    line-height: 120%;
-    font-weight: 700;
   }
 
   .lg\:font-extrabold {
