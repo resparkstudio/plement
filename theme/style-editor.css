@@ -2391,6 +2391,10 @@ div.wpcf7-validation-errors {
   margin-top: 3.25rem;
 }
 
+.mt-\[7\.5rem\] {
+  margin-top: 7.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2573,6 +2577,14 @@ div.wpcf7-validation-errors {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[1\.5px\] {
+  height: 1.5px;
+}
+
+.h-\[22px\] {
+  height: 22px;
 }
 
 .max-h-\[70vh\] {
@@ -5030,6 +5042,10 @@ div.wpcf7-validation-errors {
     top: 1rem;
   }
 
+  .lg\:top-0 {
+    top: 0px;
+  }
+
   .lg\:order-none {
     order: 0;
   }
@@ -5238,6 +5254,14 @@ div.wpcf7-validation-errors {
     height: auto;
   }
 
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:h-\[35px\] {
+    height: 35px;
+  }
+
   .lg\:min-h-\[21\.25rem\] {
     min-height: 21.25rem;
   }
@@ -5313,6 +5337,14 @@ div.wpcf7-validation-errors {
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .lg\:w-\[1\.5px\] {
+    width: 1.5px;
+  }
+
+  .lg\:w-\[35px\] {
+    width: 35px;
   }
 
   .lg\:min-w-\[330px\] {
@@ -5489,6 +5521,10 @@ div.wpcf7-validation-errors {
 
   .lg\:gap-\[5\.75rem\] {
     gap: 5.75rem;
+  }
+
+  .lg\:gap-40 {
+    gap: 10rem;
   }
 
   .lg\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -5699,6 +5735,11 @@ div.wpcf7-validation-errors {
     padding-right: 4rem !important;
   }
 
+  .lg\:px-\[3\.625rem\] {
+    padding-left: 3.625rem;
+    padding-right: 3.625rem;
+  }
+
   .lg\:pb-0 {
     padding-bottom: 0px;
   }
@@ -5894,6 +5935,10 @@ div.wpcf7-validation-errors {
     font-size: 1.125rem;
     line-height: 1.4625rem;
     font-weight: 500;
+  }
+
+  .lg\:text-\[1rem\] {
+    font-size: 1rem;
   }
 
   .lg\:font-bold {

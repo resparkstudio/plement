@@ -35,7 +35,7 @@ function plmt_specialist_card($card)
 }
 ?>
 
-<section id="specialist" class="container bg-lightGrayBg py-7 lg:py-16 lg:!px-16">
+<section id="specialist" class="container bg-lightGrayBg py-7 lg:py-16 lg:!px-16 mt-6 lg:mt-[7.5rem]">
 	<?php if ($specialist['heading']): ?>
 		<h2 class="text-h1Mobile lg:text-h1 text-center mb-6">
 			<?php echo $specialist['heading']; ?>
@@ -47,7 +47,7 @@ function plmt_specialist_card($card)
 		</div>
 	<?php endif; ?>
 	<?php if ($specialist['cards']): ?>
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6 px-[3.625rem]">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6 lg:px-[3.625rem]">
 			<?php foreach ($specialist['cards'] as $card): ?>
 				<?php plmt_specialist_card($card); ?>
 			<?php endforeach; ?>
