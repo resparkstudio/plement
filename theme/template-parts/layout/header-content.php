@@ -18,9 +18,9 @@ if (!function_exists('plmt_header_button')) {
 		?>
 		<<?php echo $tag; ?> 		<?php echo $href_attr; ?>
 			class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300
-			hover:bg-accent <?php echo $is_contact_us ? 'text-accent gap-2 font-bold' : '' ?>
+			hover:bg-mainBlackHover <?php echo $is_contact_us ? 'text-accent gap-2 font-bold' : '' ?>
 			<?php echo $use_span ? 'cursor-pointer' : '' ?>"
-			:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-accent text-white' : ''">
+			:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-mainBlackHover text-white' : ''">
 			<span class="group-hover:text-white">
 				<?php echo esc_html($item['title']); ?>
 			</span>
@@ -84,8 +84,8 @@ function plmt_header_desktop_menu_card($card, $is_dark, )
 	?>
 	<li
 		class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
-		<a href="<?php echo esc_url(url: $card['url']); ?>" class="inline-block py-5 px-10 w-full h-full">
-			<div class="flex items-center gap-2 mb-4">
+		<a href="<?php echo esc_url(url: $card['url']); ?>" class="inline-block w-full h-full py-8 px-6">
+			<div class="flex items-center gap-2">
 				<?php if (isset($card['image']) && $card['image'] && $is_dark): ?>
 					<img class="w-5 h-5" src="<?php echo esc_url($card['image']['url']) ?>"
 						alt="<?php echo esc_attr($card['image']['alt']) ?>">
@@ -98,12 +98,6 @@ function plmt_header_desktop_menu_card($card, $is_dark, )
 					<?php echo esc_html($card['title']); ?>
 				</p>
 			</div>
-			<?php if (isset($card['description'])): ?>
-				<p class="text-bodyRegular <?php echo $is_dark ? 'text-textSecondary' : 'text-textBlack' ?>">
-					<?php echo esc_html($card['description']); ?>
-				</p>
-			<?php endif; ?>
-			<?php plmt_header_menu_bullets($bullets, $is_dark) ?>
 		</a>
 	</li>
 	<?php
@@ -125,20 +119,23 @@ function plmt_header_dropdown_button($item, $is_contact_us, $is_dark)
 	<li x-data="{overlayOpen: false}"
 		class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>"
 		@click="if (activeMenu === <?php echo $item['ID']; ?>) { activeMenu = null; overlayOpen = false } else { activeMenu = <?php echo $item['ID']; ?>; overlayOpen = true }"
+		@mouseenter="if (activeMenu === <?php echo $item['ID']; ?>) { activeMenu = null; overlayOpen = false } else { activeMenu = <?php echo $item['ID']; ?>; overlayOpen = true }"
 		@click.away="activeMenu = null; overlayOpen = false" @mouseleave="activeMenu = null; overlayOpen = false">
-		<?php plmt_header_button($item, true, $is_contact_us); ?>
-		<ul x-cloak x-show="overlayOpen" class=' border-t border-t-textSecondary px-[4.125rem] grid grid-cols-2 top-[5rem] z-[1000] absolute left-1/2
-		-translate-x-1/2 w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>' role='menu'
-			aria-orientation='vertical' tabindex='-1' x-transition:enter="transition-opacity duration-200"
-			x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-			x-transition:leave="transition duration-200" x-transition:leave-end="opacity-0">
-			<?php foreach ($item['children'] as $child):
-				plmt_header_desktop_menu_card($child, $is_dark);
-			endforeach; ?>
-		</ul>
+		<div class="relative h-full w-full">
+			<?php plmt_header_button($item, true, $is_contact_us); ?>
+			<ul x-cloak x-show="overlayOpen"
+				class='border border-darkGray border-t-0 flex flex-col top-[5rem] z-[1000] absolute left-0 w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>'
+				role='menu' aria-orientation='vertical' tabindex='-1' x-transition:enter="transition-opacity duration-200"
+				x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+				x-transition:leave="transition duration-200" x-transition:leave-end="opacity-0">
+				<?php foreach ($item['children'] as $child):
+					plmt_header_desktop_menu_card($child, $is_dark);
+				endforeach; ?>
+			</ul>
+		</div>
 		<div x-cloak x-show='overlayOpen' @click="activeMenu = null; overlayOpen = false"
 			@mouseenter="activeMenu = null; overlayOpen = false"
-			class="absolute bg-[#4B4B4B29] w-screen h-screen left-0 top-[5rem] min-h-full backdrop-blur-[4px] z-[100]">
+			class="absolute bg-[#4B4B4B29] w-screen h-screen left-0 top-[calc(5rem+1px)] min-h-full backdrop-blur-[4px] z-[100]">
 		</div>
 	</li>
 	<?php
