@@ -14,7 +14,7 @@ $page_sections = [
 	'about',
 	'specialization',
 	'license',
-	'compare',
+	'specialist',
 	'steps',
 	'case-studies',
 	'partnership',

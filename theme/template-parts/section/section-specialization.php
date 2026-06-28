@@ -77,6 +77,12 @@ function plmt_specialization_tool($tool)
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
+		<?php if ($tool['button']): ?>
+			<a href="<?php echo esc_url($tool['button']['url']); ?>"
+				class="inline-block mt-10 bg-accent text-white py-[0.875rem] px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
+				<?php echo esc_html($tool['button']['title']); ?>
+			</a>
+		<?php endif; ?>
 	</div>
 	<?php
 }
