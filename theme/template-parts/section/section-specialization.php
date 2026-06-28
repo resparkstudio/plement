@@ -172,14 +172,11 @@ function plmt_specialization_categories_mobile($categories)
 	if (empty($categories)) {
 		return;
 	}
-	$first_tool = $categories[0]['tools'][0]['tool_title'] ?? null;
 	?>
-	<div x-data="{selectedTool: '<?php echo esc_js($first_tool); ?>'}" class="flex gap-20 w-full">
-		<div class="flex flex-col gap-10">
-			<?php foreach ($categories as $category): ?>
-				<?php plmt_specialization_category_mobile($category); ?>
-			<?php endforeach; ?>
-		</div>
+	<div x-data="{selectedTool: ''}" class="flex flex-col gap-10 w-full">
+		<?php foreach ($categories as $category): ?>
+			<?php plmt_specialization_category_mobile($category); ?>
+		<?php endforeach; ?>
 	</div>
 	<?php
 }

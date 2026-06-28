@@ -3949,6 +3949,11 @@ div.wpcf7-validation-errors {
   border-top-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
+.border-b-darkGray {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(100 100 100 / var(--tw-border-opacity));
+}
+
 .\!bg-accent {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(237 86 35 / var(--tw-bg-opacity)) !important;
@@ -4286,6 +4291,11 @@ div.wpcf7-validation-errors {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.py-\[7\.5rem\] {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
 }
 
 .\!pb-0 {
@@ -5833,6 +5843,10 @@ div.wpcf7-validation-errors {
 
   .lg\:max-w-none {
     max-width: none;
+  }
+
+  .lg\:max-w-\[28rem\] {
+    max-width: 28rem;
   }
 
   .lg\:-translate-x-1\/2 {

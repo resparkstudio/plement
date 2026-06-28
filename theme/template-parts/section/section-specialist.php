@@ -56,7 +56,7 @@ function plmt_specialist_card($card)
 	<?php if ($specialist['button']): ?>
 		<div class="flex justify-center mt-10">
 			<a href="<?php echo esc_url($specialist['button']['url']); ?>"
-				class="inline-block bg-accent text-white py-[0.875rem] px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
+				class="inline-block bg-accent text-white text-center py-[0.875rem] px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
 				<?php echo esc_html($specialist['button']['title']); ?>
 			</a>
 		</div>

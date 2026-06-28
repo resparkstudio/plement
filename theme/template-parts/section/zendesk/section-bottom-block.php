@@ -22,7 +22,7 @@ if (!$bottom_block) {
 	<?php if ($bottom_block['button']): ?>
 		<div class="flex justify-center">
 			<?php plmt_button(esc_url($bottom_block['button']['url']), esc_html($bottom_block['button']['title']), array(
-				'classes' => 'w-full lg:w-auto',
+				'classes' => 'w-full lg:w-auto justify-center lg:px-8',
 			)) ?>
 		</div>
 	<?php endif; ?>
