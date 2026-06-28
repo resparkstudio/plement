@@ -12,7 +12,7 @@ get_header();
 $page_sections = [
 	'hero',
 	'about',
-	'services-tabs',
+	'specialization',
 	'license',
 	'compare',
 	'steps',
