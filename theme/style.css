@@ -4048,6 +4048,10 @@ div.wpcf7-validation-errors {
   background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-current {
+  background-color: currentColor;
+}
+
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
 }
@@ -5608,6 +5612,10 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-\[7\.5rem\] {
     margin-top: 7.5rem;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .lg\:block {

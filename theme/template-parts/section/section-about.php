@@ -55,7 +55,6 @@ function plmt_trust_stats($proof)
 	}
 	?>
 	<div>
-
 		<div class="flex flex-col lg:flex-row justify-center gap-12 lg:gap-40 relative">
 			<div class="text-center">
 				<span class="text-h1Mobile lg:text-displayLarge leading-[100%] mb-2 lg:mb-5">

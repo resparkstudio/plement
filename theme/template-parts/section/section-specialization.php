@@ -30,28 +30,29 @@ function plmt_specialization_category_mobile($category)
 		<?php endif; ?>
 		<?php if ($category['tools']): ?>
 			<div>
-				<button @click="selectedTool = '<?php echo esc_js($category['tools'][0]['tool_title']); ?>'"
-					class="w-full flex items-center justify-between gap-3 py-3 px-4 text-darkGray text-title font-bold hover:bg-accent/10 hover:text-accent transition-all duration-200"
-					:class="selectedTool === '<?php echo esc_js($category['tools'][0]['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
-					<div class="flex items-center gap-3">
-						<?php if ($category['tools'][0]['tool_icon']): ?>
-							<img src="<?php echo esc_url($category['tools'][0]['tool_icon']['url']); ?>"
-								alt="<?php echo esc_attr($category['tools'][0]['tool_icon']['alt']); ?>" class="w-6 h-6">
-						<?php endif; ?>
-						<?php if ($category['tools'][0]['tool_title']): ?>
-							<p class="text-sm lg:text-base">
-								<?php echo esc_html($category['tools'][0]['tool_title']); ?>
-							</p>
-						<?php endif; ?>
+				<?php foreach ($category['tools'] as $tool): ?>
+					<button @click="selectedTool = '<?php echo esc_js($tool['tool_title']); ?>'"
+						class="w-full flex items-center justify-between gap-3 py-3 px-4 text-darkGray text-title font-bold hover:bg-accent/10 hover:text-accent transition-all duration-200"
+						:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
+						<div class="flex items-center gap-3">
+							<?php if ($tool['tool_icon']): ?>
+								<img src="<?php echo esc_url($tool['tool_icon']['url']); ?>"
+									alt="<?php echo esc_attr($tool['tool_icon']['alt']); ?>" class="w-6 h-6">
+							<?php endif; ?>
+							<?php if ($tool['tool_title']): ?>
+								<p class="text-sm lg:text-base">
+									<?php echo esc_html($tool['tool_title']); ?>
+								</p>
+							<?php endif; ?>
+						</div>
+						<span :class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'rotate-180' : ''">
+							<?php plmt_caret_icon(); ?>
+						</span>
+					</button>
+					<div x-show="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>'" x-cloak>
+						<?php plmt_specialization_tool($tool); ?>
 					</div>
-					<span
-						:class="selectedTool === '<?php echo esc_js($category['tools'][0]['tool_title']); ?>' ? 'rotate-180' : ''">
-						<?php plmt_caret_icon(); ?>
-					</span>
-				</button>
-				<div x-show="selectedTool === '<?php echo esc_js($category['tools'][0]['tool_title']); ?>'" x-cloak>
-					<?php plmt_specialization_tool($category['tools'][0]); ?>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
 	</div>
@@ -79,8 +80,9 @@ function plmt_specialization_category($category)
 							class="w-full flex items-center gap-3 py-3 px-4 text-darkGray text-title font-bold hover:bg-accent/10 hover:text-accent transition-all duration-200"
 							:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 							<?php if ($tool['tool_icon']): ?>
-								<img src="<?php echo esc_url($tool['tool_icon']['url']); ?>"
-									alt="<?php echo esc_attr($tool['tool_icon']['alt']); ?>" class="w-6 h-6">
+								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-300 ease-in-out"
+									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
+								</div>
 							<?php endif; ?>
 							<?php if ($tool['tool_title']): ?>
 								<p class="text-sm lg:text-base">
@@ -133,7 +135,7 @@ function plmt_specialization_tool($tool)
 		</div>
 		<?php if ($tool['button']): ?>
 			<a href="<?php echo esc_url($tool['button']['url']); ?>"
-				class="inline-block mt-6 lg:mt-10 bg-accent text-center text-white py-[0.875rem] w-full lg:w-auto lg:px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
+				class="inline-block mt-6 mb-3 lg:mb-0 lg:mt-10 bg-accent text-center text-white py-[0.875rem] w-full lg:w-auto lg:px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
 				<?php echo esc_html($tool['button']['title']); ?>
 			</a>
 		<?php endif; ?>
