@@ -5842,6 +5842,11 @@ div.wpcf7-validation-errors {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .lg\:-translate-y-0 {
+    --tw-translate-y: -0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .lg\:-rotate-90 {
     --tw-rotate: -90deg;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -6491,6 +6496,11 @@ div.wpcf7-validation-errors {
   color: rgb(17 31 36 / var(--tw-text-opacity));
 }
 
+.\[\&_b\]\:\!text-mainBlack b {
+  --tw-text-opacity: 1 !important;
+  color: rgb(17 31 36 / var(--tw-text-opacity)) !important;
+}
+
 .\[\&_iframe\]\:aspect-\[595\/337\] iframe {
   aspect-ratio: 595/337;
 }
@@ -6524,6 +6534,11 @@ div.wpcf7-validation-errors {
   .\[\&_img\]\:lg\:h-\[197px\] img {
     height: 197px;
   }
+}
+
+.\[\&_strong\]\:\!text-mainBlack strong {
+  --tw-text-opacity: 1 !important;
+  color: rgb(17 31 36 / var(--tw-text-opacity)) !important;
 }
 
 .\[\&_svg\]\:h-\[24px\] svg {

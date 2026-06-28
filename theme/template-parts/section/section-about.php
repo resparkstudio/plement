@@ -48,35 +48,36 @@ function statistics_counts($stats)
 	<?php
 }
 
-function plmt_trust_stats()
+function plmt_trust_stats($proof)
 {
+	if (empty($proof)) {
+		return;
+	}
 	?>
 	<div>
 
 		<div class="flex flex-col lg:flex-row justify-center gap-12 lg:gap-40 relative">
 			<div class="text-center">
-				<span class="text-h1Mobile lg:text-displayLarge leading-[100%] mb-2 lg:mb-5">100%</span>
+				<span class="text-h1Mobile lg:text-displayLarge leading-[100%] mb-2 lg:mb-5">
+					<?php echo esc_html($proof['percentage']); ?>
+				</span>
 				<div class="rich-content text-darkGray text-titleMobile lg:text-title [&_a]:text-accent [&_a]:no-underline">
-					<p>Job success on <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer">Upwork</a>
-					</p>
+					<?php echo $proof['upwork_text'] ?>
 				</div>
 			</div>
 			<span
-				class="absolute left-0 top-1/2 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 bg-lightGray h-[1.5px] w-full lg:h-full lg:w-[1.5px] lg:top-0"></span>
+				class="absolute left-0 top-1/2 lg:-translate-y-0 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 bg-lightGray h-[1.5px] w-full lg:h-full lg:w-[1.5px] lg:top-0"></span>
 			<div class="text-center flex flex-col justify-center">
 				<?php plmt_5_stars(); ?>
 				<div
 					class="mt-2 lg:mt-5 rich-content text-darkGray text-titleMobile lg:text-title [&_a]:text-accent [&_a]:no-underline">
-					<p>
-						Verified reviews on <a href="https://www.upwork.com" target="_blank"
-							rel="noopener noreferrer">Clutch</a>
-					</p>
+					<?php echo $proof['clutch_text']; ?>
 				</div>
 			</div>
 		</div>
-		<p class="hidden lg:block text-h5Regular text-center mt-5 [&_b]:text-mainBlack text-darkGray"><b>200+</b> successful
-			projects
-			delivered</p>
+		<div class="hidden lg:block text-h5Regular text-center mt-5 [&_strong]:!text-mainBlack text-darkGray">
+			<?php echo $proof['bottom_text'] ?>
+		</div>
 	</div>
 	<?php
 }
@@ -147,7 +148,7 @@ function plmt_trust_companies($companies)
 				</h2>
 			<?php endif; ?>
 		</div>
-		<?php plmt_trust_stats(); ?>
+		<?php plmt_trust_stats($statistics_content['proof']); ?>
 	</div>
 	<div class="max-w-[120rem] mx-auto mt-6 lg:mt-14">
 		<?php plmt_trust_companies($statistics_content['company_list']); ?>

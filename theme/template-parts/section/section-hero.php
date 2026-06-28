@@ -54,13 +54,13 @@ if (!isset($hero_content) || empty($hero_content)) {
 		</div>
 	</div>
 	<?php if ($hero_content['hero_image']): ?>
-		<img class="w-auto hidden lg:block absolute top-0 right-0 h-full"
+	<img class="w-auto hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 h-full"
 			src='<?php echo esc_url($hero_content['hero_image']['url']) ?>' alt='
 		<?php echo esc_attr($hero_content['hero_image']['alt']) ?>'>
 	<?php endif; ?>
-	<?php if ($hero_content['mobile_image']): ?>
+<?php if ($hero_content['mobile_image']): ?>
 		<img class="lg:hidden absolute top-0 left-0 w-full"
-			src='<?php echo esc_url($hero_content['mobile_image']['url']) ?>' alt='
+				src='<?php echo esc_url($hero_content['mobile_image']['url']) ?>' alt='
 		<?php echo esc_attr($hero_content['mobile_image']['alt']) ?>'>
 	<?php endif; ?>
 </section>
