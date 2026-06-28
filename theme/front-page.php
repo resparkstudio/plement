@@ -19,7 +19,6 @@ $page_sections = [
 	'case-studies',
 	'trust',
 	'partnership',
-	'testimonials',
 	'partner',
 	'faq',
 	'contact-us'
