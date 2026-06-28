@@ -115,6 +115,7 @@ module.exports = {
 				h4Bold: ['2rem', { lineHeight: '2rem', fontWeight: '700' }],
 				h4BoldMobile: ['1.5rem', { lineHeight: '100%', fontWeight: '700' }],
 				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
+				h5RegularMobile: ['1.125rem', { lineHeight: '110%', fontWeight: '400' }],
 				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 				caption1Regular: ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],

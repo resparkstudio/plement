@@ -17,7 +17,6 @@ $page_sections = [
 	'compare',
 	'steps',
 	'case-studies',
-	'trust',
 	'partnership',
 	'partner',
 	'faq',
