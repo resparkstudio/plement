@@ -14,7 +14,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 			<?php if ($hero_content['top_icon']): ?>
 				<img src="<?php echo esc_url($hero_content['top_icon']['url']); ?>"
 					alt="<?php echo esc_attr($hero_content['top_icon']['alt']); ?>"
-					class="max-w-[10.25rem] lg:max-w-[13rem] h-auto mb-6 w-full">
+					class="h-[2.5625rem] lg:h-14 w-auto mb-6">
 			<?php endif; ?>
 			<?php if ($hero_content['heading']): ?>
 				<h1

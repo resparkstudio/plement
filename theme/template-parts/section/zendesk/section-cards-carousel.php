@@ -45,7 +45,7 @@ function render_card($card)
 }
 ?>
 
-<section id="cards-carousel" class="py-7 lg:py-16 mb-20 <?php echo $gray_bg ? 'bg-lightGrayBg' : ''; ?>">
+<section id="info" class="py-7 lg:py-16 mb-20 <?php echo $gray_bg ? 'bg-lightGrayBg' : ''; ?>">
 	<div class="container mb-10 lg:mb-16">
 		<?php if ($cards_carousel['heading']): ?>
 			<h2 class="text-h1Mobile lg:text-h1">

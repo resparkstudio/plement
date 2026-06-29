@@ -2598,6 +2598,10 @@ b {
   height: 100vh;
 }
 
+.h-\[2\.5625rem\] {
+  height: 2.5625rem;
+}
+
 .max-h-\[70vh\] {
   max-height: 70vh;
 }
@@ -5245,6 +5249,10 @@ b {
 
   .lg\:h-full {
     height: 100%;
+  }
+
+  .lg\:h-14 {
+    height: 3.5rem;
   }
 
   .lg\:min-h-\[21\.25rem\] {
