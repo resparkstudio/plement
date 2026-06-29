@@ -101,7 +101,7 @@ function career_apply_section($apply_info)
 	</a>
 	<div class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-3 lg:mt-4">
 		<?php if ($badge): ?>
-			<span class="inline-block mb-6 bg-accent/15 text-accent text-badgesMobile lg:text-badges py-1 px-2">
+			<span class="inline-block mb-3 lg:mb-6 bg-accent/15 text-accent text-badgesMobile lg:text-badges py-1 px-2">
 				<?php echo esc_html($badge); ?>
 			</span>
 		<?php endif; ?>

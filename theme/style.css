@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.38
+Version: 0.2.39
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2969,6 +2969,10 @@ b {
   height: 2.375rem;
 }
 
+.h-\[2\.5625rem\] {
+  height: 2.5625rem;
+}
+
 .h-\[2\.875rem\] {
   height: 2.875rem;
 }
@@ -3043,10 +3047,6 @@ b {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[2\.5625rem\] {
-  height: 2.5625rem;
 }
 
 .max-h-\[70vh\] {
@@ -3251,10 +3251,6 @@ b {
   min-width: 6.25rem;
 }
 
-.max-w-\[10\.25rem\] {
-  max-width: 10.25rem;
-}
-
 .max-w-\[120rem\] {
   max-width: 120rem;
 }
@@ -3347,6 +3343,10 @@ b {
   max-width: 680px;
 }
 
+.max-w-\[70rem\] {
+  max-width: 70rem;
+}
+
 .max-w-\[75rem\] {
   max-width: 75rem;
 }
@@ -3373,10 +3373,6 @@ b {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-\[70rem\] {
-  max-width: 70rem;
 }
 
 .flex-1 {
@@ -5666,6 +5662,10 @@ b {
     height: 2.5rem;
   }
 
+  .lg\:h-14 {
+    height: 3.5rem;
+  }
+
   .lg\:h-6 {
     height: 1.5rem;
   }
@@ -5704,10 +5704,6 @@ b {
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-14 {
-    height: 3.5rem;
   }
 
   .lg\:min-h-\[21\.25rem\] {
@@ -5801,10 +5797,6 @@ b {
 
   .lg\:max-w-2xl {
     max-width: 42rem;
-  }
-
-  .lg\:max-w-\[13rem\] {
-    max-width: 13rem;
   }
 
   .lg\:max-w-\[14\.6875rem\] {
