@@ -7,7 +7,7 @@ if (!isset($license) || empty($license)) {
 
 ?>
 <section id='license'
-	class="container overflow-visible mx-auto relative py-7 lg:py-20 mt-6 lg:mt-[7.5rem] gap-[9.1875rem] justify-center flex items-center">
+	class="container overflow-x-hidden mx-auto relative py-7 lg:py-20 mt-6 lg:mt-[7.5rem] gap-[9.1875rem] justify-center flex items-center">
 	<div class="w-full">
 		<?php if ($license['heading']): ?>
 			<h2 class="text-h2Mobile lg:text-h1 font-bold mb-4 lg:mb-6"><?php echo esc_html($license['heading']); ?></h2>

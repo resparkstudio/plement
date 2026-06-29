@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.35
+Version: 0.2.37
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -3223,11 +3223,6 @@ b {
   width: max-content;
 }
 
-.w-min {
-  width: -moz-min-content;
-  width: min-content;
-}
-
 .w-screen {
   width: 100vw;
 }
@@ -3969,11 +3964,6 @@ b {
   background-color: rgb(31 46 52 / var(--tw-bg-opacity)) !important;
 }
 
-.\!bg-mainBlackHover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
-}
-
 .\!bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -4043,6 +4033,11 @@ b {
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
 }
 
+.bg-mainBlackHover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 19 22 / var(--tw-bg-opacity));
+}
+
 .bg-textBlack {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 39 / var(--tw-bg-opacity));
@@ -4060,11 +4055,6 @@ b {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-mainBlackHover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 19 22 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
@@ -4146,11 +4136,6 @@ b {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .px-\[10px\] {
@@ -4783,11 +4768,6 @@ b {
   color: rgb(255 255 255 / 0.8);
 }
 
-.\!text-mainBlack {
-  --tw-text-opacity: 1 !important;
-  color: rgb(17 31 36 / var(--tw-text-opacity)) !important;
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -5160,6 +5140,11 @@ b {
   border-color: rgb(237 86 35 / var(--tw-border-opacity));
 }
 
+.hover\:\!bg-mainBlackHover:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
+}
+
 .hover\:bg-\[\#CF491C\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(207 73 28 / var(--tw-bg-opacity));
@@ -5196,16 +5181,6 @@ b {
 .hover\:bg-lightGrayBg:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 248 250 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-mainBlackHover:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 19 22 / var(--tw-bg-opacity));
-}
-
-.hover\:\!bg-mainBlackHover:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:text-\[\#111F24\]:hover {
