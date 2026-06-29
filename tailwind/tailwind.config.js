@@ -36,6 +36,7 @@ module.exports = {
 			},
 			colors: {
 				mainBlack: '#111F24',
+				mainBlackHover: '#0D1316',
 				textBlack: '#272727',
 				textGray: '#575757',
 				textLightGray: '#A5A5A5',
@@ -58,7 +59,7 @@ module.exports = {
 				whiteShadowTop: '1px -26px 62px 0px rgba(255,255,255,0.79)',
 			},
 			animation: {
-				'loop-scroll': 'loop-scroll 50s linear infinite',
+				'loop-scroll': 'loop-scroll var(--marquee-duration, 50s) linear infinite',
 				'loop-scroll2': 'loop-scroll2 50s linear infinite',
 				marquee: 'marquee 80s linear infinite',
 				marquee2: 'marquee2 80s linear infinite',
@@ -66,7 +67,7 @@ module.exports = {
 			keyframes: {
 				'loop-scroll': {
 					from: { transform: 'translateX(0)' },
-					to: { transform: 'translateX(-100%)' },
+					to: { transform: 'translateX(-50%)' },
 				},
 				'loop-scroll2': {
 					from: { transform: 'translateX(-100%)' },
@@ -82,6 +83,11 @@ module.exports = {
 				},
 			},
 			fontSize: {
+				bodyRegular: ['1.125rem', { lineHeight: '130%', fontWeight: '400' }],
+				bodyRegularMobile: [
+					'1rem',
+					{ lineHeight: '130%', fontWeight: '400' },
+				],
 				button: ['1rem', { lineHeight: '1rem', fontWeight: '700' }],
 				displayLarge: ['4rem', { lineHeight: '4rem', fontWeight: '800' }],
 				displayLargeMobile: [
@@ -109,7 +115,8 @@ module.exports = {
 				],
 				h4Bold: ['2rem', { lineHeight: '2rem', fontWeight: '700' }],
 				h4BoldMobile: ['1.5rem', { lineHeight: '100%', fontWeight: '700' }],
-				h5Regular: ['1.25rem', { lineHeight: '1.875rem', fontWeight: '400' }],
+				h5Regular: ['1.25rem', { lineHeight: '120%', fontWeight: '400' }],
+				h5RegularMobile: ['1.125rem', { lineHeight: '110%', fontWeight: '400' }],
 				h5Mobile: ['1.125rem', { lineHeight: '120%', fontWeight: '700' }],
 				h5Bold: ['1.25rem', { lineHeight: '1.5rem', fontWeight: '700' }],
 				caption1Regular: ['0.75rem', { lineHeight: '1rem', fontWeight: '400' }],

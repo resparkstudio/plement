@@ -7,8 +7,8 @@ if (!isset($license) || empty($license)) {
 
 ?>
 <section id='license'
-	class="container overflow-visible lg:overflow-hidden mx-auto relative pt-[3.25rem] lg:pt-[7.5rem] gap-[9.1875rem] justify-center flex items-center">
-	<div class="max-w-[38.75rem] w-full">
+	class="container overflow-visible mx-auto relative py-7 lg:py-20 mt-6 lg:mt-[7.5rem] gap-[9.1875rem] justify-center flex items-center">
+	<div class="w-full">
 		<?php if ($license['heading']): ?>
 			<h2 class="text-h2Mobile lg:text-h1 font-bold mb-4 lg:mb-6"><?php echo esc_html($license['heading']); ?></h2>
 		<?php endif; ?>
@@ -26,10 +26,10 @@ if (!isset($license) || empty($license)) {
 			</div>
 		<?php endif; ?>
 	</div>
-	<div class="absolute -right-16 max-w-[14.75rem] lg:max-w-[23.1875rem] lg:static w-full">
-		<?php if ($license['image']): ?>
+	<?php if ($license['image']): ?>
+		<div class="absolute -right-16 max-w-[14.75rem] lg:max-w-[28rem] w-full">
 			<img class="w-full" src="<?php echo esc_url($license['image']['url']); ?>"
 				alt="<?php echo esc_attr($license['image']['alt']); ?>">
-		<?php endif; ?>
-	</div>
+		</div>
+	<?php endif; ?>
 </section>

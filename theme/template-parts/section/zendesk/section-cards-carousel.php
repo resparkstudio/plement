@@ -12,6 +12,8 @@ if (!$has_top_row && !$has_bottom_row) {
 	return null;
 }
 
+$gray_bg = isset($cards_carousel['gray_background']) && $cards_carousel['gray_background'];
+
 function render_card($card)
 {
 	?>
@@ -43,7 +45,7 @@ function render_card($card)
 }
 ?>
 
-<section id="cards-carousel" class="bg-lightGrayBg py-7 lg:py-16 mb-20">
+<section id="cards-carousel" class="py-7 lg:py-16 mb-20 <?php echo $gray_bg ? 'bg-lightGrayBg' : ''; ?>">
 	<div class="container mb-10 lg:mb-16">
 		<?php if ($cards_carousel['heading']): ?>
 			<h2 class="text-h1Mobile lg:text-h1">

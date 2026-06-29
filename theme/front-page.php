@@ -7,19 +7,17 @@
  * @package Plement
  */
 
-get_header();
+get_header(null, ['type' => 'dark']);
 
 $page_sections = [
 	'hero',
 	'about',
-	'services-tabs',
+	'specialization',
 	'license',
-	'compare',
+	'specialist',
 	'steps',
 	'case-studies',
-	'trust',
 	'partnership',
-	'testimonials',
 	'partner',
 	'faq',
 	'contact-us'

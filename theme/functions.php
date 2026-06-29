@@ -226,3 +226,8 @@ require get_template_directory() . '/inc/ajax.php';
  * Dashboard functions.
  */
 require get_template_directory() . '/inc/dashboard.php';
+
+/**
+ * SVG icons.
+ */
+require get_template_directory() . '/inc/icons.php';

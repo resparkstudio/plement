@@ -16,7 +16,7 @@
 				<article class="swiper-slide flex flex-col justify-between bg-lightGrayBg p-5 lg:p-10 gap-5 !h-full">
 					<?php
 					if ($tools):
-						plmt_tool_tag($tools[0]);
+						plmt_tool_tag($tools);
 					endif; ?>
 					<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 						<div>
@@ -57,8 +57,7 @@
 										stroke="white" />
 								</svg>
 
-								<span
-									class="text-bodyBold"><?php esc_html_e('READ THE FULL CASE STUDY', 'plmt'); ?></span>
+								<span class="text-bodyBold"><?php esc_html_e('READ THE FULL CASE STUDY', 'plmt'); ?></span>
 							</a>
 						</div>
 					</div>

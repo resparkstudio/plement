@@ -544,7 +544,7 @@ function plmt_dark_info_card($contact_content)
 			<?php if ($contact_content['bead']): ?>
 				<span>
 					<div
-						class="absolute top-3 right-0 bg-accent/15 text-accent text-badges py-1 px-2 lg:relative lg:justify-self-start lg:mb-12">
+						class="absolute top-3 right-0 bg-accent/15 text-accent text-badges py-1 px-2 lg:relative lg:justify-self-start lg:mb-12 w-max">
 						<?php esc_html_e($contact_content['bead']); ?>
 					</div>
 				</span>

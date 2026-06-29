@@ -14,17 +14,6 @@ function initSwiper() {
 		slidesOffsetBefore: 16,
 	});
 
-	new Swiper('.services-list', {
-		modules: [Pagination],
-		slidesPerView: 1,
-		pagination: {
-			el: '.swiper-pagination',
-			bulletActiveClass: 'swiper-pagination-bullet-active',
-			bulletClass: 'swiper-pagination-bullet',
-		},
-		autoHeight: true,
-	});
-
 	new Swiper('.packages-list', {
 		modules: [Pagination],
 		slidesPerView: 1.1,
@@ -161,7 +150,6 @@ function initSwiper() {
 			reverseDirection: true,
 		},
 	});
-
 
 }
 
