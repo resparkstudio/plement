@@ -98,10 +98,12 @@ function plmt_trust_companies($companies)
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
 								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
 								class='h-[3.75rem] w-min grayscale group-hover:grayscale-0 transition-all duration-300'>
-							<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
-								class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
-								<?php echo esc_html($company['link']['title']); ?>
-							</a>
+							<?php if ($company['link']): ?>
+								<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
+									class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
+									<?php echo esc_html($company['link']['title']); ?>
+								</a>
+							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>
 				</div>
