@@ -36,7 +36,7 @@ function plmt_specialization_category_mobile($category)
 						:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 						<div class="flex items-center gap-3">
 							<?php if ($tool['tool_icon']): ?>
-								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-300 ease-in-out"
+								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-200 ease-in-out"
 									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
 								</div>
 							<?php endif; ?>
@@ -81,7 +81,7 @@ function plmt_specialization_category($category)
 							class="w-full flex items-center gap-3 py-3 px-4 text-darkGray text-title font-bold hover:bg-accent/10 hover:text-accent transition-all duration-200"
 							:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 							<?php if ($tool['tool_icon']): ?>
-								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-300 ease-in-out"
+								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-200 ease-in-out"
 									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
 								</div>
 							<?php endif; ?>
