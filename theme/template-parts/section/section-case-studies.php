@@ -58,6 +58,11 @@ if (empty($case_studies)) {
 
 							<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 								<div>
+									<?php if (!$mobile_image): ?>
+										<div class="flex-shrink-0 h-[61px]">
+
+										</div>
+									<?php endif; ?>
 									<?php if ($mobile_image): ?>
 										<div
 											class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain lg:hidden">
