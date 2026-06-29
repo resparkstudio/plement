@@ -59,7 +59,7 @@ if (empty($case_studies)) {
 							<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 								<div>
 									<?php if (!$mobile_image): ?>
-										<div class="flex-shrink-0 h-[61px]">
+										<div class="flex-shrink-0 h-[61px] lg:hidden">
 
 										</div>
 									<?php endif; ?>
