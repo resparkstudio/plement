@@ -10,6 +10,7 @@
 get_header(null, array('type' => 'light'));
 
 $excerpt    = get_field('excerpt');
+$extra_desc = get_field('extra_description');
 $info_tabs  = get_field('info_tabs');
 $apply_info = get_field('apply_info');
 
@@ -97,13 +98,18 @@ function career_apply_section($apply_info)
 		<?php plmt_arrow_left(); ?>
 		<?php esc_html_e('Back to Careers'); ?>
 	</a>
-	<div class="maw-w-[57.5rem] w-full mx-auto lg:text-center mt-3 lg:mt-4">
+	<div class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-3 lg:mt-4">
 		<h1 class="text-h1Mobile lg:text-h1">
 			<?php echo get_the_title() ?>
 		</h1>
 		<?php if ($excerpt): ?>
 			<p class="text-titleMobile lg:text-title text-darkGray mt-3 lg:mt-4">
 				<?php esc_html_e($excerpt); ?>
+			</p>
+		<?php endif; ?>
+		<?php if ($extra_desc): ?>
+			<p class="text-darkGray mt-3 lg:mt-4 italic">
+				<?php esc_html_e($extra_desc); ?>
 			</p>
 		<?php endif; ?>
 		<a href='#apply' class='button text-title font-medium mt-3 lg:mt-4 w-full justify-center md:w-auto scroll-to '>
@@ -113,7 +119,7 @@ function career_apply_section($apply_info)
 			</span>
 		</a>
 	</div>
-	<div class="w-full mx-auto mt-6 lg:mt-10 <?php echo $info_tabs_count <= 6 ? 'max-w-[45rem]' : ''; ?>">
+	<div class="w-full mx-auto mt-6 lg:mt-10 max-w-[70rem]">
 		<?php career_info_tabs($info_tabs) ?>
 	</div>
 	<div class="article-content max-w-[45rem] mx-auto mt-8 lg:mt-10">
