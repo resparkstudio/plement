@@ -9,6 +9,7 @@
 
 get_header(null, array('type' => 'light'));
 
+$badge      = get_field('badge');
 $excerpt    = get_field('excerpt');
 $extra_desc = get_field('extra_description');
 $info_tabs  = get_field('info_tabs');
@@ -99,6 +100,11 @@ function career_apply_section($apply_info)
 		<?php esc_html_e('Back to Careers'); ?>
 	</a>
 	<div class="max-w-[57.5rem] w-full mx-auto lg:text-center mt-3 lg:mt-4">
+		<?php if ($badge): ?>
+			<span class="inline-block mb-6 bg-accent/15 text-accent text-badgesMobile lg:text-badges py-1 px-2">
+				<?php echo esc_html($badge); ?>
+			</span>
+		<?php endif; ?>
 		<h1 class="text-h1Mobile lg:text-h1">
 			<?php echo get_the_title() ?>
 		</h1>

@@ -20,6 +20,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_6a42d8e665c07",
+            "label": "Badge",
+            "name": "badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69b46f6d61644",
             "label": "Excerpt",
             "name": "excerpt",
@@ -1240,5 +1260,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1782765594
+    "modified": 1782765817
 }
