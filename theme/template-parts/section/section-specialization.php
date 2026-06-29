@@ -36,8 +36,9 @@ function plmt_specialization_category_mobile($category)
 						:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 						<div class="flex items-center gap-3">
 							<?php if ($tool['tool_icon']): ?>
-								<img src="<?php echo esc_url($tool['tool_icon']['url']); ?>"
-									alt="<?php echo esc_attr($tool['tool_icon']['alt']); ?>" class="w-6 h-6">
+								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-300 ease-in-out"
+									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
+								</div>
 							<?php endif; ?>
 							<?php if ($tool['tool_title']): ?>
 								<p class="text-sm lg:text-base">
