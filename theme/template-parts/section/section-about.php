@@ -100,7 +100,7 @@ function plmt_trust_companies($companies)
 								class='h-[3.75rem] w-auto grayscale group-hover:grayscale-0 transition-all duration-200'>
 							<?php if ($company['link']): ?>
 								<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
-									class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
+									class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 ease-in-out whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
 									<?php echo esc_html($company['link']['title']); ?>
 								</a>
 							<?php endif; ?>
