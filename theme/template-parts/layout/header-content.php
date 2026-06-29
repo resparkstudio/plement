@@ -9,23 +9,39 @@
 
 $is_dark = $args['is_dark'];
 
+function getBgColorWhenOverlayOpen($has_children, $is_dark)
+{
+	if ($has_children) {
+		return $is_dark ? 'bg-mainBlackHover' : 'bg-lightGrayBg';
+	} else {
+		return '';
+	}
+}
+function getSvgColorWhenOverlayOpen($has_children, $is_dark)
+{
+	if ($has_children) {
+		return $is_dark ? 'text-white' : 'text-mainBlack';
+	} else {
+		return '';
+	}
+}
+
 if (!function_exists('plmt_header_button')) {
-	function plmt_header_button($item, $has_children, $is_contact_us = false)
+	function plmt_header_button($item, $has_children, $is_contact_us = false, $is_dark = false)
 	{
-		$use_span  = empty($item['url']) || $item['url'] === '#';
-		$tag       = $use_span ? 'span' : 'a';
-		$href_attr = $use_span ? '' : 'href="' . esc_url($item['url']) . '"';
+		$has_url    = !empty($item['url']) && $item['url'] !== '#';
+		$overlay_bg = getBgColorWhenOverlayOpen($has_children, $is_dark);
 		?>
-		<<?php echo $tag; ?> 		<?php echo $href_attr; ?>
-			class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300
-			hover:bg-mainBlackHover <?php echo $is_contact_us ? 'text-accent gap-2 font-bold' : '' ?>
-			<?php echo $use_span ? 'cursor-pointer' : '' ?>"
-			:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '!bg-mainBlackHover text-white' : ''">
-			<span class="group-hover:text-white">
+		<a <?php echo $has_url ? 'href="' . esc_url($item['url']) . '"' : 'role="button"' ?> class="group flex items-center justify-center h-full w-full text-bodyRegular transition-colors duration-300
+				<?php echo $is_dark ? 'hover:!bg-mainBlackHover' : 'hover:bg-lightGrayBg' ?>
+				<?php echo $is_contact_us ? 'text-accent gap-2 font-bold' : '' ?>"
+			:class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? '<?php echo $overlay_bg ?> <?php echo $is_dark ? 'text-white' : '' ?>' : ''">
+			<span class="<?php echo $is_dark ? 'group-hover:text-white' : 'group-hover:text-mainBlack' ?>">
 				<?php echo esc_html($item['title']); ?>
 			</span>
 			<?php if ($has_children): ?>
-				<svg :class="overlayOpen && 'rotate-180 text-white'" class="group-hover:text-white" width="17" height="16"
+				<svg :class="overlayOpen && <?php echo $has_children ? 1 : 0 ?> ? 'rotate-180 <?php echo getSvgColorWhenOverlayOpen($has_children, $is_dark) ?>' : ''"
+					class="<?php echo $is_dark ? 'group-hover:text-white' : 'group-hover:text-mainBlack' ?>" width="17" height="16"
 					viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M14.295 5.80865C14.2571 5.71729 14.193 5.6392 14.1108 5.58426C14.0286 5.52932 13.9319 5.5 13.833 5.5H3.83301C3.73412 5.5 3.63745 5.52932 3.55522 5.58427C3.473 5.63921 3.40891 5.7173 3.37107 5.80866C3.33322 5.90003 3.32332 6.00056 3.34262 6.09755C3.36191 6.19455 3.40953 6.28364 3.47946 6.35356L8.47946 11.3535C8.52589 11.4 8.58101 11.4368 8.64167 11.4619C8.70233 11.4871 8.76735 11.5 8.83301 11.5C8.89867 11.5 8.96369 11.4871 9.02435 11.4619C9.08501 11.4368 9.14013 11.4 9.18656 11.3535L14.1866 6.35356C14.2565 6.28364 14.3041 6.19454 14.3234 6.09755C14.3427 6.00056 14.3328 5.90002 14.295 5.80865Z"
@@ -35,7 +51,7 @@ if (!function_exists('plmt_header_button')) {
 			<?php if ($is_contact_us): ?>
 				<?php plmt_arrow(); ?>
 			<?php endif; ?>
-		</<?php echo $tag; ?>>
+		</a>
 		<?php
 	}
 }
@@ -80,7 +96,6 @@ function plmt_header_menu_bullets($bullets, $is_dark)
 
 function plmt_header_desktop_menu_card($card, $is_dark, )
 {
-	$bullets = get_field('bullets', $card['ID']);
 	?>
 	<li
 		class=" transition-colors duration-300 ease-in-out <?php echo $is_dark ? 'hover:bg-darkGray2' : 'hover:bg-lightGrayBg' ?>">
@@ -108,7 +123,7 @@ function plmt_header_simple_button($item, $is_contact_us, $is_dark)
 	?>
 	<li
 		class="h-full w-full border-r <?php echo $is_dark ? 'text-white border-r-darkGray' : 'text-mainBlack border-r-lightGray' ?>">
-		<?php plmt_header_button($item, false, $is_contact_us); ?>
+		<?php plmt_header_button($item, false, $is_contact_us, $is_dark); ?>
 	</li>
 	<?php
 }
@@ -122,9 +137,9 @@ function plmt_header_dropdown_button($item, $is_contact_us, $is_dark)
 		@mouseenter="if (activeMenu === <?php echo $item['ID']; ?>) { activeMenu = null; overlayOpen = false } else { activeMenu = <?php echo $item['ID']; ?>; overlayOpen = true }"
 		@click.away="activeMenu = null; overlayOpen = false" @mouseleave="activeMenu = null; overlayOpen = false">
 		<div class="relative h-full w-full">
-			<?php plmt_header_button($item, true, $is_contact_us); ?>
+			<?php plmt_header_button($item, true, $is_contact_us, $is_dark); ?>
 			<ul x-cloak x-show="overlayOpen"
-				class='border border-darkGray border-t-0 flex flex-col top-[5rem] z-[1000] absolute left-0 w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack' : 'bg-white' ?>'
+				class='border border-t-0 flex flex-col top-[5rem] z-[1000] absolute left-0 w-full focus:outline-none <?php echo $is_dark ? 'bg-mainBlack border-darkGray' : 'bg-white border-lightGray' ?>'
 				role='menu' aria-orientation='vertical' tabindex='-1' x-transition:enter="transition-opacity duration-200"
 				x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
 				x-transition:leave="transition duration-200" x-transition:leave-end="opacity-0">

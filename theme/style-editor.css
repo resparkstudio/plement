@@ -1788,8 +1788,8 @@ div.wpcf7-validation-errors {
 
 .article-content ul:not(.article-checklist) li::before {
   position: absolute;
-  top: 50%;
   left: 0px;
+  top: 50%;
   height: 5px;
   width: 5px;
   --tw-translate-y: -50%;
@@ -1802,7 +1802,7 @@ div.wpcf7-validation-errors {
 }
 
 .article-content .article-checklist li::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0.2em;
@@ -1892,7 +1892,8 @@ div.wpcf7-validation-errors {
   }
 }
 
-.article-content strong, b {
+.article-content strong,
+b {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
 }
@@ -1940,7 +1941,7 @@ div.wpcf7-validation-errors {
 }
 
 .article-content blockquote::before {
-  content: "";
+  content: '';
   background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2221%22%20height%3D%2220%22%20viewBox%3D%220%200%2021%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M14.6512%2020L12.8605%2018.159C13.7287%2016.5969%2014.4884%2015.0349%2015.1395%2013.4728C15.7907%2011.9665%2016.1705%2010.4881%2016.2791%209.03765L12.2093%208.11715V0H21L21%205.85774C21%209.3166%2020.3488%2012.106%2019.0465%2014.2259C17.6899%2016.4017%2016.2248%2018.3264%2014.6512%2020ZM2.44186%2020L0.651165%2018.159C1.51938%2016.5969%202.27907%2015.0349%202.93023%2013.4728C3.58139%2011.9665%203.96124%2010.4881%204.06977%209.03765L0%208.11715L0%200L8.7907%200V5.85774C8.7907%209.3166%208.13953%2012.106%206.83721%2014.2259C5.48062%2016.4017%204.0155%2018.3264%202.44186%2020Z%22%20fill%3D%22%23ED5623%22%2F%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
   background-size: contain;
@@ -1993,6 +1994,16 @@ div.wpcf7-validation-errors {
   }
 }
 
+.company-marquee-slider .animate-loop-scroll {
+  --marquee-duration: 5s;
+}
+
+@media (min-width: 768px) {
+  .company-marquee-slider .animate-loop-scroll {
+    --marquee-duration: 20s;
+  }
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins, then adds custom utility classes.
@@ -2016,10 +2027,6 @@ div.wpcf7-validation-errors {
 
 .visible {
   visibility: visible;
-}
-
-.invisible {
-  visibility: hidden;
 }
 
 .\!static {
@@ -2842,10 +2849,6 @@ div.wpcf7-validation-errors {
   max-width: 37.5rem;
 }
 
-.max-w-\[38\.75rem\] {
-  max-width: 38.75rem;
-}
-
 .max-w-\[40\.625rem\] {
   max-width: 40.625rem;
 }
@@ -2884,6 +2887,10 @@ div.wpcf7-validation-errors {
 
 .max-w-\[57\.5rem\] {
   max-width: 57.5rem;
+}
+
+.max-w-\[66\.75rem\] {
+  max-width: 66.75rem;
 }
 
 .max-w-\[680px\] {
@@ -3024,12 +3031,12 @@ div.wpcf7-validation-errors {
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-loop-scroll {
-  animation: loop-scroll 50s linear infinite;
+  animation: loop-scroll var(--marquee-duration, 50s) linear infinite;
 }
 
 .cursor-default {
@@ -3220,12 +3227,6 @@ div.wpcf7-validation-errors {
   row-gap: 1.5rem;
 }
 
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
 .space-y-10 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -3315,6 +3316,10 @@ div.wpcf7-validation-errors {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .overflow-y-scroll {
@@ -3443,6 +3448,11 @@ div.wpcf7-validation-errors {
   border-bottom-color: rgb(100 100 100 / var(--tw-border-opacity));
 }
 
+.border-b-darkGray {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(100 100 100 / var(--tw-border-opacity));
+}
+
 .border-b-lightGray {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(233 233 233 / var(--tw-border-opacity));
@@ -3502,11 +3512,6 @@ div.wpcf7-validation-errors {
   border-top-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
-.border-b-darkGray {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(100 100 100 / var(--tw-border-opacity));
-}
-
 .\!bg-accent {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(237 86 35 / var(--tw-bg-opacity)) !important;
@@ -3515,6 +3520,11 @@ div.wpcf7-validation-errors {
 .\!bg-darkGray2 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(31 46 52 / var(--tw-bg-opacity)) !important;
+}
+
+.\!bg-mainBlackHover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
 }
 
 .\!bg-white {
@@ -3563,6 +3573,10 @@ div.wpcf7-validation-errors {
   background-color: rgb(36 49 53 / var(--tw-bg-opacity));
 }
 
+.bg-current {
+  background-color: currentColor;
+}
+
 .bg-darkGray\/30 {
   background-color: rgb(100 100 100 / 0.3);
 }
@@ -3601,13 +3615,9 @@ div.wpcf7-validation-errors {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.\!bg-mainBlackHover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
-}
-
-.bg-current {
-  background-color: currentColor;
+.bg-mainBlackHover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 19 22 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
@@ -3844,11 +3854,6 @@ div.wpcf7-validation-errors {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.py-\[7\.5rem\] {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
 }
 
 .\!pb-0 {
@@ -4155,7 +4160,7 @@ div.wpcf7-validation-errors {
 
 .text-h5Regular {
   font-size: 1.25rem;
-  line-height: 1.875rem;
+  line-height: 120%;
   font-weight: 400;
 }
 
@@ -4329,6 +4334,11 @@ div.wpcf7-validation-errors {
 
 .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
+}
+
+.\!text-mainBlack {
+  --tw-text-opacity: 1 !important;
+  color: rgb(17 31 36 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
@@ -4746,6 +4756,11 @@ div.wpcf7-validation-errors {
   background-color: rgb(13 19 22 / var(--tw-bg-opacity));
 }
 
+.hover\:\!bg-mainBlackHover:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(13 19 22 / var(--tw-bg-opacity)) !important;
+}
+
 .hover\:text-\[\#111F24\]:hover {
   --tw-text-opacity: 1;
   color: rgb(17 31 36 / var(--tw-text-opacity));
@@ -4776,11 +4791,6 @@ div.wpcf7-validation-errors {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:grayscale-0:hover {
-  --tw-grayscale: grayscale(0);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .hover\:\[animation-play-state\:paused\]:hover {
   animation-play-state: paused;
 }
@@ -4804,8 +4814,8 @@ div.wpcf7-validation-errors {
   color: rgb(178 178 178 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:visible {
-  visibility: visible;
+.group:hover .group-hover\:pointer-events-auto {
+  pointer-events: auto;
 }
 
 .group\/button:hover .group-hover\/button\:translate-x-0 {
@@ -4883,6 +4893,11 @@ div.wpcf7-validation-errors {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.group:hover .group-hover\:grayscale-0 {
+  --tw-grayscale: grayscale(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"][class~="is-selected"] *))) {
@@ -5005,10 +5020,6 @@ div.wpcf7-validation-errors {
 }
 
 @media (min-width: 984px) {
-  .lg\:static {
-    position: static;
-  }
-
   .lg\:relative {
     position: relative;
   }
@@ -5067,6 +5078,10 @@ div.wpcf7-validation-errors {
   .lg\:my-auto {
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .lg\:mb-10 {
@@ -5175,10 +5190,6 @@ div.wpcf7-validation-errors {
 
   .lg\:mt-\[7\.5rem\] {
     margin-top: 7.5rem;
-  }
-
-  .lg\:mb-0 {
-    margin-bottom: 0px;
   }
 
   .lg\:block {
@@ -5362,8 +5373,8 @@ div.wpcf7-validation-errors {
     max-width: 14.6875rem;
   }
 
-  .lg\:max-w-\[23\.1875rem\] {
-    max-width: 23.1875rem;
+  .lg\:max-w-\[28rem\] {
+    max-width: 28rem;
   }
 
   .lg\:max-w-\[30\.875rem\] {
@@ -5398,12 +5409,13 @@ div.wpcf7-validation-errors {
     max-width: none;
   }
 
-  .lg\:max-w-\[28rem\] {
-    max-width: 28rem;
-  }
-
   .lg\:-translate-x-1\/2 {
     --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:-translate-y-0 {
+    --tw-translate-y: -0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
@@ -5414,11 +5426,6 @@ div.wpcf7-validation-errors {
 
   .lg\:translate-x-0 {
     --tw-translate-x: 0px;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:-translate-y-0 {
-    --tw-translate-y: -0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
@@ -5656,11 +5663,6 @@ div.wpcf7-validation-errors {
   .lg\:px-\[105px\] {
     padding-left: 105px;
     padding-right: 105px;
-  }
-
-  .lg\:px-\[3\.625rem\] {
-    padding-left: 3.625rem;
-    padding-right: 3.625rem;
   }
 
   .lg\:px-\[4rem\] {
@@ -5924,7 +5926,7 @@ div.wpcf7-validation-errors {
 
   .lg\:text-h5Regular {
     font-size: 1.25rem;
-    line-height: 1.875rem;
+    line-height: 120%;
     font-weight: 400;
   }
 
@@ -6064,16 +6066,6 @@ div.wpcf7-validation-errors {
 .\[\&_a\]\:hover\:text-accentHover:hover a {
   --tw-text-opacity: 1;
   color: rgb(239 103 57 / var(--tw-text-opacity));
-}
-
-.\[\&_b\]\:text-mainBlack b {
-  --tw-text-opacity: 1;
-  color: rgb(17 31 36 / var(--tw-text-opacity));
-}
-
-.\[\&_b\]\:\!text-mainBlack b {
-  --tw-text-opacity: 1 !important;
-  color: rgb(17 31 36 / var(--tw-text-opacity)) !important;
 }
 
 .\[\&_iframe\]\:aspect-\[595\/337\] iframe {

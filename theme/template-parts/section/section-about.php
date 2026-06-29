@@ -86,47 +86,26 @@ function plmt_trust_companies($companies)
 	if (!$companies) {
 		return;
 	} ?>
-	<div class="overflow-hidden company-marquee-slider">
-		<div class="flex gap-4 animate-loop-scroll hover:[animation-play-state:paused]">
-			<div class="flex gap-4 shrink-0">
-				<?php foreach ($companies as $company): ?>
-					<div class="group flex flex-col items-center gap-2">
-						<img src='<?php echo esc_url($company['icon']['url']) ?>'
-							alt='<?php echo esc_attr($company['icon']['alt']) ?>'
-							class='h-[3.75rem] w-min grayscale hover:grayscale-0 transition-all duration-300'>
-						<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
-							class=" inline-block invisible group-hover:visible transition-all duration-300 bg-accent/10 text-accent p-2 font-bold hover:bg-accent hover:text-white">
-							<?php echo esc_html($company['link']['title']); ?>
-						</a>
-					</div>
-				<?php endforeach; ?>
-			</div>
-			<div class="flex gap-4 shrink-0" aria-hidden="true">
-				<?php foreach ($companies as $company): ?>
-					<div class="group flex flex-col items-center gap-2">
-						<img src='<?php echo esc_url($company['icon']['url']) ?>' alt='
-				<?php echo esc_attr($company['icon']['alt']) ?>'
-							class='h-[3.75rem] w-min grayscale hover:grayscale-0 transition-all duration-300'>
-						<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
-							class=" inline-block invisible group-hover:visible transition-all duration-300 bg-accent/10 text-accent p-2 font-bold hover:bg-accent hover:text-white">
-							<?php echo esc_html($company['link']['title']); ?>
-						</a>
-					</div>
-				<?php endforeach; ?>
-			</div>
-			<div class="flex gap-4 shrink-0" aria-hidden="true">
-				<?php foreach ($companies as $company): ?>
-					<div class="group flex flex-col items-center gap-2">
-						<img src='<?php echo esc_url($company['icon']['url']) ?>'
-							alt='<?php echo esc_attr($company['icon']['alt']) ?>'
-							class='h-[3.75rem] w-min grayscale hover:grayscale-0 transition-all duration-300'>
-						<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
-							class=" inline-block invisible group-hover:visible transition-all duration-300 bg-accent/10 text-accent p-2 font-bold hover:bg-accent hover:text-white">
-							<?php echo esc_html($company['link']['title']); ?>
-						</a>
-					</div>
-				<?php endforeach; ?>
-			</div>
+	<div class="overflow-x-hidden company-marquee-slider">
+		<div class="flex gap-3 animate-loop-scroll hover:[animation-play-state:paused]">
+			<?php
+			$sets = [false, true];
+			foreach ($sets as $i => $hidden):
+				?>
+				<div class="flex gap-3 shrink-0" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
+					<?php foreach ($companies as $company): ?>
+						<div class="group flex flex-col items-center gap-2">
+							<img src='<?php echo esc_url($company['icon']['url']) ?>'
+								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
+								class='h-[3.75rem] w-min grayscale group-hover:grayscale-0 transition-all duration-300'>
+							<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
+								class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
+								<?php echo esc_html($company['link']['title']); ?>
+							</a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<?php

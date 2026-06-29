@@ -7,7 +7,7 @@
  * @package Plement
  */
 
-get_header();
+get_header(null, ['type' => 'dark']);
 
 $page_sections = [
 	'hero',

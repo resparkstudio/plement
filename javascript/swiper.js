@@ -151,7 +151,6 @@ function initSwiper() {
 		},
 	});
 
-	// .company-marquee-slider is now a CSS animation marquee;
 }
 
 export default initSwiper;

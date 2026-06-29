@@ -8,7 +8,7 @@
  * @package Plement
  */
 
-get_header();
+get_header(null, ['type' => 'dark']);
 
 $heading      = get_field('heading');
 $description  = get_field('description');

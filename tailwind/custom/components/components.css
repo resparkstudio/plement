@@ -76,7 +76,7 @@
 }
 
 .icon_button_outlined_dark {
-	@apply border-mainBlack text-mainBlack text-bodyRegular bg-white inline-flex items-center gap-3 border px-6 py-4 font-medium transition-colors duration-200 ease-in-out hover:text-white hover:bg-accent hover:border-accent;
+	@apply border-mainBlack text-mainBlack text-bodyRegular hover:bg-accent hover:border-accent inline-flex items-center gap-3 border bg-white px-6 py-4 font-medium transition-colors duration-200 ease-in-out hover:text-white;
 }
 
 #site-navigation {
@@ -289,35 +289,35 @@ div.wpcf7-validation-errors {
 }
 
 .article-content h1 {
-	@apply text-h1MobileBold lg:text-h1Bold mb-3
+	@apply text-h1MobileBold lg:text-h1Bold mb-3;
 }
 
 .article-content h2 {
-	@apply text-h2MobileBold lg:text-h2Bold mb-3
+	@apply text-h2MobileBold lg:text-h2Bold mb-3;
 }
 
 .article-content h3 {
-	@apply text-h3MobileBold lg:text-h3Bold mb-3
+	@apply text-h3MobileBold lg:text-h3Bold mb-3;
 }
 
 .article-content h4 {
-	@apply text-h4BoldMobile lg:text-h4Bold mb-3
+	@apply text-h4BoldMobile lg:text-h4Bold mb-3;
 }
 
 .article-content ul {
-	@apply space-y-2 lg:space-y-3  text-darkGray
+	@apply text-darkGray space-y-2  lg:space-y-3;
 }
 
 .article-content ul li {
-	@apply pl-6 relative
+	@apply relative pl-6;
 }
 
 .article-content ul:not(.article-checklist) li::before {
-	@apply content-[''] w-[5px] h-[5px] bg-accent absolute top-1/2 -translate-y-1/2 left-0 rounded-full;
+	@apply bg-accent absolute left-0 top-1/2 h-[5px] w-[5px] -translate-y-1/2 rounded-full content-[''];
 }
 
 .article-content .article-checklist li::before {
-	content: "";
+	content: '';
 	position: absolute;
 	left: 0;
 	top: 0.2em;
@@ -336,12 +336,12 @@ div.wpcf7-validation-errors {
 
 .article-content ol li {
 	counter-increment: item;
-	@apply pl-12 py-3 pr-3 relative bg-lightGrayBg min-h-[3.125rem] text-darkGray;
+	@apply bg-lightGrayBg text-darkGray relative min-h-[3.125rem] py-3 pl-12 pr-3;
 }
 
 .article-content ol li::before {
 	content: counter(item);
-	@apply absolute left-3 top-1/2 -translate-y-1/2 font-bold text-white bg-mainBlack text-bodySmall w-[26px] h-[26px] flex items-center justify-center;
+	@apply bg-mainBlack text-bodySmall absolute left-3 top-1/2 flex h-[26px] w-[26px] -translate-y-1/2 items-center justify-center font-bold text-white;
 }
 
 .article-content img {
@@ -352,12 +352,13 @@ div.wpcf7-validation-errors {
 	@apply text-darkGray text-bodySmall lg:text-lg;
 }
 
-.article-content strong, b {
+.article-content strong,
+b {
 	@apply text-mainBlack;
 }
 
 .article-content .article-subheading {
-	@apply text-xs lg:text-sm font-bold mb-3;
+	@apply mb-3 text-xs font-bold lg:text-sm;
 }
 
 .article-content blockquote {
@@ -369,22 +370,30 @@ div.wpcf7-validation-errors {
 }
 
 .article-content blockquote::before {
-	content: "";
+	content: '';
 	background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2221%22%20height%3D%2220%22%20viewBox%3D%220%200%2021%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M14.6512%2020L12.8605%2018.159C13.7287%2016.5969%2014.4884%2015.0349%2015.1395%2013.4728C15.7907%2011.9665%2016.1705%2010.4881%2016.2791%209.03765L12.2093%208.11715V0H21L21%205.85774C21%209.3166%2020.3488%2012.106%2019.0465%2014.2259C17.6899%2016.4017%2016.2248%2018.3264%2014.6512%2020ZM2.44186%2020L0.651165%2018.159C1.51938%2016.5969%202.27907%2015.0349%202.93023%2013.4728C3.58139%2011.9665%203.96124%2010.4881%204.06977%209.03765L0%208.11715L0%200L8.7907%200V5.85774C8.7907%209.3166%208.13953%2012.106%206.83721%2014.2259C5.48062%2016.4017%204.0155%2018.3264%202.44186%2020Z%22%20fill%3D%22%23ED5623%22%2F%3E%3C%2Fsvg%3E');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	@apply w-[21px] h-[20px] lg:w-[41px] lg:h-[38px] shrink-0;
+	@apply h-[20px] w-[21px] shrink-0 lg:h-[38px] lg:w-[41px];
 }
 
 .text-bodyRegular {
-	@apply text-[1rem] lg:text-[1.125rem] leading-[1.3rem] font-normal;
+	@apply text-[1rem] font-normal leading-[1.3rem] lg:text-[1.125rem];
 }
 
 .text-bodySmall {
-	@apply text-[0.875rem] lg:text-[1rem] leading-[1.05rem] font-normal;
+	@apply text-[0.875rem] font-normal leading-[1.05rem] lg:text-[1rem];
 }
 
 .text-bodyBold {
-	@apply text-[1rem] lg:text-[1.125rem] leading-[1.2rem] font-bold;
+	@apply text-[1rem] font-bold leading-[1.2rem] lg:text-[1.125rem];
+}
+.company-marquee-slider .animate-loop-scroll {
+	--marquee-duration: 5s;
+}
+@media (min-width: 768px) {
+	.company-marquee-slider .animate-loop-scroll {
+		--marquee-duration: 20s;
+	}
 }

@@ -47,7 +47,7 @@ function plmt_specialist_card($card)
 		</div>
 	<?php endif; ?>
 	<?php if ($specialist['cards']): ?>
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6 lg:px-[3.625rem]">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6 max-w-[66.75rem] mx-auto">
 			<?php foreach ($specialist['cards'] as $card): ?>
 				<?php plmt_specialist_card($card); ?>
 			<?php endforeach; ?>
@@ -55,8 +55,7 @@ function plmt_specialist_card($card)
 	<?php endif; ?>
 	<?php if ($specialist['button']): ?>
 		<div class="flex justify-center mt-10">
-			<a href="<?php echo esc_url($specialist['button']['url']); ?>"
-				class="inline-block bg-accent text-white text-center py-[0.875rem] px-8 hover:bg-accent/90 transition-all duration-200 font-bold">
+			<a href="<?php echo esc_url($specialist['button']['url']); ?>" class="button font-bold">
 				<?php echo esc_html($specialist['button']['title']); ?>
 			</a>
 		</div>

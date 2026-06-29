@@ -19,7 +19,6 @@ if (isset($args['type']) && $args['type'] === 'light') {
 
 $is_dark = $type === 'dark';
 
-
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 
