@@ -17,8 +17,7 @@ $gray_bg = isset($cards_carousel['gray_background']) && $cards_carousel['gray_ba
 function render_card($card)
 {
 	?>
-	<div
-		class="h-full flex flex-col items-start gap-3 lg:gap-4 p-3 lg:p-6 bg-white rounded-lg border border-lightGray shrink-0">
+	<div class="h-full flex flex-col items-start gap-3 lg:gap-4 p-3 lg:p-6 bg-white border border-lightGray shrink-0">
 		<div class="flex items-center gap-3">
 			<?php if ($card['icon']): ?>
 				<img src="<?php echo esc_url($card['icon']['url']); ?>" alt="<?php echo esc_attr($card['icon']['alt']); ?>"

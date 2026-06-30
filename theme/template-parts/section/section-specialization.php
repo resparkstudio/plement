@@ -37,7 +37,7 @@ function plmt_specialization_category_mobile($category)
 						<div class="flex items-center gap-3">
 							<?php if ($tool['tool_icon']): ?>
 								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-200 ease-in-out"
-									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
+									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: contain;">
 								</div>
 							<?php endif; ?>
 							<?php if ($tool['tool_title']): ?>
@@ -82,7 +82,7 @@ function plmt_specialization_category($category)
 							:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 							<?php if ($tool['tool_icon']): ?>
 								<div class="w-5 h-5 lg:w-6 lg:h-6 bg-current transition-all duration-200 ease-in-out"
-									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: cover;">
+									style="mask-image: url(<?php echo esc_url($tool['tool_icon']['url']) ?>);mask-size: contain;">
 								</div>
 							<?php endif; ?>
 							<?php if ($tool['tool_title']): ?>
@@ -184,7 +184,7 @@ function plmt_specialization_categories_mobile($categories)
 
 ?>
 
-<section id="specialization" class="bg-lightGrayBg py-7 lg:py-20">
+<section id="services" class="bg-lightGrayBg py-7 lg:py-20">
 	<div class="container">
 		<div class="text-center mx-auto mb-6 lg:mb-14">
 			<?php if ($specialization['heading']): ?>
