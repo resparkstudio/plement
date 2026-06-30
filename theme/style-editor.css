@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.39
+Version: 0.2.40
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2212,11 +2212,6 @@ b {
 
 .col-end-4 {
   grid-column-end: 4;
-}
-
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
 }
 
 .mx-auto {
@@ -4783,10 +4778,6 @@ b {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:\[animation-play-state\:paused\]:hover {
-  animation-play-state: paused;
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -4804,10 +4795,6 @@ b {
 .disabled\:text-\[\#B2B2B2\]:disabled {
   --tw-text-opacity: 1;
   color: rgb(178 178 178 / var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:pointer-events-auto {
-  pointer-events: auto;
 }
 
 .group\/button:hover .group-hover\/button\:translate-x-0 {
@@ -4885,11 +4872,6 @@ b {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.group:hover .group-hover\:grayscale-0 {
-  --tw-grayscale: grayscale(0);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"][class~="is-selected"] *))) {
@@ -5979,12 +5961,29 @@ b {
     border-right-width: 0px;
   }
 
+  .lg\:hover\:\[animation-play-state\:paused\]:hover {
+    animation-play-state: paused;
+  }
+
+  .group:hover .lg\:group-hover\:pointer-events-auto {
+    pointer-events: auto;
+  }
+
   .group\/container:hover .group-hover\/container\:lg\:opacity-100 {
     opacity: 1;
   }
 
   .group\/container:hover .group-hover\/container\:lg\:opacity-60 {
     opacity: 0.6;
+  }
+
+  .group:hover .lg\:group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .group:hover .lg\:group-hover\:grayscale-0 {
+    --tw-grayscale: grayscale(0);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }
 
