@@ -89,7 +89,7 @@ function plmt_trust_companies($companies)
 	<div class="overflow-x-hidden company-marquee-slider">
 		<div class="inline-flex flex-nowrap w-full animate-loop-scroll hover:[animation-play-state:paused]">
 			<?php
-			$sets = [false, true, true];
+			$sets = [false, true];
 			foreach ($sets as $i => $hidden):
 				?>
 				<div class="flex mx-1.5 shrink-0" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
