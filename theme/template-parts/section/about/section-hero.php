@@ -17,7 +17,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 				<?php echo $hero_content['description'] ?>
 			</div>
 			<div class='mt-6 flex justify-between items-center lg:pl-10'>
-				<div class='flex gap-8 flex-wrap'>
+				<div class='flex gap-8 items-center flex-wrap'>
 					<?php foreach ($hero_content['icons'] as $index => $icon): ?>
 						<img src='<?php echo esc_url($icon['url']) ?>' alt='<?php echo esc_attr($icon['alt']) ?>'
 							class='<?php echo $index === 2 ? 'h-[2.8125rem] md:h-[5rem]' : 'h-[2.125rem] md:h-[3.25rem] '; ?>'>
