@@ -18,7 +18,7 @@ if (!isset($license) || empty($license)) {
 			</p>
 		<?php endif; ?>
 		<?php if ($license['badges']): ?>
-			<div class="flex flex-wrap gap-2 md:gap-3 mt-6">
+			<div class="flex items-center flex-wrap gap-2 md:gap-3 mt-6">
 				<?php foreach ($license['badges'] as $index => $badge): ?>
 					<img class="w-auto <?php echo $index === 2 ? 'h-[2.8125rem] md:h-[5rem]' : 'h-[2.125rem] md:h-[3.25rem] '; ?>"
 						src="<?php echo esc_url($badge['url']) ?>" alt="<?php echo esc_attr($badge['alt']) ?>">
