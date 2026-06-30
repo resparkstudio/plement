@@ -89,12 +89,25 @@ function plmt_trust_companies($companies)
 	<div class="overflow-x-hidden company-marquee-slider">
 		<div class="inline-flex flex-nowrap w-full animate-loop-scroll hover:[animation-play-state:paused]">
 			<?php
-			$sets = [false, true];
+			$sets = [false, true,];
 			foreach ($sets as $i => $hidden):
 				?>
-				<div class="flex mx-3 shrink-0" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
+				<div class="flex mx-3 shrink-0 w-full" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
 					<?php foreach ($companies as $company): ?>
-						<div class="group flex flex-col items-center mx-2 shrink-0">
+						<div class="group flex flex-col items-center shrink-0">
+							<img src='<?php echo esc_url($company['icon']['url']) ?>'
+								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
+								class='h-[3.75rem] shrink-0 w-auto grayscale group-hover:grayscale-0 transition-all duration-200'>
+							<?php if ($company['link']): ?>
+								<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
+									class="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 ease-in-out whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
+									<?php echo esc_html($company['link']['title']); ?>
+								</a>
+							<?php endif; ?>
+						</div>
+					<?php endforeach; ?>
+					<?php foreach ($companies as $company): ?>
+						<div class="group flex flex-col items-center shrink-0">
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
 								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
 								class='h-[3.75rem] shrink-0 w-auto grayscale group-hover:grayscale-0 transition-all duration-200'>
