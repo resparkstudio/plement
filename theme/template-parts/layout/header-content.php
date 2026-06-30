@@ -197,7 +197,8 @@ function plmt_header_dropdown_button($item, $is_contact_us, $is_dark)
 
 		<div class="lg:hidden relative z-[1000]">
 			<button @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" type="button"
-				class="flex text-textBlack lg:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
+				class="flex text-textBlack lg:hidden relative z-[1000]" aria-label="mobile menu"
+				aria-controls="mobileMenu">
 				<div class="text-center <?php echo $is_dark ? 'text-white' : 'text-textBlack' ?>">
 					<div class="hamburger" id="hamburger-1">
 						<span
@@ -214,12 +215,12 @@ function plmt_header_dropdown_button($item, $is_contact_us, $is_dark)
 			</button>
 		</div>
 	</div>
-	<nav x-data="{childOpen: false}" x-cloak x-show="menuOpen" x-trap.inert.noscroll="menuOpen"
-		@click.away="menuOpen=false" id="site-navigation"
+	<nav x-data="{childOpen: false}" x-cloak x-show="menuOpen" x-trap.noscroll="menuOpen" @click.away="menuOpen=false"
+		id="site-navigation"
 		class="fixed inset-y-0 right-0 z-[100] w-full flex justify-end lg:hidden bg-[#0000003D] h-screen transition-[cubic-bezier(.13,1.24,.92,.93)]"
-		aria-label="<?php esc_attr_e('Main Navigation', 'plement'); ?>" x-transition:enter="transform duration-800"
+		aria-label="<?php esc_attr_e('Main Navigation', 'plement'); ?>" x-transition:enter="transform duration-500"
 		x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-		x-transition:leave="transform duration-800" x-transition:leave-start="translate-x-0"
+		x-transition:leave="transform duration-500" x-transition:leave-start="translate-x-0"
 		x-transition:leave-end="translate-x-full">
 		<?php
 		$menu_locations = get_nav_menu_locations();
