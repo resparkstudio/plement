@@ -42,7 +42,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 				</div>
 				<?php if ($hero_content['services']): ?>
 					<div
-						class="grid grid-cols-2 gap-x-10 gap-y-6 lg:flex items-center justify-center mt-10 lg:gap-20 flex-wrap lg:mt-[6rem]">
+						class="opacity-80 grid grid-cols-2 gap-x-10 gap-y-6 lg:flex items-center justify-center mt-10 lg:gap-20 flex-wrap lg:mt-[6rem]">
 						<?php foreach ($hero_content['services'] as $service): ?>
 							<img src='<?php echo esc_url($service['url']) ?>' alt='<?php echo esc_attr($service['alt']) ?>'
 								class='h-8 lg:h-[2.875rem] w-auto'>
@@ -54,13 +54,13 @@ if (!isset($hero_content) || empty($hero_content)) {
 		</div>
 	</div>
 	<?php if ($hero_content['hero_image']): ?>
-	<img class="w-auto hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 h-full"
+		<img class="w-auto hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 h-full"
 			src='<?php echo esc_url($hero_content['hero_image']['url']) ?>' alt='
 		<?php echo esc_attr($hero_content['hero_image']['alt']) ?>'>
 	<?php endif; ?>
-<?php if ($hero_content['mobile_image']): ?>
+	<?php if ($hero_content['mobile_image']): ?>
 		<img class="lg:hidden absolute top-0 left-0 w-full"
-				src='<?php echo esc_url($hero_content['mobile_image']['url']) ?>' alt='
+			src='<?php echo esc_url($hero_content['mobile_image']['url']) ?>' alt='
 		<?php echo esc_attr($hero_content['mobile_image']['alt']) ?>'>
 	<?php endif; ?>
 </section>
