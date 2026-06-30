@@ -36,6 +36,26 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_6a43945064a59",
+                    "label": "Bigger icon",
+                    "name": "bigger_icon",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_6a1c16a25f490",
                     "label": "Top icon",
                     "name": "top_icon",
@@ -2125,5 +2145,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1782601860
+    "modified": 1782813799
 }

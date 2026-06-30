@@ -5,6 +5,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 	return;
 }
 
+$bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'] : false;
 
 ?>
 <section id='hero' class='mb-6  lg:mb-20 flex flex-col bg-mainBlack text-white relative '>
@@ -14,7 +15,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 			<?php if ($hero_content['top_icon']): ?>
 				<img src="<?php echo esc_url($hero_content['top_icon']['url']); ?>"
 					alt="<?php echo esc_attr($hero_content['top_icon']['alt']); ?>"
-					class="h-[2.5625rem] lg:h-14 w-auto mb-6">
+					class="h-[2.5625rem]  w-auto mb-6 <?php echo $bigger_icon ? 'lg:h-[5.5rem]' : 'lg:h-14'; ?>">
 			<?php endif; ?>
 			<?php if ($hero_content['heading']): ?>
 				<h1

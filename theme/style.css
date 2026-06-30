@@ -3049,6 +3049,10 @@ b {
   height: 100vh;
 }
 
+.h-\[2\.8125rem\] {
+  height: 2.8125rem;
+}
+
 .max-h-\[70vh\] {
   max-height: 70vh;
 }
@@ -5389,6 +5393,14 @@ b {
     height: 3.25rem;
   }
 
+  .md\:h-\[2\.8125rem\] {
+    height: 2.8125rem;
+  }
+
+  .md\:h-\[5rem\] {
+    height: 5rem;
+  }
+
   .md\:\!w-\[26\.25rem\] {
     width: 26.25rem !important;
   }
@@ -5687,6 +5699,10 @@ b {
 
   .lg\:h-\[45px\] {
     height: 45px;
+  }
+
+  .lg\:h-\[5\.5rem\] {
+    height: 5.5rem;
   }
 
   .lg\:h-auto {
