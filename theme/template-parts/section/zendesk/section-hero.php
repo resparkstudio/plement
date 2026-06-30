@@ -15,7 +15,7 @@ $bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'
 			<?php if ($hero_content['top_icon']): ?>
 				<img src="<?php echo esc_url($hero_content['top_icon']['url']); ?>"
 					alt="<?php echo esc_attr($hero_content['top_icon']['alt']); ?>"
-					class="h-[2.5625rem]  w-auto mb-6 <?php echo $bigger_icon ? 'lg:h-[5.5rem]' : 'lg:h-14'; ?>">
+					class=" w-auto mb-6 <?php echo $bigger_icon ? 'h-[4rem] lg:h-[5.5rem]' : 'h-[2.5625rem] lg:h-14'; ?>">
 			<?php endif; ?>
 			<?php if ($hero_content['heading']): ?>
 				<h1
