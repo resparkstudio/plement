@@ -89,10 +89,10 @@ function plmt_trust_companies($companies)
 	<div class="overflow-x-hidden company-marquee-slider">
 		<div class="inline-flex flex-nowrap w-full animate-loop-scroll hover:[animation-play-state:paused]">
 			<?php
-			$sets = [false, true,];
+			$sets = [false, true];
 			foreach ($sets as $i => $hidden):
 				?>
-				<div class="flex mx-3 shrink-0 w-full overflow-hidden" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
+				<div class="flex mx-3 shrink-0 overflow-hidden" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
 					<?php foreach ($companies as $company): ?>
 						<div class="group flex flex-col items-center shrink-0">
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
