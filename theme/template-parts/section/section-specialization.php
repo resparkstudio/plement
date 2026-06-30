@@ -31,7 +31,8 @@ function plmt_specialization_category_mobile($category)
 		<?php if ($category['tools']): ?>
 			<div>
 				<?php foreach ($category['tools'] as $tool): ?>
-					<button @click="selectedTool = '<?php echo esc_js($tool['tool_title']); ?>'"
+					<button
+						@click="selectedTool = (selectedTool === '<?php echo esc_js($tool['tool_title']); ?>') ? '' : '<?php echo esc_js($tool['tool_title']); ?>'"
 						class="w-full flex items-center justify-between gap-3 py-3 px-4 text-darkGray text-title font-bold hover:bg-accent/10 hover:text-accent transition-all duration-200"
 						:class="selectedTool === '<?php echo esc_js($tool['tool_title']); ?>' ? 'bg-accent/10 !text-accent' : ''">
 						<div class="flex items-center gap-3">
