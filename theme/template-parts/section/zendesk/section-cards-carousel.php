@@ -20,8 +20,10 @@ function render_card($card)
 	<div class="h-full flex flex-col items-start gap-3 lg:gap-4 p-3 lg:p-6 bg-white border border-lightGray shrink-0">
 		<div class="flex items-center gap-3">
 			<?php if ($card['icon']): ?>
-				<img src="<?php echo esc_url($card['icon']['url']); ?>" alt="<?php echo esc_attr($card['icon']['alt']); ?>"
-					class="w-7 lg:w-10 h-7 lg:h-10 shrink-0">
+				<div class="flex items-center justify-center bg-accent/10 p-[6px] lg:p-[10px] shrink-0">
+					<img src="<?php echo esc_url($card['icon']['url']); ?>" alt="<?php echo esc_attr($card['icon']['alt']); ?>"
+						class="w-4 lg:w-5 h-4 lg:h-5 object-contain">
+				</div>
 			<?php endif; ?>
 			<?php if ($card['title']): ?>
 				<h3 class="text-[1rem] lg:text-[1.0625rem] font-bold leading-[22.1px] text-mainBlack">

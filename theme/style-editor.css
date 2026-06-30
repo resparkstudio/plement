@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.42
+Version: 0.2.43
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -217,17 +217,17 @@ body {
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='bottom']
-  > .tippy-arrow::before {
+	> .tippy-arrow::before {
   border-bottom-color: #f8f8fa;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='left']
-  > .tippy-arrow::before {
+	> .tippy-arrow::before {
   border-left-color: #f8f8fa;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='right']
-  > .tippy-arrow::before {
+	> .tippy-arrow::before {
   border-right-color: #f8f8fa;
 }
 
@@ -265,6 +265,7 @@ input {
   background-color: #ed56230d;
   border-color: #ed5623;
   margin-bottom: 0;
+  border-radius: 0;
 }
 
 .codedropz-upload-container {
@@ -2362,6 +2363,10 @@ b {
   margin-top: 3.5rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -2468,6 +2473,10 @@ b {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-4 {
+  height: 1rem;
 }
 
 .h-5 {
@@ -3626,6 +3635,11 @@ b {
   --tw-bg-opacity: 0.4;
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -3661,6 +3675,10 @@ b {
 
 .p-\[10px\] {
   padding: 10px;
+}
+
+.p-\[6px\] {
+  padding: 6px;
 }
 
 .\!px-0 {
@@ -3959,6 +3977,10 @@ b {
 
 .pt-14 {
   padding-top: 3.5rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .pt-2 {
@@ -4445,10 +4467,6 @@ b {
 
 .duration-500 {
   transition-duration: 500ms;
-}
-
-.duration-800 {
-  transition-duration: 800ms;
 }
 
 .ease-in {
@@ -5214,12 +5232,12 @@ b {
     aspect-ratio: 640/316;
   }
 
-  .lg\:h-10 {
-    height: 2.5rem;
-  }
-
   .lg\:h-14 {
     height: 3.5rem;
+  }
+
+  .lg\:h-5 {
+    height: 1.25rem;
   }
 
   .lg\:h-6 {
@@ -5288,10 +5306,6 @@ b {
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:w-10 {
-    width: 2.5rem;
   }
 
   .lg\:w-5 {
@@ -5637,6 +5651,10 @@ b {
 
   .lg\:p-8 {
     padding: 2rem;
+  }
+
+  .lg\:p-\[10px\] {
+    padding: 10px;
   }
 
   .lg\:\!px-16 {

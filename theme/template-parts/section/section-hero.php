@@ -7,7 +7,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 
 ?>
 <section id='hero'
-	class='py-16 mb-6 lg:py-[4.25rem] lg:mb-[7.5rem] flex flex-col bg-mainBlack text-white relative lg:min-h-[calc(100vh-5rem)]'>
+	class='pt-16 pb-10 mb-6 lg:py-[4.25rem] lg:mb-[7.5rem] flex flex-col bg-mainBlack text-white relative lg:min-h-[calc(100vh-5rem)]'>
 	<div class="lg:container mx-auto lg:my-auto">
 		<div class='flex flex-col gap-4 items-center lg:flex-row lg:justify-center lg:gap-14 lg:text-center'>
 			<div class='hero-content w-full px-5 lg:px-0 z-10'>
@@ -42,7 +42,7 @@ if (!isset($hero_content) || empty($hero_content)) {
 				</div>
 				<?php if ($hero_content['services']): ?>
 					<div
-						class="opacity-80 grid grid-cols-2 gap-x-10 gap-y-6 lg:flex items-center justify-center mt-10 lg:gap-20 flex-wrap lg:mt-[6rem]">
+						class="opacity-80 grid grid-cols-2 gap-x-10 gap-y-6 lg:flex items-center justify-center mt-16 lg:gap-20 flex-wrap lg:mt-[6rem]">
 						<?php foreach ($hero_content['services'] as $service): ?>
 							<img src='<?php echo esc_url($service['url']) ?>' alt='<?php echo esc_attr($service['alt']) ?>'
 								class='h-8 lg:h-[2.875rem] w-auto'>
