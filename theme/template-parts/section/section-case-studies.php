@@ -58,9 +58,11 @@ if (empty($case_studies)) {
 
 							<div class="flex flex-col justify-between bg-lightGrayBg gap-4 lg:gap-6 h-full">
 								<div>
-									<?php if (!$mobile_image): ?>
-										<div class="flex-shrink-0 h-[61px] lg:hidden">
-
+									<?php if (!$mobile_image && $image): ?>
+										<div
+											class="mb-4 lg:mb-6 flex-shrink-0 [&_img]:h-[61px] [&_img]:object-contain lg:hidden">
+											<img src="<?php echo esc_url($image); ?>"
+												alt="<?php echo esc_attr($case_study->post_title); ?>">
 										</div>
 									<?php endif; ?>
 									<?php if ($mobile_image): ?>
