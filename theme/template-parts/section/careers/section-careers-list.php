@@ -43,7 +43,7 @@ function career_tags_list($tags)
 	<?php endif;
 }
 
-function career_content($title, $excerpt)
+function career_content($title, $excerpt, $extra_description_short)
 {
 	?>
 	<h3 class="text-h5Mobile lg:text-h5Bold mb-2">
@@ -54,20 +54,31 @@ function career_content($title, $excerpt)
 			<?php echo esc_html($excerpt); ?>
 		</p>
 	<?php endif; ?>
+	<?php if ($extra_description_short): ?>
+		<p class="text-darkGray italic text-bodySmallMobile lg:text-bodySmall mt-4 lg:mt-6">
+			<?php echo esc_html($extra_description_short); ?>
+		</p>
+	<?php endif; ?>
 <?php
 }
 
 function mobile_career_card($career)
 {
-	$tags    = get_field('tags', $career->ID);
-	$excerpt = get_field('excerpt', $career->ID);
-	$link    = get_permalink($career->ID);
+	$tags                    = get_field('tags', $career->ID);
+	$excerpt                 = get_field('excerpt', $career->ID);
+	$extra_description       = get_field('extra_description', $career->ID);
+	$extra_description_short = get_field('extra_description', $career->ID);
+	$link                    = get_permalink($career->ID);
+
+	if (!$extra_description_short) {
+		$extra_description_short = $extra_description;
+	}
 	?>
 	<a href="<?php echo esc_url($link) ?>"
 		class="flex justify-between items-center w-full py-3 px-4 lg:py-6 lg:px-8 border border-lightGray">
 		<div class="block">
 			<?php career_tags_list($tags) ?>
-			<?php career_content(get_the_title($career->ID), $excerpt) ?>
+			<?php career_content(get_the_title($career->ID), $excerpt, $extra_description_short) ?>
 		</div>
 	</a>
 	<?php
@@ -75,14 +86,20 @@ function mobile_career_card($career)
 
 function desktop_career_card($career)
 {
-	$tags    = get_field('tags', $career->ID);
-	$excerpt = get_field('excerpt', $career->ID);
-	$link    = get_permalink($career->ID);
+	$tags                    = get_field('tags', $career->ID);
+	$excerpt                 = get_field('excerpt', $career->ID);
+	$extra_description       = get_field('extra_description', $career->ID);
+	$extra_description_short = get_field('extra_description', $career->ID);
+	$link                    = get_permalink($career->ID);
+
+	if (!$extra_description_short) {
+		$extra_description_short = $extra_description;
+	}
 	?>
 	<div class="flex justify-between items-center w-full py-3 px-4 lg:py-6 lg:px-8 border border-lightGray">
 		<div class=" block">
 			<?php career_tags_list($tags) ?>
-			<?php career_content(get_the_title($career->ID), $excerpt) ?>
+			<?php career_content(get_the_title($career->ID), $excerpt, $extra_description_short) ?>
 		</div>
 		<?php plmt_icon_button($link, 'Open', array(
 			'variant' => 'outlined'

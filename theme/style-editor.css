@@ -1566,6 +1566,7 @@ div.wpcf7-validation-errors {
 .wpcf7-not-valid-tip {
   position: absolute;
   bottom: -1rem;
+  line-height: 120%;
   --tw-text-opacity: 1;
   color: rgb(255 79 79 / var(--tw-text-opacity));
   font-size: 0.875rem;
@@ -1861,6 +1862,7 @@ div.wpcf7-validation-errors {
   justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
+  line-height: 120%;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   font-size: 0.875rem;
@@ -1879,6 +1881,7 @@ div.wpcf7-validation-errors {
 }
 
 .article-content p {
+  line-height: 120%;
   --tw-text-opacity: 1;
   color: rgb(100 100 100 / var(--tw-text-opacity));
   font-size: 0.875rem;
@@ -2585,10 +2588,6 @@ b {
 
 .h-\[5rem\] {
   height: 5rem;
-}
-
-.h-\[61px\] {
-  height: 61px;
 }
 
 .h-\[90\%\] {
@@ -4099,6 +4098,12 @@ b {
   font-weight: 400;
 }
 
+.text-bodySmall {
+  font-size: 1rem;
+  line-height: 120%;
+  font-weight: 400;
+}
+
 .text-button {
   font-size: 1rem;
   line-height: 1rem;
@@ -4219,6 +4224,12 @@ b {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-bodySmallMobile {
+  font-size: 0.875rem;
+  line-height: 120%;
+  font-weight: 400;
 }
 
 .\!font-bold {
@@ -4381,14 +4392,6 @@ b {
 
 .opacity-80 {
   opacity: 0.8;
-}
-
-.opacity-10 {
-  opacity: 0.1;
-}
-
-.opacity-40 {
-  opacity: 0.4;
 }
 
 .shadow-sm {
@@ -5902,6 +5905,12 @@ b {
     font-weight: 400;
   }
 
+  .lg\:text-bodySmall {
+    font-size: 1rem;
+    line-height: 120%;
+    font-weight: 400;
+  }
+
   .lg\:text-displayLarge {
     font-size: 4rem;
     line-height: 4rem;
@@ -5993,6 +6002,14 @@ b {
   .lg\:text-darkGray {
     --tw-text-opacity: 1;
     color: rgb(100 100 100 / var(--tw-text-opacity));
+  }
+
+  .lg\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .lg\:opacity-40 {
+    opacity: 0.4;
   }
 
   .lg\:last\:border-r:last-child {
