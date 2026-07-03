@@ -39,7 +39,7 @@ $bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="block w-full lg:w-1/2">
+		<div class="block w-full">
 			<?php if ($hero_content['image']): ?>
 				<img class="w-auto hidden lg:block absolute top-0 h-full <?php echo $hero_content['image_left'] ? 'left-0' : 'right-0' ?>"
 					src='<?php echo esc_url($hero_content['image']['url']) ?>'
