@@ -10,8 +10,8 @@ $bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'
 ?>
 <section id='hero' class='mb-6  lg:mb-20 flex flex-col bg-mainBlack text-white relative '>
 	<div
-		class="pt-6 lg:py-[4.25rem] lg:container mx-auto lg:min-h-[calc(100vh-5rem)] flex flex-col gap-10 items-center lg:justify-between lg:gap-14 <?php echo $hero_content['image_left'] ? 'lg:flex-row-reverse' : 'lg:flex-row' ?>">
-		<div class='lg:w-1/2 min-[1920px]:w-full  hero-content px-5 lg:px-0 z-10 pb-[10rem] lg:pb-0'>
+		class="pt-6 lg:py-[4.25rem] mx-auto lg:min-h-[calc(100vh-5rem)] flex flex-col gap-10 items-center lg:justify-between lg:gap-14 <?php echo $hero_content['image_left'] ? 'lg:flex-row-reverse' : 'lg:flex-row' ?>">
+		<div class='min-[1920px]:w-full  hero-content px-5 lg:px-0 z-10 pb-[10rem] lg:pb-0'>
 			<?php if ($hero_content['top_icon']): ?>
 				<img src="<?php echo esc_url($hero_content['top_icon']['url']); ?>"
 					alt="<?php echo esc_attr($hero_content['top_icon']['alt']); ?>"
