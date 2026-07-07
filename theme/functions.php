@@ -231,3 +231,8 @@ require get_template_directory() . '/inc/dashboard.php';
  * SVG icons.
  */
 require get_template_directory() . '/inc/icons.php';
+
+/**
+ * Taxonomy SEO functions.
+ */
+require get_template_directory() . '/inc/taxonomy-seo.php';
