@@ -40,7 +40,7 @@ function member_card($member)
 		<div class="flex gap-3 items-center">
 			<?php if ($member['photo']): ?>
 				<img src="<?php echo esc_url($member['photo']['url']) ?>"
-					class="h-[5.5rem] w-[5.5rem] lg:w-[7.5rem] lg:h-[7.5rem]" />
+					class="aspect-square border border-lightGray flex items-center justify-center rounded-full h-[5.5rem] w-[5.5rem] lg:w-[7.5rem] lg:h-[7.5rem] p-[4.5px] " />
 			<?php endif; ?>
 			<div class="flex flex-col gap-2">
 				<?php if ($member['name']): ?>
