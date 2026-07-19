@@ -90,7 +90,7 @@ function member_card($member)
 function last_card($last_card)
 {
 	?>
-	<div
+	<a href="<?php echo esc_url($last_card['link']['url']) ?>" target="<?php echo esc_url($last_card['link']['target']) ?>"
 		class="border border-lightGray p-3 lg:p-4 relative group hover:border-accent hover:border-dashed hover:bg-accent/5 transition-all duration-200">
 		<div class="flex gap-3 items-center">
 			<?php if ($last_card['icon']): ?>
@@ -111,14 +111,13 @@ function last_card($last_card)
 			</p>
 		<?php endif; ?>
 		<div class="mt-3">
-			<a href="<?php echo esc_url($last_card['link']['url']) ?>"
-				target="<?php echo esc_url($last_card['link']['target']) ?>"
-				class="inline-flex items-center gap-2 text-mainBlack font-bold text-[1.125rem] leading-[120%] hover:text-accent transition-colors duration-200 group-hover:text-accent">
+			<span
+				class="inline-flex items-center gap-2 text-mainBlack font-bold text-[1rem] lg:text-[1.125rem] leading-[120%] hover:text-accent transition-colors duration-200 group-hover:text-accent">
 				<?php plmt_arrow_circle_icon(); ?>
 				<?php echo esc_html($last_card['link']['title']); ?>
-			</a>
+			</span>
 		</div>
-	</div>
+	</a>
 	<?php
 }
 
