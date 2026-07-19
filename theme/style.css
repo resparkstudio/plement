@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.44
+Version: 0.2.45
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2549,14 +2549,6 @@ b {
   left: 2px;
 }
 
-.left-\[4px\] {
-  left: 4px;
-}
-
-.left-\[6\.5px\] {
-  left: 6.5px;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -2589,10 +2581,6 @@ b {
   top: 1rem;
 }
 
-.top-\[25px\] {
-  top: 25px;
-}
-
 .top-\[5rem\] {
   top: 5rem;
 }
@@ -2603,10 +2591,6 @@ b {
 
 .top-\[calc\(5rem\+1px\)\] {
   top: calc(5rem + 1px);
-}
-
-.\!z-10 {
-  z-index: 10 !important;
 }
 
 .z-0 {
@@ -3029,16 +3013,16 @@ b {
   height: 4rem;
 }
 
+.h-\[5\.5rem\] {
+  height: 5.5rem;
+}
+
 .h-\[57px\] {
   height: 57px;
 }
 
 .h-\[5rem\] {
   height: 5rem;
-}
-
-.h-\[90\%\] {
-  height: 90%;
 }
 
 .h-\[9px\] {
@@ -3129,6 +3113,10 @@ b {
   width: 20%;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -3201,10 +3189,6 @@ b {
   width: 26px;
 }
 
-.w-\[2px\] {
-  width: 2px;
-}
-
 .w-\[3\.75rem\] {
   width: 3.75rem;
 }
@@ -3215,6 +3199,10 @@ b {
 
 .w-\[40px\] {
   width: 40px;
+}
+
+.w-\[5\.5rem\] {
+  width: 5.5rem;
 }
 
 .w-\[57px\] {
@@ -3307,10 +3295,6 @@ b {
   max-width: 37.5rem;
 }
 
-.max-w-\[40\.625rem\] {
-  max-width: 40.625rem;
-}
-
 .max-w-\[40rem\] {
   max-width: 40rem;
 }
@@ -3327,8 +3311,8 @@ b {
   max-width: 45rem;
 }
 
-.max-w-\[50rem\] {
-  max-width: 50rem;
+.max-w-\[51\.625rem\] {
+  max-width: 51.625rem;
 }
 
 .max-w-\[53\.25rem\] {
@@ -4127,6 +4111,10 @@ b {
   padding: 6px;
 }
 
+.p-\[7px\] {
+  padding: 7px;
+}
+
 .\!px-0 {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -4135,6 +4123,16 @@ b {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-1\.5 {
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
 }
 
 .px-10 {
@@ -4307,11 +4305,6 @@ b {
   padding-bottom: 4.625rem;
 }
 
-.py-\[5rem\] {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -4391,10 +4384,6 @@ b {
 
 .pl-5 {
   padding-left: 1.25rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
 }
 
 .pl-\[18px\] {
@@ -5184,6 +5173,10 @@ b {
   padding-bottom: 0px;
 }
 
+.hover\:border-dashed:hover {
+  border-style: dashed;
+}
+
 .hover\:border-accent:hover {
   --tw-border-opacity: 1;
   border-color: rgb(237 86 35 / var(--tw-border-opacity));
@@ -5206,6 +5199,10 @@ b {
 
 .hover\:bg-accent\/10:hover {
   background-color: rgb(237 86 35 / 0.1);
+}
+
+.hover\:bg-accent\/5:hover {
+  background-color: rgb(237 86 35 / 0.05);
 }
 
 .hover\:bg-accent\/90:hover {
@@ -5334,6 +5331,11 @@ b {
 .group:hover .group-hover\:bg-mainBlack {
   --tw-bg-opacity: 1;
   background-color: rgb(17 31 36 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:text-accent {
+  --tw-text-opacity: 1;
+  color: rgb(237 86 35 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-mainBlack {
@@ -5694,6 +5696,10 @@ b {
     height: 3.5rem;
   }
 
+  .lg\:h-16 {
+    height: 4rem;
+  }
+
   .lg\:h-5 {
     height: 1.25rem;
   }
@@ -5734,6 +5740,10 @@ b {
     height: 5.5rem;
   }
 
+  .lg\:h-\[7\.5rem\] {
+    height: 7.5rem;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -5764,6 +5774,10 @@ b {
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:w-16 {
+    width: 4rem;
   }
 
   .lg\:w-5 {
@@ -5810,6 +5824,10 @@ b {
     width: 45px;
   }
 
+  .lg\:w-\[7\.5rem\] {
+    width: 7.5rem;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -5847,10 +5865,6 @@ b {
     max-width: 34.375rem;
   }
 
-  .lg\:max-w-\[40\.25rem\] {
-    max-width: 40.25rem;
-  }
-
   .lg\:max-w-\[43\.5rem\] {
     max-width: 43.5rem;
   }
@@ -5861,10 +5875,6 @@ b {
 
   .lg\:max-w-\[82rems\] {
     max-width: 82rems;
-  }
-
-  .lg\:max-w-\[90rem\] {
-    max-width: 90rem;
   }
 
   .lg\:max-w-none {
@@ -5966,6 +5976,10 @@ b {
 
   .lg\:gap-20 {
     gap: 5rem;
+  }
+
+  .lg\:gap-3 {
+    gap: 0.75rem;
   }
 
   .lg\:gap-4 {
@@ -6093,6 +6107,10 @@ b {
 
   .lg\:p-20 {
     padding: 5rem;
+  }
+
+  .lg\:p-3 {
+    padding: 0.75rem;
   }
 
   .lg\:p-4 {
