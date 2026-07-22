@@ -24,7 +24,7 @@ $bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'
 				</h1>
 			<?php endif; ?>
 
-			<div class='flex flex-wrap'>
+			<div class='flex flex-wrap md:flex-nowrap'>
 				<?php if ($hero_content['primary_button']): ?>
 					<?php plmt_button(esc_url($hero_content['primary_button']['url']), esc_attr($hero_content['primary_button']['title']), array(
 						'classes' => '!w-[10rem] lg:!w-[16.875rem] w-full !px-0 py-3 justify-center lg:w-auto lg:py-5'
@@ -32,7 +32,7 @@ $bigger_icon = isset($hero_content['bigger_icon']) ? $hero_content['bigger_icon'
 				<?php endif; ?>
 				<?php if ($hero_content['secondary_button']): ?>
 					<?php plmt_button(esc_url($hero_content['secondary_button']['url']), esc_attr($hero_content['secondary_button']['title']), array(
-						'classes' => '!w-[10rem] h-full justify-center lg:!w-[16.875rem] scroll-to lg:py-5 text-white border-darkGray2 !bg-darkGray2 hidden lg:inline-flex',
+						'classes' => '!w-[10rem] h-full justify-center lg:!w-[16.875rem] scroll-to lg:py-5 text-white border-darkGray2 !bg-darkGray2',
 						'variant' =>
 							'secondary'
 					)) ?>
