@@ -95,7 +95,7 @@ function plmt_trust_companies($companies)
 				<div class="flex gap-6 shrink-0 overflow-hidden" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
 					<?php foreach ($companies as $company): ?>
 						<div
-							class="group flex flex-col justify-center items-center shrink-0 gap-2 w-[7.5rem] lg:w-[10.625rem] aspect-square border border-lightGray">
+							class="group flex flex-col justify-center items-center shrink-0 gap-2 w-[7.5rem] lg:w-[10.625rem] aspect-square border border-lightGray px-2">
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
 								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
 								class='h-8 lg:h-[3.75rem] shrink-0 w-auto grayscale lg:group-hover:grayscale-0 transition-all duration-200'>
