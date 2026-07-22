@@ -84,6 +84,7 @@ module.exports = {
 			},
 			fontSize: {
 				bodySmall: ['1rem', { lineHeight: '120%', fontWeight: '400' }],
+				bodySmallBold: ['1rem', { lineHeight: '120%', fontWeight: '700' }],
 				bodySmallMobile: ['0.875rem', { lineHeight: '120%', fontWeight: '400' }],
 				bodyRegular: ['1.125rem', { lineHeight: '130%', fontWeight: '400' }],
 				bodyRegularMobile: [

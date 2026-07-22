@@ -336,12 +336,12 @@ div.wpcf7-validation-errors {
 
 .article-content ol li {
 	counter-increment: item;
-	@apply bg-lightGrayBg text-darkGray relative min-h-[3.125rem] py-3 pl-12 pr-3;
+	@apply bg-lightGrayBg text-darkGray relative flex min-h-[3.125rem] items-center gap-3 p-3;
 }
 
 .article-content ol li::before {
 	content: counter(item);
-	@apply bg-mainBlack text-bodySmall absolute left-3 top-1/2 flex h-[26px] w-[26px] -translate-y-1/2 items-center justify-center font-bold text-white;
+	@apply bg-mainBlack text-bodySmallBold flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center text-white;
 }
 
 .article-content img {
