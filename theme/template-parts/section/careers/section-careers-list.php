@@ -23,7 +23,49 @@ foreach ($careers as $career) {
 	}
 }
 
-ksort($grouped_careers);
+// Sort careers inside each group (future openings last)
+foreach ($grouped_careers as &$group) {
+	usort($group, function ($a, $b) {
+		$aFuture = (bool) get_field('is_future_opening', $a->ID);
+		$bFuture = (bool) get_field('is_future_opening', $b->ID);
+
+		return $aFuture <=> $bFuture;
+	});
+}
+unset($group);
+
+// Sort groups
+uksort($grouped_careers, function ($groupA, $groupB) use ($grouped_careers) {
+	$currentA = 0;
+	$futureA  = 0;
+
+	foreach ($grouped_careers[$groupA] as $career) {
+		if (get_field('is_future_opening', $career->ID)) {
+			$futureA++;
+		} else {
+			$currentA++;
+		}
+	}
+
+	$currentB = 0;
+	$futureB  = 0;
+
+	foreach ($grouped_careers[$groupB] as $career) {
+		if (get_field('is_future_opening', $career->ID)) {
+			$futureB++;
+		} else {
+			$currentB++;
+		}
+	}
+
+	// Current openings first
+	if ($currentA !== $currentB) {
+		return $currentB <=> $currentA;
+	}
+
+	// More future openings last
+	return $futureA <=> $futureB;
+});
 
 function career_tags_list($tags)
 {
