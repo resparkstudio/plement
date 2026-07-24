@@ -98,7 +98,7 @@ function plmt_trust_companies($companies)
 							class="group flex flex-col justify-center items-center shrink-0 gap-2 w-[7.5rem] lg:w-[10.625rem] aspect-square border border-lightGray px-2">
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
 								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
-								class='h-8 lg:h-[3.75rem] shrink-0 w-auto grayscale lg:group-hover:grayscale-0 transition-all duration-200'>
+								class='h-8 lg:h-[3rem] shrink-0 w-auto grayscale lg:group-hover:grayscale-0 transition-all duration-200'>
 							<?php if ($company['link']): ?>
 								<a href="<?php echo esc_url($company['link']['url']) ?>" target="_blank" rel="noopener noreferrer"
 									class="pointer-events-none lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto transition-all duration-200 ease-in-out whitespace-nowrap bg-accent/10 text-accent px-2 py-2 font-bold hover:bg-accent hover:text-white">
