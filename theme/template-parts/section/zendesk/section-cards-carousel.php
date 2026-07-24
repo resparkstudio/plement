@@ -71,7 +71,7 @@ function render_card($card)
 						</div>
 					<?php endforeach; ?>
 				</div>
-				<div class="swiper-pagination !static mt-6"></div>
+				<!-- <div class="swiper-pagination !static mt-6"></div> -->
 			</div>
 		</div>
 	<?php endif; ?>
