@@ -390,7 +390,7 @@ b {
 	@apply text-[1rem] font-bold leading-[1.2rem] lg:text-[1.125rem];
 }
 .company-marquee-slider .animate-loop-scroll {
-	--marquee-duration: 5s;
+	--marquee-duration: 20s;
 }
 @media (min-width: 768px) {
 	.company-marquee-slider .animate-loop-scroll {
