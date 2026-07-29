@@ -87,15 +87,15 @@ function plmt_trust_companies($companies)
 		return;
 	} ?>
 	<div class="overflow-x-hidden company-marquee-slider pt-[1px] lg:p-0">
-		<div class="inline-flex flex-nowrap w-full mx-3 animate-loop-scroll lg:hover:[animation-play-state:paused]">
+		<div class="inline-flex flex-nowrap w-full gap-6 animate-loop-scroll lg:hover:[animation-play-state:paused]">
 			<?php
 			$sets = [false, true];
 			foreach ($sets as $i => $hidden):
 				?>
-				<div class="flex mx-3 shrink-0 overflow-hidden" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
+				<div class="flex gap-6 shrink-0 overflow-hidden" <?php echo $hidden ? 'aria-hidden="true"' : ''; ?>>
 					<?php foreach ($companies as $company): ?>
 						<div
-							class="group mx-3 flex flex-col justify-center items-center shrink-0 gap-2 w-[7.5rem] lg:w-[10.625rem] aspect-square border border-lightGray px-2">
+							class="group flex flex-col justify-center items-center shrink-0 gap-2 w-[7.5rem] lg:w-[10.625rem] aspect-square border border-lightGray px-2">
 							<img src='<?php echo esc_url($company['icon']['url']) ?>'
 								alt='<?php echo esc_attr($company['icon']['alt']) ?>'
 								class='h-8 lg:h-[3rem] shrink-0 w-auto grayscale lg:group-hover:grayscale-0 transition-all duration-200'>
