@@ -87,7 +87,7 @@ function plmt_trust_companies($companies)
 		return;
 	} ?>
 	<div class="overflow-x-hidden company-marquee-slider pt-[1px] lg:p-0">
-		<div class="inline-flex flex-nowrap w-full gap-6 animate-loop-scroll lg:hover:[animation-play-state:paused]">
+		<div class="inline-flex flex-nowrap gap-6 animate-loop-scroll lg:hover:[animation-play-state:paused]">
 			<?php
 			$sets = [false, true];
 			foreach ($sets as $i => $hidden):
