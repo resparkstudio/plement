@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.58
+Version: 0.2.59
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -2435,7 +2435,7 @@ b {
 }
 
 .company-marquee-slider .animate-loop-scroll {
-  --marquee-duration: 20s;
+  --marquee-duration: 30s;
 }
 
 @media (min-width: 768px) {
