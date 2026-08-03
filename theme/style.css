@@ -4,7 +4,7 @@ Theme URI: https://underscoretw.com/
 Author: underscoretw.com
 Author URI: https://underscoretw.com/
 Description: A custom theme based on _tw
-Version: 0.2.57
+Version: 0.2.58
 Tested up to: 6.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -6482,12 +6482,18 @@ b {
     border-right-width: 0px;
   }
 
-  .lg\:hover\:\[animation-play-state\:paused\]:hover {
-    animation-play-state: paused;
+  .lg\:hover\:bg-accent:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(237 86 35 / var(--tw-bg-opacity));
   }
 
-  .group:hover .lg\:group-hover\:pointer-events-auto {
-    pointer-events: auto;
+  .lg\:hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .lg\:hover\:\[animation-play-state\:paused\]:hover {
+    animation-play-state: paused;
   }
 
   .group\/container:hover .group-hover\/container\:lg\:opacity-100 {
